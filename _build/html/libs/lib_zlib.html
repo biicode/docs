@@ -97,12 +97,41 @@
 <p>The following code would be in each one.</p>
 <div class="section" id="infdef-h">
 <h3>infdef.h<a class="headerlink" href="#infdef-h" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-cpp"><div class="highlight"><pre><span class="cp">#pragma once</span>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#pragma once</span>
 
-<span class="cp">#include &lt;stdio.h&gt;</span>
-<span class="cp">#include &lt;assert.h&gt;</span>
-<span class="cp">#include &quot;zlib/zlib/zlib.h&quot;</span>
-
+<span class="hll"><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class="hll"><span class="cp">#include &lt;assert.h&gt;</span>
+</span><span class="hll"><span class="cp">#include &quot;zlib/zlib/zlib.h&quot;</span>
+</span>
 <span class="cm">/*********** Methods declarations *************/</span>
 
 <span class="cm">/* Compress from file source to file dest until EOF on source.</span>
@@ -112,8 +141,8 @@
 <span class="cm">version of the library linked do not match, or Z_ERRNO if there is</span>
 <span class="cm">an error reading or writing the files. */</span>
 
-<span class="kt">int</span> <span class="nf">def</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="n">source</span><span class="p">,</span> <span class="kt">FILE</span> <span class="o">*</span><span class="n">dest</span><span class="p">,</span> <span class="kt">int</span> <span class="n">level</span><span class="p">);</span>
-
+<span class="hll"><span class="kt">int</span> <span class="nf">def</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="n">source</span><span class="p">,</span> <span class="kt">FILE</span> <span class="o">*</span><span class="n">dest</span><span class="p">,</span> <span class="kt">int</span> <span class="n">level</span><span class="p">);</span>
+</span>
 <span class="cm">/* Decompress from file source to file dest until stream ends or EOF.</span>
 <span class="cm">inf() returns Z_OK on success, Z_MEM_ERROR if memory could not be</span>
 <span class="cm">allocated for processing, Z_DATA_ERROR if the deflate data is</span>
@@ -128,7 +157,7 @@
 
 <span class="kt">void</span> <span class="nf">zerr</span><span class="p">(</span><span class="kt">int</span> <span class="n">ret</span><span class="p">);</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="infdef-cpp">
 <h3>infdef.cpp<a class="headerlink" href="#infdef-cpp" title="Permalink to this headline">¶</a></h3>

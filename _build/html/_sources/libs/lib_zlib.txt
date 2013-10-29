@@ -16,6 +16,8 @@ infdef.h
 ^^^^^^^^
 
 .. code-block:: cpp
+	:linenos:
+	:emphasize-lines: 3,4,5,16
 
 	#pragma once
 
