@@ -15,6 +15,7 @@ Contents:
 
    intro
    install
+   libraries
 
 
 .. Comment 
