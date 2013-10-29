@@ -18,6 +18,13 @@ Contents:
    libraries
 
 
+sample video
+------------
+
+.. raw:: html
+
+	<iframe width="640" height="480" src="//www.youtube.com/embed/IJcBxT_fhaw" frameborder="0" allowfullscreen></iframe>
+
 .. Comment 
 	Indices and tables
 	==================
