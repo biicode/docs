@@ -3,13 +3,17 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to biicode docs's documentation!
-========================================
+Welcome to the biicode documentation!
+=====================================
+
+Here you will find all the information to get started using biicode with your projects. Soon you will discover that coding has never been easier!
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
+   
+   intro
 
 
 
