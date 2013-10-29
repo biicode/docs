@@ -27,7 +27,7 @@ Biicode has many core innovations, and we are following the lean startup and MVP
 What problem does it solve?
 ---------------------------
 
-We have proposed a C++ challenge in `https://github.com/biicode/challenge`_, some source files that have to be built and run (both the application and the test).
+We have proposed a C++ challenge in https://github.com/biicode/challenge, some source files that have to be built and run (both the application and the test).
 
 These source files have dependencies to 3 well known open source libraries, which are quite simple to integrate in any project:
 
