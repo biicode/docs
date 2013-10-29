@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Zlib &mdash; biicode docs 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="biicode docs 1.0 documentation" href="../index.html" />
+    <link rel="up" title="What libraries are available in biicode?" href="../libraries.html" />
+    <link rel="prev" title="Crypto++, a free C++ class library of cryptographic schemes" href="lib_crypto++.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="lib_crypto++.html" title="Crypto++, a free C++ class library of cryptographic schemes"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">biicode docs 1.0 documentation</a> &raquo;</li>
+          <li><a href="../libraries.html" accesskey="U">What libraries are available in biicode?</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Zlib</a><ul>
+<li><a class="reference internal" href="#usage-example-difficulty-medium">Usage example (difficulty: medium)</a><ul>
+<li><a class="reference internal" href="#infdef-h">infdef.h</a></li>
+<li><a class="reference internal" href="#infdef-cpp">infdef.cpp</a></li>
+<li><a class="reference internal" href="#zpipe-cpp">zpipe.cpp</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="lib_crypto++.html"
+                        title="previous chapter">Crypto++, a free C++ class library of cryptographic schemes</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/libs/lib_zlib.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="zlib">
+<h1>Zlib<a class="headerlink" href="#zlib" title="Permalink to this headline">¶</a></h1>
+<p>Zlib is a software library written in C language used for data compression. For more information about this library, visit its official website or Documentation.</p>
+<p>This is the biicode library site and this is the biicode library examples.</p>
+<div class="section" id="usage-example-difficulty-medium">
+<h2>Usage example (difficulty: medium)<a class="headerlink" href="#usage-example-difficulty-medium" title="Permalink to this headline">¶</a></h2>
+<p>To check this library, we&#8217;re making an example to compress and decompress a single file. Then you could create a <a href="#id1"><span class="problematic" id="id2">*</span></a>.h and a <a href="#id3"><span class="problematic" id="id4">*</span></a>.cpp file named infdef (inflate and deflate) and a zpipe.cpp which would be, for example, in ~/hive_directory/src/user_name/hive_name/.</p>
+<p>The following code would be in each one.</p>
+<div class="section" id="infdef-h">
+<h3>infdef.h<a class="headerlink" href="#infdef-h" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="cp">#pragma once</span>
+
+<span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="cp">#include &lt;assert.h&gt;</span>
+<span class="cp">#include &quot;zlib/zlib/zlib.h&quot;</span>
+
+<span class="cm">/*********** Methods declarations *************/</span>
+
+<span class="cm">/* Compress from file source to file dest until EOF on source.</span>
+<span class="cm">def() returns Z_OK on success, Z_MEM_ERROR if memory could not be</span>
+<span class="cm">allocated for processing, Z_STREAM_ERROR if an invalid compression</span>
+<span class="cm">level is supplied, Z_VERSION_ERROR if the version of zlib.h and the</span>
+<span class="cm">version of the library linked do not match, or Z_ERRNO if there is</span>
+<span class="cm">an error reading or writing the files. */</span>
+
+<span class="kt">int</span> <span class="nf">def</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="n">source</span><span class="p">,</span> <span class="kt">FILE</span> <span class="o">*</span><span class="n">dest</span><span class="p">,</span> <span class="kt">int</span> <span class="n">level</span><span class="p">);</span>
+
+<span class="cm">/* Decompress from file source to file dest until stream ends or EOF.</span>
+<span class="cm">inf() returns Z_OK on success, Z_MEM_ERROR if memory could not be</span>
+<span class="cm">allocated for processing, Z_DATA_ERROR if the deflate data is</span>
+<span class="cm">invalid or incomplete, Z_VERSION_ERROR if the version of zlib.h and</span>
+<span class="cm">the version of the library linked do not match, or Z_ERRNO if there</span>
+<span class="cm">is an error reading or writing the files. */</span>
+
+<span class="kt">int</span> <span class="nf">inf</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="n">source</span><span class="p">,</span> <span class="kt">FILE</span><span class="o">*</span> <span class="n">dest</span><span class="p">);</span>
+
+
+<span class="cm">/* report a zlib or i/o error */</span>
+
+<span class="kt">void</span> <span class="nf">zerr</span><span class="p">(</span><span class="kt">int</span> <span class="n">ret</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="infdef-cpp">
+<h3>infdef.cpp<a class="headerlink" href="#infdef-cpp" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="cp">#include &quot;infdef.h&quot;</span>
+
+<span class="cp">#define CHUNK 20000</span>
+
+<span class="kt">int</span> <span class="nf">def</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="n">source</span><span class="p">,</span> <span class="kt">FILE</span> <span class="o">*</span><span class="n">dest</span><span class="p">,</span> <span class="kt">int</span> <span class="n">level</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="kt">int</span> <span class="n">ret</span><span class="p">,</span> <span class="n">flush</span><span class="p">;</span>
+   <span class="kt">unsigned</span> <span class="n">have</span><span class="p">;</span>
+   <span class="n">z_stream</span> <span class="n">strm</span><span class="p">;</span>
+   <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">in</span><span class="p">[</span><span class="n">CHUNK</span><span class="p">];</span>
+   <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">out</span><span class="p">[</span><span class="n">CHUNK</span><span class="p">];</span>
+
+  <span class="cm">/* allocate deflate state */</span>
+   <span class="n">strm</span><span class="p">.</span><span class="n">zalloc</span> <span class="o">=</span> <span class="n">Z_NULL</span><span class="p">;</span>
+   <span class="n">strm</span><span class="p">.</span><span class="n">zfree</span> <span class="o">=</span> <span class="n">Z_NULL</span><span class="p">;</span>
+   <span class="n">strm</span><span class="p">.</span><span class="n">opaque</span> <span class="o">=</span> <span class="n">Z_NULL</span><span class="p">;</span>
+   <span class="n">ret</span> <span class="o">=</span> <span class="n">deflateInit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">strm</span><span class="p">,</span> <span class="n">level</span><span class="p">);</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">!=</span> <span class="n">Z_OK</span><span class="p">)</span>
+     <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+
+  <span class="cm">/* compress until end of file */</span>
+   <span class="k">do</span> <span class="p">{</span>
+     <span class="n">strm</span><span class="p">.</span><span class="n">avail_in</span> <span class="o">=</span> <span class="n">fread</span><span class="p">(</span><span class="n">in</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">CHUNK</span><span class="p">,</span> <span class="n">source</span><span class="p">);</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">ferror</span><span class="p">(</span><span class="n">source</span><span class="p">))</span> <span class="p">{</span>
+       <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">deflateEnd</span><span class="p">(</span><span class="o">&amp;</span><span class="n">strm</span><span class="p">);</span>
+       <span class="k">return</span> <span class="n">Z_ERRNO</span><span class="p">;</span>
+     <span class="p">}</span>
+     <span class="n">flush</span> <span class="o">=</span> <span class="n">feof</span><span class="p">(</span><span class="n">source</span><span class="p">)</span> <span class="o">?</span> <span class="n">Z_FINISH</span> <span class="o">:</span> <span class="n">Z_NO_FLUSH</span><span class="p">;</span>
+     <span class="n">strm</span><span class="p">.</span><span class="n">next_in</span> <span class="o">=</span> <span class="n">in</span><span class="p">;</span>
+
+   <span class="cm">/* run deflate() on input until output buffer not full, finish</span>
+<span class="cm">     compression if all of source has been read in */</span>
+     <span class="k">do</span> <span class="p">{</span>
+       <span class="n">strm</span><span class="p">.</span><span class="n">avail_out</span> <span class="o">=</span> <span class="n">CHUNK</span><span class="p">;</span>
+       <span class="n">strm</span><span class="p">.</span><span class="n">next_out</span> <span class="o">=</span> <span class="n">out</span><span class="p">;</span>
+       <span class="n">ret</span> <span class="o">=</span> <span class="n">deflate</span><span class="p">(</span><span class="o">&amp;</span><span class="n">strm</span><span class="p">,</span> <span class="n">flush</span><span class="p">);</span> <span class="cm">/* no bad return value */</span>
+       <span class="n">assert</span><span class="p">(</span><span class="n">ret</span> <span class="o">!=</span> <span class="n">Z_STREAM_ERROR</span><span class="p">);</span> <span class="cm">/* state not clobbered */</span>
+       <span class="n">have</span> <span class="o">=</span> <span class="n">CHUNK</span> <span class="o">-</span> <span class="n">strm</span><span class="p">.</span><span class="n">avail_out</span><span class="p">;</span>
+
+       <span class="k">if</span> <span class="p">(</span><span class="n">fwrite</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">have</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span> <span class="o">!=</span> <span class="n">have</span> <span class="o">||</span> <span class="n">ferror</span><span class="p">(</span><span class="n">dest</span><span class="p">))</span> <span class="p">{</span>
+         <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">deflateEnd</span><span class="p">(</span><span class="o">&amp;</span><span class="n">strm</span><span class="p">);</span>
+         <span class="k">return</span> <span class="n">Z_ERRNO</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">strm</span><span class="p">.</span><span class="n">avail_out</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="n">assert</span><span class="p">(</span><span class="n">strm</span><span class="p">.</span><span class="n">avail_in</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span> <span class="cm">/* all input will be used */</span>
+
+   <span class="cm">/* done when last data in file processed */</span>
+    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">flush</span> <span class="o">!=</span> <span class="n">Z_FINISH</span><span class="p">);</span>
+    <span class="n">assert</span><span class="p">(</span><span class="n">ret</span> <span class="o">==</span> <span class="n">Z_STREAM_END</span><span class="p">);</span> <span class="cm">/* stream will be complete */</span>
+
+  <span class="cm">/* clean up and return */</span>
+   <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">deflateEnd</span><span class="p">(</span><span class="o">&amp;</span><span class="n">strm</span><span class="p">);</span>
+   <span class="k">return</span> <span class="n">Z_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">inf</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="n">source</span><span class="p">,</span> <span class="kt">FILE</span><span class="o">*</span> <span class="n">dest</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="kt">int</span> <span class="n">ret</span><span class="p">;</span>
+   <span class="kt">unsigned</span> <span class="n">have</span><span class="p">;</span>
+   <span class="n">z_stream</span> <span class="n">strm</span><span class="p">;</span>
+   <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">in</span><span class="p">[</span><span class="n">CHUNK</span><span class="p">];</span>
+   <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">out</span><span class="p">[</span><span class="n">CHUNK</span><span class="p">];</span>
+
+  <span class="cm">/* allocate inflate state */</span>
+   <span class="n">strm</span><span class="p">.</span><span class="n">zalloc</span> <span class="o">=</span> <span class="n">Z_NULL</span><span class="p">;</span>
+   <span class="n">strm</span><span class="p">.</span><span class="n">zfree</span> <span class="o">=</span> <span class="n">Z_NULL</span><span class="p">;</span>
+   <span class="n">strm</span><span class="p">.</span><span class="n">opaque</span> <span class="o">=</span> <span class="n">Z_NULL</span><span class="p">;</span>
+   <span class="n">strm</span><span class="p">.</span><span class="n">avail_in</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="n">strm</span><span class="p">.</span><span class="n">next_in</span> <span class="o">=</span> <span class="n">Z_NULL</span><span class="p">;</span>
+   <span class="n">ret</span> <span class="o">=</span> <span class="n">inflateInit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">strm</span><span class="p">);</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">!=</span> <span class="n">Z_OK</span><span class="p">)</span>
+     <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+
+  <span class="cm">/* decompress until deflate stream ends or end of file */</span>
+   <span class="k">do</span> <span class="p">{</span>
+     <span class="n">strm</span><span class="p">.</span><span class="n">avail_in</span> <span class="o">=</span> <span class="n">fread</span><span class="p">(</span><span class="n">in</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">CHUNK</span><span class="p">,</span> <span class="n">source</span><span class="p">);</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">ferror</span><span class="p">(</span><span class="n">source</span><span class="p">))</span> <span class="p">{</span>
+       <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">inflateEnd</span><span class="p">(</span><span class="o">&amp;</span><span class="n">strm</span><span class="p">);</span>
+       <span class="k">return</span> <span class="n">Z_ERRNO</span><span class="p">;</span>
+     <span class="p">}</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">strm</span><span class="p">.</span><span class="n">avail_in</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+       <span class="k">break</span><span class="p">;</span>
+     <span class="n">strm</span><span class="p">.</span><span class="n">next_in</span> <span class="o">=</span> <span class="n">in</span><span class="p">;</span>
+
+    <span class="cm">/* run inflate() on input until output buffer not full */</span>
+     <span class="k">do</span> <span class="p">{</span>
+       <span class="n">strm</span><span class="p">.</span><span class="n">avail_out</span> <span class="o">=</span> <span class="n">CHUNK</span><span class="p">;</span>
+       <span class="n">strm</span><span class="p">.</span><span class="n">next_out</span> <span class="o">=</span> <span class="n">out</span><span class="p">;</span>
+       <span class="n">ret</span> <span class="o">=</span> <span class="n">inflate</span><span class="p">(</span><span class="o">&amp;</span><span class="n">strm</span><span class="p">,</span> <span class="n">Z_NO_FLUSH</span><span class="p">);</span>
+       <span class="n">assert</span><span class="p">(</span><span class="n">ret</span> <span class="o">!=</span> <span class="n">Z_STREAM_ERROR</span><span class="p">);</span> <span class="cm">/* state not clobbered */</span>
+       <span class="k">switch</span> <span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">case</span> <span class="n">Z_NEED_DICT</span>:
+         <span class="n">ret</span> <span class="o">=</span> <span class="n">Z_DATA_ERROR</span><span class="p">;</span> <span class="cm">/* and fall through */</span>
+         <span class="k">case</span> <span class="n">Z_DATA_ERROR</span>:
+         <span class="k">case</span> <span class="n">Z_MEM_ERROR</span>:
+        <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">inflateEnd</span><span class="p">(</span><span class="o">&amp;</span><span class="n">strm</span><span class="p">);</span>
+         <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+       <span class="p">}</span>
+       <span class="n">have</span> <span class="o">=</span> <span class="n">CHUNK</span> <span class="o">-</span> <span class="n">strm</span><span class="p">.</span><span class="n">avail_out</span><span class="p">;</span>
+       <span class="k">if</span> <span class="p">(</span><span class="n">fwrite</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">have</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span> <span class="o">!=</span> <span class="n">have</span> <span class="o">||</span> <span class="n">ferror</span><span class="p">(</span><span class="n">dest</span><span class="p">))</span> <span class="p">{</span>
+         <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">inflateEnd</span><span class="p">(</span><span class="o">&amp;</span><span class="n">strm</span><span class="p">);</span>
+         <span class="k">return</span> <span class="n">Z_ERRNO</span><span class="p">;</span>
+       <span class="p">}</span>
+      <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">strm</span><span class="p">.</span><span class="n">avail_out</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+
+     <span class="cm">/* done when inflate() says it&#39;s done */</span>
+     <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">ret</span> <span class="o">!=</span> <span class="n">Z_STREAM_END</span><span class="p">);</span>
+
+  <span class="cm">/* clean up and return */</span>
+   <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">inflateEnd</span><span class="p">(</span><span class="o">&amp;</span><span class="n">strm</span><span class="p">);</span>
+   <span class="k">return</span> <span class="n">ret</span> <span class="o">==</span> <span class="n">Z_STREAM_END</span> <span class="o">?</span> <span class="n">Z_OK</span> <span class="o">:</span> <span class="n">Z_DATA_ERROR</span><span class="p">;</span>
+<span class="p">}</span>
+
+  <span class="cm">/* report a zlib or i/o error */</span>
+ <span class="kt">void</span> <span class="nf">zerr</span><span class="p">(</span><span class="kt">int</span> <span class="n">ret</span><span class="p">)</span>
+ <span class="p">{</span>
+    <span class="n">fputs</span><span class="p">(</span><span class="s">&quot;zpipe: &quot;</span><span class="p">,</span> <span class="n">stderr</span><span class="p">);</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="n">Z_ERRNO</span>:
+        <span class="k">if</span> <span class="p">(</span><span class="n">ferror</span><span class="p">(</span><span class="n">stdin</span><span class="p">))</span>
+          <span class="n">fputs</span><span class="p">(</span><span class="s">&quot;error reading stdin</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">stderr</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ferror</span><span class="p">(</span><span class="n">stdout</span><span class="p">))</span>
+          <span class="n">fputs</span><span class="p">(</span><span class="s">&quot;error writing stdout</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">stderr</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="n">Z_STREAM_ERROR</span>:
+        <span class="n">fputs</span><span class="p">(</span><span class="s">&quot;invalid compression level</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">stderr</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="n">Z_DATA_ERROR</span>:
+        <span class="n">fputs</span><span class="p">(</span><span class="s">&quot;invalid or incomplete deflate data</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">stderr</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="n">Z_MEM_ERROR</span>:
+        <span class="n">fputs</span><span class="p">(</span><span class="s">&quot;out of memory</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">stderr</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="n">Z_VERSION_ERROR</span>:
+        <span class="n">fputs</span><span class="p">(</span><span class="s">&quot;zlib version mismatch!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">stderr</span><span class="p">);</span>
+    <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="zpipe-cpp">
+<h3>zpipe.cpp<a class="headerlink" href="#zpipe-cpp" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="cp">#include &quot;infdef.h&quot;</span>
+<span class="cp">#include &lt;iostream&gt;</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="cm">/* compress or decompress */</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="kt">int</span> <span class="n">ret</span><span class="p">;</span>
+   <span class="n">string</span> <span class="n">request</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span>
+
+   <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;Do you want to compress or decompress a file (to exit &#39;CTRL+C&#39;)? &lt;comp|decomp&gt;&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+      <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">request</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">request</span><span class="o">==</span><span class="s">&quot;comp&quot;</span> <span class="o">||</span> <span class="n">request</span><span class="o">==</span><span class="s">&quot;decomp&quot;</span><span class="p">)</span>
+        <span class="k">break</span><span class="p">;</span>
+   <span class="p">}</span>
+
+  <span class="n">string</span> <span class="n">name_file_source</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+  <span class="n">string</span> <span class="n">name_file_dest</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+  <span class="kt">float</span> <span class="n">size_src</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">size_dest</span><span class="o">=</span><span class="mf">0.0</span><span class="p">;</span>
+
+  <span class="cm">/*</span>
+<span class="cm">   Enter or path to file, for example:</span>
+<span class="cm">   C:/Users/User/file.txt</span>
+<span class="cm">   Or</span>
+<span class="cm">   If you save the file in the bin folder, where</span>
+<span class="cm">   you will have the *.exe file, you just need write</span>
+<span class="cm">   name and extension file:</span>
+<span class="cm">       file.txt</span>
+<span class="cm">  */</span>
+
+  <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;Enter file source name: &quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+  <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">name_file_source</span><span class="p">;</span>
+  <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;Enter file destination name: &quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+  <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">name_file_dest</span><span class="p">;</span>
+
+  <span class="kt">FILE</span> <span class="o">*</span><span class="n">source</span><span class="o">=</span><span class="nb">NULL</span><span class="p">;</span><span class="c1">//original file</span>
+  <span class="kt">FILE</span><span class="o">*</span> <span class="n">dest</span><span class="o">=</span><span class="nb">NULL</span><span class="p">;</span> <span class="c1">//file to compress or decompress</span>
+
+ <span class="cm">/* do compression if &quot;comp&quot; specified */</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">request</span> <span class="o">==</span> <span class="s">&quot;comp&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">try</span>
+      <span class="p">{</span>
+         <span class="n">source</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">name_file_source</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span><span class="s">&quot;r&quot;</span><span class="p">);</span>
+         <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">source</span><span class="p">)</span>
+            <span class="k">throw</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">catch</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+      <span class="p">{</span>
+         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;File does not exist, method return with &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+         <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="n">dest</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">name_file_dest</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span><span class="s">&quot;wb&quot;</span><span class="p">);</span><span class="c1">//wb because write to binary format</span>
+      <span class="n">ret</span> <span class="o">=</span> <span class="n">def</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">dest</span> <span class="p">,</span><span class="n">Z_DEFAULT_COMPRESSION</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">!=</span> <span class="n">Z_OK</span><span class="p">)</span>
+         <span class="n">zerr</span><span class="p">(</span><span class="n">ret</span><span class="p">);</span>
+      <span class="k">else</span>
+      <span class="p">{</span>
+        <span class="cm">/* Calculate size file to see the difference */</span>
+        <span class="n">size_src</span> <span class="o">=</span> <span class="n">ftell</span><span class="p">(</span><span class="n">source</span><span class="p">);</span>
+        <span class="n">size_dest</span> <span class="o">=</span> <span class="n">ftell</span><span class="p">(</span><span class="n">dest</span><span class="p">);</span>
+
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;The original file size is: &quot;</span><span class="o">&lt;&lt;</span><span class="n">size_src</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;The file size after being compressed is: &quot;</span><span class="o">&lt;&lt;</span><span class="n">size_dest</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="cm">/* do decompression if &quot;decomp&quot; specified */</span>
+   <span class="k">else</span> <span class="p">{</span>
+      <span class="n">try</span>
+      <span class="p">{</span>
+         <span class="n">source</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">name_file_source</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span><span class="s">&quot;rb&quot;</span><span class="p">);</span><span class="c1">//rb because read from binary format</span>
+         <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">source</span><span class="p">)</span>
+            <span class="k">throw</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">catch</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+      <span class="p">{</span>
+         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;File does not exist, method return with &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+         <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="n">dest</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">name_file_dest</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span><span class="s">&quot;w&quot;</span><span class="p">);</span>
+      <span class="n">ret</span> <span class="o">=</span> <span class="n">def</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">dest</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">!=</span> <span class="n">Z_OK</span><span class="p">)</span>
+         <span class="n">zerr</span><span class="p">(</span><span class="n">ret</span><span class="p">);</span>
+      <span class="k">else</span>
+      <span class="p">{</span>
+        <span class="cm">/* Calculate size file to see the difference */</span>
+        <span class="n">size_src</span> <span class="o">=</span> <span class="n">ftell</span><span class="p">(</span><span class="n">source</span><span class="p">);</span>
+        <span class="n">size_dest</span> <span class="o">=</span> <span class="n">ftell</span><span class="p">(</span><span class="n">dest</span><span class="p">);</span>
+
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;The original file size is: &quot;</span><span class="o">&lt;&lt;</span><span class="n">size_src</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;The file size after being decompressed is: &quot;</span><span class="o">&lt;&lt;</span><span class="n">size_dest</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Then, you need find all the depencies of your project, in this case, zlib.h, so execute in console:</p>
+<div class="highlight-python"><pre>$ bii find</pre>
+</div>
+<p>Next, you can already run the code:</p>
+<div class="highlight-python"><pre>$ bii cpp:run</pre>
+</div>
+<p>Then you&#8217;ll be requested to select compression or decompression any file, and the file source name and file destination name.</p>
+<p>This will be the output if you would want to compress a file.txt which is in your desktop directory and the compressed name file would be file.gz. The last one will be created in your ~/hive_directory/bin/ directory:</p>
+<div class="highlight-python"><pre>Do you want to compress or decompress a file (to exit 'CTRL+C')? &lt;comp|decomp&gt;
+comp
+Enter file source name:
+C:\Users\Usuario\Desktop\file.txt
+Enter file destination name:
+file.gz
+The original file size is: 16944
+The file size after being compressed is: 5152</pre>
+</div>
+<p>In this case file.txt had a size of 16944 bytes and file.gz 5152 bytes.</p>
+<p>Now, if you want to decompress the file.gz to check all is correct, run the code again and the output will be the next:</p>
+<div class="highlight-python"><pre>Do you want to compress or decompress a file (to exit 'CTRL+C')? &lt;comp|decomp&gt;
+decomp
+Enter file source name:
+file.gz
+Enter file destination name:
+myfile.txt
+The original file size is: 5152
+The file size after being decompressed is: 16944</pre>
+</div>
+<p>Finally, you can see that the new file, myfile.txt, has been created in the ~/hive_directory/bin/ directory and it´s exactly like the file.txt in terms of size and content.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="lib_crypto++.html" title="Crypto++, a free C++ class library of cryptographic schemes"
+             >previous</a> |</li>
+        <li><a href="../index.html">biicode docs 1.0 documentation</a> &raquo;</li>
+          <li><a href="../libraries.html" >What libraries are available in biicode?</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, biicode.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

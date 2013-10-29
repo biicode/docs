@@ -1,0 +1,184 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introduction &mdash; biicode docs 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="biicode docs 1.0 documentation" href="index.html" />
+    <link rel="next" title="Installation and Setup" href="install.html" />
+    <link rel="prev" title="Welcome to the biicode documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="install.html" title="Installation and Setup"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to the biicode documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">biicode docs 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Introduction</a><ul>
+<li><a class="reference internal" href="#what-is-biicode">What is biicode</a></li>
+<li><a class="reference internal" href="#biicode-beta">Biicode BETA</a></li>
+<li><a class="reference internal" href="#what-problem-does-it-solve">What problem does it solve?</a></li>
+<li><a class="reference internal" href="#some-basic-concepts">Some basic concepts</a><ul>
+<li><a class="reference internal" href="#cell">Cell</a></li>
+<li><a class="reference internal" href="#block">Block</a></li>
+<li><a class="reference internal" href="#hive">Hive</a></li>
+<li><a class="reference internal" href="#workspace">Workspace</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to the biicode documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="install.html"
+                        title="next chapter">Installation and Setup</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/intro.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-biicode">
+<h2>What is biicode<a class="headerlink" href="#what-is-biicode" title="Permalink to this headline">¶</a></h2>
+<p>Biicode is a new dependencies manager for Software developers, with many unique characteristics:</p>
+<ul class="simple">
+<li>It is <strong>simple</strong>. Everybody should be able to seamless integrate and reuse anybody else source code, quickly.</li>
+<li>Reuse of existing code is always done from source code. If required by the language (as C++) artifacts like libraries are built locally.</li>
+<li>Dependencies are always managed at the file level. No libraries, no packaging. If you need to reuse some files from previously developed code, just the required files, together with its transitive dependencies are integrated in your project.</li>
+<li>It also manages updates. You can easily upgrade your dependencies if new compatible versions that match your preferences are published.</li>
+<li>It is fully deterministic, the joint compatible configuration of libraries is computed.</li>
+<li>Multilanguage, multi OS. The work flow, the tool, the way you reuse code is exactly the same independently of the programming language or the OS you are using. Currently we are working mainly for C/C++, but we have many other languages in the pipeline.</li>
+<li>Biicode is not just for reusing other&#8217;s source code! Publishing your code is also very simple, so you can easily share with others and reuse your code in all your projects.</li>
+<li>Dependencies deduced from source code. Just code as usual, write your #includes or imports in your source files. No need to explicitely write them in other files. Biicode scans your source files, and extract relationships between those files.</li>
+<li>Configurable: you can define (if desired) manually in configuration files many things: from dependencies and connections between your files, the policies to find new dependencies, or the rules to be applied while building.</li>
+<li>Highly automated. Based in just your source files, we are able to create projects and build scripts. For example in C++, we automatically create a CMakeLists.txt file with the configuration required to build your project.</li>
+</ul>
+</div>
+<div class="section" id="biicode-beta">
+<h2>Biicode BETA<a class="headerlink" href="#biicode-beta" title="Permalink to this headline">¶</a></h2>
+<p>Biicode is now in an early Beta stage, we currently accept new users by invitation only and slowly, as we have many users that are giving us a lot of feedback that we have to process and further improve the usability of the system. Sorry if we cannot provide or response quickly to your invitation request, we are doing our best to quickly attend our current users feedback.</p>
+<p>Biicode has many core innovations, and we are following the lean startup and MVP paradigms, we try to release very often and quickly and iterate quickly on user feedback. But this also means that much functionality you could expect is not as intuitive as you would desire, and errors and failures could arise often, specially on last features. Some things and features are probably on their way, maybe even implemented but not yet properly documented. Also, expect commands, processes and the like to change in the short term.</p>
+</div>
+<div class="section" id="what-problem-does-it-solve">
+<h2>What problem does it solve?<a class="headerlink" href="#what-problem-does-it-solve" title="Permalink to this headline">¶</a></h2>
+<p>We have proposed a C++ challenge in <a href="#id1"><span class="problematic" id="id2">`https://github.com/biicode/challenge`_</span></a>, some source files that have to be built and run (both the application and the test).</p>
+<p>These source files have dependencies to 3 well known open source libraries, which are quite simple to integrate in any project:</p>
+<ul class="simple">
+<li>Eigen <a class="reference external" href="http://eigen.tuxfamily.org">http://eigen.tuxfamily.org</a> is headers-only</li>
+<li>CSparse  <a class="reference external" href="http://www.cise.ufl.edu/research/sparse/CSparse/">http://www.cise.ufl.edu/research/sparse/CSparse/</a> is very simple, just a .h and some .c files</li>
+<li>Google GTest <a class="reference external" href="https://code.google.com/p/googletest/">https://code.google.com/p/googletest/</a> is also very portable, independent and prepared to be integrated in other projects.</li>
+</ul>
+<p>The challenge consists in doing the task, from sources, in Win, Linux and Mac with the same setup.</p>
+<p>Try it yourself and then solve the problem with biicode! (proceed to Install and Get Started)</p>
+</div>
+<div class="section" id="some-basic-concepts">
+<h2>Some basic concepts<a class="headerlink" href="#some-basic-concepts" title="Permalink to this headline">¶</a></h2>
+<p>Before getting your hands dirty you might want to learn a few basic concepts and how biicode sees the (development) world.</p>
+<div class="section" id="cell">
+<h3>Cell<a class="headerlink" href="#cell" title="Permalink to this headline">¶</a></h3>
+<p>A cell is the basic biicode processing and sharing unit. It corresponds to your files and it holds relevant metadata.</p>
+<p>Lets say the honey is the source code you put inside each one of your source files, and the cell structure is the metadata that relates such source file with the others. Actually, cells can be of any type (text, data, images), not just source code. In your code you can make references (includes, import) to your cells or cells from any other user. You just care about producing the honey, biicode will try to care for the rest.</p>
+</div>
+<div class="section" id="block">
+<h3>Block<a class="headerlink" href="#block" title="Permalink to this headline">¶</a></h3>
+<p>A block is a group of cells that are logically related and probably cooperate to perform some functions, or are just grouped according to some criteria. It’s a similar concept to C libraries, java packages or python packages and modules, but not exactly the same, as they are always from source code, and without any real packaging grouping them other than the block name. Cells belonging to published blocks can be reused pretty straightforwardly, just referencing them from other cells. A very important concept of blocks, is that not all cells within a block are to be reused together, if you need a certain cell of a block and such cell does not depend on anything else, only that cell will be retrieved and used. Published cells and blocks are stored in biicode cloud</p>
+<p>Circular dependencies between blocks are not allowed, as usually happens in other existing systems. If the cells of a block A depends on the cells of block B; the cells of block B cannot depend on cells belonging to block A.</p>
+</div>
+<div class="section" id="hive">
+<h3>Hive<a class="headerlink" href="#hive" title="Permalink to this headline">¶</a></h3>
+<p>The hive is very similar to a conventional &#8220;project&#8221;. It is a folder inside your workspace in which you edit, build and run your code; a sandbox where you can play around with your code before sharing it. You can have as many hives as you want, they are private and you can save them in the cloud for later. Biicode is not a version control system, so you can use git, mercurial, svn or whatever you prefer along with biicode if you want a version control of your hives files.</p>
+</div>
+<div class="section" id="workspace">
+<h3>Workspace<a class="headerlink" href="#workspace" title="Permalink to this headline">¶</a></h3>
+<p>This is a special folder in your system that will hold your code, the code you depend on, your executables and buildscripts as well as biicode metadata. The concept is pretty much the same as in IDEs. Once created, you’ll perform the rest of tasks from within there</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="install.html" title="Installation and Setup"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to the biicode documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">biicode docs 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, biicode.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
