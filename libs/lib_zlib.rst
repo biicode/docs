@@ -8,7 +8,7 @@ This is the biicode library site and this is the biicode library examples.
 Usage example (difficulty: medium)
 ---------------------------------
 
-To check this library, we're making an example to compress and decompress a single file. Then you could create a *.h and a *.cpp file named infdef (inflate and deflate) and a zpipe.cpp which would be, for example, in ~/hive_directory/src/user_name/hive_name/.
+To check this library, we're making an example to compress and decompress a single file. Then you could create a \*.h and a \*.cpp file named infdef (inflate and deflate) and a zpipe.cpp which would be, for example, in ~/hive_directory/src/user_name/hive_name/.
 
 The following code would be in each one.
 
