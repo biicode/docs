@@ -17,6 +17,9 @@ import sys, os
 # more ingo: http://ryan-roemer.github.io/sphinx-bootstrap-theme/
 import sphinx_bootstrap_theme
 
+# sphinx rtd theme, added by @luispedraza
+# more info: https://github.com/snide/sphinx_rtd_theme
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -98,8 +101,14 @@ pygments_style = 'colorful'
 # a list of builtin themes.
 # html_theme = 'default'
 # html_theme = 'agogo'
-html_theme = 'bootstrap'
-html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+
+# bootstrap theme:
+# html_theme = 'bootstrap'
+# html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+
+# sphinx rtd theme:
+html_theme = "sphinx_rtd_theme"
+html_theme_path = ["_themes", ]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
