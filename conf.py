@@ -104,6 +104,16 @@ html_theme = 'bootstrap'
 # html_theme = "sphinx_rtd_theme"
 html_theme_path = ["_themes"]
 
+
+# bootstrap the options:
+html_theme_options = {
+	'navbar_title': "biicode Docs",
+	'navbar_site_name': "Index",
+	'navbar_links': [('biicode', 'http://www.biicode.com')],
+	'globaltoc_depth': 2,
+	'source_link_position': None
+}
+
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
