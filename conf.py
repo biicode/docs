@@ -97,23 +97,24 @@ pygments_style = 'colorful'
 
 # sphinx bootstrap theme, added by @luispedraza
 # more ingo: http://ryan-roemer.github.io/sphinx-bootstrap-theme/
-html_theme = 'bootstrap'
+# html_theme = 'bootstrap'
+# bootstrap the options:
+# html_theme_options = {
+# 	'navbar_title': "biicode Docs",
+# 	'navbar_site_name': "Index",
+# 	'navbar_links': [('biicode', 'http://www.biicode.com')],
+# 	'globaltoc_depth': 2,
+# 	'bootswatch_theme': "journal",
+# 	'source_link_position': None # nav, footer
+# }
 
 # sphinx rtd theme, added by @luispedraza
 # more info: https://github.com/snide/sphinx_rtd_theme
-# html_theme = "sphinx_rtd_theme"
+html_theme = "sphinx_rtd_theme"
 html_theme_path = ["_themes"]
 
 
-# bootstrap the options:
-html_theme_options = {
-	'navbar_title': "biicode Docs",
-	'navbar_site_name': "Index",
-	'navbar_links': [('biicode', 'http://www.biicode.com')],
-	'globaltoc_depth': 2,
-	'bootswatch_theme': "journal",
-	'source_link_position': None # nav, footer
-}
+
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
