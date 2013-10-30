@@ -1,0 +1,659 @@
+
+
+  
+  
+ 
+  
+ 
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Basic Commands &mdash; biicode docs 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch/journal/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="biicode docs 1.0 documentation" href="index.html" />
+    <link rel="next" title="Advanced Features" href="advanced.html" />
+    <link rel="prev" title="Installation and Setup" href="install.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">biicode Docs</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://www.biicode.com.html">biicode</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Index <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#what-is-biicode">What is biicode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#biicode-beta">Biicode BETA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#what-problem-does-it-solve">What problem does it solve?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#some-basic-concepts">Some basic concepts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation and Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#download-and-install-the-client-binaries">Download and install the client binaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-the-development-tools">Install the development tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#create-a-workspace">Create a workspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Basic Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#finding-dependencies">Finding dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-file-filter">The File Filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#policies">Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#changing-your-policy-tag">Changing your policy tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-settings">Custom Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-and-ide">Using and IDE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#virtual-resources">Virtual Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#edit-dependencies">Edit Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#merge-a-branch">Merge a Branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#dependencies-configuration">Dependencies Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#c-compiling-options">C++ Compiling Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">List of Available Libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_cimg.html">CImg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_crypto++.html">Crypto++, a free C++ class library of cryptographic schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_zlib.html">Zlib</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faqs.html">Frequently Asked Questions</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Basic Commands</a><ul>
+<li><a class="reference internal" href="#finding-dependencies">Finding dependencies</a></li>
+<li><a class="reference internal" href="#the-file-filter">The File Filter</a></li>
+<li><a class="reference internal" href="#policies">Policies</a></li>
+<li><a class="reference internal" href="#changing-your-policy-tag">Changing your policy tag</a><ul>
+<li><a class="reference internal" href="#search-beta-versions">Search BETA versions</a></li>
+<li><a class="reference internal" href="#advanced-tag-selection">Advanced tag selection</a></li>
+<li><a class="reference internal" href="#special-attention">Special attention</a></li>
+<li><a class="reference internal" href="#changing-your-policy-file-for-all-your-new-hives">Changing your policy file for all your new hives</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#custom-settings">Custom Settings</a><ul>
+<li><a class="reference internal" href="#cpp-settings">cpp settings:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-and-ide">Using and IDE</a><ul>
+<li><a class="reference internal" href="#eclipse">Eclipse</a></li>
+<li><a class="reference internal" href="#microsoft-visual-studio">Microsoft Visual Studio</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li><a href="install.html"
+         title="Previous Chapter: Installation and Setup">&laquo; Installation and...</a></li>
+  <li><a href="advanced.html"
+         title="Next Chapter: Advanced Features">Advanced Feature... &raquo;</a></li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="basic-commands">
+<h1>Basic Commands<a class="headerlink" href="#basic-commands" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="finding-dependencies">
+<h2>Finding dependencies<a class="headerlink" href="#finding-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>External dependencies to your hive are retrieved from biicode servers when found to your dep folders. The configuration file for configuring your policies for this is named &#8220;policies.bii&#8221; in your hive &#8220;bii&#8221; folder.</p>
+<p>If you simply want to find missing dependencies, type:</p>
+<div class="highlight-python"><pre>$ bii find</pre>
+</div>
+<p>If you want to update already defined dependencies (as well as finding unresolved ones in the same step):</p>
+<div class="highlight-python"><pre>$ bii find --update</pre>
+</div>
+<p>Note that all find commands depend on the values configured in such file. You can for example try to update your dependencies, but if there are no compatible versions that match your policies, you will not get such updates. E.g. a new ALPHA version for one of your dependencies will not be updated if you do not change your policy.</p>
+<p>If you want to find compatible downgrades:</p>
+<div class="highlight-python"><pre>$ bii find --downgrade</pre>
+</div>
+<p>These options can be combined:</p>
+<div class="highlight-python"><pre>$ bii find --update --downgrade</pre>
+</div>
+<p>If you want to find any possible matching compatible version (not just updates or downgrades from your current one), type:</p>
+<div class="highlight-python"><pre>$ bii find --modify</pre>
+</div>
+</div>
+<div class="section" id="the-file-filter">
+<h2>The File Filter<a class="headerlink" href="#the-file-filter" title="Permalink to this headline">¶</a></h2>
+<p>The file below is the FileFilter. Adding and removing parameters to this file, define those files you want to use in yor hive.</p>
+<div class="highlight-python"><pre># You can edit this file to add accepted and ignored file extensions
+# Configuration is up to down hierarchical so first rule matched is the one applied.
+#
+# Format is as follows:
+#     &lt;rule&gt;    &lt;pattern&gt;    &lt;desired_extension&gt;
+# rule: can be 'ACCEPT' or 'IGNORE'
+# pattern: conforms Unix Filename Pattern Matching
+# desired_extension: This indicates you'd like matched files to be treated
+#                    as if they had that extension. It can be left blank
+#
+# Example: Accept files without extension to be treated as c headers
+# ACCEPT    [!.]*    .h
+
+# Compiled source #
+IGNORE     *.com
+IGNORE     *.class
+IGNORE     *.dll
+IGNORE     *.exe
+IGNORE     *.o
+IGNORE     *.so
+IGNORE     *.obj
+IGNORE     *.pyc
+IGNORE     *.dir
+
+# Editor backups
+IGNORE     *~
+
+# Hidden files
+IGNORE     *.*/*
+
+# OS generated files
+IGNORE    Thumbs.db
+IGNORE    ehthumbs.db
+IGNORE    .DS_STORE
+
+# Known source code
+ACCEPT    *.c
+ACCEPT    *.cpp
+ACCEPT    *.cc
+ACCEPT    *.h
+ACCEPT    *.hh
+ACCEPT    *.hxx
+ACCEPT    *.hpp
+ACCEPT    *.js
+ACCEPT    *.node
+ACCEPT    *.json
+ACCEPT    *.java
+ACCEPT    *.py
+ACCEPT    *.f
+ACCEPT    *.F
+ACCEPT    *.for
+ACCEPT    *.f90
+
+# Text and markup
+ACCEPT    *.txt
+ACCEPT    *.md
+ACCEPT    *.htm
+ACCEPT    *.html
+ACCEPT    *.xml
+ACCEPT    *.bii
+
+# Binaries, images
+ACCEPT    *.wav
+ACCEPT    *.mp3
+ACCEPT    *.gif
+ACCEPT    *.jpg
+ACCEPT    *.png
+ACCEPT    *.bmp</pre>
+</div>
+<p>For example, if you want to use .ppm and .pgm images, you would have to add the following lines:</p>
+<div class="highlight-python"><pre>ACCEPT *.ppm
+ACCEPT *.pgm</pre>
+</div>
+</div>
+<div class="section" id="policies">
+<h2>Policies<a class="headerlink" href="#policies" title="Permalink to this headline">¶</a></h2>
+<p>Start with a new hive in your Biicode workspace directory:</p>
+<div class="highlight-python"><pre>$bii new policies</pre>
+</div>
+<p>Create a main.cpp which includes the block policyadvanced to use hello() method and its owner is tutorial user. It would be like this:</p>
+<p><strong>main.cpp</strong></p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &quot;tutorial/policyadvanced/hello.h&quot;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+   <span class="n">hello</span><span class="p">();</span>
+   <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>If you check the output after runnig the code</p>
+<div class="highlight-python"><pre>$bii cpp:run
+...
+Hello STABLE</pre>
+</div>
+<p>Examining the user tutorial/policyadvanced block in Biicode, there are published four versions with different tags:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="16%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Published index</th>
+<th class="head">Version</th>
+<th class="head">Output method hello()</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>3</td>
+<td>&nbsp;</td>
+<td>DEV             &#8220;Hello DEVELOP&#8221;</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>&nbsp;</td>
+<td>ALPHA       &#8220;Hello ALPHA&#8221;</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>&nbsp;</td>
+<td>BETA            &#8220;Hello BETA&#8221;</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>&nbsp;</td>
+<td>STABLE          &#8220;Hello STABLE&#8221;</td>
+</tr>
+</tbody>
+</table>
+<p>Being index=0 the first version uploaded, each one has a different method hello() depending on its version.</p>
+<p>The reason why your program has executed hello() of STABLE version is as follows. Look at folder  ~/your_bii_workspace/your_hive/bii/ named policies.bii which is a YAML file and has this appearance:</p>
+<div class="highlight-python"><pre>default:
+- block: . # Dot . is the pattern for all blocks
+ rules:
+ #First rule is accept with priority 1 all 'master' branches of the original
+ #creator of the block, with category STABLE
+ - [branch.name == "master" and branch.user == block.user, tag==STABLE, 1]</pre>
+</div>
+<p>Then, your policy for this hive makes your searches are in master branchs of anyone user block and all the blocks as STABLE versions.</p>
+</div>
+<div class="section" id="changing-your-policy-tag">
+<h2>Changing your policy tag<a class="headerlink" href="#changing-your-policy-tag" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="search-beta-versions">
+<h3>Search BETA versions<a class="headerlink" href="#search-beta-versions" title="Permalink to this headline">¶</a></h3>
+<p>Modify the policies.bii</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">-</span> <span class="p">[</span><span class="n">branch</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&quot;master&quot;</span> <span class="ow">and</span> <span class="n">branch</span><span class="o">.</span><span class="n">user</span> <span class="o">==</span> <span class="n">block</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">tag</span><span class="o">==</span><span class="n">BETA</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You have just modified your default policy file, then you have to write in console:</p>
+<div class="highlight-python"><pre>$ bii find --update
+
+Finding missing dependencies in server
+Analyzing compatibility for found dependencies...
+   Updated block!
+Dependencies resolved in server:
+All dependencies resolved
+Updated dependencies:
+tutorial/tutorial/policyadvanced/master:#1
+
+Saving files on disk
+Computing dependencies
+Saving dependences on disk</pre>
+</div>
+<p>Run your code:</p>
+<div class="highlight-python"><pre>$ bii cpp:run
+...
+Hello BETA</pre>
+</div>
+<p>Like you can see, you are using BETA version!</p>
+</div>
+<div class="section" id="advanced-tag-selection">
+<h3>Advanced tag selection<a class="headerlink" href="#advanced-tag-selection" title="Permalink to this headline">¶</a></h3>
+<p>Finally, you could look for by published order with your tags. For example, if you write:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">-</span> <span class="p">[</span><span class="n">branch</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&quot;master&quot;</span> <span class="ow">and</span> <span class="n">branch</span><span class="o">.</span><span class="n">user</span> <span class="o">==</span> <span class="n">block</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">tag</span><span class="o">&gt;</span><span class="n">DEV</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This type will look for any block with any tag published before DEV version block uploaded to Biicode.</p>
+<p>Update the dependencies again and run the code:</p>
+<div class="highlight-python"><pre>$ bii find --update
+...
+$ bii cpp:run
+...
+Hello ALPHA</pre>
+</div>
+<p>Given that the ALPHA version was published before the DEV one, it is the chosen to resolve your dependency.</p>
+</div>
+<div class="section" id="special-attention">
+<h3>Special attention<a class="headerlink" href="#special-attention" title="Permalink to this headline">¶</a></h3>
+<p>Modify your policies.bii again to get the last version (in this example DEV version)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">-</span> <span class="p">[</span><span class="n">branch</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&quot;master&quot;</span> <span class="ow">and</span> <span class="n">branch</span><span class="o">.</span><span class="n">user</span> <span class="o">==</span> <span class="n">block</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">tag</span><span class="o">==</span><span class="n">DEV</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Once more find the dependencies and execute:</p>
+<div class="highlight-python"><pre>$bii find --update
+...
+$bii cpp:run
+...
+Hello DEVELOP</pre>
+</div>
+<p>However if you try to change the policies to link with an older version (for example, BETA version), you will get this output:</p>
+<div class="highlight-python"><pre>$ bii find --update
+
+Finding missing dependencies in server
+Analyzing compatibility for found dependencies...
+Everything was up to date
+Computing dependencies
+Saving dependences on disk</pre>
+</div>
+<p>You could get an older version after using an updated one just like that:</p>
+<div class="highlight-python"><pre>$ bii find --update --downgrade
+
+Analyzing compatibility for found dependencies...
+   Updated block!
+Dependencies resolved in server:
+All dependencies resolved
+Updated dependencies:
+   tutorial/tutorial/policyadvanced/master:#1
+
+Saving files on disk
+Computing dependencies
+Saving dependences on disk</pre>
+</div>
+</div>
+<div class="section" id="changing-your-policy-file-for-all-your-new-hives">
+<h3>Changing your policy file for all your new hives<a class="headerlink" href="#changing-your-policy-file-for-all-your-new-hives" title="Permalink to this headline">¶</a></h3>
+<p>You could be sure to keep a specified policies for all the new hives. It is possible!</p>
+<p>In your Biicode workspace, at folder bii, you have another policy file named default_policies.bii. The changes that you make here will be copied to all new hives and not old hives.</p>
+</div>
+</div>
+<div class="section" id="custom-settings">
+<h2>Custom Settings<a class="headerlink" href="#custom-settings" title="Permalink to this headline">¶</a></h2>
+<p>The settings.bii  file defines the tools that you want to use and their corresponding settings. This file is created when you create a new hive in the bii folder, its parameters are as follows:</p>
+<div class="section" id="cpp-settings">
+<h3>cpp settings:<a class="headerlink" href="#cpp-settings" title="Permalink to this headline">¶</a></h3>
+<p>Configurable parameters are as shown below. It is important to keep the file format for correct interpretation:</p>
+<ul>
+<li><p class="first">Compiler:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Family: GNU, MINGW, VC, JAVAC</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Runner</p>
+<blockquote>
+<div><ul class="simple">
+<li>Family: Java, Node, Python</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Builder:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Family: MSBUILD, MAKE, MINGW, NMake, ANT, MAVEN</p>
+</li>
+<li><p class="first">Builder type: to define the different types of builder you want to use:</p>
+<blockquote>
+<div><ul class="simple">
+<li>None, Debug, Release, RelWithDebInfo, MinSizeRel</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Configurer:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Family: CMake</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">IDE:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Family: ECLIPSE, NETBEANS, VISUAL, CODEBLOCKS</li>
+<li>Subfamily: CDT, PYDEV, JAVA, J2EE</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>An example of how to write the settings to cpp is the following:</p>
+<div class="highlight-python"><pre>cpp:
+        builder: {family: MINGW}
+        compiler: {family: MINGW}
+        ide: {family: ECLIPSE, subfamily: CDT}
+        build_type: debug</pre>
+</div>
+</div>
+</div>
+<div class="section" id="using-and-ide">
+<h2>Using and IDE<a class="headerlink" href="#using-and-ide" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="eclipse">
+<h3>Eclipse<a class="headerlink" href="#eclipse" title="Permalink to this headline">¶</a></h3>
+<p>First of all, you need to configure your project. Initialize your default C++ settings writting:</p>
+<div class="highlight-python"><pre>$ bii cpp:init
+...
+These are your default settings for this Hive
+Builder: MINGW
+Compiler: MINGW
+
+If you want to change it, you have to modify this file:
+
+ ./hive_name/bii/settings.bii</pre>
+</div>
+<p>Inside the bii  folder of you hive, change the file settings.bii:</p>
+<div class="highlight-python"><pre>cpp:
+        builder: {family: MINGW}
+        compiler: {family: MINGW}
+os: {arch: 32bit, family: Windows, subfamily: '8', version: 6.2.9200}</pre>
+</div>
+<p>includes the following lines:</p>
+<div class="highlight-python"><pre>cpp:
+        builder: {family: MINGW}
+        compiler: {family: MINGW}
+        ide: {family: ECLIPSE, subfamily: CDT}
+        build_type: debug
+os: {arch: 32bit, family: Windows, subfamily: '8', version: 6.2.9200}</pre>
+</div>
+<p>Now, copy the code from your hello word tutorial into the block folder and write.Now, if you configure the project with these settings, the output in the console would be:</p>
+<div class="highlight-python"><pre>$ bii cpp:configure
+
+...
+
+invoking cmake -G "Eclipse CDT4 - MinGW Makefiles" -Wno-dev ../src
+-- The C compiler identification is GNU 4.6.2
+-- The CXX compiler identification is GNU 4.6.2
+-- Could not determine Eclipse version, assuming at least 3.6 (Helios). Adjust CMAKE_ECLIPSE_VERSION if this is wrong.
+-- Check for working C compiler: C:/MinGW/bin/gcc.exe
+-- Check for working C compiler: C:/MinGW/bin/gcc.exe -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working CXX compiler: C:/MinGW/bin/g++.exe
+-- Check for working CXX compiler: C:/MinGW/bin/g++.exe -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: [hive_build_folder]</pre>
+</div>
+<p>if you write $ bii cpp:run, you will see the following message:</p>
+<div class="highlight-python"><pre>invoking cmake -G "Eclipse CDT4 - MinGW Makefiles" -Wno-dev ../src
+-- Could not determine Eclipse version, assuming at least 3.6 (Helios). Adjust CMAKE_ECLIPSE_VERSION if this is wrong.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: [hive_build_folder]
+[!] You have configured an IDE setup
+[!] Use ECLIPSE to build your project
+[!] Use ECLIPSE to run your project</pre>
+</div>
+<p>Note: when you define other IDE type, you have to compile and execute with this new one as indicated in the last two lines of the output console.</p>
+<p>Finally, you are ready to open your project with Eclipse. The first step is to import the project:</p>
+<ol class="arabic simple">
+<li>File &gt; import...</li>
+<li>general &gt; Existing Projects into Workspace and clic next.</li>
+<li>Select root directory:  find the build folder of your hive and click accept.</li>
+<li>Into the projects box, you should see a project already selected. Click finish</li>
+</ol>
+<p>Now you have your project in eclipse workspace with a following folder tree like this:</p>
+<img alt="_images/eclipse_tree.png" src="_images/eclipse_tree.png" />
+<p>For this tutorial our user name is tutorial and our block name is eclipse.</p>
+<p>If you want to add any file, just click right mouse button on the folder on your block and create a new file</p>
+<p>You only have to change the run configuration, for this:</p>
+<ol class="arabic simple">
+<li>Right click on <a class="reference external" href="mailto:your_blockname&#37;&#52;&#48;build">your_blockname<span>&#64;</span>build</a>.</li>
+<li>Run As &gt; Run Configurations</li>
+<li>New launch configuration</li>
+<li>In the Application C/C++ box insert .../blockname/bin/username_blockname_main.exe</li>
+</ol>
+<p>And this is all you need to work as usual in eclipse.</p>
+</div>
+<div class="section" id="microsoft-visual-studio">
+<h3>Microsoft Visual Studio<a class="headerlink" href="#microsoft-visual-studio" title="Permalink to this headline">¶</a></h3>
+<p>First of all, you need to inicialize your default C++ settings with the following command:</p>
+<div class="highlight-python"><pre>$ bii cpp:init
+...
+These are your default settings for this Hive
+
+Builder: MINGW
+Compiler: MINGW
+
+If you want to change it, you have to modify this file:
+
+  ./hive_name/bii/settings.bii</pre>
+</div>
+<p>The settings.bii is a YAML file which contains:</p>
+<div class="highlight-python"><pre>cpp:
+  builder: {family: MINGW}
+  compiler: {family: MINGW}
+os: {arch: 32bit, family: Windows, subfamily: '7', version: 6.1.7601}</pre>
+</div>
+<p>If you want change your IDE to build your project with Visual Studio you should add the following command line and take care with the spaces you write because it must be written perfect (look at builder and compiler definitions lines):</p>
+<div class="highlight-python"><pre>cpp:
+  ide: {family: VISUAL, version: 10.0}
+  builder: {family: MINGW}
+  compiler: {family: MINGW}
+os: {arch: 32bit, family: Windows, subfamily: '7', version: 6.1.7601}</pre>
+</div>
+<p>Now, copy the code from your hello word tutorial into the block folder. You just choose Visual Studio as IDE with the version 10.0, i.e Visual Studio 2010. Now, if you configure the project with these settings, the output in the console would be:</p>
+<div class="highlight-python"><pre>$bii cpp:configure
+
+...
+
+invoking cmake  -G "Visual Studio 10" -Wno-dev ../src
+-- The C compiler identification is MSVC 16.0.40219.1
+-- The CXX compiler identification is MSVC 16.0.40219.1
+-- Check for working C compiler using: Visual Studio 10
+-- Check for working C compiler using: Visual Studio 10 -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working CXX compiler using: Visual Studio 10
+-- Check for working CXX compiler using: Visual Studio 10 -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: [hive_build_folder]</pre>
+</div>
+<p>If you write $ bii cpp:run, you will see the following message:</p>
+<div class="highlight-python"><pre>invoking cmake  -G "Visual Studio 10" -Wno-dev ../src
+-- Configuring done
+-- Generating done
+-- Build files have been written to: [hive_build_folder]
+[!] You have configured an IDE setup
+[!] Use VISUAL to build your project
+[!] Use VISUAL to run your project</pre>
+</div>
+<p>Note: when you define other IDE type, you have to compile and execute with this new one as indicated in the last two lines of the output console.</p>
+<p>Finally, you are ready to open your project with Visual Studio. Just run the .sln file inside the build folder of your hive and will open a project with the following folder structure. Your code is located in the third folder:</p>
+<img alt="_images/visual_studio_tree.jpg" src="_images/visual_studio_tree.jpg" />
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, biicode.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
