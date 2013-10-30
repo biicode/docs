@@ -54,6 +54,7 @@ infdef.cpp
 ^^^^^^^^^^
 
 .. code-block:: cpp
+	:linenos:
 
 	#include "infdef.h"
 	 

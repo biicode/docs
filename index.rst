@@ -18,7 +18,10 @@ Contents:
 
    intro
    install
+   basic
+   advanced
    libraries
+   faqs
 
 
 sample video

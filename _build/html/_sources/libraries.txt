@@ -1,5 +1,5 @@
-What libraries are available in biicode?
-========================================
+List of Available Libraries
+===========================
 
 In this section you will find an updated list of the libraries currently supported by biicode.
 
