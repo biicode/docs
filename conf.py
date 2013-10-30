@@ -111,7 +111,8 @@ html_theme_options = {
 	'navbar_site_name': "Index",
 	'navbar_links': [('biicode', 'http://www.biicode.com')],
 	'globaltoc_depth': 2,
-	'source_link_position': None
+	'bootswatch_theme': "journal",
+	'source_link_position': None # nav, footer
 }
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -192,10 +193,10 @@ htmlhelp_basename = 'biicodedocsdoc'
 
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
-#'papersize': 'letterpaper',
+'papersize': 'letterpaper',
 
 # The font size ('10pt', '11pt' or '12pt').
-#'pointsize': '10pt',
+'pointsize': '11pt',
 
 # Additional stuff for the LaTeX preamble.
 #'preamble': '',
