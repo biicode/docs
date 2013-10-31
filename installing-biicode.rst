@@ -49,8 +49,8 @@ Windows
 
 **C++**: You need to install the following elements:
 
-* `MinGW <http://www.mingw.org/>`_, the minimalist GNU for Windows. This project provides an Open Source minimalist development environment for native Microsoft Windows applications. Follow `this link <http://sourceforge.net/projects/mingw/files/Installer/>`_ to get the installer.
-* `CMake <http://www.cmake.org/>`_, an Open Source tool that manages the software building process in a compiler-independent manner. You can `download the latest version of CMake from this location <http://www.cmake.org/cmake/resources/software.html>`_.
+* `MinGW, the minimalist GNU for Windows <http://www.mingw.org/>`_. This project provides an Open Source minimalist development environment for native Microsoft Windows applications. Follow `this link <http://sourceforge.net/projects/mingw/files/Installer/>`_ to get the installer.
+* `CMake, an Open Source tool that manages the software building process in a compiler-independent manner <http://www.cmake.org/>`_. You can `download the latest version of CMake from this location <http://www.cmake.org/cmake/resources/software.html>`_.
 
 Max OS
 ^^^^^^
@@ -58,7 +58,7 @@ Max OS
 **C++**: You need to install:
 
 * The XCode Developeer Tools
-* The appropriate version of `CMake <http://www.cmake.org/cmake/resources/software.html>`_ for your Mac OSX.
+* The appropriate `version of CMake <http://www.cmake.org/cmake/resources/software.html>`_ for your Mac OSX.
 
 Create a workspace
 ------------------
