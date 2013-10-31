@@ -37,7 +37,7 @@ v. 0.1.10
 * Solved some bugs in renaming files
 * Transitive propagation of cpp_rules from libraries to executables requiring those libraries.
 * Solved bugs for user login camelcase
-checkout --deps --force flow improved
+* checkout --deps --force flow improved
 * Use system proxy
 
 v. 0.1.9
