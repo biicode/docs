@@ -112,9 +112,10 @@ pygments_style = 'colorful'
 # more info: https://github.com/snide/sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme"
 html_theme_path = ["_themes"]
-html_theme_options = {
-	'css_files': ["_static/biicode.css"]
-}
+
+# html_theme_options = {
+# 	'css_files': ["_static/biicode.css"]
+# }
 
 
 
