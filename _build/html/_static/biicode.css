@@ -1,0 +1,18 @@
+.terminal {
+	background-color: #404040;
+	color: #fff;
+}
+
+nav.wy-nav-side {
+	position: fixed;
+	z-index: 100;
+}
+
+nav.wy-nav-top {
+	position: fixed;
+	width: 100%;
+}
+
+a:hover {
+	text-decoration: underline;
+}

@@ -6,9 +6,6 @@
 Welcome to the biicode documentation!
 =====================================
 
-
-Hola pepe 
-
 Here you will find all the information to get started using biicode with your projects. Soon you will discover that coding has never been easier!
 
 Contents:
