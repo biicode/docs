@@ -1,0 +1,422 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>“Hello World!” in C++ &mdash; biicode docs 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+  
+      
+  
+  
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../',
+        VERSION:'1.0',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/theme.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="../_static/biicode.css" type="text/css" />
+  
+    <link rel="top" title="biicode docs 1.0 documentation" href="../index.html"/>
+        <link rel="up" title="Getting Started With biicode" href="../getting-started.html"/>
+        <link rel="next" title="Solving the C++ Challenge" href="c++challenge.html"/>
+        <link rel="prev" title="Getting Started With biicode" href="../getting-started.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+    
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> biicode docs</a>
+        <form class="wy-form" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro-to-biicode.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro-to-biicode.html#what-is-biicode">What is biicode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro-to-biicode.html#biicode-beta">Biicode BETA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro-to-biicode.html#what-problem-does-it-solve">What problem does it solve?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro-to-biicode.html#some-basic-concepts">Some basic concepts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installing-biicode.html">Installation and Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installing-biicode.html#download-and-install-the-client-binaries">Download and install the client binaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installing-biicode.html#install-the-development-tools">Install the development tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installing-biicode.html#create-a-workspace">Create a workspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../getting-started.html">Getting Started With biicode</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">&#8220;Hello World!&#8221; in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c++challenge.html">Solving the C++ Challenge</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../basic-commands.html">Basic Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basic-commands.html#finding-dependencies">Finding dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic-commands.html#the-file-filter">The File Filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic-commands.html#policies">Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic-commands.html#changing-your-policy-tag">Changing your policy tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic-commands.html#custom-settings">Custom Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic-commands.html#using-and-ide">Using and IDE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-features.html">Advanced Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#virtual-resources">Virtual Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#edit-dependencies">Edit Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#merge-a-branch">Merge a Branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#dependencies-configuration">Dependencies Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#c-compiling-options">C++ Compiling Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../libraries.html">List of Available Libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_cimg.html">CImg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_crypto++.html">Crypto++, a free C++ class library of cryptographic schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_zlib.html">Zlib</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Some biicode Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/google-test-tutorial.html">Google Test Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/updating-blocks-and-dependencies.html">Updating blocks and dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+        
+      </div>
+      
+
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">biicode docs</a>        
+      </nav>
+      
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="../index.html">Docs</a> &raquo;</li>
+  <li><a href="">&#8220;Hello World!&#8221; in C++</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <div class="section" id="hello-world-in-c">
+<h1>&#8220;Hello World!&#8221; in C++<a class="headerlink" href="#hello-world-in-c" title="Permalink to this headline">¶</a></h1>
+<p>We will start with a simple example: the well-known &#8220;Hello World&#8221;.</p>
+<div class="section" id="create-a-new-hive">
+<h2>Create a new hive<a class="headerlink" href="#create-a-new-hive" title="Permalink to this headline">¶</a></h2>
+<p>Open your console, move to your biicode workspace and create a new hive named &#8220;hello&#8221;:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ../biicode_workspace
+<span class="nv">$ </span>bii new hello
+</pre></div>
+</div>
+<p>If it works correctly, you should see the following message:</p>
+<div class="highlight-bash"><div class="highlight"><pre>Created new Hive hello
+</pre></div>
+</div>
+<p>Inside your workspace you will find a folder named hello with subfolders bii, dep and src.</p>
+</div>
+<div class="section" id="just-code">
+<h2>Just code!<a class="headerlink" href="#just-code" title="Permalink to this headline">¶</a></h2>
+<p>Our &#8220;hello&#8221; hive project will have the following 3 files, just copy them to your hive inside the src folder, under the block name your_user_name/hello, i.e. inside /hello/src/your_user_name/hello/</p>
+<p><strong>hello.h</strong></p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#pragma once</span>
+
+<span class="c1">//Method to print &quot;Hello World&quot;</span>
+<span class="kt">void</span> <span class="nf">hello</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>hello.cpp</strong></p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &quot;hello.h&quot;</span>
+<span class="cp">#include  &lt;iostream&gt;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">hello</span><span class="p">(){</span>
+ <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;Hello World&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>main.cpp</strong></p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &quot;hello.h&quot;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">hello</span><span class="p">();</span>
+  <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="build-and-run">
+<h2>Build and run<a class="headerlink" href="#build-and-run" title="Permalink to this headline">¶</a></h2>
+<p>Put those files into the folder  ~/hello/src/your_user_name/hello/, and write:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd </span>hello
+<span class="nv">$ </span>bii cpp:run
+</pre></div>
+</div>
+<p>After a while, this message will appear in your console:</p>
+<div class="highlight-bash"><div class="highlight"><pre>Hello World
+</pre></div>
+</div>
+</div>
+<div class="section" id="publish-your-code">
+<h2>Publish your code<a class="headerlink" href="#publish-your-code" title="Permalink to this headline">¶</a></h2>
+<p>Uploading your code to Biicode is really simple, just type:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii publish
+</pre></div>
+</div>
+<p>Then you will be requested to write a tag and a message:</p>
+<div class="highlight-bash"><div class="highlight"><pre>block:     your_name_user/hello
+<span class="nv">$ </span>introduce tag: STABLE
+<span class="nv">$ </span>introduce msg: My first project with biicode
+</pre></div>
+</div>
+<p>In the Tag option, you could write STABLE, ALPHA, BETA and DEV, depending on state of your code.</p>
+<p>If your code has been published correctly, you will see a message like the following:</p>
+<div class="highlight-bash"><div class="highlight"><pre>Reading Hive...
+Permissions OK
+Preparing publication data <span class="k">for </span>publish version -1
+Remote <span class="nb">read </span>block your_user_name/your_user_name/hello/master:#-1
+Sending data!
+Committing publish...
+Successfully published your_user_name/your_user_name/hello/master:#0
+</pre></div>
+</div>
+<p>You will be able to navigate to your homepage www.biicode.com/your_user_name, and to navigate your recently uploaded code.</p>
+</div>
+<div class="section" id="reuse-it">
+<h2>Reuse it!<a class="headerlink" href="#reuse-it" title="Permalink to this headline">¶</a></h2>
+<p>Now you will see how simple it is to reuse existing source code from biicode. As the published files have already been uploaded to biicode servers, it is possible for anyone —even other users— to do the following from another computer or location.</p>
+<p>First, create a new hive named hellopretty</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ..
+<span class="nv">$ </span>bii new hellopretty
+<span class="nv">$ </span><span class="nb">cd </span>hellopretty
+</pre></div>
+</div>
+<p>Add the following files to the folder ~/src/your_user_name/hellopretty/</p>
+<p><strong>hellopretty.h</strong></p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#pragma once</span>
+
+<span class="kt">void</span> <span class="nf">hellopretty</span> <span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>hellopretty.cpp</strong></p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &quot;your_user_name/hello/hello.h&quot; </span><span class="c1">//reusing hello.h header</span>
+<span class="cp">#include &quot;hellopretty.h&quot;</span>
+<span class="cp">#include &lt;iostream&gt;</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">hellopretty</span> <span class="p">(){</span>
+   <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;**********************************&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+   <span class="n">hello</span><span class="p">();</span>
+   <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;**********************************&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>main.cpp</strong></p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &quot;hellopretty.h&quot;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">hellopretty</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>To resolve any missing dependencies (in this case, the hello.h is not part of our project), we use:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii find
+</pre></div>
+</div>
+<p>If the server successfully finds the dependencies, you will see a message like the following on your screen:</p>
+<div class="highlight-bash"><div class="highlight"><pre>Finding missing dependencies in server
+Looking <span class="k">for </span>diego/hello...
+    &gt;&gt; Block candidate: diego/diego/hello/master
+    &gt;&gt; Version diego/diego/hello/master:#0 <span class="o">(</span>STABLE<span class="o">)</span> valid due your policy!
+    Found blocks: diego/diego/hello/master:#0
+Analyzing compatibility <span class="k">for </span>found dependencies...
+    Resolved block!
+Dependencies resolved in server:
+Find resolved new dependencies:
+        diego/diego/hello/master:#0
+All dependencies resolved
+</pre></div>
+</div>
+<p>You can try the new method in your console compiling and executing your new code. Write this at the hive&#8217;s directory:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii cpp:run
+**********************************
+Hello World
+**********************************
+</pre></div>
+</div>
+<p>You will find your_user_name/hello block with the recently retrieved source files hello.h and hello.cpp in your hive hellopretty/dep subfolder. Note that the main.cpp of the hello block has not been retrieved. You don&#8217;t need it to reuse the hello function!</p>
+</div>
+<div class="section" id="publish-a-new-version-of-your-hello-block">
+<h2>Publish a new version of your hello block<a class="headerlink" href="#publish-a-new-version-of-your-hello-block" title="Permalink to this headline">¶</a></h2>
+<p>Change the message in the file to &#8220;Hello biicode&#8221;.</p>
+<p><strong>hello.cpp</strong></p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &quot;hello.h&quot;</span>
+<span class="cp">#include  &lt;iostream&gt;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">hello</span><span class="p">(){</span>
+ <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;Hello biicode&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Execute your block:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ..
+<span class="nv">$ </span><span class="nb">cd </span>hello
+<span class="nv">$ </span>bii cpp:run
+...
+Hello biicode
+</pre></div>
+</div>
+<p>Now, post your block like before:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii publish
+block:     your_name_user/hello
+<span class="nv">$ </span>introduce tag: STABLE
+<span class="nv">$ </span>introduce msg: My first update of my block
+...
+Successfully published diego/diego/hello/master:#1
+</pre></div>
+</div>
+<p>As you can see, the version of your block changed from 0 to 1</p>
+</div>
+<div class="section" id="update-your-hellopretty-block-with-the-new-version-of-hello">
+<h2>Update your hellopretty block with the new version of hello<a class="headerlink" href="#update-your-hellopretty-block-with-the-new-version-of-hello" title="Permalink to this headline">¶</a></h2>
+<p>To update your hellopretty block you only have to search the server for the published modifications of your dependencies.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ..
+<span class="nv">$ </span><span class="nb">cd </span>hellopretty
+<span class="nv">$ </span>bii find --update     <span class="o">(</span>from version 0.1.10, before <span class="nv">$ </span>bii find --modify-existing<span class="o">)</span>
+</pre></div>
+</div>
+<p>If the server finds modifications that have been published before, a message like the following will appear in your console:</p>
+<div class="highlight-bash"><div class="highlight"><pre>Finding missing dependencies in server
+Analyzing compatibility <span class="k">for </span>found dependencies...
+    Updated block!
+Dependencies resolved in server:
+All dependencies resolved
+Updated dependencies:
+        diego/diego/hello/master:#1
+Saving files on disk
+Computing dependencies
+Retrieving resources from server
+Retrieving resources from server
+Saving dependences on disk
+</pre></div>
+</div>
+<p>Finally, just re-run cpp:run to see how your block has been updated.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii cpp:run
+</pre></div>
+</div>
+<p>After a while, you will see this in your console:</p>
+<div class="highlight-bash"><div class="highlight"><pre>**********************************
+Hello biicode
+**********************************
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          <footer>
+  <hr/>
+      &copy; Copyright 2013, biicode.
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+.highlight-bash {
+	background-color: #404040 !important;
+	color: #fff;
+}
+
+nav.wy-nav-side {
+	position: fixed;
+	z-index: 100;
+}
+
+nav.wy-nav-top {
+	position: fixed;
+	width: 100%;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+.wy-side-nav-search, .wy-menu-vertical {
+	z-index: 150;
+}
