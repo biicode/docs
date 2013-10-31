@@ -6,12 +6,16 @@ We will start with a simple example: the well-known "Hello World".
 Create a new hive
 -----------------
 
-Open your console, move to your biicode workspace and create a new hive named "hello": ::
+Open your console, move to your biicode workspace and create a new hive named "hello":
+
+.. code-block:: bash
 
 	$ cd ../biicode_workspace
 	$ bii new hello
 
-If it works correctly, you should see the following message: ::
+If it works correctly, you should see the following message:
+
+.. code-block:: bash
 
 	Created new Hive hello
 
@@ -60,23 +64,31 @@ Our "hello" hive project will have the following 3 files, just copy them to your
 Build and run
 -------------
 
-Put those files into the folder  ~/hello/src/your_user_name/hello/, and write: ::
+Put those files into the folder  ~/hello/src/your_user_name/hello/, and write:
+
+.. code-block:: bash
 
 	$ cd hello
 	$ bii cpp:run
 
-After a while, this message will appear in your console: ::
+After a while, this message will appear in your console:
+
+.. code-block:: bash
 
 	Hello World
  
 Publish your code
 -----------------
 
-Uploading your code to Biicode is really simple, just type: ::
+Uploading your code to Biicode is really simple, just type:
+
+.. code-block:: bash
 
 	$ bii publish
 
-Then you will be requested to write a tag and a message: ::
+Then you will be requested to write a tag and a message:
+
+.. code-block:: bash
 
 	block:     your_name_user/hello
 	$ introduce tag: STABLE 
@@ -84,7 +96,9 @@ Then you will be requested to write a tag and a message: ::
 
 In the Tag option, you could write STABLE, ALPHA, BETA and DEV, depending on state of your code.
 
-If your code has been published correctly, you will see a message like the following: ::
+If your code has been published correctly, you will see a message like the following:
+
+.. code-block:: bash
 
     Reading Hive...
     Permissions OK
@@ -101,9 +115,11 @@ Reuse it!
 
 Now you will see how simple it is to reuse existing source code from biicode. As the published files have already been uploaded to biicode servers, it is possible for anyone —even other users— to do the following from another computer or location.
 
-First, create a new hive named hellopretty ::
+First, create a new hive named hellopretty
 
-	$cd ..
+.. code-block:: bash
+
+	$ cd ..
 	$ bii new hellopretty
 	$ cd hellopretty 
 
@@ -147,11 +163,15 @@ Add the following files to the folder ~/src/your_user_name/hellopretty/
 	    return 1;
 	}
 
-To resolve any missing dependencies (in this case, the hello.h is not part of our project), we use: ::
+To resolve any missing dependencies (in this case, the hello.h is not part of our project), we use:
+
+.. code-block:: bash
 
 	$ bii find
 
-If the server successfully finds the dependencies, you will see a message like the following on your screen: ::
+If the server successfully finds the dependencies, you will see a message like the following on your screen:
+
+.. code-block:: bash
 
 	Finding missing dependencies in server
 	Looking for diego/hello...
@@ -165,7 +185,9 @@ If the server successfully finds the dependencies, you will see a message like t
 	        diego/diego/hello/master:#0
 	All dependencies resolved
 
-You can try the new method in your console compiling and executing your new code. Write this at the hive's directory: ::
+You can try the new method in your console compiling and executing your new code. Write this at the hive's directory:
+
+.. code-block:: bash
 
 	$ bii cpp:run
 	**********************************
@@ -192,15 +214,19 @@ Change the message in the file to "Hello biicode".
 	 cout<<"Hello biicode"<<endl;
 	}
 
-Execute your block: ::
+Execute your block:
+
+.. code-block:: bash
 
 	$ cd ..
 	$ cd hello
 	$ bii cpp:run
 	...
-	 Hello biicode
+	Hello biicode
 
-Now, post your block like before: ::
+Now, post your block like before:
+
+.. code-block:: bash
 
 	$ bii publish
 	block:     your_name_user/hello
@@ -214,13 +240,17 @@ As you can see, the version of your block changed from 0 to 1
 Update your hellopretty block with the new version of hello
 -----------------------------------------------------------
 
-To update your hellopretty block you only have to search the server for the published modifications of your dependencies. ::
+To update your hellopretty block you only have to search the server for the published modifications of your dependencies.
+
+.. code-block:: bash
 
 	$ cd ..
-	$cd hellopretty
+	$ cd hellopretty
 	$ bii find --update     (from version 0.1.10, before $ bii find --modify-existing)
 
-If the server finds modifications that have been published before, a message like the following will appear in your console: ::
+If the server finds modifications that have been published before, a message like the following will appear in your console:
+
+.. code-block:: bash
 
 	Finding missing dependencies in server
 	Analyzing compatibility for found dependencies...
@@ -235,11 +265,15 @@ If the server finds modifications that have been published before, a message lik
 	Retrieving resources from server
 	Saving dependences on disk
 
-Finally, just re-run cpp:run to see how your block has been updated. ::
+Finally, just re-run cpp:run to see how your block has been updated.
+
+.. code-block:: bash
 
 	$ bii cpp:run
 
-After a while, you will see this in your console: ::
+After a while, you will see this in your console:
+
+.. code-block:: bash
 
 	**********************************
 	Hello biicode

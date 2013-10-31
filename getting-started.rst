@@ -10,5 +10,5 @@ You will find more tutorials in the corresponding section of this documentation.
 
 .. toctree::
 
-	tutorials/helloworld
-	tutorials/c++challenge
+	start/helloworld
+	start/c++challenge

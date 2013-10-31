@@ -3,6 +3,11 @@ Installation and Setup
 
 In this section you will learn how to get the biicode client and install it on your system.
 
+.. toctree::
+	:hidden:
+
+	changelog
+
 Download and install the client binaries
 ----------------------------------------
 
@@ -33,7 +38,9 @@ Now, you need to install some development tools in your machine.
 Linux
 ^^^^^
 
-**C++**:Install the required development tools as root: ::
+**C++**: Install the required development tools as root:
+
+.. code-block:: bash
 
 	$ sudo apt-get install build-essential cmake
 
@@ -56,7 +63,9 @@ Max OS
 Create a workspace
 ------------------
 
-The final step is creating your own biicode workspace. This is the place where all your hives will be located. In general, this steps needs to be done only once after the initial setup.::
+The final step is creating your own biicode workspace. This is the place where all your hives will be located. In general, this steps needs to be done only once after the initial setup.
+
+.. code-block:: bash
 
 	$ mkdir biicode_workspace 
 	$ cd ~/biicode_workspace

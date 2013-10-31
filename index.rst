@@ -16,7 +16,7 @@ Contents:
    intro-to-biicode
    installing-biicode
    getting-started
-   basic-concepts
+   basic-commands
    advanced-features
    libraries
    tutorials

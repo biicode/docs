@@ -12,8 +12,7 @@ To check this library, we're making an example to compress and decompress a sing
 
 The following code would be in each one.
 
-infdef.h
-^^^^^^^^
+**infdef.h**
 
 .. code-block:: cpp
 	:linenos:
@@ -50,8 +49,7 @@ infdef.h
 
 	void zerr(int ret);
 
-infdef.cpp
-^^^^^^^^^^
+**infdef.cpp**
 
 .. code-block:: cpp
 	:linenos:
@@ -194,10 +192,10 @@ infdef.cpp
 	    }
 	 }
 
-zpipe.cpp
-^^^^^^^^^
+**zpipe.cpp**
 
 .. code-block:: cpp
+	:linenos:
 
 	#include "infdef.h"
 	#include <iostream>
@@ -302,17 +300,23 @@ zpipe.cpp
 	  return 1;
 	}
 
-Then, you need find all the depencies of your project, in this case, zlib.h, so execute in console::
+Then, you need find all the depencies of your project, in this case, zlib.h, so execute in console
+
+.. code-block:: bash
 
 	$ bii find
 
-Next, you can already run the code::
+Next, you can already run the code:
+
+.. code-block:: bash
 
 	$ bii cpp:run
 
 Then you'll be requested to select compression or decompression any file, and the file source name and file destination name.
 
-This will be the output if you would want to compress a file.txt which is in your desktop directory and the compressed name file would be file.gz. The last one will be created in your ~/hive_directory/bin/ directory::
+This will be the output if you would want to compress a file.txt which is in your desktop directory and the compressed name file would be file.gz. The last one will be created in your ~/hive_directory/bin/ directory
+
+.. code-block:: bash
 
 	Do you want to compress or decompress a file (to exit 'CTRL+C')? <comp|decomp>
 	comp
@@ -326,7 +330,9 @@ This will be the output if you would want to compress a file.txt which is in you
 
 In this case file.txt had a size of 16944 bytes and file.gz 5152 bytes.
 
-Now, if you want to decompress the file.gz to check all is correct, run the code again and the output will be the next::
+Now, if you want to decompress the file.gz to check all is correct, run the code again and the output will be the next
+
+.. code-block:: bash
 
 	Do you want to compress or decompress a file (to exit 'CTRL+C')? <comp|decomp>
 	decomp

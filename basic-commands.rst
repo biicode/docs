@@ -6,32 +6,44 @@ Finding dependencies
 
 External dependencies to your hive are retrieved from biicode servers when found to your dep folders. The configuration file for configuring your policies for this is named "policies.bii" in your hive "bii" folder. 
 
-If you simply want to find missing dependencies, type: ::
+If you simply want to find missing dependencies, type:
+
+.. code-block:: bash
 
 	$ bii find
 
-If you want to update already defined dependencies (as well as finding unresolved ones in the same step): ::
+If you want to update already defined dependencies (as well as finding unresolved ones in the same step): 
+
+.. code-block:: bash
 
 	$ bii find --update
 
 Note that all find commands depend on the values configured in such file. You can for example try to update your dependencies, but if there are no compatible versions that match your policies, you will not get such updates. E.g. a new ALPHA version for one of your dependencies will not be updated if you do not change your policy.
 
-If you want to find compatible downgrades: ::
+If you want to find compatible downgrades:
+
+.. code-block:: bash
 
 	$ bii find --downgrade
 
-These options can be combined: ::
+These options can be combined:
+
+.. code-block:: bash
 
 	$ bii find --update --downgrade
 
-If you want to find any possible matching compatible version (not just updates or downgrades from your current one), type: ::
+If you want to find any possible matching compatible version (not just updates or downgrades from your current one), type:
+
+.. code-block:: bash
 
 	$ bii find --modify
+
+.. _filefilter:
 
 The File Filter
 ---------------
 
-The file below is the FileFilter. Adding and removing parameters to this file, define those files you want to use in yor hive. ::
+The file below is the **File Filter**. The information included in this file determines the types of files that you want to include in your Hive. ::
 
 	# You can edit this file to add accepted and ignored file extensions
 	# Configuration is up to down hierarchical so first rule matched is the one applied.
@@ -356,7 +368,7 @@ Now, copy the code from your hello word tutorial into the block folder and write
 	-- Generating done
 	-- Build files have been written to: [hive_build_folder]
 
-if you write $ bii cpp:run, you will see the following message: ::
+if you write ``$ bii cpp:run``, you will see the following message: ::
 
 	invoking cmake -G "Eclipse CDT4 - MinGW Makefiles" -Wno-dev ../src
 	-- Could not determine Eclipse version, assuming at least 3.6 (Helios). Adjust CMAKE_ECLIPSE_VERSION if this is wrong.

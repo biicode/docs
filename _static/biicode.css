@@ -1,5 +1,5 @@
-.terminal {
-	background-color: #404040;
+.highlight-bash {
+	background-color: #404040 !important;
 	color: #fff;
 }
 
@@ -15,4 +15,7 @@ nav.wy-nav-top {
 
 a:hover {
 	text-decoration: underline;
+}
+.wy-side-nav-search, .wy-menu-vertical {
+	z-index: 150;
 }
