@@ -16,13 +16,14 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   intro
-   install
-   basic
-   advanced
+   intro-to-biicode
+   installing-biicode
+   getting-started
+   basic-concepts
+   advanced-features
    libraries
+   tutorials
    faqs
-
 
 sample video
 ------------

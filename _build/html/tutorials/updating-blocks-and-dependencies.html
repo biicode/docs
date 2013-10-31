@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Crypto++, a free C++ class library of cryptographic schemes &mdash; biicode docs 1.0 documentation</title>
+  <title>Updating blocks and dependencies &mdash; biicode docs 1.0 documentation</title>
   
 
   
@@ -45,9 +45,9 @@
 
   
     <link rel="top" title="biicode docs 1.0 documentation" href="../index.html"/>
-        <link rel="up" title="List of Available Libraries" href="../libraries.html"/>
-        <link rel="next" title="Zlib" href="lib_zlib.html"/>
-        <link rel="prev" title="CImg" href="lib_cimg.html"/> 
+        <link rel="up" title="Some biicode Tutorials" href="../tutorials.html"/>
+        <link rel="next" title="Frequently Asked Questions" href="../faqs.html"/>
+        <link rel="prev" title="“Hello World!” in C++" href="helloworld.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -86,8 +86,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started With biicode</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/c++challenge.html">Solving the C++ Challenge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c++challenge.html">Solving the C++ Challenge</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../basic-concepts.html">Basic Commands</a><ul>
@@ -107,17 +107,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#c-compiling-options">C++ Compiling Options</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="../libraries.html">List of Available Libraries</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="lib_cimg.html">CImg</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Crypto++, a free C++ class library of cryptographic schemes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib_zlib.html">Zlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../libraries.html">List of Available Libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_cimg.html">CImg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_crypto++.html">Crypto++, a free C++ class library of cryptographic schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_zlib.html">Zlib</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Some biicode Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/c++challenge.html">Solving the C++ Challenge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/google-test-tutorial.html">Google Test Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/updating-blocks-and-dependencies.html">Updating blocks and dependencies</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Some biicode Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="c++challenge.html">Solving the C++ Challenge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="google-test-tutorial.html">Google Test Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Updating blocks and dependencies</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
@@ -144,32 +144,26 @@
         <div class="rst-content">
           <ul class="wy-breadcrumbs">
   <li><a href="../index.html">Docs</a> &raquo;</li>
-  <li><a href="">Crypto++, a free C++ class library of cryptographic schemes</a></li>
+  <li><a href="">Updating blocks and dependencies</a></li>
   
 </ul>
 <hr/>
 
           
-  <div class="section" id="crypto-a-free-c-class-library-of-cryptographic-schemes">
-<h1>Crypto++, a free C++ class library of cryptographic schemes<a class="headerlink" href="#crypto-a-free-c-class-library-of-cryptographic-schemes" title="Permalink to this headline">¶</a></h1>
-<p>Crypto++ is a C++ class library of cryptographic algorithms and schemes written by Wei Dai. For more information about this library, visit their <a class="reference external" href="http://www.cryptopp.com/">official website</a> or wiki.</p>
-<p>You can find the biicode library site following this link.</p>
-<p>This first basic example shows hot to encrypt a message with SHA1 code.:</p>
-<div class="highlight-python"><pre>#include "cryptopp/cryptopp/sha.h"
-#include "cryptopp/cryptopp/filters.h"
-#include "cryptopp/cryptopp/hex.h"
-#include &lt;iostream&gt;
-#include &lt;string&gt;
-
-
-int main() {
-   CryptoPP::SHA1 sha1;
-   std::string source = "Hello";  //This will be randomly generated somehow
-   std::string hash = "";
-   CryptoPP::StringSource(source, true, new CryptoPP::HashFilter(sha1, new CryptoPP::HexEncoder(new CryptoPP::StringSink(hash))));
-   std::cout &lt;&lt; hash;
-}</pre>
+  <div class="section" id="updating-blocks-and-dependencies">
+<h1>Updating blocks and dependencies<a class="headerlink" href="#updating-blocks-and-dependencies" title="Permalink to this headline">¶</a></h1>
+<p>If you want to make changes to your block you only need to publish a new version:</p>
+<div class="highlight-python"><pre>$ bii work
+$ bii publish</pre>
 </div>
+<p>It will be published to a master branch by default. It is possible to create a new branch with the &#8211;branch option:</p>
+<div class="highlight-python"><pre>bii publish --branch branchname</pre>
+</div>
+<p>If you wish to update your existing dependencies to newer versions you will need to do the following:</p>
+<div class="highlight-python"><pre>bii find --modify-existing</pre>
+</div>
+<p>Biicode will automatically update your dependencies if there&#8217;s a compatible set with newer versions.</p>
+<p>If you wish to move to a new branch you will need to edit your policies file.</p>
 </div>
 
 
