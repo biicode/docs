@@ -53,7 +53,7 @@
     <script type="text/javascript" src="_static/theme.js"></script>
   {% endif %}
 
-  {% for cssfile in css_files %}
+  {% for cssfile in theme_css_files %}
     <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
   {% endfor %}
 
