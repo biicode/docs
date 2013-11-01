@@ -95,9 +95,9 @@ pygments_style = 'colorful'
 # html_theme = 'default'
 # html_theme = 'agogo'
 
-# sphinx rtd theme, added by @luispedraza
-# more info: https://github.com/snide/sphinx_rtd_theme
-html_theme = "sphinx_rtd_theme"
+# biicode theme, added by @luispedraza
+# based on: https://github.com/snide/sphinx_rtd_theme
+html_theme = "biicode"
 html_theme_path = ["_themes"]
 
 # Theme options are theme-specific and customize the look and feel of a theme
