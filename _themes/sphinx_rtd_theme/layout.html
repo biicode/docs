@@ -89,18 +89,32 @@
 
 </head>
 
-<body class="wy-body-for-nav">
+<body class="body-for-nav">
 
-  <div class="wy-grid-for-nav">
+  {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
+  <nav class="nav-top">
+    <div class="nav-top-mobile">
+      <i data-toggle="nav-top" class="icon icon-reorder"></i>
+      <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}</a>
+    </div>
+    <div class="nav-top-standard">
+      <ul class="main-menu">
+        <li><a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <div class="grid-for-nav">
     
     {# SIDE NAV, TOGGLES ON MOBILE #}
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}</a>
+    <nav data-toggle="nav-shift" class="nav-side">
+      <div class="side-nav-search">
         {% include "searchbox.html" %}
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+      <div class="menu menu-vertical" data-spy="affix">
         {% set toctree = toctree(maxdepth=2, collapse=False) %}
         {% if toctree %}
             {{ toctree }}
@@ -112,17 +126,10 @@
       &nbsp;
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
-      <nav class="wy-nav-top">
-        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
-        <a href="/">{{ project }}</a>        
-      </nav>
-      
+    <section data-toggle="nav-shift" class="nav-content-wrap">
 
       {# PAGE CONTENT #}
-      <div class="wy-nav-content">
+      <div class="nav-content">
         <div class="rst-content">
           {% include "breadcrumbs.html" %}
           {% block body %}{% endblock %}
