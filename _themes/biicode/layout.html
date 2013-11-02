@@ -38,14 +38,14 @@
   };
   </script>
 
-  <script type="text/javascript" src="_static/jquery.js"></script>
-  <script type="text/javascript" src="_static/underscore.js"></script>
-  <script type="text/javascript" src="_static/doctools.js"></script>
-  <script type="text/javascript" src="_static/theme.js"></script>
-  <script type="text/javascript" src="_static/searchtools.js"></script>
-  <link rel="stylesheet" href="_static/theme.css" type="text/css" />
+    {%- for script in theme_scripts %}
+        <script type="text/javascript" src="{{ pathto(script, 1) }}"></script>
+    {%- endfor %}
   {% endif %}
 
+  {% for style in theme_styles %}
+    <link rel="stylesheet" href="{{ pathto(style, 1) }}" type="text/css" />
+  {% endfor %}
 
   {%- block linktags %}
   {%- if hasdoc('about') %}

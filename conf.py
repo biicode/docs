@@ -98,6 +98,10 @@ pygments_style = 'colorful'
 # biicode theme, added by @luispedraza
 # based on: https://github.com/snide/sphinx_rtd_theme
 html_theme = "biicode"
+html_theme_options = {
+	'scripts' : ['_static/jquery.js', '_static/underscore.js', '_static/doctools.js', '_static/theme.js', '_static/searchtools.js'],
+	'styles' : ['_static/theme.css']
+}
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
