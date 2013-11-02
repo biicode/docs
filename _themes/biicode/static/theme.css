@@ -4404,5 +4404,24 @@ a:hover {
   text-decoration: underline;
 }
 .side-nav-search, .menu-vertical {
-  z-index: 150;
+  z-index: 150;  
+}
+
+/* Previous and next sections navigation */
+.nav-rel-container {
+  height: 20px;
+}
+.nav-rel a {
+  display: block;
+  min-width: 200px;
+  background-color: #ffaa00;
+  color: #fff;
+  font-size: .8em;
+  border-radius: 5px;
+}
+.nav-rel.prev {
+  float: left;
+}
+.nav-rel.next {
+  float: right;
 }

@@ -35,9 +35,9 @@
   };
   </script>
 
-    {%- for script in theme_scripts %}
-        <script type="text/javascript" src="{{ pathto(script, 1) }}"></script>
-    {%- endfor %}
+  {%- for script in theme_scripts %}
+  <script type="text/javascript" src="{{ pathto(script, 1) }}"></script>
+  {%- endfor %}
   {% endif %}
 
   {# TYPEKIT #}
@@ -45,7 +45,7 @@
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
   {% for style in theme_styles %}
-    <link rel="stylesheet" href="{{ pathto(style, 1) }}" type="text/css" />
+  <link rel="stylesheet" href="{{ pathto(style, 1) }}" type="text/css" />
   {% endfor %}
 
   {%- block linktags %}
@@ -123,7 +123,9 @@
       <div class="nav-content">
         <div class="rst-content">
           {% include "breadcrumbs.html" %}
+          {% include "prevnext.html" %}
           {% block body %}{% endblock %}
+          {% include "prevnext.html" %}
           {% include "footer.html" %}
         </div>
       </div>
