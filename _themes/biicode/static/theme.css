@@ -4030,6 +4030,7 @@ pre.literal-block:after {
   font-size: 100%;
   *zoom: 1;
   border-bottom: 1px solid #fff;
+  z-index: 1;
 }
 
 .nav-top-standard {
@@ -4187,12 +4188,68 @@ footer {
   text-align: center;
 }
 
+/***************/
+/* BIICODE CSS */
+/***************/
+
+li.toctree-l1 > a {
+  height: 3em;
+  display: block;
+}
+.highlight-bash {
+  background-color: #404040 !important;
+  color: #fff;
+}
+
+nav.nav-side {
+  position: fixed;
+  top: 50px;
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+.side-nav-search, .menu-vertical {
+  z-index: 150;  
+}
+
+/* Previous and next sections navigation */
+.nav-rel-container {
+  height: 30px;
+}
+.nav-rel a {
+  padding: 5px;
+  display: block;
+  min-width: 200px;
+  background-color: #ffaa00;
+  color: #fff;
+  font-size: .8em;
+  border-radius: 5px;
+}
+.nav-rel a:hover {
+  background-color: #A66E00;
+  text-decoration: none;
+}
+.nav-rel.prev {
+  float: left;
+  text-align: left;
+}
+.nav-rel.next {
+  float: right;
+  text-align: right;
+}
+
+
 /*********************/
 /* ALL MEDIA QUERIES */
 /*********************/
 
 /* MEDIA QUERY PRINTER */
-
 @media print {
   html, body, section {
     background: none !important;
@@ -4350,7 +4407,7 @@ footer {
     position: fixed;
     min-width: 100%;
     left: 85%;
-    top: 0;
+    top: 50px;
     height: 100%;
     overflow: hidden;
   }
@@ -4380,48 +4437,4 @@ footer {
   .nav-top-standard {
     display: block;
   }
-}
-
-/***************/
-/* BIICODE CSS */
-/***************/
-.highlight-bash {
-  background-color: #404040 !important;
-  color: #fff;
-}
-
-nav.nav-side {
-  position: fixed;
-  top: 50px;
-  -webkit-transition: all .25s ease;
-  -moz-transition: all .25s ease;
-  -ms-transition: all .25s ease;
-  -o-transition: all .25s ease;
-  transition: all .25s ease;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-.side-nav-search, .menu-vertical {
-  z-index: 150;  
-}
-
-/* Previous and next sections navigation */
-.nav-rel-container {
-  height: 20px;
-}
-.nav-rel a {
-  display: block;
-  min-width: 200px;
-  background-color: #ffaa00;
-  color: #fff;
-  font-size: .8em;
-  border-radius: 5px;
-}
-.nav-rel.prev {
-  float: left;
-}
-.nav-rel.next {
-  float: right;
 }

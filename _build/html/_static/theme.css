@@ -4030,6 +4030,7 @@ pre.literal-block:after {
   font-size: 100%;
   *zoom: 1;
   border-bottom: 1px solid #fff;
+  z-index: 1;
 }
 
 .nav-top-standard {
@@ -4190,6 +4191,11 @@ footer {
 /***************/
 /* BIICODE CSS */
 /***************/
+
+li.toctree-l1 > a {
+  height: 3em;
+  display: block;
+}
 .highlight-bash {
   background-color: #404040 !important;
   color: #fff;
@@ -4401,7 +4407,7 @@ a:hover {
     position: fixed;
     min-width: 100%;
     left: 85%;
-    top: 0;
+    top: 50px;
     height: 100%;
     overflow: hidden;
   }
