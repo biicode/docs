@@ -21,9 +21,6 @@
   {% if favicon %}
   <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
   {% endif %}
-
-  {# CSS #}
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
   
   {# JS #}    
   {% if not embedded %}
@@ -42,6 +39,10 @@
         <script type="text/javascript" src="{{ pathto(script, 1) }}"></script>
     {%- endfor %}
   {% endif %}
+
+  {# TYPEKIT #}
+  <script type="text/javascript" src="http://use.typekit.net/gpi5lyx.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
   {% for style in theme_styles %}
     <link rel="stylesheet" href="{{ pathto(style, 1) }}" type="text/css" />

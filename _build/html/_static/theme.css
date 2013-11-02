@@ -2255,7 +2255,7 @@ input[type="text"], input[type="password"], input[type="email"], input[type="url
   display: inline-block;
   border: 1px solid #cccccc;
   font-size: 80%;
-  font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+  font-family: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
   box-shadow: inset 0 1px 3px #dddddd;
   border-radius: 0;
   -webkit-transition: border 0.3s linear;
@@ -2462,7 +2462,7 @@ select[disabled], textarea[disabled], input[readonly], select[readonly], textare
   display: inline-block;
   border: 1px solid #cccccc;
   font-size: 80%;
-  font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+  font-family: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
   box-shadow: inset 0 1px 3px #dddddd;
   -webkit-transition: border 0.3s linear;
   -moz-transition: border 0.3s linear;
@@ -3067,7 +3067,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+  font-family: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
   font-weight: normal;
   color: #404040;
   min-height: 100%;
@@ -3105,7 +3105,7 @@ a:hover {
 h1, h2, h3, h4, h5, h6, legend {
   margin-top: 0;
   font-weight: 700;
-  font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
+  font-family: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
 }
 
 p {
@@ -3935,14 +3935,15 @@ pre.literal-block:after {
   z-index: 200;
   background-color: #ffaa00;
   text-align: center;
-  padding: 0.809em;
+  padding: 15px;
   display: block;
   color: #fcfcfc;
-  margin-bottom: 0.809em;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #fff;
 }
-.side-nav-search input[type=text] {
+.side-nav-search input[type=search] {
   width: 100%;
-  border-radius: 50px;
+  border-radius: 5px;
   padding: 6px 12px;
   border-color: #A66F00;
 }
@@ -4019,16 +4020,16 @@ pre.literal-block:after {
 }
 
 .nav-top {
+  position: fixed;
+  width: 100%;
   height: 50px;
-  /*display: none;*/
   background: #ffaa00;
   color: white;
-  padding: 0.4045em 0.809em;
-  position: relative;
-  line-height: 50px;
+  padding: 10px;
   text-align: center;
   font-size: 100%;
   *zoom: 1;
+  border-bottom: 1px solid #fff;
 }
 
 .nav-top-standard {
@@ -4097,7 +4098,7 @@ footer {
   color: #fcfcfc;
   background: #1f1d1d;
   border-top: solid 10px #343131;
-  font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+  font-family: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
 }
 .rst-versions a {
   color: #ffaa00;
@@ -4393,15 +4394,10 @@ nav.nav-side {
   position: fixed;
   top: 50px;
   -webkit-transition: all .25s ease;
-     -moz-transition: all .25s ease;
-      -ms-transition: all .25s ease;
-       -o-transition: all .25s ease;
-          transition: all .25s ease;
-}
-
-nav.nav-top {
-  position: fixed;
-  width: 100%;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
 }
 
 a:hover {
