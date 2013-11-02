@@ -52,6 +52,8 @@ A cell is the basic biicode processing and sharing unit. It corresponds to your 
 
 Lets say the honey is the source code you put inside each one of your source files, and the cell structure is the metadata that relates such source file with the others. Actually, cells can be of any type (text, data, images), not just source code. In your code you can make references (includes, import) to your cells or cells from any other user. You just care about producing the honey, biicode will try to care for the rest.
 
+.. image:: _static/img/test.png
+
 Block
 ^^^^^
 
