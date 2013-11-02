@@ -1,0 +1,268 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Solving the C++ Challenge &mdash; biicode docs 0.1.11 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+  
+      
+  
+  
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../',
+        VERSION:'0.1.11',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/theme.js"></script>
+  
+
+  
+    <link rel="top" title="biicode docs 0.1.11 documentation" href="../index.html"/>
+        <link rel="up" title="Getting Started With biicode" href="../getting-started.html"/>
+        <link rel="next" title="Basic Commands" href="../basic-commands.html"/>
+        <link rel="prev" title="“Hello World!” in C++" href="helloworld.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="body-for-nav">
+
+  
+  <nav class="nav-top">
+    <div class="nav-top-mobile">
+      <i data-toggle="nav-top" class="icon icon-reorder"></i>
+      <a href="../index.html" class="icon icon-home"> biicode docs</a>
+    </div>
+    <div class="nav-top-standard">
+      <ul class="main-menu">
+        <li><a href="../index.html" class="icon icon-home"> biicode docs</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <div class="grid-for-nav">
+    
+    
+    <nav data-toggle="nav-shift" class="nav-side">
+      <div class="side-nav-search">
+        <form class="form" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="menu menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro-to-biicode.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro-to-biicode.html#what-is-biicode">What is biicode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro-to-biicode.html#biicode-beta">Biicode BETA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro-to-biicode.html#what-problem-does-it-solve">What problem does it solve?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro-to-biicode.html#some-basic-concepts">Some basic concepts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installing-biicode.html">Installation and Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installing-biicode.html#download-and-install-the-client-binaries">Download and install the client binaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installing-biicode.html#install-the-development-tools">Install the development tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installing-biicode.html#create-a-workspace">Create a workspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../getting-started.html">Getting Started With biicode</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Solving the C++ Challenge</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../basic-commands.html">Basic Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basic-commands.html#finding-dependencies">Finding dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic-commands.html#the-file-filter">The File Filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic-commands.html#policies">Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic-commands.html#changing-your-policy-tag">Changing your policy tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic-commands.html#custom-settings">Custom Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic-commands.html#using-and-ide">Using and IDE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-features.html">Advanced Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#virtual-resources">Virtual Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#edit-dependencies">Edit Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#merge-a-branch">Merge a Branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#dependencies-configuration">Dependencies Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#c-compiling-options">C++ Compiling Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../libraries.html">List of Available Libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_cimg.html">CImg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_crypto++.html">Crypto++, a free C++ class library of cryptographic schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_zlib.html">Zlib</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Some biicode Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/google-test-tutorial.html">Google Test Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/updating-blocks-and-dependencies.html">Updating blocks and dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+        
+      </div>
+      
+
+      &nbsp;
+    </nav>
+
+    <section data-toggle="nav-shift" class="nav-content-wrap">
+
+      
+      <div class="nav-content">
+        <div class="rst-content">
+          <ul class="breadcrumbs">
+  <li><a href="../index.html">Docs</a> &raquo;</li>
+  <li><a href="">Solving the C++ Challenge</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <div class="section" id="solving-the-c-challenge">
+<h1>Solving the C++ Challenge<a class="headerlink" href="#solving-the-c-challenge" title="Permalink to this headline">¶</a></h1>
+<p>In this section we explain, step by step, how to solve the C++ challenge with the help of biicode.</p>
+<div class="section" id="create-a-new-hive">
+<h2>Create a New Hive<a class="headerlink" href="#create-a-new-hive" title="Permalink to this headline">¶</a></h2>
+<p>Open your console, move to your biicode workspace and create a new hive named &#8220;hello&#8221;:</p>
+<div class="highlight-python"><pre>$ cd ../biicode_workspace
+$ bii new challenge
+$ cd challenge</pre>
+</div>
+</div>
+<div class="section" id="copy-the-code">
+<h2>Copy the code<a class="headerlink" href="#copy-the-code" title="Permalink to this headline">¶</a></h2>
+<p>Download the code from github or better challenge.zip and copy the source code into challenge/src/your_user_name/challenge</p>
+<p>You will be able to check the dependencies of the current hive (and see if some are still unresolved) with:</p>
+<div class="highlight-python"><pre>$ bii deps
+...
+Unresolved
+ eigen/eigen/Dense
+ google/gtest/include/gtest/gtest.h
+ tdavis/csparse/include/cs.h
+...</pre>
+</div>
+</div>
+<div class="section" id="find-and-retrieve-dependencies">
+<h2>Find and retrieve dependencies<a class="headerlink" href="#find-and-retrieve-dependencies" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>$ bii find
+...
+Dependencies resolved in server:
+Find resolved new dependencies:
+ google/google/gtest/master:#1
+ eigen/eigen/eigen/master:#0
+ tdavis/tdavis/csparse/master:#0
+All dependencies resolved
+...
+Retrieving resources from server
+Saving dependences on disk</pre>
+</div>
+</div>
+<div class="section" id="build-and-run">
+<h2>Build and run<a class="headerlink" href="#build-and-run" title="Permalink to this headline">¶</a></h2>
+<p>Running the app is really easy.</p>
+<div class="highlight-python"><pre>$ bii cpp:run solver
+*************** SPARSE ***************
+0: 1
+1: 0.5
+2: 0.333333
+3: 0.25
+4: 0.2
+5: 0.166667
+6: 0.142857
+7: 0.125
+8: 0.111111
+9: 0.1
+*************** DENSE ***************
+0: 1
+1: 0.5
+2: 0.333333
+3: 0.25
+4: 0.2
+5: 0.166667
+6: 0.142857
+7: 0.125
+8: 0.111111
+9: 0.1</pre>
+</div>
+<p>Running the tests is really easy too (note that one of the tests fails due to sparse solver accuracy, but the execution of the tests works!).</p>
+<div class="highlight-python"><pre>$ bii cpp:run gtest
+[==========] Running 2 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 2 tests from Solver
+[ RUN ] Solver.BasicDiagonalSparse
+\src\eigen\challenge\test1.cpp:21: Failure
+Value of: 1./(i+1)
+ Actual: 0.5
+Expected: sol[i]
+Which is: 0.5
+\src\eigen\challenge\test1.cpp:21: Failure
+Value of: 1./(i+1)
+ Actual: 0.333333
+Expected: sol[i]
+Which is: 0.333333
+[ FAILED ] Solver.BasicDiagonalSparse (1 ms)
+[ RUN ] Solver.BasicDiagonalDense
+[ OK ] Solver.BasicDiagonalDense (0 ms)
+[----------] 2 tests from Solver (1 ms total)
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test case ran. (1 ms total)
+[ PASSED ] 1 test.
+[ FAILED ] 1 test, listed below:
+[ FAILED ] Solver.BasicDiagonalSparse 1 FAILED TEST</pre>
+</div>
+</div>
+</div>
+
+
+          <footer>
+  <hr/>
+      &copy; Copyright 2013, biicode.
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</body>
+</html>
