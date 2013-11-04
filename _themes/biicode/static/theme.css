@@ -4264,6 +4264,7 @@ a:hover {
   padding: 5px;
   margin-bottom: 10px;
   padding: 0;
+  padding-bottom: 5px;
 }
 
 .toctree-wrapper li.toctree-l1 > a {
@@ -4282,7 +4283,10 @@ a:hover {
 
 .toctree-wrapper li.toctree-l2 {
   margin: 0 !important;
+  padding: 3px;
   padding-left: 20px;
+  font-size: .95em;
+  border-bottom: 1px solid #555;
 }
 
 .toctree-wrapper li.toctree-l2:hover {
@@ -4291,7 +4295,7 @@ a:hover {
 }
 
 .toctree-wrapper a {
-  color: #fff;
+  color: #b3b3b3;
   text-decoration: none;
   display: block;
 }
