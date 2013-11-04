@@ -4196,6 +4196,19 @@ footer {
 /* BIICODE CSS */
 /***************/
 
+#biicode-logo a {
+  float: right;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 130px;
+  border: 3px solid #fff;
+  height: 45px;
+  background-repeat: no-repeat;
+  background-image: url('img/logo.png');
+  background-size: 120px;
+  text-indent: 500px;
+}
+
 li.toctree-l1 > a {
   display: block;
 }
