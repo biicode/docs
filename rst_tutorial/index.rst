@@ -1,6 +1,11 @@
 Main Title: a Simple reStructuredText (reST) Tutorial
 =====================================================
 
+This is a simple reST and sphinx tutorial for writing the biicode documentation, maintaining and homogeneus style throughout the documents.
+
+This is a Section Title: basic usage
+------------------------------------
+
 Please, first of all, clone locally the documentation sources, `available here <https://github.com/biicode/docs>`_.
 
 A better way of writting the previous paragraph would be:
