@@ -2,26 +2,16 @@ Frequently Asked Questions
 ==========================
 
 How do I configure my settings to build executables with Visual Studio Compiler?
---------------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-External dependencies to your hive are retrieved from biicode servers when found to your dep folders. The configuration file for configuring your policies for this is named "policies.bii" in your hive "bii" folder. 
+The tools biicode uses for building binaries and compiling the source code are specified into the settings.bii file, 
+located inside the bii folder of the hive. ::
 
-If you simply want to find missing dependencies, type:
+An example of how to write the settings to build executables with Visual Studio 10: ::
+ 
+	cpp:
+		builder: {family: NMake, version: '10.0'}
+		compiler: {family: VC}
+		build_type: release
 
-.. code-block:: bash
-
-	$ bii find
-
-If you want to update already defined dependencies (as well as finding unresolved ones in the same step): 
-
-.. code-block:: bash
-
-	$ bii find --update
-
-Note that all find commands depend on the values configured in such file. You can for example try to update your dependencies, but if there are no compatible versions that match your policies, you will not get such updates. E.g. a new ALPHA version for one of your dependencies will not be updated if you do not change your policy.
-
-If you want to find compatible downgrades:
-
-.. code-block:: bash
-
-	$ bii find --downgrade
+Because it is based on the CMake tool, some versions of Visual Studio need an specific way for specifiyng the tool version: ::
