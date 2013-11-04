@@ -4229,6 +4229,7 @@ a:hover {
   padding: 5px;
   display: block;
   min-width: 200px;
+  max-width: 48%;
   background-color: #ffaa00;
   color: #fff;
   font-size: .8em;
@@ -4249,11 +4250,50 @@ a:hover {
 
 .toctree-wrapper {
   background-color: #e3e3e3;
-  border-radius: 3px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.toctree-wrapper li {
+  list-style-type: none !important;
 }
 
 .toctree-wrapper li.toctree-l1 {
   background-color: #333;
+  border-radius: 6px;
+  padding: 5px;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.toctree-wrapper li.toctree-l1 > a {
+  background-color: #ffaa00;
+  color: #000;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 5px;
+  border-bottom: 1px solid #fff;
+}
+
+.toctree-wrapper li.toctree-l1 > a:hover {
+  background-color: #A66E00;
+  color: #fff;
+}
+
+.toctree-wrapper li.toctree-l2 {
+  margin: 0 !important;
+  padding-left: 20px;
+}
+
+.toctree-wrapper li.toctree-l2:hover {
+  background-color: #444;
+  padding-left: 25px;
+}
+
+.toctree-wrapper a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
 }
 
 /*********************/
