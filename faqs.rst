@@ -14,10 +14,12 @@ An example of how to write the settings to build executables with Visual Studio 
 		compiler: {family: VC}
 		build_type: release
 
-Because it is based on the CMake tool, some versions of Visual Studio need an specific way for specifiyng the tool version: ::
-::
+Because it is based on the CMake tool, some versions of Visual Studio need an specific way for specifiyng the tool version: 
+
+
+
 ====================	=================================================== 
-Visual version	 	Builder 
+Visual version      	Builder 
 ====================	=================================================== 	
 Visual Studio 6	 	{family: NMake, version: '6.0'}	    	
 Visual Studio 7		{family: NMake, version: '7.0'}
