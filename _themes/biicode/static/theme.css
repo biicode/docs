@@ -3657,6 +3657,10 @@ pre.literal-block:after {
   color: #333333;
 }
 
+.highlight-bat .n, .highlight-bash .n {
+  color: #a6a6d5;
+}
+
 .na {
   color: teal;
 }
@@ -4196,7 +4200,7 @@ li.toctree-l1 > a {
   height: 3em;
   display: block;
 }
-.highlight-bash {
+.highlight-bash, .highlight-bat {
   background-color: #404040 !important;
   color: #fff;
 }
