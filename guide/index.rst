@@ -3,6 +3,8 @@ Main Title: a Simple reStructuredText (reST) Tutorial
 
 This is a simple reST and sphinx tutorial for writing the biicode documentation, maintaining and homogeneus style throughout the documents.
 
+.. _first-section:
+
 This is a Section Title: basic usage
 ------------------------------------
 
@@ -128,8 +130,12 @@ For plain text examples or configuration files, use the marker for literal code 
 
 
 
-This is the Title of a Section
-------------------------------
+Anohter section: linking
+------------------------
+
+Links to web pages. `This is a link to biicode.com <http://www.biicode.com>`_
+
+Links to document sections. :ref:`This is a link to a the first section of this document <first-section>`.
 
 
 
