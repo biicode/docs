@@ -4035,6 +4035,7 @@ pre.literal-block:after {
   *zoom: 1;
   border-bottom: 1px solid #fff;
   z-index: 1;
+  overflow: hidden;
 }
 
 .nav-top-standard {
