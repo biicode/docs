@@ -4197,7 +4197,6 @@ footer {
 /***************/
 
 li.toctree-l1 > a {
-  height: 3em;
   display: block;
 }
 .highlight-bash, .highlight-bat {
@@ -4248,6 +4247,14 @@ a:hover {
   text-align: right;
 }
 
+.toctree-wrapper {
+  background-color: #e3e3e3;
+  border-radius: 3px;
+}
+
+.toctree-wrapper li.toctree-l1 {
+  background-color: #333;
+}
 
 /*********************/
 /* ALL MEDIA QUERIES */
