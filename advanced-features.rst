@@ -78,11 +78,11 @@ For this purpose you should create a new folder within your src and inside of th
 
 The format of this file is: ::
 
-	[-+=]dependent_file_name NULL|[[!]dependency_file ]+
+	dependent_file_name [-+=] NULL|[[!]dependency_file ]+
 
 It's a file separated by spaces.
 
-If you have previously specified an operator the dependent file name, will behave differently:
+Depending on specified operator after the dependent file name, it will behave differently:
 
 * With the - operator all specified dependencies will be deleted from their dependent file.
 * With the + operator all specified dependencies will be added to their dependent file.
@@ -105,12 +105,12 @@ Pattern 	Meaning
 
 An example of this file is: ::
 
-	test.cpp example.h !LICENSE
-	*.cpp !README
-	example.h NULL
-	+main.cpp matrix32.h
-	-main.cpp matrix16.h
-	=calculator.cpp solver.h type.h
+	test.cpp + example.h !LICENSE
+	*.cpp + !README
+	example.h = NULL
+	main.cpp + matrix32.h
+	main.cpp - matrix16.h
+	calculator.cpp = solver.h type.h
 	
 In this example we're declaring that test.cpp depends on example.h and LICENSE, but LICENSE mustn't be compiled.
 
