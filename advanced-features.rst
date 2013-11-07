@@ -31,6 +31,25 @@ Then you can write a virtual.bii file in your block's bii folder to select which
 
 virtual.bii files —as other configuration files— are written in python, so it is not possible to make any imports, but you will have direct access to settings. In this case a custom setting 'test' is being used and we are checking for it's presence.
 
+Compilation rules
+-----------------
+
+Sometimes your project need to define some preprocessor variables or maybe you need to link with some dynamic library provided by the system. Biicode gives you the option to define these special compilation needs.
+
+You can define rules file for each executable target. Rules files can be placed anywhere in your src directory with a filename following the next regular expression:
+
+:regexp:`\*cpp_rules*\.bii`
+
+These files are written in Python, a small subset of it. You can interact with hive settings and target properties.
+
+You can see an example of this kind of files.
+
+.. code-block:: python
+	:linenos:
+
+        if "matrix.cpp" in target.filenames:
+           target.add_definition("OPTMIZE_MATRIX")
+
 
 Edit Dependencies
 -----------------
@@ -111,7 +130,7 @@ An example of this file is: ::
 	main.cpp + matrix32.h
 	main.cpp - matrix16.h
 	calculator.cpp = solver.h type.h
-	
+
 In this example we're declaring that test.cpp depends on example.h and LICENSE, but LICENSE mustn't be compiled.
 
 Also, we're declaring that all files with a cpp extension depend on the README file but it mustn't be compiled.
@@ -140,4 +159,3 @@ In your settings.bii file you can add compiler definiotions, specify C++ version
 * builder family valid values are 'MSBUILD', 'MAKE', 'MINGW' and 'NMake'
 * compiler family valid values are 'GNU', 'MINGW' and 'VC'
 * valid std are "c++11" and  "c++0x"
-
