@@ -4218,6 +4218,11 @@ li.toctree-l1 > a {
   color: #fff;
 }
 
+.highlight-bash .hll, .highlight-bat .hll {
+  background-color: #cccc33;
+  font-weight: bold;
+}
+
 nav.nav-side {
   position: fixed;
   top: 50px;
