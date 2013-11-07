@@ -237,8 +237,8 @@ Now, post your block to the biicode server just like you did before:
 
 	$ bii publish
 	block:     your_user_name/hello
-	$ introduce tag: STABLE 
-	$ introduce msg: My first block update
+	Introduce tag: STABLE 
+	Introduce msg: My first block update
 	...
 	...
 	Successfully published your_user_name/hello(your_user_name/master): 1
