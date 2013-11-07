@@ -13,4 +13,22 @@ $( document ).ready(function() {
     $("[data-toggle='rst-versions']").toggleClass("shift-up");
   });
   $("table.docutils:not(.field-list").wrap("<div class='table-responsive'></div>");
+
+  /* Modal windows */
+  $(".modal").each(function() {
+    console.log("modal__");
+    var link = $(this);
+    var dialog = $("<div></div>")
+      .load(link.attr("href"))
+      .dialog({
+        autoOpen: false,
+        title: link.attr("title"),
+        width: 500,
+        height: 300
+      });
+    link.click(function() {
+      dialog.dialog("open");
+      return false;
+    });
+  });
 });

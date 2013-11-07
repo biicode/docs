@@ -3,11 +3,6 @@ Installation and Setup
 
 In this section you will learn how to get the biicode client and install it on your system.
 
-.. toctree::
-	:hidden:
-
-	changelog
-
 Download and install the client binaries
 ----------------------------------------
 
@@ -28,7 +23,10 @@ First of all, download the appropriate client binaries for your system, execute 
 .. _bii-win-setup.exe: https://s3.amazonaws.com/biibinaries/release/0.1.12.3/bii-win-setup_0.1.12.3.exe
 .. _bii-macos64.pkg: https://s3.amazonaws.com/biibinaries/release/0.1.12.3/bii-macos64.pkg
 
-Here is the :doc:`changelog`.
+.. raw:: html
+
+	Here is the <a class="modal" href="changelog.html" title="biicode Changelog">Changelog</a>.
+
 
 Install the development tools
 -----------------------------
