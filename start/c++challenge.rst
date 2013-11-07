@@ -114,7 +114,6 @@ The final step is to actually compile and run the app. You can accomplish this t
 	No deps to find
 	...
 	...
-	Command to run: /Users/luis/Documents/Workspace/biicodeWS/challenge/bin/luispedraza_challenge_solvertool 
 	*************** SPARSE ***************
 	0: 1
 	1: 0.5
@@ -151,12 +150,12 @@ Running the tests is really easy too. Note that in this case one of the tests fa
 	[----------] Global test environment set-up.
 	[----------] 2 tests from Solver
 	[ RUN      ] Solver.BasicDiagonalSparse
-	/Users/luis/Documents/Workspace/biicodeWS/challenge/src/luispedraza/challenge/test1.cpp:21: Failure
+	challenge/src/your_user_name/challenge/test1.cpp:21: Failure
 	Value of: 1./(i+1)
 	  Actual: 0.5
 	Expected: sol[i]
 	Which is: 0.5
-	/Users/luis/Documents/Workspace/biicodeWS/challenge/src/luispedraza/challenge/test1.cpp:21: Failure
+	challenge/src/your_user_name/challenge/test1.cpp:21: Failure
 	Value of: 1./(i+1)
 	  Actual: 0.333333
 	Expected: sol[i]
