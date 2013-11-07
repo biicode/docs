@@ -4319,6 +4319,11 @@ a:hover {
   display: block;
 }
 
+/* Extra top offset in sections, usefull for linking to sections avoiding the top bar */
+.section h1, .section h2 {
+  padding-top: 60px;
+}
+
 /*********************/
 /* ALL MEDIA QUERIES */
 /*********************/
