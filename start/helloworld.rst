@@ -248,7 +248,7 @@ As you can see, the version of your block changed from 0 to 1. Your can see both
 Update your hellopretty block with the new version of hello
 -----------------------------------------------------------
 
-To update your **hellopretty** block you only need to search the server for any published new versions of your dependencies using the ``bii find`` command with the ``--update`` modifier. If the server finds new published versions of any dependencies, you'll see a corresponding message on your screen:
+To update your **hellopretty** block you only need to search the server for any published new versions of your dependencies using the ``bii find`` command with the ``--update`` modifier. If the server finds new published versions of any dependencies, you'll see an indicative message on your screen:
 
 .. code-block:: bash
 	:emphasize-lines: 8,9
