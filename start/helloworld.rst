@@ -90,7 +90,7 @@ Once your have written, compiled and successfully executed some code, surely you
 
 	  Preparing publication data for publish version 0
 
-	  Remote read block your_user_name/hello(luispedraza/master): -1
+	  Remote read block your_user_name/hello(your_user_name/master): -1
 
 	  Sending data!
 
@@ -133,7 +133,7 @@ Add the following files to the folder ``hellopretty/src/your_user_name/hellopret
 	 
 	using namespace std;
 	 
-	void hellopretty (){   
+	void hellopretty (){
 	   cout<<"**********************************"<<endl;
 	   hello();
 	   cout<<"**********************************"<<endl;
