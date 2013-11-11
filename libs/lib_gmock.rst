@@ -1,11 +1,11 @@
 Gmock (Google C++ Mocking Framework)
 =====================================
 
-Google C++ Mocking Framework (or Google Mock for short) is a library for writing and using C++ mock classes. For more information about this library, visit their `official website <https://code.google.com/p/googlemock/>`_ or `wiki <https://code.google.com/p/googlemock/w/list>`_ 
+Google C++ Mocking Framework (or Google Mock, or simply gmock for short) is a library for writing and using C++ mock classes. For more information about this library, visit their `official website <https://code.google.com/p/googlemock/>`_ or `wiki <https://code.google.com/p/googlemock/w/list>`_ 
 
 You can find here the `Gmock biicode library site <https://www.biicode.com/google/blocks/google/gmock/branches/master>`_ .
 
-The following example shows a simple use of gmock test. You can find this example and another ones in `google/gmocksamples <https://www.biicode.com/google/blocks/google/gmocksamples/branches/master>`_ .
+The following example shows a simple use of gmock test. You can find this and other examples in `the biicode gmock samples block <https://www.biicode.com/google/blocks/google/gmocksamples/branches/master>`_ .
 
 .. code-block:: cpp
 	:linenos:
