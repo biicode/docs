@@ -5,12 +5,12 @@ Google C++ Mocking Framework (or Google Mock for short) is a library for writing
 
 You can find here the `Gmock biicode library site <https://www.biicode.com/google/blocks/google/gmock/branches/master>`_ .
 
-The following example shows how to use the gmock tests.
+The following example shows a simple use of gmock test. You can find this example and another ones in `google/gmocksamples <https://www.biicode.com/google/blocks/google/gmocksamples/branches/master>`_ .
 
 .. code-block:: cpp
 	:linenos:
 
-	// Copyright 2008, Google Inc.
+	// Copyright 2013, Google Inc.
 	// All rights reserved.
 	//
 	// Redistribution and use in source and binary forms, with or without
@@ -41,68 +41,78 @@ The following example shows how to use the gmock tests.
 	//
 	// Author: wan@google.com (Zhanyong Wan)
 
-	// Tests Google Mock's output in various scenarios.  This ensures that
-	// Google Mock's messages are readable and useful.
+	// Tests Google Mock's functionality that depends on exceptions.
 
-	#include "phil/gmock/gmock/gmock.h"
+	// Google Mock - a framework for writing C++ mock classes.
+	//
+	// This program is for verifying that a leaked mock object can be
+	// caught by Google Mock's leak detector.
 
-	#include <stdio.h>
-	#include <string>
+	#include "google/gmock/gmock.h"
 
-	#include "google/gtest/gtest.h"
+	namespace {
 
-	using testing::_;
-	using testing::AnyNumber;
-	using testing::Ge;
-	using testing::InSequence;
-	using testing::NaggyMock;
-	using testing::Ref;
-	using testing::Return;
-	using testing::Sequence;
+	using ::testing::Return;
 
-	class MockFoo {
+	class FooInterface {
+	 public:
+	  virtual ~FooInterface() {}
+	  virtual void DoThis() = 0;
+	};
+
+	class MockFoo : public FooInterface {
 	 public:
 	  MockFoo() {}
 
-	  MOCK_METHOD3(Bar, char(const std::string& s, int i, double x));
-	  MOCK_METHOD2(Bar2, bool(int x, int y));
-	  MOCK_METHOD2(Bar3, void(int x, int y));
+	  MOCK_METHOD0(DoThis, void());
 
 	 private:
 	  GTEST_DISALLOW_COPY_AND_ASSIGN_(MockFoo);
 	};
 
-	class GMockOutputTest : public testing::Test {
-	 protected:
-	  NaggyMock<MockFoo> foo_;
-	};
-	
-	TEST_F(GMockOutputTest, CatchesLeakedMocks) {
+	TEST(LeakTest, LeakedMockWithExpectCallCausesFailureWhenLeakCheckingIsEnabled) {
+	  MockFoo* foo = new MockFoo;
+
+	  EXPECT_CALL(*foo, DoThis());
+	  foo->DoThis();
+
+	  // In order to test the leak detector, we deliberately leak foo.
+
+	  // Makes sure Google Mock's leak detector can change the exit code
+	  // to 1 even when the code is already exiting with 0.
+	  exit(0);
+	}
+
+	TEST(LeakTest, LeakedMockWithOnCallCausesFailureWhenLeakCheckingIsEnabled) {
+	  MockFoo* foo = new MockFoo;
+
+	  ON_CALL(*foo, DoThis()).WillByDefault(Return());
+
+	  // In order to test the leak detector, we deliberately leak foo.
+
+	  // Makes sure Google Mock's leak detector can change the exit code
+	  // to 1 even when the code is already exiting with 0.
+	  exit(0);
+	}
+
+	TEST(LeakTest, CatchesMultipleLeakedMockObjects) {
 	  MockFoo* foo1 = new MockFoo;
 	  MockFoo* foo2 = new MockFoo;
 
-	  // Invokes ON_CALL on foo1.
-	  ON_CALL(*foo1, Bar(_, _, _)).WillByDefault(Return('a'));
+	  ON_CALL(*foo1, DoThis()).WillByDefault(Return());
+	  EXPECT_CALL(*foo2, DoThis());
+	  foo2->DoThis();
 
-	  // Invokes EXPECT_CALL on foo2.
-	  EXPECT_CALL(*foo2, Bar2(_, _));
-	  EXPECT_CALL(*foo2, Bar2(1, _));
-	  EXPECT_CALL(*foo2, Bar3(_, _)).Times(AnyNumber());
-	  foo2->Bar2(2, 1);
-	  foo2->Bar2(1, 1);
+	  // In order to test the leak detector, we deliberately leak foo1 and
+	  // foo2.
 
-	  // Both foo1 and foo2 are deliberately leaked.
+	  // Makes sure Google Mock's leak detector can change the exit code
+	  // to 1 even when the code is already exiting with 0.
+	  exit(0);
 	}
 
-	void TestCatchesLeakedMocksInAdHocTests() {
-	  MockFoo* foo = new MockFoo;
+	}  // namespace
 
-	  // Invokes EXPECT_CALL on foo.
-	  EXPECT_CALL(*foo, Bar2(_, _));
-	  foo->Bar2(2, 1);
-
-	  // foo is deliberately leaked.
-	}
 
 	int main(int argc, char **argv) {
 	  testing::InitGoogleMock(&argc, argv);
@@ -110,13 +120,12 @@ The following example shows how to use the gmock tests.
 	  // Ensures that the tests pass no matter what value of
 	  // --gmock_catch_leaked_mocks and --gmock_verbose the user specifies.
 	  testing::GMOCK_FLAG(catch_leaked_mocks) = true;
-	  testing::GMOCK_FLAG(verbose) = "warning";
+	  testing::GMOCK_FLAG(verbose) = testing::internal::kWarningVerbosity;
 
-	  TestCatchesLeakedMocksInAdHocTests();
 	  return RUN_ALL_TESTS();
 	}
 
-The output you will see in your console	after executing the command:
+You will see next console output after executing the command:
 	
 .. code-block:: bat
 
@@ -124,19 +133,11 @@ The output you will see in your console	after executing the command:
 	
 	...
 	
-	[==========] Running 1 test from 1 test case.
+	[==========] Running 3 tests from 1 test case.
 	[----------] Global test environment set-up.
-	[----------] 1 test from GMockOutputTest
-	[ RUN      ] GMockOutputTest.CatchesLeakedMocks
-	[       OK ] GMockOutputTest.CatchesLeakedMocks (0 ms)
-	[----------] 1 test from GMockOutputTest (0 ms total)
-
-	[----------] Global test environment tear-down
-	[==========] 1 test from 1 test case ran. (0 ms total)
-	[  PASSED  ] 1 test.
-
-	ERROR: this mock object should be deleted but never is. Its address is @0x5956f0.
-	ERROR: this mock object (used in test GMockOutputTest.CatchesLeakedMocks) should be deleted but never is. Its address is @0x596b90.
-	ERROR: this mock object (used in test GMockOutputTest.CatchesLeakedMocks) should be deleted but never is. Its address is @0x596c68.
+	[----------] 3 tests from LeakTest
+	[ RUN      ] LeakTest.LeakedMockWithExpectCallCausesFailureWhenLeakCheckingIsEnabled
 	
-	ERROR: 3 leaked mock objects found at program exit.
+	ERROR: this mock object (used in test LeakTest.LeakedMockWithExpectCallCausesFailureWhenLeakCheckingIsEnabled) should be deleted but never is. Its address is @0x5d29e8.
+	ERROR: 1 leaked mock object found at program exit.
+
