@@ -135,7 +135,7 @@ In this example we're declaring that test.cpp depends on example.h and LICENSE, 
 
 Also, we're declaring that all files with a cpp extension depend on the README file but it mustn't be compiled.
 
-Declaring example.h NULL all example.h dependencies are deleted.
+Declaring example.h = NULL all example.h dependencies are deleted.
 
 In the forth line we add matrix32.h as a main.cpp dependency.
 
