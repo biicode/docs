@@ -124,6 +124,12 @@ The following example shows a simple use of gmock test. You can find this and ot
 
 	  return RUN_ALL_TESTS();
 	}
+	
+First, you need to resolve all the dependencies of this *main.cpp*
+	
+.. code-block:: bat
+	
+	$ bii find
 
 You will see next console output after executing the command:
 	

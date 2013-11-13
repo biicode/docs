@@ -1,10 +1,10 @@
 "Hello World!" in C++
-=====================
+---------------------
 
 This example shows how to build a simple "Hello World" appliction with biicode.
 
 Create a new hive
------------------
+^^^^^^^^^^^^^^^^^^
 
 Creating a new hive is as easy as executing the ``bii new`` command. Open your console, move to your biicode workspace and create a new hive named **"hello"**:
 
@@ -18,7 +18,7 @@ Creating a new hive is as easy as executing the ``bii new`` command. Open your c
 In the previous figure, the highlighted line indicates that the process worked fine. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``dep`` and ``src`.
 
 Just code!
-----------
+^^^^^^^^^^
 
 Our "hello" hive will have the following 3 files. Just copy them into your hive ``hello/src/your_user_name/hello`` folder. That is the source code for your **hello block** in you **hello hive**.
 
@@ -58,7 +58,7 @@ Our "hello" hive will have the following 3 files. Just copy them into your hive 
 	}
 
 Build and run
--------------
+^^^^^^^^^^^^^^
 
 Once you have completed all the coding process, and the source files are located under ``hello/src/your_user_name/hello``, you are ready to compile and run the application. Assuming that you are located in your biicode workspace folder, ``cd`` to your **"hello" hive folder**, and run the ``bii cpp:run`` command:
 
@@ -74,7 +74,7 @@ Note that the ``bii cpp:run`` command needs to be executed from a folder contain
 	Hello World!
  
 Publish your code
------------------
+^^^^^^^^^^^^^^^^^^
 
 Once your have written, compiled and successfully executed some code, surely you are willing to share it with the biicode community! Uploading your code to biicode is really simple using the ``bii publish`` command. You will be requested to provide a **tag** and a **message**. Valid tags are ``STABLE``, ``ALPHA``, ``BETA``, and ``DEV``. They provide information about the development state of your hive. The message is any information describing your publication.
 
@@ -100,7 +100,7 @@ Once your have written, compiled and successfully executed some code, surely you
 If your code has been published correctly —as it is the case in the previous example—, you can navigate using your favourite Web browser to you biicode homepage (located at http://www.biicode.com/your_user_name) and inspect online your new block.
 
 Reuse it!
----------
+^^^^^^^^^
 
 One of the most interesting aspects of biicode is the ability it provides to easily reuse code. As the published files have already been uploaded to biicode servers, it is possible for anyone —even other biicode users— to use these files in new projects. We'll show the process creating a new hive named **"hellopretty"**. From your biicode workspace folder, execute again the ``bii new`` command to create a new hive:
 
@@ -204,7 +204,7 @@ Now you can try to compile and run again your new code. In this case the process
 You will find the ``your_user_name/hello`` block along with the retrieved source files ``hello.h`` and ``hello.cpp`` in your  ``hellopretty/dep`` subfolder. Note that the ``main.cpp`` file of the **hello** block was not retrieved. That is because you don't need it to reuse the ``hello()`` function! 
 
 Publish a new version of your hello block
------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Modifying your code and publishing the results is easy with biicode. Now we´ll change the message displayed by the ``hello()`` function in the **hello** block. Update the ``hello.cpp`` as following:
 
@@ -246,7 +246,7 @@ Now, post your block to the biicode server just like you did before:
 As you can see, the version of your block changed from 0 to 1. Your can see both versions published online visiting your biicode user main page, as before.
  
 Update your hellopretty block with the new version of hello
------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To update your **hellopretty** block you only need to search the server for any published new versions of your dependencies using the ``bii find`` command with the ``--update`` modifier. If the server finds new published versions of any dependencies, you'll see an indicative message on your screen:
 
