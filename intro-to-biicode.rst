@@ -54,6 +54,7 @@ Lets say the honey is the source code you put inside each one of your source fil
 
 .. image:: _static/img/test_wihtout_bii.png
 
+
 Block
 ^^^^^
 
