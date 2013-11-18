@@ -13,17 +13,17 @@ First of all, download the appropriate client binaries for your system, execute 
 +----------------+----------------------------------+------------------------+-----------------------+
 |    VERSION     |              UBUNTU              |      WINDOWS           |       MAC OS          |
 +----------------+----------------------------------+------------------------+-----------------------+
-| 0.1.12.3       | `bii-ubuntu32.deb`_              | `bii-win-setup.exe`_   | `bii-macos64.pkg`_    |
+| 0.1.13.2       | `bii-ubuntu32.deb`_              | `bii-win-setup.exe`_   | `bii-macos64.pkg`_    |
 |                +----------------------------------+                        |                       |
 |                | `bii-ubuntu64.deb`_              |                        |                       |
 +----------------+----------------------------------+------------------------+-----------------------+
-| 0.1.11         | Deprecated version. Please, upgrade to 0.1.12.3                                   |
+| 0.1.12.3       | Deprecated version. Please, upgrade to 0.1.13.2                                   |
 +----------------+-----------------------------------------------------------------------------------+
 
-.. _bii-ubuntu32.deb: https://s3.amazonaws.com/biibinaries/release/0.1.12.3/bii-ubuntu32.deb
-.. _bii-ubuntu64.deb: https://s3.amazonaws.com/biibinaries/release/0.1.12.3/bii-ubuntu64.deb
-.. _bii-win-setup.exe: https://s3.amazonaws.com/biibinaries/release/0.1.12.3/bii-win-setup_0.1.12.3.exe
-.. _bii-macos64.pkg: https://s3.amazonaws.com/biibinaries/release/0.1.12.3/bii-macos64.pkg
+.. _bii-ubuntu32.deb: https://s3.amazonaws.com/biibinaries/release/0.1.13.2/bii-ubuntu32.deb
+.. _bii-ubuntu64.deb: https://s3.amazonaws.com/biibinaries/release/0.1.13.2/bii-ubuntu64.deb
+.. _bii-win-setup.exe: https://s3.amazonaws.com/biibinaries/release/0.1.13.2/bii-win.exe
+.. _bii-macos64.pkg: https://s3.amazonaws.com/biibinaries/release/0.1.13.2/bii-macos64.pkg
 
 .. raw:: html
 
