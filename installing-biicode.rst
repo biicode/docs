@@ -13,21 +13,21 @@ First of all, download the appropriate client binaries for your system, execute 
 +----------------+----------------------------------+------------------------+-----------------------+
 |    VERSION     |              UBUNTU              |      WINDOWS           |       MAC OS          |
 +----------------+----------------------------------+------------------------+-----------------------+
-| 0.1.12.3       | `bii-ubuntu32.deb`_              | `bii-win-setup.exe`_   | `bii-macos64.pkg`_    |
+| 0.1.13.2       | `bii-ubuntu32.deb`_              | `bii-win-setup.exe`_   | `bii-macos64.pkg`_    |
 |                +----------------------------------+                        |                       |
 |                | `bii-ubuntu64.deb`_              |                        |                       |
 +----------------+----------------------------------+------------------------+-----------------------+
-| 0.1.11         | Deprecated version. Please, upgrade to 0.1.12.3                                   |
+| 0.1.12.3       | Deprecated version. Please, upgrade to 0.1.13.2                                   |
 +----------------+-----------------------------------------------------------------------------------+
 
-.. _bii-ubuntu32.deb: https://s3.amazonaws.com/biibinaries/release/0.1.12.3/bii-ubuntu32.deb
-.. _bii-ubuntu64.deb: https://s3.amazonaws.com/biibinaries/release/0.1.12.3/bii-ubuntu64.deb
-.. _bii-win-setup.exe: https://s3.amazonaws.com/biibinaries/release/0.1.12.3/bii-win-setup_0.1.12.3.exe
-.. _bii-macos64.pkg: https://s3.amazonaws.com/biibinaries/release/0.1.12.3/bii-macos64.pkg
+.. _bii-ubuntu32.deb: https://s3.amazonaws.com/biibinaries/release/0.1.13.2/bii-ubuntu32.deb
+.. _bii-ubuntu64.deb: https://s3.amazonaws.com/biibinaries/release/0.1.13.2/bii-ubuntu64.deb
+.. _bii-win-setup.exe: https://s3.amazonaws.com/biibinaries/release/0.1.13.2/bii-win.exe
+.. _bii-macos64.pkg: https://s3.amazonaws.com/biibinaries/release/0.1.13.2/bii-macos64.pkg
 
 .. raw:: html
 
-    Here is the <a class="modal" href="changelog.html" title="biicode Changelog">Changelog</a>.
+	Here is the <a class="modal" href="changelog.html" title="biicode Changelog">Changelog</a>.
 
 
 Install the development tools
@@ -42,7 +42,7 @@ Linux
 
 .. code-block:: bash
 
-    $ sudo apt-get install build-essential cmake
+	$ sudo apt-get install build-essential cmake
 
 Windows
 ^^^^^^^
@@ -74,9 +74,9 @@ The final step is creating your own biicode workspace. This is the place where a
 
 .. code-block:: bash
 
-    $ mkdir biicode_workspace 
-    $ cd ~/biicode_workspace
-    $ bii init
-    $ Username: your_user_name
-    $ Password for your_user_name: your_password 
+	$ mkdir biicode_workspace 
+	$ cd ~/biicode_workspace
+	$ bii init
+	$ Username: your_user_name
+	$ Password for your_user_name: your_password 
 
