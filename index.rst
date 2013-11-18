@@ -20,16 +20,19 @@ Contents:
    advanced-features
    libraries
    tutorials
+   troubleshooting
    faqs
 
-sample video
-------------
 
-.. raw:: html
 
-	<iframe width="640" height="480" src="//www.youtube.com/embed/IJcBxT_fhaw" frameborder="0" allowfullscreen></iframe>
+
 
 .. Comment 
+   sample video
+   ------------
+   .. raw:: html
+
+      <iframe width="640" height="480" src="//www.youtube.com/embed/IJcBxT_fhaw" frameborder="0" allowfullscreen></iframe>
 	Indices and tables
 	==================
 

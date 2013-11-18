@@ -1,5 +1,7 @@
-Frequently Asked Questions
-==========================
+FAQs
+====
+
+This sections sumarizes some Frequently Asked Questions that our users hace posed up to this moment. If your particular inquiry is not in this list, please, don't hessitate to contact us so web can help you as soon as possible.
 
 How do I configure my settings to build executables with Visual Studio Compiler?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
