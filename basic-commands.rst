@@ -402,6 +402,10 @@ You only have to change the run configuration, for this:
 #. Run As > Run Configurations
 #. New launch configuration
 #. In the Application C/C++ box insert .../blockname/bin/username_blockname_main.exe
+#. Click on Arguments tab.
+#. In Working directory section clieck on File System
+#. Select .../blockname/bin folder
+#. Click on Run button.
 
 And this is all you need to work as usual in eclipse.
 
