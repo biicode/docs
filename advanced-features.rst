@@ -47,8 +47,14 @@ You can see an example of this kind of files.
 .. code-block:: python
 	:linenos:
 
+        target.std = "c++11"
+
         if "matrix.cpp" in target.filenames:
-           target.add_definition("OPTMIZE_MATRIX")
+           target.add_definition("OPTMIZE_MATRIX=1")
+
+        if settings.os.family == "MacOS":
+           target.add_package("OpenGL",[])
+           target.add_library("${OPENGL_LIBRARIES}")
 
 
 Edit Dependencies
