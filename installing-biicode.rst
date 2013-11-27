@@ -71,6 +71,7 @@ Create a workspace
 ------------------
 
 The final step is creating your own biicode workspace. This is the place where all your hives will be located. In general, this steps needs to be done only once after the initial setup.
+**NOTE:** Please avoid creating biicode workspaces in paths with spaces and colons ':'
 
 .. code-block:: bash
 
