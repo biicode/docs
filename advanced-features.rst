@@ -1,7 +1,7 @@
-Advanced Features
+Advanced features
 =================
 
-Virtual Resources
+Virtual resources
 -----------------
 
 Imagine you want different code to be compiled or executed depending on whether you are in a production or testing environment, Windows or Linux or compiler version. This is possible with virtual resources.
@@ -57,7 +57,7 @@ You can see an example of this kind of files.
            target.add_library("${OPENGL_LIBRARIES}")
 
 
-Edit Dependencies
+Edit dependencies
 -----------------
 
 If you want to edit a block you depend on, you can open it and move it to your hive. You can do so by executing: ::
@@ -81,7 +81,7 @@ Then you can close the block to remove it from your src folder: ::
 Your code will now depend on the version you have just published.
 
 
-Merge a Branch
+Merge a branch
 --------------
 
 Imagine you have a published block and someone just published a bugfix in a new branch and you want to incorporate those changes to the master version of your block.
@@ -94,12 +94,12 @@ Then you can review changes and publish your new version as usual. ::
 
 	$ bii publish BLOCK_NAME
 
-Dependencies Configuration
+Dependencies configuration
 --------------------------
 
 There are cases in which biicode can't detect some dependencies. In these cases you can manually configure your dependencies.
 
-For this purpose you should create a new folder within your src and inside of this bii folder a file named dependencies.bii.
+For this purpose you should create a new folder within your src and inside of this bii folder a file named **dependencies.bii**.
 
 The format of this file is: ::
 

@@ -1,4 +1,4 @@
-Getting Started With biicode
+Getting started
 ============================
 
 In this section you will learn how to get started using biicode. We propose two simple tutorials that will help to to understand the power and simplicity of this tool:

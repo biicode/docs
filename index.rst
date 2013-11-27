@@ -20,6 +20,7 @@ Contents:
    advanced-features
    libraries
    tutorials
+   reference
    troubleshooting
    faqs
 
@@ -28,7 +29,7 @@ Contents:
 
 
 .. Comment 
-   sample video
+   Biicode presentation video
    ------------
    .. raw:: html
 
