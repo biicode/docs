@@ -18,6 +18,7 @@ Contents:
    getting-started
    basic-commands
    advanced-features
+   raspberry-pi
    libraries
    tutorials
    faqs
