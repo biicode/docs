@@ -3,6 +3,8 @@
 Installation and setup
 ======================
 
+.. _installation:
+
 In this section you will learn how to get the biicode client and install it on your system.
 
 Download and install the client binaries
