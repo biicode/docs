@@ -201,7 +201,7 @@ Eclipse
 
 First of all, you need to configure your project. Initialize your default C++ settings writting: ::
 
-	$ bii cpp:init
+	$ bii cpp:settings
 	...
 	These are your default settings for this Hive
 	Builder: MINGW
@@ -296,7 +296,7 @@ Microsoft Visual Studio
 
 First of all, you need to inicialize your default C++ settings with the following command: ::
 
-	$ bii cpp:init 
+	$ bii cpp:settings 
 	... 
 	These are your default settings for this Hive 
 

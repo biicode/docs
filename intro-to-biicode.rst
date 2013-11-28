@@ -40,6 +40,8 @@ The challenge consists in doing the task, from sources, in Win, Linux and Mac wi
 Try it yourself and then solve the problem with biicode! (proceed to Install and Get Started)
 
 
+.. _basic_concepts:
+
 Some basic concepts
 -------------------
 
