@@ -1,10 +1,10 @@
-Raspberry pi
+Raspberry Pi
 ============
 
-Raspberry pi Configuration
+Raspberry Pi Configuration
 --------------------------
 
-True to our philosophy of reuse, tutorial about how to burn SD cards and guide on how to configure the raspberry pi is a reuse of two articles `Kristophorus Hadiono <http://xmodulo.com/author/kristophorus>`_.
+Following our philosophy of reuse, tutorial about how to burn SD cards and guide on how to configure the Raspberry Pi is a reuse of two articles `Kristophorus Hadiono <http://xmodulo.com/author/kristophorus>`_.
 
 * `How to write Raspberry Pi image to SD card <http://xmodulo.com/2013/11/write-raspberry-pi-image-sd-card.html>`_
 * `How to configure Raspberry Pi for the first time <http://xmodulo.com/2013/11/configure-raspberry-pi-first-time.html>`_
@@ -12,11 +12,11 @@ True to our philosophy of reuse, tutorial about how to burn SD cards and guide o
 Download and install
 ^^^^^^^^^^^^^^^^^^^^
 
-Raspberry PI uses an SD card as backing storage for an operating system and other tools. In this tutorial, I will describe how to write a Raspberry PI image to an SD card.
+Raspberry Pi uses an SD card as backing storage for an operating system and other tools. In this tutorial, I will describe how to write a Raspberry Pi image to an SD card.
 
-**Raspberry pi images**
+**Raspberry Pi images**
 
-There are several flavors of raw Raspberry PI images (e.g., Raspbian, Pidora, Risc OS, RaspBMC, Arch, and OpenElec) which you can download from `Raspberry Pi's official site <http://www.raspberrypi.org/downloads>`_. All these images are compatible with both model A and B.
+There are several flavors of raw Raspberry Pi images (e.g., Raspbian, Pidora, Risc OS, RaspBMC, Arch, and OpenElec) which you can download from `Raspberry Pi's official site <http://www.raspberrypi.org/downloads>`_. All these images are compatible with both model A and B.
 We recommend  to use Raspbian image which based on Debian.
 
 +----------------------------------------+--------------+----------------------------------------+
@@ -25,6 +25,8 @@ We recommend  to use Raspbian image which based on Debian.
 |.. image:: _static/img/rpi/raspbian.png |SHA-1 Checksum|99e6b5e6b8cfbf66e34437a74022fcf9744ccb1d|
 |                                        +--------------+----------------------------------------+                       
 |                                        |Default login |user: pi password: raspberry            |
+|                                        |              +----------------------------------------+
+|                                        |              |password: raspberry                     |
 +----------------------------------------+--------------+----------------------------------------+
 .. _2013-09-25-wheezy-raspbian.zip: http://downloads.raspberrypi.org/raspbian_latest
 
@@ -132,7 +134,7 @@ The following screenshot shows the Raspbian GUI desktop with default login (user
 Linux Configuration
 -------------------
 
-This tutorial shows how to use a Raspberry pi with biicode.
+Now let's look at the tools we need to install to use the Raspberry Pi with biicode.
 
 Install and download some tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -145,15 +147,17 @@ First, install the support for 32 bit applications.
 	$ sudo apt-get update
 	$ sudo apt-get install ia32-libs
 
-Clone the raspberry pi repository with linux cross-compilers from github.
+Clone the Raspberry Pi repository with linux cross-compilers from github.
 
 .. code-block:: bash
 
 	$ cd /user/local
 	$ sudo git clone https://github.com/raspberrypi/tools.git
+	
+Finally, it only remains to biicode installed. To do this, you can follow the tutorial that appears in the section of installation and setup.
 
 Configure your workspace
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 Now, add the cross compilers to enviroment.bii: ::
 
@@ -172,7 +176,7 @@ Now, add the cross compilers to enviroment.bii: ::
 Create a new hive and code!
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Creating a new hivewith the ``bii new`` command.
+Creating a new hive with the ``bii new`` command.
 
 Copy the code that you want to compile into your ``block folder``. For example:
 
@@ -212,22 +216,20 @@ Once you have completed all the coding process, you are ready to make the cross-
 Note that the ``bii rpi:build`` command needs to be executed from a folder containing a hive like any other biicode project. After some messages showing information about the compiling process, the binaries will created in your ``bin folder``.
 
 Send your binaries
-^^^^^^^^^^^^^^^^^^
+------------------
 
-To send your binary to raspberry pi, you just execute the ``rpi:send`` command and the file will be sent to the address that appears in your **settings.bii**:
+To send your binary to Raspberry Pi, you just execute the ``rpi:send`` command and the file will be sent to the address that appears in your **settings.bii**:
 
 .. code-block:: bash
 
-	$ bii publish
-	No deps to find
+	$ bii rpi:send
 
-	  No detected all the parameters required to send the file
-	  All the parameters will be taken from your settings.bii
-
+	...
+	
 	Sending with scp -r HIVE_DIRECTORY/bin RPI_USER@RPI_IP:HIVE_NAME
 
 	RPI_USER@RPI_IP's password:
 
-Finally, the raspberry pi user's password will be asked. If you have not changed your password, for raspbian is **raspberry**.
+Finally, the Raspberry Pi user's password will be asked. If you have not changed your password, for raspbian is **raspberry**.
 
-You just have to go to your raspberry pi and execute the binaries as any computer.
+You just have to go to your Raspberry Pi and execute the binaries as any computer.
