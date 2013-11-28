@@ -3112,7 +3112,7 @@ p {
   line-height: 24px;
   margin: 0;
   font-size: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 15px;
 }
 
 h1 {
@@ -4320,8 +4320,8 @@ a:hover {
 }
 
 /* Extra top offset in sections, usefull for linking to sections avoiding the top bar */
-.section h1, .section h2 {
-  padding-top: 60px;
+.section h1, .section h2, .section h3 {
+  padding-top: 50px;
 }
 
 /*********************/

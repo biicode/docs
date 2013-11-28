@@ -38,8 +38,6 @@ If you want to find any possible matching compatible version (not just updates o
 
 	$ bii find --modify
 
-.. _filefilter:
-
 
 Policies
 --------

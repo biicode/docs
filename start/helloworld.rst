@@ -15,7 +15,7 @@ Creating a new hive is as easy as executing the ``bii new`` command. Open your c
 	$ bii new hello
 	Created new Hive hello
 
-In the previous figure, the highlighted line indicates that the process worked fine. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``dep`` and ``src`.
+In the previous figure, the highlighted line indicates that the process worked fine. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``dep`` and ``src``.
 
 Just code!
 ^^^^^^^^^^
