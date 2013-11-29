@@ -190,7 +190,7 @@ Finally, it only remains to biicode installed. To do this, you can follow the tu
 Configure your workspace
 ------------------------
 
-Now, add the cross compilers to enviroment.bii, like shown in the last four lines: ::
+Now, add the cross compilers to enviroment.bii like shown in the last four lines: ::
 
 	cpp:
 	  builders:
@@ -200,9 +200,9 @@ Now, add the cross compilers to enviroment.bii, like shown in the last four line
         - path: null
 	      tool: {family: GNU}
 	    - path: /user/local/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-gcc
-          tool: {family: GNU, subfamily: C, arch: ARM}
+	      tool: {family: GNU, subfamily: C, arch: ARM}
 	    - path: /user/local/raspberry_pi/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-g++
-          tool: {family: GNU, subfamily: CPP, arch: ARM}
+	      tool: {family: GNU, subfamily: CPP, arch: ARM}
 	  
 Create a new hive and code!
 ---------------------------
@@ -259,7 +259,7 @@ To send your binary to Raspberry Pi, you just execute the ``rpi:send`` command a
 	
 	Sending with scp -r [HIVE_DIRECTORY]/bin [RPI_USER]@[RPI_IP]:[DIRECTORY]/[HIVE_NAME]
 
-	RPI_USER@RPI_IP's password:
+	[RPI_USER]@[RPI_IP]'s password:
 
 Finally, the Raspberry Pi user's password will be asked. If you have not changed your password, for raspbian is **raspberry**.
 
