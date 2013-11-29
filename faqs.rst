@@ -30,7 +30,7 @@ Can I use biicode for the XXX programming language?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 We have released our beta with a strong focus on C++, which lacks a multiOS dependency manager. We are experimenting with other languages as Python, Node, Java or Fortran. The support for these languages will mature during the next months, and new languages will enter the pipeline too.
 
-How does biicode relates to Maven, NPM, PyPI...?
+How does biicode relate to Maven, NPM, PyPI...?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Biicode manages your code dependencies and retrieves the missing files from a central repository to your local machine. However, there are some differences with these services: 
 
@@ -43,10 +43,11 @@ All that said, biicode does not try to compete against the power of such establi
 
 What is a workspace, a block, a hive?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Go to :ref:`Introduction: Basic concepts <basic_concepts>`.
+Please, see :ref:`Introduction: Basic concepts <basic_concepts>`.
 
 Other
 -----
+
 How do I configure my settings to build executables with Visual Studio Compiler?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
