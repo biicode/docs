@@ -1,7 +1,7 @@
 "Hello World!" in C++
 ---------------------
 
-This example shows how to build a simple "Hello World" appliction with biicode.
+This example shows how to build a simple "Hello World" application with biicode.
 
 Create a new hive
 ^^^^^^^^^^^^^^^^^^

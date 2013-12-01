@@ -40,36 +40,5 @@ The challenge consists in doing the task, from sources, in Win, Linux and Mac wi
 Try it yourself and then solve the problem with biicode! (proceed to Install and Get Started)
 
 
-.. _basic_concepts:
-
-Some basic concepts
--------------------
-
-Before getting your hands dirty you might want to learn a few basic concepts and how biicode sees the (development) world.
-
-Cell
-^^^^
-
-A cell is the basic biicode processing and sharing unit. **It corresponds to your files and it holds relevant metadata.** 
-
-Lets say the honey is the source code you put inside each one of your source files, and the cell structure is the metadata that relates such source file with the others. Actually, cells can be of any type (text, data, images), not just source code. In your code you can make references (includes, import) to your cells or cells from any other user. You just care about producing the honey, biicode will try to care for the rest.
-
-.. image:: _static/img/test_wihtout_bii.png
 
 
-Block
-^^^^^
-
-A block is a **group of cells** that are logically related and probably cooperate to perform some functions, or are just grouped according to some criteria. It’s a similar concept to C libraries, java packages or python packages and modules, but not exactly the same, as they are always from source code, and without any real packaging grouping them other than the block name. Cells belonging to published blocks can be reused pretty straightforwardly, just referencing them from other cells. A very important concept of blocks, is that not all cells within a block are to be reused together, if you need a certain cell of a block and such cell does not depend on anything else, only that cell will be retrieved and used. Published cells and blocks are stored in biicode cloud
-
-**Circular dependencies between blocks are not allowed**, as usually happens in other existing systems. If the cells of a block "A" depends on the cells of block "B"; the cells of block "B" cannot depend on cells belonging to block "A".
-
-Hive
-^^^^
-
-The hive is very similar to a **conventional "project"**. It is a folder inside your workspace in which you edit, build and run your code; a sandbox where you can play around with your code before sharing it. **You can have as many hives as you want**, they are private and you can save them in the cloud for later. **Biicode is not a version control system, so you can use git, mercurial, svn or whatever** you prefer along with biicode if you want a version control of your hives files.
-
-Workspace
-^^^^^^^^^
-
-This is a special **folder** in your system that **will hold your hives**, dependencies, your app´s and buildscripts as well as biicode metadata. The concept is pretty much the same as in IDEs. Once created, you’ll perform the rest of tasks from within there
