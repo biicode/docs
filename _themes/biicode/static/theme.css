@@ -4268,7 +4268,6 @@ a:hover {
 }
 
 .toctree-wrapper {
-
   border-radius: 5px;
   padding: 10px;
 }
@@ -4296,8 +4295,8 @@ a:hover {
 }
 
 .toctree-wrapper li.toctree-l1 > a:hover {
-  background-color: #A66E00;
-  color: #fff;
+  background-color: #333;
+  color: #ffaa00;
 }
 
 .toctree-wrapper li.toctree-l2 {
