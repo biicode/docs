@@ -4323,6 +4323,13 @@ a:hover {
 .section h1, .section h2, .section h3 {
   padding-top: 50px;
 }
+.section h1 {
+  border-bottom: 3px solid #ffaa00;
+}
+
+.section h2 {
+  border-bottom: 1px solid #ffaa00;
+}
 
 /*********************/
 /* ALL MEDIA QUERIES */

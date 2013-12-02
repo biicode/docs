@@ -5,6 +5,9 @@ Installation and setup
 
 In this section you will learn how to get the biicode client and install it on your system.
 
+.. contents:: 
+	:local:
+
 Download and install the client binaries
 ----------------------------------------
 
@@ -70,15 +73,18 @@ Max OS
 Create a workspace
 ------------------
 
-The final step is creating your own biicode workspace. This is the place where all your hives will be located. In general, this steps needs to be done only once after the initial setup.
+The final step is creating your own **biicode workspace**. This is the place where all your hives will be located. In general, this step needs to be done only once after the initial setup.
 
-**NOTE:** Please avoid creating biicode workspaces in paths with spaces and colons ':'
+**NOTE:** Please **avoid creating biicode workspaces in paths with spaces or colons ':'**.
 
 .. code-block:: bash
 
-	$ mkdir biicode_workspace 
+	$ mkdir biicode_workspace
 	$ cd ~/biicode_workspace
 	$ bii init
 	$ Username: your_user_name
-	$ Password for your_user_name: your_password 
+	$ Password for your_user_name: your_password
+
+
+And that's all! You have successfully installed the biicode client program and the development tools for your platform, and you have created the biicode workspace that will containt all your code!
 
