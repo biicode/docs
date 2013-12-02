@@ -16,21 +16,25 @@ Contents:
    intro-to-biicode
    installing-biicode
    getting-started
-   basic-commands
+   basic-usage
    advanced-features
    raspberry-pi
    libraries
    tutorials
+   reference
+   troubleshooting
    faqs
 
-sample video
-------------
 
-.. raw:: html
 
-	<iframe width="640" height="480" src="//www.youtube.com/embed/IJcBxT_fhaw" frameborder="0" allowfullscreen></iframe>
+
 
 .. Comment 
+   Biicode presentation video
+   ------------
+   .. raw:: html
+
+      <iframe width="640" height="480" src="//www.youtube.com/embed/IJcBxT_fhaw" frameborder="0" allowfullscreen></iframe>
 	Indices and tables
 	==================
 

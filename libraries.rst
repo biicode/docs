@@ -1,7 +1,7 @@
-List of Available Libraries
+List of libraries
 ===========================
 
-In this section you will find an updated list of the libraries currently supported by biicode.
+This doesn't aim to be a comprehensive list of all the contents of biicode, just some examples of already existing code that is ready for use.
 
 .. toctree::
    :maxdepth: 1
