@@ -1,6 +1,17 @@
 Changelog
 =========
 
+v. 0.2.3  
+--------------------
+*(2-dic-13)*
+
+* Experimental upload-download of hives to biicode, so it is not necessary to publish to keep working in other computer.
+* Navigation of uploaded hives in the web
+* Updated exe creation to pyinstaller2.1, as 2.0 had some problems in some windows installs.
+* Creation (experimental) of dynamic libraries from C code. Integration from python code with cffi.
+* Improved use of biicode for C/C++ dev with RaspberryPI (linux only)
+
+
 v. 0.1.11
 ---------
 
