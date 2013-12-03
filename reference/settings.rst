@@ -32,8 +32,6 @@ Configurable parameters common (may exist or not) for all languages.
 
 C++ settings:
 ^^^^^^^^^^^^^
-* valid std are "c++11" and  "c++0x"
-
 * Builder:
 
 	* Builder type: to define the different types of builder you want to use:
@@ -46,5 +44,4 @@ An example of how to write the settings to cpp is the following: ::
 		builder: {family: MINGW}
 		compiler: {family: MINGW}
 		ide: {family: ECLIPSE, subfamily: CDT}
-		std: c++11
 		build_type: debug
