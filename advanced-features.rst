@@ -56,9 +56,10 @@ You can see an example of this kind of files.
            target.add_package("OpenGL",[])
            target.add_library("${OPENGL_LIBRARIES}")
 
+.. _dependencies_edition:
 
-Edit dependencies
------------------
+Dependencies edition
+--------------------
 
 If you want to edit a block you depend on, you can open it and move it to your hive. You can do so by executing: ::
 
