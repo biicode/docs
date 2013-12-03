@@ -161,12 +161,10 @@ The settings.bii is a YAML file which contains: ::
 	  compiler: {family: MINGW}
 	os: {arch: 32bit, family: Windows, subfamily: '7', version: 6.1.7601}
 
-If you want change your IDE to build your project with Visual Studio you should add the following command line and take care with the spaces you write because it must be written perfect (look at builder and compiler definitions lines): ::
+If you want change your IDE to build your project with Visual Studio you should add the following command line and take care with the spaces you write because it must be written perfect ( builder and compiler definitions lines are not needed): ::
 
 	cpp:
 	  ide: {family: VISUAL, version: 10.0}
-	  builder: {family: MINGW}
-	  compiler: {family: MINGW}
 	os: {arch: 32bit, family: Windows, subfamily: '7', version: 6.1.7601}
 
 Now, copy the code from your hello word tutorial into the block folder. You just choose Visual Studio as IDE with the version 10.0, i.e Visual Studio 2010. Now, if you configure the project with these settings, the output in the console would be: ::
