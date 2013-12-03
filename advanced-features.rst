@@ -38,7 +38,7 @@ In this example we are defining a function that decides which implementation of 
 	    else:
 	    	return "develop"
 
-The ``virtual.bii`` file —as other biicode configuration files— is written in python language. It is not possible to make any imports, but you will have direct access to the project settings, received as a parameter. In this case a custom setting ``test`` is being used, and we are checking for it's presence inside a python function.
+The ``virtual.bii`` file —as other biicode configuration files— is written in python language. It is not possible to make any imports, but you will have direct access to the project settings, received as a parameter. In this case a custom setting ``test`` is being used, and we are checking for its presence inside a python function.
 
 Compilation rules
 -----------------
