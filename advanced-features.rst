@@ -60,21 +60,27 @@ You can see an example of this kind of files.
 Edit dependencies
 -----------------
 
-If you want to edit a block you depend on, you can open it and move it to your hive. You can do so by executing: ::
+If you want to edit a block you depend on, you can open it and move it to your hive. You can do so by executing:
 
-	bii open BLOCK_NAME
+.. code-block:: bash
+
+	$ bii open BLOCK_NAME
 
 Where BLOCK_NAME is DEP_OWNER/DEP_NAME
 
 Then you can work as if the block was yours and the changes you make will be reflected in your code at build time.
 
-Once you are happy with the changes you can publish your own version of the block: ::
+Once you are happy with the changes you can publish your own version of the block:
 
-	bii publish BLOCK_NAME --branch BRANCH_NAME
+.. code-block:: bash
+
+	$ bii publish BLOCK_NAME --branch BRANCH_NAME
 
 Unless the code is yours you will not be able to publish it to an existing branch, so you will need to specify a BRANCH_NAME.
 
-Then you can close the block to remove it from your src folder: ::
+Then you can close the block to remove it from your src folder:
+
+.. code-block:: bash
 
 	bii close BLOCK_NAME
 
@@ -86,49 +92,49 @@ Merge a branch
 
 Imagine you have a published block and someone just published a bugfix in a new branch and you want to incorporate those changes to the master version of your block.
 
-Merging a branch is very simple: ::
+Merging a branch is very simple:
+
+.. code-block:: bash
 
 	$ bii merge --block BLOCK_NAME --version VERSION_NUMBER
 
-Then you can review changes and publish your new version as usual. ::
+Then you can review changes and publish your new version as usual.
+
+.. code-block:: bash
 
 	$ bii publish BLOCK_NAME
 
-Dependencies configuration
---------------------------
+Manually configuring dependencies
+---------------------------------
 
-There are cases in which biicode can't detect some dependencies. In these cases you can manually configure your dependencies.
+There are some special cases in which biicode can't detect some dependencies. In these cases **you can manually configure your dependencies**.
 
-For this purpose you should create a new folder within your src and inside of this bii folder a file named **dependencies.bii**.
-
-The format of this file is: ::
+For this purpose you should create a new folder within your ``src`` and inside of this bii folder a file named ``dependencies.bii``. This file contains rules matching the following structure: ::
 
 	dependent_file_name [-+=] NULL|[[!]dependency_file ]+
 
-It's a file separated by spaces.
+Depending on specified operator after the ``dependent_file_name``, it will behave differently:
 
-Depending on specified operator after the dependent file name, it will behave differently:
+* With the ``-`` operator all specified dependencies will be deleted from their dependent file.
+* With the ``+`` operator all specified dependencies will be added to their dependent file.
+* With the ``=`` operator all specified dependencies will overwrite existing dependencies.
 
-* With the - operator all specified dependencies will be deleted from their dependent file.
-* With the + operator all specified dependencies will be added to their dependent file.
-* With the = operator all specified dependencies will overwrite existing dependencies.
+If you mark a dependency with a ``!`` symbol you are declaring this file a dependency but it should be excluded from the building process.
 
-If you mark a dependency with a ! symbol you are declaring this file a dependency but it should be excluded from the building process.
+Also, you can declare that a file doesn't depend on nothing using the ``NULL`` keyword.
 
-Also, you can declare that a file doesn't depend on nothing using NULL keyword.
-
-Dependent_file_name could be defined using Unix filename pattern matching.
+The ``dependent_file_name`` may be defined using **Unix filename pattern matching**.
 
 ==========	========================================
 Pattern 	Meaning
 ==========	========================================
-\*			Matches everything
-?			Matches a single character
-[seq]		Matcches any character in seq
-[!seq]		Matches any character not in seq
+``\*``			Matches everything
+``?``			Matches a single character
+``[seq]``		Matches any character in seq
+``[!seq]``		Matches any character not in seq
 ==========	========================================
 
-An example of this file is: ::
+This is an example of a ``dependencies.bii`` file: ::
 
 	test.cpp + example.h !LICENSE
 	*.cpp + !README
@@ -137,27 +143,24 @@ An example of this file is: ::
 	main.cpp - matrix16.h
 	calculator.cpp = solver.h type.h
 
-In this example we're declaring that test.cpp depends on example.h and LICENSE, but LICENSE mustn't be compiled.
-
-Also, we're declaring that all files with a cpp extension depend on the README file but it mustn't be compiled.
-
-Declaring example.h = NULL all example.h dependencies are deleted.
-
-In the forth line we add matrix32.h as a main.cpp dependency.
-
-In the next line we are deleting matrix16.h as a main.cpp dependency.
-
-Finally, we're declaring that solver.h and type.h are calculator.cpp dependencies, ovewriting all existing implicit dependencies.
+* In this example we're declaring that ``test.cpp`` depends on both ``example.h`` and ``LICENSE``. However, ``LICENSE`` must be excluded from the compilation process.
+* Also, we're declaring that all files with a ``.cpp`` extension depend on the ``README`` file but it mustn't be compiled.
+* Declaring ``example.h = NULL`` all ``example.h`` dependencies are deleted.
+* In the fourth line we add ``matrix32.h`` as a ``main.cpp`` dependency.
+* In the next line we are deleting ``matrix16.h`` as a ``main.cpp`` dependency.
+* Finally, we're declaring that ``solver.h`` and ``type.h`` are ``calculator.cpp`` dependencies, ovewriting all existing implicit dependencies.
 
 
 Policies
 --------
 
-Start with a new hive in your Biicode workspace directory: ::
+Start with a new hive in your **biicode workspace** directory:
 
-	$bii new policies
+.. code-block:: bash
 
-Create a main.cpp which includes the block policyadvanced to use hello() method and its owner is tutorial user. It would be like this:
+	$ bii new policies
+
+Create a ``main.cpp`` file which includes the block ``policyadvanced`` to use the ``hello()`` method declared in the ``hello.h`` file. Given that the owner of this block is the ``tutorial`` user we should write the following code:
 
 **main.cpp**
 
@@ -171,26 +174,59 @@ Create a main.cpp which includes the block policyadvanced to use hello() method 
 	   return 1;
 	}
 
-If you check the output after runnig the code ::
+If you check the output after runnig the code:
 
-	$bii cpp:run
+.. code-block:: bash
+
+	$ bii cpp:run
 	...
 	Hello STABLE
 
-Examining the user tutorial/policyadvanced block in Biicode, there are published four versions with different tags:
+Examining the ``tutorial/policyadvanced`` block in Biicode (`available in this location <https://www.biicode.com/tutorial/blocks/tutorial/policyadvanced/branches/master>`_), we find four published versions with different tags:
 
-================	========== 	====================================
-Published index 	Version 	Output method hello() 
-================	========== 	====================================
-3	 				DEV	    	"Hello DEVELOP"
-2	 				ALPHA	    "Hello ALPHA"
-1	 				BETA		"Hello BETA"
-0	 				STABLE		"Hello STABLE"
-================	========== 	====================================
+.. raw:: html
 
-Being index=0 the first version uploaded, each one has a different method hello() depending on its version.
+	<div class="table-responsive"><table border="1" class="docutils">
+	<colgroup>
+	<col width="22%">
+	<col width="22%">
+	<col width="55%">
+	</colgroup>
+	<thead valign="bottom">
+		<tr class="row-odd">
+			<th class="head">Published index</th>
+			<th class="head">Version</th>
+			<th class="head">Output of hello() method</th>
+		</tr>
+	</thead>
+	<tbody valign="top">
+		<tr class="row-even">
+			<td>3</td>
+			<td>DEV</td>
+			<td>“Hello DEVELOP”</td>
+		</tr>
+		<tr class="row-odd">
+			<td>2</td>
+			<td>ALPHA</td>
+			<td>“Hello ALPHA”</td>
+		</tr>
+		<tr class="row-even">
+			<td>1</td>
+			<td>BETA</td>
+			<td>“Hello BETA”</td>
+		</tr>
+		<tr class="row-odd">
+			<td>0</td>
+			<td>STABLE</td>
+			<td>“Hello STABLE”</td>
+		</tr>
+	</tbody>
+	</table>
+	</div>
 
-The reason why your program has executed hello() of STABLE version is as follows. Look at folder  ~/your_bii_workspace/your_hive/bii/ named policies.bii which is a YAML file and has this appearance: ::
+Being **index=0** the first uploaded version, each one has a different ``hello()``method implementation depending on its version.
+
+The reason why your program has executed ``hello()`` of ``STABLE`` version is as follows. Check the contents of the ``policies.bii`` file located inside your ``~/your_bii_workspace/policies/bii/`` folder. This is a simple YAML file with the following appearance: ::
 
 	default:
 	- block: . # Dot . is the pattern for all blocks
@@ -199,7 +235,7 @@ The reason why your program has executed hello() of STABLE version is as follows
 	 #creator of the block, with category STABLE
 	 - [branch.name == "master" and branch.user == block.user, tag==STABLE, 1]
 
-Then, your policy for this hive makes your searches are in master branchs of anyone user block and all the blocks as STABLE versions.
+Then, your policy for this hive makes your searches are in master branchs of anyone user block and all the blocks as ``STABLE`` versions.
 
 Changing your policy tag
 ------------------------
@@ -207,11 +243,13 @@ Changing your policy tag
 Search BETA versions
 ^^^^^^^^^^^^^^^^^^^^
 
-Modify the policies.bii ::
+Modify the ``policies.bii`` file as shown here: ::
 
  - [branch.name == "master" and branch.user == block.user, tag==BETA, 1]
 
-You have just modified your default policy file, then you have to write in console: ::
+You have just modified your default policy file. Now, you only need to update your hive to reflect the changes using the following command:
+
+.. code-block:: bash
 
 	$ bii find --update
 
@@ -227,13 +265,15 @@ You have just modified your default policy file, then you have to write in conso
 	Computing dependencies
 	Saving dependences on disk
 
-Run your code: ::
+Now, you can run your code:
+
+.. code-block:: bash
 
 	$ bii cpp:run
 	...
 	Hello BETA
 
-Like you can see, you are using BETA version!
+As you can see, now you are using the ``BETA`` version of the ``tutorial/policyadvanced`` block!
 
 Advanced tag selection
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -242,9 +282,11 @@ Finally, you could look for by published order with your tags. For example, if y
 
 	- [branch.name == "master" and branch.user == block.user, tag>DEV, 1]
 
-This type will look for any block with any tag published before DEV version block uploaded to Biicode.
+This type will look for any blocks with any tag published before ``DEV`` version block uploaded to biicode.
 
-Update the dependencies again and run the code: ::
+Update the dependencies again and run the code:
+
+.. code-block:: bash
 
 	$ bii find --update
 	...
@@ -252,24 +294,28 @@ Update the dependencies again and run the code: ::
 	...
 	Hello ALPHA
 
-Given that the ALPHA version was published before the DEV one, it is the chosen to resolve your dependency.
+Given that the ``ALPHA`` version was published before the ``DEV`` one, this is the one chosen to resolve your dependency.
 
 Special attention
 ^^^^^^^^^^^^^^^^^
 
-Modify your policies.bii again to get the last version (in this example DEV version) ::
+Modify your ``policies.bii`` file again to get the last version (in this example ``DEV`` version) ::
 
 	- [branch.name == "master" and branch.user == block.user, tag==DEV, 1]
 
-Once more find the dependencies and execute: ::
+Once more find the dependencies and execute your code:
 
-	$bii find --update
+.. code-block:: bash
+
+	$ bii find --update
 	...
-	$bii cpp:run
+	$ bii cpp:run
 	...
 	Hello DEVELOP
 
-However if you try to change the policies to link with an older version (for example, BETA version), you will get this output: ::
+However if you try to change the policies to link with an older version (for example, ``BETA`` version), you will get this output:
+
+.. code-block:: bash
 
 	$ bii find --update
 
@@ -279,7 +325,9 @@ However if you try to change the policies to link with an older version (for exa
 	Computing dependencies
 	Saving dependences on disk
 
-You could get an older version after using an updated one just like that: ::
+You could get an older version after using an updated one just like this:
+
+.. code-block:: bash
 
 	$ bii find --update --downgrade
 
@@ -299,5 +347,4 @@ Changing your policy file for all your new hives
 
 You could be sure to keep a specified policies for all the new hives. It is possible!
 
-In your Biicode workspace, at folder bii, you have another policy file named default_policies.bii. The changes that you make here will be copied to all new hives and not old hives.
-
+In your biicode workspace, inside the ``bii`` folde, you will find another policy file named ``default_policies.bii``. The changes that you make here will be copied to all new hives and not old hives.
