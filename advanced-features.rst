@@ -1,15 +1,21 @@
 Advanced features
 =================
 
+This section describes some advanced functionalities provided by biicode. Using these features, you will able to have a better control of your projects, defining **virtual resources**, defining advanced **compilation rules**, or even taking deeper control of the way your **dependencies** are found and retrieved.
+
 Virtual resources
 -----------------
 
-Imagine you want different code to be compiled or executed depending on whether you are in a production or testing environment, Windows or Linux or compiler version. This is possible with virtual resources.
+Virtual resources are those whose actual implementation depends on the current compilation platform, or any other conditions you may want to specify. These conditions are specified in a special ``virtual.bii`` file, for every block, using simple python code.
 
-So, let's say you have this main.cpp and you have two versions of sphere.h and its implementation under a couple of files called "test" and "development".
+Imagine you want different code to be compiled or executed depending on different conditions, like whether you are in a production or a testing environment, Windows or Linux platforms, or even the compiler version. This is possible making use of **virtual resources**.
+
+So, let's say you have this ``main.cpp`` and two different versions of ``sphere.h`` and its corresponding implementation file ``sphere.cpp``, under two separate folders called ``test`` and ``development``.
 
 .. code-block:: cpp
 	:linenos:
+
+	#include "sphere.h"
 
 	using namespace std;
 	int main() {
@@ -18,31 +24,32 @@ So, let's say you have this main.cpp and you have two versions of sphere.h and i
 	        return 1;
 	}
 
-Then you can write a virtual.bii file in your block's bii folder to select which one is going to be used:
+Note that the ``main.cpp`` file includes the ``sphere.h`` header file, but makes no reference to the actual location of this resource —and the corresponding implementation, ``sphere.cpp``—. In fact, there is no such file as ``sphere.h`` located in the same folder as ``main.cpp``. The actual file to be included in your code is determined by a spectial ``virtual.bii`` configuration file, written in python language. You need to create this file in your block's ``bii`` folder, and write the code that selects the virtual resource to be used in each case. **Everuy rule is implemented as a python function** —you can give it whatever name you want—, **whose docstring contains the list of resurces affected by that particular rule**.
+
+In this example we are defining a function that decides which implementation of the ``sphere.h`` and ``sphere.cpp`` resurces is to be used depending on the presenece or not of the ``test`` key in our project secttings. **The return vale for this function must be the name of the folder containing the valid implementations of the virtual resources** for each condition —in our case, the ``test`` folder, or the ``develop`` folder—.
 
 .. code-block:: python
 	:linenos:
 
 	def func(settings):
+		"""sphere.h sphere.cpp"""
 	    if settings.user.get('test'):
-	    return "test"
+	    	return "test"
 	    else:
-	    return "develop"
+	    	return "develop"
 
-virtual.bii files —as other configuration files— are written in python, so it is not possible to make any imports, but you will have direct access to settings. In this case a custom setting 'test' is being used and we are checking for it's presence.
+The ``virtual.bii`` file —as other biicode configuration files— is written in python language. It is not possible to make any imports, but you will have direct access to the project settings, received as a parameter. In this case a custom setting ``test`` is being used, and we are checking for it's presence inside a python function.
 
 Compilation rules
 -----------------
 
 Sometimes your project need to define some preprocessor variables or maybe you need to link with some dynamic library provided by the system. Biicode gives you the option to define these special compilation needs.
 
-You can define rules file for each executable target. Rules files can be placed anywhere in your src directory with a filename following the next regular expression:
+You can define rules files for each executable target. Rules files can be placed anywhere in your src directory with a filename following the next regular expression:
 
 :regexp:`\*cpp_rules*\.bii`
 
-These files are written in Python, a small subset of it. You can interact with hive settings and target properties.
-
-You can see an example of this kind of files.
+These files are written in Python, a small subset of it. You can interact with hive settings and target properties. This is an example of this kind of files:
 
 .. code-block:: python
 	:linenos:
@@ -128,7 +135,7 @@ The ``dependent_file_name`` may be defined using **Unix filename pattern matchin
 ==========	========================================
 Pattern 	Meaning
 ==========	========================================
-``\*``			Matches everything
+``*``			Matches everything
 ``?``			Matches a single character
 ``[seq]``		Matches any character in seq
 ``[!seq]``		Matches any character not in seq
@@ -182,7 +189,7 @@ If you check the output after runnig the code:
 	...
 	Hello STABLE
 
-Examining the ``tutorial/policyadvanced`` block in Biicode (`available in this location <https://www.biicode.com/tutorial/blocks/tutorial/policyadvanced/branches/master>`_), we find four published versions with different tags:
+Examining the ``tutorial/policyadvanced`` block in biicode (`available in this location <https://www.biicode.com/tutorial/blocks/tutorial/policyadvanced/branches/master>`_), we find four published versions with different tags:
 
 .. raw:: html
 
