@@ -45,4 +45,4 @@ Now, clone the Raspberry Pi repository with linux cross-compilers from github.
 	$ cd /user/local
 	$ sudo git clone https://github.com/raspberrypi/tools.git
 	
-Finally, it only remains to biicode installed. To do this, you can follow the tutorial that appears in the section of installation and setup.
+Finally, it only remains to biicode installed. For a complete description go to: :ref:`Installations and setup <installation>`.

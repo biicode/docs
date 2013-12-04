@@ -1,7 +1,7 @@
 How to configure your biicode workspace
 =======================================
 
-Add the cross compilers to enviroment.bii like shown in the last four lines: ::
+Add the cross compilers to **enviroment.bii** like shown in the last four lines: ::
 
 	cpp:
 	  builders:
@@ -57,6 +57,8 @@ Once you have completed all the coding process, you are ready to make the cross-
 
 Note that the ``bii rpi:build`` command needs to be executed from a folder containing a hive like any other biicode project. After some messages showing information about the compiling process, the binaries will created in your ``bin folder``.
 
+Remember that when generating the binary by cross compilation, you can only run on the Raspberry Pi.
+
 Send your binaries
 ------------------
 
@@ -74,7 +76,7 @@ To send your binary to Raspberry Pi, you just execute the ``rpi:send`` command a
 
 Finally, the Raspberry Pi user's password will be asked. If you have not changed your password, for raspbian is **raspberry**.
 
-If you want to send files to another Raspberry Pi or specify a different directory that appears in your settings.bii, you have the option of passing these parameters to the bii:send. These parameters are not obligatory, can be passed only a new directory and use the other parameters of settings.bii.
+If you want to send files to another Raspberry Pi or specify a different directory that appears in your **settings.bii**, you have the option of passing these parameters to the ``bii:send``. These parameters are not obligatory, can be passed only a new directory and use the other parameters of **settings.bii**.
 
 .. code-block:: bash
 

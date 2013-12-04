@@ -32,7 +32,7 @@ We recommend  to use Raspbian image which based on Debian.
 
 To burn a Raspbian image, it is recommended to use a class 10 SD card with minimum 4 GB storage.
 
-Before starting the process, first download the Raspbian. The image comes as a zip file. Unzip the file to extract the Raspbian image file.
+Before starting the process, first download Raspbian. The image comes as a zip file. Unzip the file to extract the Raspbian image file.
 
 Burn Raspbian Image to an SD Card
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -134,3 +134,5 @@ Finally, do not forget to activate SSH service in Raspberry Pi by choosing the S
 
 Once you are done with configuration, finish raspi-config, and reboot Raspberry Pi.
 The following screenshot shows the Raspbian GUI desktop with default login (user name: "pi", and password: "raspberry").
+
+.. image:: ../_static/img/rpi/rpi_desktop.jpg
