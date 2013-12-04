@@ -87,20 +87,9 @@ You can now import your project to Eclipse. The first step is to import the proj
 
 If you want to add any file, just click right mouse button on the folder on your block and create a new file
 
-To build with biicode you need to set up build configuration in eclipse:
+Note: If you add new dependencies to your project you'll need to manually invoke "bii find"
 
-#. Right click on your_blockname@build.
-#. Properties > Builders > New > Program > Ok
-#. Set cpp_configure as name
-#. In Location browse for bii executable in your filesystem (/usr/bin/bii for unix systems)
-#. In working directory browse workspace and select your_blockname@build
-#. Add cpp:configure in arguments box
-#. Click OK
-#. Click Up two times to move cpp_configure to the top of the list
-#. Click Ok
-
-Now you can build your project (Project > Build Project)
-Note: If you add new dependencies to your project you'll need to manually invoke "bii find" or add it to the build config in the same way we did with "bii cpp:configure"
+You can build your application in Project > Build project if you don't have automated builds set.
 
 To run your application from eclipse you need to change run configuration.
 
