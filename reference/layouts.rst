@@ -28,9 +28,9 @@ Workspace layout is as follows:::
 As you see there is a bii folder containing a bunch of files and all your hives. We will explain later hive directory structure so let's focus on files within bii folder.
 
 * **.local.db**: is the local cache, it keeps published blocks you have read from server
-* **default_filefilter**: holds default `filefilter<http://docs.biicode.com/en/latest/reference/filefilter.html>` configuration, it is copied to all hives and can be edited globaly or in an individual hive
-* **default_settings**: holds default `settings<http://docs.biicode.com/en/latest/reference/settings.html>` configuration, hives use that information and you can override it in every hive
-* **default_policies**: holds default `policies<http://docs.biicode.com/en/latest/reference/policies.html>` configuration, it is copied to all hives and can be edited globaly or in an individual hive
+* **default_filefilter**: holds default `filefilter <http://docs.biicode.com/en/latest/reference/filefilter.html>`_ configuration, it is copied to all hives and can be edited globaly or in an individual hive
+* **default_settings**: holds default `settings <http://docs.biicode.com/en/latest/reference/settings.html>`_ configuration, hives use that information and you can override it in every hive
+* **default_policies**: holds default `policies <http://docs.biicode.com/en/latest/reference/policies.html>`_ configuration, it is copied to all hives and can be edited globaly or in an individual hive
 * **environment.bii**: Holds information about your system and tools such as your operating system and tools. You can edit a path if the tool is not in your $PATH
 
 Hive layout

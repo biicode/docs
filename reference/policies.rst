@@ -1,5 +1,5 @@
 
-.. _filefilter:
+.. _policies:
 
 Policies
 ---------------
