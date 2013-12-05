@@ -1,10 +1,10 @@
 
 .. _filefilter:
 
-The File Filter
+Filefilter
 ---------------
 
-The file below is the **File Filter**. The information included in this file determines the types of files that you want to include in your Hive. ::
+The file below is the **Filefilter**. The information included in this file determines the types of files that you want to include in your Hive. ::
 
 	# You can edit this file to add accepted and ignored file extensions
 	# Configuration is up to down hierarchical so first rule matched is the one applied.
