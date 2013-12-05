@@ -107,7 +107,7 @@ if you write ``$ bii cpp:run``, you will see the following message: ::
 	[!] Use ECLIPSE to build your project
 	[!] Use ECLIPSE to run your project
 
-Note: when you define other IDE type, you have to compile and execute with this new one as indicated in the last two lines of the output console.
+Note: when you define another IDE type, you have to compile and execute with this new one as indicated in the last two lines of the output console.
 
 Finally, you are ready to open your project with Eclipse. The first step is to import the project:
 
@@ -116,7 +116,7 @@ Finally, you are ready to open your project with Eclipse. The first step is to i
 #. Select root directory:  find the build folder of your hive and click accept.
 #. Into the projects box, you should see a project already selected. Click finish
 
-Now you have your project in eclipse workspace with a following folder tree like this:
+Now you should have your project in an eclipse workspace with the following folder tree:
 
 .. image:: _static/img/eclipse_tree.png
 
@@ -161,13 +161,13 @@ The settings.bii is a YAML file which contains: ::
 	  compiler: {family: MINGW}
 	os: {arch: 32bit, family: Windows, subfamily: '7', version: 6.1.7601}
 
-If you want change your IDE to build your project with Visual Studio you should add the following command line and take care with the spaces you write because it must be written perfect ( builder and compiler definitions lines are not needed): ::
+If you want change your IDE to build your project with Visual Studio you should add the following command line. Copy the line exactly as it appears on screen (same indentation and blank spaces). Note that builder and compiler definition lines are not requiered any more.: ::
 
 	cpp:
 	  ide: {family: VISUAL, version: 10.0}
 	os: {arch: 32bit, family: Windows, subfamily: '7', version: 6.1.7601}
 
-Now, copy the code from your hello word tutorial into the block folder. You just choose Visual Studio as IDE with the version 10.0, i.e Visual Studio 2010. Now, if you configure the project with these settings, the output in the console would be: ::
+Now, copy the code from your hello word tutorial into the block folder. You have just chosen Visual Studio 10.0 version as IDE, i.e Visual Studio 2010. If you now configure the project with these settings, the output in the console would be: ::
 
 	$bii cpp:configure
 
@@ -198,9 +198,9 @@ If you write $ bii cpp:run, you will see the following message: ::
 	[!] Use VISUAL to build your project
 	[!] Use VISUAL to run your project
 
-Note: when you define other IDE type, you have to compile and execute with this new one as indicated in the last two lines of the output console.
+Note: when you define any other IDE type, you have to compile and execute from the new IDE, as indicated in the last two lines of the output console.
  
-Finally, you are ready to open your project with Visual Studio. Just run the .sln file inside the build folder of your hive and will open a project with the following folder structure. Your code is located in the third folder:
+Finally, you are now ready to open your project with Visual Studio. Just double-click on the .sln file inside the build folder of your hive and a VS project will open with the folder structure that appears below. Your source code is located in the third folder:
 
 .. image:: _static/img/visual_studio_tree.jpg
 

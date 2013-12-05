@@ -21,13 +21,13 @@ policies.bii have this format as self-documented:::
 
 	default:
 	- block: .  # Dot . is the pattern for all blocks
-  	rules:
-  	#First rule is accept with priority 1 all 'master' branches of the original
-  	#creator of the block, with category STABLE
-  	- [branch.name == "master" and branch.user == block.user, tag==STABLE, 1]
-  	#	Examples:
-  	# To accept with priority 1 all 'master' branches of the original creator of
-  	# the block with category STABLE, or with any category for my 'master' blocks
+	rules:
+	#First rule is accept with priority 1 all 'master' branches of the original
+	#creator of the block, with category STABLE
+	- [branch.name == "master" and branch.user == block.user, tag==STABLE, 1]
+	#	Examples:
+	# To accept with priority 1 all 'master' branches of the original creator of
+	# the block with category STABLE, or with any category for my 'master' blocks
 	# - [branch.name == "master" and branch.user == block.user, tag==STABLE or branch.user == YOUR_USERNAME, 1]
 
 Notes:
