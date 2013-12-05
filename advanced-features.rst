@@ -3,6 +3,16 @@ Advanced features
 
 This section describes some advanced functionalities provided by biicode. Using these features, you will able to have a better control of your projects, defining **virtual resources**, defining advanced **compilation rules**, or even taking deeper control of the way your **dependencies** are found and retrieved.
 
+
+The settings file
+-----------------
+
+Every hive contains a special file which allows yo to define some custom settings for your project. This file is located in the ``bii`` folder of your hive, and its name is ``settings.bii``.
+
+The biicode client generates this file for you when you create a new hive. Initially, it contains only information regarding your platform: architecture, operating system, and version. When you compile your project som additional information is included regarding the builder, compiler and configurer to be used.
+
+You can also specify your own settings for that particular project. This information will be used, for instance, for defining the virtual resources that will be explained in a few paragraphs.
+
 Virtual resources
 -----------------
 
@@ -19,8 +29,8 @@ So, let's say you have this ``main.cpp`` and two different versions of ``sphere.
 
 	using namespace std;
 	int main() {
-	    Sphere s(2.0f);
-	    cout << "Volume: " << s.volume() << endl;
+		Sphere s(2.0f);
+		cout << "Volume: " << s.volume() << endl;
 		return 1;
 	}
 
@@ -33,10 +43,10 @@ In this example we are defining a function that decides which implementation of 
 
 	def func(settings):
 		"""sphere.h sphere.cpp"""
-	    if settings.user.get('test'):
-	    	return "test"
-	    else:
-	    	return "develop"
+		if settings.user.get('test'):
+			return "test"
+		else:
+			return "develop"
 
 The ``virtual.bii`` file —as other biicode configuration files— is written in python language. It is not possible to make any imports, but you will have direct access to the project settings, received as a parameter. In this case a custom setting ``test`` is being used, and we are checking for its presence inside a python function.
 
