@@ -21,10 +21,10 @@ So, let's say you have this ``main.cpp`` and two different versions of ``sphere.
 	int main() {
 	    Sphere s(2.0f);
 	    cout << "Volume: " << s.volume() << endl;
-	        return 1;
+		return 1;
 	}
 
-Note that the ``main.cpp`` file includes the ``sphere.h`` header file, but makes no reference to the actual location of this resource —and the corresponding implementation, ``sphere.cpp``—. In fact, there is no such file as ``sphere.h`` located in the same folder as ``main.cpp``. The actual file to be included in your code is determined by a spectial ``virtual.bii`` configuration file, written in python language. You need to create this file in your block's ``bii`` folder, and write the code that selects the virtual resource to be used in each case. **Everuy rule is implemented as a python function** —you can give it whatever name you want—, **whose docstring contains the list of resurces affected by that particular rule**.
+Note that the ``main.cpp`` file includes the ``sphere.h`` header file, but makes no reference to the actual location of this resource —and the corresponding implementation, ``sphere.cpp``—. In fact, there is no such file as ``sphere.h`` located in the same folder as ``main.cpp``. The actual file to be included in your code is determined by a spectial ``virtual.bii`` configuration file, written in python language. You need to create this file in your block's ``bii`` folder, and write the code that selects the virtual resource to be used in each case. **Every rule is implemented as a python function** —you can give it whatever name you want—, **whose docstring contains the list of resurces affected by that particular rule**.
 
 In this example we are defining a function that decides which implementation of the ``sphere.h`` and ``sphere.cpp`` resurces is to be used depending on the presenece or not of the ``test`` key in our project secttings. **The return vale for this function must be the name of the folder containing the valid implementations of the virtual resources** for each condition —in our case, the ``test`` folder, or the ``develop`` folder—.
 
