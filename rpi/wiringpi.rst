@@ -27,6 +27,8 @@ The WiringPi devLib
 
 The devLib is a set of library routines implemented using **WiringPi** to give you easy access to some popular peripherals. Devices supported include character LCD displays (based on the Hitachi HD44780U chips), and graphical ones - e.g. the common 128x64 pixel displays with the generic 12864H driver chip. The DS1302 RTC clock chip, sensors based on the Maxdetect chips (e.g. RHT003) the Gertboard and PiFace interface boards and so on.
 
+.. _rpigpio:
+
 Raspberry Pi GPIO Pin Layout
 ----------------------------
 
@@ -81,3 +83,12 @@ Raspberry Pi GPIO Pin Layout
 +--------------+-----------------+--------+----+----+--------+----------+--------------+
 |                                | 0v     | 7  | 8  | 0v     |                         |
 +--------------+-----------------+--------+----+----+--------+----------+--------------+
+
+WiringPi tutorials
+------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   tutorials/blink
+   tutorials/servo
