@@ -1,32 +1,14 @@
 Servos with WiringPi
 ===================
 
+softServo.h
+-----------
+
 To control servos, **softServo** and **WiringPi** has two basic functions:
 
 **int softServoSetup (int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)**
 
 With the first function we pass the number of pins you want to use as controllers. For more information about the GPIO go to: :ref:`Raspberry Pi GPIO Pin Layout <rpigpio>`.
-
-.. code-block:: cpp
-	:linenos:
-
-	int softServoSetup (int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)
-	{
-	  int servo ;
-
-	  if (p0 != -1) { pinMode (p0, OUTPUT) ; digitalWrite (p0, LOW) ; }
-	  ...
-	  if (p7 != -1) { pinMode (p7, OUTPUT) ; digitalWrite (p7, LOW) ; }
-
-	  pinMap [0] = p0 ;
-	  ...
-	  pinMap [7] = p7 ;
-
-	  for (servo = 0 ; servo < MAX_SERVOS ; ++servo)
-		pulseWidth [servo] = 1500 ;		// Mid point
-	  
-	  return piThreadCreate (softServoThread) ;
-	}
 
 **softServoWrite (int servoPin, int value)**
 
@@ -34,25 +16,8 @@ With the second function we assign to a pin configured previously the value that
 
 This function adds 1000 to the value that is passed as a parameter, so the final range is from 750 to 2.250 and the average stay in 1500, which is the default value that the library gives servo 90 degrees.
 
-.. code-block:: cpp
-	:linenos:
-
-	void softServoWrite (int servoPin, int value)
-	{
-	  int servo ;
-
-	  servoPin &= 63 ;
-
-	  /**/ if (value < -250)
-		value = -250 ;
-	  else if (value > 1250)
-		value = 1250 ;
-
-	  for (servo = 0 ; servo < MAX_SERVOS ; ++servo)
-		if (pinMap [servo] == servoPin)
-		  pulseWidth [servo] = value + 1000 ; // uS
-	}
-**servo.c**
+Example: servo.c
+----------------
 
 .. code-block:: cpp
 	:linenos:

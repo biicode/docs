@@ -5,6 +5,15 @@ Author: **Gordon Henderson**
 
 `WiringPi home page <http://wiringpi.com/>`_
 
+WiringPi tutorials
+------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   tutorials/blink
+   tutorials/servo
+
 The WiringPi library
 --------------------
 
@@ -84,11 +93,4 @@ Raspberry Pi GPIO Pin Layout
 |                                | 0v     | 7  | 8  | 0v     |                         |
 +--------------+-----------------+--------+----+----+--------+----------+--------------+
 
-WiringPi tutorials
-------------------
 
-.. toctree::
-   :maxdepth: 1
-
-   tutorials/blink
-   tutorials/servo

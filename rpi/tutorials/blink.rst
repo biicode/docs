@@ -1,7 +1,8 @@
 Blink with WiringPi
 ===================
 
-**blink.c**
+Example: blink.c
+----------------
 
 .. code-block:: cpp
 	:linenos:
