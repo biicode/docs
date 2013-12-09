@@ -16,7 +16,7 @@ Workspace layout is as follows:::
 |-- myworkspace
 |    |-- bii
 |    |    |-- .local.db
-|    |    |-- default_filefilter.bii 
+|    |    |-- default_filefilter.bii
 |    |    |-- default_settings.bii
 |    |    |-- default_policies.bii
 |    |    +-- environment.bii
@@ -41,7 +41,7 @@ Hive layout is as follows:::
 |-- my_hive
 |    |-- bii
 |    |    |-- .hive.db
-|    |    |-- filefilter.bii 
+|    |    |-- filefilter.bii
 |    |    |-- settings.bii
 |    |    |-- policies.bii
 |    |    |-- dependencies.bii
@@ -62,7 +62,7 @@ Hive layout is as follows:::
 |         +-- other_user_name
 |         |     +-- block_im_editing
 |         |   	|       |-- message.c
-|         |     |       |-- message.h		
+|         |     |       |-- message.h
 
 As you see, the hive contains a collections of folders, we will go through each of them:
 
@@ -75,4 +75,3 @@ As you see, the hive contains a collections of folders, we will go through each 
 * **build**: Contains build files such as make scripts and compiled objects. You can safely delete it's contents
 * **dep**: Contains your hive dependencies source code, but only the files you're using.
 * **src**: Contains the code you are working on, code is listed under usernames folders as you can be editing other person's code. Under each username folder you can find all the blocks you are editing at the moment. Inside your src folder you can also have a `rules file <http://docs.biicode.com/en/latest/advanced-features.html?highlight=cpp_rules#compilation-rules>`_ to configure your build.
-
