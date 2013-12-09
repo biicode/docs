@@ -3,7 +3,7 @@
 Installation and setup
 ======================
 
-In this section you will learn how to get the biicode client and install it on your system.
+In this section you will learn how to download the biicode client and install it on your system.
 
 .. contents:: 
 	:local:

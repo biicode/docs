@@ -161,7 +161,7 @@ The settings.bii is a YAML file which contains: ::
 	  compiler: {family: MINGW}
 	os: {arch: 32bit, family: Windows, subfamily: '7', version: 6.1.7601}
 
-If you want change your IDE to build your project with Visual Studio you should add the following command line. Copy the line exactly as it appears on screen (same indentation and blank spaces). Note that builder and compiler definition lines are not requiered any more.: ::
+If you want change your IDE to build your project with Visual Studio you should add the following command line. Copy the line exactly as it appears on screen (same indentation and blank spaces). Note that builder and compiler definition lines are not required any more.: ::
 
 	cpp:
 	  ide: {family: VISUAL, version: 10.0}
