@@ -53,7 +53,7 @@ Hive layout is as follows:::
 |         |-- CMakeLists.txt
 |    	  +-- my_user_name
 |         |     +-- my_block
-|		  |     |       |-- cpp_rules.bii
+|         |     |       |-- cpp_rules.bii
 |         |   	|       |-- hello.c
 |         |     |       |-- hello.h
 |         |     +-- my_other_block
