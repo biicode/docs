@@ -1,5 +1,0 @@
-
-.. _cpprules:
-
-Cpp Rules
----------

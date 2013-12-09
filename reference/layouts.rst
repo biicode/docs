@@ -43,7 +43,9 @@ Hive layout is as follows:::
 |    |    |-- .hive.db
 |    |    |-- filefilter.bii
 |    |    |-- settings.bii
-|    |    +-- policies.bii
+|    |    |-- policies.bii
+|    |    |-- dependencies.bii
+|    |    |-- virtual.bii
 |    +-- bin
 |    +-- build
 |    +-- dep
@@ -51,6 +53,7 @@ Hive layout is as follows:::
 |         |-- CMakeLists.txt
 |    	  +-- my_user_name
 |         |     +-- my_block
+|         |     |       |-- cpp_rules.bii
 |         |   	|       |-- hello.c
 |         |     |       |-- hello.h
 |         |     +-- my_other_block
@@ -63,8 +66,12 @@ Hive layout is as follows:::
 
 As you see, the hive contains a collections of folders, we will go through each of them:
 
-* **bii**: I has a similar structure to workspace bii folder described before in :ref:`workspace_bii`. It also contains a .hive.db that contains all your hive information
+* **bii**: I has a similar structure to workspace bii folder described before in :ref:`workspace_bii`. It also contains some extra files:
+
+	* **.hive.db**: It contains all your hive information
+	* **dependencies.bii**: Optional file. Allows you to set extra dependencies for yor project such as licese files. You can read about it `here <http://docs.biicode.com/en/latest/advanced-features.html?highlight=cpp_rules#edit-dependencies>`_
+	* **virtual.bii**: Optional file. Used to configure `virtual resources <http://docs.biicode.com/en/latest/advanced-features.html?highlight=cpp_rules#virtual-resources>`_
 * **bin**: When you build your project, if there are any generated executables, they will be placed here. You can safely delete it's contents
 * **build**: Contains build files such as make scripts and compiled objects. You can safely delete it's contents
-* **dep**: Contains your hive dependencies
-* **src**: Contains the code you are working on, code is listed under usernames folders as you can be editing other person's code. Under each username folder you can find all the blocks you are editing at the moment.
+* **dep**: Contains your hive dependencies source code, but only the files you're using.
+* **src**: Contains the code you are working on, code is listed under usernames folders as you can be editing other person's code. Under each username folder you can find all the blocks you are editing at the moment. Inside your src folder you can also have a `rules file <http://docs.biicode.com/en/latest/advanced-features.html?highlight=cpp_rules#compilation-rules>`_ to configure your build.

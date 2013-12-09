@@ -74,6 +74,10 @@ These files are written in Python, a small subset of it. You can interact with h
            target.add_library("${OPENGL_LIBRARIES}")
 
 
+Once you've written your file you should add it to your :ref:`dependencies.bii <dependencies-bii>`
+
+.. _dependencies-bii:
+
 Edit dependencies
 -----------------
 
