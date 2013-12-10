@@ -285,18 +285,12 @@ Now you have your project in eclipse workspace with a following folder tree like
 
 For this tutorial our user name is tutorial and our block name is codeblocks.
 
-If you want to add any file, just click on `File > New > Empty` file and create a new file in the `src/user/block` folder
+If you want to add any file, just click on `File > New > Empty file` and create a new file in the `src/user/block` folder.
 
-You only have to change the run configuration, for this:
 
-#. Right click on your_blockname@build.
-#. Run As > Run Configurations
-#. New launch configuration
-#. In the Application C/C++ box insert .../blockname/bin/username_blockname_main.exe
-#. Click on Arguments tab.
-#. In Working directory section clieck on File System
-#. Select .../blockname/bin folder
-#. Click on Run button.
+To runs your project you need to select the main file on build target:
 
-And this is all you need to work as usual in eclipse.
+.. image:: _static/img/codeblocks_build_target.png
+
+And this is all you need to work as usual in CodeBlocks.
 

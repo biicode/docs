@@ -1,5 +1,7 @@
-Blink with WiringPi
-===================
+Blink
+=====
+
+With this example we will have a LED flash every half second on pin 0 (:ref:`GPIO <rpigpio>` 17).
 
 Example: blink.c
 ----------------

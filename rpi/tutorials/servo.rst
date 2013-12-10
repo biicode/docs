@@ -1,5 +1,5 @@
-Servos with WiringPi
-===================
+Servos
+======
 
 softServo.h
 -----------
@@ -18,6 +18,8 @@ This function adds 1000 to the value that is passed as a parameter, so the final
 
 Example: servo.c
 ----------------
+
+With this example we put a servo in the center position using the pin 0 (:ref:`GPIO <rpigpio>` 17) as a control signal.
 
 .. code-block:: cpp
 	:linenos:
@@ -39,7 +41,7 @@ Example: servo.c
 
 	  softServoSetup (0, 1, 2, 3, 4, 5, 6, 7) ;
 
-	  softServoWrite (0,  0) ;
+	  softServoWrite (0,  500) ;
 	/*
 	  softServoWrite (1, 1000) ;
 	  softServoWrite (2, 1100) ;

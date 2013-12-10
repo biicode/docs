@@ -1,6 +1,9 @@
 How to configure your biicode workspace
 =======================================
 
+Add the cross compilers to biicode
+----------------------------------
+
 Add the cross compilers to **enviroment.bii** like shown in the last four lines: ::
 
 	cpp:
@@ -16,7 +19,7 @@ Add the cross compilers to **enviroment.bii** like shown in the last four lines:
           tool: {family: GNU, subfamily: CPP, arch: ARM}
 	  
 Create a new hive and code!
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Creating a new hive with the ``bii new`` command.
 
