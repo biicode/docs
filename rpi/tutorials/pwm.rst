@@ -11,7 +11,7 @@ Example: pwm.c
 .. code-block:: cpp
 	:linenos:
 
-	#include <wiringPi.h>
+	#include <drogon/wiringpi/wiringpi/wiringpi.h>
 
 	#include <stdio.h>
 	#include <stdlib.h>
