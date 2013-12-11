@@ -28,8 +28,8 @@ With this example we put a servo in the center position using the pin 0 (:ref:`G
 	#include <errno.h>
 	#include <string.h>
 
-	#include <wiringPi.h>
-	#include <softServo.h>
+	#include <drogon/wiringpi/wiringpi/wiringpi.h>
+	#include <drogon/wiringpi/wiringpi/softservo.h>
 
 	int main ()
 	{
