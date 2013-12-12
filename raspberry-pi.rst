@@ -10,4 +10,5 @@ The Raspberry Pi is a credit-card sized computer that plugs into your TV and a k
    rpi/linux
    rpi/biicodews
    rpi/wiringpi
+   rpi/faqs
 

@@ -6,6 +6,11 @@ Following our philosophy of reuse, tutorial about how to burn SD cards and guide
 * `How to write Raspberry Pi image to SD card <http://xmodulo.com/2013/11/write-raspberry-pi-image-sd-card.html>`_
 * `How to configure Raspberry Pi for the first time <http://xmodulo.com/2013/11/configure-raspberry-pi-first-time.html>`_
 
+**Summary**
+
+.. contents:: 
+	:local:
+
 Download and install the Linux image
 ------------------------------------
 
