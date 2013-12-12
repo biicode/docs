@@ -1,7 +1,6 @@
 How to configure your linux for cross compiling 
 ===============================================
 
-
 To use the cross compilers that are in the raspberry pi githab repository need to have the Linux OS installed or a virtual machine that contains it.
 We recommend using ubuntu,but any debian distribution should work perfectly.
 Now let's look all the tools we need to install to use the Raspberry Pi with biicode.
