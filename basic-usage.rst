@@ -97,7 +97,7 @@ To run your application from eclipse you need to change run configuration.
 #. New launch configuration
 #. In the Application C/C++ box insert .../blockname/bin/username_blockname_main.exe
 #. Click on Arguments tab.
-#. In Working directory section clieck on File System
+#. In Working directory section click on File System
 #. Select .../blockname/bin folder
 #. Click on Run button.
 
