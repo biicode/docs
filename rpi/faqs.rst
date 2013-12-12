@@ -1,8 +1,7 @@
-FAQs
-====
+Raspberry PI FAQs
+=================
 
-
-This sections sumarizes some Frequently Asked Questions that our users hace posed up to this moment. If your particular inquiry is not in this list, please, don't hesitate to contact us so we can help you as soon as possible.
+This sections sumarizes some Frequently Asked Questions that our users have posed up to this moment. If your particular inquiry is not in this list, please, don't hesitate to contact us so we can help you as soon as possible.
 
 .. contents:: 
 	:local:
@@ -10,9 +9,15 @@ This sections sumarizes some Frequently Asked Questions that our users hace pose
 General
 -------
 
-Volume control
-^^^^^^^^^^^^^^
-You can force the RPi to use a specific interface using the command amixer cset numid=3 N where the N parameter means the following: 0=auto, 1=analog, 2=hdmi.  Therefore, to force the Raspberry Pi to use the analog output:
+Output selection and volume control
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**You can force the RPi to use a specific interface** using the command ``amixer cset numid=3 N``, where the ``N`` parameter can take the following values:
+
+* ``0`` for **auto** selection
+* ``1`` for **analog** output
+* ``2`` for **hdmi** output
+
+Therefore, to force the Raspberry Pi to use the analog output, you can use the following command:
 
 .. code-block:: bash
 
