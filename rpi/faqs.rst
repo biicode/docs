@@ -10,8 +10,8 @@ This sections sumarizes some Frequently Asked Questions that our users hace pose
 General
 -------
 
-Pi volume control
-^^^^^^^^^^^^^^^^^
+Volume control
+^^^^^^^^^^^^^^
 You can force the RPi to use a specific interface using the command amixer cset numid=3 N where the N parameter means the following: 0=auto, 1=analog, 2=hdmi.  Therefore, to force the Raspberry Pi to use the analog output:
 
 .. code-block:: bash
