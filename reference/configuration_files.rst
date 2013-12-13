@@ -5,4 +5,4 @@ Configuration Files
    :maxdepth: 1
    :glob:
 
-   configuration_file/*
+   configuration_files/*
