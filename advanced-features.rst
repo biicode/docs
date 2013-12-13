@@ -57,7 +57,7 @@ Compilation rules
 
 Sometimes your project need to define some preprocessor variables or maybe you need to link with some dynamic library provided by the system. Biicode gives you the option to define these special compilation needs.
 
-You can define rules files for each executable target. Rules files can be placed anywhere in your src directory with a filename following the next regular expression:
+You can define rules files for each executable target. Rules files can be placed anywhere in your blocks directory with a filename following the next regular expression:
 
 :regexp:`\*cpp_rules*\.bii`
 
@@ -101,7 +101,7 @@ Once you are happy with the changes you can publish your own version of the bloc
 
 Unless the code is yours you will not be able to publish it to an existing branch, so you will need to specify a BRANCH_NAME.
 
-Then you can close the block to remove it from your src folder:
+Then you can close the block to remove it from your blocks folder:
 
 .. code-block:: bash
 
