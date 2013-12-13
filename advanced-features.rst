@@ -75,6 +75,7 @@ These files are written in Python, a small subset of it. You can interact with h
            target.add_package("OpenGL",[])
            target.add_library("${OPENGL_LIBRARIES}")
 
+.. _dependencies_edition:
 
 Once you've written your file you should add it to your :ref:`dependencies.bii <dependencies-bii>`
 
