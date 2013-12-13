@@ -39,6 +39,7 @@ If you want to find any possible matching compatible version (not just updates o
 	$ bii find --modify
 
 
+.. _use_ide:
 
 Using an IDE
 -------------
@@ -76,7 +77,7 @@ includes the following lines: ::
 
 You can see Visual options in Visual section below.
 
-<<<<<<< HEAD
+
 Eclipse
 ^^^^^^^
 You can now import your project to Eclipse. The first step is to import the project:
@@ -140,7 +141,7 @@ Now, copy the code from your hello word tutorial into the block folder. You have
 
 	...
 
-	invoking cmake  -G "Visual Studio 10" -Wno-dev ../src
+	invoking cmake  -G "Visual Studio 10" -Wno-dev ../blocks
 	-- The C compiler identification is MSVC 16.0.40219.1
 	-- The CXX compiler identification is MSVC 16.0.40219.1
 	-- Check for working C compiler using: Visual Studio 10
@@ -157,7 +158,7 @@ Now, copy the code from your hello word tutorial into the block folder. You have
 
 If you write $ bii cpp:run, you will see the following message: ::
 
-	invoking cmake  -G "Visual Studio 10" -Wno-dev ../src
+	invoking cmake  -G "Visual Studio 10" -Wno-dev ../blocks
 	-- Configuring done
 	-- Generating done
 	-- Build files have been written to: [hive_build_folder]
@@ -208,7 +209,7 @@ Now, copy the code from your hello word tutorial into the block folder and write
 
 	...
 
-	invoking cmake -D CMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -Wno-dev ../src
+	invoking cmake -D CMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -Wno-dev ../blocks
 	-- The C compiler identification is GNU 4.6.2
 	-- The CXX compiler identification is GNU 4.6.2
 	-- Could not determine Eclipse version, assuming at least 3.6 (Helios). Adjust CMAKE_ECLIPSE_VERSION if this is wrong.
@@ -226,7 +227,7 @@ Now, copy the code from your hello word tutorial into the block folder and write
 
 if you write ``$ bii cpp:run``, you will see the following message: ::
 
-	invoking cmake -D CMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -Wno-dev ../src
+	invoking cmake -D CMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -Wno-dev ../blocks
 	-- Could not determine Eclipse version, assuming at least 3.6 (Helios). Adjust CMAKE_ECLIPSE_VERSION if this is wrong.
 	-- Configuring done
 	-- Generating done
@@ -250,7 +251,7 @@ Now you have your project in eclipse workspace with a following folder tree like
 
 For this tutorial our user name is tutorial and our block name is codeblocks.
 
-If you want to add any file, just click on `File > New > Empty file` and create a new file in the `src/user/block` folder.
+If you want to add any file, just click on `File > New > Empty file` and create a new file in the `blocks/user/block` folder.
 
 
 To runs your project you need to select the main file on build target:

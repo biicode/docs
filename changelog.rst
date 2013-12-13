@@ -1,5 +1,13 @@
 Changelog
 =========
+v. 0.3
+--------------------
+*(16-dic-13)*
+
+* Improved Eclipse support. You can read about it :ref:`here <use_ide>`
+* Improved Raspberry Pi support. You can read about it :ref:`here <raspberry_pi>`
+* Changed hive structure. You can read about new layout :ref:`here <hive_layout>`
+
 
 v. 0.2.3  
 --------------------
@@ -14,7 +22,6 @@ v. 0.2.3
 
 v. 0.1.11
 ---------
-
 *(28-Oct-13)*
 
 * Fixed bug in Eclipse Cmake generated project with empty targets

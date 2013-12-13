@@ -2,7 +2,9 @@ Reference
 ==============
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
-   reference/*
+   reference/layouts
+   reference/Configuration Files/*
+   
