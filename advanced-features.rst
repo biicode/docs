@@ -11,7 +11,8 @@ Every hive contains a special file which allows yo to define some custom setting
 
 The biicode client generates this file for you when you create a new hive. Initially, it contains only information regarding your platform: architecture, operating system, and version. When you compile your project som additional information is included regarding the builder, compiler and configurer to be used.
 
-You can also specify your own settings for that particular project. This information will be used, for instance, for defining the virtual resources that will be explained in a few paragraphs.
+You can also specify your own settings for that particular project. This information will be used, for instance, for defining the virtual resources that will be explained in a few paragraphs. You can read more about :ref:`settings.bii <settings_bii>` :ref:`here <settings_bii>`
+
 
 Virtual resources
 -----------------
@@ -52,6 +53,7 @@ The ``virtual.bii`` file —as other biicode configuration files— is written i
 
 Compilation rules
 -----------------
+.. _compilation_rules:
 
 Sometimes your project need to define some preprocessor variables or maybe you need to link with some dynamic library provided by the system. Biicode gives you the option to define these special compilation needs.
 
@@ -76,7 +78,6 @@ These files are written in Python, a small subset of it. You can interact with h
 
 Once you've written your file you should add it to your :ref:`dependencies.bii <dependencies-bii>`
 
-.. _dependencies-bii:
 
 Edit dependencies
 -----------------
@@ -130,46 +131,7 @@ Manually configuring dependencies
 
 There are some special cases in which biicode can't detect some dependencies. In these cases **you can manually configure your dependencies**.
 
-For this purpose you should create a new folder within your ``src`` and inside of this bii folder a file named ``dependencies.bii``. This file contains rules matching the following structure: ::
-
-	dependent_file_name [-+=] NULL|[[!]dependency_file ]+
-
-Depending on specified operator after the ``dependent_file_name``, it will behave differently:
-
-* With the ``-`` operator all specified dependencies will be deleted from their dependent file.
-* With the ``+`` operator all specified dependencies will be added to their dependent file.
-* With the ``=`` operator all specified dependencies will overwrite existing dependencies.
-
-If you mark a dependency with a ``!`` symbol you are declaring this file a dependency but it should be excluded from the building process.
-
-Also, you can declare that a file doesn't depend on nothing using the ``NULL`` keyword.
-
-The ``dependent_file_name`` may be defined using **Unix filename pattern matching**.
-
-==========	========================================
-Pattern 	Meaning
-==========	========================================
-``*``			Matches everything
-``?``			Matches a single character
-``[seq]``		Matches any character in seq
-``[!seq]``		Matches any character not in seq
-==========	========================================
-
-This is an example of a ``dependencies.bii`` file: ::
-
-	test.cpp + example.h !LICENSE
-	*.cpp + !README
-	example.h = NULL
-	main.cpp + matrix32.h
-	main.cpp - matrix16.h
-	calculator.cpp = solver.h type.h
-
-* In this example we're declaring that ``test.cpp`` depends on both ``example.h`` and ``LICENSE``. However, ``LICENSE`` must be excluded from the compilation process.
-* Also, we're declaring that all files with a ``.cpp`` extension depend on the ``README`` file but it mustn't be compiled.
-* Declaring ``example.h = NULL`` all ``example.h`` dependencies are deleted.
-* In the fourth line we add ``matrix32.h`` as a ``main.cpp`` dependency.
-* In the next line we are deleting ``matrix16.h`` as a ``main.cpp`` dependency.
-* Finally, we're declaring that ``solver.h`` and ``type.h`` are ``calculator.cpp`` dependencies, ovewriting all existing implicit dependencies.
+For this purpose you can use :ref:`dependencies.bii <dependencies-bii>`
 
 
 Policies
