@@ -69,7 +69,7 @@ As you see, the hive contains a collections of folders, we will go through each 
 * **bii**: I has a similar structure to workspace bii folder described before in :ref:`workspace_bii`. It also contains some extra files:
 
 	* **.hive.db**: It contains all your hive information
-	* **dependencies.bii**: Optional file. Allows you to set extra dependencies for yor project such as licese files. You can read about it `here <http://docs.biicode.com/en/latest/advanced-features.html?highlight=cpp_rules#edit-dependencies>`_
+	* **dependencies.bii**: Optional file. Allows you to set extra dependencies for yor project such as licese files. You can read about it :ref:`dependencies_bii`.
 	* **virtual.bii**: Optional file. Used to configure `virtual resources <http://docs.biicode.com/en/latest/advanced-features.html?highlight=cpp_rules#virtual-resources>`_
 * **bin**: When you build your project, if there are any generated executables, they will be placed here. You can safely delete it's contents
 * **build**: Contains build files such as make scripts and compiled objects. You can safely delete it's contents
