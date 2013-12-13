@@ -7,6 +7,5 @@ Reference
 
    reference/layouts
    reference/configuration_files
-..   reference/Configuration Files/*
    
    
