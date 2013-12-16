@@ -51,9 +51,10 @@ In this example we are defining a function that decides which implementation of 
 
 The ``virtual.bii`` file —as other biicode configuration files— is written in python language. It is not possible to make any imports, but you will have direct access to the project settings, received as a parameter. In this case a custom setting ``test`` is being used, and we are checking for its presence inside a python function.
 
+.. _compilation_rules:
+
 Compilation rules
 -----------------
-.. _compilation_rules:
 
 Sometimes your project need to define some preprocessor variables or maybe you need to link with some dynamic library provided by the system. Biicode gives you the option to define these special compilation needs.
 
@@ -134,6 +135,7 @@ There are some special cases in which biicode can't detect some dependencies. In
 
 For this purpose you can use :ref:`dependencies.bii <dependencies-bii>`
 
+.. _advanced_policies:
 
 Policies
 --------
