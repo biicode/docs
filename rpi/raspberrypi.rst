@@ -84,6 +84,8 @@ After the writing process is finished, eject the SD card and plug in to the Rasp
 
 Mac
 ^^^
+You can try `RPi SD Card Builder <http://alltheware.wordpress.com/2012/12/11/easiest-way-sd-card-setup/>`_ or follow this tutorial:
+
 
 First, download and install SD Card Formatter from `SD Associations <https://www.sdcard.org/downloads/formatter_4/eula_mac/>`_.
 Insert your SD card into the card reader, select "Overwrite Format" and then format the SD card with SD Card Formatter.  The reason why we format the SD card is to make the card recognized by the operating system.
