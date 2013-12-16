@@ -31,6 +31,7 @@ We recommend  to use Raspbian image which based on Debian.
 |                                            |              +----------------------------------------+
 |                                            |              |password: **raspberry**                 |
 +--------------------------------------------+--------------+----------------------------------------+
+
 .. _2013-09-25-wheezy-raspbian.zip: http://downloads.raspberrypi.org/raspbian_latest
 
 **Prepare for Burning Raspbian Image to an SD Card**
@@ -86,7 +87,7 @@ Mac
 ^^^
 
 First, download and install SD Card Formatter from `SD Associations <https://www.sdcard.org/downloads/formatter_4/eula_mac/>`_.
-Insert your SD card into the card reader, select “Overwrite Format” and then format the SD card with SD Card Formatter.  The reason why we format the SD card is to make the card recognized by the operating system.
+Insert your SD card into the card reader, select "Overwrite Format" and then format the SD card with SD Card Formatter.  The reason why we format the SD card is to make the card recognized by the operating system.
 
 .. image:: ../_static/img/rpi/burn_win_sd.png
 
@@ -110,7 +111,7 @@ After the Raspbian system is installed on an SD card, put the SD card into the R
 Expanding the File System
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you wrote Raspbian image to an SD card with dd command, it normally takes around 3 GB of your SD card space. This means that if you have 4 GB or more in your SD card, the default Raspbian system will not recognize all available SD card space. Then how can you use the remaining space, or in other words, how can you “expand” the Raspbian file system, so that it recognizes the entire SD card space?
+If you wrote Raspbian image to an SD card with dd command, it normally takes around 3 GB of your SD card space. This means that if you have 4 GB or more in your SD card, the default Raspbian system will not recognize all available SD card space. Then how can you use the remaining space, or in other words, how can you "expand" the Raspbian file system, so that it recognizes the entire SD card space?
 
 This is when "Expand Filesystem" menu option can help. Click the option, which will then guide you to expand a root partition with fdisk as shown below.
 
@@ -123,7 +124,7 @@ The resulting partition layout change will take effect after rebooting Raspberry
 Enable Boot to Desktop / Scratch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The menu option called “Enable Boot to Desktop” in raspi-config allows you to automatically launch and log in to the GUI desktop of Raspbian upon booting. You can also enable the Scratch programming environment. By default, Raspbian is set to boot into a text-based console log in. Depending on your use case, enable booting to desktop.
+The menu option called "Enable Boot to Desktop" in raspi-config allows you to automatically launch and log in to the GUI desktop of Raspbian upon booting. You can also enable the Scratch programming environment. By default, Raspbian is set to boot into a text-based console log in. Depending on your use case, enable booting to desktop.
 
 .. image:: ../_static/img/rpi/desktop.jpg
 
