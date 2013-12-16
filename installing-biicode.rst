@@ -13,12 +13,12 @@ Download and install the client binaries
 
 First of all, download the appropriate client binaries for your system, execute the setup program and follow the instructions. 
 
-0.3  
+0.3.1  
 ^^^^^^
-* `ubuntu32 <https://s3.amazonaws.com/biibinaries/release/0.3/bii-ubuntu320_3.deb>`_
-* `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.3/bii-ubuntu64_0_3.deb>`_
-* `win <https://s3.amazonaws.com/biibinaries/release/0.3/bii-win_0_3.exe>`_
-* `mac64 <https://s3.amazonaws.com/biibinaries/release/0.3/bii-macos64_0_3.pkg>`_
+* `ubuntu32 <https://s3.amazonaws.com/biibinaries/release/0.3.1/bii-ubuntu32_0_3_1.deb>`_
+* `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.3.1/bii-ubuntu64_0_3_1.deb>`_
+* `win <https://s3.amazonaws.com/biibinaries/release/0.3.1/bii-win_0_3_1.exe>`_
+* `mac64 <https://s3.amazonaws.com/biibinaries/release/0.3.1/bii-macos64_0_3_1.pkg>`_
 
 .. raw:: html
 
