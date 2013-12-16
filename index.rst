@@ -22,7 +22,6 @@ Contents:
    libraries
    tutorials
    reference
-   articles
    troubleshooting
    faqs
 
