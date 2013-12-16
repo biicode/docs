@@ -15,7 +15,7 @@ If the publication has been correctly created, you will see a message like the f
 
 	Created new Hive maths
 
-Then, a hive folder named maths will be created in your workspace folder. Said folder will contain the following subfolders: bii, dep and src.
+Then, a hive folder named maths will be created in your workspace folder. Said folder will contain the following subfolders: bii, deps and blocks.
 
 Compile and execute your block
 ------------------------------
@@ -85,7 +85,7 @@ To check that the factorial function runs fine, make a main.cpp like this:
 	  return RUN_ALL_TESTS();
 	}
 
-Put every files into the folder ~/maths/src/your_user_name/maths/ and  execute them: ::
+Put every files into the folder ~/maths/blocks/your_user_name/maths/ and  execute them: ::
 
 	$ bii work
 	Saving files on disk

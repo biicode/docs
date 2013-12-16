@@ -1,3 +1,5 @@
+.. _c-challenge:
+
 Solving the C++ Challenge
 =========================
 
@@ -17,7 +19,7 @@ Open your console, move to your biicode workspace and create a new hive named "c
 Copy the code
 -------------
 
-Download the `challenge sources from github <https://github.com/biicode/challenge>`_ or in `zipped format from this link <https://biicorporateproduction.s3.amazonaws.com/media/uploads/challenge.zip>`_. Copy all the files into ``challenge/src/your_user_name/challenge``.
+Download the `challenge sources from github <https://github.com/biicode/challenge>`_ or in `zipped format from this link <https://biicorporateproduction.s3.amazonaws.com/media/uploads/challenge.zip>`_. Copy all the files into ``challenge/blocks/your_user_name/challenge``.
 If you got the sources from github, you need to replace the #include directives as follows: (#include "sparse/cs.h" => #include "tdavis/sparse/cs.h", #include <eigen/Dense> => #include <eigen/eigen/Dense>, #include "gtest/include/gtest/gtest.h" => #include "google/gtest/include/gtest/gtest.h")
 
 Now you can check for all the code dependencies of the current hive using the ``bii deps`` command. Please, note that while most of the dependencies are correctly solved, three of them are not. Theses **unresolved dependencies** have been highlighted in the following figure:
@@ -151,12 +153,12 @@ Running the tests is really easy too. Note that in this case one of the tests fa
 	[----------] Global test environment set-up.
 	[----------] 2 tests from Solver
 	[ RUN      ] Solver.BasicDiagonalSparse
-	challenge/src/your_user_name/challenge/test1.cpp:21: Failure
+	challenge/blocks/your_user_name/challenge/test1.cpp:21: Failure
 	Value of: 1./(i+1)
 	  Actual: 0.5
 	Expected: sol[i]
 	Which is: 0.5
-	challenge/src/your_user_name/challenge/test1.cpp:21: Failure
+	challenge/blocks/your_user_name/challenge/test1.cpp:21: Failure
 	Value of: 1./(i+1)
 	  Actual: 0.333333
 	Expected: sol[i]
