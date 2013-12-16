@@ -5,6 +5,8 @@ Workspace and hives layout
 
 In this section we are going to explain the structure of biicode projects in disk. If you haven't done so, we recommend reading :ref:`Basic Concepts <basic_concepts>` first. If you want to read in detail about any of these files you can check :ref:`configuration files section <config_files>`.
 
+.. _workspace_bii:
+
 Workspace layout
 ----------------
 
@@ -21,7 +23,6 @@ Workspace layout is as follows:::
 |    +-- my_hive1
 |    +-- my_hive2
 
-.. _workspace_bii:
 
 As you see there is a bii folder containing a bunch of files and all your hives. We will explain later hive directory structure so let's focus on files within bii folder.
 
@@ -68,9 +69,9 @@ Inside the workspace you can hold **many hives**. Each hive layout is as follows
 |    |    └── bii_vars.cmake
 |    +-- deps
 
-As you see, the hive contains a collections of folders, we will go through each of them:
+As you can see, the hive contains a collection of folders. We will go through each one of them:
 
-* **bii**: I has a similar structure to workspace bii folder described before in :ref:`workspace_bii`. It also contains some extra files:
+* **bii**: It has a similar structure to the :ref:`workspace folder <workspace_bii>`. It also contains some additional files:
 
 	* **.hive.db**: It contains all your hive information
 	* **dependencies.bii**: Optional file. Allows you to set extra dependencies for yor project such as licese files. You can read about it :ref:`here <dependencies_bii>`.

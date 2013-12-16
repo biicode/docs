@@ -1,5 +1,9 @@
+.. _config_raspberry_ws:
+
 How to configure your biicode workspace
 =======================================
+
+If you haven't done so, you must first  :ref:`create a biicode workspace <create_workspace>`.
 
 Add the cross compilers to biicode
 ----------------------------------
