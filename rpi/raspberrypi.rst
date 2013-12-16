@@ -1,3 +1,4 @@
+==================================================
 How to set up your Raspberry Pi for the first time
 ==================================================
 
@@ -12,12 +13,12 @@ Following our philosophy of reuse, tutorial about how to burn SD cards and guide
 	:local:
 
 Download and install the Linux image
-------------------------------------
+====================================
 
 Raspberry Pi uses an SD card as backing storage for an operating system and other tools. In this tutorial, I will describe how to write a Raspberry Pi image to an SD card.
 
 Raspberry Pi images
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 There are several flavors of raw Raspberry Pi images (e.g., Raspbian, Pidora, Risc OS, RaspBMC, Arch, and OpenElec) which you can download from `Raspberry Pi's official site <http://www.raspberrypi.org/downloads>`_. All these images are compatible with both model A and B.
 We recommend  to use Raspbian image which based on Debian.
@@ -41,7 +42,7 @@ To burn a Raspbian image, it is recommended to use a class 10 SD card with minim
 Before starting the process, first download Raspbian. The image comes as a zip file. Unzip the file to extract the Raspbian image file.
 
 Burn Raspbian Image to an SD Card
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------
 
 Linux
 ^^^^^
@@ -62,9 +63,7 @@ Finally, run the following dd command to write Raspberry Pi image to the SD card
 
 	$ sudo dd bs=4M if=/path/to/image of=/dev/sdc
 
-The "bs" argument sets the block size to 4 MB. Normally the "bs" argument will work with 4M, but you can change to 1M, which will take longer time to write. The "if" argument sets the full path to Raspbian image, and the "of" argument specifies the device name of the SD card. Here "/dev/sdc" is the device name you identified with Gparted earlier. Note that the dd command will not give you any feedback during its operation, and it will look like freezing. So be patient until writing is finished.
-
-After the writing process is finished, eject the SD card. Plug in to the Raspberry Pi, and make sure that all the connections are ready (HDMI/TV out, keyboard, mouse, Ethernet cable). Finally, turn on the power.
+The ``bs`` argument sets the block size to 4 MB. Normally the ``bs`` argument will work with 4M, but you can change to 1M, which will take longer time to write. The ``if`` argument sets the full path to Raspbian image, and the ``of`` argument specifies the device name of the SD card. Here ``/dev/sdc`` is the device name you identified with Gparted earlier. Note that the dd command will not give you any feedback during its operation, and it will look like freezing. So be patient until writing is finished.
 
 Besides using dd command, you can also try other image writer applications such as `usb-imagerwriter <https://launchpad.net/usb-imagewriter>`_ for deb based distributions, and `imagewriter <http://rpm.pbone.net/index.php3/stat/4/idpl/23633559/dir/redhat_el_6/com/imagewriter-1.10-7.1.el6.x86_64.rpm.html>`_ for rpm based distributions. These tools will make the image writing process more user-friendly than dd command.
 
@@ -91,13 +90,34 @@ Insert your SD card into the card reader, select "Overwrite Format" and then for
 
 .. image:: ../_static/img/rpi/burn_win_sd.png
 
+Now you need to find out under which /dev directory your sdcard is:
+
+.. code-block:: bash
+
+	bii:~ $ df -h
+	Filesystem      Size   Used  Avail Capacity  iused     ifree %iused  Mounted on
+	/dev/disk2     698Gi  135Gi  562Gi    20% 35525778 147326043   19%   /
+	devfs          186Ki  186Ki    0Bi   100%      644         0  100%   /dev
+	map -hosts       0Bi    0Bi    0Bi   100%        0         0  100%   /net
+	map auto_home    0Bi    0Bi    0Bi   100%        0         0  100%   /home
+	/dev/disk0s1    15Gi  2.4Mi   15Gi     1%        0         0  100%   /Volumes/BIIBERRY
+
+From the output you can see that the SD card (named BIIBERRY) is in **/dev/disk0s1**
+
+Before proceeding you need to ensure nobody is using the SD card or you might get a **Resource busy** error:
+
+* Open Disk Utility
+* You'll see all storage devices connected to your Mac and all their partitions
+* Select BIIBERRY, the only partition of your SD card, right click on it and select "Unmount BIIBERRY", do not eject it.
+
+
 Finally, run the following dd command to write Raspberry Pi image to the SD card.
 
 .. code-block:: bash
 
-	$ sudo dd bs=4M if=/path/to/image of=/dev/sdc
+	$ sudo dd bs=4m if=/path/to/image of=/dev/disk0s1
 
-The "bs" argument sets the block size to 4 MB. Normally the "bs" argument will work with 4M, but you can change to 1M, which will take longer time to write. The "if" argument sets the full path to Raspbian image, and the "of" argument specifies the device name of the SD card. Here "/dev/sdc" is the device name you identified with Gparted earlier. Note that the dd command will not give you any feedback during its operation, and it will look like freezing. So be patient until writing is finished.
+The ``bs`` argument sets the block size to 4 MB. Normally the ``bs`` argument will work with 4m, but you can change to 1m, which will take longer time to write. The ``if`` argument sets the full path to Raspbian image, and the ``of`` argument specifies the device name of the SD card. Note that the **dd command will not give you any feedback during its operation**, and it will look as it it was frozen. Be patient, it could easily take half an hour to complete. You can see how much it has written in Activity Monitor selecting "Disk" tab.
 
 Configuration
 -------------
