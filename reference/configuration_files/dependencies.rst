@@ -1,10 +1,10 @@
 
-.. _dependencies-bii:
+.. _dependencies_bii:
 
 Dependencies configuration
 --------------------------
 
-The ``dependencies.bii``  file defines explicit dependencies that do not appear in code a common use for this is to include rules :ref:`compilation_rules` or license file. This file should be placed it in ``YOUR_HIVE/blocks``
+The ``dependencies.bii`` file defines explicit dependencies that do not appear in code. A common use for this is to include :ref:`compilation rules <compilation_rules>` or license file. This file should be placed it in ``your_hive/blocks``
 
 dependencies.bii contains rules matching the following structure: ::
 

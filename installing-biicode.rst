@@ -62,6 +62,9 @@ Max OS
 * The XCode Developeer Tools
 * The appropriate `version of CMake <http://www.cmake.org/cmake/resources/software.html>`_ for your Mac OSX.
 
+
+.. _create_workspace:
+
 Create a workspace
 ------------------
 

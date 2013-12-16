@@ -77,7 +77,7 @@ These files are written in Python, a small subset of it. You can interact with h
 
 .. _dependencies_edition:
 
-Once you've written your file you should add it to your :ref:`dependencies.bii <dependencies-bii>`
+Once you've written your file you should add it to your :ref:`dependencies.bii <dependencies_bii>`
 
 
 Edit dependencies
@@ -132,7 +132,7 @@ Manually configuring dependencies
 
 There are some special cases in which biicode can't detect some dependencies. In these cases **you can manually configure your dependencies**.
 
-For this purpose you can use :ref:`dependencies.bii <dependencies-bii>`
+For this purpose you can use :ref:`dependencies.bii <dependencies_bii>`
 
 
 Policies
@@ -208,7 +208,7 @@ Examining the ``tutorial/policyadvanced`` block in biicode (`available in this l
 	</table>
 	</div>
 
-Being **index=0** the first uploaded version, each one has a different ``hello()``method implementation depending on its version.
+Being **index=0** the first uploaded version, each one has a different ``hello()`` method implementation depending on its version.
 
 The reason why your program has executed ``hello()`` of ``STABLE`` version is as follows. Check the contents of the ``policies.bii`` file located inside your ``~/your_bii_workspace/policies/bii/`` folder. This is a simple YAML file with the following appearance: ::
 

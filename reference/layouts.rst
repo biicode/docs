@@ -3,13 +3,15 @@
 Workspace and hives layout
 ==========================
 
-In this section we are going to explain the structure of biicode projects in disk. If you haven't done so, we recommend reading :ref:`Basic Concepts <basic_concepts>` first.
+In this section we are going to explain the structure of biicode projects in disk.
 Top level directory is the workspace, it contains cached data from server, information about your machine, system and tools, default configurations and hives.
+
+.. _workspace_bii:
 
 Workspace layout
 ----------------
 
-Workspace layout is as follows:::
+Workspace layout is as follows: ::
 
 |-- myworkspace
 |    |-- bii
@@ -21,7 +23,6 @@ Workspace layout is as follows:::
 |    +-- my_hive1
 |    +-- my_hive2
 
-.. _workspace_bii:
 
 As you see there is a bii folder containing a bunch of files and all your hives. We will explain later hive directory structure so let's focus on files within bii folder.
 
@@ -36,7 +37,7 @@ As you see there is a bii folder containing a bunch of files and all your hives.
 Hive layout
 -----------
 
-Hive layout is as follows:::
+Hive layout is as follows: ::
 
 |-- my_hive
 |    +-- bii
@@ -68,12 +69,12 @@ Hive layout is as follows:::
 |    |    └── bii_vars.cmake
 |    +-- deps
 
-As you see, the hive contains a collections of folders, we will go through each of them:
+As you can see, the hive contains a collection of folders. We will go through each one of them:
 
-* **bii**: I has a similar structure to workspace bii folder described before in :ref:`workspace_bii`. It also contains some extra files:
+* **bii**: It has a similar structure to the :ref:`workspace folder <workspace_bii>`. It also contains some additional files:
 
 	* **.hive.db**: It contains all your hive information
-	* **dependencies.bii**: Optional file. Allows you to set extra dependencies for yor project such as licese files. You can read about it :ref:`here <dependencies_bii>`.
+	* **dependencies.bii**: Optional file. Allows you to set extra dependencies for yor project such as licese files. You can read about it :ref:`this section <dependencies_bii>`.
 	* **virtual.bii**: Optional file. Used to configure `virtual resources <http://docs.biicode.com/en/latest/advanced-features.html?highlight=cpp_rules#virtual-resources>`_
 * **bin**: When you build your project, if there are any generated executables, they will be placed here. You can safely delete it's contents
 * **blocks**: Contains the code of the blocks you are working on. Code is listed under usernames/blockname folders as you can be editing other person's blocks. Under each username folder you can find all the blocks you are editing at the moment. For version control systems, it is usually ok to ignore everything but this ``src`` folder, together with the ``bii`` one that holds the configuration and metadata. Inside your block folder you can also have a `rules file <http://docs.biicode.com/en/latest/advanced-features.html?highlight=cpp_rules#compilation-rules>`_ to configure your build.
