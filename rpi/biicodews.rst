@@ -17,9 +17,9 @@ Add the cross compilers to **enviroment.bii** like shown in the last four lines:
       compilers:
         - path: null
           tool: {family: GNU}
-        - path: /user/local/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-gcc
+        - path: /usr/local/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-gcc
           tool: {family: GNU, subfamily: C, arch: ARM}
-        - path: /user/local/raspberry_pi/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-g++
+        - path: /usr/local/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-g++
           tool: {family: GNU, subfamily: CPP, arch: ARM}
 	  
 Create a new hive and code!
