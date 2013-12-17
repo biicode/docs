@@ -51,13 +51,14 @@ In this example we are defining a function that decides which implementation of 
 
 The ``virtual.bii`` file —as other biicode configuration files— is written in python language. It is not possible to make any imports, but you will have direct access to the project settings, received as a parameter. In this case a custom setting ``test`` is being used, and we are checking for its presence inside a python function.
 
+.. _compilation_rules:
+
 Compilation rules
 -----------------
-.. _compilation_rules:
 
 Sometimes your project need to define some preprocessor variables or maybe you need to link with some dynamic library provided by the system. Biicode gives you the option to define these special compilation needs.
 
-You can define rules files for each executable target. Rules files can be placed anywhere in your src directory with a filename following the next regular expression:
+You can define rules files for each executable target. Rules files can be placed anywhere in your blocks directory with a filename following the next regular expression:
 
 :regexp:`\*cpp_rules*\.bii`
 
@@ -75,6 +76,7 @@ These files are written in Python, a small subset of it. You can interact with h
            target.add_package("OpenGL",[])
            target.add_library("${OPENGL_LIBRARIES}")
 
+.. _dependencies_edition:
 
 Once you've written your file you should add it to your :ref:`dependencies.bii <dependencies_bii>`
 
@@ -100,7 +102,7 @@ Once you are happy with the changes you can publish your own version of the bloc
 
 Unless the code is yours you will not be able to publish it to an existing branch, so you will need to specify a BRANCH_NAME.
 
-Then you can close the block to remove it from your src folder:
+Then you can close the block to remove it from your blocks folder:
 
 .. code-block:: bash
 
@@ -133,6 +135,7 @@ There are some special cases in which biicode can't detect some dependencies. In
 
 For this purpose you can use :ref:`dependencies.bii <dependencies_bii>`
 
+.. _advanced_policies:
 
 Policies
 --------

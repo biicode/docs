@@ -39,14 +39,15 @@ If you want to find any possible matching compatible version (not just updates o
 	$ bii find --modify
 
 
+.. _use_ide:
 
 Using an IDE
 -------------
+Configure your project
+^^^^^^^^^^^^^^^^^^^^^^
+First of all, you need to configure your project. If you did it when creating the workspace or hive you can skip this part.
 
-Eclipse
-^^^^^^^
-
-First of all, you need to configure your project. Initialize your default C++ settings writting: ::
+Initialize your default C++ settings writting: ::
 
 	$ bii cpp:settings
 	...
@@ -74,64 +75,31 @@ includes the following lines: ::
 		build_type: debug
 	os: {arch: 32bit, family: Windows, subfamily: '8', version: 6.2.9200}
 
-Now, copy the code from your hello word tutorial into the block folder and write.Now, if you configure the project with these settings, the output in the console would be: ::
+You can see Visual options in Visual section below.
 
-	$ bii cpp:configure
 
-	...
-
-	invoking cmake -G "Eclipse CDT4 - MinGW Makefiles" -Wno-dev ../src
-	-- The C compiler identification is GNU 4.6.2
-	-- The CXX compiler identification is GNU 4.6.2
-	-- Could not determine Eclipse version, assuming at least 3.6 (Helios). Adjust CMAKE_ECLIPSE_VERSION if this is wrong.
-	-- Check for working C compiler: C:/MinGW/bin/gcc.exe
-	-- Check for working C compiler: C:/MinGW/bin/gcc.exe -- works
-	-- Detecting C compiler ABI info
-	-- Detecting C compiler ABI info - done
-	-- Check for working CXX compiler: C:/MinGW/bin/g++.exe
-	-- Check for working CXX compiler: C:/MinGW/bin/g++.exe -- works
-	-- Detecting CXX compiler ABI info
-	-- Detecting CXX compiler ABI info - done
-	-- Configuring done
-	-- Generating done
-	-- Build files have been written to: [hive_build_folder]
-
-if you write ``$ bii cpp:run``, you will see the following message: ::
-
-	invoking cmake -G "Eclipse CDT4 - MinGW Makefiles" -Wno-dev ../src
-	-- Could not determine Eclipse version, assuming at least 3.6 (Helios). Adjust CMAKE_ECLIPSE_VERSION if this is wrong.
-	-- Configuring done
-	-- Generating done
-	-- Build files have been written to: [hive_build_folder]
-	[!] You have configured an IDE setup
-	[!] Use ECLIPSE to build your project
-	[!] Use ECLIPSE to run your project
-
-Note: when you define another IDE type, you have to compile and execute with this new one as indicated in the last two lines of the output console.
-
-Finally, you are ready to open your project with Eclipse. The first step is to import the project:
+Eclipse
+^^^^^^^
+You can now import your project to Eclipse. The first step is to import the project:
 
 #. File > import...
 #. general > Existing Projects into Workspace and clic next.
 #. Select root directory:  find the build folder of your hive and click accept.
 #. Into the projects box, you should see a project already selected. Click finish
 
-Now you should have your project in an eclipse workspace with the following folder tree:
-
-.. image:: _static/img/eclipse_tree.png
-
-For this tutorial our user name is tutorial and our block name is eclipse.
-
 If you want to add any file, just click right mouse button on the folder on your block and create a new file
 
-You only have to change the run configuration, for this:
+Note: If you add new dependencies to your project you'll need to manually invoke "bii find"
 
-#. Right click on your_blockname@build.
+You can build your application in Project > Build project if you don't have automated builds set.
+
+To run your application from eclipse you need to change run configuration.
+
 #. Run As > Run Configurations
 #. New launch configuration
 #. In the Application C/C++ box insert .../blockname/bin/username_blockname_main.exe
 #. Click on Arguments tab.
-#. In Working directory section clieck on File System
+#. In Working directory section click on File System
 #. Select .../blockname/bin folder
 #. Click on Run button.
 
@@ -173,7 +141,7 @@ Now, copy the code from your hello word tutorial into the block folder. You have
 
 	...
 
-	invoking cmake  -G "Visual Studio 10" -Wno-dev ../src
+	invoking cmake  -G "Visual Studio 10" -Wno-dev ../blocks
 	-- The C compiler identification is MSVC 16.0.40219.1
 	-- The CXX compiler identification is MSVC 16.0.40219.1
 	-- Check for working C compiler using: Visual Studio 10
@@ -190,7 +158,7 @@ Now, copy the code from your hello word tutorial into the block folder. You have
 
 If you write $ bii cpp:run, you will see the following message: ::
 
-	invoking cmake  -G "Visual Studio 10" -Wno-dev ../src
+	invoking cmake  -G "Visual Studio 10" -Wno-dev ../blocks
 	-- Configuring done
 	-- Generating done
 	-- Build files have been written to: [hive_build_folder]
@@ -241,7 +209,7 @@ Now, copy the code from your hello word tutorial into the block folder and write
 
 	...
 
-	invoking cmake -D CMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -Wno-dev ../src
+	invoking cmake -D CMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -Wno-dev ../blocks
 	-- The C compiler identification is GNU 4.6.2
 	-- The CXX compiler identification is GNU 4.6.2
 	-- Could not determine Eclipse version, assuming at least 3.6 (Helios). Adjust CMAKE_ECLIPSE_VERSION if this is wrong.
@@ -259,7 +227,7 @@ Now, copy the code from your hello word tutorial into the block folder and write
 
 if you write ``$ bii cpp:run``, you will see the following message: ::
 
-	invoking cmake -D CMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -Wno-dev ../src
+	invoking cmake -D CMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -Wno-dev ../blocks
 	-- Could not determine Eclipse version, assuming at least 3.6 (Helios). Adjust CMAKE_ECLIPSE_VERSION if this is wrong.
 	-- Configuring done
 	-- Generating done
@@ -283,7 +251,7 @@ Now you have your project in eclipse workspace with a following folder tree like
 
 For this tutorial our user name is tutorial and our block name is codeblocks.
 
-If you want to add any file, just click on `File > New > Empty file` and create a new file in the `src/user/block` folder.
+If you want to add any file, just click on `File > New > Empty file` and create a new file in the `blocks/user/block` folder.
 
 
 To runs your project you need to select the main file on build target:

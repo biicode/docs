@@ -66,7 +66,7 @@ Now, clone the Raspberry Pi repository with linux cross-compilers from github.
 	$ cd /usr/local
 	$ sudo git clone https://github.com/raspberrypi/tools.git
 	
-You don't need to compile or install anything. You can choose other directory where to clone `raspberry tools <https://github.com/raspberrypi/tools>`_ but then you will need to update :ref:`biicode settings <settings_bii>`.
+You don't need to compile or install anything. You can choose other directory where to clone `raspberry tools <https://github.com/raspberrypi/tools>`_ but then you will need to take it into account in next step when updating :ref:`environment.bii <layouts>`.
 
 Finally, you need to install biicode. Go to :ref:`Installations and setup <installation>` for instructions.
 Once you have installed biicode, you can proceed to :ref:`configure your biicode raspberry project <config_raspberry_ws>`.

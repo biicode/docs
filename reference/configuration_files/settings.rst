@@ -1,9 +1,10 @@
+
 .. _settings_bii:
 
 Settings
 ---------------
 
-The settings.bii  file defines the tools that you want to use and their corresponding settings. It is important to keep the file format for correct interpretation. This file is created when you create a new hive in the bii folder, its parameters are as follows:
+The ``settings.bii`` file defines the tools that you want to use and their corresponding settings. This file is created when you create a new hive in the bii folder as you can see in the :ref:`layouts section <layouts>`. It's important to keep the file format for correct interpretation. Format is as follows:
 
 Common settings:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

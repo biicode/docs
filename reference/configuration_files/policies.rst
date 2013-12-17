@@ -4,9 +4,9 @@
 Policies
 ---------------
 
-Policies are the rules followed when finding or updating dependencies. They can be configured globally in your_workspace/bii/default_policies.bii or individually in your_hive/bii/policies.bii.
+Policies are the rules applied when finding or updating dependencies. They can be configured globally in your_workspace/bii/default_policies.bii or individually in your_hive/bii/policies.bii as you can see in the :ref:`layouts section <layouts>`.
 
-policies.bii have this format as self-documented:::
+``policies.bii`` have this format as self-documented:::
 
 	# This is the file for configuring your finds of dependencies. You can have
 	# several policies defined, each one with its own name. The 'default' policy
@@ -30,8 +30,10 @@ policies.bii have this format as self-documented:::
 	# the block with category STABLE, or with any category for my 'master' blocks
 	# - [branch.name == "master" and branch.user == block.user, tag==STABLE or branch.user == YOUR_USERNAME, 1]
 
-Notes:
+**Notes**:
 
 * **Priorities are ascending**. A policy rule with priority 2 will be applied before a policy rule with priority 0
 * branch.name, branch.user, block.user, block.name and tag are **internal variables** that will be evaluated by biicode
 * tag can be compared against **STABLE**, **DEV** and **ALPHA** constants. The have a sorted relation so you can say tag >= DEV
+
+You can find examples and advanced options :ref:`here <advanced_policies>`.

@@ -1,9 +1,10 @@
+
 .. _mains-bii:
 
 Executables configuration
-==========================
+-------------------------
 
-Biicode automatically detects entry points to your programs by examining which files contain a main function definition. However there are certain cases where you are using frameworks that have a more complex setup. In those cases you might want to tell biicode where are your entry points. You can do so in the ``mains.bii`` file that should be placed in ``YOUR_HIVE/bii`` folder.
+Biicode automatically detects entry points to your programs by examining which files contain a main function definition. However there are certain cases where you are using frameworks that have a more complex setup. In those cases you might want to tell biicode where are your entry points. You can do so in the ``mains.bii`` file that should be placed in ``YOUR_HIVE/bii`` folder as you can see in the :ref:`hive layout <hive_layout>` section.
 
 
 mains.bii contains rules matching the following structure: ::

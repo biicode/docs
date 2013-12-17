@@ -15,7 +15,7 @@ If it works correctly, you should see the following message: ::
 
 	Created new Hive hello
 
-Inside your workspace you will find a folder named hello with subfolders bii, dep and src.
+Inside your workspace you will find a folder named hello with subfolders bii, deps and src.
 
 Just code!
 ----------
@@ -172,7 +172,7 @@ You can try the new method in your console compiling and executing your new code
 	Hello World
 	**********************************
 
-You will find your_user_name/hello block with the recently retrieved source files hello.h and hello.cpp in your hive hellopretty/dep subfolder. Note that the main.cpp of the hello block has not been retrieved. You don't need it to reuse the hello function! 
+You will find your_user_name/hello block with the recently retrieved source files hello.h and hello.cpp in your hive hellopretty/deps subfolder. Note that the main.cpp of the hello block has not been retrieved. You don't need it to reuse the hello function! 
 
 Publish a new version of your hello block
 -----------------------------------------

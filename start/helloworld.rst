@@ -15,12 +15,12 @@ Creating a new hive is as easy as executing the ``bii new`` command. Open your c
 	$ bii new hello
 	Created new Hive hello
 
-In the previous figure, the highlighted line indicates that the process worked fine. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``dep`` and ``src``.
+In the previous figure, the highlighted line indicates that the process worked fine. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``deps`` and ``blocks``.
 
 Just code!
 ^^^^^^^^^^
 
-Our "hello" hive will have the following 3 files. Just copy them into your hive ``hello/src/your_user_name/hello`` folder. That is the source code for your **hello block** in you **hello hive**.
+Our "hello" hive will have the following 3 files. Just copy them into your hive ``hello/blocks/your_user_name/hello`` folder. That is the source code for your **hello block** in you **hello hive**.
 
 **hello.h**
 
@@ -60,7 +60,7 @@ Our "hello" hive will have the following 3 files. Just copy them into your hive 
 Build and run
 ^^^^^^^^^^^^^^
 
-Once you have completed all the coding process, and the source files are located under ``hello/src/your_user_name/hello``, you are ready to compile and run the application. Assuming that you are located in your biicode workspace folder, ``cd`` to your **"hello" hive folder**, and run the ``bii cpp:run`` command:
+Once you have completed all the coding process, and the source files are located under ``hello/blocks/your_user_name/hello``, you are ready to compile and run the application. Assuming that you are located in your biicode workspace folder, ``cd`` to your **"hello" hive folder**, and run the ``bii cpp:run`` command:
 
 .. code-block:: bash
 
@@ -111,7 +111,7 @@ One of the most interesting aspects of biicode is the ability it provides to eas
 	Created new Hive hellopretty
 	$ cd hellopretty 
 
-Add the following files to the folder ``hellopretty/src/your_user_name/hellopretty/`` (remember to substitute ``your_user_name`` with your actual biicode user name):
+Add the following files to the folder ``hellopretty/blocks/your_user_name/hellopretty/`` (remember to substitute ``your_user_name`` with your actual biicode user name):
 
 **hellopretty.h**
 
@@ -201,7 +201,7 @@ Now you can try to compile and run again your new code. In this case the process
 	Hello World!
 	**********************************
 
-You will find the ``your_user_name/hello`` block along with the retrieved source files ``hello.h`` and ``hello.cpp`` in your  ``hellopretty/dep`` subfolder. Note that the ``main.cpp`` file of the **hello** block was not retrieved. That is because you don't need it to reuse the ``hello()`` function! 
+You will find the ``your_user_name/hello`` block along with the retrieved source files ``hello.h`` and ``hello.cpp`` in your  ``hellopretty/deps`` subfolder. Note that the ``main.cpp`` file of the **hello** block was not retrieved. That is because you don't need it to reuse the ``hello()`` function! 
 
 Publish a new version of your hello block
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
