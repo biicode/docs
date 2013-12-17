@@ -10,17 +10,17 @@ Add the cross compilers to biicode
 
 Add the cross compilers to **enviroment.bii** like shown in the last four lines: ::
 
-	cpp:
-	  builders:
-	    - path: make
-	      tool: {family: MAKE}
-      compilers:
-        - path: null
-          tool: {family: GNU}
-        - path: /user/local/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-gcc
-          tool: {family: GNU, subfamily: C, arch: ARM}
-        - path: /user/local/raspberry_pi/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-g++
-          tool: {family: GNU, subfamily: CPP, arch: ARM}
+        cpp:
+          builders:
+            - path: make
+              tool: {family: MAKE}
+          compilers:
+            - path: null
+              tool: {family: GNU}
+            - path: /user/local/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-gcc
+              tool: {family: GNU, subfamily: C, arch: ARM}
+            - path: /user/local/raspberry_pi/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-g++
+              tool: {family: GNU, subfamily: CPP, arch: ARM}
 	  
 Create a new hive and code!
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -94,5 +94,4 @@ If you want to send files to another Raspberry Pi or specify a different directo
 	$ bii rpi:send [directory]
 	
 	
-
 You just have to go to your Raspberry Pi and execute the binaries as any computer.
