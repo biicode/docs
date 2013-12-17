@@ -1,5 +1,5 @@
 
-.. _dependencies-bii:
+.. _dependencies_bii:
 
 Dependencies configuration
 --------------------------

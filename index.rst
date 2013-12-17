@@ -18,7 +18,7 @@ Contents:
    getting-started
    basic-usage
    advanced-features
-   raspberry-pi
+   hardware
    libraries
    tutorials
    reference
