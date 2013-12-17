@@ -21,12 +21,41 @@ Add the cross compilers to **enviroment.bii** like shown in the last four lines:
           tool: {family: GNU, subfamily: C, arch: ARM}
         - path: /user/local/raspberry_pi/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-g++
           tool: {family: GNU, subfamily: CPP, arch: ARM}
-	  
+	
 Create a new hive and code!
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 Creating a new hive with the ``bii new`` command.
 
+Configure your settings
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Update your settings.bii or default_settings with the info of your Raspberry Pi ::
+	
+	rpi: {directory: /home/pi, ip: 127.0.0.8, password: raspberry, user: pi}
+	
+* directory: Raspberry Pi directory where you want to save the files you send for scp
+* ip: Raspberry Pi ip adress
+* user: Raspberry Pi user name
+* password: Raspberry Pi password
+
+Change the architetucture of the cpp compiler on the settings.bii to ARM: ::
+
+	cpp:
+	  builder: {family: MINGW}
+	  compiler: {arch: 32bit, family: MINGW}
+	  configurer: {family: CMake}
+	 
+	(...)
+	 
+	cpp:
+	  builder: {family: MINGW}
+	  compiler: {arch: ARM, family: MINGW}
+	  configurer: {family: CMake}
+
+Code as usual
+^^^^^^^^^^^^^
+ 
 Copy the code that you want to compile into your ``block folder``. For example:
 
 **hello.h**
@@ -60,9 +89,9 @@ Once you have completed all the coding process, you are ready to make the cross-
 
 .. code-block:: bash
 
-	$ bii rpi:build
+	$ bii cpp:build
 
-Note that the ``bii rpi:build`` command needs to be executed from a folder containing a hive like any other biicode project. After some messages showing information about the compiling process, the binaries will created in your ``bin folder``.
+Note that the ``bii cpp:build`` command needs to be executed from a folder containing a hive like any other biicode project. After some messages showing information about the compiling process, the binaries will created in your ``bin folder``.
 
 Remember that when generating the binary by cross compilation, you can only run on the Raspberry Pi.
 
