@@ -24,10 +24,10 @@ First of all, download the appropriate client binaries for your system, execute 
 
 0.3.2
 ^^^^^^
-* `ubuntu32 <https://s3.amazonaws.com/biibinaries/release/0.3.2/bii-ubuntu32_0_3_1.deb>`_
-* `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.3.2/bii-ubuntu64_0_3_1.deb>`_
-* `win <https://s3.amazonaws.com/biibinaries/release/0.3.2/bii-win_0_3_1.exe>`_
-* `mac64 <https://s3.amazonaws.com/biibinaries/release/0.3.2/bii-macos64_0_3_1.pkg>`_
+* `ubuntu32 <https://s3.amazonaws.com/biibinaries/release/0.3.2/bii-ubuntu32_0_3_2.deb>`_
+* `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.3.2/bii-ubuntu64_0_3_2.deb>`_
+* `win <https://s3.amazonaws.com/biibinaries/release/0.3.2/bii-win_0_3_2.exe>`_
+* `mac64 <https://s3.amazonaws.com/biibinaries/release/0.3.2/bii-macos64_0_3_2.pkg>`_
 
 .. raw:: html
 
