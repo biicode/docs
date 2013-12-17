@@ -13,12 +13,21 @@ Download and install the client binaries
 
 First of all, download the appropriate client binaries for your system, execute the setup program and follow the instructions. 
 
-0.3.1  
+**Important note**: in this version :ref:`hive layout <hive_layout>` has changed so you need to follow next steps to adapt it:
+
+* rename YOUR_HIVE/src to YOUR_HIVE/blocks
+* rename YOUR_HIVE/dep to YOUR_HIVE/deps
+* delete YOUR_HIVE/blocks/CMakeLists.txt
+* delete YOUR_HIVE/build
+* execute ``bii:clean``
+* execute ``bii cpp:configure``
+
+0.3.2
 ^^^^^^
-* `ubuntu32 <https://s3.amazonaws.com/biibinaries/release/0.3.1/bii-ubuntu32_0_3_1.deb>`_
-* `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.3.1/bii-ubuntu64_0_3_1.deb>`_
-* `win <https://s3.amazonaws.com/biibinaries/release/0.3.1/bii-win_0_3_1.exe>`_
-* `mac64 <https://s3.amazonaws.com/biibinaries/release/0.3.1/bii-macos64_0_3_1.pkg>`_
+* `ubuntu32 <https://s3.amazonaws.com/biibinaries/release/0.3.2/bii-ubuntu32_0_3_1.deb>`_
+* `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.3.2/bii-ubuntu64_0_3_1.deb>`_
+* `win <https://s3.amazonaws.com/biibinaries/release/0.3.2/bii-win_0_3_1.exe>`_
+* `mac64 <https://s3.amazonaws.com/biibinaries/release/0.3.2/bii-macos64_0_3_1.pkg>`_
 
 .. raw:: html
 

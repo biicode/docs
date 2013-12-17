@@ -1,8 +1,8 @@
 Changelog
 =========
-v. 0.3.1
+v. 0.3.2
 --------------------
-*(16-dic-13)*
+*(17-dic-13)*
 
 * Init and new configuration wizards
 * Improved Eclipse support. You can read about it :ref:`here <use_ide>`
