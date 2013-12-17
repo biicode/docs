@@ -8,20 +8,23 @@ If you haven't done so, you must first  :ref:`create a biicode workspace <create
 Add the cross compilers to biicode
 ----------------------------------
 
-Add the cross compilers to **enviroment.bii** like shown in the last four lines: ::
+Add the cross compilers to **enviroment.bii** like shown in the last four lines: 
 
-	cpp:
-	  builders:
-	    - path: make
-	      tool: {family: MAKE}
-      compilers:
-        - path: null
-          tool: {family: GNU}
-        - path: /user/local/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-gcc
-          tool: {family: GNU, subfamily: C, arch: ARM}
-        - path: /user/local/raspberry_pi/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-g++
-          tool: {family: GNU, subfamily: CPP, arch: ARM}
-	
+.. code-block:: text
+    :emphasize-lines: 8,9,10,11
+    
+    cpp:
+        builders:
+            - path: make
+              tool: {family: MAKE}
+        compilers:
+            - path: null
+              tool: {family: GNU}
+            - path: /usr/local/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-gcc
+              tool: {family: GNU, subfamily: C, arch: ARM}
+            - path: /usr/local/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-g++
+              tool: {family: GNU, subfamily: CPP, arch: ARM}
+    	
 Create a new hive and code!
 ---------------------------
 
