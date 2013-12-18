@@ -4,7 +4,7 @@
 Filefilter
 ---------------
 
-The file below is the **Filefilter**. The information included in this file determines the types of files that you want to include in your Hive. ::
+The file below is ``filefilter.bii``. It is placed under YOUR_WORKSPACE/bii YOUR_HIVE/bii as you can see in :ref:`layouts section <layouts>`. Information included in this file determines the types of files that you want to include in your Hive. ::
 
 	# You can edit this file to add accepted and ignored file extensions
 	# Configuration is up to down hierarchical so first rule matched is the one applied.
