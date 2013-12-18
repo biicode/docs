@@ -93,15 +93,14 @@ Note: If you add new dependencies to your project you'll need to manually invoke
 
 You can build your application in Project > Build project if you don't have automated builds set.
 
-To run your application from eclipse you need to change run configuration.
 
-#. Run As > Run Configurations
-#. New launch configuration
-#. In the Application C/C++ box insert .../blockname/bin/username_blockname_main.exe
-#. Click on Arguments tab.
-#. In Working directory section click on File System
-#. Select .../blockname/bin folder
-#. Click on Run button.
+If you are using **mac** you will need some aditional setup:
+
+#. Right click on your project and select Properties
+#. Select "C/C++ Make project" and click "Binary Parser" tab
+#. Unselect Mach-O Parser (deprecated)
+#. Select Mach-O 64 Parser
+#. Click OK
 
 And this is all you need to work as usual in eclipse.
 
