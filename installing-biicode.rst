@@ -22,12 +22,12 @@ First of all, download the appropriate client binaries for your system, execute 
 * execute ``bii:clean``
 * execute ``bii cpp:configure``
 
-0.3.2
+0.3.3
 ^^^^^^
-* `ubuntu32 <https://s3.amazonaws.com/biibinaries/release/0.3.2/bii-ubuntu32_0_3_2.deb>`_
-* `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.3.2/bii-ubuntu64_0_3_2.deb>`_
-* `win <https://s3.amazonaws.com/biibinaries/release/0.3.2/bii-win_0_3_2.exe>`_
-* `mac64 <https://s3.amazonaws.com/biibinaries/release/0.3.2/bii-macos64_0_3_2.pkg>`_
+* `ubuntu32 <https://s3.amazonaws.com/biibinaries/release/0.3.3/bii-ubuntu32_0_3_3.deb>`_
+* `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.3.3/bii-ubuntu64_0_3_3.deb>`_
+* `win <https://s3.amazonaws.com/biibinaries/release/0.3.3/bii-win_0_3_3.exe>`_
+* `mac64 <https://s3.amazonaws.com/biibinaries/release/0.3.3/bii-macos64_0_3_3.pkg>`_
 
 .. raw:: html
 
