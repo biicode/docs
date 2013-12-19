@@ -17,6 +17,7 @@ Contents:
    installing-biicode
    getting-started
    basic-usage
+   ides
    advanced-features
    hardware
    libraries
