@@ -10,7 +10,7 @@ project. After reading this guide don't forget that biicode can work
 whit other languages too.
 
 Before starting this guide, please install biicode.
-[installing-biicode]
+
 
 
 .. toctree::
@@ -19,4 +19,3 @@ Before starting this guide, please install biicode.
    start/basicconcepts
    start/createworkspace
    start/helloworld
-   start/c++challenge

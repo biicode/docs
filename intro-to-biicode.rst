@@ -38,7 +38,3 @@ These source files have dependencies to 3 well known open source libraries, whic
 The challenge consists in doing the task, from sources, in Win, Linux and Mac with the same setup.
 
 Try it yourself and then solve the problem with biicode! (please proceed to Install and Get Started sections)
-
-
-
-
