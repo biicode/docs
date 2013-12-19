@@ -37,7 +37,7 @@ We recommend  to use Raspbian image which based on Debian.
 
 **Prepare for Burning Raspbian Image to an SD Card**
 
-To burn a Raspbian image, it is recommended to use a class 10 SD card with minimum 4 GB storage.
+To burn a Raspbian image, **it is recommended to use a class 10 SD card with minimum 4 GB storage**.
 
 Before starting the process, first download Raspbian. The image comes as a zip file. Unzip the file to extract the Raspbian image file.
 

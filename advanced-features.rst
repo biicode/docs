@@ -3,6 +3,7 @@ Advanced features
 
 This section describes some advanced functionalities provided by biicode. Using these features, you will able to have a better control of your projects, defining **virtual resources**, defining advanced **compilation rules**, or even taking deeper control of the way your **dependencies** are found and retrieved.
 
+.. _settings:
 
 The settings file
 -----------------

@@ -5,6 +5,8 @@ With this example we will have a LED flash every half second on pin 0 (:ref:`GPI
 
 Remember to execute ``bii:find`` :ref:`(command info) <biifind>`.
 
+The generated binary only work on your Raspberry Pi and have to run as sudo because it works on the hardware
+
 Example: blink.c
 ----------------
 

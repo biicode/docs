@@ -29,12 +29,12 @@ Add the cross compilers to :ref:`enviroment.bii <layouts>` like shown in the las
 Create a new hive and code!
 ---------------------------
 
-Creating a new hive with the ``bii new`` command.
+Creating a new hive with the ``bii new`` command. :ref:`(command info) <biinew>`
 
 Configure your settings
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Update your ``settings.bii`` or ``default_settings.bii`` with the info of your Raspberry Pi ::
+Update your :ref:`settings.bii <settings>` or :ref:`default_settings.bii <layouts>` with the info of your Raspberry Pi ::
 	
 	rpi: {directory: /home/pi, ip: 192.168.1.68, password: raspberry, user: pi}
 	
@@ -60,7 +60,7 @@ add ``arch: ARM``::
 Code as usual
 ^^^^^^^^^^^^^
  
-Copy the code that you want to compile into your ``block folder``. For example:
+Copy the code that you want to compile into your :ref:`block folder <layouts>`. For example:
 
 **hello.h**
 
@@ -136,7 +136,7 @@ You can use the ``rpi:ssh`` command if you want a remotely access to your Raspbe
 
 .. code-block:: bash
 
-	$ bii rpi:send
+	$ bii rpi:ssh
 
 	...
 	
@@ -144,9 +144,17 @@ You can use the ``rpi:ssh`` command if you want a remotely access to your Raspbe
 
 	[RPI_USER]@[RPI_IP]'s password:
 	
+	pi@raspberrypi ~ $ cd bin
+	pi@raspberrypi ~/bin $ ls
+	[binary_name]
+	pi@raspberrypi ~/bin $ ./[binary_name]
+	Hello world!
+	
 If you want to send files to another Raspberry Pi that appears in your **settings.bii**, you have the option of passing these parameters to the ``bii:ssh``.
 
 .. code-block:: bash
 
 	$ bii rpi:ssh [user] [ip]
+	
+
 

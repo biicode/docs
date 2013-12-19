@@ -57,9 +57,10 @@ Choose the paper doll you like most
 
 As fans of the TV Show we chose to move `Heisenberg <http://www.cubeecraft.com/cubee/heisenberg>`_.Feel free to be creative: make your own doll.
 
-+-----------------------------------------+------------------------------------------+
-|.. image:: raspberry_pi_christmas/01.jpg | .. image:: raspberry_pi_christmas/02.jpg |
-+-----------------------------------------+------------------------------------------+
+
+.. image:: raspberry_pi_christmas/01.jpg
+.. image:: raspberry_pi_christmas/02.jpg
+
 
 Put it together! 
 ----------------
@@ -71,13 +72,12 @@ Stick the head to the servo and put the servo in the body
 
 In the following pictures you can see how we built our doll:
 
-+----------------------------------------+-----------------------------------------+
-|.. image:: raspberry_pi_christmas/2.jpg | .. image:: raspberry_pi_christmas/3.jpg |
-+----------------------------------------+-----------------------------------------+
-|.. image:: raspberry_pi_christmas/4.jpg | .. image:: raspberry_pi_christmas/6.jpg |
-+----------------------------------------+-----------------------------------------+
-|.. image:: raspberry_pi_christmas/7.jpg | .. image:: raspberry_pi_christmas/8.jpg |
-+----------------------------------------+-----------------------------------------+
+.. image:: raspberry_pi_christmas/2.jpg
+.. image:: raspberry_pi_christmas/3.jpg
+.. image:: raspberry_pi_christmas/4.jpg
+.. image:: raspberry_pi_christmas/6.jpg
+.. image:: raspberry_pi_christmas/7.jpg
+.. image:: raspberry_pi_christmas/8.jpg
 
 Connect the servo to the 5v, GPIO17 and 0v pins
 -----------------------------------------------
