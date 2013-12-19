@@ -1,0 +1,520 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced features &mdash; biicode docs 0.1.11 documentation</title>
+  
+
+  
+  
+  
+      
+  
+  
+  <script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+    URL_ROOT:'./',
+    VERSION:'0.1.11',
+    COLLAPSE_INDEX:false,
+    FILE_SUFFIX:'.html',
+    HAS_SOURCE:  true
+  };
+  </script>
+  <script type="text/javascript" src="_static/jquery.js"></script>
+  <script type="text/javascript" src="_static/underscore.js"></script>
+  <script type="text/javascript" src="_static/doctools.js"></script>
+  <script type="text/javascript" src="_static/theme.js"></script>
+  <script type="text/javascript" src="_static/searchtools.js"></script>
+  
+
+  
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  
+  <link rel="stylesheet" href="_static/theme.css" type="text/css" />
+  
+  <link rel="top" title="biicode docs 0.1.11 documentation" href="index.html"/>
+  <link rel="next" title="Hardware" href="hardware.html"/>
+  <link rel="prev" title="Basic usage" href="basic-usage.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="body-for-nav">
+
+  
+  <nav class="nav-top">
+    <div id="biicode-logo"><a href="http://www.biicode.com">biicode</a></div>
+    <div class="nav-top-mobile">
+      <i data-toggle="nav-top" class="icon icon-reorder"></i>
+      <a href="index.html" class="icon icon-book"> biicode docs</a>
+    </div>
+    <div class="nav-top-standard">
+      <ul class="main-menu">
+        <li><a href="index.html" class="icon icon-book"> biicode docs</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <div class="grid-for-nav">
+
+    
+    <nav data-toggle="nav-shift" class="nav-side">
+      <div class="side-nav-search">
+        <form class="form" action="search.html" method="get">
+  <input type="search" name="q" placeholder="search in biicode docs…" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="menu menu-vertical" data-spy="affix">
+        
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro-to-biicode.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro-to-biicode.html#what-is-biicode">What is biicode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro-to-biicode.html#biicode-beta">Biicode BETA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro-to-biicode.html#what-problem-does-it-solve">What problem does it solve?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installing-biicode.html">Installation and setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installing-biicode.html#download-and-install-the-client-binaries">Download and install the client binaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing-biicode.html#install-the-development-tools">Install the development tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing-biicode.html#create-a-workspace">Create a workspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="start/basicconcepts.html">Basic concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start/helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start/c++challenge.html">Solving the C++ Challenge</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic-usage.html">Basic usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic-usage.html#finding-dependencies">Finding dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic-usage.html#using-an-ide">Using an IDE</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Advanced features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-settings-file">The settings file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#virtual-resources">Virtual resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compilation-rules">Compilation rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#edit-dependencies">Edit dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#merge-a-branch">Merge a branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manually-configuring-dependencies">Manually configuring dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#policies">Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#changing-your-policy-tag">Changing your policy tag</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware/raspberry-pi.html">Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">List of libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_box2s.html">Box2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_cimg.html">CImg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_crypto++.html">Crypto++, a free C++ class library of cryptographic schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_glui.html">GLUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_gmock.html">Gmock (Google C++ Mocking Framework)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_littlecms.html">Little CMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_mili.html">MiLi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_zlib.html">Zlib</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Other tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/google-test-tutorial.html">Google Test Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/updating-blocks-and-dependencies.html">Updating blocks and dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/layouts.html">Workspace and hives layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/configuration_files.html">Configuration Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#the-biicode-client-stopped-working">The biicode client stopped working</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faqs.html">FAQs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faqs.html#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faqs.html#other">Other</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      <div class="rst-versions" data-toggle="rst-versions">
+  <span class="rst-current-version rst-out-of-date" data-toggle="rst-current-version">
+    <span class="icon icon-book"> Read the Docs</span>
+    v:  
+    (old) 
+    <span class="icon icon-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <dl>
+      <dt>On Read the Docs</dt>
+      <dd>
+        <a href="///projects//?fromdocs=">Project Home</a>
+      </dd>
+      <dd>
+        <a href="///builds//?fromdocs=">Builds</a>
+      </dd>
+    </dl>
+    <hr/>
+    Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.
+  </div>
+</div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="nav-shift" class="nav-content-wrap">
+
+      
+      <div class="nav-content">
+        <div class="rst-content">
+          <ul class="breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Advanced features</a></li>
+  
+</ul>
+<hr/>
+
+          <div class="nav-rel-container">
+	<div class="nav-rel prev"><a href="basic-usage.html"
+		title="Previous Chapter: Basic usage">&laquo; Basic usage</a></div>
+		<div class="nav-rel next"><a href="hardware.html"
+			title="Next Chapter: Hardware">Hardware &raquo;</a></div>
+</div>
+          
+  <div class="section" id="advanced-features">
+<h1>Advanced features<a class="headerlink" href="#advanced-features" title="Permalink to this headline">¶</a></h1>
+<p>This section describes some advanced functionalities provided by biicode. Using these features, you will able to have a better control of your projects, defining <strong>virtual resources</strong>, defining advanced <strong>compilation rules</strong>, or even taking deeper control of the way your <strong>dependencies</strong> are found and retrieved.</p>
+<div class="section" id="the-settings-file">
+<h2>The settings file<a class="headerlink" href="#the-settings-file" title="Permalink to this headline">¶</a></h2>
+<p>Every hive contains a special file which allows yo to define some custom settings for your project. This file is located in the <tt class="docutils literal"><span class="pre">bii</span></tt> folder of your hive, and its name is <tt class="docutils literal"><span class="pre">settings.bii</span></tt>.</p>
+<p>The biicode client generates this file for you when you create a new hive. Initially, it contains only information regarding your platform: architecture, operating system, and version. When you compile your project som additional information is included regarding the builder, compiler and configurer to be used.</p>
+<p>You can also specify your own settings for that particular project. This information will be used, for instance, for defining the virtual resources that will be explained in a few paragraphs. You can read more about <a class="reference internal" href="reference/configuration_files/settings.html#settings-bii"><em>settings.bii</em></a> <a class="reference internal" href="reference/configuration_files/settings.html#settings-bii"><em>here</em></a></p>
+</div>
+<div class="section" id="virtual-resources">
+<h2>Virtual resources<a class="headerlink" href="#virtual-resources" title="Permalink to this headline">¶</a></h2>
+<p>Virtual resources are those whose actual implementation depends on the current compilation platform, or any other conditions you may want to specify. These conditions are specified in a special <tt class="docutils literal"><span class="pre">virtual.bii</span></tt> file, for every block, using simple python code.</p>
+<p>Imagine you want different code to be compiled or executed depending on different conditions, like whether you are in a production or a testing environment, Windows or Linux platforms, or even the compiler version. This is possible making use of <strong>virtual resources</strong>.</p>
+<p>So, let&#8217;s say you have this <tt class="docutils literal"><span class="pre">main.cpp</span></tt> and two different versions of <tt class="docutils literal"><span class="pre">sphere.h</span></tt> and its corresponding implementation file <tt class="docutils literal"><span class="pre">sphere.cpp</span></tt>, under two separate folders called <tt class="docutils literal"><span class="pre">test</span></tt> and <tt class="docutils literal"><span class="pre">development</span></tt>.</p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &quot;sphere.h&quot;</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">Sphere</span> <span class="n">s</span><span class="p">(</span><span class="mf">2.0f</span><span class="p">);</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Volume: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">volume</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Note that the <tt class="docutils literal"><span class="pre">main.cpp</span></tt> file includes the <tt class="docutils literal"><span class="pre">sphere.h</span></tt> header file, but makes no reference to the actual location of this resource —and the corresponding implementation, <tt class="docutils literal"><span class="pre">sphere.cpp</span></tt>—. In fact, there is no such file as <tt class="docutils literal"><span class="pre">sphere.h</span></tt> located in the same folder as <tt class="docutils literal"><span class="pre">main.cpp</span></tt>. The actual file to be included in your code is determined by a spectial <tt class="docutils literal"><span class="pre">virtual.bii</span></tt> configuration file, written in python language. You need to create this file in your block&#8217;s <tt class="docutils literal"><span class="pre">bii</span></tt> folder, and write the code that selects the virtual resource to be used in each case. <strong>Every rule is implemented as a python function</strong> —you can give it whatever name you want—, <strong>whose docstring contains the list of resurces affected by that particular rule</strong>.</p>
+<p>In this example we are defining a function that decides which implementation of the <tt class="docutils literal"><span class="pre">sphere.h</span></tt> and <tt class="docutils literal"><span class="pre">sphere.cpp</span></tt> resurces is to be used depending on the presenece or not of the <tt class="docutils literal"><span class="pre">test</span></tt> key in our project secttings. <strong>The return vale for this function must be the name of the folder containing the valid implementations of the virtual resources</strong> for each condition —in our case, the <tt class="docutils literal"><span class="pre">test</span></tt> folder, or the <tt class="docutils literal"><span class="pre">develop</span></tt> folder—.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">settings</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;sphere.h sphere.cpp&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;test&#39;</span><span class="p">):</span>
+                <span class="k">return</span> <span class="s">&quot;test&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s">&quot;develop&quot;</span>
+</pre></div>
+</td></tr></table></div>
+<p>The <tt class="docutils literal"><span class="pre">virtual.bii</span></tt> file —as other biicode configuration files— is written in python language. It is not possible to make any imports, but you will have direct access to the project settings, received as a parameter. In this case a custom setting <tt class="docutils literal"><span class="pre">test</span></tt> is being used, and we are checking for its presence inside a python function.</p>
+</div>
+<div class="section" id="compilation-rules">
+<span id="id1"></span><h2>Compilation rules<a class="headerlink" href="#compilation-rules" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes your project need to define some preprocessor variables or maybe you need to link with some dynamic library provided by the system. Biicode gives you the option to define these special compilation needs.</p>
+<p>You can define rules files for each executable target. Rules files can be placed anywhere in your blocks directory with a filename following the next regular expression:</p>
+<p><tt class="regexp docutils literal"><span class="pre">*cpp_rules*.bii</span></tt></p>
+<p>These files are written in Python, a small subset of it. You can interact with hive settings and target properties. This is an example of this kind of files:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">target</span><span class="o">.</span><span class="n">std</span> <span class="o">=</span> <span class="s">&quot;c++11&quot;</span>
+
+<span class="k">if</span> <span class="s">&quot;matrix.cpp&quot;</span> <span class="ow">in</span> <span class="n">target</span><span class="o">.</span><span class="n">filenames</span><span class="p">:</span>
+   <span class="n">target</span><span class="o">.</span><span class="n">add_definition</span><span class="p">(</span><span class="s">&quot;OPTMIZE_MATRIX=1&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">os</span><span class="o">.</span><span class="n">family</span> <span class="o">==</span> <span class="s">&quot;MacOS&quot;</span><span class="p">:</span>
+   <span class="n">target</span><span class="o">.</span><span class="n">add_package</span><span class="p">(</span><span class="s">&quot;OpenGL&quot;</span><span class="p">,[])</span>
+   <span class="n">target</span><span class="o">.</span><span class="n">add_library</span><span class="p">(</span><span class="s">&quot;${OPENGL_LIBRARIES}&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p id="dependencies-edition">Once you&#8217;ve written your file you should add it to your <a class="reference internal" href="reference/configuration_files/dependencies.html#dependencies-bii"><em>dependencies.bii</em></a></p>
+</div>
+<div class="section" id="edit-dependencies">
+<h2>Edit dependencies<a class="headerlink" href="#edit-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>If you want to edit a block you depend on, you can open it and move it to your hive. You can do so by executing:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii open BLOCK_NAME
+</pre></div>
+</div>
+<p>Where BLOCK_NAME is DEP_OWNER/DEP_NAME</p>
+<p>Then you can work as if the block was yours and the changes you make will be reflected in your code at build time.</p>
+<p>Once you are happy with the changes you can publish your own version of the block:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii publish BLOCK_NAME --branch BRANCH_NAME
+</pre></div>
+</div>
+<p>Unless the code is yours you will not be able to publish it to an existing branch, so you will need to specify a BRANCH_NAME.</p>
+<p>Then you can close the block to remove it from your blocks folder:</p>
+<div class="highlight-bash"><div class="highlight"><pre>bii close BLOCK_NAME
+</pre></div>
+</div>
+<p>Your code will now depend on the version you have just published.</p>
+</div>
+<div class="section" id="merge-a-branch">
+<h2>Merge a branch<a class="headerlink" href="#merge-a-branch" title="Permalink to this headline">¶</a></h2>
+<p>Imagine you have a published block and someone just published a bugfix in a new branch and you want to incorporate those changes to the master version of your block.</p>
+<p>Merging a branch is very simple:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii merge --block BLOCK_NAME --version VERSION_NUMBER
+</pre></div>
+</div>
+<p>Then you can review changes and publish your new version as usual.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii publish BLOCK_NAME
+</pre></div>
+</div>
+</div>
+<div class="section" id="manually-configuring-dependencies">
+<h2>Manually configuring dependencies<a class="headerlink" href="#manually-configuring-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>There are some special cases in which biicode can&#8217;t detect some dependencies. In these cases <strong>you can manually configure your dependencies</strong>.</p>
+<p>For this purpose you can use <a class="reference internal" href="reference/configuration_files/dependencies.html#dependencies-bii"><em>dependencies.bii</em></a></p>
+</div>
+<div class="section" id="policies">
+<span id="advanced-policies"></span><h2>Policies<a class="headerlink" href="#policies" title="Permalink to this headline">¶</a></h2>
+<p>Start with a new hive in your <strong>biicode workspace</strong> directory:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii new policies
+</pre></div>
+</div>
+<p>Create a <tt class="docutils literal"><span class="pre">main.cpp</span></tt> file which includes the block <tt class="docutils literal"><span class="pre">policyadvanced</span></tt> to use the <tt class="docutils literal"><span class="pre">hello()</span></tt> method declared in the <tt class="docutils literal"><span class="pre">hello.h</span></tt> file. Given that the owner of this block is the <tt class="docutils literal"><span class="pre">tutorial</span></tt> user we should write the following code:</p>
+<p><strong>main.cpp</strong></p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &quot;tutorial/policyadvanced/hello.h&quot;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+   <span class="n">hello</span><span class="p">();</span>
+   <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>If you check the output after runnig the code:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii cpp:run
+...
+Hello STABLE
+</pre></div>
+</div>
+<p>Examining the <tt class="docutils literal"><span class="pre">tutorial/policyadvanced</span></tt> block in biicode (<a class="reference external" href="https://www.biicode.com/tutorial/blocks/tutorial/policyadvanced/branches/master">available in this location</a>), we find four published versions with different tags:</p>
+<div class="table-responsive"><table border="1" class="docutils">
+<colgroup>
+<col width="22%">
+<col width="22%">
+<col width="55%">
+</colgroup>
+<thead valign="bottom">
+        <tr class="row-odd">
+                <th class="head">Published index</th>
+                <th class="head">Version</th>
+                <th class="head">Output of hello() method</th>
+        </tr>
+</thead>
+<tbody valign="top">
+        <tr class="row-even">
+                <td>3</td>
+                <td>DEV</td>
+                <td>“Hello DEVELOP”</td>
+        </tr>
+        <tr class="row-odd">
+                <td>2</td>
+                <td>ALPHA</td>
+                <td>“Hello ALPHA”</td>
+        </tr>
+        <tr class="row-even">
+                <td>1</td>
+                <td>BETA</td>
+                <td>“Hello BETA”</td>
+        </tr>
+        <tr class="row-odd">
+                <td>0</td>
+                <td>STABLE</td>
+                <td>“Hello STABLE”</td>
+        </tr>
+</tbody>
+</table>
+</div><p>Being <strong>index=0</strong> the first uploaded version, each one has a different <tt class="docutils literal"><span class="pre">hello()</span></tt> method implementation depending on its version.</p>
+<p>The reason why your program has executed <tt class="docutils literal"><span class="pre">hello()</span></tt> of <tt class="docutils literal"><span class="pre">STABLE</span></tt> version is as follows. Check the contents of the <tt class="docutils literal"><span class="pre">policies.bii</span></tt> file located inside your <tt class="docutils literal"><span class="pre">~/your_bii_workspace/policies/bii/</span></tt> folder. This is a simple YAML file with the following appearance:</p>
+<div class="highlight-python"><pre>default:
+- block: . # Dot . is the pattern for all blocks
+ rules:
+ #First rule is accept with priority 1 all 'master' branches of the original
+ #creator of the block, with category STABLE
+ - [branch.name == "master" and branch.user == block.user, tag==STABLE, 1]</pre>
+</div>
+<p>Then, your policy for this hive makes your searches are in master branchs of anyone user block and all the blocks as <tt class="docutils literal"><span class="pre">STABLE</span></tt> versions.</p>
+</div>
+<div class="section" id="changing-your-policy-tag">
+<h2>Changing your policy tag<a class="headerlink" href="#changing-your-policy-tag" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="search-beta-versions">
+<h3>Search BETA versions<a class="headerlink" href="#search-beta-versions" title="Permalink to this headline">¶</a></h3>
+<p>Modify the <tt class="docutils literal"><span class="pre">policies.bii</span></tt> file as shown here:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">-</span> <span class="p">[</span><span class="n">branch</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&quot;master&quot;</span> <span class="ow">and</span> <span class="n">branch</span><span class="o">.</span><span class="n">user</span> <span class="o">==</span> <span class="n">block</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">tag</span><span class="o">==</span><span class="n">BETA</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You have just modified your default policy file. Now, you only need to update your hive to reflect the changes using the following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii find --update
+
+Finding missing dependencies in server
+Analyzing compatibility <span class="k">for </span>found dependencies...
+   Updated block!
+Dependencies resolved in server:
+All dependencies resolved
+Updated dependencies:
+tutorial/tutorial/policyadvanced/master:#1
+
+Saving files on disk
+Computing dependencies
+Saving dependences on disk
+</pre></div>
+</div>
+<p>Now, you can run your code:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii cpp:run
+...
+Hello BETA
+</pre></div>
+</div>
+<p>As you can see, now you are using the <tt class="docutils literal"><span class="pre">BETA</span></tt> version of the <tt class="docutils literal"><span class="pre">tutorial/policyadvanced</span></tt> block!</p>
+</div>
+<div class="section" id="advanced-tag-selection">
+<h3>Advanced tag selection<a class="headerlink" href="#advanced-tag-selection" title="Permalink to this headline">¶</a></h3>
+<p>Finally, you could look for by published order with your tags. For example, if you write:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">-</span> <span class="p">[</span><span class="n">branch</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&quot;master&quot;</span> <span class="ow">and</span> <span class="n">branch</span><span class="o">.</span><span class="n">user</span> <span class="o">==</span> <span class="n">block</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">tag</span><span class="o">&gt;</span><span class="n">DEV</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This type will look for any blocks with any tag published before <tt class="docutils literal"><span class="pre">DEV</span></tt> version block uploaded to biicode.</p>
+<p>Update the dependencies again and run the code:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii find --update
+...
+<span class="nv">$ </span>bii cpp:run
+...
+Hello ALPHA
+</pre></div>
+</div>
+<p>Given that the <tt class="docutils literal"><span class="pre">ALPHA</span></tt> version was published before the <tt class="docutils literal"><span class="pre">DEV</span></tt> one, this is the one chosen to resolve your dependency.</p>
+</div>
+<div class="section" id="special-attention">
+<h3>Special attention<a class="headerlink" href="#special-attention" title="Permalink to this headline">¶</a></h3>
+<p>Modify your <tt class="docutils literal"><span class="pre">policies.bii</span></tt> file again to get the last version (in this example <tt class="docutils literal"><span class="pre">DEV</span></tt> version)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">-</span> <span class="p">[</span><span class="n">branch</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&quot;master&quot;</span> <span class="ow">and</span> <span class="n">branch</span><span class="o">.</span><span class="n">user</span> <span class="o">==</span> <span class="n">block</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">tag</span><span class="o">==</span><span class="n">DEV</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Once more find the dependencies and execute your code:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii find --update
+...
+<span class="nv">$ </span>bii cpp:run
+...
+Hello DEVELOP
+</pre></div>
+</div>
+<p>However if you try to change the policies to link with an older version (for example, <tt class="docutils literal"><span class="pre">BETA</span></tt> version), you will get this output:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii find --update
+
+Finding missing dependencies in server
+Analyzing compatibility <span class="k">for </span>found dependencies...
+Everything was up to date
+Computing dependencies
+Saving dependences on disk
+</pre></div>
+</div>
+<p>You could get an older version after using an updated one just like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii find --update --downgrade
+
+Analyzing compatibility <span class="k">for </span>found dependencies...
+   Updated block!
+Dependencies resolved in server:
+All dependencies resolved
+Updated dependencies:
+   tutorial/tutorial/policyadvanced/master:#1
+
+Saving files on disk
+Computing dependencies
+Saving dependences on disk
+</pre></div>
+</div>
+</div>
+<div class="section" id="changing-your-policy-file-for-all-your-new-hives">
+<h3>Changing your policy file for all your new hives<a class="headerlink" href="#changing-your-policy-file-for-all-your-new-hives" title="Permalink to this headline">¶</a></h3>
+<p>You could be sure to keep a specified policies for all the new hives. It is possible!</p>
+<p>In your biicode workspace, inside the <tt class="docutils literal"><span class="pre">bii</span></tt> folde, you will find another policy file named <tt class="docutils literal"><span class="pre">default_policies.bii</span></tt>. The changes that you make here will be copied to all new hives and not old hives.</p>
+</div>
+</div>
+</div>
+
+
+          <div class="nav-rel-container">
+	<div class="nav-rel prev"><a href="basic-usage.html"
+		title="Previous Chapter: Basic usage">&laquo; Basic usage</a></div>
+		<div class="nav-rel next"><a href="hardware.html"
+			title="Next Chapter: Hardware">Hardware &raquo;</a></div>
+</div>
+          <footer>
+  <hr/>
+      &copy; Copyright 2013, biicode.
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+
+
+  <!-- Google Analaytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41860930-1', 'biicode.com');
+  ga('send', 'pageview');
+  </script>
+  
+</body>
+</html>

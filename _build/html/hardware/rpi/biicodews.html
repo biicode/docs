@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to configure your biicode workspace &mdash; biicode docs 0.1.11 documentation</title>
+  
+
+  
+  
+  
+      
+  
+  
+  <script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+    URL_ROOT:'../../',
+    VERSION:'0.1.11',
+    COLLAPSE_INDEX:false,
+    FILE_SUFFIX:'.html',
+    HAS_SOURCE:  true
+  };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/underscore.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/theme.js"></script>
+  <script type="text/javascript" src="../../_static/searchtools.js"></script>
+  
+
+  
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  
+  <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+  
+  <link rel="top" title="biicode docs 0.1.11 documentation" href="../../index.html"/>
+  <link rel="up" title="Raspberry Pi" href="../raspberry-pi.html"/>
+  <link rel="next" title="WiringPi: C GPIO library" href="wiringpi.html"/>
+  <link rel="prev" title="How to configure your linux for cross compiling" href="linux.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="body-for-nav">
+
+  
+  <nav class="nav-top">
+    <div id="biicode-logo"><a href="http://www.biicode.com">biicode</a></div>
+    <div class="nav-top-mobile">
+      <i data-toggle="nav-top" class="icon icon-reorder"></i>
+      <a href="../../index.html" class="icon icon-book"> biicode docs</a>
+    </div>
+    <div class="nav-top-standard">
+      <ul class="main-menu">
+        <li><a href="../../index.html" class="icon icon-book"> biicode docs</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <div class="grid-for-nav">
+
+    
+    <nav data-toggle="nav-shift" class="nav-side">
+      <div class="side-nav-search">
+        <form class="form" action="../../search.html" method="get">
+  <input type="search" name="q" placeholder="search in biicode docs…" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="menu menu-vertical" data-spy="affix">
+        
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro-to-biicode.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../intro-to-biicode.html#what-is-biicode">What is biicode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro-to-biicode.html#biicode-beta">Biicode BETA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro-to-biicode.html#what-problem-does-it-solve">What problem does it solve?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing-biicode.html">Installation and setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installing-biicode.html#download-and-install-the-client-binaries">Download and install the client binaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installing-biicode.html#install-the-development-tools">Install the development tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installing-biicode.html#create-a-workspace">Create a workspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../start/basicconcepts.html">Basic concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../start/helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../start/c++challenge.html">Solving the C++ Challenge</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic-usage.html">Basic usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../basic-usage.html#finding-dependencies">Finding dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basic-usage.html#using-an-ide">Using an IDE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced-features.html">Advanced features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced-features.html#the-settings-file">The settings file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced-features.html#virtual-resources">Virtual resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced-features.html#compilation-rules">Compilation rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced-features.html#edit-dependencies">Edit dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced-features.html#merge-a-branch">Merge a branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced-features.html#manually-configuring-dependencies">Manually configuring dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced-features.html#policies">Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced-features.html#changing-your-policy-tag">Changing your policy tag</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../hardware.html">Hardware</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../raspberry-pi.html">Raspberry Pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arduino.html">Arduino</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../libraries.html">List of libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../libs/lib_box2s.html">Box2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../libs/lib_cimg.html">CImg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../libs/lib_crypto++.html">Crypto++, a free C++ class library of cryptographic schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../libs/lib_glui.html">GLUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../libs/lib_gmock.html">Gmock (Google C++ Mocking Framework)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../libs/lib_littlecms.html">Little CMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../libs/lib_mili.html">MiLi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../libs/lib_zlib.html">Zlib</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Other tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/google-test-tutorial.html">Google Test Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/updating-blocks-and-dependencies.html">Updating blocks and dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference.html">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/layouts.html">Workspace and hives layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/configuration_files.html">Configuration Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/cpp_build_files.html">C++ build files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../troubleshooting.html#the-biicode-client-stopped-working">The biicode client stopped working</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs.html">FAQs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../faqs.html#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faqs.html#other">Other</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      <div class="rst-versions" data-toggle="rst-versions">
+  <span class="rst-current-version rst-out-of-date" data-toggle="rst-current-version">
+    <span class="icon icon-book"> Read the Docs</span>
+    v:  
+    (old) 
+    <span class="icon icon-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <dl>
+      <dt>On Read the Docs</dt>
+      <dd>
+        <a href="///projects//?fromdocs=">Project Home</a>
+      </dd>
+      <dd>
+        <a href="///builds//?fromdocs=">Builds</a>
+      </dd>
+    </dl>
+    <hr/>
+    Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.
+  </div>
+</div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="nav-shift" class="nav-content-wrap">
+
+      
+      <div class="nav-content">
+        <div class="rst-content">
+          <ul class="breadcrumbs">
+  <li><a href="../../index.html">Docs</a> &raquo;</li>
+  <li><a href="">How to configure your biicode workspace</a></li>
+  
+</ul>
+<hr/>
+
+          <div class="nav-rel-container">
+	<div class="nav-rel prev"><a href="linux.html"
+		title="Previous Chapter: How to configure your linux for cross compiling">&laquo; How to configure your linux fo...</a></div>
+		<div class="nav-rel next"><a href="wiringpi.html"
+			title="Next Chapter: WiringPi: C GPIO library">WiringPi: C GPIO library &raquo;</a></div>
+</div>
+          
+  <div class="section" id="how-to-configure-your-biicode-workspace">
+<span id="config-raspberry-ws"></span><h1>How to configure your biicode workspace<a class="headerlink" href="#how-to-configure-your-biicode-workspace" title="Permalink to this headline">¶</a></h1>
+<p>If you haven&#8217;t done so, you must first  <a class="reference internal" href="../../installing-biicode.html#create-workspace"><em>create a biicode workspace</em></a>.</p>
+<div class="section" id="add-the-cross-compilers-to-biicode">
+<h2>Add the cross compilers to biicode<a class="headerlink" href="#add-the-cross-compilers-to-biicode" title="Permalink to this headline">¶</a></h2>
+<p>Add the cross compilers to <tt class="docutils literal"><span class="pre">enviroment.bii</span></tt> like shown in the last four lines:</p>
+<div class="highlight-text"><div class="highlight"><pre>cpp:
+    builders:
+        - path: make
+          tool: {family: MAKE}
+    compilers:
+        - path: null
+          tool: {family: GNU}
+<span class="hll">        - path: /usr/local/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-gcc
+</span><span class="hll">          tool: {family: GNU, subfamily: C, arch: ARM}
+</span><span class="hll">        - path: /usr/local/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-g++
+</span><span class="hll">          tool: {family: GNU, subfamily: CPP, arch: ARM}
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="create-a-new-hive-and-code">
+<h2>Create a new hive and code!<a class="headerlink" href="#create-a-new-hive-and-code" title="Permalink to this headline">¶</a></h2>
+<p>Creating a new hive with the <tt class="docutils literal"><span class="pre">bii</span> <span class="pre">new</span></tt> command.</p>
+<div class="section" id="configure-your-settings">
+<h3>Configure your settings<a class="headerlink" href="#configure-your-settings" title="Permalink to this headline">¶</a></h3>
+<p>Update your <tt class="docutils literal"><span class="pre">settings.bii</span></tt> or <tt class="docutils literal"><span class="pre">default_settings.bii</span></tt> with the info of your Raspberry Pi</p>
+<div class="highlight-python"><pre>rpi: {directory: /home/pi, ip: 192.168.1.68, password: raspberry, user: pi}</pre>
+</div>
+<ul class="simple">
+<li><strong>directory</strong>: Raspberry Pi directory where you want to save the files you send for SCP</li>
+<li><strong>ip</strong>: Raspberry Pi IP address. You can find it under <tt class="docutils literal"><span class="pre">inet</span> <span class="pre">addr</span></tt> field executing <tt class="docutils literal"><span class="pre">ifconfig</span></tt> in a console inside the raspberry.</li>
+<li><strong>user</strong>: Raspberry Pi user name</li>
+<li><strong>password</strong>: Raspberry Pi password</li>
+</ul>
+<p>Change the architecture of the cpp compiler on the <tt class="docutils literal"><span class="pre">settings.bii</span></tt>. Where you see:</p>
+<div class="highlight-python"><pre>cpp:
+  builder: {family: MAKE}
+  compiler: {amily: GNU}
+  configurer: {family: CMake}</pre>
+</div>
+<p>add <tt class="docutils literal"><span class="pre">arch:</span> <span class="pre">ARM</span></tt>:</p>
+<div class="highlight-python"><pre>cpp:
+  builder: {family: MAKE}
+  compiler: {arch: ARM, family: GNU}
+  configurer: {family: CMake}</pre>
+</div>
+</div>
+<div class="section" id="code-as-usual">
+<h3>Code as usual<a class="headerlink" href="#code-as-usual" title="Permalink to this headline">¶</a></h3>
+<p>Copy the code that you want to compile into your <tt class="docutils literal"><span class="pre">block</span> <span class="pre">folder</span></tt>. For example:</p>
+<p><strong>hello.h</strong></p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include  &lt;iostream&gt;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">hello</span><span class="p">(){</span>
+ <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;Hello World&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>main.cpp</strong></p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &quot;hello.h&quot;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">hello</span><span class="p">();</span>
+  <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="compile-your-code">
+<h3>Compile your code<a class="headerlink" href="#compile-your-code" title="Permalink to this headline">¶</a></h3>
+<p>Once you have completed all the coding process, you are ready to make the cross-compilation:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii cpp:build
+</pre></div>
+</div>
+<p>Note that the <tt class="docutils literal"><span class="pre">bii</span> <span class="pre">cpp:build</span></tt> command needs to be executed from a folder containing a hive like any other biicode project. After some messages showing information about the compiling process, the binaries will created in your <tt class="docutils literal"><span class="pre">bin</span> <span class="pre">folder</span></tt>.</p>
+<p>Remember that when generating the binary by cross compilation, you can only run on the Raspberry Pi.</p>
+</div>
+</div>
+<div class="section" id="send-your-binaries">
+<h2>Send your binaries<a class="headerlink" href="#send-your-binaries" title="Permalink to this headline">¶</a></h2>
+<p>To send your binary to Raspberry Pi, you just execute the <tt class="docutils literal"><span class="pre">rpi:send</span></tt> command and the file will be sent by scp to the address that appears in your <strong>settings.bii</strong>:</p>
+<div class="highlight-bash"><pre>$ bii rpi:send
+
+...
+
+Sending with scp -r [HIVE_DIRECTORY]/bin [RPI_USER]@[RPI_IP]:[DIRECTORY]/[HIVE_NAME]
+
+[RPI_USER]@[RPI_IP]'s password:</pre>
+</div>
+<p>Finally, the Raspberry Pi user&#8217;s password will be asked. If you have not changed your password, for raspbian is <strong>raspberry</strong>.</p>
+<p>If you want to send files to another Raspberry Pi or specify a different directory that appears in your <strong>settings.bii</strong>, you have the option of passing these parameters to the <tt class="docutils literal"><span class="pre">bii:send</span></tt>. These parameters are not obligatory, can be passed only a new directory and use the other parameters of <strong>settings.bii</strong>.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii rpi:send <span class="o">[</span>directory<span class="o">]</span> <span class="o">[</span>user<span class="o">]</span> <span class="o">[</span>ip<span class="o">]</span>
+
+...
+
+<span class="nv">$ </span>bii rpi:send <span class="o">[</span>directory<span class="o">]</span>
+</pre></div>
+</div>
+<p>You just have to go to your Raspberry Pi and execute the binaries as any computer.</p>
+</div>
+</div>
+
+
+          <div class="nav-rel-container">
+	<div class="nav-rel prev"><a href="linux.html"
+		title="Previous Chapter: How to configure your linux for cross compiling">&laquo; How to configure your linux fo...</a></div>
+		<div class="nav-rel next"><a href="wiringpi.html"
+			title="Next Chapter: WiringPi: C GPIO library">WiringPi: C GPIO library &raquo;</a></div>
+</div>
+          <footer>
+  <hr/>
+      &copy; Copyright 2013, biicode.
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+
+
+  <!-- Google Analaytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41860930-1', 'biicode.com');
+  ga('send', 'pageview');
+  </script>
+  
+</body>
+</html>

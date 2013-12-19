@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Meta-configuration of C/C++ projects with CMake &mdash; biicode docs 0.1.11 documentation</title>
+  
+
+  
+  
+  
+      
+  
+  
+  <script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+    URL_ROOT:'../',
+    VERSION:'0.1.11',
+    COLLAPSE_INDEX:false,
+    FILE_SUFFIX:'.html',
+    HAS_SOURCE:  true
+  };
+  </script>
+  <script type="text/javascript" src="../_static/jquery.js"></script>
+  <script type="text/javascript" src="../_static/underscore.js"></script>
+  <script type="text/javascript" src="../_static/doctools.js"></script>
+  <script type="text/javascript" src="../_static/theme.js"></script>
+  <script type="text/javascript" src="../_static/searchtools.js"></script>
+  
+
+  
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  
+  <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+  
+  <link rel="top" title="biicode docs 0.1.11 documentation" href="../index.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="body-for-nav">
+
+  
+  <nav class="nav-top">
+    <div id="biicode-logo"><a href="http://www.biicode.com">biicode</a></div>
+    <div class="nav-top-mobile">
+      <i data-toggle="nav-top" class="icon icon-reorder"></i>
+      <a href="../index.html" class="icon icon-book"> biicode docs</a>
+    </div>
+    <div class="nav-top-standard">
+      <ul class="main-menu">
+        <li><a href="../index.html" class="icon icon-book"> biicode docs</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <div class="grid-for-nav">
+
+    
+    <nav data-toggle="nav-shift" class="nav-side">
+      <div class="side-nav-search">
+        <form class="form" action="../search.html" method="get">
+  <input type="search" name="q" placeholder="search in biicode docs…" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="menu menu-vertical" data-spy="affix">
+        
+        
+        <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro-to-biicode.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro-to-biicode.html#what-is-biicode">What is biicode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro-to-biicode.html#biicode-beta">Biicode BETA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro-to-biicode.html#what-problem-does-it-solve">What problem does it solve?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installing-biicode.html">Installation and setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installing-biicode.html#download-and-install-the-client-binaries">Download and install the client binaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installing-biicode.html#install-the-development-tools">Install the development tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installing-biicode.html#create-a-workspace">Create a workspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../start/basicconcepts.html">Basic concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/c++challenge.html">Solving the C++ Challenge</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../basic-usage.html">Basic usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basic-usage.html#finding-dependencies">Finding dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic-usage.html#using-an-ide">Using an IDE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-features.html">Advanced features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#the-settings-file">The settings file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#virtual-resources">Virtual resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#compilation-rules">Compilation rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#edit-dependencies">Edit dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#merge-a-branch">Merge a branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#manually-configuring-dependencies">Manually configuring dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#policies">Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#changing-your-policy-tag">Changing your policy tag</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../hardware/raspberry-pi.html">Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../libraries.html">List of libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_box2s.html">Box2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_cimg.html">CImg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_crypto++.html">Crypto++, a free C++ class library of cryptographic schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_glui.html">GLUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_gmock.html">Gmock (Google C++ Mocking Framework)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_littlecms.html">Little CMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_mili.html">MiLi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_zlib.html">Zlib</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Other tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/google-test-tutorial.html">Google Test Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/updating-blocks-and-dependencies.html">Updating blocks and dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/layouts.html">Workspace and hives layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/configuration_files.html">Configuration Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#the-biicode-client-stopped-working">The biicode client stopped working</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">FAQs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../faqs.html#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faqs.html#other">Other</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      <div class="rst-versions" data-toggle="rst-versions">
+  <span class="rst-current-version rst-out-of-date" data-toggle="rst-current-version">
+    <span class="icon icon-book"> Read the Docs</span>
+    v:  
+    (old) 
+    <span class="icon icon-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <dl>
+      <dt>On Read the Docs</dt>
+      <dd>
+        <a href="///projects//?fromdocs=">Project Home</a>
+      </dd>
+      <dd>
+        <a href="///builds//?fromdocs=">Builds</a>
+      </dd>
+    </dl>
+    <hr/>
+    Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.
+  </div>
+</div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="nav-shift" class="nav-content-wrap">
+
+      
+      <div class="nav-content">
+        <div class="rst-content">
+          <ul class="breadcrumbs">
+  <li><a href="../index.html">Docs</a> &raquo;</li>
+  <li><a href="">Meta-configuration of C/C++ projects with CMake</a></li>
+  
+</ul>
+<hr/>
+
+          <div class="nav-rel-container">
+</div>
+          
+  <div class="section" id="meta-configuration-of-c-c-projects-with-cmake">
+<h1>Meta-configuration of C/C++ projects with CMake<a class="headerlink" href="#meta-configuration-of-c-c-projects-with-cmake" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+<div class="section" id="project-configuration-and-setup">
+<h2>Project configuration and setup<a class="headerlink" href="#project-configuration-and-setup" title="Permalink to this headline">¶</a></h2>
+<p>Project configuration in software development is the process of setting up <em>how</em> your code will be built, managed and/or run. It varies depending on the programming language and tools, as the IDE, used. For instance, when programming in C/C++, the project setup usually comes with defining which artifacts (executables, libraries) will be built from certain source code files, with given compiling and linking options. In Microsoft Visual, this can be mostly done with wizards, menu and contextual commands; e.g. you can configure your directories containing external libraries in a dialog (Project Properties).</p>
+<p>Other languages, especially interpreted ones, as node or python, typically require much less project configuration or setup. In languages, such as Java, typical project setup can be done with IDEs like Eclipse or Netbeans, nevertheless, the use of Maven is probably more extended. Maven allows you to define not only how the project has to be built, packaged, executed or tested, but also, to specify dependencies to binaries artifacts (jars), which can be retrieved from external servers.</p>
+<p>In the C/C++ ecosystem, the best tool for project configuration is CMake. CMake allows to specify the build of a project in files named CmakeLists.txt with a simple syntax (it is simpler than writing Makefiles). From those files it can generate projects for the most popular IDEs and build systems in different OS. It is a must have tool. It is the de-facto standard in the industry for the C/C++ multiplatform and even for single OS development. We love it. We have used it for a long time in our own projects, and, as professors, we have taught it from the first day in our Software Engineering courses at university.</p>
+</div>
+<div class="section" id="c-c-project-meta-configuration">
+<h2>C/C++ project meta-configuration<a class="headerlink" href="#c-c-project-meta-configuration" title="Permalink to this headline">¶</a></h2>
+<p>What is the project meta-configuration? Probably you already know something about meta-programming. Meta-programming is a process in which the code you write (as in a C++ template) is the specification or instructions of how the real code will be generated by a system (in the case of C++ templates, the compiler).</p>
+<p>In biicode, meta-configuration is the process in which the project setup is done (most of the time automatically) by collecting information about the project and user intentions from different origins. For example, the source code itself is a great source of information that can be exploited for this purpose.</p>
+<p>Let&#8217;s see how it works with the well-known example &#8220;Hello World&#8221;:</p>
+<p>Imagine someone starts to write code, and writes the following three (simplified) files for a Hello World application.</p>
+<img alt="../_images/hello_files.png" src="../_images/hello_files.png" />
+<p>Analyzing the source code, it is clear that the user wants to build an executable (from the main function, in green), that <em>includes</em> the file &#8220;hello.h&#8221; (red). Cross-checking declared and defined symbols in &#8220;hello.h&#8221; and &#8220;hello.cpp&#8221; it can be easily deduced that the implementation (blue) of the function hello() is found in the &#8220;hello.cpp&#8221; file, and so it is required to build the application. Accordingly, a CMakeLists.txt like the following could be automatically generated:</p>
+<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">ADD_EXECUTABLE</span><span class="p">(</span><span class="s">main</span>
+            <span class="s">main.cpp</span>
+            <span class="s">hello.cpp</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What makes this automatic generation of the CMakeLists.txt file interesting? If a couple of new files are added and included by &#8220;main.cpp&#8221; or &#8220;hello.cpp&#8221;, they will automatically be added to the executable. If the user wants to create a new executable, all they have to do is to write a file (with whatever name) with a main() function inside, i.e. the user just has to focus on writing code, practically the rest of the process can be automated. Although real large scale multiplatform projects usually have a complex building process which probably cannot be automatically fully deduced, this approach can be very valuable for students, programming courses, rapid prototyping and testing, etc. And for such large projects, they can also benefit from this approach. Lets see how.</p>
+</div>
+<div class="section" id="biicode-approach-to-c-projects-meta-configuration">
+<h2>Biicode approach to C++ projects meta-configuration<a class="headerlink" href="#biicode-approach-to-c-projects-meta-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Biicode is a free tool (and it will always be free for OSS) created by C/C++ lovers to manage source code files dependencies in a novel way, facilitating the process of sharing and reusing source code.</p>
+<p>In biicode, each project is called a hive, and it has the following simplified layout:</p>
+<div class="highlight-python"><pre>|-- my_hive
+|    +-- blocks (the user source code is here)
+|    |    +-- my_user_name
+|    |          +-- my_block
+|    |          |       |-- hello.c
+|    |          |       |-- hello.h
+|    |          +-- my_other_block
+|    |                  |-- foo.c
+|    |                  └── bar.h
+|    +-- build (to store generated project and build files)
+|    +-- cmake (stores the generated CMake files)
+|    +-- deps (stores source code of dependencies)</pre>
+</div>
+<p>The user&#8217;s source code is arranged in blocks, each one in the form <em>username/blockname</em>. These blocks are the units that are published and reused, somewhat (but different, really) similar to repositories in a version control system.</p>
+<p>Let&#8217;s assume that the username for this example is <strong>maya</strong>, the hive is called <strong>hello</strong>, and the blockname in this case (this is not necessary), is also <strong>hello</strong>.
+The layout will be:</p>
+<div class="highlight-python"><pre>|-- hello (the hive - project)
+|    +-- blocks
+|    |    +-- maya
+|    |          +-- hello (block maya/hello)
+|    |                  |-- hello.cpp
+|    |                  |-- hello.h
+|    |                  └── main.cpp
+|    +-- cmake
+|    |    |-- CMakeLists.txt
+|    |    ├── bii_targets.cmake
+|    |    └── bii_vars.cmake</pre>
+</div>
+<div class="section" id="generated-cmake-files">
+<h3>Generated CMake files<a class="headerlink" href="#generated-cmake-files" title="Permalink to this headline">¶</a></h3>
+<p>The files inside the cmake folder are automatically generated by biicode. The CMakeLists.txt is created just once, so the user can modify its contents if necessary.</p>
+<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">PROJECT</span><span class="p">(</span> <span class="s">hello</span> <span class="p">)</span>
+<span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">2.8</span><span class="p">)</span>
+<span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_RUNTIME_OUTPUT_DIRECTORY</span> <span class="s">../bin</span><span class="p">)</span>
+<span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG</span> <span class="s">../bin</span><span class="p">)</span>
+<span class="nb">INCLUDE_DIRECTORIES</span><span class="p">(</span><span class="s">../blocks</span><span class="p">)</span>
+<span class="nb">INCLUDE_DIRECTORIES</span><span class="p">(</span><span class="s">../deps</span><span class="p">)</span>
+
+<span class="c"># This file has all the variables used in bii_targets.cmake to define the targets</span>
+<span class="nb">INCLUDE</span><span class="p">(</span><span class="s">bii_vars.cmake</span><span class="p">)</span>
+
+
+<span class="c"># This file defines the actual targets EXEs, LIBs STATIC and SHARED with their respective</span>
+<span class="c"># settings and definitions</span>
+<span class="nb">INCLUDE</span><span class="p">(</span><span class="s">bii_targets.cmake</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It includes two other files, also generated by biicode. These two files are overwritten everytime the <em>bii</em> tool is called and there are changes in the project.
+The first one, <em>bii_vars.cmake</em> creates variables that define the targets to build and their properties, but does not create those targets yet. Some variables might be empty, but they are declared here for convenience to the user.</p>
+<div class="highlight-cmake"><div class="highlight"><pre><span class="c">###### Defining target maya_hello_main #######</span>
+<span class="nb">SET</span><span class="p">(</span><span class="s">BII_TARGET_maya_hello_main_NAME</span> <span class="s">maya_hello_main</span><span class="p">)</span>
+<span class="nb">SET</span><span class="p">(</span><span class="s">BII_TARGET_maya_hello_main_TYPE</span> <span class="s">EXE</span><span class="p">)</span>
+<span class="c">#Ordered list of libraries to link with</span>
+<span class="nb">SET</span><span class="p">(</span><span class="s">BII_TARGET_maya_hello_main_LIBS</span> <span class="p">)</span>
+<span class="nb">SET</span><span class="p">(</span><span class="s">BII_TARGET_maya_hello_main_COMPILE_FLAGS</span> <span class="p">)</span>
+<span class="nb">SET</span><span class="p">(</span><span class="s">BII_TARGET_maya_hello_main_FILES</span> <span class="s">../blocks/maya/hello/hello.cpp</span>
+                                <span class="s">../blocks/maya/hello/hello.h</span>
+                                <span class="s">../blocks/maya/hello/main.cpp</span><span class="p">)</span>
+<span class="nb">SET</span><span class="p">(</span><span class="s">BII_TARGET_maya_hello_main_DATA_FILES</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>The other <em>bii_targets.cmake</em> file, is the one that actually define the targets to be built, based on the variables declared in the previous file.</p>
+<div class="highlight-cmake"><div class="highlight"><pre><span class="c">#This file is automatically created by biicode.</span>
+<span class="c">#Do not modify it, as your changes will be overwritten.</span>
+
+<span class="c">###### Artifact for target maya_hello_main #######</span>
+<span class="nb">ADD_EXECUTABLE</span><span class="p">(</span> <span class="o">${</span><span class="nv">BII_TARGET_maya_hello_main_NAME</span><span class="o">}</span>
+                                <span class="o">${</span><span class="nv">BII_TARGET_maya_hello_main_EXE_TYPE</span><span class="o">}</span>
+                                <span class="o">${</span><span class="nv">BII_TARGET_maya_hello_main_FILES</span><span class="o">}</span><span class="p">)</span>
+<span class="nb">TARGET_LINK_LIBRARIES</span><span class="p">(</span> <span class="o">${</span><span class="nv">BII_TARGET_maya_hello_main_NAME</span><span class="o">}</span> <span class="o">${</span><span class="nv">BII_TARGET_maya_hello_main_LIBS</span><span class="o">}</span><span class="p">)</span>
+<span class="nb">SET_TARGET_PROPERTIES</span><span class="p">(</span><span class="o">${</span><span class="nv">BII_TARGET_maya_hello_main_NAME</span><span class="o">}</span> <span class="s">PROPERTIES</span> <span class="s">COMPILE_FLAGS</span>
+                                <span class="s2">&quot;${BII_TARGET_maya_hello_main_COMPILE_FLAGS}&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This way makes it very simple to define or customize the building process. Users can edit the used variables in the CMakeLists.txt between the two included .cmake files.
+Note that this approach is not exclusive with the possibility of the user having their own CMakeLists inside their blocks along with his source code, or even other cmake files that could be included from the biicode generated CMakeList.txt one.</p>
+</div>
+<div class="section" id="integrating-dependencies">
+<h3>Integrating dependencies<a class="headerlink" href="#integrating-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>Biicode allows a very simple publication and sharing of your source code to the biicode cloud. You (or anyone else in the world) can later very easily reuse code in another project. All you have to do to reuse previously published code is to write in your code a #include directive, in the form &#8220;username/block/path/to/file.h&#8221;. If biicode does not find such file locally, it will look for it in biicode cloud and retrieve it into your project along with other files (included by or implementing such file). What happens with such source code?</p>
+<p>It is retrieved as source code, not as binaries, so it has to be built locally. The source files could be just directly added to the executable, but it seems more intuitive to define a library that contains such files, as they wont be usually edited by the user, and link the executable to such library.</p>
+<p>For example, imagine that the user <strong>willy</strong> has developed a similar application that says goodbye instead of hello, with the following layout:</p>
+<div class="highlight-python"><pre>|-- bye (the hive - project)
+|    +-- blocks
+|    |    +-- willy
+|    |          +-- bye (block willy/bye)
+|    |                  |-- bye.cpp
+|    |                  |-- bye.h
+|    |                  └── main.cpp</pre>
+</div>
+<p>Willy can very easily publish and share his code, with the command (see HYPERLINK to DOCU):</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii publish
+</pre></div>
+</div>
+<p>Maya can very easily reuse that code, writing in her code:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="cp">#include &quot;maya/hello/hello.h&quot;</span>
+<span class="cp">#include &quot;willy/bye/bye.h&quot;</span>
+<span class="cp">#include &lt;iostream&gt;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+        <span class="n">hello</span><span class="p">();</span>
+        <span class="n">bye</span><span class="p">();</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>and issuing the command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>bii find
+</pre></div>
+</div>
+<p>The source code files <em>&#8220;bye.cpp&#8221;</em> and <em>&#8220;bye.h&#8221;</em> are retrieved and written in the <em>deps</em> folder. Note that willy&#8217;s main.cpp file is not retrieved as it is not necessary as indicated by the dependency graph.</p>
+<p>The generated CMake <em>bii_vars.cmake</em> file will now also contain:</p>
+<div class="highlight-cmake"><div class="highlight"><pre><span class="c">###### Defining target willy_bye #######</span>
+<span class="nb">SET</span><span class="p">(</span><span class="s">BII_TARGET_willy_bye_NAME</span> <span class="s">willy_bye</span><span class="p">)</span>
+<span class="nb">SET</span><span class="p">(</span><span class="s">BII_TARGET_willy_bye_TYPE</span> <span class="s">STATIC</span><span class="p">)</span>
+<span class="nb">SET</span><span class="p">(</span><span class="s">BII_TARGET_willy_bye_FILES</span> <span class="s">../blocks/willy/bye/bye.cpp</span>
+                                <span class="s">../blocks/willy/bye/bye.h</span><span class="p">)</span>
+
+<span class="c">###### Defining target maya_hello_main #######</span>
+<span class="nb">SET</span><span class="p">(</span><span class="s">BII_TARGET_maya_hello_main_NAME</span> <span class="s">maya_hello_main</span><span class="p">)</span>
+<span class="nb">SET</span><span class="p">(</span><span class="s">BII_TARGET_maya_hello_main_TYPE</span> <span class="s">EXE</span><span class="p">)</span>
+<span class="c">#Ordered list of libraries to link with</span>
+<span class="nb">SET</span><span class="p">(</span><span class="s">BII_TARGET_maya_hello_main_LIBS</span> <span class="s">willy_bye</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and the <em>bii_targets.cmake</em> file:</p>
+<div class="highlight-cmake"><div class="highlight"><pre><span class="c">###### Artifact for target willy_bye #######</span>
+<span class="nb">ADD_LIBRARY</span><span class="p">(</span> <span class="o">${</span><span class="nv">BII_TARGET_willy_bye_NAME</span><span class="o">}</span>
+                                <span class="o">${</span><span class="nv">BII_TARGET_willy_bye_TYPE</span><span class="o">}</span>
+                                <span class="o">${</span><span class="nv">BII_TARGET_willy_bye_FILES</span><span class="o">}</span><span class="p">)</span>
+<span class="nb">TARGET_LINK_LIBRARIES</span><span class="p">(</span> <span class="o">${</span><span class="nv">BII_TARGET_willy_bye_NAME</span><span class="o">}</span> <span class="o">${</span><span class="nv">BII_TARGET_willy_bye_LIBS</span><span class="o">}</span><span class="p">)</span>
+<span class="nb">SET_TARGET_PROPERTIES</span><span class="p">(</span><span class="o">${</span><span class="nv">BII_TARGET_willy_bye_NAME</span><span class="o">}</span> <span class="s">PROPERTIES</span> <span class="s">COMPILE_FLAGS</span>
+                                <span class="s2">&quot;${BII_TARGET_willy_bye_COMPILE_FLAGS}&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="advanced-configuration">
+<h3>Advanced configuration<a class="headerlink" href="#advanced-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Why we call it meta-configuration instead of automated configuration? Because, is the user who specifies the configuration of the project in a higher level. The automatic dependencies detection in C/C++ can sometimes fail, most of the times due to the usage of macros that a normal parser cannot handle. The programmer could also want to specify his own dependencies to do reflection, feature toggling, etc. Custom dependencies can be set in a file called <em>&#8220;dependencies.bii&#8221;</em> in which the user can add, remove or redefine dependencies between files.</p>
+<p>Biicode has also a way to define custom build options. These options are propagated to the affected targets automatically, following the dependency graph.
+For example, imagine the user <strong>willy</strong> uses in the <em>bye</em> block some mathematical functions from <em>&lt;math.h&gt;</em>, that requires to link with the &#8220;m&#8221; library under linux (the typical -lm link flag). How can user willy specify such behaviour? It is true that #pragma directives can sometimes be used to define libraries to link with, but biicode defines a more general approach that can be used not just for linking libraries, but for many building properties.</p>
+<p>The user <strong>willy</strong> can create a file <strong>cpp_rules.bii</strong> in his block <strong>bye</strong> that could contain something similar to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">os</span><span class="o">.</span><span class="n">family</span> <span class="o">==</span> <span class="s">&#39;Linux&#39;</span><span class="p">:</span>
+        <span class="n">target</span><span class="o">.</span><span class="n">add_library</span><span class="p">(</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This defines that under Linux, the library &#8216;m&#8217; has to be added to the current target (in this case, the STATIC library that will be created, named <em>willy_bye</em>.
+Although it is a static library and it does not make much sense to link it with another library (linking is only actually performed for exes and shared libraries), biicode knows that this setting has to be transitively propagated, that is, executables and shared libraries that link to <strong>willy_bye</strong> will have in turn to link with <strong>m</strong>, so biicode adds it to the list of required libraries for such executables and shared libraries.</p>
+</div>
+<div class="section" id="editing-cmakelists-txt">
+<h3>Editing CMakeLists.txt<a class="headerlink" href="#editing-cmakelists-txt" title="Permalink to this headline">¶</a></h3>
+<p>Suppose that you need to use a library, let&#8217;s say Boost. If such library was already in biicode, it would be enough to just #include it. But boost is still not in biicode (and it is not likely to be in the short term, for many reasons, as being too large or having many complex interdependencies among its libraries). Fortunately, as explained above, it is fairly straightforward to modify the CMakeLists.txt in order to account for it.</p>
+<p>For example, if the required library is lambda, which is only composed by headers, you just need to specify your boost installation directory as:</p>
+<div class="highlight-cmake"><div class="highlight"><pre><span class="nb">PROJECT</span><span class="p">(</span> <span class="s">hello</span> <span class="p">)</span>
+
+<span class="c"># This file has all the variables used in bii_targets.cmake to define the targets</span>
+<span class="nb">INCLUDE</span><span class="p">(</span><span class="s">bii_vars.cmake</span><span class="p">)</span>
+
+<span class="hll"><span class="nb">INCLUDE_DIRECTORIES</span><span class="p">(</span><span class="s">path/to/your/boost/installation</span><span class="p">)</span>
+</span><span class="c"># This file defines the actual targets EXEs, LIBs STATIC and SHARED with their respective</span>
+<span class="c"># settings and definitions</span>
+<span class="nb">INCLUDE</span><span class="p">(</span><span class="s">bii_targets.cmake</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Of course, you can also use FIND_PACKAGE features of CMake for such purpose. In fact, we are already using it to find and configure projects with well known dependencies, large and massively used libraries as WxWidgets or Boost, so it will be enough for users to just #include what they want and biicode is able to fully configure the project if a local installation of such libraries is found.</p>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>In this post we have introduced a new approach to C/C++ projects configuration: meta-configuration from user information, mainly source code.
+This is a powerful approach, that can lower barriers for students and new users of the C/C++ language, but that can be also very interesting for many users used in conjunction with a dependency manager based on source code instead of binary artifacts.</p>
+<p>Biicode is such novel dependency manager for the C/C++ ecosystem in which source code files can be easily reused among projects and very simply shared with the OSS community. Biicode is in Beta stage, it has currently few contents, so it is probable that your typical requirements are not available in it yet, and it is still not very stable. But it is a solid proof of the power of this approach, and it is evolving quickly, iterating on user feedback. The fact that we use CMake has been widely accepted by our users, we are so convinced about its power that can assure that we will always use it. We are even using it for our experimental Fortran biicode tools!</p>
+<p>Do you want to try? Go to <a class="reference external" href="http://www.biicode.com">http://www.biicode.com</a> and request your invitation!</p>
+</div>
+</div>
+
+
+          <div class="nav-rel-container">
+</div>
+          <footer>
+  <hr/>
+      &copy; Copyright 2013, biicode.
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+
+
+  <!-- Google Analaytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41860930-1', 'biicode.com');
+  ga('send', 'pageview');
+  </script>
+  
+</body>
+</html>

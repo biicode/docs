@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation and setup &mdash; biicode docs 0.1.11 documentation</title>
+  
+
+  
+  
+  
+      
+  
+  
+  <script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+    URL_ROOT:'./',
+    VERSION:'0.1.11',
+    COLLAPSE_INDEX:false,
+    FILE_SUFFIX:'.html',
+    HAS_SOURCE:  true
+  };
+  </script>
+  <script type="text/javascript" src="_static/jquery.js"></script>
+  <script type="text/javascript" src="_static/underscore.js"></script>
+  <script type="text/javascript" src="_static/doctools.js"></script>
+  <script type="text/javascript" src="_static/theme.js"></script>
+  <script type="text/javascript" src="_static/searchtools.js"></script>
+  
+
+  
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  
+  <link rel="stylesheet" href="_static/theme.css" type="text/css" />
+  
+  <link rel="top" title="biicode docs 0.1.11 documentation" href="index.html"/>
+  <link rel="next" title="Getting started" href="getting-started.html"/>
+  <link rel="prev" title="Introduction" href="intro-to-biicode.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="body-for-nav">
+
+  
+  <nav class="nav-top">
+    <div id="biicode-logo"><a href="http://www.biicode.com">biicode</a></div>
+    <div class="nav-top-mobile">
+      <i data-toggle="nav-top" class="icon icon-reorder"></i>
+      <a href="index.html" class="icon icon-book"> biicode docs</a>
+    </div>
+    <div class="nav-top-standard">
+      <ul class="main-menu">
+        <li><a href="index.html" class="icon icon-book"> biicode docs</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <div class="grid-for-nav">
+
+    
+    <nav data-toggle="nav-shift" class="nav-side">
+      <div class="side-nav-search">
+        <form class="form" action="search.html" method="get">
+  <input type="search" name="q" placeholder="search in biicode docs…" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="menu menu-vertical" data-spy="affix">
+        
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro-to-biicode.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro-to-biicode.html#what-is-biicode">What is biicode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro-to-biicode.html#biicode-beta">Biicode BETA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro-to-biicode.html#what-problem-does-it-solve">What problem does it solve?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installation and setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#download-and-install-the-client-binaries">Download and install the client binaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-the-development-tools">Install the development tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-workspace">Create a workspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="start/basicconcepts.html">Basic concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start/helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start/c++challenge.html">Solving the C++ Challenge</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic-usage.html">Basic usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic-usage.html#finding-dependencies">Finding dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic-usage.html#using-an-ide">Using an IDE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-features.html">Advanced features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced-features.html#the-settings-file">The settings file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced-features.html#virtual-resources">Virtual resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced-features.html#compilation-rules">Compilation rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced-features.html#edit-dependencies">Edit dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced-features.html#merge-a-branch">Merge a branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced-features.html#manually-configuring-dependencies">Manually configuring dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced-features.html#policies">Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced-features.html#changing-your-policy-tag">Changing your policy tag</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware/raspberry-pi.html">Raspberry Pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware/arduino.html">Arduino</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">List of libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_box2s.html">Box2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_cimg.html">CImg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_crypto++.html">Crypto++, a free C++ class library of cryptographic schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_glui.html">GLUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_gmock.html">Gmock (Google C++ Mocking Framework)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_littlecms.html">Little CMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_mili.html">MiLi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs/lib_zlib.html">Zlib</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Other tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/google-test-tutorial.html">Google Test Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/updating-blocks-and-dependencies.html">Updating blocks and dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/layouts.html">Workspace and hives layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/configuration_files.html">Configuration Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/cpp_build_files.html">C++ build files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#the-biicode-client-stopped-working">The biicode client stopped working</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faqs.html">FAQs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faqs.html#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faqs.html#other">Other</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      <div class="rst-versions" data-toggle="rst-versions">
+  <span class="rst-current-version rst-out-of-date" data-toggle="rst-current-version">
+    <span class="icon icon-book"> Read the Docs</span>
+    v:  
+    (old) 
+    <span class="icon icon-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <dl>
+      <dt>On Read the Docs</dt>
+      <dd>
+        <a href="///projects//?fromdocs=">Project Home</a>
+      </dd>
+      <dd>
+        <a href="///builds//?fromdocs=">Builds</a>
+      </dd>
+    </dl>
+    <hr/>
+    Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.
+  </div>
+</div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="nav-shift" class="nav-content-wrap">
+
+      
+      <div class="nav-content">
+        <div class="rst-content">
+          <ul class="breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Installation and setup</a></li>
+  
+</ul>
+<hr/>
+
+          <div class="nav-rel-container">
+	<div class="nav-rel prev"><a href="intro-to-biicode.html"
+		title="Previous Chapter: Introduction">&laquo; Introduction</a></div>
+		<div class="nav-rel next"><a href="getting-started.html"
+			title="Next Chapter: Getting started">Getting started &raquo;</a></div>
+</div>
+          
+  <div class="section" id="installation-and-setup">
+<span id="installation"></span><h1>Installation and setup<a class="headerlink" href="#installation-and-setup" title="Permalink to this headline">¶</a></h1>
+<p>In this section you will learn how to download the biicode client and install it on your system.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#download-and-install-the-client-binaries" id="id2">Download and install the client binaries</a><ul>
+<li><a class="reference internal" href="#id1" id="id3">0.3.4</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#install-the-development-tools" id="id4">Install the development tools</a><ul>
+<li><a class="reference internal" href="#linux" id="id5">Linux</a></li>
+<li><a class="reference internal" href="#windows" id="id6">Windows</a></li>
+<li><a class="reference internal" href="#max-os" id="id7">Max OS</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#create-a-workspace" id="id8">Create a workspace</a></li>
+</ul>
+</div>
+<div class="section" id="download-and-install-the-client-binaries">
+<h2><a class="toc-backref" href="#id2">Download and install the client binaries</a><a class="headerlink" href="#download-and-install-the-client-binaries" title="Permalink to this headline">¶</a></h2>
+<p>First of all, download the appropriate client binaries for your system, execute the setup program and follow the instructions.</p>
+<div class="section" id="id1">
+<h3><a class="toc-backref" href="#id3">0.3.4</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><strong>Important note users upgrading from previous versions to 0.3.4</strong>: in this 0.3.4 version the <a class="reference internal" href="reference/layouts.html#hive-layout"><em>hive layout</em></a> has changed so you need to follow next steps to upgrade it:</p>
+<ul class="simple">
+<li>rename YOUR_HIVE/src to YOUR_HIVE/blocks</li>
+<li>rename YOUR_HIVE/dep to YOUR_HIVE/deps</li>
+<li>delete YOUR_HIVE/blocks/CMakeLists.txt</li>
+<li>delete YOUR_HIVE/build</li>
+<li>execute <tt class="docutils literal"><span class="pre">bii:clean</span></tt></li>
+<li>execute <tt class="docutils literal"><span class="pre">bii</span> <span class="pre">cpp:configure</span></tt></li>
+</ul>
+<p><strong>Download 0.3.4</strong></p>
+<ul class="simple">
+<li><a class="reference external" href="https://s3.amazonaws.com/biibinaries/release/0.3.4/bii-ubuntu32_0_3_4.deb">ubuntu32</a></li>
+<li><a class="reference external" href="https://s3.amazonaws.com/biibinaries/release/0.3.4/bii-ubuntu64_0_3_4.deb">ubuntu64</a></li>
+<li><a class="reference external" href="https://s3.amazonaws.com/biibinaries/release/0.3.4/bii-win_0_3_4.exe">win</a></li>
+<li><a class="reference external" href="https://s3.amazonaws.com/biibinaries/release/0.3.4/bii-macos64_0_3_4.pkg">mac64</a></li>
+</ul>
+Here is the <a class="modal" href="changelog.html" title="biicode Changelog">Changelog</a>.</div>
+</div>
+<div class="section" id="install-the-development-tools">
+<h2><a class="toc-backref" href="#id4">Install the development tools</a><a class="headerlink" href="#install-the-development-tools" title="Permalink to this headline">¶</a></h2>
+<p>Now, you need to install some development tools in your machine.</p>
+<div class="section" id="linux">
+<h3><a class="toc-backref" href="#id5">Linux</a><a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
+<p><strong>C++</strong>: Install the required development tools as root:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install build-essential cmake
+</pre></div>
+</div>
+</div>
+<div class="section" id="windows">
+<h3><a class="toc-backref" href="#id6">Windows</a><a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<p><strong>C++</strong>: You need to install the following elements:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.mingw.org/">MinGW, the minimalist GNU for Windows</a>. This project provides an Open Source minimalist development environment for native Microsoft Windows applications. Follow <a class="reference external" href="http://sourceforge.net/projects/mingw/files/Installer/">this link</a> to get the installer, and choose while installing two additional packages, GCC and G++ package.</li>
+<li><a class="reference external" href="http://www.cmake.org/">CMake, an Open Source tool that manages the software building process in a compiler-independent manner</a>. You can <a class="reference external" href="http://www.cmake.org/cmake/resources/software.html">download the latest version of CMake from this location</a>.</li>
+</ul>
+<p><strong>Note</strong>: After installing the tools, you must add the binary folder directions in your Windows <tt class="docutils literal"><span class="pre">PATH</span> <span class="pre">Environment</span></tt> (in <strong>My Computer</strong>, click <strong>Properties</strong>, click <strong>Advanced System Settings</strong> and in the System Properties window click the <strong>Environment Variables</strong> button, then you will see a new window and in <strong>System Variables</strong> you&#8217;ll find the variable <tt class="docutils literal"><span class="pre">PATH</span></tt>), for example:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">C:/MinGW/bin</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">C:/Program</span> <span class="pre">Files/CMake/bin</span></tt></li>
+</ul>
+</div></blockquote>
+<img alt="_images/image_path.png" src="_images/image_path.png" />
+</div>
+<div class="section" id="max-os">
+<h3><a class="toc-backref" href="#id7">Max OS</a><a class="headerlink" href="#max-os" title="Permalink to this headline">¶</a></h3>
+<p><strong>C++</strong>: You need to install:</p>
+<ul class="simple">
+<li>The XCode Developeer Tools</li>
+<li>The appropriate <a class="reference external" href="http://www.cmake.org/cmake/resources/software.html">version of CMake</a> for your Mac OSX.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="create-a-workspace">
+<span id="create-workspace"></span><h2><a class="toc-backref" href="#id8">Create a workspace</a><a class="headerlink" href="#create-a-workspace" title="Permalink to this headline">¶</a></h2>
+<p>The final step is creating your own <strong>biicode workspace</strong>. This is the place where all your hives will be located. In general, this step needs to be done only once after the initial setup.</p>
+<p><strong>NOTE:</strong> Please <strong>avoid creating biicode workspaces in paths with spaces or colons &#8216;:&#8217;</strong>.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir biicode_workspace
+<span class="nv">$ </span><span class="nb">cd</span> ~/biicode_workspace
+<span class="nv">$ </span>bii init
+<span class="nv">$ </span>Username: your_user_name
+<span class="nv">$ </span>Password <span class="k">for </span>your_user_name: your_password
+</pre></div>
+</div>
+<p>And that&#8217;s all! You have successfully installed the biicode client program and the development tools for your platform, and you have created the biicode workspace that will containt all your code!</p>
+</div>
+</div>
+
+
+          <div class="nav-rel-container">
+	<div class="nav-rel prev"><a href="intro-to-biicode.html"
+		title="Previous Chapter: Introduction">&laquo; Introduction</a></div>
+		<div class="nav-rel next"><a href="getting-started.html"
+			title="Next Chapter: Getting started">Getting started &raquo;</a></div>
+</div>
+          <footer>
+  <hr/>
+      &copy; Copyright 2013, biicode.
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+
+
+  <!-- Google Analaytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41860930-1', 'biicode.com');
+  ga('send', 'pageview');
+  </script>
+  
+</body>
+</html>

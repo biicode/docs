@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic concepts &mdash; biicode docs 0.1.11 documentation</title>
+  
+
+  
+  
+  
+      
+  
+  
+  <script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+    URL_ROOT:'../',
+    VERSION:'0.1.11',
+    COLLAPSE_INDEX:false,
+    FILE_SUFFIX:'.html',
+    HAS_SOURCE:  true
+  };
+  </script>
+  <script type="text/javascript" src="../_static/jquery.js"></script>
+  <script type="text/javascript" src="../_static/underscore.js"></script>
+  <script type="text/javascript" src="../_static/doctools.js"></script>
+  <script type="text/javascript" src="../_static/theme.js"></script>
+  <script type="text/javascript" src="../_static/searchtools.js"></script>
+  
+
+  
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  
+  <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+  
+  <link rel="top" title="biicode docs 0.1.11 documentation" href="../index.html"/>
+  <link rel="up" title="Getting started" href="../getting-started.html"/>
+  <link rel="next" title="“Hello World!” in C++" href="helloworld.html"/>
+  <link rel="prev" title="Getting started" href="../getting-started.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="body-for-nav">
+
+  
+  <nav class="nav-top">
+    <div id="biicode-logo"><a href="http://www.biicode.com">biicode</a></div>
+    <div class="nav-top-mobile">
+      <i data-toggle="nav-top" class="icon icon-reorder"></i>
+      <a href="../index.html" class="icon icon-book"> biicode docs</a>
+    </div>
+    <div class="nav-top-standard">
+      <ul class="main-menu">
+        <li><a href="../index.html" class="icon icon-book"> biicode docs</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <div class="grid-for-nav">
+
+    
+    <nav data-toggle="nav-shift" class="nav-side">
+      <div class="side-nav-search">
+        <form class="form" action="../search.html" method="get">
+  <input type="search" name="q" placeholder="search in biicode docs…" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="menu menu-vertical" data-spy="affix">
+        
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro-to-biicode.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro-to-biicode.html#what-is-biicode">What is biicode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro-to-biicode.html#biicode-beta">Biicode BETA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro-to-biicode.html#what-problem-does-it-solve">What problem does it solve?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installing-biicode.html">Installation and setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installing-biicode.html#download-and-install-the-client-binaries">Download and install the client binaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installing-biicode.html#install-the-development-tools">Install the development tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installing-biicode.html#create-a-workspace">Create a workspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../getting-started.html">Getting started</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Basic concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c++challenge.html">Solving the C++ Challenge</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../basic-usage.html">Basic usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basic-usage.html#finding-dependencies">Finding dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic-usage.html#using-an-ide">Using an IDE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-features.html">Advanced features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#the-settings-file">The settings file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#virtual-resources">Virtual resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#compilation-rules">Compilation rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#edit-dependencies">Edit dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#merge-a-branch">Merge a branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#manually-configuring-dependencies">Manually configuring dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#policies">Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-features.html#changing-your-policy-tag">Changing your policy tag</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../hardware/raspberry-pi.html">Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../libraries.html">List of libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_box2s.html">Box2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_cimg.html">CImg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_crypto++.html">Crypto++, a free C++ class library of cryptographic schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_glui.html">GLUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_gmock.html">Gmock (Google C++ Mocking Framework)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_littlecms.html">Little CMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_mili.html">MiLi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libs/lib_zlib.html">Zlib</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Other tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/google-test-tutorial.html">Google Test Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/helloworld.html">&#8220;Hello World!&#8221; in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/updating-blocks-and-dependencies.html">Updating blocks and dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/layouts.html">Workspace and hives layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/configuration_files.html">Configuration Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#the-biicode-client-stopped-working">The biicode client stopped working</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">FAQs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../faqs.html#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faqs.html#other">Other</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      <div class="rst-versions" data-toggle="rst-versions">
+  <span class="rst-current-version rst-out-of-date" data-toggle="rst-current-version">
+    <span class="icon icon-book"> Read the Docs</span>
+    v:  
+    (old) 
+    <span class="icon icon-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <dl>
+      <dt>On Read the Docs</dt>
+      <dd>
+        <a href="///projects//?fromdocs=">Project Home</a>
+      </dd>
+      <dd>
+        <a href="///builds//?fromdocs=">Builds</a>
+      </dd>
+    </dl>
+    <hr/>
+    Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.
+  </div>
+</div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="nav-shift" class="nav-content-wrap">
+
+      
+      <div class="nav-content">
+        <div class="rst-content">
+          <ul class="breadcrumbs">
+  <li><a href="../index.html">Docs</a> &raquo;</li>
+  <li><a href="">Basic concepts</a></li>
+  
+</ul>
+<hr/>
+
+          <div class="nav-rel-container">
+	<div class="nav-rel prev"><a href="../getting-started.html"
+		title="Previous Chapter: Getting started">&laquo; Getting started</a></div>
+		<div class="nav-rel next"><a href="helloworld.html"
+			title="Next Chapter: “Hello World!” in C++">“Hello World!” in C++ &raquo;</a></div>
+</div>
+          
+  <div class="section" id="basic-concepts">
+<span id="id1"></span><h1>Basic concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h1>
+<p>This section briefly describes some basic concepts regarding your workspace and projects. For a description of how is this reflected on disk go to: <a class="reference internal" href="../reference/layouts.html#layouts"><em>Reference: Workspace and hives layouts</em></a>.</p>
+<div class="section" id="workspace">
+<h2>Workspace<a class="headerlink" href="#workspace" title="Permalink to this headline">¶</a></h2>
+<p>This is a <strong>special folder</strong> which is created on your system during the <a class="reference internal" href="../installing-biicode.html#installation"><em>installation process</em></a>. The concept is pretty much the same as in IDEs; the place where all your projects —which in biicode terminology are called <em>hives</em>— are located. This workspace contains all your code and related metadata, so keep it private under your user account, and do not share it with untrusted people.</p>
+<p>Simply speaking, your workspace <strong>will hold your hives</strong>, or projects.</p>
+<p>Your workspace containes a special <tt class="docutils literal"><span class="pre">bii</span></tt> folder, created when you call the <tt class="docutils literal"><span class="pre">bii</span> <span class="pre">init</span></tt> command during the biicode instalation process. This folder contains some important information for the client program and general settings for your hives, so do not remove it!</p>
+</div>
+<div class="section" id="hive">
+<h2>Hive<a class="headerlink" href="#hive" title="Permalink to this headline">¶</a></h2>
+<p>The concept of hive is very similar to that of a <strong>conventional project</strong>. In short, they are first level folders —other than the <tt class="docutils literal"><span class="pre">bii</span></tt> folder— in your workspace, and their contents. In these hive folders you edit, build and run your code. You can think of them as a sandbox where you can play around with your code before sharing it.</p>
+<p><strong>You can have as many hives as you want</strong> inside your workspace. They are local to your computer, and each hive is self-contained. You can zip and send any hive by email to lately unzip it on another workspace (e.g. another computer), or even share it using a Dropbox folder. Hives can also be directly uploaded to biicode (althoug this is, at this moment, an experimental feature).</p>
+<p><strong>Biicode is not a version control system, so you should use git, mercurial, svn or whatever</strong> you prefer along with biicode if you want a real version control of your hives files. Biicode is completelly compatible with thoses systems, and does not interfere with them.</p>
+<p>You can read about hive structure in disk <a class="reference internal" href="../reference/layouts.html#hive-layout"><em>here</em></a></p>
+</div>
+<div class="section" id="block">
+<h2>Block<a class="headerlink" href="#block" title="Permalink to this headline">¶</a></h2>
+<p>A block is a <strong>group of files, or cells in biicode terminology, that are logically related</strong>. Inside the <tt class="docutils literal"><span class="pre">src</span></tt> and <tt class="docutils literal"><span class="pre">dep</span></tt> folders, the source code is organized in <strong>blocks</strong>. Each <strong>block</strong> name is composed by two parts, a username of the block creator, and the simple block name, in the form: <tt class="docutils literal"><span class="pre">user_name/block_name</span></tt>.</p>
+<p>Blocks are the items you can publish and share for later reuse. It’s a similar concept to C libraries, java jars, or python packages and modules, but not exactly the same, as they are always from source code, and without any real packaging grouping them other than the block name.  An important concept of blocks, is that not all cells (files) within a block are to be reused together. If you need a certain cell of a block and such cell does not depend on anything else, only that cell will be retrieved and reused in your hive.</p>
+<p><strong>Circular dependencies between blocks are not allowed</strong>, as usually happens in other existing systems. If the cells of a block <strong>A</strong> depend on the cells of block <strong>B</strong>, then, the cells of block <strong>B</strong> cannot depend on cells belonging to block <strong>A</strong>.</p>
+</div>
+<div class="section" id="cell">
+<h2>Cell<a class="headerlink" href="#cell" title="Permalink to this headline">¶</a></h2>
+<p>A cell is the <strong>basic biicode processing and reuse unit</strong>. It is basically each file together with its metadata.</p>
+<p>Let&#8217;s say the honey is the source code you put inside each one of your source files, and the cell structure is the metadata that relates such source file with the others. Actually, cells can be of any type (text, data, images), not just source code. In your code you can make references (includes, imports) to your cells or cells from any other user.</p>
+<p>You just care about producing the honey, biicode will try to care for the rest.</p>
+</div>
+</div>
+
+
+          <div class="nav-rel-container">
+	<div class="nav-rel prev"><a href="../getting-started.html"
+		title="Previous Chapter: Getting started">&laquo; Getting started</a></div>
+		<div class="nav-rel next"><a href="helloworld.html"
+			title="Next Chapter: “Hello World!” in C++">“Hello World!” in C++ &raquo;</a></div>
+</div>
+          <footer>
+  <hr/>
+      &copy; Copyright 2013, biicode.
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+
+
+  <!-- Google Analaytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41860930-1', 'biicode.com');
+  ga('send', 'pageview');
+  </script>
+  
+</body>
+</html>
