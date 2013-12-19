@@ -8,7 +8,7 @@ If you haven't done so, you must first  :ref:`create a biicode workspace <create
 Add the cross compilers to biicode
 ----------------------------------
 
-Add the cross compilers to **enviroment.bii** like shown in the last four lines: 
+Add the cross compilers to ``enviroment.bii`` like shown in the last four lines: 
 
 .. code-block:: text
     :emphasize-lines: 8,9,10,11
@@ -25,6 +25,7 @@ Add the cross compilers to **enviroment.bii** like shown in the last four lines:
             - path: /usr/local/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-g++
               tool: {family: GNU, subfamily: CPP, arch: ARM}
     	
+		
 Create a new hive and code!
 ---------------------------
 
@@ -33,27 +34,27 @@ Creating a new hive with the ``bii new`` command.
 Configure your settings
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Update your settings.bii or default_settings with the info of your Raspberry Pi ::
+Update your ``settings.bii`` or ``default_settings.bii`` with the info of your Raspberry Pi ::
 	
-	rpi: {directory: /home/pi, ip: 127.0.0.8, password: raspberry, user: pi}
+	rpi: {directory: /home/pi, ip: 192.168.1.68, password: raspberry, user: pi}
 	
-* directory: Raspberry Pi directory where you want to save the files you send for scp
-* ip: Raspberry Pi ip adress
-* user: Raspberry Pi user name
-* password: Raspberry Pi password
+* **directory**: Raspberry Pi directory where you want to save the files you send for SCP
+* **ip**: Raspberry Pi IP address. You can find it under ``inet addr`` field executing ``ifconfig`` in a console inside the raspberry.
+* **user**: Raspberry Pi user name
+* **password**: Raspberry Pi password
 
-Change the architetucture of the cpp compiler on the settings.bii to ARM: ::
+Change the architecture of the cpp compiler on the ``settings.bii``. Where you see::
 
 	cpp:
-	  builder: {family: MINGW}
-	  compiler: {arch: 32bit, family: MINGW}
+	  builder: {family: MAKE}
+	  compiler: {amily: GNU}
 	  configurer: {family: CMake}
 	 
-	(...)
+add ``arch: ARM``::
 	 
 	cpp:
-	  builder: {family: MINGW}
-	  compiler: {arch: ARM, family: MINGW}
+	  builder: {family: MAKE}
+	  compiler: {arch: ARM, family: GNU}
 	  configurer: {family: CMake}
 
 Code as usual
@@ -125,5 +126,5 @@ If you want to send files to another Raspberry Pi or specify a different directo
 	
 	$ bii rpi:send [directory]
 	
-	
+
 You just have to go to your Raspberry Pi and execute the binaries as any computer.
