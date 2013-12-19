@@ -1,7 +1,7 @@
 Christmas coding with Raspberry Pi and biicode: How to make a doll move
 =======================================================================
 
-Surprise your friends and family with a moving doll by following a few simple steps. 
+Surprise your friends and family with a **moving doll** by following a few simple steps. 
 Check out the video of our handcrafted Heisenberg paper doll at our office:
 
 .. raw:: html
@@ -12,9 +12,9 @@ You just need paper, scissors, a servo, a Raspberry Pi and biicode!
 -------------------------------------------------------------------
 
 * Sing up to `biicode <https://www.biicode.com/>`_
-* :ref:`install <installation>` biicode in a few easy steps.
+* :ref:`Install <installation>` biicode in a few easy steps.
 * Get :ref:`here <raspberry_pi>` all the info you need to use your Raspberry Pi with biicode.
-* To move the servo, just use the :ref:`wiringpi<wiringpi>` already uploaded and ready to be used, in biicode.
+* To move the servo, just use the :ref:`WiringPi library <wiringpi>`, ready to be used in biicode.
 
 .. code-block:: cpp
 	:linenos:
@@ -55,15 +55,15 @@ You just need paper, scissors, a servo, a Raspberry Pi and biicode!
 Choose the paper doll you like most
 -----------------------------------
 
-As fans of the TV Show we chose to move `Heisenberg <http://www.cubeecraft.com/cubee/heisenberg>`_.Feel free to be creative: make your own doll.
+As fans of the TV Show we chose to move `Heisenberg <http://www.cubeecraft.com/cubee/heisenberg>`_ paper doll for our little experiment. Feel free to be creative making your own doll.
 
 
 .. image:: raspberry_pi_christmas/01.jpg
 .. image:: raspberry_pi_christmas/02.jpg
 
 
-Put it together! 
-----------------
+Putting it all together! 
+------------------------
 
 .. image:: raspberry_pi_christmas/1.jpg
 
@@ -82,7 +82,7 @@ In the following pictures you can see how we built our doll:
 Connect the servo to the 5v, GPIO17 and 0v pins
 -----------------------------------------------
 
-If you need more information about the GPIO Reference, :ref:`here <rpigpio>`.
+If you need more information about the GPIO Reference :ref:`follow this link <rpigpio>`.
 
 +-------+--------+
 |Signal | GPIO17 |
@@ -102,4 +102,4 @@ If you need more information about the GPIO Reference, :ref:`here <rpigpio>`.
 
 Have fun with the moving doll!
 
-Now having your doll moving, share it with you friends and family, make them laugh. We would also be happy to see other videos online, show us your most creative doll :)
+Now having your doll moving, share it with your friends and family, make them laugh. We would also be happy to see other videos online. **Feel free to show us your most creative doll** :)
