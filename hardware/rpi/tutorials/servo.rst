@@ -21,6 +21,10 @@ Example: servo.c
 
 With this example we put a servo in the center position using the pin 0 (:ref:`GPIO <rpigpio>` 17) as a control signal.
 
+Remember to execute ``bii:find`` :ref:`(command info) <biifind>`.
+
+The generated binary only work on your Raspberry Pi and have to run as sudo because it works on the hardware
+
 .. code-block:: cpp
 	:linenos:
 
