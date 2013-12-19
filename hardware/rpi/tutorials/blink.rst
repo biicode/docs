@@ -3,6 +3,8 @@ Blink
 
 With this example we will have a LED flash every half second on pin 0 (:ref:`GPIO <rpigpio>` 17).
 
+Remember to execute ``bii:find`` :ref:`(command info) <biifind>`.
+
 Example: blink.c
 ----------------
 

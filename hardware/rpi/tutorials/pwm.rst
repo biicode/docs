@@ -1,9 +1,11 @@
 PWM
 ===
 
-With this example we will have a PWM sawtooth function on pin 1 (:ref:`GPIO <rpigpio>` 18).
+With this example we will have a PWM sawtooth function on pin 0 (:ref:`GPIO <rpigpio>` 18).
 
-Just have to set pin 1 as PWM whit the pinMode function `pinMode (1, PWM_OUTPUT)`.
+Just have to set pin 1 as PWM whit the pinMode function `pinMode (0, PWM_OUTPUT)`.
+
+Remember to execute ``bii:find`` :ref:`(command info) <biifind>`.
 
 Example: pwm.c
 ----------------

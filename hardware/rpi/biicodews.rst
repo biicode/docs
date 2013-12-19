@@ -3,12 +3,12 @@
 How to configure your biicode workspace
 =======================================
 
-If you haven't done so, you must first  :ref:`create a biicode workspace <create_workspace>`.
+If you haven't done so, you must first :ref:`install bicode <installation>` and :ref:`create a biicode workspace <create_workspace>`.
 
 Add the cross compilers to biicode
 ----------------------------------
 
-Add the cross compilers to ``enviroment.bii`` like shown in the last four lines: 
+Add the cross compilers to :ref:`enviroment.bii <layouts>` like shown in the last four lines: 
 
 .. code-block:: text
     :emphasize-lines: 8,9,10,11
@@ -128,3 +128,25 @@ If you want to send files to another Raspberry Pi or specify a different directo
 	
 
 You just have to go to your Raspberry Pi and execute the binaries as any computer.
+
+Connect with your Raspberry Pi
+------------------------------
+
+You can use the ``rpi:ssh`` command if you want a remotely access to your Raspberry Pi. With this command you **can run your binaries**.
+
+.. code-block:: bash
+
+	$ bii rpi:send
+
+	...
+	
+	Connecting with ssh [RPI_USER]@[RPI_IP]
+
+	[RPI_USER]@[RPI_IP]'s password:
+	
+If you want to send files to another Raspberry Pi that appears in your **settings.bii**, you have the option of passing these parameters to the ``bii:ssh``.
+
+.. code-block:: bash
+
+	$ bii rpi:ssh [user] [ip]
+

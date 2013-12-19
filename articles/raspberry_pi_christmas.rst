@@ -1,17 +1,20 @@
-Code your christmas with Raspberry Pi and biicode
-=================================================
+Christmas coding with Raspberry Pi and biicode: How to make a doll move
+=======================================================================
+
+Surprise your friends and family with a moving doll by following a few simple steps. 
+Check out the video of our handcrafted Heisenberg paper doll at our office:
 
 .. raw:: html
 
 	<iframe width="640" height="480" src="//www.youtube.com/embed/S_oIqUt_CBo" frameborder="0" allowfullscreen></iframe>
 
 You just need paper, scissors, a servo, a Raspberry Pi and biicode!
----------------------------------------------------
+-------------------------------------------------------------------
 
-* Sing Up `biicode <https://www.biicode.com/>`_
-* :ref:`installation <installation>`
-* To use your :ref:`Raspberry pi with biicode <raspberry_pi>`, you have here all the info.
-* To move the servo, we use :ref:`wiringpi<wiringpi>` that is already ready to be used in biicode.
+* Sing up to `biicode <https://www.biicode.com/>`_
+* :ref:`install <installation>` biicode in a few easy steps.
+* Get :ref:`here <raspberry_pi>` all the info you need to use your Raspberry Pi with biicode.
+* To move the servo, just use the :ref:`wiringpi<wiringpi>` already uploaded and ready to be used, in biicode.
 
 .. code-block:: cpp
 	:linenos:
@@ -49,22 +52,24 @@ You just need paper, scissors, a servo, a Raspberry Pi and biicode!
 
 	}
 
-Choose the paper doll that you like
+Choose the paper doll you like most
 -----------------------------------
 
-`cubeecraft heisenberg <http://www.cubeecraft.com/cubee/heisenberg>`_
+As fans of the TV Show we chose to move `Heisenberg <http://www.cubeecraft.com/cubee/heisenberg>`_.Feel free to be creative: make your own doll.
 
 +-----------------------------------------+------------------------------------------+
 |.. image:: raspberry_pi_christmas/01.jpg | .. image:: raspberry_pi_christmas/02.jpg |
 +-----------------------------------------+------------------------------------------+
 
-Mount it with some small modifications
---------------------------------------
+Put it together! 
+----------------
 
 .. image:: raspberry_pi_christmas/1.jpg
 
-Paste the head to the servo and put the servo in the body
+Stick the head to the servo and put the servo in the body
 ---------------------------------------------------------
+
+In the following pictures you can see how we built our doll:
 
 +----------------------------------------+-----------------------------------------+
 |.. image:: raspberry_pi_christmas/2.jpg | .. image:: raspberry_pi_christmas/3.jpg |
@@ -74,10 +79,10 @@ Paste the head to the servo and put the servo in the body
 |.. image:: raspberry_pi_christmas/7.jpg | .. image:: raspberry_pi_christmas/8.jpg |
 +----------------------------------------+-----------------------------------------+
 
-Connected to the 5v , GPIO17 and 0v pins
-----------------------------------------
+Connect the servo to the 5v, GPIO17 and 0v pins
+-----------------------------------------------
 
-:ref:`GPIO Reference <rpigpio>`.
+If you need more information about the GPIO Reference, :ref:`here <rpigpio>`.
 
 +-------+--------+
 |Signal | GPIO17 |
@@ -87,11 +92,14 @@ Connected to the 5v , GPIO17 and 0v pins
 | \-    |     0v |
 +-------+--------+
 
-+------------+------------------+------------+
-| GPIO Rev.1 | GPIO Pin Layout  | GPIO Rev.2 |
-+------------+------------------+------------+
-| .. image:: ../_static/img/rpi/gpios.png    |
-+--------------------------------------------+
++----------------------------------------------+-------------------------------------------------+----------------------------------------------+
+| GPIO Rev.1                                   | GPIO Pin Layout                                 | GPIO Rev.2                                   |
++----------------------------------------------+-------------------------------------------------+----------------------------------------------+
+| .. image:: ../_static/img/rpi/gpiosr1.png    | .. image:: raspberry_pi_christmas/gpios.png     |    .. image:: ../_static/img/rpi/gpiosr2.png |
++----------------------------------------------+-------------------------------------------------+----------------------------------------------+
 
-.. image:: raspberry_pi_christmas/servo.jpg
+.. image:: raspberry_pi_christmas/servo.jpg 
 
+Have fun with the moving doll!
+
+Now having your doll moving, share it with you friends and family, make them laugh. We would also be happy to see other videos online, show us your most creative doll :)

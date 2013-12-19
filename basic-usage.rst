@@ -1,6 +1,8 @@
 Basic usage
 ==============
 
+.. _biifind:
+
 Finding dependencies
 --------------------
 
