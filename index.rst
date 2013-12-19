@@ -29,7 +29,7 @@ Contents:
 
 
 
-.. Comment 
+.. Comment
    Biicode presentation video
    ------------
    .. raw:: html
@@ -41,4 +41,3 @@ Contents:
 	* :ref:`genindex`
 	* :ref:`modindex`
 	* :ref:`search`
-
