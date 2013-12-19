@@ -1,30 +1,33 @@
 How to configure your linux for cross compiling 
 ===============================================
 
-To use the cross compilers that are in the raspberry pi github repository need to have the Linux OS installed or a virtual machine that contains it.
-We recommend using ubuntu,but any debian distribution should work perfectly.
+To use the cross compilers that are in the Raspberry Pi Github repository, you need to have a Linux OS installed or a virtual machine that contains it. We recommend using `Ubuntu <http://www.ubuntu.com/>`_, but any Debian distribution should work perfectly.
+
 Now let's look all the tools we need to install to use the Raspberry Pi with biicode.
 
 Install ia32-libs (only for 64bit OS)
----------------------------------------------------
+-------------------------------------
 
-To know if your linux is 32 or 64 bits, just type:
+To find if your Linux is 32 or 64 bits, just type:
  
 .. code-block:: bash
 
-	$ uname -m 
-	x86_64 ==> 64-bit kernel
-	i686   ==> 32-bit kernel
+	$ uname -m
 
-Then, if you have 64-bit OS, you need to install the support for 32 bit applications. These libraries are required to use the cross compilers supplied by Raspberry Pi from their github repository.
+This command may throw one of the following outputs:
+
+* ``x86_64`` ==> 64-bit kernel
+* ``i686`   ==> 32-bit kernel
+
+Then, if you have 64-bit OS, you need to install the support for 32 bit applications. These libraries are required to use the cross compilers supplied by Raspberry Pi from their Github repository.
 
 .. code-block:: bash
 
 	$ sudo apt-get install ia32-libs
 	
-It is possible that you encounter some of the following errors. 
+It is possible that you encounter some of the following errors: 
 
-If it does not find the package, you may need add a 32bits architecture to your package list:
+If it does not find the package, you may need to add a 32bits architecture to your package list:
 
 .. code-block:: bash
 
@@ -64,19 +67,19 @@ just install the dependencies manually like any other package:
 	$ sudo apt-get install ia32-libs-multiarch
 	$ sudo apt-get install ia32-libs
 
-Download Raspberry cross-compiler tools
+Download the Raspberry Pi cross-compiler tools
 ---------------------------------------
 
-Now, clone the Raspberry Pi repository with linux cross-compilers from github (you might need to install git with ''$ sudo apt-get install git'').
+Now, clone the Raspberry Pi repository with linux cross-compilers from Github (you might need to install git with ``$ sudo apt-get install git``).
 
 .. code-block:: bash
 
-	$sudo apt-get install git-core
-
+	$ sudo apt-get install git-core
 	$ cd /usr/local
 	$ sudo git clone https://github.com/raspberrypi/tools.git
 	
-You don't need to compile or install anything. You can choose other directory where to clone `raspberry tools <https://github.com/raspberrypi/tools>`_ but then you will need to take it into account in next step when updating :ref:`environment.bii <layouts>`.
+You don't need to compile or install anything else. You can choose other directory where to clone the `raspberry tools <https://github.com/raspberrypi/tools>`_, but then you will need to take it into account in the next step when updating the :ref:`environment.bii <layouts>` file.
 
-Finally, you need to install biicode. Go to :ref:`Installations and setup <installation>` for instructions.
+Finally, you need to install biicode. Visit :ref:`Installation and setup <installation>` for instructions.
+
 Once you have installed biicode, you can proceed to :ref:`configure your biicode raspberry project <config_raspberry_ws>`.
