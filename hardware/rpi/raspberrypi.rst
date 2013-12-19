@@ -2,7 +2,7 @@
 How to set up your Raspberry Pi for the first time
 ==================================================
 
-Following our philosophy of reuse, tutorial about how to burn SD cards and guide on how to configure the Raspberry Pi is a reuse of two articles `Kristophorus Hadiono <http://xmodulo.com/author/kristophorus>`_.
+Following our philosophy of reuse, this tutorial on how to burn SD cards and guide on how to configure the Raspberry Pi is a reuse of two articles by `Kristophorus Hadiono <http://xmodulo.com/author/kristophorus>`_.
 
 * `How to write Raspberry Pi image to SD card <http://xmodulo.com/2013/11/write-raspberry-pi-image-sd-card.html>`_
 * `How to configure Raspberry Pi for the first time <http://xmodulo.com/2013/11/configure-raspberry-pi-first-time.html>`_
