@@ -13,9 +13,37 @@ Creating a new hive is as easy as executing the ``bii new`` command. Open your c
 
 	$ cd /path/to/your/biicode_workspace
 	$ bii new hello
-	Created new Hive hello
+        Created new hive hello
+        Select language: (java/node/fortran/python/cpp/None)
+        Introduce lang (default:cpp): cpp
+        INFO: Selected lang: cpp
+        Generate a default hello world?  (YES/no) no
+        Select IDE family: (Visual/CodeBlocks/Eclipse/NetBeans/None)
+        Introduce ide (default:Eclipse):
+        INFO: Selected family: Eclipse
+        Select build type: (None/Debug/Release/RelWithDebInfo/MinSizeRel)
+        Introduce build_type (default:Debug): Debug
+        invoking cmake -D CMAKE_BUILD_TYPE=Debug  -G "Eclipse CDT4 - Unix Makefiles" -Wno-dev ../cmake
+        -- The C compiler identification is Clang 4.2.0
+        -- The CXX compiler identification is Clang 4.2.0
+        -- Could not determine Eclipse version, assuming at least 3.6 (Helios). Adjust CMAKE_ECLIPSE_VERSION if this is wrong.
+        -- Check for working C compiler: /usr/bin/cc
+        -- Check for working C compiler: /usr/bin/cc -- works
+        -- Detecting C compiler ABI info
+        -- Detecting C compiler ABI info - done
+        -- Check for working CXX compiler: /usr/bin/c++
+        -- Check for working CXX compiler: /usr/bin/c++ -- works
+        -- Detecting CXX compiler ABI info
+        -- Detecting CXX compiler ABI info - done
+        -- Configuring done
+        -- Generating done
+        -- Build files have been written to: /Users/fran/biiclipse/hello/build
 
-In the previous figure, the highlighted line indicates that the process worked fine. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``deps`` and ``blocks``.
+        An eclipse project has been generated.
+        Open eclipse, select "Import > (General) > Existing project into Workspace" and select folder "/Users/fran/biiclipse/hello"
+
+
+In the previous figure, an assistant asks you for hive language, if you want to generate an hello world also asks for your IDE family as well as your build type. The highlighted line indicates that the process worked fine. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``deps`` and ``blocks``.
 
 Just code!
 ^^^^^^^^^^
@@ -26,9 +54,9 @@ Our "hello" hive will have the following 3 files. Just copy them into your hive 
 
 .. code-block:: cpp
 	:linenos:
-	
+
 	#pragma once
-	 
+
 	//Method to print "Hello World!"
 	void hello();
 
@@ -40,7 +68,7 @@ Our "hello" hive will have the following 3 files. Just copy them into your hive 
 	#include "hello.h"
 	#include  <iostream>
 	using namespace std;
-	 
+
 	void hello(){
 	 cout<<"Hello World"<<endl;
 	}
@@ -51,7 +79,7 @@ Our "hello" hive will have the following 3 files. Just copy them into your hive 
 	:linenos:
 
 	#include "hello.h"
-	 
+
 	int main() {
 	  hello();
 	  return 1;
@@ -72,7 +100,7 @@ Note that the ``bii cpp:run`` command needs to be executed from a folder contain
 .. code-block:: bash
 
 	Hello World!
- 
+
 Publish your code
 ^^^^^^^^^^^^^^^^^^
 
@@ -109,7 +137,7 @@ One of the most interesting aspects of biicode is the ability it provides to eas
 	$ cd /path/to/your/biicode_workspace
 	$ bii new hellopretty
 	Created new Hive hellopretty
-	$ cd hellopretty 
+	$ cd hellopretty
 
 Add the following files to the folder ``hellopretty/blocks/your_user_name/hellopretty/`` (remember to substitute ``your_user_name`` with your actual biicode user name):
 
@@ -119,7 +147,7 @@ Add the following files to the folder ``hellopretty/blocks/your_user_name/hellop
 	:linenos:
 
 	#pragma once
-	 
+
 	void hellopretty ();
 
 **hellopretty.cpp**
@@ -130,9 +158,9 @@ Add the following files to the folder ``hellopretty/blocks/your_user_name/hellop
 	#include "your_user_name/hello/hello.h" //reusing hello.h header
 	#include "hellopretty.h"
 	#include <iostream>
-	 
+
 	using namespace std;
-	 
+
 	void hellopretty (){
 	   cout<<"**********************************"<<endl;
 	   hello();
@@ -145,8 +173,8 @@ Add the following files to the folder ``hellopretty/blocks/your_user_name/hellop
 	:linenos:
 
 	#include "hellopretty.h"
-	 
-	int main(){ 
+
+	int main(){
 	    hellopretty();
 	    return 1;
 	}
@@ -177,7 +205,7 @@ However, biicode knows that you are trying to reuse the ``hello.h`` header. To r
 	  >> Block candidate: your_user_name/hello(your_user_name/master)
 	  >> Version your_user_name/hello(your_user_name/master): 0 (STABLE) valid due your policy!
 	  Found blocks: your_user_name/hello(your_user_name/master): 0
-	Analyzing compatibility for found dependencies... 
+	Analyzing compatibility for found dependencies...
 	  Resolved block!
 	Dependencies resolved in server:
 	Find resolved new dependencies:
@@ -201,7 +229,7 @@ Now you can try to compile and run again your new code. In this case the process
 	Hello World!
 	**********************************
 
-You will find the ``your_user_name/hello`` block along with the retrieved source files ``hello.h`` and ``hello.cpp`` in your  ``hellopretty/deps`` subfolder. Note that the ``main.cpp`` file of the **hello** block was not retrieved. That is because you don't need it to reuse the ``hello()`` function! 
+You will find the ``your_user_name/hello`` block along with the retrieved source files ``hello.h`` and ``hello.cpp`` in your  ``hellopretty/deps`` subfolder. Note that the ``main.cpp`` file of the **hello** block was not retrieved. That is because you don't need it to reuse the ``hello()`` function!
 
 Publish a new version of your hello block
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -217,7 +245,7 @@ Modifying your code and publishing the results is easy with biicode. Now we´ll 
 	#include "hello.h"
 	#include  <iostream>
 	using namespace std;
-	 
+
 	void hello(){
 	 cout<<"Hello biicode!"<<endl;
 	}
@@ -237,14 +265,14 @@ Now, post your block to the biicode server just like you did before:
 
 	$ bii publish
 	block:     your_user_name/hello
-	Introduce tag: STABLE 
+	Introduce tag: STABLE
 	Introduce msg: My first block update
 	...
 	...
 	Successfully published your_user_name/hello(your_user_name/master): 1
 
 As you can see, the version of your block changed from 0 to 1. Your can see both versions published online visiting your biicode user main page, as before.
- 
+
 Update your hellopretty block with the new version of hello
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -256,7 +284,7 @@ To update your **hellopretty** block you only need to search the server for any 
 	$ cd /path/to/your/biicode_workspace/hellopretty
 	$ bii find --update
 	Finding missing dependencies in server
-	Analyzing compatibility for found dependencies... 
+	Analyzing compatibility for found dependencies...
 	  Updated block!
 	Dependencies resolved in server:
 	All dependencies resolved

@@ -5,13 +5,13 @@ Installation and setup
 
 In this section you will learn how to download the biicode client and install it on your system.
 
-.. contents:: 
+.. contents::
 	:local:
 
 Download and install the client binaries
 ----------------------------------------
 
-First of all, download the appropriate client binaries for your system, execute the setup program and follow the instructions. 
+First of all, download the appropriate client binaries for your system, execute the setup program and follow the instructions.
 
 
 
@@ -54,6 +54,7 @@ Linux
 .. code-block:: bash
 
 	$ sudo apt-get install build-essential cmake
+        $ sudo dpkg -i bii-ubuntu{ARCH}_{VERSION}.deb
 
 Windows
 ^^^^^^^
@@ -64,38 +65,33 @@ Windows
 * `CMake, an Open Source tool that manages the software building process in a compiler-independent manner <http://www.cmake.org/>`_. You can `download the latest version of CMake from this location <http://www.cmake.org/cmake/resources/software.html>`_.
 
 **Note**: After installing the tools, you must add the binary folder directions in your Windows ``PATH Environment`` (in **My Computer**, click **Properties**, click **Advanced System Settings** and in the System Properties window click the **Environment Variables** button, then you will see a new window and in **System Variables** you'll find the variable ``PATH``), for example:
-  
+
   * ``C:/MinGW/bin``
   * ``C:/Program Files/CMake/bin``
-  
+
 .. image:: _static/img/image_path.png
 
-Max OS
-^^^^^^
+Mac OS X
+^^^^^^^^
 
 **C++**: You need to install:
 
 * The XCode Developeer Tools
-* The appropriate `version of CMake <http://www.cmake.org/cmake/resources/software.html>`_ for your Mac OSX.
-
-
-.. _create_workspace:
-
-Create a workspace
-------------------
-
-The final step is creating your own **biicode workspace**. This is the place where all your hives will be located. In general, this step needs to be done only once after the initial setup.
-
-**NOTE:** Please **avoid creating biicode workspaces in paths with spaces or colons ':'**.
 
 .. code-block:: bash
 
-	$ mkdir biicode_workspace
-	$ cd ~/biicode_workspace
-	$ bii init
-	$ Username: your_user_name
-	$ Password for your_user_name: your_password
+	$ xcode-select --install
 
 
-And that's all! You have successfully installed the biicode client program and the development tools for your platform, and you have created the biicode workspace that will containt all your code!
+* The appropriate `version of CMake <http://www.cmake.org/cmake/resources/software.html>`_ for your Mac OSX.
 
+
+
+.. _upgrading:
+
+Upgrading
+---------
+
+Upgrades of biicode are straightforward:
+download the new package, install it over the existing package.
+The installer will handle the work of removing old files.
