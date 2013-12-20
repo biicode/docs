@@ -115,7 +115,7 @@ Reuse it!
 ------------------------
 
 Reusing your ``Blink`` class in other projects is straightforward. All you need to do is to include and do a *find*. 
-You can use the Blink class whevever you want in your own code, this is only an example.
+You can use the Blink class wherever you want in your own code, this is only an example.
 
 .. code-block:: cpp
 	
