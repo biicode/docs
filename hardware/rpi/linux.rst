@@ -68,7 +68,7 @@ just install the dependencies manually like any other package:
 	$ sudo apt-get install ia32-libs
 
 Download the Raspberry Pi cross-compiler tools
----------------------------------------
+----------------------------------------------
 
 Now, clone the Raspberry Pi repository with linux cross-compilers from Github (you might need to install git with ``$ sudo apt-get install git``).
 

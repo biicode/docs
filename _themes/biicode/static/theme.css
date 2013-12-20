@@ -3799,12 +3799,23 @@ pre.literal-block:after {
 
 .breadcrumbs li {
   display: inline-block;
+  vertical-align: text-top;
 }
 .breadcrumbs li.breadcrumbs-aside {
   float: right;
 }
 .breadcrumbs li a {
-  display: inline-block;
+  float: left;
+  display: block;
+  padding: 5px;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.breadcrumbs li span {
+  float: left;
+  display: block;
   padding: 5px;
 }
 .breadcrumbs li a:first-child {
