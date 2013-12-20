@@ -7,7 +7,7 @@ as the major features that biicode offers.
 
 The getting started guide will create a basic C++ hello world
 project. After reading this guide don't forget that biicode can work
-whit other languages too.
+with other languages too.
 
 Before starting this guide, please install biicode.
 
