@@ -16,10 +16,11 @@ Contents:
    intro-to-biicode
    installing-biicode
    getting-started
-   basic-usage
    ides
+   basic-usage
    advanced-features
    hardware
+   articles
    libraries
    tutorials
    reference

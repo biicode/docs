@@ -3,7 +3,7 @@
 Create a workspace
 ------------------
 
-The final step is creating your own **biicode workspace**. This is the
+The first step is creating your own **biicode workspace**. This is the
 place where all your hives will be located. In general, this step
 needs to be done only once after the initial setup.
 
@@ -24,5 +24,5 @@ needs to be done only once after the initial setup.
 
 
 As you can see, it's possible to set a default programming language as
-well as a default IDE. Now you have created created the biicode
-workspace that will containt all your code!
+well as a default IDE. Now you have created the biicode workspace that
+will containt all your code!

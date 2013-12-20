@@ -1,12 +1,7 @@
 Christmas coding with Raspberry Pi and biicode: How to make a doll move
 =======================================================================
 
-Surprise your friends and family with a **moving doll** by following a few simple steps. 
-Check out the video of our handcrafted Heisenberg paper doll at our office:
-
-.. raw:: html
-
-	<iframe width="640" height="480" src="//www.youtube.com/embed/S_oIqUt_CBo" frameborder="0" allowfullscreen></iframe>
+Surprise your friends and family with a **moving doll** by following a few simple steps.
 
 You just need paper, scissors, a servo, a Raspberry Pi and biicode!
 -------------------------------------------------------------------
@@ -17,40 +12,40 @@ You just need paper, scissors, a servo, a Raspberry Pi and biicode!
 * To move the servo, just use the :ref:`WiringPi library <wiringpi>`, ready to be used in biicode.
 
 .. code-block:: cpp
-	:linenos:
 
-	#include <stdio.h>
-	#include <errno.h>
-	#include <string.h>
+    #include <stdio.h>
+    #include <errno.h>
+    #include <string.h>
 
-	#include <drogon/wiringpi/wiringpi/wiringpi.h>
-	#include <drogon/wiringpi/wiringpi/softservo.h>
+    #include <drogon/wiringpi/wiringpi/wiringpi.h>
+    #include <drogon/wiringpi/wiringpi/softservo.h>
 
-	int main ()
-	{
-	  if (wiringPiSetup () == -1)
-	  {
-		fprintf (stdout, "oops: %s\n", strerror (errno)) ;
-		return 1 ;
-	  }
+    int main ()
+    {
+        if (wiringPiSetup () == -1)
+        {
+            fprintf (stdout, "oops: %s\n", strerror (errno));
+            return 1 ;
+        }
 
-	  softServoSetup (0, 1, 2, 3, 4, 5, 6, 7) ;
+        softServoSetup (0, 1, 2, 3, 4, 5, 6, 7) ;
 
-	  softServoWrite (0,  500);
-	  
-	  int range = 500;
-	  int vel = 10;
+        softServoWrite (0,  500);
 
-	  for (;;)
-		softServoWrite (0,  range);
-		range += vel;
-		if (range > 1250 || range < -250)
-		{
-			vel = -vel;
-		{
-		delay (10);
+        int range = 500;
+        int vel = 10;
 
-	}
+        for (;;){
+            softServoWrite (0,  range);
+            range += vel;
+            if (range > 1250 || range < -250)
+                vel = -vel;
+
+            delay (10);
+        }
+    }
+
+
 
 Choose the paper doll you like most
 -----------------------------------
@@ -62,7 +57,7 @@ As fans of the TV Show we chose to move `Heisenberg <http://www.cubeecraft.com/c
 .. image:: raspberry_pi_christmas/02.jpg
 
 
-Putting it all together! 
+Putting it all together!
 ------------------------
 
 .. image:: raspberry_pi_christmas/1.jpg
@@ -87,7 +82,7 @@ If you need more information about the GPIO Reference :ref:`follow this link <rp
 +-------+--------+
 |Signal | GPIO17 |
 +-------+--------+
-| \+    |     5v | 
+| \+    |     5v |
 +-------+--------+
 | \-    |     0v |
 +-------+--------+
@@ -98,7 +93,7 @@ If you need more information about the GPIO Reference :ref:`follow this link <rp
 | .. image:: ../_static/img/rpi/gpiosr1.png    | .. image:: raspberry_pi_christmas/gpios.png     |    .. image:: ../_static/img/rpi/gpiosr2.png |
 +----------------------------------------------+-------------------------------------------------+----------------------------------------------+
 
-.. image:: raspberry_pi_christmas/servo.jpg 
+.. image:: raspberry_pi_christmas/servo.jpg
 
 Have fun with the moving doll!
 

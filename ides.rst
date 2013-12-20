@@ -1,8 +1,8 @@
-============
-Using an IDE
-============
+==================
+Configuring an IDE
+==================
 
-Biicode is integrated with mainly used IDES. You can configure your
+Biicode is integrated with mainly used IDEs. You can configure your
 projects using your favourite ide with biicode easily.
 Follow next instructions to achieve this integration.
 

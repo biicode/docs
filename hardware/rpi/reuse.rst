@@ -94,7 +94,7 @@ And the main would use it as:
 	int main (void)
 	{
 		wiringPiSetup();
-		Blink b(1); //Blink on PIN 1
+		Blink b(0); //Blink on PIN 0
 		b.start(1000, 100);
 		for (int i=0; i<10;i++){
 			//Do your tasks here, no need to manage the Led, it will
@@ -128,6 +128,7 @@ You can use the Blink class wherever you want in your own code, this is only an 
 .. code-block:: cpp
 	
 	//main.cpp
+
 	#include "your_user_name/your_block/blink.h" // Needed for use Blink class
     #include <drogon/wiringpi/wiringpi/wiringpi.h> // Needed for setup wiring pi
 	#include <unistd.h>
@@ -135,7 +136,7 @@ You can use the Blink class wherever you want in your own code, this is only an 
 	int main(){
 		wiringPiSetup();
 		//code here	
-		Blink b(1); //blink on PIN 1
+		Blink b(0); //blink on PIN 0
 		b.start(1000, 100);
 		//more code here (tipically inside an infinite loop)
 		sleep(10); 
