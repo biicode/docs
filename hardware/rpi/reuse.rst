@@ -101,6 +101,8 @@ This can be achieved with biicode, all you need to do is to publish your code:
 
 .. code-block:: bash
 
+	$ bii work
+	...
 	$ bii publish
 	Introduce TAG: STABLE
 	Introduce msg: Blinker class working (or whatever message you like)
