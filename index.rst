@@ -17,6 +17,7 @@ Contents:
    installing-biicode
    getting-started
    basic-usage
+   ides
    advanced-features
    hardware
    libraries
@@ -29,7 +30,7 @@ Contents:
 
 
 
-.. Comment 
+.. Comment
    Biicode presentation video
    ------------
    .. raw:: html
@@ -41,4 +42,3 @@ Contents:
 	* :ref:`genindex`
 	* :ref:`modindex`
 	* :ref:`search`
-

@@ -3,6 +3,8 @@
 
 We will start with a simple example: the well-known "Hello World".
 
+.. _biinew:
+
 Create a new hive
 -----------------
 

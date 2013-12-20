@@ -3799,12 +3799,23 @@ pre.literal-block:after {
 
 .breadcrumbs li {
   display: inline-block;
+  vertical-align: text-top;
 }
 .breadcrumbs li.breadcrumbs-aside {
   float: right;
 }
 .breadcrumbs li a {
-  display: inline-block;
+  float: left;
+  display: block;
+  padding: 5px;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.breadcrumbs li span {
+  float: left;
+  display: block;
   padding: 5px;
 }
 .breadcrumbs li a:first-child {
@@ -4247,12 +4258,20 @@ a:hover {
 .nav-rel a {
   padding: 5px;
   display: block;
-  min-width: 200px;
-  max-width: 48%;
+  min-width: 100px;
+  max-width: 300px;
   background-color: #ffaa00;
   color: #fff;
   font-size: .8em;
   border-radius: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-transition: all .2s ease;
+     -moz-transition: all .2s ease;
+      -ms-transition: all .2s ease;
+       -o-transition: all .2s ease;
+          transition: all .2s ease;
 }
 .nav-rel a:hover {
   background-color: #A66E00;
@@ -4266,7 +4285,6 @@ a:hover {
   float: right;
   text-align: right;
 }
-
 .toctree-wrapper {
   border-radius: 5px;
   padding: 10px;
@@ -4465,6 +4483,10 @@ a:hover {
 
 /* MEDIA QUERY TABLET */
 @media screen and (max-width: 768px) {
+  .nav-rel a {
+    min-width: 100px;
+    max-width: 40%;
+  }
   .form-gallery-manage li {
     width: 25%;
   }

@@ -26,10 +26,10 @@ With this command you create the next tree: ::
 |    +-- blocks
 |         +-- my_user_name
 |         |     +-- my_block
-|         |     |       |-- my_block.ino
-|         |     |       |-- dependencies.h
-|         |   	|       +-- bii
-|         |     |       	|-- dependencies.bii
+|         |     |	|-- my_block.ino
+|         |     |	|-- dependencies.h
+|         |   	|	+-- bii
+|         |     |		|-- dependencies.bii
 
 
 These files have the following content:
@@ -66,7 +66,25 @@ This file
 Create a Arduino library
 ------------------------
 
-Create all the files you need to start with the ``arduino:wizard --lib`` command. If you are in a block folderIf you are inside a hive, but not in a block folder:
+Create all the files you need to start with the ``arduino:wizard --lib`` command. With this command you create the next tree: ::
+
+|-- my_hive
+|    +-- bii
+|    +-- bin
+|    +-- build
+|    +-- dep
+|    +-- blocks
+|         +-- my_user_name
+|         |     +-- my_block
+|         |     |	|-- library_name.h
+|         |     |	|-- library_name.cpp
+|         |     |	|-- keywords.txt
+|         |   	|	+-- Examples
+|         |     |		|-- my_block
+|         |     |			|-- my_block.ino
+
+
+If you are in a block folder:
 
 .. code-block:: bash
 
@@ -78,7 +96,9 @@ Create all the files you need to start with the ``arduino:wizard --lib`` command
 
 	These files have been created:
 		lib.h
-		lib.cpp
+		lib.cpp		
+		keywords.txt
+		Example/my_block/my_block.ino
 		
 If you are inside a hive, but not in a block folder, a warning message will appear:
 
