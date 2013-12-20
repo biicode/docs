@@ -13,6 +13,7 @@ This could be such class:
 	//blink.h
 	#pragma once
 	#include "pthread.h"
+        #include <unistd.h>
 
 	/** Class to blink a led of the raspberry Pi (connected GPIO) */
 	class Blink{
@@ -79,12 +80,13 @@ And the main would use it as:
 	
 	//main.cpp
 	#include "blink.h"
+        #include <unistd.h>
 	#include <drogon/wiringpi/wiringpi/wiringpi.h>
 	
 	int main (void)
 	{
-		wiringPiSetup () ;
-		Blink b;
+		wiringPiSetup();
+		Blink b(1); //Blink on PIN 1
 		b.start(1000, 100);
 		for (int i=0; i<10;i++){
 			//Do your tasks here, no need to manage the Led, it will
@@ -113,18 +115,24 @@ Reuse it!
 ------------------------
 
 Reusing your ``Blink`` class in other projects is straightforward. All you need to do is to include and do a *find*. 
+You can use the Blink class whevever you want in your own code, this is only an example.
 
 .. code-block:: cpp
 	
 	//main.cpp
-	#include "your_user_name/your_block/blink.h"
+	#include "your_user_name/your_block/blink.h" // Needed for use Blink class
+        #include <drogon/wiringpi/wiringpi/wiringpi.h> // Needed for setup wiring pi
 	
-	//code here, might need a wiringPiSetup	
-	Blink b;
-	b.start(1000, 100);
-	//more code here
-	b.stop();
-	
+	int main(){
+		wiringPiSetup();
+		//code here	
+		Blink b(1); //blink on PIN 1
+		b.start(1000, 100);
+		//more code here (tipically inside an infinite loop)
+
+		b.stop();
+	}
+
 Once you have the code, invoke ``find`` to resolve external dependencies, so the Blink class is retrieved, together with the wiringPI source code files. Then, build and run in your RaspberryPI as usual:
 
 .. code-block:: bash
