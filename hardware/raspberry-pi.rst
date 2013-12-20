@@ -12,5 +12,6 @@ The `Raspberry Pi <http://www.raspberrypi.org/>`_ is a credit-card sized compute
    rpi/linux
    rpi/biicodews
    rpi/wiringpi
+   rpi/reuse
    rpi/faqs
 
