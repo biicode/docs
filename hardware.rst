@@ -1,5 +1,5 @@
-Hardware
-========
+Cross platform support
+======================
 
 .. toctree::
    :maxdepth: 2

@@ -19,14 +19,12 @@ Creating a new hive is as easy as executing the ``bii new`` command. Open your c
         INFO: Selected lang: cpp
         Generate a default hello world?  (YES/no) no
         Select IDE family: (Visual/CodeBlocks/Eclipse/NetBeans/None)
-        Introduce ide (default:Eclipse):
-        INFO: Selected family: Eclipse
+        Introduce ide (default:Eclipse): None
         Select build type: (None/Debug/Release/RelWithDebInfo/MinSizeRel)
-        Introduce build_type (default:Debug): Debug
-        invoking cmake -D CMAKE_BUILD_TYPE=Debug  -G "Eclipse CDT4 - Unix Makefiles" -Wno-dev ../cmake
+        Introduce build_type (default:Debug): None
+        invoking cmake   -G "Unix Makefiles" -Wno-dev ../cmake
         -- The C compiler identification is Clang 4.2.0
         -- The CXX compiler identification is Clang 4.2.0
-        -- Could not determine Eclipse version, assuming at least 3.6 (Helios). Adjust CMAKE_ECLIPSE_VERSION if this is wrong.
         -- Check for working C compiler: /usr/bin/cc
         -- Check for working C compiler: /usr/bin/cc -- works
         -- Detecting C compiler ABI info
@@ -38,9 +36,6 @@ Creating a new hive is as easy as executing the ``bii new`` command. Open your c
         -- Configuring done
         -- Generating done
         -- Build files have been written to:  /path/to/your/biicode_workspace/hello/build
-
-        An eclipse project has been generated.
-        Open eclipse, select "Import > (General) > Existing project into Workspace" and select folder "/path/to/your/biicode_workspace/hello"
 
 
 In the previous figure, an assistant asks you for hive language, if you want to generate an hello world also asks for your IDE family as well as your build type. The highlighted line indicates that the process worked fine. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``deps`` and ``blocks``.
