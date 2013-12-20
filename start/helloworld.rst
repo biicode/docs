@@ -17,6 +17,7 @@ Creating a new hive is as easy as executing the ``bii new`` command. Open your c
         Select language: (java/node/fortran/python/cpp/None)
         Introduce lang (default:cpp): cpp
         INFO: Selected lang: cpp
+		Introduce block name (default:my_block): my_block
         Generate a default hello world?  (YES/no) no
         Select IDE family: (Visual/CodeBlocks/Eclipse/NetBeans/None)
         Introduce ide (default:Eclipse):
@@ -43,7 +44,7 @@ Creating a new hive is as easy as executing the ``bii new`` command. Open your c
         Open eclipse, select "Import > (General) > Existing project into Workspace" and select folder "/path/to/your/biicode_workspace/hello"
 
 
-In the previous figure, an assistant asks you for hive language, if you want to generate an hello world also asks for your IDE family as well as your build type. The highlighted line indicates that the process worked fine. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``deps`` and ``blocks``.
+In the previous figure, an assistant asks you for hive language, your block name, if you want to generate an hello world, your IDE family and your build type. The highlighted line indicates that the process worked fine. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``deps`` and ``blocks``.
 
 Just code!
 ^^^^^^^^^^
