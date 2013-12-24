@@ -188,19 +188,6 @@ Now, copy the code from your hello word tutorial into the block folder and write
 	-- Generating done
 	-- Build files have been written to: [hive_build_folder]
 
-if you write ``$ bii cpp:run``, you will see the following message: ::
-
-	invoking cmake -D CMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -Wno-dev ../blocks
-	-- Could not determine Eclipse version, assuming at least 3.6 (Helios). Adjust CMAKE_ECLIPSE_VERSION if this is wrong.
-	-- Configuring done
-	-- Generating done
-	-- Build files have been written to: [hive_build_folder]
-
-	[!] You have configured an IDE setup
-	[!] Use CODEBLOCKS to build your project
-	[!] Binary file does not exist
-
-Note: when you define other IDE type, you have to compile and execute with this new one as indicated in the last two lines of the output console.
 
 Finally, you are ready to open your project with CodeBlocks. The first step is to open the project:
 
