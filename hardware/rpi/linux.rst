@@ -17,7 +17,7 @@ To find if your Linux is 32 or 64 bits, just type:
 This command may throw one of the following outputs:
 
 * ``x86_64`` ==> 64-bit kernel
-* ``i686`   ==> 32-bit kernel
+* ``i686``   ==> 32-bit kernel
 
 Then, if you have 64-bit OS, you need to install the support for 32 bit applications. These libraries are required to use the cross compilers supplied by Raspberry Pi from their Github repository.
 
@@ -77,9 +77,11 @@ Now, clone the Raspberry Pi repository with linux cross-compilers from Github (y
 	$ sudo apt-get install git-core
 	$ cd /usr/local
 	$ sudo git clone https://github.com/raspberrypi/tools.git
+
+If you don't want to install git on your computer, you can also `download it in zip format <https://github.com/raspberrypi/tools/archive/master.zip>`_ and unzip into the folder you want.
 	
-You don't need to compile or install anything else. You can choose other directory where to clone the `raspberry tools <https://github.com/raspberrypi/tools>`_, but then you will need to take it into account in the next step when updating the :ref:`environment.bii <layouts>` file.
+You don't need to compile or install anything else. You can choose other directory where to clone the `Raspberry Pi tools <https://github.com/raspberrypi/tools>`_, but then you will need to take it into account in the next step when updating the :ref:`environment.bii <layouts>` file.
 
 Finally, you need to install biicode. Visit :ref:`Installation and setup <installation>` for instructions.
 
-Once you have installed biicode, you can proceed to :ref:`configure your biicode raspberry project <config_raspberry_ws>`.
+Once you have installed biicode, you can proceed to :ref:`configure your biicode Raspberry Pi project <config_raspberry_ws>`.
