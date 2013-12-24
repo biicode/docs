@@ -7,7 +7,7 @@ Just have to set pin 1 as PWM whit the pinMode function `pinMode (0, PWM_OUTPUT)
 
 Remember to execute ``bii:find`` :ref:`(command info) <biifind>`.
 
-The generated binary only work on your Raspberry Pi and have to run as sudo because it works on the hardware
+The generated binary only work on your Raspberry Pi and have to run as sudo because it works on the hardware.
 
 Example: pwm.c
 ----------------

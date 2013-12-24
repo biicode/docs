@@ -1,9 +1,17 @@
 The best part: share and reuse code with biicode!
-====================================================
+=================================================
 **And now, the best part, check how easy is to share and reuse code using the biicode platform.**
 
+Remember that you can also do the :ref:`"How to configure your biicode workspace" <config_raspberry_ws>` example.
+
+What you need?
+--------------
+
+* Raspberry Pi
+* 1 Led
+
 The Blink class
------------------
+---------------
 
 Suppose that based on the blinking example, you have developed a more elaborated version of the blink example in a ``Blink`` class, that uses a thread to do such task in parallel transparent to the main thread of execution, and admits some parametrization. Please note that using threads for just switching a Led is probably overkill (due to the cost of thread context switching), so this is just an example.
 This could be such class:
@@ -13,7 +21,7 @@ This could be such class:
 	//blink.h
 	#pragma once
 	#include "pthread.h"
-        #include <unistd.h>
+    #include <unistd.h>
 
 	/** Class to blink a led of the raspberry Pi (connected GPIO) */
 	class Blink{
@@ -80,7 +88,7 @@ And the main would use it as:
 	
 	//main.cpp
 	#include "blink.h"
-        #include <unistd.h>
+    #include <unistd.h>
 	#include <drogon/wiringpi/wiringpi/wiringpi.h>
 	
 	int main (void)
@@ -97,7 +105,7 @@ And the main would use it as:
 	}
 
 Publish your code
-------------------------
+-----------------
 The ``Blink`` class seems interesting, it is probable that you might need to reuse it in other projects or you might want to share with the community so other RaspberryPI users can reuse it easily in their projects.
 This can be achieved with biicode, all you need to do is to publish your code:
 
@@ -112,7 +120,7 @@ This can be achieved with biicode, all you need to do is to publish your code:
 Assuming that your user name is *your_user_name* and the block is named *your_block*, you could navigate to http://www.biicode.com, go to your profile and see your code there.
 
 Reuse it!
-------------------------
+---------
 
 Reusing your ``Blink`` class in other projects is straightforward. All you need to do is to include and do a *find*. 
 You can use the Blink class wherever you want in your own code, this is only an example.
@@ -122,7 +130,8 @@ You can use the Blink class wherever you want in your own code, this is only an 
 	//main.cpp
 
 	#include "your_user_name/your_block/blink.h" // Needed for use Blink class
-        #include <drogon/wiringpi/wiringpi/wiringpi.h> // Needed for setup wiring pi
+    #include <drogon/wiringpi/wiringpi/wiringpi.h> // Needed for setup wiring pi
+	#include <unistd.h>
 	
 	int main(){
 		wiringPiSetup();
@@ -130,15 +139,24 @@ You can use the Blink class wherever you want in your own code, this is only an 
 		Blink b(0); //blink on PIN 0
 		b.start(1000, 100);
 		//more code here (tipically inside an infinite loop)
+		sleep(10); 
 
 		b.stop();
 	}
 
-Once you have the code, invoke ``find`` to resolve external dependencies, so the Blink class is retrieved, together with the wiringPI source code files. Then, build and run in your RaspberryPI as usual:
+Once you have the code, invoke ``find`` to resolve external dependencies, so the Blink class is retrieved, together with the wiringPI source code files. Then, build and run in your Raspberry Pi as usual. Remember, the generated binary only work on your Raspberry Pi and have to run as sudo because it works on the hardware:
 
 .. code-block:: bash
 
 	$ bii find
 	...
 	$ bii cpp:build
+	...
 	$ bii rpi:send
+	...
+	$ bii rpi:ssh
+	...
+	pi@raspberrypi ~ $ cd bin
+	pi@raspberrypi ~/bin $ ls
+	[binary_name]
+	pi@raspberrypi ~/bin $ sudo ./[binary_name]

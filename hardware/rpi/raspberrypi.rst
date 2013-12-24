@@ -126,7 +126,7 @@ Configuration
 
 After the writing process is finished, eject the SD card. Plug in to the Raspberry Pi, and make sure that all the connections are ready (HDMI/TV out, keyboard, mouse, Ethernet cable). Finally, turn on the power.
 
-After the Raspbian system is installed on an SD card, put the SD card into the Raspberry card reader. Make sure that everything (e.g., external HDMI monitor/TV, keyboard and mouse) is connected properly. Upon the first time booting, you will see the following setup options appear in the screen. This is a Raspberry Pi configuration tool called raspi-config. You can skip this part, and run the tool later if you know what are you doing. However, it is wise to go through the options for the first time setup.
+After the Raspbian system is installed on an SD card, put the SD card into the Raspberry Pi card reader. Make sure that everything (e.g., external HDMI monitor/TV, keyboard and mouse) is connected properly. Upon the first time booting, you will see the following setup options appear in the screen. This is a Raspberry Pi configuration tool called raspi-config. You can skip this part, and run the tool later if you know what are you doing. However, it is wise to go through the options for the first time setup.
 
 .. image:: ../../_static/img/rpi/config.jpg
 
