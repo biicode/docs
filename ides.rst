@@ -8,9 +8,12 @@ Follow next instructions to achieve this integration.
 
 Configure your project
 ======================
+
 First of all, you need to configure your project. If you did it when creating the workspace or hive you can skip this part.
 
-Initialize your default C++ settings writting: ::
+Initialize your default C++ settings writting:
+
+.. code-block:: bash
 
 	$ bii cpp:settings
 	...
@@ -22,14 +25,10 @@ Initialize your default C++ settings writting: ::
 
 	 ./hive_name/bii/settings.bii
 
-Inside the bii  folder of you hive, change the file settings.bii: ::
+Inside the ``bii`` folder of you hive, change the ``settings.bii`` file including the following highlighted lines for the desired IDE and build type: 
 
-	cpp:
-		builder: {family: MINGW}
-		compiler: {family: MINGW}
-	os: {arch: 32bit, family: Windows, subfamily: '8', version: 6.2.9200}
-
-includes the following lines: ::
+.. code-block:: text
+	:emphasize-lines: 4,5
 
 	cpp:
 		builder: {family: MINGW}
@@ -38,11 +37,13 @@ includes the following lines: ::
 		build_type: debug
 	os: {arch: 32bit, family: Windows, subfamily: '8', version: 6.2.9200}
 
+
 You can see Visual options in Visual section below.
 
 
 Eclipse
 =======
+
 You can now import your project to Eclipse. The first step is to import the project:
 
 #. File > import...
@@ -52,10 +53,9 @@ You can now import your project to Eclipse. The first step is to import the proj
 
 If you want to add any file, just click right mouse button on the folder on your block and create a new file
 
-Note: If you add new dependencies to your project you'll need to manually invoke "bii find"
+Note: If you add new dependencies to your project you'll need to manually invoke ``bii find``.
 
-You can build your application in Project > Build project if you don't have automated builds set.
-
+You can build your application in *Project > Build project* if you don't have automated builds set.
 
 If you are using **mac** you will need some aditional setup:
 
@@ -71,7 +71,9 @@ And this is all you need to work as usual in eclipse.
 Microsoft Visual Studio
 =======================
 
-First of all, you need to inicialize your default C++ settings with the following command: ::
+First of all, you need to inicialize your default C++ settings with the following command:
+
+.. code-block:: bash
 
 	$ bii cpp:settings
 	...
@@ -84,22 +86,24 @@ First of all, you need to inicialize your default C++ settings with the followin
 
 	  ./hive_name/bii/settings.bii
 
-The settings.bii is a YAML file which contains: ::
+The ``settings.bii`` is a YAML file with the following contents: ::
 
 	cpp:
 	  builder: {family: MINGW}
 	  compiler: {family: MINGW}
 	os: {arch: 32bit, family: Windows, subfamily: '7', version: 6.1.7601}
 
-If you want change your IDE to build your project with Visual Studio you should add the following command line. Copy the line exactly as it appears on screen (same indentation and blank spaces). Note that builder and compiler definition lines are not required any more.: ::
+If you want to change your IDE to build your project with Visual Studio you should add the following command line. Copy the line exactly as it appears on screen (same indentation and blank spaces). Note that builder and compiler definition lines are not required any more.: ::
 
 	cpp:
 	  ide: {family: VISUAL, version: 10.0}
 	os: {arch: 32bit, family: Windows, subfamily: '7', version: 6.1.7601}
 
-Now, copy the code from your hello word tutorial into the block folder. You have just chosen Visual Studio 10.0 version as IDE, i.e Visual Studio 2010. If you now configure the project with these settings, the output in the console would be: ::
+Now, copy the code from your hello word tutorial into the block folder. You have just chosen Visual Studio 10.0 version as IDE, i.e Visual Studio 2010. If you now configure the project with these settings, the output in the console would be:
 
-	$bii cpp:configure
+.. code-block:: bash
+
+	$ bii cpp:configure
 
 	...
 
@@ -118,8 +122,11 @@ Now, copy the code from your hello word tutorial into the block folder. You have
 	-- Generating done
 	-- Build files have been written to: [hive_build_folder]
 
-If you write $ bii cpp:run, you will see the following message: ::
+If you invoke the ``bii cpp:run`` command, you will see the following message:
 
+.. code-block:: bash
+	
+	$ bii cpp:run
 	invoking cmake  -G "Visual Studio 10" -Wno-dev ../blocks
 	-- Configuring done
 	-- Generating done
@@ -138,7 +145,9 @@ Finally, you are now ready to open your project with Visual Studio. Just double-
 CodeBlocks
 ==========
 
-First of all, you need to configure your project. Initialize your default C++ settings writting: ::
+First of all, you need to configure your project. Initialize your default C++ settings writting:
+
+.. code-block:: bash
 
 	$ bii cpp:settings
 	...
@@ -150,14 +159,14 @@ First of all, you need to configure your project. Initialize your default C++ se
 
 	 ./hive_name/bii/settings.bii
 
-Inside the bii  folder of you hive, change the file settings.bii: ::
+Inside the ``bii`` folder of you hive, change the file ``settings.bii``: ::
 
 	cpp:
 		builder: {family: MINGW}
 		compiler: {family: MINGW}
 	os: {arch: 32bit, family: Windows, subfamily: '8', version: 6.2.9200}
 
-includes the following lines: ::
+including the following lines: ::
 
 	cpp:
 		builder: {family: MINGW}
@@ -166,7 +175,9 @@ includes the following lines: ::
 		build_type: debug
 	os: {arch: 32bit, family: Windows, subfamily: '8', version: 6.2.9200}
 
-Now, copy the code from your hello word tutorial into the block folder and write.Now, if you configure the project with these settings, the output in the console would be: ::
+Now, copy the code from your hello word tutorial into the block folder and write.Now, if you configure the project with these settings, the output in the console would be:
+
+.. code-block:: bash
 
 	$ bii cpp:configure
 
@@ -201,7 +212,7 @@ Now you have your project in eclipse workspace with a following folder tree like
 
 For this tutorial our user name is tutorial and our block name is codeblocks.
 
-If you want to add any file, just click on `File > New > Empty file` and create a new file in the `blocks/user/block` folder.
+If you want to add any file, just click on *File > New > Empty file* and create a new file in the ``blocks/user/block`` folder.
 
 
 To runs your project you need to select the main file on build target:
