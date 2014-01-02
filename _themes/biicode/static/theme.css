@@ -4482,11 +4482,6 @@ a:hover {
   .breadcrumbs li.breadcrumbs-aside {
     display: none;
   }
-
-  .menu-vertical {
-    max-height: 400px;
-    overflow-y: scroll;
-  }
 }
 
 /* MEDIA QUERY TABLET */
