@@ -3867,6 +3867,14 @@ pre.literal-block:after {
   padding: 0 16px;
 }
 
+.menu-vertical {
+  overflow-y: scroll;
+  max-height: 500px;
+}
+.menu-vertical > ul {
+  min-height: 1200px;
+}
+
 .menu-vertical header {
   height: 32px;
   display: inline-block;
@@ -4473,11 +4481,6 @@ a:hover {
 
   .breadcrumbs li.breadcrumbs-aside {
     display: none;
-  }
-
-  .menu-vertical {
-    max-height: 400px;
-    overflow-y: scroll;
   }
 }
 
