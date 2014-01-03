@@ -67,7 +67,10 @@ These files are written in Python, a small subset of it. You can interact with h
 
 .. code-block:: python
 	:linenos:
-
+		
+        if settings.os.family == "linux":
+           target.add_library("dl")
+		
         target.std = "c++11"
 
         if "matrix.cpp" in target.filenames:
