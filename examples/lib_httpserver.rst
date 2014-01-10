@@ -16,7 +16,7 @@ It's tested on:
 How does it work?
 -------------
 
-It allow you to just implement a subclass of httpserver::HttpMiddleware to attend browsers or other http client requests.
+It allows you to just implement a subclass of httpserver::HttpMiddleware to attend browsers or other http client requests.
 
 A method "call" from your subclass object will be called with a Request* object and a Response* object.
 
@@ -38,7 +38,7 @@ How can i use it?
 
 main.cpp
 ^^^^^^^^^^^^
-This file just instance the server and run it with a simple configuration parameters.
+This file just instances the server and run it with a simple configuration parameters.
 
 .. code-block:: cpp
         
@@ -63,7 +63,7 @@ This file just instance the server and run it with a simple configuration parame
 
 my_http_middle_ware.h
 ^^^^^^^^^^^^
-Define your HttpMiddleware subclass.
+Defines your HttpMiddleware subclass.
 
 .. code-block:: cpp    
 
@@ -85,8 +85,8 @@ Define your HttpMiddleware subclass.
 my_http_middle_ware.cpp
 ^^^^^^^^^^^^
 
-Implement your HttpMiddleware subclass.
-Just write the call method reading from request the variables or headers you need and modify response to print the output.
+Implements HttpMiddleware subclass.
+You should implement "call" method, read from request the variables or headers you need and modify response to return the output.
 
 .. code-block:: cpp 
 
