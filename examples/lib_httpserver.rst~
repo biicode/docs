@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 .. _httpserver:
 
 ===========
 HTTP Server
 ===========
-
+=======
+HTTP Server 
+=====
 You can write and extend your own multi-platform http server with `lasote/httpserver <https://www.biicode.com/lasote/blocks/lasote/httpserver/branches/master>`_ block.
+>>>>>>> 1aa28471f780a77f3c1c314e98889be5eb2e5b62
+
 
 How does it work?
 -------------
