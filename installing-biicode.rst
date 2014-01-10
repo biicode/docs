@@ -14,9 +14,7 @@ Download and install the client binaries
 First of all, download the appropriate client binaries for your system, execute the setup program and follow the instructions.
 
 
-
-
-0.4.1
+0.5
 ^^^^^^
 
 
@@ -29,12 +27,12 @@ First of all, download the appropriate client binaries for your system, execute 
 * execute ``bii:clean``
 * execute ``bii cpp:configure``
 
-**Download 0.4.1**
+**Download 0.5**
 
-* `ubuntu32 <https://s3.amazonaws.com/biibinaries/release/0.4.1/bii-ubuntu32_0_4_1.deb>`_
-* `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.4.1/bii-ubuntu64_0_4_1.deb>`_
-* `win <https://s3.amazonaws.com/biibinaries/release/0.4.1/bii-win_0_4_1.exe>`_
-* `mac64 <https://s3.amazonaws.com/biibinaries/release/0.4.1/bii-macos64_0_4_1.pkg>`_
+* `ubuntu32 <https://s3.amazonaws.com/biibinaries/release/0.5/bii-ubuntu32_0_5.deb>`_
+* `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.5/bii-ubuntu64_0_5.deb>`_
+* `win <https://s3.amazonaws.com/biibinaries/release/0.5/bii-win_0_5.exe>`_
+* `mac64 <https://s3.amazonaws.com/biibinaries/release/0.5/bii-macos64_0_5.pkg>`_
 
 .. raw:: html
 
