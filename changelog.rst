@@ -17,7 +17,7 @@ v. 0.5
 
 v. 0.4
 -------------------
-*(20-dic-13)*
+*(20-Dec-13)*
 
 * Improved wizards behavior
 * Added cookies announcement in web as dictated by law
