@@ -5,10 +5,52 @@ How to configure your biicode workspace
 
 If you haven't done so, you must first :ref:`install bicode <installation>` and :ref:`create a biicode workspace <create_workspace>`.
 
-Add the cross compilers to biicode
-----------------------------------
+Let biicode download the cross compilers and configure your workspace
+---------------------------------------------------------------------
 
-Add the cross compilers to :ref:`enviroment.bii <layouts>` like shown in the last four lines: 
+First, Install git-core if it is not installed:
+
+.. code-block:: bash
+
+	$ sudo apt-get install git-core
+
+For biicode download and configure everything for you, you just have to run the ``bii rpi:setup`` command:
+
+.. code-block:: bash
+
+	$ bii rpi:setup
+
+	INFO: Cloning the ARM cross compiler into /usr/local/tools
+	
+	fatal: could not create work tree dir '/usr/local/tools'.: Permision denied
+	INFO: Cloning the ARM cross compiler with sudo
+	[sudo] password for [USER]:
+	
+If you already have downloaded the cross compilers the setup tool will indicate this with the following message:
+
+.. code-block:: bash
+
+	$ bii rpi:setup
+
+	INFO: Cloning the ARM cross compiler into /usr/local/tools
+	
+	INFO: The tools are already Downloaded
+	
+If you want to download the cross compilers another folder or if you already have downloaded to another directory, you just have to indicate the directory  where you want it to clone or where it is
+
+.. code-block:: bash
+
+	$ bii rpi:setup [directory]
+
+	...
+	
+Once you have done this, a cross compilers will have downloaded and added to :ref:`enviroment.bii <layouts>`.
+
+
+Add the cross compilers to biicode by yourself
+----------------------------------------------
+
+If you have not used the ``bii rpi:setup`` command, add the cross compilers to :ref:`enviroment.bii <layouts>` like shown in the last four lines : 
 
 .. code-block:: text
     :emphasize-lines: 8,9,10,11
@@ -102,7 +144,7 @@ Remember that when generating the binary by cross compilation, you can only run 
 Send your binaries
 ------------------
 
-To send your binary to Raspberry Pi, you just execute the ``rpi:send`` command and the file will be sent by scp to the address that appears in your **settings.bii**:
+To send your binary to Raspberry Pi, you just execute the ``rpi:send`` command and the file will be sent by rsync to the address that appears in your **settings.bii**:
 
 .. code-block:: bash
 
@@ -110,7 +152,7 @@ To send your binary to Raspberry Pi, you just execute the ``rpi:send`` command a
 
 	...
 	
-	Sending with scp -r [HIVE_DIRECTORY]/bin [RPI_USER]@[RPI_IP]:[DIRECTORY]/[HIVE_NAME]
+	Sending with rsync -Pravdtze ssh [HIVE_DIRECTORY]/bin/* [RPI_USER]@[RPI_IP]:[DIRECTORY]/[HIVE_NAME]
 
 	[RPI_USER]@[RPI_IP]'s password:
 

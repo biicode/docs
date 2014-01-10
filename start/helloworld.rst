@@ -48,7 +48,7 @@ Our "hello" hive will have the following 3 files. Just copy them into your hive 
 **hello.h**
 
 .. code-block:: cpp
-	:linenos:
+	:linenos:z
 
 	#pragma once
 
