@@ -1,8 +1,29 @@
 Changelog
 =========
+v. 0.5
+--------------------
+*(10-Jan-14)*
+
+* Raspberry now using rsync instead of scp
+* Wizard rpi:setup for automatic install of cross compilers
+* New breadcrumb navigation bar for blocks in browser
+* Reduced computation by an order of magnitude, especially noticeable in large hives
+* Fixed bugs in parsers, that kept old state even the file was modified
+* Improved normalization of endlines, for handling also \\r
+* Fixed bug of not finding new dependencies of files in already dependents blocks
+
+
+v. 0.4
+-------------------
+*(20-dic-13)*
+
+* Improved wizards behavior
+* Added cookies announcement in web as dictated by law
+
+
 v. 0.3.4
 --------------------
-*(17-dic-13)*
+*(17-Dec-13)*
 
 * Init and new configuration wizards
 * Improved Eclipse support. You can read about it :ref:`here <use_ide>`
@@ -13,7 +34,7 @@ v. 0.3.4
 
 v. 0.2.3  
 --------------------
-*(2-dic-13)*
+*(2-Dec-13)*
 
 * Experimental upload-download of hives to biicode, so it is not necessary to publish to keep working in other computer.
 * Navigation of uploaded hives in the web
