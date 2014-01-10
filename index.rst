@@ -21,8 +21,7 @@ Contents:
    advanced-features
    hardware
    articles
-   libraries
-   tutorials
+   examples   
    reference
    troubleshooting
    faqs
