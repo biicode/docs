@@ -1,8 +1,10 @@
 Changelog
 =========
+
 v. 0.5
 --------------------
 *(10-Jan-14)*
+
 
 * Raspberry now using rsync instead of scp
 * Wizard rpi:setup for automatic install of cross compilers
@@ -29,7 +31,7 @@ v. 0.3.4
 * Improved Eclipse support. You can read about it :ref:`here <use_ide>`
 * Improved Raspberry Pi support. You can read about it :ref:`here <raspberry_pi>`
 * Changed hive structure. You can read about new layout :ref:`here <hive_layout>`
-* User can edit cmakes (blog post comming)
+* User can edit cmakes http://docs.biicode.com/en/latest/reference/cpp_build_files.html
 
 
 v. 0.2.3  

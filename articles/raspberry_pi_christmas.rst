@@ -3,6 +3,11 @@ Christmas coding with Raspberry Pi and biicode: How to make a doll move
 
 Surprise your friends and family with a **moving doll** by following a few simple steps.
 
+.. raw:: html
+
+    <iframe width="560" height="315" src="//www.youtube.com/embed/S_oIqUt_CBo" frameborder="0" allowfullscreen></iframe>
+
+
 You just need paper, scissors, a servo, a Raspberry Pi and biicode!
 -------------------------------------------------------------------
 
