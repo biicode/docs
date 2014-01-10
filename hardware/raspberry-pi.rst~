@@ -9,7 +9,6 @@ The `Raspberry Pi <http://www.raspberrypi.org/>`_ is a credit-card sized compute
    :maxdepth: 2
 
    rpi/configuration
-   rpi/reuse
    rpi/wiringpi
    rpi/tutorials
    rpi/faqs
