@@ -23,15 +23,15 @@ Raspberry Pi images
 There are several flavors of raw Raspberry Pi images (e.g., Raspbian, Pidora, Risc OS, RaspBMC, Arch, and OpenElec) which you can download from `Raspberry Pi's official site <http://www.raspberrypi.org/downloads>`_. All these images are compatible with both model A and B.
 We recommend  to use Raspbian image which based on Debian.
 
-+-----------------------------------------------+--------------+----------------------------------------+
-|                                               |Image         |`2013-09-25-wheezy-raspbian.zip`_       |          
-|                                               +--------------+----------------------------------------+
-|.. image:: ../../_static/img/rpi/raspbian.png  |SHA-1 Checksum|99e6b5e6b8cfbf66e34437a74022fcf9744ccb1d|
-|                                               +--------------+----------------------------------------+                       
-|                                               |Default login |user: **pi**                            |
-|                                               |              +----------------------------------------+
-|                                               |              |password: **raspberry**                 |
-+-----------------------------------------------+--------------+----------------------------------------+
++--------------------------------------------------+--------------+----------------------------------------+
+|                                                  |Image         |`2013-09-25-wheezy-raspbian.zip`_       |          
+|                                                  +--------------+----------------------------------------+
+|.. image:: ../../../_static/img/rpi/raspbian.png  |SHA-1 Checksum|99e6b5e6b8cfbf66e34437a74022fcf9744ccb1d|
+|                                                  +--------------+----------------------------------------+                       
+|                                                  |Default login |user: **pi**                            |
+|                                                  |              +----------------------------------------+
+|                                                  |              |password: **raspberry**                 |
++--------------------------------------------------+--------------+----------------------------------------+
 
 .. _2013-09-25-wheezy-raspbian.zip: http://downloads.raspberrypi.org/raspbian_latest
 
@@ -53,7 +53,7 @@ First, you need to identify the device name for the SD card. For that, you can u
  
 Launch Gparted, and you will see a drop-down disk selection menu in the top right corner which shows a list of hard drives. In this example, the SD card is mapped to "/dev/sdc". Make a note of this device name as you need it later.
 
-.. image:: ../../_static/img/rpi/burn_linux_gparted.jpg
+.. image:: ../../../_static/img/rpi/burn_linux_gparted.jpg
 
 You do not need to create or format any partition on the SD card. If there is already a partition or filesystem created on the SD card, it will be overwritten by dd command subsequently anyway.
 If the SD card is mounted, make sure to unmount it now.
@@ -73,12 +73,12 @@ Windows
 First, download and install SD Card Formatter from `SD Associations <https://www.sdcard.org/downloads/formatter_4/eula_windows/>`_.
 Insert your SD card into the card reader, and then format the SD card with SD Card Formatter. Formatting options do not matter, as the formatted filesystem will be overwritten during the subsequent image writing step. The reason why we format the SD card is to make the card recognized by the operating system.
 
-.. image:: ../../_static/img/rpi/burn_win_sd.png
+.. image:: ../../../_static/img/rpi/burn_win_sd.png
 
 Next, download and install `win32diskimager <http://sourceforge.net/projects/win32diskimager/>`_ application which can flash an SD Card.
 Launch win32diskimager. After locating the extracted Raspbian raw image via a built-in file dialog box, write the image to an SD card. It will take some times to finish writing the image into the SD card.
 
-.. image:: ../../_static/img/rpi/burn_win_win32diskimager.jpg
+.. image:: ../../../_static/img/rpi/burn_win_win32diskimager.jpg
 
 After the writing process is finished, eject the SD card and plug in to the Raspberry Pi.
 
@@ -90,7 +90,7 @@ You can try `RPi SD Card Builder <http://alltheware.wordpress.com/2012/12/11/eas
 First, download and install SD Card Formatter from `SD Associations <https://www.sdcard.org/downloads/formatter_4/eula_mac/>`_.
 Insert your SD card into the card reader, select "Overwrite Format" and then format the SD card with SD Card Formatter.  The reason why we format the SD card is to make the card recognized by the operating system.
 
-.. image:: ../../_static/img/rpi/burn_win_sd.png
+.. image:: ../../../_static/img/rpi/burn_win_sd.png
 
 Now you need to find out under which /dev directory your sdcard is:
 
@@ -128,7 +128,7 @@ After the writing process is finished, eject the SD card. Plug in to the Raspber
 
 After the Raspbian system is installed on an SD card, put the SD card into the Raspberry Pi card reader. Make sure that everything (e.g., external HDMI monitor/TV, keyboard and mouse) is connected properly. Upon the first time booting, you will see the following setup options appear in the screen. This is a Raspberry Pi configuration tool called raspi-config. You can skip this part, and run the tool later if you know what are you doing. However, it is wise to go through the options for the first time setup.
 
-.. image:: ../../_static/img/rpi/config.jpg
+.. image:: ../../../_static/img/rpi/config.jpg
 
 Expanding the File System
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -137,25 +137,25 @@ If you wrote Raspbian image to an SD card with dd command, it normally takes aro
 
 This is when "Expand Filesystem" menu option can help. Click the option, which will then guide you to expand a root partition with fdisk as shown below.
 
-.. image:: ../../_static/img/rpi/shell_expanding.jpg
+.. image:: ../../../_static/img/rpi/shell_expanding.jpg
 
 The resulting partition layout change will take effect after rebooting Raspberry Pi.
 
-.. image:: ../../_static/img/rpi/expanding.jpg
+.. image:: ../../../_static/img/rpi/expanding.jpg
 
 Enable Boot to Desktop / Scratch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The menu option called "Enable Boot to Desktop" in raspi-config allows you to automatically launch and log in to the GUI desktop of Raspbian upon booting. You can also enable the Scratch programming environment. By default, Raspbian is set to boot into a text-based console log in. Depending on your use case, enable booting to desktop.
 
-.. image:: ../../_static/img/rpi/desktop.jpg
+.. image:: ../../../_static/img/rpi/desktop.jpg
 
 Advanced Options
 ^^^^^^^^^^^^^^^^
 
 In the "Advanced Options" menu, you can manage several important options for Raspberry Pi. Under this menu, you will see several advanced options like below. The "Overscan" option is useful when you set up an external HDMI monitor or TV properly. The default value is enabled, but to make sure, choose "Enable" button again inside the Overscan menu.
 
-.. image:: ../../_static/img/rpi/advanced_options.jpg
+.. image:: ../../../_static/img/rpi/advanced_options.jpg
 
 If you want to change the host name of your Raspberry Pi, choose "Hostname" option, and then type the name that you will use as host name. The default value of host name is "raspberry".
 Finally, do not forget to activate SSH service in Raspberry Pi by choosing the SSH menu and entering "Enable" button. The SSH service is needed when you want to run Raspberry Pi headless.
@@ -163,4 +163,4 @@ Finally, do not forget to activate SSH service in Raspberry Pi by choosing the S
 Once you are done with configuration, finish raspi-config, and reboot Raspberry Pi.
 The following screenshot shows the Raspbian GUI desktop with default login (user name: "pi", and password: "raspberry").
 
-.. image:: ../../_static/img/rpi/rpi_desktop.jpg
+.. image:: ../../../_static/img/rpi/rpi_desktop.jpg

@@ -1,4 +1,4 @@
-Raspberry PI FAQs
+Raspberry Pi FAQs
 =================
 
 This sections sumarizes some Frequently Asked Questions that our users have posed up to this moment. If your particular inquiry is not in this list, please, don't hesitate to contact us so we can help you as soon as possible.

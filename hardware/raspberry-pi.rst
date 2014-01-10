@@ -8,10 +8,8 @@ The `Raspberry Pi <http://www.raspberrypi.org/>`_ is a credit-card sized compute
 .. toctree::
    :maxdepth: 2
 
-   rpi/raspberrypi
-   rpi/linux
-   rpi/biicodews
+   rpi/configuration
    rpi/wiringpi
-   rpi/reuse
+   rpi/tutorials
    rpi/faqs
 

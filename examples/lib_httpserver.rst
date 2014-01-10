@@ -1,5 +1,8 @@
+.. _httpserver:
+
+===========
 HTTP Server
-=====
+===========
 
 This block implements an extensible and multi-platform HTTP server.
 
