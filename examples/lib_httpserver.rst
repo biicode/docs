@@ -1,8 +1,6 @@
 HTTP Server 
 =====
-You can write your own multiplatform http server with `lasote/httpserver <https://www.biicode.com/lasote/blocks/lasote/httpserver/branches/master>`_ block.
-
-This block implements an extensible and multi-platform HTTP server.
+You can write and extend your own multi-platform http server with `lasote/httpserver <https://www.biicode.com/lasote/blocks/lasote/httpserver/branches/master>`_ block.
 
 
 How does it work?
