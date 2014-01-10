@@ -1,4 +1,4 @@
-HTTP Server
+HTTP Server (lasote/httpserver)
 =====
 
 This block implements an extensible and multi-platform HTTP server.
