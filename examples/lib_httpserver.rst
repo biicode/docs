@@ -1,17 +1,9 @@
-HTTP Server (lasote/httpserver)
+HTTP Server 
 =====
+You can write your own multiplatform http server with *lasote/httpserver* block.
 
 This block implements an extensible and multi-platform HTTP server.
 
-Supported S.O
--------------
-
-It's tested on:
-
-* Linux with GCC
-* Windows with Mingw
-* Windows with Visual Studio
-* MacOS with Clang
 
 How does it work?
 -------------
@@ -126,6 +118,15 @@ You should implement "call" method, read from request the variables or headers y
         response.body = html.str();
     }
 
+Supported S.O
+-------------
+
+It's tested on:
+
+* Linux with GCC
+* Windows with Mingw
+* Windows with Visual Studio
+* MacOS with Clang
 
     
 More information
