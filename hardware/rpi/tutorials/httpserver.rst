@@ -61,9 +61,6 @@ Defines your HttpMiddleware subclass.
 
 .. code-block:: cpp 
 
-	#ifndef MY_HTTP_MIDDLE_WARE_H_
-	#define MY_HTTP_MIDDLE_WARE_H_
-
 	#include "lasote/httpserver/http_middleware.h"
 	#include "led.h"
 
@@ -79,21 +76,16 @@ Defines your HttpMiddleware subclass.
 				virtual void call(Request&, Response&);
 			private:
 				Led myLed;
-				string route(Request& request);
-				string render_index_page(Request& request);
-				string render_hello_page(Request& request);
+		};
 
-			};
-
-		} /* namespace httpserver */
-	#endif /* MY_HTTP_MIDDLE_WARE_H_ */
+	} /* namespace httpserver */
 
 
 my_http_middle_ware.cpp
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Implements HttpMiddleware subclass.
-With the call method you can turn on or turn off a LED using the request info of the html.
+With the call method you can turn on or turn off a LED using the request info of the request.
 
 .. code-block:: cpp 
 
@@ -145,7 +137,7 @@ With the call method you can turn on or turn off a LED using the request info of
 led.h
 ^^^^^
 
-Defines your led subclass.
+Defines a Led class for turn on/off the light.
 
 .. code-block:: cpp 
 
@@ -166,7 +158,7 @@ Defines your led subclass.
 led.cpp
 ^^^^^^^
 
-Implements HttpMiddleware subclass.
+Implements the Led class
 
 .. code-block:: cpp 
 
