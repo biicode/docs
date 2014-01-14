@@ -20,7 +20,7 @@ Biicode is a new dependencies manager for Software developers, with many unique 
 Biicode BETA
 ------------
 
-Biicode is now in an early Beta stage, we currently accept new users by invitation only and slowly, as we have many users that are giving us a lot of feedback that we have to process and further improve the usability of the system. Sorry if we cannot provide or response quickly to your invitation request, we are doing our best to quickly attend our current users feedback.
+Biicode is now in an early Beta stage but we are already open, also we have many users that are giving us a lot of feedback that we have to process and further improve the usability of the system. We are doing our best to quickly attend our current users feedback.
 
 Biicode has many core innovations, and we are following the lean startup and MVP paradigms, we try to release very often and quickly and iterate quickly on user feedback. But this also means that much functionality you could expect is not as intuitive as you would desire, and errors and failures could arise often, specially on last features. Some things and features are probably on their way, maybe even implemented but not yet properly documented. Also, expect commands, processes and the like to change in the short term.
 
