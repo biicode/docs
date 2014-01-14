@@ -31,7 +31,7 @@ How can i use it?
 The code
 --------
 
-These are the files you will need on your block to have your HTTP Server up and running:
+These are the files you will need in your block to have your HTTP Server up and running:
 
 **main.cpp**. This file just instanciates the server and runs it with simple configuration parameters.
 
