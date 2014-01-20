@@ -4,11 +4,24 @@ How to configure your biicode workspace
 
 If you haven't done so, you must first :ref:`create a biicode workspace <create_workspace>`.
 
-changes, if needed, the sketchbook on the **enviroment.bii**: ::
+changes, if needed, the Arduino info on the **enviroment.bii**:
 
-	arduino:
-	  sketchbooks:
-	  - {sketchbook: 'C:\Users\[USER_NAME]\Documents\Arduino'}
+.. code-block:: text
+	:emphasize-lines: 3, 4
+
+	arduino
+	  boards:
+	  - path: C:/Program Files (x86)/Arduino
+		tool: {board: uno, no_autolibs: 'false', port: COM3, programmer: usbtinyisp}
+	  builders:
+	  - path: mingw32-make
+		tool: {family: MINGW}
+	  compilers:
+	  - path: null
+		tool: {arch: AVR, family: MINGW}
+	  configurers:
+	  - path: cmake
+		tool: {family: CMake}
 
 Create a new hive and code!
 ===========================
