@@ -2,6 +2,9 @@
 How to configure your biicode workspace
 =======================================
 
+Update your environment.bii and settings.bii
+============================================
+
 If you haven't done so, you must first :ref:`create a biicode workspace <create_workspace>`.
 
 changes, if needed, the Arduino info on the **enviroment.bii**:
@@ -23,12 +26,72 @@ changes, if needed, the Arduino info on the **enviroment.bii**:
 	  - path: cmake
 		tool: {family: CMake}
 
+Path to the Arduino SDK
+-----------------------
+		
+Arduino Boards (SDK Arduino 1.0.5)
+----------------------------------
+
+	* ``uno``: Arduino Uno
+	* ``atmega328``: Arduino Duemilanove w/ ATmega328
+	* ``diecimila``: Arduino Diecimila or Duemilanove w/ ATmega168
+	* ``nano328``: Arduino Nano w/ ATmega328
+	* ``nano``: Arduino Nano w/ ATmega168
+	* ``mega2560``: Arduino Mega 2560 or Mega ADK
+	* ``mega``: Arduino Mega (ATmega1280)
+	* ``leonardo``: Arduino Leonardo
+	* ``esplora``: Arduino Esplora
+	* ``micro``: Arduino Micro
+	* ``mini328``: Arduino Mini w/ ATmega328
+	* ``mini``: Arduino Mini w/ ATmega168
+	* ``ethernet``: Arduino Ethernet
+	* ``fio``: Arduino Fio
+	* ``bt328``: Arduino BT w/ ATmega328
+	* ``bt``: Arduino BT w/ ATmega168
+	* ``LilyPadUSB``: LilyPad Arduino USB
+	* ``lilypad328``: LilyPad Arduino w/ ATmega328
+	* ``lilypad``: LilyPad Arduino w/ ATmega168
+	* ``pro5v328``: Arduino Pro or Pro Mini (5V, 16 MHz) w/ ATmega328
+	* ``pro5v``: Arduino Pro or Pro Mini (5V, 16 MHz) w/ ATmega168
+	* ``pro328``: Arduino Pro or Pro Mini (3.3V, 8 MHz) w/ ATmega328
+	* ``pro``: Arduino Pro or Pro Mini (3.3V, 8 MHz) w/ ATmega168
+	* ``atmega168``: Arduino NG or older w/ ATmega168
+	* ``atmega8``: Arduino NG or older w/ ATmega8
+	* ``robotControl``: Arduino Robot Control
+	* ``robotMotor``: Arduino Robot Motor
+	
+no_autolibs
+-----------
+
+no_autolibs can be false or true.
+
+USB port
+--------
+
+USB where you have the Arduino board connected
+
+Serial command
+--------------
+
+You need to define how to open your serial terminal if you want to use de Serial port comunication. For example:
+
+Arduino Programmers (SDK Arduino 1.0.5)
+---------------------------------------
+
+	* ``avrisp``: AVR ISP
+	* ``avrispmkii``: AVRISP mkII
+	* ``usbtinyisp``: USBtinyISP
+	* ``usbasp``: USBasp
+	* ``parallel``: Parallel Programmer
+	* ``arduinoisp``: Arduino as ISP
+
 Create a new hive and code!
 ===========================
 
 Creating a new hive with the ``bii new`` command.
 
-Create all the files you need to start with the ``arduino:wizard`` command. With this command you create the next tree:
+Create all the files you need to start with the ``arduino:wizard --newmain`` command.
+Then create a ``mains.bii`` file into ``block/bii`` folder. With this, you create the next tree:
 
 .. code-block:: text
 	:emphasize-lines: 9, 10, 11, 12
@@ -41,21 +104,28 @@ Create all the files you need to start with the ``arduino:wizard`` command. With
 	|    +-- blocks
 	|         +-- my_user_name
 	|         |     +-- my_block
-	|         |     |	|-- my_block.ino
-	|         |     |	|-- dependencies.h
-	|         |   	|	+-- bii
-	|         |     |		|-- dependencies.bii
+	|         |     |	|-- main.cpp
+	|         |     |	|-- bii
+	|         |     |	|	|-- mains.bii
+	
+
 
 
 These files have the following content:
 
-my_block.ino
-------------
+main.cpp
+--------
 
-This is the main project file and must have the same name as the block containing it.
+This is the main project file.
 
 .. code-block:: cpp
 	:linenos:
+
+	#if ARDUINO >= 100
+		#include "Arduino.h"
+	#else
+		#include "WProgram.h"
+	#endif
 
 	void setup() {
 
@@ -65,47 +135,15 @@ This is the main project file and must have the same name as the block containin
 
 	}
 
-dependencies.h
---------------
+mains.bii
+---------
 
-To maintain compatibility with the Arduino IDE, this file contains dependencies to other blocks. Thanks to this, the routes that have our files are IDE as required, putting relative paths with several levels deep only in the dependencies.h
-
-.. code-block:: cpp
-	:linenos:
-
-	#my_block.ino external dependencies
-	
-dependencies.bii
-----------------
-
-With this file we make the connection between my_block.ino and dependencies.h. You have all the :ref:`info about dependencies.bii here <dependencies_bii>`.
+biicode use this file to define main.cpp like a main file. You have all the :ref:`info about mains.bii here <mains-bii>`.
 
 .. code-block:: text
 	:linenos:
 
-	my_block.ino + dependencies.h
-	
-Copy your dependencies like Arduino libraries 
-=============================================
-
-
-To **use your dependencies in the Arduino IDE** you need to pass them as libraries. To do this you just have to use the ``bii arduino:copy`` command.
-
-.. code-block:: bash
-	:linenos:
-	
-	$ bii arduino:copy
-	
-	The libraries have been copied into your sketchbook
-
-A message like the following will be printed if the path that appears in your environment.bii not exist.
-	
-.. code-block:: bash
-	:linenos:
-	
-	$ bii arduino:copy
-	
-	The specified path of the sketchbook does not exist in the environment.bii
+	main.cpp
 
 
 
