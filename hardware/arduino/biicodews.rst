@@ -10,27 +10,26 @@ If you haven't done so, you must first :ref:`create a biicode workspace <create_
 changes, if needed, the Arduino info on the **enviroment.bii**:
 
 .. code-block:: text
-	:emphasize-lines: 3, 4
+	:emphasize-lines: 3, 8, 9
 
-	arduino
+	arduino:
 	  boards:
-	  - path: C:/Program Files (x86)/Arduino
-		tool: {board: uno, no_autolibs: 'false', port: COM3, programmer: usbtinyisp}
+	  - {board: uno, no_autolibs: 'false', port: COM3, programmer: usbtinyisp}
 	  builders:
 	  - path: mingw32-make
 		tool: {family: MINGW}
 	  compilers:
-	  - path: null
-		tool: {arch: AVR, family: MINGW}
+	  - path: C:/Program Files/Arduino
+		tool: {arch: AVR, family: MINGW, version: 1.0.5}
 	  configurers:
 	  - path: cmake
 		tool: {family: CMake}
 
-Path to the Arduino SDK
------------------------
-		
+Boards information:
+-------------------
+
 Arduino Boards (SDK Arduino 1.0.5)
-----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 	* ``uno``: Arduino Uno
 	* ``atmega328``: Arduino Duemilanove w/ ATmega328
@@ -61,22 +60,23 @@ Arduino Boards (SDK Arduino 1.0.5)
 	* ``robotMotor``: Arduino Robot Motor
 	
 no_autolibs
------------
+^^^^^^^^^^^
 
 no_autolibs can be false or true.
 
 USB port
---------
+^^^^^^^^
 
 USB where you have the Arduino board connected
 
-Serial command
---------------
+* **Linux**
 
-You need to define how to open your serial terminal if you want to use de Serial port comunication. For example:
+* **windows**
+
+* **Mac**
 
 Arduino Programmers (SDK Arduino 1.0.5)
----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 	* ``avrisp``: AVR ISP
 	* ``avrispmkii``: AVRISP mkII
@@ -84,6 +84,22 @@ Arduino Programmers (SDK Arduino 1.0.5)
 	* ``usbasp``: USBasp
 	* ``parallel``: Parallel Programmer
 	* ``arduinoisp``: Arduino as ISP
+
+Compilers:
+----------
+
+Path to the Arduino SDK
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Tool info
+^^^^^^^^^
+
+arch: AVR
+
+family: MINGW
+
+version: 1.0.5
+
 
 Create a new hive and code!
 ===========================
