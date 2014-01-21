@@ -13,10 +13,25 @@ Download and install the client binaries
 
 First of all, download the appropriate client binaries for your system, execute the setup program and follow the instructions.
 
+0.6
+^^^^^^
+**Important note users upgrading from previous versions to 0.6**: in this version  :ref:`policies configuration file <policies>` has changed so you'll need to re-add your custom policies
+
+**Download 0.6**
+
+* `ubuntu32 <https://s3.amazonaws.com/biibinaries/release/0.6/bii-ubuntu32_0_6.deb>`_
+* `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.6/bii-ubuntu64_0_6.deb>`_
+* `win <https://s3.amazonaws.com/biibinaries/release/0.6/bii-win_0_6.exe>`_
+* `mac64 <https://s3.amazonaws.com/biibinaries/release/0.6/bii-macos64_0_6.pkg>`_
+* `raspbian <https://s3.amazonaws.com/biibinaries/release/0.6/bii-rpi.pkg>`_
+
+.. raw:: html
+
+	Here is the <a class="modal" href="changelog.html" title="biicode Changelog">Changelog</a>.
+
 
 0.5
 ^^^^^^
-
 
 **Important note users upgrading from previous versions to 0.3.4**: in this 0.3.4 version the :ref:`hive layout <hive_layout>` has changed so you need to follow next steps to upgrade it:
 
@@ -26,17 +41,6 @@ First of all, download the appropriate client binaries for your system, execute 
 * delete YOUR_HIVE/build
 * execute ``bii:clean``
 * execute ``bii cpp:configure``
-
-**Download 0.5**
-
-* `ubuntu32 <https://s3.amazonaws.com/biibinaries/release/0.5/bii-ubuntu32_0_5.deb>`_
-* `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.5/bii-ubuntu64_0_5.deb>`_
-* `win <https://s3.amazonaws.com/biibinaries/release/0.5/bii-win_0_5.exe>`_
-* `mac64 <https://s3.amazonaws.com/biibinaries/release/0.5/bii-macos64_0_5.pkg>`_
-
-.. raw:: html
-
-	Here is the <a class="modal" href="changelog.html" title="biicode Changelog">Changelog</a>.
 
 
 Install the development tools
