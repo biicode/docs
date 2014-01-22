@@ -12,4 +12,4 @@ If you want to use your code into biicode, you just put the following lines in a
 		#include "WProgram.h"
 	#endif
 	
-An change the ``.ino`` files to ``.cpp``.
+And change the ``.ino`` files to ``.cpp``.

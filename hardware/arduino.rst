@@ -8,4 +8,4 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
   
    arduino/getting_started
    arduino/reuse
-   arduino/tutorials
+
