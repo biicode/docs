@@ -69,7 +69,7 @@ no_autolibs can be false or true. Disable Arduino library detection (default On)
 USB port
 ^^^^^^^^
 
-USB where you have the Arduino board connected
+USB where you have the Arduino board connected.
 
 
 **Linux**
