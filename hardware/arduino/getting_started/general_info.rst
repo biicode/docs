@@ -1,8 +1,9 @@
-============
+
+
 Arduino info
 ============
 
-``WARNING: This information is in the process of adaptation. NOT FEED THEM!``
+``WARNING: This information is in the process of adaptation. DO NOT FEED IT!``
 
 ``GO TO NEXT STEP!!!!``
 
@@ -30,9 +31,9 @@ Interfacing with Software
 
 **Arduino and C++**
 
-* `Interfacing Arduino with C++ and libSerial <http://playground.arduino.cc//Interfacing/CPlusPlus>`_
+* `Interfacing Arduino with C++ and libSerial <http://sglez.org/2008/08/05/interfacing-arduino-with-c-and-libserial/>`_
 * `Arduino and C++ (for Windows) <http://playground.arduino.cc//Interfacing/CPPWindows>`_
-* `Arduino and C++ (for Linux and Max OSX) <http://sglez.org/2008/08/05/interfacing-arduino-with-c-and-libserial/>`_
+* `Arduino and C++ (for Linux and Max OSX) <http://playground.arduino.cc//Interfacing/CPlusPlus>`_
 
 **Arduino and Python**
 

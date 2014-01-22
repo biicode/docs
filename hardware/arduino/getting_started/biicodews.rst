@@ -8,8 +8,7 @@ Update your environment.bii
 ===========================
 
 If you haven't done so, you must first :ref:`create a biicode workspace <create_workspace>`.
-
-changes, if needed, the Arduino info on the **enviroment.bii**:
+Then, if it isn't there,  add the Arduino info on the **enviroment.bii**:
 
 .. code-block:: text
 	:emphasize-lines: 3, 8, 9

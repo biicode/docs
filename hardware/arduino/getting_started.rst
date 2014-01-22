@@ -8,3 +8,4 @@ Getting started
    getting_started/general_info
    getting_started/biicodews
    getting_started/getting_started
+   getting_started/arduino_to_biicode
