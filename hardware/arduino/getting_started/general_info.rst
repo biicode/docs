@@ -1,8 +1,9 @@
-============
+
+
 Arduino info
 ============
 
-``WARNING: This information is in the process of adaptation. NOT FEED THEM!``
+``WARNING: This information is in the process of adaptation. DO NOT FEED IT!``
 
 ``GO TO NEXT STEP!!!!``
 
