@@ -72,7 +72,7 @@ Inside the workspace you can hold **many hives**. Each hive layout is as follows
 |    |    └── bii_vars.cmake
 |    +-- deps
 
-As you can see, the hive contains a collection of folders. We will go through each one of them:
+As you can see, the **hive** contains a collection of folders. We will go through each one of them:
 
 * **bii**: It has a similar structure to the :ref:`workspace folder <workspace_bii>`. It also contains some additional files:
 

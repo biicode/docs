@@ -1,24 +1,23 @@
-
 .. _dependencies_bii:
 
 Dependencies configuration
 --------------------------
 
-The ``dependencies.bii`` file defines explicit dependencies that do not appear in code a common or direct way. Filling this configuration file you can add a :ref:`compilation rules <compilation_rules>` or license file to be downloaded and/or used whenever someone reuses your code. This file should be placed it in ``YOUR_HIVE/blocks`` as you can see in the :ref:`hive layout <hive_layout>` section.
+The ``dependencies.bii`` file is used to **define those dependencies that cannot be automatically inferred from your code in a direct way**. Filling this configuration file you can add dependencies to custom :ref:`compilation rules files<compilation_rules>` for each file or group of files, or even define a license file to be downloaded and/or used whenever someone reuses your code. This is an optional configuration file, and should be placed inside the ``bii`` folder contained in every block, as you can see in the :ref:`hive layout <hive_layout>` section. The rules defined in each ``dependencies.bii`` file should affect only to cells contained in the block where the file is included.
 
-``dependencies.bii`` contains rules matching the following structure: ::
+The ``dependencies.bii`` file contains rules matching the following pattern: ::
 
 	dependent_file_name [-+=] NULL|[[!]dependency_file ]+
 
-Depending on specified operator after the ``dependent_file_name``, it will behave differently:
+The specific meaning of each rule dependes on the operator located right after the ``dependent_file_name``:
 
-* With the ``-`` operator all specified dependencies will be deleted from their dependent file.
-* With the ``+`` operator all specified dependencies will be added to their dependent file.
-* With the ``=`` operator all specified dependencies will overwrite existing dependencies.
+* With the ``-`` operator all specified dependencies will be **deleted** from their dependent file.
+* With the ``+`` operator all specified dependencies will be **added** to their dependent file.
+* With the ``=`` operator all specified dependencies will **overwrite** existing dependencies.
 
-If you mark a dependency with a ``!`` symbol you are declaring this file a dependency but **it should be excluded from the building process.**
+If you mark a dependency with a ``!`` symbol you are declaring this file as a dependency, but **it should be excluded from the building process**. This is usefull, for example, to define **license files** that must be downloaded along with your code, but must not be included in the compilation process.
 
-Also, you can declare that a file doesn't depend on nothing using the ``NULL`` keyword.
+Also, you can declare that a file has no dependencies using the ``NULL`` keyword.
 
 The ``dependent_file_name`` may be defined using **Unix filename pattern matching**.
 
@@ -40,9 +39,11 @@ This is an example of a ``dependencies.bii`` file: ::
 	main.cpp - matrix16.h
 	calculator.cpp = solver.h type.h
 
-* In this example we're declaring that ``test.cpp`` depends on both ``example.h`` and ``LICENSE``. However, ``LICENSE`` must be excluded from the compilation process.
-* Also, we're declaring that all files with a ``.cpp`` extension depend on the ``README`` file but it mustn't be compiled.
-* Declaring ``example.h = NULL`` all ``example.h`` dependencies are deleted.
-* In the fourth line we add ``matrix32.h`` as a ``main.cpp`` dependency.
+The meaning of this configuration is as follows:
+
+* We are declaring that ``test.cpp`` depends on both ``example.h`` and ``LICENSE``. However, ``LICENSE`` must be excluded from the compilation process.
+* Also, we're declaring that all files with a ``.cpp`` extension depend on the ``README`` file, but this dependency mustn't be compiled.
+* The line ``example.h = NULL`` informs biicode that all ``example.h`` dependencies are deleted.
+* In the fourth line we add ``matrix32.h`` as dependency of the ``main.cpp`` file.
 * In the next line we are deleting ``matrix16.h`` as a ``main.cpp`` dependency.
-* Finally, we're declaring that ``solver.h`` and ``type.h`` are ``calculator.cpp`` dependencies, ovewriting all existing implicit dependencies.
+* In the last line we are declaring that both ``solver.h`` and ``type.h`` are ``calculator.cpp`` are the only dependencies of ``calculator.cpp``, ovewriting any existing implicit dependencies.
