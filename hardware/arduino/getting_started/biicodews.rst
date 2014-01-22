@@ -64,20 +64,37 @@ Arduino Boards (SDK Arduino 1.0.5)
 no_autolibs
 ^^^^^^^^^^^
 
-no_autolibs can be false or true.
+no_autolibs can be false or true. Disable Arduino library detection (default On).
 
 USB port
 ^^^^^^^^
 
 USB where you have the Arduino board connected
 
-* **Arduino IDE**
 
-* **Linux**
+**Linux**
 
-* **windows**
+On Linux the Arduino serial device is named as follows (where X is the device number):
 
-* **Mac**
+* ``/dev/ttyUSBX``
+* ``/dev/ttyACMX``
+
+Where ``/dev/ttyACMX`` is for the new Uno and Mega Arduino's, while ``/dev/ttyUSBX`` is for the old ones.
+
+**windows**
+
+When specifying the serial port name on Windows, use the following names:
+
+* ``com1`` ``com2`` ... ``comN``
+
+**Mac**
+
+When specifying the serial port name on Mac OS X, use the following names (where XXX is a unique ID):
+
+* ``/dev/tty.usbmodemXXX``
+* ``/dev/tty.usbserialXXX``
+
+Where ``tty.usbmodemXXX`` is for new Uno and Mega Arduino's, while ``tty.usbserialXXX`` are the older ones.
 
 Arduino Programmers (SDK Arduino 1.0.5)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
