@@ -4347,13 +4347,14 @@ a:hover {
 /* Extra top offset in sections, usefull for linking to sections avoiding the top bar */
 .section h1, .section h2, .section h3 {
   padding-top: 50px;
+  padding-bottom: 8px;
 }
 .section h1 {
   border-bottom: 3px solid #ffaa00;
 }
 
 .section h2 {
-  border-bottom: 1px solid #ffaa00;
+  border-bottom: 2px solid #ffaa00;
 }
 
 /*********************/

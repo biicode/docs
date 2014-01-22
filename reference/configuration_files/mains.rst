@@ -1,24 +1,22 @@
-.. _mains-bii:
+.. _mains_bii:
 
-Executables configuration
--------------------------
+Entry Points Configuration
+--------------------------
 
-Biicode automatically detects entry points to your programs by examining which files contain a ``main`` function definition. However, there are certain cases where a specific framework requires a more complex setup. In those cases you might want to explicitly tell biicode where are your entry points. 
+Biicode automatically detects entry points to your programs by examining which files contain a ``main`` function definition —or the equivalent one in your programming language—. However, there are certain cases where a specific framework requires a more complex setup. In those cases you might want to **explicitly tell biicode where are your entry points**. 
 
-You can do so making use of the ``mains.bii`` file located in ``YOUR_HIVE/bii`` folder as you can see in the :ref:`hive layout <hive_layout>` section.
+You can do so making use of the ``mains.bii`` file located in ``your_block/bii/`` folder as you can see in the :ref:`hives layout <hive_layout>` section. Optionally, you can use the biicode tag ``#bii:entry_point`` described in :ref:`this section<bii_entry_point_tag>`. 
 
-
-mains.bii contains rules matching the following structure: ::
+Any ``mains.bii`` file contains lines with rules matching the following structure: ::
 
 	[[!]file ]
 
-If you add a file, it will be considered as an entry point.
-If you add a file with a ``!`` symbol you are declaring this file file should not be considered an entry point.
-
+* If you write the name of a file, it will be considered as an entry point.
+* If the filename is preceded by an exclamation point (``!``) , you are declaring this file file should not be considered an entry point (despite the fact that biicode could find a ``main`` function or any other indicator that may lead to consider this file as an entry point to your program).
 
 This is an example of a ``mains.bii`` file: ::
 
 	funct.cpp
-	!funct.h
+	!no_main.cpp
 
-* In this example we're declaring that ``funct.cpp`` is an entry point to the application but ``funct.h`` is not even if it declared a main function
+In this case we are declaring that ``funct.cpp`` is an entry point to the application, but ``no_main.h`` is not, even in the case it contained a ``main`` function implementation in its contents.
