@@ -7,6 +7,5 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
    :maxdepth: 2
   
    arduino/getting_started
-   arduino/arduino_to_biicode
    arduino/reuse
    arduino/tutorials

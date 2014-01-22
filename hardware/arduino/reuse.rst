@@ -144,21 +144,21 @@ Once you have the code, invoke ``find`` to resolve external dependencies, so the
 
 	Uploading...[ 90%] Built target uno_CORE
 	[100%] Built target your_user_name_my_block_blink
-	Scanning dependencies of target your_user_name_my_block_blink-upload
+	Scanning dependencies of target [USER]_my_block_blink-upload
 
 	avrdude.exe: AVR device initialized and ready to accept instructions
 
 	Reading | ################################################## | 100% 0.00s
 
 	avrdude.exe: Device signature = 0x1e950f
-	avrdude.exe: reading input file "your_user_name_my_block_blink.hex"
-	avrdude.exe: input file your_user_name_my_block_blink.hex auto detected as Intel Hex
+	avrdude.exe: reading input file "[USER]_my_block_blink.hex"
+	avrdude.exe: input file [USER]_my_block_blink.hex auto detected as Intel Hex
 	avrdude.exe: writing flash (1116 bytes):
 
 	Writing | ################################################## | 100% 0.18s
 
 	avrdude.exe: 1116 bytes of flash written
-	avrdude.exe: reading input file "your_user_name_my_block_blink.eep"
+	avrdude.exe: reading input file "[USER]_my_block_blink.eep"
 	avrdude.exe: writing eeprom (0 bytes):
 
 	Writing | ################################################## | 100% 0.00s
@@ -169,7 +169,7 @@ Once you have the code, invoke ``find`` to resolve external dependencies, so the
 
 	avrdude.exe done.  Thank you.
 
-	[100%] Built target your_user_name_my_block_blink-upload
+	[100%] Built target [USER]_my_block_blink-upload
 
 
 	
