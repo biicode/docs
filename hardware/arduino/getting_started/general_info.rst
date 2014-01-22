@@ -2,6 +2,10 @@
 Arduino info
 ============
 
+``WARNING: This information is in the process of adaptation. NOT FEED THEM!``
+
+``GO TO NEXT STEP!!!!``
+
 Getting Started with Arduino
 ============================
 

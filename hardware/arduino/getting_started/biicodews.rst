@@ -1,9 +1,11 @@
+.. _arduinows:
+
 =======================================
 How to configure your biicode workspace
 =======================================
 
-Update your environment.bii and settings.bii
-============================================
+Update your environment.bii
+===========================
 
 If you haven't done so, you must first :ref:`create a biicode workspace <create_workspace>`.
 
@@ -69,6 +71,8 @@ USB port
 
 USB where you have the Arduino board connected
 
+* **Arduino IDE**
+
 * **Linux**
 
 * **windows**
@@ -91,75 +95,13 @@ Compilers:
 Path to the Arduino SDK
 ^^^^^^^^^^^^^^^^^^^^^^^
 
+Path where you installed arduino. It is important to choose a SDK compatible with your board. If you need to download a SDK or more info visit the `official Arduino website <http://arduino.cc/en/Main/Software>`_
+
 Tool info
 ^^^^^^^^^
 
-arch: AVR
+* ``arch``: AVR
+* ``amily``: MINGW (windows) or Gnu (linux/Mac)
+* ``version``: 1.0.5
 
-family: MINGW
-
-version: 1.0.5
-
-
-Create a new hive and code!
-===========================
-
-Creating a new hive with the ``bii new`` command.
-
-Create all the files you need to start with the ``arduino:wizard --newmain`` command.
-Then create a ``mains.bii`` file into ``block/bii`` folder. With this, you create the next tree:
-
-.. code-block:: text
-	:emphasize-lines: 9, 10, 11, 12
-
-	|-- my_hive
-	|    +-- bii
-	|    +-- bin
-	|    +-- build
-	|    +-- dep
-	|    +-- blocks
-	|         +-- my_user_name
-	|         |     +-- my_block
-	|         |     |	|-- main.cpp
-	|         |     |	|-- bii
-	|         |     |	|	|-- mains.bii
-	
-
-
-
-These files have the following content:
-
-main.cpp
---------
-
-This is the main project file.
-
-.. code-block:: cpp
-	:linenos:
-
-	#if ARDUINO >= 100
-		#include "Arduino.h"
-	#else
-		#include "WProgram.h"
-	#endif
-
-	void setup() {
-
-	}
-
-	void loop() {
-
-	}
-
-mains.bii
----------
-
-biicode use this file to define main.cpp like a main file. You have all the :ref:`info about mains.bii here <mains-bii>`.
-
-.. code-block:: text
-	:linenos:
-
-	main.cpp
-
-
-
+You can see de version of your SDK into the file ``[Arduino_SDK_path]/revisions.txt``
