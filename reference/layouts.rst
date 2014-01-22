@@ -61,9 +61,11 @@ Inside the workspace you can hold **many hives**. Each hive layout is as follows
 |    |    |   	        |-- foo.c
 |    |    |             └── bar.h
 |    |    +-- other_user_name
+|    |          +-- bii
+|    |          |    |-- mains.bii
 |    |          +-- block_im_editing
-|    |        	       |-- message.c
-|    |                 └── message.h
+|    |        	     |-- message.c
+|    |               └── message.h
 |    +-- build
 |    +-- cmake
 |    |    |-- CMakeLists.txt
