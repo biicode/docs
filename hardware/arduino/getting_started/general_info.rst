@@ -2,27 +2,22 @@
 Arduino info
 ============
 
-Arduino IDE
-===========
+``WARNING: This information is in the process of adaptation. NOT FEED THEM!``
 
-* `Download the Arduino software <http://arduino.cc/en/Main/Software>`_
+``GO TO NEXT STEP!!!!``
 
 Getting Started with Arduino
 ============================
 
+* `Download the Arduino software <http://arduino.cc/en/Main/Software>`_
 * `Getting Started with Arduino <http://arduino.cc/en/Guide/HomePage>`_
 
-Getting Started with Arduino Yun and Arduino Due
-================================================
-
-* `Getting started with the Arduino Due <http://arduino.cc/en/Guide/ArduinoDue>`_
-* `Guide to the Arduino Yun <http://arduino.cc/en/Guide/ArduinoYun>`_
 
 Getting Started with Intel Galileo
 ==================================
 
 * `Arduino IDE for Intel Galileo <https://communities.intel.com/community/makers/software/drivers>`_
-* `Getting started with the Arduino Due <http://arduino.cc/en/ArduinoCertified/IntelGalileo>`_
+* `Getting started with Intel Galileo <http://arduino.cc/en/ArduinoCertified/IntelGalileo>`_
 
 Interfacing with Software
 =========================
