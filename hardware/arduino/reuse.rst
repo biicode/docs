@@ -14,7 +14,7 @@ The Blink library
 
 Suppose that based on the blinking example, you have in your block three files, a ``Blink_lib`` class and a main file ``blink.cpp`` which uses the first class. This could be such that:
 
-**blink_lib class**
+**blink_lib.h**
 
 .. code-block:: cpp
 	
@@ -35,6 +35,8 @@ Suppose that based on the blinking example, you have in your block three files, 
 	 * @param pin      - pin number
 	 **/
 	void blink(unsigned long duration, uint8_t pin=13);
+
+**blink_lib.cpp**
 
 .. code-block:: cpp
 	
