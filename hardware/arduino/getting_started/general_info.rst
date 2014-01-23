@@ -1,28 +1,24 @@
-============
+
+
 Arduino info
 ============
 
-Arduino IDE
-===========
+``WARNING: This information is in the process of adaptation. DO NOT FEED IT!``
 
-* `Download the Arduino software <http://arduino.cc/en/Main/Software>`_
+``GO TO NEXT STEP!!!!``
 
 Getting Started with Arduino
 ============================
 
+* `Download the Arduino software <http://arduino.cc/en/Main/Software>`_
 * `Getting Started with Arduino <http://arduino.cc/en/Guide/HomePage>`_
 
-Getting Started with Arduino Yun and Arduino Due
-================================================
-
-* `Getting started with the Arduino Due <http://arduino.cc/en/Guide/ArduinoDue>`_
-* `Guide to the Arduino Yun <http://arduino.cc/en/Guide/ArduinoYun>`_
 
 Getting Started with Intel Galileo
 ==================================
 
 * `Arduino IDE for Intel Galileo <https://communities.intel.com/community/makers/software/drivers>`_
-* `Getting started with the Arduino Due <http://arduino.cc/en/ArduinoCertified/IntelGalileo>`_
+* `Getting started with Intel Galileo <http://arduino.cc/en/ArduinoCertified/IntelGalileo>`_
 
 Interfacing with Software
 =========================
@@ -35,9 +31,9 @@ Interfacing with Software
 
 **Arduino and C++**
 
-* `Interfacing Arduino with C++ and libSerial <http://playground.arduino.cc//Interfacing/CPlusPlus>`_
+* `Interfacing Arduino with C++ and libSerial <http://sglez.org/2008/08/05/interfacing-arduino-with-c-and-libserial/>`_
 * `Arduino and C++ (for Windows) <http://playground.arduino.cc//Interfacing/CPPWindows>`_
-* `Arduino and C++ (for Linux and Max OSX) <http://sglez.org/2008/08/05/interfacing-arduino-with-c-and-libserial/>`_
+* `Arduino and C++ (for Linux and Max OSX) <http://playground.arduino.cc//Interfacing/CPlusPlus>`_
 
 **Arduino and Python**
 

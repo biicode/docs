@@ -5,8 +5,7 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
 
 .. toctree::
    :maxdepth: 2
-   
-   arduino/arduino_ide
-   arduino/biicodews
-   arduino/arduino_libs
+  
+   arduino/getting_started
+   arduino/reuse
 

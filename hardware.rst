@@ -5,4 +5,5 @@ Cross platform support
    :maxdepth: 2
 
    hardware/raspberry-pi
+   hardware/arduino
 
