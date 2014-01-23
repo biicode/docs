@@ -6,7 +6,7 @@ The file filter
 
 The ``filefilter.bii`` file allows you to specify which files will be processed and published by the Biicode client program. The concept is similar to the ``.gitignore`` files in a git repository, and allows you to define which extensions will be uploaded to our servers, and which ones will be excluded. The most important difference with a typical ``.gitignore`` file, is that the ``filefileter.bii`` file **must explicitly indicate which extensions must be included in your project, whitelisting them via appropriate configuration**. This is important to provide Biicode with information about which file containe source code, what is the language of that code, and how we must process your files and find their dependencies.
 
-Here you can see an example of the ``defaul_filefilter.bii`` file located in the ``bii`` folder in the root of your workspace (as you can see in :ref:`layouts section <layouts>`). ::
+Here you can see an example of the ``default_filefilter.bii`` file located in the ``bii`` folder in the root of your workspace (as you can see in :ref:`layouts section <layouts>`). ::
 
 	# You can edit this file to add accepted and ignored file extensions
 	# Configuration is up to down hierarchical so first rule matched is the one applied.
