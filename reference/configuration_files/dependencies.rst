@@ -3,7 +3,9 @@
 Dependencies configuration
 --------------------------
 
-The ``dependencies.bii`` file is used to **define those dependencies that cannot be automatically inferred from your code in a direct way**. Filling this configuration file you can add dependencies to custom :ref:`compilation rules files<compilation_rules>` for each file or group of files, or even define a license file to be downloaded and/or used whenever someone reuses your code. This is an optional configuration file, and should be placed inside the ``bii`` folder contained in every block, as you can see in the :ref:`hive layout <hive_layout>` section. The rules defined in each ``dependencies.bii`` file should affect only to cells contained in the block where the file is included.
+The ``dependencies.bii`` file is used to **define those dependencies that cannot be automatically inferred from your code in a direct way**. Filling this configuration file you can also add dependencies to custom :ref:`compilation rules files<compilation_rules>` for each file or group of files, or even define a license file to be downloaded and/or used whenever someone reuses your code. This is an optional configuration file, and should be placed inside the ``bii`` folder contained in every block, as you can see in the :ref:`hive layout <hive_layout>` section. Optionally, you may specify custom dependencies making use of :ref:`tags inserted in the file comments, as explained in this section<bii_dependencies_tag>`.
+
+The rules defined in each ``dependencies.bii`` file should affect only to cells contained in the block where the file is included. This means that a ``dependencies.bii`` configuration file **can only be locate inside a** ``block_name/bii`` **folder**, and make no sense having a ``default_dependencies.bii`` file in the workspace ``bii`` folder.
 
 The ``dependencies.bii`` file contains rules matching the following pattern: ::
 

@@ -49,6 +49,9 @@ Similarly, in the comments of your ``calculator.cpp`` file:
 	// Biicode tag configuration in a single line C++ comment:
 	// bii:#dependencies(= solver.h type.h)
 
+	... come code here ...
+	/* end of calculator.cpp */
+
 And so on.
 
 .. _bii_entry_point_tag:
@@ -62,9 +65,9 @@ This tag provides similar functionality to the ``mains.bii`` :ref:`configuration
 	
 	bii:#entry_point([type]) 
 
-The optional parameter ``type`` admits one of the following values:
+The optional parameter ``type`` can take one of the following values:
 
-* None, that is, the empty string, indicates that this particular file is an executable, and must be considered as such int he configuration and possible compilation of your project.
+* *None*, that is, the empty string, indicates that this particular file is an executable, and must be considered as such int he configuration and possible compilation of your project.
 * ``EXCLUDE``, indicates that this file must not be considered as an entry point for your program.
 
 Consider the following example for a ``mains.bii`` file contained in a C++ block: ::
