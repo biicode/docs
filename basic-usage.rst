@@ -11,7 +11,7 @@ This section describes **the most common use cases that you will find when using
 Biicode provides the tools for analyzing, publishing and reusing code. The basic commands of the :ref:`client binary<installation>` for these activites are explained in the following lines (a more detailed description of some of these commands can be found in the :ref:`commands reference<bii_commands>`):
 
 Checking your dependencies
-==========================
+--------------------------
 
 There is one command that, when executed inside any hive in your workspace, is able to determine all dependencies affecting your source code for that particular hive. This is the ``bii deps`` command.
 
@@ -22,7 +22,7 @@ There is one command that, when executed inside any hive in your workspace, is a
 With this command you can **check your hive dependencies**, the versions of external blocks you are depending on (in your deps folder) and also the dependencies internal to your own hive. This is an important source of information, we are working on it to make it more navigable and informative.
 
 Processing the code
-===================
+-------------------
 
 The ``bii work`` command is a very basic command that performs the main processing of biicode for your current hive. It checks what files you have modified, analyzes and search dependencies among your hive files (i.e. locally), and fills the ``deps`` folder. Most times it is not necessary to invoke this command explicitly, because it is automatically called by development commands as ``cpp:run``, ``cpp:build`` or ``cpp:configure``.
 
@@ -31,7 +31,7 @@ The ``bii work`` command is a very basic command that performs the main processi
 	$ bii work
 
 Cleaning meta-information
-=========================
+-------------------------
 
 The ``bii clean`` command cleans most of biicode internal hive meta-information, keeping the strictly minimum required to reconstruct everything in a subsequent command. In theory, this command should not exist, but it is sometimes necessary, especially when new versions of biicode client are released that might have backwards incompatibilities.
 
@@ -42,7 +42,7 @@ The ``bii clean`` command cleans most of biicode internal hive meta-information,
 .. _biipublish:
 
 Publishing your code
-====================
+--------------------
 
 When you do a ``bii publish`` you are uploading the code of one of your current hive blocks to biicode servers. It means that such code is more or less ready to be reused, the level of the reuse can be defined by the ``tag``, which can be one of:
 
@@ -76,7 +76,7 @@ The name of the block has to include your user name. You can specify to open a d
 .. _biifind:
 
 Finding dependencies
-====================
+--------------------
 
 External dependencies to your hive are retrieved from biicode servers when found to your dep folders.
 If you simply want to find missing dependencies, type:

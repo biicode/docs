@@ -71,12 +71,12 @@ This commands allows you to retrieve any code dependencies from the Biicode serv
 
 The retrieved files are copied on your file system, under the ``deps`` folder of your hive, following a folder structure that reproduces the name of the retrieved blocks: ``<block_name> = <user_name>/<simple_name>`` (see the :ref:`basic concepts<basic_concepts>` and how a **block** is uniquely identified).
 
-``bii open <block_name>``: Reusing other's code
------------------------------------------------
+``bii open <block_name>``: Reusing the code
+-------------------------------------------
 
-This command is tipically used when you decide you want to do some modifications to one of your dependency blocks that was originally created by other user. There are two ways of retrieving a block created by other user to perform some modifications:
+This command is tipically used when you decide you want to do some modifications to one of your dependency blocks (those blocks contained in the ``deps`` folder of your hive). There are two ways of retrieving a block created by you or other biicode user to perform some modifications:
 
-That block is a dependency of your code 
+That block is a dependency of your code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In this case, you are using some files from other user's block. This means that when you execute a ``bii find`` command those files are copied to the ``deps`` folder of your hive. Let's imagine your user name is ``peter``, and your block ``peter/my_block`` dependes on the code written by the user ``martha``. In particular it dependes from the block ``martha/her_block``.  After calling the ``bii find`` command, the files your block needs are copied under the ``deps`` folder of the hive you are working on. If you decide to make some modifications to the code you are using, you must call the ``bii open`` command, passing as a parameter the name of the block you intend to modify:
@@ -90,6 +90,5 @@ Then, the biicode client copies martha's block to your ``blocks`` hive folder, a
 You have an empty hive
 ^^^^^^^^^^^^^^^^^^^^^^
 
-We know that whenever we create a new hive, a default new block is created for as with the name provided to the assistant. If we manually remove that block from the ``blocks`` folder of the hive, we can directly call the ``bii open`` command and retrieve any published block from the Biicode servers. The code is copied to the ``blocks`` folder of the **hive** we are working on, and we can modify it as any other source block.
-
+We know that whenever we create a new hive, a default new block is created for as with the name provided to the assistant. If we manually remove that block from the ``blocks`` folder of the hive, we can directly call the ``bii open <block_name>`` command and retrieve any published block from the Biicode servers. The code is then copied to the ``blocks`` folder of the **hive** we are working on, and we can modify it as any other source block.
 
