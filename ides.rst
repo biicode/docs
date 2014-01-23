@@ -173,7 +173,7 @@ Now, copy the code from your hello word tutorial into the block folder and write
 Finally, you are ready to open your project with CodeBlocks. The first step is to open the project:
 
 #. From the main menu, select *File > open...*
-#. Find the ``build`` folder of your hive and select the **[Hive_name].cbp** file.
+#. Find the ``build`` folder of your hive and select the **hive_name.cbp** file.
 #. Click *open*.
 
 Now you have your project in the CodeBlocks workspace showing a folders tree similar to this one:

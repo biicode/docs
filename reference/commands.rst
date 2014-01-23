@@ -60,6 +60,7 @@ After your block has been published and uploaded to the Biicode servers, the pro
 ``bii deps``: Analyzing code dependencies
 -----------------------------------------
 
+This command allows you to check the dependencies of any hive in your workspace.
 
 .. _bii_find_command:
 
