@@ -14,7 +14,7 @@ v. 0.6
 * Added :ref:`new tagging system <comments_tags>`
 * Added cpp:exe command that allows executing an already compiled binary w/o recompiling
 * Improved renaming support
-* Adding OpenGLES project generation
+* Adding :ref:`OpenGL ES for RPI <opengles>` project generation
 * Improved cpp wizard
 
 
