@@ -9,14 +9,14 @@ You can think of these tags as inline configuration instructions that are placed
 
 .. _bii_dependencies_tag:
 
-The ``#bii:dependencies`` tag
+The ``bii:#dependencies`` tag
 -----------------------------
 
 This tag provides the same functionality as the ``dependencies.bii`` :ref:`configuration files<dependencies_bii>`. It allows you to define the dependencies configuration for any given file, simply including this information inside the comments of the source code. The syntaxis for this command is:
 
 .. code-block:: text
 
-	#bii:dependencies(list_of_dependencies)
+	bii:#dependencies(list_of_dependencies)
 
 where ``list_of_dependencies`` is a string containing informacion about that particular file dependencies, with a similar structure to the one used in the ``dependencies.bii`` files. Take, for instance, this example displayed in the :ref:`section describing the dependencies.bii file<dependencies_bii>`: ::
 
@@ -27,14 +27,14 @@ where ``list_of_dependencies`` is a string containing informacion about that par
 	main.cpp - matrix16.h
 	calculator.cpp = solver.h type.h
 
-This same behavior can be achieved making use of the ``#bii:dependencies``, including the appropriate parameters for each dependent code file.
+This same behavior can be achieved making use of the ``bii:#dependencies``, including the appropriate parameters for each dependent code file.
 
 In your ``test.cpp`` file:
 
 .. code-block:: cpp
 
 	/* Begin of test.cpp file.
-		#bii:dependencies(+ example.h !LICENSE)
+		bii:#dependencies(+ example.h !LICENSE)
 	*/
 
 	... some code here ...
@@ -47,20 +47,20 @@ Similarly, in the comments of your ``calculator.cpp`` file:
 	/* Begin of calculator.cpp */
 
 	// Biicode tag configuration in a single line C++ comment:
-	// #bii:dependencies(= solver.h type.h)
+	// bii:#dependencies(= solver.h type.h)
 
 And so on.
 
 .. _bii_entry_point_tag:
 
-The ``#bii:entry_point`` tag
+The ``bii:#entry_point`` tag
 ----------------------------
 
 This tag provides similar functionality to the ``mains.bii`` :ref:`configuration file<mains_bii>`. When included in the comments of a given file, determines wether or not that particular file contains an entry point for your code, and its type. The syntaxis for this command is as follows:
 
 .. code-block:: text
 	
-	#bii:entry_point([type]) 
+	bii:#entry_point([type]) 
 
 The optional parameter ``type`` admits one of the following values:
 
@@ -79,7 +79,7 @@ In the ``funct.cpp`` you could write:
 .. code-block:: cpp
 
 	/* This is the file: funct.cpp
-		#bii:entry_point()
+		bii:#entry_point()
 	*/
 
 	... some code here ...
@@ -94,7 +94,7 @@ And similarly, in you ``no_main.cpp`` file:
 		
 	*/
 
-	// #bii:entry_point(EXCLUDE)
+	// bii:#entry_point(EXCLUDE)
 
 	int main() {
 		return 0;
