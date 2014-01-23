@@ -1,6 +1,23 @@
 Changelog
 =========
 
+v. 0.6
+--------------------
+*(26-Jan-14)*
+
+* Added :ref:`arduino support <arduino>`
+* Created :ref:`raspbian native client <installation>`
+* Improved python native libraries
+* Improved :ref:`virtual resources <virtual_resources>` management
+* :ref:`Policies <policies>` made easier and now  user find their own DEV (in master branches) versions by default
+* Bugfixes
+* Added :ref:`new tagging system <comments_tags>`
+* Added cpp:exe command that allows executing an already compiled binary w/o recompiling
+* Improved renaming support
+* Adding OpenGLES project generation
+* Improved cpp wizard
+
+
 v. 0.5
 --------------------
 *(10-Jan-14)*

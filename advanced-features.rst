@@ -15,6 +15,8 @@ The biicode client generates this file for you when you create a new hive. Initi
 You can also specify your own settings for that particular project. This information will be used, for instance, for defining the virtual resources that will be explained in a few paragraphs. You can read more about :ref:`settings.bii <settings_bii>` :ref:`here <settings_bii>`
 
 
+.. _virtual_resources:
+
 Virtual resources
 -----------------
 
