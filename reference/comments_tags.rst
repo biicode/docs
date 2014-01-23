@@ -1,6 +1,6 @@
 .. _comments_tags:
 
-Comments Tags
+Comments tags
 =============
 
 One of the reason why biicode is a powerful tool for any software developer, is that not only automatically configures your project and builds it if needed, but also **provides the tools that allow you to take full control of the project configuration and settings**. This control is provided on one hand via specific :ref:`configuration files<config_files>`. On the other hand, you can make use of **special tags included in your code comments**, that provide Biicode with valuable information about your specific necessities and desires about any hive or block. 

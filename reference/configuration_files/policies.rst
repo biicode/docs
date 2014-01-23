@@ -1,4 +1,3 @@
-
 .. _policies:
 
 Policies

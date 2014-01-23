@@ -1,6 +1,6 @@
 .. _config_files:
 
-Configuration Files
+Configuration files
 ===================
 
 In this section you will find a detailed description of the biicode configuration files. These files **extend the basic biicode functionality, providing you with additional tools for taking a deeper control and full flexibility configuring your hives and blocks**.

@@ -14,12 +14,12 @@ In the following sections you will learn about four basic concepts:
 * The **block**, or biicode basic code sharing unit. Any hive can contain multiple blocks of code; blocks of your own, and blocks of other users.
 * The **cell**, or file. Blocks are made up of one or more cells that contain source code and other resurces (images, data files, etc.)
 
-Now these conceps are explaind in more detail:
+Now these conceps are explained in more detail:
 
 Workspace
 ^^^^^^^^^
 
-This is a **special folder** which is created on your system during the :ref:`installation process <installation>`. The concept is pretty much the same as in IDEs; **the place where all your projects** —which in biicode terminology are called *hives*— **are located**. The workspace contains all your code and related metadata, so keep it private under your system user account, and do not share it with untrusted people.
+This is a **special folder** which is created on your system during the :ref:`installation process <installation>`. The concept is pretty much the same as in IDEs; **the place where all your projects —which in biicode terminology are called hives— are located**. The workspace contains all your code and related metadata, so keep it private under your system user account, and do not share it with untrusted people.
 
 Simply speaking, your workspace **will hold your hives**, or projects.
 
@@ -46,14 +46,13 @@ A block is a **group of files, or cells in biicode terminology, that are logical
 * The ``blocks`` folder contains those **blocks that are being edited by you**. That is the code you are actually programming.
 * The ``deps`` folders contains those blocks that are dependencies of the code contained in the ``blocks`` folder. They are automatically retrieved by the biicode client program, downloaded from our servers and stored locally on your computer. However, these blocks typically contain only those files required to meet the dependencies of your source files contained in the ``blocks`` folder.
 
-A **block** name is composed by two parts, the **username** of the block original creator, and the simple **block name**, in the form: ``user_name/block_name``. This structure is reflected under the ``blocks`` and ``deps`` folders structure, both for your own blocks and for the dependencies.
+A **block** name, ``<block_name>``, is composed by two parts, the **user name** of the block original creator, and the **name of the block**, which is a simple name: ``user_name/simple_name``. This structure is reflected under the ``blocks`` and ``deps`` folders structure, both for your own blocks and for the dependencies.
 
 Blocks are the items you can **publish and share for later reuse**. It’s a similar concept to C libraries, java jars, or python packages and modules, but not exactly the same, as they **always contains source code**, and without any real packaging grouping them other than the block name.  
 
 It is important to emphasize the fact that not all cells (files) within a block are to be reused together. If you need a certain cell of a block and such cell does not depend on any other file, only that cell will be retrieved and reused in your hive.
 
 **Circular dependencies between blocks are not allowed**, as usually happens in other systems. If the cells of a block **A** depend on the cells of block **B**, then, the cells of block **B** cannot depend on cells belonging to block **A**.
-
 
 Cell
 ^^^^
