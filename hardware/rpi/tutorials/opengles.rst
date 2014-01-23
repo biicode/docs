@@ -19,15 +19,15 @@ let's call it triangle.
 
 .. code-block:: bash
 
-	$ bii new triangle
+    you@yourmachine ~/bii_ws $ bii new triangle
     ..
-	you@yourmachine ~/bii_ws $ cd triangle
+    you@yourmachine ~/bii_ws $ cd triangle
 
 When you have your shining new hive, you should execute the following command:
 
 .. code-block:: bash
 
-	you@yourmachine ~/bii_ws/triangle $ bii rpi:initopengles pi 192.168.1.69
+    you@yourmachine ~/bii_ws/triangle $ bii rpi:initopengles pi 192.168.1.69
     pi@192.168.1.69's password:
     receiving incremental file list
     ..

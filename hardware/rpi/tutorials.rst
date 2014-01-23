@@ -8,3 +8,4 @@ Raspberry Pi examples
    tutorials/blink
    tutorials/pwm
    tutorials/servo
+   tutorials/opengles
