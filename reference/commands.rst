@@ -13,12 +13,16 @@ This section summarizes the **commands available to be used with the biicode cli
 
 All these functionalities are achieved using appropriate commands that are explained and used in many examples along this documentation, and are compiled here in a list for your convenience and reference.
 
+.. _bii_init_command:
+
 ``bii init``: Workspace initialization
 --------------------------------------
 
 This is the first command you should invoke after installing the biicode client program, and allows the biicode :ref:`workspace initialization in a folder of your choice<create_workspace>`.
 
 This command creates a special ``bii`` folder in the root of your workspace, that contains :ref:`default configuration files<config_files>` for the biicode client. These default files are used as templates when you create a new **hive**, and copied to the corresponding ``bii`` configuration folders for each hive.
+
+.. _bii_new_command:
 
 ``bii new <hive_name>``: Creating new hives
 -------------------------------------------
@@ -36,6 +40,8 @@ In case you choose **cpp** as your programming language, there are some addition
 * The name of the **IDE** you will be using when writing your code. This way, the command will be able to automatically create the project configuration for your favourite IDE. Available options are: *Visual*, *CodeBlocks*, *Eclipse*, *NetBeans*, or *None* if you don't need this configuration.
 * Finally, the client asks for a **build type** for your code. Available options are: *None*, *Debug*, *Release*, *RelWithDebInfo*, or *MinSizeRel*.
 
+.. _bii_publish_command:
+
 ``bii publish``: Sharing your code
 ----------------------------------
 
@@ -49,6 +55,13 @@ The ``bii publish`` command must be invoked inside a **hive** folder and has no 
 
 After your block has been published and uploaded to the Biicode servers, the program shows a message with information about the name of the block (``user_name/simple_name``), the name of the branch (``user_name/branch_name``), and the numeric ID of the version that has been published in that particular branch.
 
+.. _bii_deps_command:
+
+``bii deps``: Analyzing code dependencies
+-----------------------------------------
+
+
+.. _bii_find_command:
 
 ``bii find``: Retrieveing dependencies
 --------------------------------------

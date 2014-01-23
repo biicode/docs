@@ -1,15 +1,16 @@
-==================
+.. _ide_configuration:
+
 Configuring an IDE
 ==================
 
-Biicode is integrated with mainly used IDEs. You can configure your
-projects using your favourite ide with biicode easily.
-Follow next instructions to achieve this integration.
+If your are programming in C++, Biicode offers you **integration with some of the most commonly used IDEs**, and is able to do the appropriate corresponding project setup on your behalf. This way you can work on your biicode hive, using the underlying infrastructure and services provided by standard IDEs, just as it is was any other standard project. In fact, this configuration can be established from the very first momment, when you create a new hive with the ``bii new`` command (see :ref:`the commands reference for more information<bii_new_command>`).
+
+This section details the steps you should follow to achieve this integration.
 
 Configure your project
-======================
+----------------------
 
-First of all, you need to configure your project. If you did it when creating the workspace or hive you can skip this part.
+First of all, you need to configure your hive for the particular IDE of your choice. If you already did so when creating the hive with the help of the ``bii new`` command, you can skip this section. Otherwise, you can define your preferences in the ``settings.bii`` configuration of your hive.
 
 Initialize your default C++ settings writting:
 
@@ -25,10 +26,9 @@ Initialize your default C++ settings writting:
 
 	 ./hive_name/bii/settings.bii
 
-Inside the ``bii`` folder of you hive, change the ``settings.bii`` file including the following highlighted lines for the desired IDE and build type: 
+Inside the ``bii`` folder of you hive, update the ``settings.bii`` file including the information about your desired **ide** and **build_type** (leaving the rest of the file as it is in your particular platform). This is an example with a *debug* build type and *Eclipse* as the desired IDE.
 
 .. code-block:: text
-	:emphasize-lines: 4,5
 
 	cpp:
 		builder: {family: MINGW}
@@ -37,63 +37,51 @@ Inside the ``bii`` folder of you hive, change the ``settings.bii`` file includin
 		build_type: debug
 	os: {arch: 32bit, family: Windows, subfamily: '8', version: 6.2.9200}
 
+After modifying this file, you mus execute the ``bii cpp:config`` command to apply all chantes and generate the project files.
 
-You can see Visual options in Visual section below.
+Some particular configuration options for :ref:`Eclipse<ide_eclipse>`, :ref:`Visual Studio<ide_visual>` and :ref:`CodeBlocks<ide_codeblocks>` are detailed in the following subsections:
 
+.. _ide_eclipse:
 
 Eclipse
-=======
+-------
 
-You can now import your project to Eclipse. The first step is to import the project:
+If you have cofigured your hive ``settings.bii`` file as in the previous example, your are ready to import your project into the Eclipse IDE.
 
-#. File > import...
-#. general > Existing Projects into Workspace and clic next.
-#. Select root directory:  find the build folder of your hive and click accept.
-#. Into the projects box, you should see a project already selected. Click finish
+#. From the main Eclipse menu choose: *File > import...*
+#. Now, select *general > Existing Projects into Workspace*, and clic next.
+#. Select the root directory as the **root folder of your hive**.
+#. You should see a project already selected in the *projects* box. Click *finish*.
 
-If you want to add any file, just click right mouse button on the folder on your block and create a new file
+If you want to add new files to your block, just right-click on the folder of your block and create a new file.
 
 Note: If you add new dependencies to your project you'll need to manually invoke ``bii find``.
 
 You can build your application in *Project > Build project* if you don't have automated builds set.
 
-If you are using **mac** you will need some aditional setup:
+If you are using **Mac** as developing platform, you will need some aditional setup:
 
-#. Right click on your project and select Properties
-#. Select "C/C++ Make project" and click "Binary Parser" tab
-#. Unselect Mach-O Parser (deprecated)
-#. Select Mach-O 64 Parser
-#. Click OK
+#. Right-click on your project and select *Properties*.
+#. Select *C/C++ Make project* and click on the *Binary Parser* subsection tab.
+#. Unselect Mach-O Parser (deprecated).
+#. Select Mach-O 64 Parser.
+#. Click *OK*.
 
-And this is all you need to work as usual in eclipse.
+And this is all you need to work as usual with the Eclipse IDE.
 
+.. _ide_visual:
 
 Microsoft Visual Studio
-=======================
+-----------------------
 
-First of all, you need to inicialize your default C++ settings with the following command:
-
-.. code-block:: bash
-
-	$ bii cpp:settings
-	...
-	These are your default settings for this Hive
-
-	Builder: MINGW
-	Compiler: MINGW
-
-	If you want to change it, you have to modify this file:
-
-	  ./hive_name/bii/settings.bii
-
-The ``settings.bii`` is a YAML file with the following contents: ::
+First of all, you need to inicialize your default C++ settings with the ``bii cpp:settings`` command, as explained before. The generated ``settings.bii`` is a YAML file with the following contents: ::
 
 	cpp:
 	  builder: {family: MINGW}
 	  compiler: {family: MINGW}
 	os: {arch: 32bit, family: Windows, subfamily: '7', version: 6.1.7601}
 
-If you want to change your IDE to build your project with Visual Studio you should add the following command line. Copy the line exactly as it appears on screen (same indentation and blank spaces). Note that builder and compiler definition lines are not required any more.: ::
+If you want to change your IDE to build your project with Microsoft Visual Studio, you need to add the following command lines to this config file. Copy them exactly as it appears on screen (same indentation and blank spaces). Note that **builder and compiler definition lines are not required any more**: ::
 
 	cpp:
 	  ide: {family: VISUAL, version: 10.0}
@@ -141,32 +129,14 @@ Finally, you are now ready to open your project with Visual Studio. Just double-
 
 .. image:: _static/img/visual_studio_tree.jpg
 
+.. _ide_codeblocks:
 
 CodeBlocks
-==========
+----------
 
-First of all, you need to configure your project. Initialize your default C++ settings writting:
+First of all, you need to configure your project. Initialize your default C++ settings as explained before, using the ``bii cpp:settings`` command from your hive folder.
 
-.. code-block:: bash
-
-	$ bii cpp:settings
-	...
-	These are your default settings for this Hive
-	Builder: MINGW
-	Compiler: MINGW
-
-	If you want to change it, you have to modify this file:
-
-	 ./hive_name/bii/settings.bii
-
-Inside the ``bii`` folder of you hive, change the file ``settings.bii``: ::
-
-	cpp:
-		builder: {family: MINGW}
-		compiler: {family: MINGW}
-	os: {arch: 32bit, family: Windows, subfamily: '8', version: 6.2.9200}
-
-including the following lines: ::
+Inside the ``bii`` folder of you hive, change the file ``settings.bii`` including the following lines for the ``ide`` family and ``build_type``: ::
 
 	cpp:
 		builder: {family: MINGW}
@@ -175,7 +145,7 @@ including the following lines: ::
 		build_type: debug
 	os: {arch: 32bit, family: Windows, subfamily: '8', version: 6.2.9200}
 
-Now, copy the code from your hello word tutorial into the block folder and write.Now, if you configure the project with these settings, the output in the console would be:
+Now, copy the code from your hello word tutorial into the block folder and write. Now, if you configure the project with these settings using the ``bii cpp:configure`` command, the output in the console would be:
 
 .. code-block:: bash
 
@@ -202,20 +172,19 @@ Now, copy the code from your hello word tutorial into the block folder and write
 
 Finally, you are ready to open your project with CodeBlocks. The first step is to open the project:
 
-#. File > open...
-#. find the build folder of your hive and click on **[Hive_name].cbd**
-#. Click open
+#. From the main menu, select *File > open...*
+#. Find the ``build`` folder of your hive and select the **[Hive_name].cbp** file.
+#. Click *open*.
 
-Now you have your project in eclipse workspace with a following folder tree like this:
+Now you have your project in the CodeBlocks workspace showing a folders tree similar to this one:
 
 .. image:: _static/img/codeblocks_tree.png
 
-For this tutorial our user name is tutorial and our block name is codeblocks.
+For this tutorial our user name is *tutorial* and our block simple name is *codeblocks*.
 
-If you want to add any file, just click on *File > New > Empty file* and create a new file in the ``blocks/user/block`` folder.
+If you want to add any file, just click on *File > New > Empty file* and create a new file in the ``blocks/username/block`` folder.
 
-
-To runs your project you need to select the main file on build target:
+To run your project you need to select the main file on build target:
 
 .. image:: _static/img/codeblocks_build_target.png
 
