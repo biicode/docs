@@ -14,3 +14,6 @@ The `Raspberry Pi <http://www.raspberrypi.org/>`_ is a credit-card sized compute
    rpi/tutorials
    rpi/faqs
 
+
+You can use biicode directly in it but we suggest setting using the cross compilation feature built in biicode.
+Cross compilation only works in Linux at the moment so you can set up a virtual Linux machine or use the native rpi client.
