@@ -2,7 +2,7 @@
 .. _policies:
 
 Policies
----------------
+--------
 
 Policies are the rules applied when finding or updating dependencies. They can be configured globally in your_workspace/bii/default_policies.bii or individually in your_hive/bii/policies.bii as you can see in the :ref:`layouts section <layouts>`.
 

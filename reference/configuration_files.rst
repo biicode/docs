@@ -5,7 +5,7 @@ Configuration Files
 
 In this section you will find a detailed description of the biicode configuration files. These files **extend the basic biicode functionality, providing you with additional tools for taking a deeper control and full flexibility configuring your hives and blocks**.
 
-All biicode configuration files have the ``.bii`` extension, and are located insinde ``bii`` folders across your workspace. Take a look at the :ref:`workspace <workspace_bii>` and :ref:`hives <hive_layout>` layouts, and see the examples trying to find the locations for different ``*.bii`` files, and their names.
+All biicode configuration files have the ``.bii`` extension, and are located insinde ``bii`` folders across your workspace. Take a look at the :ref:`workspace <workspace_layout>` and :ref:`hives <hive_layout>` layouts, and see the examples trying to find the locations for different ``*.bii`` files, and their names.
 
 * Configuration files contained in the ``bii`` folder of your workspace contain **general settings that are shared by all the hives and blocks in your workspace**. Their names start with the ``default_`` string, and that gives an idea of the characteristics of the rules contained in these files. These rules will be applied if no more specific configuration is found in your hive or block. Examples of these files are ``default_policies.bii``, or ``default_filefilter.bii`` in the ``your_workspace/bii`` folder.
 

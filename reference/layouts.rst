@@ -3,9 +3,11 @@
 Workspace and hives layout
 ==========================
 
-In this section we are going to explain the structure of biicode projects in disk. If you haven't done so, we recommend reading :ref:`Basic Concepts <basic_concepts>` first. If you want to read in detail about any of these files you can check :ref:`configuration files section <config_files>`.
+In this section we are going to explain the folders structure of a typical Biicode workspace, and the hives it contains. If you haven't done so, we recommend reading these :ref:`Basic Concepts <basic_concepts>` first. 
 
-.. _workspace_bii:
+If you want to read in detail about any of these files you can check :ref:`configuration files section <config_files>`.
+
+.. _workspace_layout:
 
 Workspace layout
 ----------------
@@ -76,7 +78,7 @@ Inside the workspace you can hold **many hives**. Each hive layout is as follows
 
 As you can see, the **hive** contains a collection of folders. We will go through each one of them:
 
-* **bii**: It has a similar structure to the :ref:`workspace folder <workspace_bii>`. It also contains some additional files:
+* **bii**: It has a similar structure to the :ref:`workspace folder <workspace_layout>`. It also contains some additional files:
 
 	* **.hive.db**: It contains all your hive meta information
 

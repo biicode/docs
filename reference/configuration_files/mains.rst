@@ -1,6 +1,6 @@
 .. _mains_bii:
 
-Entry Points Configuration
+Entry points configuration
 --------------------------
 
 Biicode automatically detects entry points to your programs by examining which files contain a ``main`` function definition —or the equivalent one in your programming language—. However, there are certain cases where a specific framework requires a more complex setup. In those cases you might want to **explicitly tell biicode where are your entry points**. 

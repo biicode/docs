@@ -1,8 +1,8 @@
 
 .. _filefilter:
 
-Filefilter
-----------
+The file filter
+---------------
 
 The ``filefilter.bii`` file allows you to specify which files will be processed and published by the Biicode client program. The concept is similar to the ``.gitignore`` files in a git repository, and allows you to define which extensions will be processed by our service, and which ones will be excluded. However, in this case you must explicitly indicate which extensions must be included in your project, whitelisting them via appropriate configuration. 
 
