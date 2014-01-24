@@ -91,7 +91,7 @@ The reason why your program has executed ``hello()`` of ``STABLE`` version is as
 
 Then, your policy for this hive makes your searches are in master branchs of anyone user block and all the blocks as ``STABLE`` versions.
 
-**Note**: Make sure you have defined any policy name as ``default:`` or any you want, else you get an error.
+**Note**: Make sure you have defined any policy name as ``default:`` or any you want, else you'll get an error.
 
 
 Changing your policy name
