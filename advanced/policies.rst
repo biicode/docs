@@ -78,11 +78,16 @@ Being **index=0** the first uploaded version, each one has a different ``hello()
 The reason why your program has executed ``hello()`` of ``STABLE`` version is as follows. Check the contents of the ``policies.bii`` file located inside your ``~/your_bii_workspace/policies/bii/`` folder. This is a simple YAML file with the following appearance: ::
 
 	default:
-	- block: . # Dot . is the pattern for all blocks
-	 rules:
-	 #First rule is accept with priority 1 all 'master' branches of the original
-	 #creator of the block, with category STABLE
-	 - [branch.name == "master" and branch.user == block.user, tag==STABLE, 1]
+	# First rule is accept with priority 1 all your published blocks (master branches)
+	# for all tags.
+	- block: block.user == "[USER]" and branch == "[USER]/master"
+	  version: tag>=DEV
+	  priority: 1
+	# Then, accept with priority 1 all 'master' branches of the original
+	# creator of the block, with category STABLE
+	- block: branch.name == "master" and branch.user == block.user
+	  version: tag==STABLE
+	  priority: 1
 
 Then, your policy for this hive makes your searches are in master branchs of anyone user block and all the blocks as ``STABLE`` versions.
 
@@ -94,7 +99,9 @@ Search BETA versions
 
 Modify the ``policies.bii`` file as shown here: ::
 
- - [branch.name == "master" and branch.user == block.user, tag==BETA, 1]
+	- block: branch.name == "master" and branch.user == block.user
+	  version: tag==BETA
+	  priority: 1
 
 You have just modified your default policy file. Now, you only need to update your hive to reflect the changes using the following command:
 
@@ -129,7 +136,9 @@ Advanced tag selection
 
 Finally, you could look for by published order with your tags. For example, if you write: ::
 
-	- [branch.name == "master" and branch.user == block.user, tag>DEV, 1]
+	- block: branch.name == "master" and branch.user == block.user
+	  version: tag>DEV
+	  priority: 1
 
 This type will look for any blocks with any tag published before ``DEV`` version block uploaded to biicode.
 
@@ -150,7 +159,9 @@ Special attention
 
 Modify your ``policies.bii`` file again to get the last version (in this example ``DEV`` version) ::
 
-	- [branch.name == "master" and branch.user == block.user, tag==DEV, 1]
+	- block: branch.name == "master" and branch.user == block.user
+	  version: tag==DEV
+	  priority: 1
 
 Once more find the dependencies and execute your code:
 
