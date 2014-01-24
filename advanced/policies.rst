@@ -1,7 +1,7 @@
 .. _advanced_policies:
 
 Policies (tutorial)
-===========
+======================
 
 Start with a new hive in your **biicode workspace** directory:
 
