@@ -91,6 +91,43 @@ The reason why your program has executed ``hello()`` of ``STABLE`` version is as
 
 Then, your policy for this hive makes your searches are in master branchs of anyone user block and all the blocks as ``STABLE`` versions.
 
+**Note**: Make sure you have defined any policy name as ``default:`` or any you want, else you get an error.
+
+
+Changing your policy name
+-------------------------
+
+If you have defined another policy name as "my_policy", like this example: ::
+	
+	my_policy:
+	# First rule is accept with priority 1 all your published blocks (master branches)
+	# for all tags.
+	- block: block.user == "[USER]" and branch == "[USER]/master"
+	  version: tag==STABLE
+	  priority: 1
+	  
+	default:
+	# First rule is accept with priority 1 all your published blocks (master branches)
+	# for all tags.
+	- block: block.user == "[USER]" and branch == "[USER]/master"
+	  version: tag==DEV
+	  priority: 1
+
+Then, you have two names to call different policies. In this case, if you want to select "my_policy" to get the dependencies according it, you only have to write this command:
+
+.. code-block:: bash
+	
+	$ bii find --policy my_policy
+	
+Or
+
+.. code-block:: bash
+	
+	$ bii find -p my_policy
+
+If you don't specify any policy name, you call to ``default:`` policies.
+	
+
 Changing your policy tag
 ------------------------
 
@@ -207,4 +244,4 @@ Changing your policy file for all your new hives
 
 You could be sure to keep a specified policies for all the new hives. It is possible!
 
-In your biicode workspace, inside the ``bii`` folde, you will find another policy file named ``default_policies.bii``. The changes that you make here will be copied to all new hives and not old hives.
+In your biicode workspace, inside the ``bii`` folder, you will find another policy file named ``default_policies.bii``. The changes that you make here will be copied to all new hives and not old hives.
