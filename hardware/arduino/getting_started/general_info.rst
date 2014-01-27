@@ -1,10 +1,9 @@
-============
+
+
 Arduino info
 ============
 
-``WARNING: This information is in the process of adaptation. NOT FEED THEM!``
-
-``GO TO NEXT STEP!!!!``
+This is a section where you can find additional and important documentation about Arduino SW and homepage, and other websites that you could consider so interesting like communities and posts.
 
 Getting Started with Arduino
 ============================

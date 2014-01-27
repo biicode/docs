@@ -1,6 +1,6 @@
 .. _c-challenge:
 
-Solving the C++ Challenge
+Solving the C++ challenge
 =========================
 
 In this section we explain, step by step, how to solve `the C++ challenge <http://web.biicode.com/challenge>`_ with the help of biicode.

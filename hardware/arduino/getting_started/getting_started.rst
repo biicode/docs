@@ -10,7 +10,7 @@ Create your hive
 Creating a new hive with the ``bii new`` command.
 
 .. code-block:: bash
-	:emphasize-lines: 1, 2, 5, 8, 10
+	:emphasize-lines: 5, 8, 10
 
 	$ bii new
 	Introduce name: arduino_hello
@@ -104,6 +104,8 @@ Configure the hive settings.bii file whit the info about your board and serial p
 Build and Upload
 ================
 
+Now, you can compile your firmware and upload it in your Arduino. The command ``build`` compiles your firmware, and ``upload`` sends it to your Arduino.
+
 .. code-block:: bash
 	:emphasize-lines: 1, 7
 
@@ -127,4 +129,24 @@ Build and Upload
 
 	[100%] Built target [USER]_my_block_main-upload
 	
+If you are sure to upload the program, you can try just the command ``upload``.
+
+.. code-block:: bash
+
+	$ bii arduino:upload
 	
+	...
+	
+	[100%] Built target [USER]_my_block_main
+	
+	...
+	
+	Writing | ################################################## | 100% 0.00s
+
+	avrdude.exe: 0 bytes of eeprom written
+
+	avrdude.exe: safemode: Fuses OK
+
+	avrdude.exe done.  Thank you.
+
+	[100%] Built target [USER]_my_block_main-upload
