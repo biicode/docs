@@ -68,7 +68,7 @@ no_autolibs can be false or true. Disable Arduino library detection (default On)
 USB port
 ^^^^^^^^
 
-USB where you have the Arduino board connected.
+USB where you have the Arduino board connected. It depends on your OS.
 
 
 **Linux**
@@ -117,7 +117,7 @@ Tool info
 ^^^^^^^^^
 
 * ``arch``: AVR
-* ``amily``: MINGW (windows) or Gnu (linux/Mac)
+* ``family``: MINGW (windows) or Gnu (linux/Mac)
 * ``version``: 1.0.5
 
 You can see de version of your SDK into the file ``[Arduino_SDK_path]/revisions.txt``
