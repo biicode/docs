@@ -13,17 +13,17 @@ Download and install the client binaries
 
 First of all, download the appropriate client binaries for your system, execute the setup program and follow the instructions.
 
-0.6
+0.6.1
 ^^^^^^
 **Important note users upgrading from previous versions to 0.6**: in this version  :ref:`policies configuration file <policies>` has changed so you'll need to re-add your custom policies
 
 **Download 0.6**
 
-* `ubuntu32 <https://s3.amazonaws.com/biibinaries/release/0.6/bii-ubuntu32_0_6.deb>`_
-* `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.6/bii-ubuntu64_0_6.deb>`_
-* `win <https://s3.amazonaws.com/biibinaries/release/0.6/bii-win_0_6.exe>`_
-* `mac64 <https://s3.amazonaws.com/biibinaries/release/0.6/bii-macos64_0_6.pkg>`_
-* `raspbian <https://s3.amazonaws.com/biibinaries/release/0.6/bii-rpi.pkg>`_
+* `ubuntu32 <https://s3.amazonaws.com/biibinaries/release/0.6.1/bii-ubuntu32_0_6_1.deb>`_
+* `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.6.1/bii-ubuntu64_0_6_1.deb>`_
+* `win <https://s3.amazonaws.com/biibinaries/release/0.6.1/bii-win_0_6_1.exe>`_
+* `mac64 <https://s3.amazonaws.com/biibinaries/release/0.6.1/bii-macos64_0_6_1.pkg>`_
+* `raspbian <https://s3.amazonaws.com/biibinaries/release/0.6.1/bii-rpi_0_6_1.pkg>`_
 
 .. raw:: html
 
