@@ -11,9 +11,9 @@ Why biicode?
 
 Biicode gives you several advantages for your Arduino experience. 
 
-	1. You can **save your project in different folders** if you want a better organization. 
-	2. You can **reuse other users´ code**. You could use, for example, an interesting PID code which you would want to add in your project.
-	3. You have a very **simple** and **fast** way to **compile and upload** your code in your Arduino.
+	1. **Save your project in different folders** for a better organization. 
+	2. **Reuse other users´ code**. You could add to your project a useful PID code.
+	3. This is a very **simple** and **fast** way to **compile and upload** your code in your Arduino.
 
 .. toctree::
    :maxdepth: 2
