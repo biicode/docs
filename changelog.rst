@@ -1,9 +1,9 @@
 Changelog
 =========
 
-v. 0.6
+v. 0.6.1
 --------------------
-*(26-Jan-14)*
+*(28-Jan-14)*
 
 * Added :ref:`arduino support <arduino>`
 * Created :ref:`raspbian native client <installation>`
