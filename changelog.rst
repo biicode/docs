@@ -8,7 +8,7 @@ v. 0.6.2
 * Added :ref:`arduino support <arduino>`
 * Created :ref:`raspbian native client <installation>`
 * Improved python native libraries
-* Improved :ref:`virtual resources <virtual_resources>` management
+* Improved :ref:`virtual cells <virtual_cells>` management
 * :ref:`Policies <policies>` made easier and now  user find their own DEV (in master branches) versions by default
 * Bugfixes
 * Added :ref:`new tagging system <comments_tags>`
