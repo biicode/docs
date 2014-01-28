@@ -13,7 +13,7 @@ Biicode gives you several advantages for your Raspberry Pi experience.
 
 	1. **Auto cross compiling, including OpenGL ES apps**. 
 	2. **Reuse other users´ code**. 
-	3. **An easy way to send information and communicate by ssh**
+	3. **An easy way to send information and communicate by SSH**
 
 
 .. toctree::
