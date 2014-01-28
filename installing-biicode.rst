@@ -23,7 +23,7 @@ First of all, download the appropriate client binaries for your system, execute 
 * `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.6.1/bii-ubuntu64_0_6_1.deb>`_
 * `win <https://s3.amazonaws.com/biibinaries/release/0.6.1/bii-win_0_6_1.exe>`_
 * `mac64 <https://s3.amazonaws.com/biibinaries/release/0.6.1/bii-macos64_0_6_1.pkg>`_
-* `raspbian <https://s3.amazonaws.com/biibinaries/release/0.6.1/bii-rpi_0_6_1.pkg>`_
+* `raspbian <https://s3.amazonaws.com/biibinaries/release/0.6.1/bii-rpi_0_6_1.deb>`_
 
 .. raw:: html
 
