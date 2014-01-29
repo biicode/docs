@@ -16,6 +16,7 @@ Biicode provides the tools for analyzing, publishing and reusing code. The basic
 
 	basic/web-access
 	basic/hive-usage
+	basic/work-clean
 	basic/publish
 	basic/dependencies
 	
