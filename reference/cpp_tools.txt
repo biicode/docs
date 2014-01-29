@@ -1,0 +1,27 @@
+.. _bii_cpp_tools:
+
+C++ Tools list
+==============
+
+``bii cpp:build``: Build the project
+------------------------------------
+
+
+``bii cpp:configure``: Configure your project
+---------------------------------------------
+
+
+``bii cpp:exe``: Run a binary or script
+---------------------------------------
+
+
+``bii cpp:run``: Runs a binary or script
+----------------------------------------
+
+
+``bii cpp:settings``: Shows hive settings
+-----------------------------------------
+
+
+``bii cpp:wizard``: Create default classes or main files
+--------------------------------------------------------
