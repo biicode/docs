@@ -31,7 +31,7 @@ This is the command that **creates new hives inside your workspace**. It must be
 
 The command creates a new folder with the name of the hive, and the full folders structure where your blocks and cells will be located. After invoking the command, some questions are asked to the user:
 
-* The programming **language** of your code. This information is used to define the project configuration, making use of the default settings defined in your workspace configuration default files. Available options are: *java*, *node*, *fortran*, *python*, *cpp*, or *None*.
+* The programming **language** of your code. This information is used to define the project configuration, making use of the default settings defined in your workspace configuration default files. Available options are: *java*, *node*, *fortran*, *python*, *cpp*, *arduino* or *None*.
 * The name of the **first block** in your hive. A hive, as any other software project, is a logical structure that contains your source files. From a functional point of view, your source files are grouped in blocks. Any hive can hold as many blocks as you want, but at least on of them must be placed in the ``blocks`` folder of your hive, and contain the original code your are creating (or the modifications applied to other users blocks). In other works, **every hive must contain at least on block of code** under the ``blocks`` folder.
 
 In case you choose **cpp** as your programming language, there are some additional options that are supported by the client program, and help you to configure your project and build settings:
