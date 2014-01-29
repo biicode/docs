@@ -10,6 +10,18 @@ This section describes **the most common use cases that you will find when using
 
 Biicode provides the tools for analyzing, publishing and reusing code. The basic commands of the :ref:`client binary<installation>` for these activites are explained in the following lines (a more detailed description of some of these commands can be found in the :ref:`commands reference<bii_commands>`):
 
+Web access
+----------
+
+One of the most important things is **how can I see my blocks or any user blocks?** You don´t really need to sign in biicode to see it. It´s so fast an easy, you only have to enter the URL:
+
+	``www.biicode.com/user_name``
+	
+And you'll be able to see all the blocks published and profile about this user.
+
+For example, try the `sbaker user <https://www.biicode.com/sbaker>`_
+
+	
 Checking your dependencies
 --------------------------
 
@@ -73,6 +85,46 @@ You can publish new versions of your code from the same hive you were working as
 The name of the block has to include your user name. You can specify to open a different branch or different version number with optional arguments (--branch and --version), but this is not the usual flow. Furthermore, you can only publish a new version if you have opened the last one of the block, otherwise it can still be published but in other branch, which is a subject of advanced usage. You can also open a block of another user, but usually you will not have write permissions, so you could publish your modifications only in a different branch.
 
 
+Hive usage
+----------
+
+A :ref:`hive<hive_definition>` has a great advantage because of **you can move to any PC and use it when you want**. You could compress it in a zip, save it, for example, in Dropbox, open it in other computer where you have a workspace and start to work.
+
+**Note:** you should execute ``bii clean`` before moving the hive so that you delete all the junk files and take up less space.
+
+``CAUTION:`` Special attention if you are working in a same hive from different places because you could overwrite part of your code.
+
+.. _bii_upload:
+
+Uploading your hive
+^^^^^^^^^^^^^^^^^^^
+
+When you do a ``bii upload`` you are uploading the hive with your current blocks to biicode servers. In this case, there are some differences with respect to the blocks published. 
+
+* These hives are only visible by you. Nobody has access to it
+* Can not write any tag or messages
+* Can not reuse any blocks are in the hive
+* Only upload or :ref:`download<bii_download>` the hive
+
+
+.. code-block:: bash
+
+	$ bii upload
+
+
+.. _bii_download:
+
+Downloading your hive
+^^^^^^^^^^^^^^^^^^^^^	
+You can download all the hives you have in biicode. You only need to know the hive name and enter this code in your workspace directory.
+
+.. code-block:: bash
+	
+	$ cd my_workspace
+	$ bii download --hive your_hive_name
+
+``CAUTION:`` Remember the hive downloaded is a copy, and if you make changes and upload later, these will overwrite the oldest files in biicode.
+	
 .. _biifind:
 
 Finding dependencies
