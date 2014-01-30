@@ -2,7 +2,7 @@
 
 C/C++ Tools list
 ================
-This section summarizes the **C/C++ commands available to be used with the biicode client program**. These tools are only avaliable for this language, so if you execute:
+This section summarizes the **C/C++ commands available to be used with the biicode client program**. You can see these tools if you execute:
 
 .. code-block:: bash
 
