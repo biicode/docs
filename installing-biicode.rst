@@ -13,21 +13,25 @@ Download and install the client binaries
 
 First of all, download the appropriate client binaries for your system, execute the setup program and follow the instructions.
 
-0.6.2
-^^^^^^
-**Important note users upgrading from previous versions to 0.6**: in this version  :ref:`policies configuration file <policies>` has changed so you'll need to re-add your custom policies
+0.7
+^^^^^
 
-**Download 0.6.2**
+**Download 0.7**
 
-* `ubuntu32 <https://s3.amazonaws.com/biibinaries/release/0.6.2/bii-ubuntu32_0_6_2.deb>`_
-* `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.6.2/bii-ubuntu64_0_6_2.deb>`_
-* `win <https://s3.amazonaws.com/biibinaries/release/0.6.2/bii-win_0_6_2.exe>`_
-* `mac64 <https://s3.amazonaws.com/biibinaries/release/0.6.2/bii-macos64_0_6_2.pkg>`_
-* `raspbian <https://s3.amazonaws.com/biibinaries/release/0.6.2/bii-rpi_0_6_2.deb>`_
+* `ubuntu32 <https://s3.amazonaws.com/biibinaries/release/0.7/bii-ubuntu32_0_7.deb>`_
+* `ubuntu64 <https://s3.amazonaws.com/biibinaries/release/0.7/bii-ubuntu64_0_7.deb>`_
+* `win <https://s3.amazonaws.com/biibinaries/release/0.7/bii-win_0_7.exe>`_
+* `mac64 <https://s3.amazonaws.com/biibinaries/release/0.7/bii-macos64_0_7.pkg>`_
+* `raspbian <https://s3.amazonaws.com/biibinaries/release/0.7/bii-rpi_0_7.deb>`_
 
 .. raw:: html
 
 	Here is the <a class="modal" href="changelog.html" title="biicode Changelog">Changelog</a>.
+	
+
+0.6.2
+^^^^^^
+**Important note users upgrading from previous versions to 0.6**: in this version  :ref:`policies configuration file <policies>` has changed so you'll need to re-add your custom policies
 
 
 0.5
