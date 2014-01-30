@@ -113,11 +113,10 @@ C++ app
 	#include <string>
 	#include <iostream>
 
-	// application reads from the specified serial port and reports the collected data
 	using namespace std;
 	int main()
 	{
-		string output = "";
+		string incomingData = "";
 		string input = "";
 		serial serialport('#', ';', "COM8", 9600);
 
@@ -126,10 +125,10 @@ C++ app
 			if (input != "") cout << input << "\n";
 			else{
 				cout << "Enter: ";
-				cin >> output;
-				output = "#" + output;
-				output += ";";
-				serialport.writeString(output); //send a message
+				cin >> incomingData;
+				incomingData = "#" + incomingData;
+				incomingData += ";";
+				serialport.writeString(incomingData); //send a message
 			}
 		}
 		return 0;
@@ -147,7 +146,7 @@ Arduino app
 	#else
 		#include "WProgram.h"
 	#endif
-	#include <Servo.h>
+	#include <servo.h>
 	#include "david/serial_arduino/serial.h"
 
 
