@@ -4,10 +4,33 @@ Serial Interface: Arduino & C++
 
 With this serial interface library you only need to read a string or send it.
 
-In this example we use a C++ App to move a Servo on the Arduino, we only need write a first message with the keyword "servo" and another message with the angle.
+How does it work?
+-----------------
+
+Just need to use the method ``read`` and ``write`` to comunicate with the others devices by serial port.
+
+How can i use it?
+-----------------
+
+* Just copy the files contained in the following section to a new block.
+* Find the dependencies and execute your code:
+
+**C++ App**
+
+.. code-block:: bash
+
+    $ bii find
+    $ bii cpp:run
+	
+**Arduino App**
+
+.. code-block:: bash
+
+    $ bii find
+    $ bii arduino:upload
 
 C++ App functions
------------------
+=================
 
 * ``serial(char open, char end, const char device[], int spd=9600)``
 
@@ -34,7 +57,7 @@ Write an array of unsigned char by the serial port.
 Write a string by the serial port.
 
 C++ Arduino functions
----------------------
+=====================
 
 
 * ``serial(char open, char end, int spd=9600)``
@@ -74,6 +97,11 @@ Write an endChar by the serial port.
 * ``writeln()``
 
 Write a newline character by the serial port.
+
+The code
+--------
+
+In this example we use a C++ App to move a Servo on the Arduino, we only need write a first message with the keyword "servo" and another message with the angle.
 
 C++ app
 =======
