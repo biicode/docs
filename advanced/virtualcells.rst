@@ -21,19 +21,28 @@ So, let's say you have this ``main.cpp`` and two different versions of ``sphere.
 		return 1;
 	}
 
-Note that the ``main.cpp`` file includes the ``sphere.h`` header file, but makes no reference to the actual location of this resource —and the corresponding implementation, ``sphere.cpp``—. In fact, there is no such file as ``sphere.h`` located in the same folder as ``main.cpp``. The actual file to be included in your code is determined by a spectial ``virtual.bii`` configuration file, written in python language. You need to create this file in your block's ``bii`` folder, and write the code that selects the virtual resource to be used in each case. **Every rule is implemented as a python function** —you can give it whatever name you want—, **whose docstring contains the list of resurces affected by that particular rule**.
+Note that the ``main.cpp`` file includes the ``sphere.h`` header file, but makes no reference to the actual location of this resource —and the corresponding implementation, ``sphere.cpp``—. In fact, there is no such file as ``sphere.h`` located in the same folder as ``main.cpp``. The actual file to be included in your code is determined by a spectial ``virtual.bii`` configuration file, **written in python language**.
 
-In this example we are defining a function that decides which implementation of the ``sphere.h`` and ``sphere.cpp`` resurces is to be used depending on the presenece or not of the ``test`` key in our project secttings. **The return vale for this function must be the name of the folder containing the valid implementations of the virtual resources** for each condition —in our case, the ``test`` folder, or the ``develop`` folder—.
+You need to create this file in your block's ``bii`` folder, and write the code that selects the virtual resource to be used in each case. **Every rule is implemented as a python function** —you can give it whatever name you want, that has no relevance—, **whose docstring contains the list of resources affected by that particular rule, and returns a literal python string with the name of the folder containing the desired implementations of the virtual resources**. This function will receive as a parameter your project settings configuration.
+
+In this example we are defining a python function that decides which implementation of the ``sphere.h`` and ``sphere.cpp`` resurces is to be used depending on the value of the user defined variable ``model`` in the user's :ref:`hive settings file<settings>`. In this case we are returning the name of the ``test`` folder, or the ``develop`` folder, and we must include in this locations appropriate implementations for each of these resources.
 
 .. code-block:: python
 	:linenos:
 
-	def func(settings):
+	def choose_implementation(settings):
 		"""sphere.h sphere.cpp"""
-		if settings.user.get('test'):
+		mode = settings.user.get('mode')
+		if mode == 'test':
 			return "test"
-		else:
+		elif mode == 'develop':
 			return "develop"
 
-The ``virtual.bii`` file —as other biicode configuration files— is written in python language. It is not possible to make any imports, but you will have direct access to the project settings, received as a parameter. In this case a custom setting ``test`` is being used, and we are checking for its presence inside a python function.
+Additionaly, we must remember to define the appropriate configuration in our ``settings.bii`` file. Assuming we desire to use the implemetations contained in the ``test`` folder, we shoul include the following lines in our yaml configuration file:
 
+.. code-block:: text
+
+	user:
+		mode: test
+
+The ``virtual.bii`` file is always written in python language. **It is not possible to make any imports, but you will have direct access to the project settings**, received as a parameter.
