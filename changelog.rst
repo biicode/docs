@@ -1,6 +1,15 @@
 Changelog
 =========
 
+v. 0.7
+--------------------
+*(31-Jan-14)*
+
+* Merge bugfixes
+* Various bugfixes
+* Deps output improved
+
+
 v. 0.6.2
 --------------------
 *(28-Jan-14)*
