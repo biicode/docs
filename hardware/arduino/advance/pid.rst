@@ -9,7 +9,7 @@ This library of PIDs have all the tools necessary for you to make a good control
 
 * Mode Manual/Auto with reset.
 
-* change the Kp, Ki and Kd parameters of the PID.
+* Change the Kp, Ki and Kd parameters of the PID.
 
 * Change the minimum output and maximum output.
 
@@ -42,14 +42,14 @@ Example of use (Control a Servo)
 .. code-block:: cpp
 	:linenos:
 
-	setup(){
+	void setup(){
 		PID pid_servo(6.0, 0.0, 0.0, 0, 180);
 
 		...
 
 	}
 
-	loop(){
+	void loop(){
 		input = analogRead(pin_input);
 		input = map(input, 0, 1023, 0, 180);
 		output = pid_servo.Compute(setpoint, input);
