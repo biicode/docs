@@ -123,7 +123,7 @@ Once your have written, compiled and successfully executed some code, surely you
 	  Committing publish...
 	Successfully published your_user_name/my_block(your_user_name/master): 0
 
-If your code has been published correctly —as it is the case in the previous example—, you can navigate using your favourite Web browser to you biicode homepage (located at http://www.biicode.com/your_user_name) and inspect online your new block.
+If your code has been published correctly —as it is the case in the previous example—, you can navigate to it following :ref:`next step<web_access>`.
 
 Reuse it!
 ^^^^^^^^^

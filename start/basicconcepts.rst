@@ -27,6 +27,8 @@ Your workspace containes a special ``bii`` folder, created when you call the ``b
 
 :ref:`Here can learn more about the workspace folders layout<workspace_layout>`.
 
+.. _hive_definition:
+
 Hive
 ^^^^
 
