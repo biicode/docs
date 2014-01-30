@@ -2,6 +2,8 @@
 Arduino PID library
 ===================
 
+How does it work?
+=================
 
 This library of PIDs have all the tools necessary for you to make a good control over your systems.
 
@@ -13,8 +15,8 @@ This library of PIDs have all the tools necessary for you to make a good control
 
 * Change the minimum output and maximum output.
 
-Main functions
-==============
+How can i use it?
+=================
 
 * ``PID( double kp, double ki, double kd, double outMin, double outMax)``
 
@@ -36,8 +38,8 @@ This function change the minimum output and maximum output of the PID.
 
 This function change the mode between automatic and manual. In automatic mode the output is calculated as a function of the PID and in manual mode the PID stops acting.
 
-Example of use (Control a Servo)
-================================
+The code: Control a Servo
+=========================
 
 .. code-block:: cpp
 	:linenos:
