@@ -39,7 +39,6 @@ If you have configured your hive as a C/C++ project and you want to develop in a
 	-- Check for working CXX compiler: [YOUR_PATH]/avr-g++.exe -- works
 	-- Detecting CXX compiler ABI info
 	-- Detecting CXX compiler ABI info - done
-	-- Generating david_serial_arduino
 	-- Configuring done
 	-- Generating done
 	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_HIVE]/build
@@ -71,7 +70,7 @@ This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX c
 	[100%] Built target your_user_name_block_firmware
 
 	
-``bii arduino:settings``: Shows hive settings
+``bii arduino:settings``: Show the hive settings
 ---------------------------------------------
 This command shows your settings about arduino or initializes the settings from default workspace settings in your hive if not existing.
 
@@ -88,7 +87,7 @@ This command shows your settings about arduino or initializes the settings from 
 		[YOUR_BII_WORKSPACE/YOUR_HIVE]/bii/settings.bii
 
 
-``bii arduino:usb``: Scans the USB devices
+``bii arduino:usb``: Scan the USB devices
 ------------------------------------------
 Shows us which is the port where you have connected your arduino, so you can configure your settings according to the port and board type.
 
@@ -124,92 +123,11 @@ When you are sure about the firmware you want to upload in the arduino, this com
 	[100%] Built target [USER]_my_block_main-upload
 
 
+.. _bii_arduino_wizard:
+
 ``bii arduino:wizard``: Create default classes or main files
 ------------------------------------------------------------
-This command has several utilities. It's a very simple way to create us a default class or main.cpp/main.c for your project. You have this options to execute the command:
-
-
-**Without options**
-By default it is called to create a new default class.
-
-.. code-block:: bash
-	
-	$ bii arduino:wizard
-	Class name (default: newclass): my_lib
-
-	Creating a new class named "my_lib"
-	WARN:
-	You're not in a valid block
-	INFO: You can save it in a block of your choice.
-	For example: 'my_block2' or 'user25/my_block4'
-	Block name (default:my_block): other_block
-	All files will be saved in your default directory [YOUR_HIVE]/your_user_name/other_block
-
-	These files have been created:
-		my_lib.h
-		my_lib.cpp
-
-
-**With options**
-Creating a default class:
-
-.. code-block:: bash
-	
-	$ bii arduino:wizard --newclass my_lib
-
-	Creating a new class named "my_lib"
-	WARN:
-	You're not in a valid block
-	INFO: You can save it in a block of your choice.
-	For example: 'my_block2' or 'user25/my_block4'
-	Block name (default:my_block): [ENTER]
-	All files will be saved in your default directory [YOUR_HIVE]/your_user_name/my_block
-
-	These files have been created:
-		my_lib.h
-		my_lib.cpp
-
-Creating a default main.cpp file:
-
-.. code-block:: bash
-	
-	$ bii arduino:wizard --newclass my_main
-	INFO: Default extension file is '.cpp'. You can use '.c' extension too.
-
-	Creating a main file "my_main.cpp"
-	WARN:
-	You're not in a valid block
-	INFO: You can save it in a block of your choice.
-	For example: 'my_block2' or 'user25/my_block4'
-	Block name (default:my_block): firmware
-	All files will be saved in your default directory [YOUR_HIVE]/your_user_name/firmware
-
-	File my_main.cpp has been created in [YOUR_HIVE]/your_user_name/firmware/my_main.cpp
-
-
-Creating a default main.c file:
-
-.. code-block:: bash
-	
-	$ bii arduino:wizard --newclass my_main.c
-
-	Creating a main file "my_main.c"
-	WARN:
-	You're not in a valid block
-	INFO: You can save it in a block of your choice.
-	For example: 'my_block2' or 'user25/my_block4'
-	Block name (default:my_block): firmware
-	All files will be saved in your default directory [YOUR_HIVE]/your_user_name/firmware
-
-	File my_main.c has been created in [YOUR_HIVE]/your_user_name/firmware/my_main.c
-
-
-
-
-
-
-
-
+This command has the same utilities like the :ref:`cpp:wizard tool<bii_cpp_wizard>`. The difference is only in the default classes and mains which creates them, because arduino needs other templates.
 
 
 
