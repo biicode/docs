@@ -40,12 +40,13 @@ This code is an example of the layout of your code. We read the input and define
 		...
 		
 	}
-	
+    
 	void loop(){
 		input = analogRead(pin_input);
 		input = map(input, 0, 1023, 0, 180);
 		output = pid_servo.Compute(setpoint, input);
 		servo.write(output);
+
 		
 		...
 	

@@ -49,6 +49,7 @@ First of all, download the appropriate client binaries for your system, execute 
 
 Install the development tools
 -----------------------------
+.. _dev_tools_installation:
 
 Now, you need to install some development tools in your machine.
 

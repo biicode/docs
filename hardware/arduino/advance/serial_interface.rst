@@ -25,6 +25,7 @@ The code
 C++ app
 =======
 
+
 **main.cpp**
 
 .. code-block:: cpp
@@ -34,7 +35,9 @@ C++ app
 	#include <string>
 	#include <iostream>
 
+
 	using namespace std; 
+
 	int main()
 	{
 		string incomingData = "";
@@ -87,11 +90,11 @@ Arduino app
 
 		msg = serialport.read(); //read a message
 		if(msg != "")
-		{    
+		{
 			serialport.writeOpen();
 			serialport.writeString(msg); //send a message
 			serialport.writeEnd();
-		 
+
 			if(premsg=="servo"){
 				int n;
 				n = atoi(msg.c_str());
@@ -141,3 +144,4 @@ Execute following commands in each hive:
     ...
 
 Now you can start hacking your own commands!
+
