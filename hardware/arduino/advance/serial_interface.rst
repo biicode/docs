@@ -15,19 +15,30 @@ How can i use it?
 * Just copy the files contained in the following section to a new block.
 * Find the dependencies and execute your code:
 
-**C++ App**
-
-.. code-block:: bash
-
-    $ bii find
-    $ bii cpp:run
-	
 **Arduino App**
 
 .. code-block:: bash
 
     $ bii find
     $ bii arduino:upload
+
+**C++ App**
+
+.. code-block:: bash
+
+    $ bii find
+    $ bii cpp:run
+    
+    ...
+    
+    Enter: servo
+    servo
+    Enter: 180
+    180
+    Enter: servo
+    servo
+    Enter: 90
+    ...
 
 The code
 --------
@@ -49,7 +60,7 @@ C++ app
 	{
 		string incomingData = "";
 		string input = "";
-		serial serialport('#', ';', "COM8", 9600);
+		serial serialport('#', ';', "COM8", 9600); //Change the serial port ID!!
 
 		while(1){
 			input = serialport.read(); //read a message
@@ -77,7 +88,7 @@ Arduino app
 	#else
 		#include "WProgram.h"
 	#endif
-	#include <servo.h> 
+	#include "arduino/libraries/servo/servo.h"
 	#include "david/serial_arduino/serial.h"
 
 
