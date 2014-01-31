@@ -2,7 +2,17 @@
 Blink Without Delay
 ===================
 
-This is the main project file.
+This code work like the basic blink example but with the characteristic that this code don't use ``delay()``.
+
+How does it work?
+=================
+
+This code use the method ``millis()`` and 2 control variavles to count the time transcurred in a period of time. when this time are equal to 1000 the status of the led change.
+
+the code
+========
+
+**main.cpp**
 
 .. code-block:: cpp
 	:linenos:
