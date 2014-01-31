@@ -7,7 +7,7 @@ With this serial interface library you only need to read a string or send it.
 How does it work?
 -----------------
 
-Just need to use the method ``read`` and ``write`` to comunicate with the others devices by serial port.
+Just need to use the method ``read`` and ``write`` to comunicate with the others devices by serial port. You can see the full list of functions to the end of this page.
 
 How can i use it?
 -----------------
@@ -28,75 +28,6 @@ How can i use it?
 
     $ bii find
     $ bii arduino:upload
-
-C++ App functions
-=================
-
-* ``serial(char open, char end, const char device[], int spd=9600)``
-
-This function is responsible for initializing all the parameters of the serial port.
-
-open: Define the first character of a message.
-
-end: Define the last character of a message.
-
-device: Define the serial port ID.
-
-spd: Define the speed of the serial port.
-
-* ``string read()``
-
-Read the serial port and return a string and return a void string if there are no info.
-
-* ``write(unsigned char* data, int lng)``
-
-Write an array of unsigned char by the serial port.
-
-* ``writeString(string output)``
-
-Write a string by the serial port.
-
-C++ Arduino functions
-=====================
-
-
-* ``serial(char open, char end, int spd=9600)``
-
-This function is responsible for initializing all the parameters of the serial port.
-
-open: Define the first character of a message.
-
-end: Define the last character of a message.
-
-spd: Define the speed of the serial port.
-
-* ``void init()``
-
-Init the serial port whit the speed.
-
-* ``string read()``
-
-Read the serial port and return a string and return a void string if there are no info.
-
-* ``write(unsigned char* output, int lng)``
-
-Write an array of unsigned char by the serial port.
-
-* ``writeString(String output)``
-
-Write a string by the serial port.
-
-* ``void writeOpen()``
-
-Write an openChar by the serial port.
-
-* ``writeEnd()``
-
-Write an endChar by the serial port.
-
-* ``writeln()``
-
-Write a newline character by the serial port.
 
 The code
 --------
@@ -177,3 +108,75 @@ Arduino app
 			premsg = msg;
 		}
 	}
+
+All functions
+-------------
+	
+C++ App functions
+=================
+
+* ``serial(char open, char end, const char device[], int spd=9600)``
+
+This function is responsible for initializing all the parameters of the serial port.
+
+open: Define the first character of a message.
+
+end: Define the last character of a message.
+
+device: Define the serial port ID.
+
+spd: Define the speed of the serial port.
+
+* ``string read()``
+
+Read the serial port and return a string and return a void string if there are no info.
+
+* ``write(unsigned char* data, int lng)``
+
+Write an array of unsigned char by the serial port.
+
+* ``writeString(string output)``
+
+Write a string by the serial port.
+
+C++ Arduino functions
+=====================
+
+
+* ``serial(char open, char end, int spd=9600)``
+
+This function is responsible for initializing all the parameters of the serial port.
+
+open: Define the first character of a message.
+
+end: Define the last character of a message.
+
+spd: Define the speed of the serial port.
+
+* ``void init()``
+
+Init the serial port whit the speed.
+
+* ``string read()``
+
+Read the serial port and return a string and return a void string if there are no info.
+
+* ``write(unsigned char* output, int lng)``
+
+Write an array of unsigned char by the serial port.
+
+* ``writeString(String output)``
+
+Write a string by the serial port.
+
+* ``void writeOpen()``
+
+Write an openChar by the serial port.
+
+* ``writeEnd()``
+
+Write an endChar by the serial port.
+
+* ``writeln()``
+
+Write a newline character by the serial port.
