@@ -125,3 +125,4 @@ Execute following commands in each hive:
     Enter: 90
     ...
 
+Now you can start hacking your own commands!
