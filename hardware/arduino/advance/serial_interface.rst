@@ -2,48 +2,25 @@
 Serial Interface: Arduino & C++
 ===============================
 
-With this serial interface library you only need to read a string or send it.
+With this serial interface you can define your own commands for the arduino. You will be able to send commands from a console in your PC to the arduino.
+In this example we use a desktop console app to move a servo attached to the Arduino, we just have to send the "servo" command  and the angle.
+
 
 How does it work?
 -----------------
 
-Just need to use the method ``read`` and ``write`` to comunicate with the others devices by serial port. You can see the full list of functions to the end of this page.
+Just need to use the methods ``read`` and ``write`` to comunicate with the device through serial port. Those functions are defined in `david/serial_arduino <https://www.biicode.com/david/blocks/david/serial_arduino/branches/master>`_ and `david/serial_cpp <https://www.biicode.com/david/blocks/david/serial_cpp/branches/master>`_ libraries.
+You can find the whole api definition in the blocks web!
 
-How can i use it?
+
+How do I use it?
 -----------------
 
-* Just copy the files contained in the following section to a new block.
-* Find the dependencies and execute your code:
-
-**Arduino App**
-
-.. code-block:: bash
-
-    $ bii find
-    $ bii arduino:upload
-
-**C++ App**
-
-.. code-block:: bash
-
-    $ bii find
-    $ bii cpp:run
-    
-    ...
-    
-    Enter: servo
-    servo
-    Enter: 180
-    180
-    Enter: servo
-    servo
-    Enter: 90
-    ...
+* You need to create two hives arduino_app adn cpp_app, one will contain the code that will be uploaded to arduino and the other one the client application that will run in your PC.
+* Copy the example code, C++ app code goes into your your pc hive and arduino code goes into the hive with arduino code.
 
 The code
 --------
-
-In this example we use a C++ App to move a Servo on the Arduino, we only need write a first message with the keyword "servo" and another message with the angle.
 
 C++ app
 =======
@@ -120,74 +97,31 @@ Arduino app
 		}
 	}
 
-All functions
--------------
-	
-C++ App functions
-=================
 
-* ``serial(char open, char end, const char device[], int spd=9600)``
+Execute following commands in each hive:
 
-This function is responsible for initializing all the parameters of the serial port.
+**Arduino App**
 
-open: Define the first character of a message.
+.. code-block:: bash
 
-end: Define the last character of a message.
+    $ bii find
+    $ bii arduino:upload
 
-device: Define the serial port ID.
+**C++ App**
 
-spd: Define the speed of the serial port.
+.. code-block:: bash
 
-* ``string read()``
+    $ bii find
+    $ bii cpp:run
+    
+    ...
+    
+    Enter: servo
+    servo
+    Enter: 180
+    180
+    Enter: servo
+    servo
+    Enter: 90
+    ...
 
-Read the serial port and return a string and return a void string if there are no info.
-
-* ``write(unsigned char* data, int lng)``
-
-Write an array of unsigned char by the serial port.
-
-* ``writeString(string output)``
-
-Write a string by the serial port.
-
-C++ Arduino functions
-=====================
-
-
-* ``serial(char open, char end, int spd=9600)``
-
-This function is responsible for initializing all the parameters of the serial port.
-
-open: Define the first character of a message.
-
-end: Define the last character of a message.
-
-spd: Define the speed of the serial port.
-
-* ``void init()``
-
-Init the serial port whit the speed.
-
-* ``string read()``
-
-Read the serial port and return a string and return a void string if there are no info.
-
-* ``write(unsigned char* output, int lng)``
-
-Write an array of unsigned char by the serial port.
-
-* ``writeString(String output)``
-
-Write a string by the serial port.
-
-* ``void writeOpen()``
-
-Write an openChar by the serial port.
-
-* ``writeEnd()``
-
-Write an endChar by the serial port.
-
-* ``writeln()``
-
-Write a newline character by the serial port.
