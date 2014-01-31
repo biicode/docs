@@ -1,6 +1,6 @@
 .. _bii_arduino_tools:
 
-Arduino Tools list
+Arduino command list
 ==================
 This section summarizes the **Arduino commands available to be used with the biicode client program**. You can see these tools if you execute:
 
@@ -17,6 +17,9 @@ This section summarizes the **Arduino commands available to be used with the bii
 	  arduino:upload  Upload a firmware in Arduino
 	  arduino:usb     Scans the USB devices
 	  arduino:wizard  Create a default class with constructor/destructor and a main.cpp or main.c
+
+
+**Note**: You need to have arduino :ref:`correctly set up <arduinows>`.
 
 
 ``bii arduino:configure``: Configure your project
@@ -42,32 +45,6 @@ If you have configured your hive as a C/C++ project and you want to develop in a
 	-- Configuring done
 	-- Generating done
 	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_HIVE]/build
-
-
-``bii arduino:build``: Build the project
-----------------------------------------
-This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX compiler -> avr-g++) to build and compile the project.
-
-.. code-block:: bash
-
-	$ bii arduino:build
-
-	...
-
-	invoking cmake   -G "MinGW Makefiles" -Wno-dev ../cmake
-	-- The C compiler identification is GNU 4.3.2
-	-- The CXX compiler identification is GNU 4.3.2
-	-- Arduino SDK version 1.0.5: [YOUR_SDK_PATH]
-	-- Check for working C compiler: [YOUR_PATH]/avr-gcc.exe
-	-- Check for working C compiler: [YOUR_PATH]/avr-gcc.exe -- works
-	-- Detecting C compiler ABI info
-	-- Detecting C compiler ABI info - done
-	-- Check for working CXX compiler: [YOUR_PATH]/avr-g++.exe
-	-- Check for working CXX compiler: [YOUR_PATH]/avr-g++.exe -- works
-
-	...
-
-	[100%] Built target your_user_name_block_firmware
 
 
 ``bii arduino:settings``: Show the hive settings
@@ -98,9 +75,48 @@ Shows us which is the port where you have connected your arduino, so you can con
 	  Arduino Leonardo (COM3)
 
 
+**Note**: For MacOS users output will less informative.
+
+..code-block:: bash
+
+	$ bii arduino:usb
+	USB Devices:
+	  /dev/cu.Bluetooth-Incoming-Port
+	  /dev/cu.Bluetooth-Modem
+	  /dev/cu.usbmodem1a1221
+
+In this case ``cu.usbmodem1a1221`` is the port you need to put in your settings.
+
+
+``bii arduino:build``: Build the project
+----------------------------------------
+This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX compiler -> avr-g++) to build and compile the project.
+
+.. code-block:: bash
+
+	$ bii arduino:build
+
+	...
+
+	invoking cmake   -G "MinGW Makefiles" -Wno-dev ../cmake
+	-- The C compiler identification is GNU 4.3.2
+	-- The CXX compiler identification is GNU 4.3.2
+	-- Arduino SDK version 1.0.5: [YOUR_SDK_PATH]
+	-- Check for working C compiler: [YOUR_PATH]/avr-gcc.exe
+	-- Check for working C compiler: [YOUR_PATH]/avr-gcc.exe -- works
+	-- Detecting C compiler ABI info
+	-- Detecting C compiler ABI info - done
+	-- Check for working CXX compiler: [YOUR_PATH]/avr-g++.exe
+	-- Check for working CXX compiler: [YOUR_PATH]/avr-g++.exe -- works
+
+	...
+
+	[100%] Built target your_user_name_block_firmware
+
+
 ``bii arduino:upload``: Upload a firmware in Arduino
 ----------------------------------------------------
-When you are sure about the firmware you want to upload in the arduino, this command sends automatically your firmware to it.
+When you want to deploy your code into the arduino, this command sends your previously built firmware to the arduino.
 
 .. code-block:: bash
 
@@ -128,6 +144,3 @@ When you are sure about the firmware you want to upload in the arduino, this com
 ``bii arduino:wizard``: Create default classes or main files
 ------------------------------------------------------------
 This command has the same utilities like the :ref:`cpp:wizard tool<bii_cpp_wizard>`. The difference is only in the default classes and mains which creates them, because arduino needs other templates.
-
-
-

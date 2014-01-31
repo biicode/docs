@@ -1,6 +1,6 @@
 .. _bii_cpp_tools:
 
-C/C++ Tools list
+C/C++ command list
 ================
 This section summarizes the **C/C++ commands available to be used with the biicode client program**. You can see these tools if you execute:
 
@@ -17,10 +17,12 @@ This section summarizes the **C/C++ commands available to be used with the biico
 	  cpp:wizard      Create a default class with constructor/destructor and a main.cpp or main.c
 
 
+**Note**: You need to have a cpp compiler :ref:`installed and configured <dev_tools_installation>`.
+
 
 ``bii cpp:build``: Build the project
 ------------------------------------
-This command uses the cross compiler of cpp (C compiler -> avr-gcc and CXX compiler -> avr-g++) to build and compile the project.
+This command invokes the C++ compiler to build your project.
 
 .. code-block:: bash
 
@@ -44,9 +46,10 @@ This command uses the cross compiler of cpp (C compiler -> avr-gcc and CXX compi
 
 	[100%] Built target your_user_name_block_cpp_block
 
+
 ``bii cpp:configure``: Configure your project
 ---------------------------------------------
-If you have configured your hive as a C/C++ project and you want to develop in cpp language, this command helps you! Enter it and configure your hive like an cpp project. It invokes cpp cross compiler and you are ready to start with your cpp.
+If you have configured your hive as a C/C++ project and you want to develop in cpp language, this command helps you! Enter it and configure your hive like an cpp project. It invokes cpp compiler and you are ready to start with your cpp.
 
 .. code-block:: bash
 
@@ -88,11 +91,12 @@ This command executes directly a created binary file. For example, if you have s
 
 	Hello pretty
 
-**Note**: Pay attention to the executable name because you don't need to enter the full name, only different to the others.
+**Note**: Pay attention to the executable name because you don't need to enter the full name, only the part that's different from the others.
+
 
 ``bii cpp:settings``: Shows the hive settings
 -----------------------------------------
-This command shows your settings about cpp or initializes the settings from default workspace settings in your hive if not existing.
+This command shows your settings about cpp or initializes the settings from default workspace settings in your hive if they are missing.
 
 .. code-block:: bash
 
@@ -107,10 +111,10 @@ This command shows your settings about cpp or initializes the settings from defa
 		[YOUR_BII_WORKSPACE/YOUR_HIVE]/bii/settings.bii
 
 
-.. _bii_cpp_wizard:
-
 ``bii cpp:wizard``: Create default classes or main files
 --------------------------------------------------------
+.. _bii_cpp_wizard:
+
 This command has several utilities. It's a very simple way to create us a default class or main.cpp/main.c for your project. You have this options to execute the command:
 
 
