@@ -27,9 +27,9 @@ This command invokes the C++ compiler to build your project.
 .. code-block:: bash
 
 	$ bii cpp:build
-
+	
 	...
-
+	
 	invoking cmake -D CMAKE_BUILD_TYPE=Debug  -G "MinGW Makefiles" -Wno-dev ../cmake
 	-- The C compiler identification is GNU 4.8.1
 	-- The CXX compiler identification is GNU 4.8.1

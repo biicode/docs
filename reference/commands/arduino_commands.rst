@@ -46,7 +46,6 @@ If you have configured your hive as a C/C++ project and you want to develop in a
 	-- Generating done
 	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_HIVE]/build
 
-
 ``bii arduino:settings``: Show the hive settings
 ---------------------------------------------
 This command shows your settings about arduino or initializes the settings from default workspace settings in your hive if not existing.
@@ -72,8 +71,8 @@ Shows us which is the port where you have connected your arduino, so you can con
 
 	$ bii arduino:usb
 	USB Devices:
-	  Arduino Leonardo (COM3)
 
+	  Arduino Uno (COM3)
 
 **Note**: For MacOS users output will less informative.
 
@@ -95,9 +94,9 @@ This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX c
 .. code-block:: bash
 
 	$ bii arduino:build
-
+	
 	...
-
+	
 	invoking cmake   -G "MinGW Makefiles" -Wno-dev ../cmake
 	-- The C compiler identification is GNU 4.3.2
 	-- The CXX compiler identification is GNU 4.3.2

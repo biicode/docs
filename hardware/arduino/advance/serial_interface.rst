@@ -25,6 +25,8 @@ The code
 C++ app
 =======
 
+**main.cpp**
+
 .. code-block:: cpp
 	:linenos:
 
@@ -33,6 +35,7 @@ C++ app
 	#include <iostream>
 
 	using namespace std;
+
 	int main()
 	{
 		string incomingData = "";
@@ -56,6 +59,8 @@ C++ app
 
 Arduino app
 ===========
+
+**main.cpp**
 
 .. code-block:: cpp
 	:linenos:
@@ -97,6 +102,17 @@ Arduino app
 		}
 	}
 
+**mains.bii**
+
+biicode use this file to define main.cpp like a main file. You have all the :ref:`info about mains.bii here <mains_bii>`. You need to create this file into [BLOCK_NAME]/bii/mains.bii
+
+.. code-block:: text
+	:linenos:
+
+	main.cpp
+
+Run this Apps
+=============
 
 Execute following commands in each hive:
 

@@ -27,6 +27,11 @@ First of all, download the appropriate client binaries for your system, execute 
 .. raw:: html
 
 	Here is the <a class="modal" href="changelog.html" title="biicode Changelog">Changelog</a>.
+	
+
+0.6.2
+^^^^^^
+**Important note users upgrading from previous versions to 0.6**: in this version  :ref:`policies configuration file <policies>` has changed so you'll need to re-add your custom policies
 
 
 0.6.2
