@@ -16,40 +16,42 @@ The Blink class
 Suppose that based on the blinking example, you have developed a more elaborated version of the blink example in a ``Blink`` class, that uses a thread to do such task in parallel transparent to the main thread of execution, and admits some parametrization. Please note that using threads for just switching a Led is probably overkill (due to the cost of thread context switching), so this is just an example.
 This could be such class:
 
+**blink.h**
+
 .. code-block:: cpp
 	
-	//blink.h
-	#pragma once
-	#include "pthread.h"
+    #pragma once
+    #include "pthread.h"
     #include <unistd.h>
+    
+    /** Class to blink a led of the raspberry Pi (connected GPIO) */
+    class Blink{
+    public:
+        /** blinker on the "pin" pin */
+        Blink(int pin=0);
+        /** call this function to modify the frequency of blinking, specifying
+        milliseconds ligth is on and milliseconds light is off */
+        void set_frequency(int millis_up=1000, int millis_down=1000);
+        /** start to blink, internally using a thread (which might not be 
+        the best solution for just blinking a led) for demo purposes */
+        void start(int millis_up=1000, int millis_down=1000);
+        /** stop the thread, if wait is true, it waits to the thread to finish */
+        void stop(bool wait=false);
+    
+    private:
+        static void *my_thread(void* data);
+        void blink();
+        pthread_t thread_id;
+        int pin;
+        int millis_up;
+        int millis_down;
+        bool blinking;
+    };
 
-	/** Class to blink a led of the raspberry Pi (connected GPIO) */
-	class Blink{
-	public:
-		/** blinker on the "pin" pin */
-		Blink(int pin=0);
-		/** call this function to modify the frequency of blinking, specifying
-		milliseconds ligth is on and milliseconds light is off */
-		void set_frequency(int millis_up=1000, int millis_down=1000);
-		/** start to blink, internally using a thread (which might not be 
-		the best solution for just blinking a led) for demo purposes */
-		void start(int millis_up=1000, int millis_down=1000);
-		/** stop the thread, if wait is true, it waits to the thread to finish */
-		void stop(bool wait=false);
-
-	private:
-		static void *my_thread(void* data);
-		void blink();
-		pthread_t thread_id;
-		int pin;
-		int millis_up;
-		int millis_down;
-		bool blinking;
-	};
+**blink.cpp**
 
 .. code-block:: cpp
 	
-	//blink.cpp
 	#include "blink.h"
 	#include <drogon/wiringpi/wiringpi/wiringpi.h>
 
@@ -84,25 +86,26 @@ This could be such class:
 	
 And the main would use it as:
 
+**main.cpp**
+
 .. code-block:: cpp
 	
-	//main.cpp
-	#include "blink.h"
+    #include "blink.h"
     #include <unistd.h>
-	#include <drogon/wiringpi/wiringpi/wiringpi.h>
-	
-	int main (void)
-	{
-		wiringPiSetup();
-		Blink b(0); //Blink on PIN 0
-		b.start(1000, 100);
-		for (int i=0; i<10;i++){
-			//Do your tasks here, no need to manage the Led, it will
-			//keep blinking
-			sleep(1); 
-		}
-		b.stop();
-	}
+    #include <drogon/wiringpi/wiringpi/wiringpi.h>
+    
+    int main (void)
+    {
+        wiringPiSetup();
+        Blink b(0); //Blink on PIN 0
+        b.start(1000, 100);
+        for (int i=0; i<10;i++){
+            //Do your tasks here, no need to manage the Led, it will
+            //keep blinking
+            sleep(1); 
+        }
+        b.stop();
+    }
 
 Publish your code
 -----------------
@@ -125,24 +128,24 @@ Reuse it!
 Reusing your ``Blink`` class in other projects is straightforward. All you need to do is to include and do a *find*. 
 You can use the Blink class wherever you want in your own code, this is only an example.
 
+**main.cpp**
+
 .. code-block:: cpp
 	
-	//main.cpp
-
-	#include "your_user_name/your_block/blink.h" // Needed for use Blink class
+    #include "your_user_name/your_block/blink.h" // Needed for use Blink class
     #include <drogon/wiringpi/wiringpi/wiringpi.h> // Needed for setup wiring pi
-	#include <unistd.h>
-	
-	int main(){
-		wiringPiSetup();
-		//code here	
-		Blink b(0); //blink on PIN 0
-		b.start(1000, 100);
-		//more code here (tipically inside an infinite loop)
-		sleep(10); 
-
-		b.stop();
-	}
+    #include <unistd.h>
+    
+    int main(){
+        wiringPiSetup();
+        //code here	
+        Blink b(0); //blink on PIN 0
+        b.start(1000, 100);
+        //more code here (tipically inside an infinite loop)
+        sleep(10); 
+    
+        b.stop();
+    }
 
 Once you have the code, invoke ``find`` to resolve external dependencies, so the Blink class is retrieved, together with the wiringPI source code files. Then, build and run in your Raspberry Pi as usual. Remember, the generated binary only work on your Raspberry Pi and have to run as sudo because it works on the hardware:
 
