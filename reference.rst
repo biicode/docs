@@ -13,3 +13,5 @@ Reference
    reference/cpp_build_files
    reference/commands
    reference/comments_tags
+   reference/cpp_tools
+   reference/arduino_tools
