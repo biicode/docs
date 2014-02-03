@@ -11,7 +11,7 @@ The getting started guide will create a basic C++ hello world
 project. After reading this guide don't forget that biicode can work
 with other languages too.
 
-Before starting this guide, please install biicode.
+Before starting this guide, please `register <https://www.biicode.com/accounts/signup>`_ and `install biicode <https://www.biicode.com/downloads>`_.
 
 
 
