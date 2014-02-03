@@ -66,7 +66,7 @@ Linux
 .. code-block:: bash
 
 	$ sudo apt-get install build-essential cmake
-        $ sudo dpkg -i bii-ubuntu{ARCH}_{VERSION}.deb
+
 
 Windows
 ^^^^^^^
