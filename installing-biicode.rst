@@ -80,11 +80,6 @@ The installer will handle the work of removing old files.
 
 Updating your workspace from older versions
 -------------------------------------------
-	
-0.6.2
-^^^^^^
-**Important note users upgrading from previous versions to 0.6**: in this version  :ref:`policies configuration file <policies>` has changed so you'll need to re-add your custom policies
-
 
 0.6.2
 ^^^^^^
