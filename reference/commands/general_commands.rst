@@ -146,7 +146,7 @@ Now, let's suppose you decide to open in the same hive a dependency block ``simp
 
 	$ bii open buddy/simple
 
-Reached this point, your hive should cointain both a ``dummy`` block (in ``your_hive/blocks/username/dummy)``), and a editable copy of the ``simple`` block (in ``your_hive/blocks/buddy/simple``). Moreover, if you check again your hive info, you will get a different ouput reflecting the changes in your hive:
+Reached this point, your hive should contain both a ``dummy`` block (in ``your_hive/blocks/username/dummy)``), and a editable copy of the ``simple`` block (in ``your_hive/blocks/buddy/simple``). Moreover, if you check again your hive info, you will get a different ouput reflecting the changes in your hive:
 
 .. code-block:: bash
 
@@ -252,4 +252,38 @@ Now, you are ready to understand the following sequence of commands. Otherwise, 
 Merges information
 ^^^^^^^^^^^^^^^^^^
 
-This part of the ``bii info`` command output thisplays information only in case you have performed any :ref:`merges<bii_merge_command>` in your hive.
+This part of the ``bii info`` command output shows information **only in case you have performed any merges in your current hive**. Following the example introduced in the :ref:`section that exaplined the merge command<bii_merge_command>`, let's assume you have just merged a ``original/mathematyka(improver/better_math): 5`` version into your local copy of the ``mathematyka`` block, with branch and version: ``original/mathematyka(original/master): 25``. Now, the ouput of the client info utility would be as follows:
+
+.. code-block:: bash
+
+	$ bii info
+
+	Tracking info:
+	==============
+	[B]: original/mathematyka
+	  Tracking: original/mathematyka(original/master): 25
+
+	Merges info:
+	============
+	[B]: original/mathematyka
+	  Merged: original/mathematyka(improver/better_math): 5
+
+This information about the merges performed in your code is only available locally, and while you haven't published the modifications to your edition block. See the ouput of the ``bii info`` command after you have published the changes, and try to understand its meaning:
+
+.. code-block:: bash
+
+	$ bii publish --block original/mathematyka
+	...
+	INFO: Successfully published original/mathematyka(original/master): 26
+
+	$ bii info
+
+	Tracking info:
+	==============
+	[B]: original/mathematyka
+	  Tracking: original/mathematyka(original/master): 26
+
+	Merges info:
+	============
+	No merges found in this hive.
+
