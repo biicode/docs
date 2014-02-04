@@ -10,7 +10,12 @@ Update your environment.bii
 ===========================
 
 If you haven't done so, you must first :ref:`create a biicode workspace <create_workspace>`.
-Then, if it isn't there,  add the Arduino info on the **enviroment.bii**:
+
+You need to `download the Arduino software <http://arduino.cc/en/Main/Software>`_ first, it is important to choose a SDK compatible with your board. If you need more info visit the `official Arduino website <http://arduino.cc/en/Main/Software>`_.
+
+``Windows Users``: Install the Arduino software inside the C:/Program Files/Arduino and not into C:/Program Files/Arduino (x86). It is important because some cmake version can not interprete correctly this path.
+
+Then, if it isn't there, add the Arduino info on the **enviroment.bii**:
 
 .. code-block:: text
 	:emphasize-lines: 3, 8, 9
@@ -30,6 +35,8 @@ Then, if it isn't there,  add the Arduino info on the **enviroment.bii**:
 
 Boards information:
 -------------------
+
+If you need help with your Arduino board you can see `Getting Started with Arduino <http://arduino.cc/en/Guide/HomePage>`_ on the Arduino homepage.
 
 Arduino Boards (SDK Arduino 1.0.5)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
