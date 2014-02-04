@@ -107,16 +107,15 @@ This command executes directly a created binary file. For example, if you have s
 
 **Note**: Pay attention to the executable name because you don't need to enter the full name, only the part that's different from the others.
 
+.. _bii_cpp_wizard:
+
 ``bii cpp:wizard``: Create default classes or main files
 --------------------------------------------------------
-.. _bii_cpp_wizard:
 
 This command has several utilities. It's a very simple way to create us a default class or main.cpp/main.c for your project. You have this options to execute the command:
 
-
 Without options
 ^^^^^^^^^^^^^^^
-
 By default it is called to create a new default class.
 
 .. code-block:: bash
@@ -136,10 +135,8 @@ By default it is called to create a new default class.
 		my_lib.h
 		my_lib.cpp
 
-
 With options
 ^^^^^^^^^^^^
-
 Creating a default class into a default block:
 
 .. code-block:: bash

@@ -46,7 +46,9 @@ In the previous figure, an assistant asks you for hive language, your block name
 Just code!
 ^^^^^^^^^^
 
-Our "hello" hive will have the following 3 files. Just copy them into your hive ``hello/blocks/your_user_name/my_block`` folder. That is the source code for your **hello block** in you **hello hive**.
+Our "hello" hive will have these files: ``hello.h``, ``hello.cpp`` and ``main.cpp``. Just create them into your hive ``hello/blocks/your_user_name/my_block`` folder with their appropriate content. Check :ref:`here<bii_cpp_wizard>` how you can create these files. 
+
+This is the source code for your **hello block** in your **hello hive**.
 
 **hello.h**
 
