@@ -114,7 +114,9 @@ This command executes directly a created binary file. For example, if you have s
 This command has several utilities. It's a very simple way to create us a default class or main.cpp/main.c for your project. You have this options to execute the command:
 
 
-**Without options**
+Without options
+^^^^^^^^^^^^^^^
+
 By default it is called to create a new default class.
 
 .. code-block:: bash
@@ -135,8 +137,10 @@ By default it is called to create a new default class.
 		my_lib.cpp
 
 
-**With options**
-Creating a default class:
+With options
+^^^^^^^^^^^^
+
+Creating a default class into a default block:
 
 .. code-block:: bash
 
@@ -154,7 +158,7 @@ Creating a default class:
 		my_lib.h
 		my_lib.cpp
 
-Creating a default main.cpp file:
+Creating a default main.cpp file into a new or existing block named cpp_block:
 
 .. code-block:: bash
 
@@ -172,7 +176,7 @@ Creating a default main.cpp file:
 	File my_main.cpp has been created in [YOUR_HIVE]/your_user_name/cpp_block/my_main.cpp
 
 
-Creating a default main.c file:
+Creating a default main.c file into a new or existing block named cpp_block:
 
 .. code-block:: bash
 
