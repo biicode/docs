@@ -138,10 +138,15 @@ One of the most interesting aspects of biicode is the ability it provides to eas
 	$ bii new hellopretty
 	Created new Hive hellopretty
         ...
+	Introduce lang (default:None):
+	INFO: Selected lang: None
+	How would you like to name your first block?
+	Introduce block name (default:my_block): my_pretty_block
+	INFO: block name: my_pretty_block
         ...
 	$ cd hellopretty
 
-Add the following files to the folder ``hellopretty/blocks/your_user_name/my_block/`` (remember to substitute ``your_user_name`` with your actual biicode user name):
+Add the following files to the folder ``hellopretty/blocks/your_user_name/my_pretty_block/`` (remember to substitute ``your_user_name`` with your actual biicode user name):
 
 **hellopretty.h**
 
@@ -181,13 +186,13 @@ Add the following files to the folder ``hellopretty/blocks/your_user_name/my_blo
 	    return 1;
 	}
 
-In this case we are maing use of the ``hello()`` function, which is not explicitly defined in the current hive. If you tried to compile and run this program using the ``bii cpp:run`` command, you would see an error message:
+In this case we are using of the ``hello()`` function, which is not explicitly defined in the current hive. If you tried to compile and run this program using the ``bii cpp:run`` command, you would see an error message:
 
 .. code-block:: bash
 
 	Detected 3 files created, 0 updated
 	Processing hive
-	  Cell your_user_name/my_block/hellopretty.h is implemented by set(['your_user_name/my_block/hellopretty.cpp'])
+	  Cell your_user_name/my_pretty_block/hellopretty.h is implemented by set(['your_user_name/my_pretty_block/hellopretty.cpp'])
 	...
 	...
 	#include "your_user_name/my_block/hello.h" //reusing hello.h header
@@ -266,14 +271,14 @@ Now, post your block to the biicode server just like you did before:
 .. code-block:: bash
 
 	$ bii publish
-	block:     your_user_name/my_block
+	block:     your_user_name/my_pretty_block
 	Introduce tag: STABLE
 	Introduce msg: My first block update
 	...
 	...
-	Successfully published your_user_name/my_block(your_user_name/master): 1
+	Successfully published your_user_name/my_pretty_block(your_user_name/master): 0
 
-As you can see, the version of your block changed from 0 to 1. Your can see both versions published online visiting your biicode user main page, as before.
+You can see this version published online visiting your biicode user main page, as before.
 
 Update your hellopretty block with the new version of hello
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -291,7 +296,7 @@ To update your **hellopretty** block you only need to search the server for any 
 	Dependencies resolved in server:
 	All dependencies resolved
 	Updated dependencies:
-		your_user_name/your_user_name/my_block/master:#1
+		your_user_name/your_user_name/my_pretty_block/master:#0
 
 	Saving files on disk
 	Computing dependencies
