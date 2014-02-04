@@ -4,6 +4,8 @@
 How to configure your biicode workspace
 =======================================
 
+``IMPORTANT:`` You can only have one language for Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
+
 Update your environment.bii
 ===========================
 

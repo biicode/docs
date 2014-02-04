@@ -2,6 +2,8 @@
 Create a new hive and code!
 ===========================
 
+``IMPORTANT:`` You can only have one language for Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
+
 Remember that you need to :ref:`configure your biicode workspace <arduinows>` with the Arduino SDK.
 
 Create your hive

@@ -2,6 +2,8 @@
 How to move your code to biicode
 ================================
 
+``IMPORTANT:`` You can only have one language for Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
+
 If you have some existing Arduino projects, and want to start using them with Biicode, you need to take these simple **4 steps**:
 
 **1st step**: Create a **new hive** in your biicode workspace using the ``bii new <hive_name>`` command (see the :ref:`reference for this coommand here<bii_new_command>`).
