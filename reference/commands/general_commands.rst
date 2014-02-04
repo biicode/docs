@@ -1,4 +1,4 @@
-Client commands list
+Client command list
 ====================
 
 .. _bii_init_command:

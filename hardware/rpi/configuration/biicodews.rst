@@ -141,6 +141,8 @@ Note that the ``bii cpp:build`` command needs to be executed from a folder conta
 
 Remember that when generating the binary by cross compilation, you can only run on the Raspberry Pi.
 
+.. _bii_rpi_send:
+
 Send your binaries
 ------------------
 
@@ -170,6 +172,8 @@ If you want to send files to another Raspberry Pi or specify a different directo
 	
 
 You just have to go to your Raspberry Pi and execute the binaries as any computer.
+
+.. _bii_rpi_ssh:
 
 Connect with your Raspberry Pi
 ------------------------------

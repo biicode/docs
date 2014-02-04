@@ -19,3 +19,4 @@ All these functionalities are achieved using appropriate commands that are expla
    commands/general_commands
    commands/cpp_commands
    commands/arduino_commands
+   commands/rpi_commands

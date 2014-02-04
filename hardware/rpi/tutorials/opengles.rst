@@ -13,7 +13,7 @@ your RaspberryPi for being able to cross compile in your develop machine, like h
 with OpenGLES interfaces an shared libraries files. Biicode allows you to do
 this almost automatically.
 
-How can i do it?
+How can I do it?
 -----------------
 First of all make sure that your RaspberryPi is connected to your local network,
 and you have permissions grants to access it. Then you should create a new hive,
