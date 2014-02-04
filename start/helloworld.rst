@@ -271,14 +271,14 @@ Now, post your block to the biicode server just like you did before:
 .. code-block:: bash
 
 	$ bii publish
-	block:     your_user_name/my_pretty_block
+	block:     your_user_name/my_block
 	Introduce tag: STABLE
 	Introduce msg: My first block update
 	...
 	...
-	Successfully published your_user_name/my_pretty_block(your_user_name/master): 0
+	Successfully published your_user_name/my_block(your_user_name/master): 1
 
-You can see this version published online visiting your biicode user main page, as before.
+As you can see, the version of your block changed from 0 to 1. Your can see both versions published online visiting your biicode user main page, as before.
 
 Update your hellopretty block with the new version of hello
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -296,7 +296,7 @@ To update your **hellopretty** block you only need to search the server for any 
 	Dependencies resolved in server:
 	All dependencies resolved
 	Updated dependencies:
-		your_user_name/your_user_name/my_pretty_block/master:#0
+		your_user_name/your_user_name/my_block/master:#1
 
 	Saving files on disk
 	Computing dependencies
