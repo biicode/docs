@@ -59,6 +59,8 @@ This commands allows you to retrieve any code dependencies from the Biicode serv
 
 The retrieved files are copied on your file system, under the ``deps`` folder of your hive, following a folder structure that reproduces the name of the retrieved blocks: ``<block_name> = <user_name>/<simple_name>`` (see the :ref:`basic concepts<basic_concepts>` and how a **block** is uniquely identified).
 
+.. _bii_open_command:
+
 ``bii open <block_name>``: Reusing the code
 -------------------------------------------
 
@@ -78,4 +80,144 @@ Then, the biicode client copies martha's block to your ``blocks`` hive folder, a
 You have an empty hive
 ^^^^^^^^^^^^^^^^^^^^^^
 
-We know that whenever we create a new hive, a default new block is created for as with the name provided to the assistant. If we manually remove that block from the ``blocks`` folder of the hive, we can directly call the ``bii open <block_name>`` command and retrieve any published block from the Biicode servers. The code is then copied to the ``blocks`` folder of the **hive** we are working on, and we can modify it as any other source block.
+We know that whenever we create a new hive, a default new block is created for us with the name provided to the assistant. If we manually remove that block from the ``blocks`` folder of the hive, we can directly call the ``bii open <block_name>`` command and retrieve any published block from the Biicode servers. The code is then copied to the ``blocks`` folder of the **hive** we are working on, and we can modify it as any other source block.
+
+``bii info``: Hive information
+------------------------------
+
+This command shows some **general information about the hive you are currently working on**. This information comprehends two fundamental aspects of the blocks contained in your hive:
+
+Tracking information
+^^^^^^^^^^^^^^^^^^^^
+
+The tracking information **provides insight about the origins of each of the blocks** currently contained in the ``blocks`` folder of your hive, which are being edited by you and are susceptible of :ref:`being shared in a new publication<bii_publish_command>`. This is the block, branch and version of the code you are currently editing. This information can find its origin in three different types of events regarding your blocks:
+
+* You have **published** at least one version of a block, and you continue working on it. In this case the tracking information contains the last published version of your code: ``<block_name>(branch_name): <version>``.
+
+* You have performed an :ref:`open of a given block<bii_open_command>` in order to make some modifications or adaptations. In this case the source code of this block is automatically copied by the biicode client to the ``blocks`` folder of your hive, and the tracking information reflects the fact that the code contained in this particular block is based on the code of the opened block.
+
+* You have just **created** a new unpublished block in your hive. In this case, no tracking information is available. You'll have to publish your block first!
+
+In the first two scenarios, **the tracking information provides details about the code that serves as the basis for your edition**. You can think of this information as the code that is in the same *track* as your *unpublished block*, just one step before. When you perform a new publication of your block this information will be updated precisely with the name of the branch and version just published.
+
+Imagine you are the original creator of the ``dummy`` block, and your are working on the ``master`` branch of this block, where you have performed 10 publications (from 0 to 9). This means that your last published version is ``username/dummy(username/master): 9`` (where ``username`` is, as you could expect, your username). This is the tracking block version for your local ``dummy`` block, contained in your hive. Executing the ``bii info`` command you would see the following output on your console:
+
+.. code-block:: bash
+
+	$ bii info
+
+	Tracking info:
+	==============
+	[B]: username/dummy
+	  Tracking: username/dummy(username/master): 9
+
+	Merges info:
+	============
+	No merges found in this hive.
+
+Now, let's suppose you decide to open in the same hive a dependency block ``simple``, owned by one of your biicode buddies, with username ``buddy``. To accomplish this, you should use the ``bii open`` command as follows:
+
+.. code-block:: bash
+
+	$ bii open buddy/simple
+
+Reached this point, your hive should cointain both a ``dummy`` block (in ``your_hive/blocks/username/dummy)``), and a editable copy of the ``simple`` block (in ``your_hive/blocks/buddy/simple``). Moreover, if you check again your hive info, you will get a different ouput reflecting the changes in your hive:
+
+.. code-block:: bash
+
+	$ bii info
+
+	Tracking info:
+	==============
+	[B]: username/dummy
+	  Tracking: username/dummy(username/master): 9
+	[B]: buddy/simple
+	  Tracking: buddy/simple(buddy/master): 3
+
+	Merges info:
+	============
+	No merges found in this hive.
+
+Given that you didn't specify any branch or version information in the ``bii open``, the client has retrieved the last published version (``3``, in this case) available in the master branch of the owner user (``buddy/master``).
+
+Now, after having worked for a while in your hive, you are happy with the results and decide to share your code with other biicode users. As you can only pubish one block at a time, let's suppose you decide to publish first your modifications to your local copy of the ``buddy/simple`` block. In this case you must specify the ``--branch`` information to create your own branch with the modifications of another user's block:
+
+.. code-block:: bash
+
+	$ bii publish --block buddy/simple --branch my_simple_branch
+	...
+	...
+	INFO: Successfully published buddy/simple(username/my_simple_branch): 0
+
+The output of the previous command indicates that the first (``0``) version of the ``username/my_simple_branch`` branch of ``buddy/simple`` block has just been published. Your hive information has also been updated:
+
+.. code-block:: bash
+
+	$ bii info
+
+	Tracking info:
+	==============
+	[B]: username/dummy
+	  Tracking: username/dummy(username/master): 9
+	[B]: buddy/simple
+	  Tracking: buddy/simple(username/my_simple_branch): 0
+
+	Merges info:
+	============
+	No merges found in this hive.
+
+Note that your local copy of the ``buddy/simple`` block **is now tracking a different branch and version; the one that you just published**.
+
+Now, you are ready to understand the following sequence of commands. Otherwise, do not hesitate to check our forum and get some answers in the `Client section of the biicode forum <http://forum.biicode.com/category/client>`_.
+
+.. code-block:: bash
+
+	$ bii publish --block username/dummy
+	...
+	...
+	INFO: Successfully published username/dummy(username/master): 10
+	$ bii info
+
+	Tracking info:
+	==============
+	[B]: username/dummy
+	  Tracking: username/dummy(username/master): 10
+	[B]: buddy/simple
+	  Tracking: buddy/simple(username/my_simple_branch): 0
+
+	...
+	... some code modifications, building and verifying your program
+	...
+	$ bii publish --block username/dummy --branch sampling
+	...
+	...
+	INFO: Successfully published username/dummy(username/sampling): 0
+	$ bii info
+
+	Tracking info:
+	==============
+	[B]: username/dummy
+	  Tracking: username/dummy(username/sampling): 0
+	[B]: buddy/simple
+	  Tracking: buddy/simple(username/my_simple_branch): 0
+
+	...
+	... some code modifications, building and verifying your program
+	...
+
+	$ bii publish --block buddy/simple
+	...
+	...
+	INFO: Successfully published buddy/simple(username/my_simple_branch): 1
+	$ bii info
+
+	Tracking info:
+	==============
+	[B]: username/dummy
+	  Tracking: username/dummy(username/sampling): 0
+	[B]: buddy/simple
+	  Tracking: buddy/simple(username/my_simple_branch): 1
+
+	...
+	... and so on ...
+	...
