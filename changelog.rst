@@ -3,6 +3,14 @@
 Changelog
 =========
 
+v. 0.8
+--------------------
+*(4-Feb-14)*
+
+* Merge bugfixes
+* Hive download bugfixes
+
+
 v. 0.7
 --------------------
 *(31-Jan-14)*
