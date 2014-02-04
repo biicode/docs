@@ -83,7 +83,7 @@ This is the main project file.
 
 **mains.bii**
 
-biicode use this file to define main.cpp like a main file. You have all the :ref:`info about mains.bii here <mains-bii>`.
+biicode use this file to define main.cpp like a main file. You have all the :ref:`info about mains.bii here <mains_bii>`.
 
 .. code-block:: text
 	:linenos:

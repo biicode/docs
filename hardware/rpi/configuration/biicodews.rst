@@ -71,7 +71,7 @@ If you have not used the ``bii rpi:setup`` command, add the cross compilers to :
 Create a new hive and code!
 ---------------------------
 
-Creating a new hive with the ``bii new`` command. :ref:`(command info) <biinew>`
+Creating a new hive with the ``bii new`` command. :ref:`(command info) <bii_new_command>`
 
 Configure your settings
 ^^^^^^^^^^^^^^^^^^^^^^^

@@ -108,7 +108,7 @@ In this case you indicate in the ``--block`` parameter the local version of the 
 This command shows some **general information about the hive you are currently working on**. This information comprehends two fundamental aspects of the blocks contained in your hive:
 
 * The :ref:`tracking info<bii_info_tracking>`, or the last published version of the code you are editing in your block.
-* The :ref:`merges info<bii_info_merges`, showing the published code that has been merged into your edition blocks, before they are published.
+* The :ref:`merges info<bii_info_merges>`, showing the published code that has been merged into your edition blocks, before they are published.
 
 .. _bii_info_tracking:
 
