@@ -5,7 +5,7 @@ Download the Arduino Software
 ---------------------------------
 You need to `download the Arduino software <http://arduino.cc/en/Main/Software>`_ first, it is important to choose a SDK compatible with your board. If you need more info visit the `official Arduino website <http://arduino.cc/en/Main/Software>`_.
 
-``IMPORTANT:`` Check you have installed the :ref:`C++ Development Tools<cpp_desktop_win>`.
+``IMPORTANT:`` Check you have installed the :ref:`C++ Development Tools<cpp_desktop_linux>`.
 
 Update your environment.bii
 ---------------------------------
@@ -109,7 +109,7 @@ port
 
 		Where ``/dev/ttyACMX`` is for the new Uno and Mega Arduino's, while ``/dev/ttyUSBX`` is for the old ones.
 
-
+Want to know in which usb port is your Arduino connected? Use the command :ref:`arduino:usb<arduino_usb>`.
 
 programmer
 ^^^^^^^^^^

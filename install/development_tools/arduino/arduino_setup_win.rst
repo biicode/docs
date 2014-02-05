@@ -7,7 +7,7 @@ You need to `download the Arduino software <http://arduino.cc/en/Main/Software>`
 
 **NOTE:** **Install** the Arduino software **into C:/Program Files/Arduino and not into C:/Program Files/Arduino (x86)**. It is important because some CMake versions can not interpret correctly this path.
 
-``IMPORTANT:`` Check you have installed the :ref:`C++ Development Tools<cpp_desktop_linux>`.
+``IMPORTANT:`` Check you have installed the :ref:`C++ Development Tools<cpp_desktop_win>`.
 
 
 
@@ -111,6 +111,8 @@ port
 		When specifying the serial port name on Windows, use the following names:
 
 		* ``com1`` ``com2`` ... ``comN``
+
+Want to know in which usb port is your Arduino connected? Use the command :ref:`arduino:usb<arduino_usb>`.
 
 programmer
 ^^^^^^^^^^
