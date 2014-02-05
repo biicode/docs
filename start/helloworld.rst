@@ -46,7 +46,9 @@ In the previous figure, an assistant asks you for hive language, your block name
 Just code!
 ^^^^^^^^^^
 
-Our "hello" hive will have the following 3 files. Just copy them into your hive ``hello/blocks/your_user_name/my_block`` folder. That is the source code for your **hello block** in you **hello hive**.
+Our "hello" hive will have these files: ``hello.h``, ``hello.cpp`` and ``main.cpp``. Just create them into your hive ``hello/blocks/your_user_name/my_block`` folder with their appropriate content. Check :ref:`here<bii_cpp_wizard>` how you can create these files. 
+
+This is the source code for your **hello block** in your **hello hive**.
 
 **hello.h**
 
@@ -136,10 +138,15 @@ One of the most interesting aspects of biicode is the ability it provides to eas
 	$ bii new hellopretty
 	Created new Hive hellopretty
         ...
+	Introduce lang (default:None):
+	INFO: Selected lang: None
+	How would you like to name your first block?
+	Introduce block name (default:my_block): my_pretty_block
+	INFO: block name: my_pretty_block
         ...
 	$ cd hellopretty
 
-Add the following files to the folder ``hellopretty/blocks/your_user_name/my_block/`` (remember to substitute ``your_user_name`` with your actual biicode user name):
+Add the following files to the folder ``hellopretty/blocks/your_user_name/my_pretty_block/`` (remember to substitute ``your_user_name`` with your actual biicode user name):
 
 **hellopretty.h**
 
@@ -179,13 +186,13 @@ Add the following files to the folder ``hellopretty/blocks/your_user_name/my_blo
 	    return 1;
 	}
 
-In this case we are maing use of the ``hello()`` function, which is not explicitly defined in the current hive. If you tried to compile and run this program using the ``bii cpp:run`` command, you would see an error message:
+In this case we are using of the ``hello()`` function, which is not explicitly defined in the current hive. If you tried to compile and run this program using the ``bii cpp:run`` command, you would see an error message:
 
 .. code-block:: bash
 
 	Detected 3 files created, 0 updated
 	Processing hive
-	  Cell your_user_name/my_block/hellopretty.h is implemented by set(['your_user_name/my_block/hellopretty.cpp'])
+	  Cell your_user_name/my_pretty_block/hellopretty.h is implemented by set(['your_user_name/my_pretty_block/hellopretty.cpp'])
 	...
 	...
 	#include "your_user_name/my_block/hello.h" //reusing hello.h header

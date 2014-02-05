@@ -4,9 +4,9 @@ Arduino & C++: Serial Port Interface
 
 With this example you will turn on and turn off a LED using a console application that communicates with the Arduino by serial port.
 
-You onli need to change the line 13 with the name of the USB port.
+You only need to change the line 13 with the name of the USB port.
 
-**C++ aplication main.cpp**
+**C++ application main.cpp**
 
 .. code-block:: cpp
 	:linenos:

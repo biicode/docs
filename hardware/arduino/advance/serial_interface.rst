@@ -9,7 +9,7 @@ In this example we use a desktop console app to move a servo attached to the Ard
 How does it work?
 -----------------
 
-Just need to use the methods ``read`` and ``write`` to comunicate with the device through serial port. Those functions are defined in `david/serial_arduino <https://www.biicode.com/david/blocks/david/serial_arduino/branches/master>`_ and `david/serial_cpp <https://www.biicode.com/david/blocks/david/serial_cpp/branches/master>`_ libraries.
+Just need to use the methods ``read`` and ``write`` to communicate with the device through serial port. Those functions are defined in `david/serial_arduino <https://www.biicode.com/david/blocks/david/serial_arduino/branches/master>`_ and `david/serial_cpp <https://www.biicode.com/david/blocks/david/serial_cpp/branches/master>`_ libraries.
 You can find the whole api definition in the blocks web!
 
 
@@ -21,6 +21,7 @@ How do I use it?
 
 The code
 --------
+At the moment, it's only compatible with Windows OS.
 
 C++ app
 =======
