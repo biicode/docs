@@ -48,15 +48,31 @@ After your block has been published and uploaded to the Biicode servers, the pro
 ``bii deps``: Analyzing code dependencies
 -----------------------------------------
 
-This command allows you to check the dependencies of any hive in your workspace. It's basic form, with no parameters, provides two pieces of invormation, giving you a general idea of which are your code dependencies:
+This command allows you to check the dependencies of any hive in your workspace. It's basic form, with no parameters, provides two pieces of information, giving you a general idea of which are your code dependencies:
 
-* The Dependencies Table: a list of the **blocks that contain cells your code depends on**.
-* The full list of your cell dependnecies.
+* The **Dependencies Table**: a list of the **blocks that contain cells your code depends on**.
+* The full list of your cell dependencies.
 
-The command can also be used combining a series of additional parameters (you can obtain the full list typing ``bii deps --help`` inside your workspace):
+The command can also be used combining a series of **additional parameters** (you can obtain the full list typing ``bii deps --help`` inside your workspace):
 
-* ``--detail``: Provides a detailed view of your hive's dependencies, grouping your source cells with their corresponding source blocks (those contained within the ``blocks`` folder of your hive). For each file, the command shows information about it's type, 
+* ``--detail``: Provides a detailed view of your hive's dependencies, grouping your source cells with their corresponding source blocks (those contained within the ``blocks`` folder of your hive). For each file, the command shows information about it's name and type, the presence or not of a ``main`` function, and the full list of dependencies for each particular cell, grouped under the *explicit* (those dependencies explicitly referenced in your code, as C++ includes or python imports), *implicit* (deduced from code inspection, i.e. C++ implementation files of symbols defined in a header file), and *system* (grouping all system dependencies of a file) sections.
 
+* Parameters for **filtering the cells to be analyzed**, whose dependencies are to be displayed. The command provides 4 different options for filtering the results:
+
+	* ``--blocks`` allows you to filter dependencies by block name.
+	* ``--files`` receives a list of cell names to be included in the result. Those files not contained in the list are omitted.
+	* ``--virtual`` indicates the client to show only those virtual cells contained in your hive.
+	* ``--main`` is used for displaying information about cells that contain a ``main`` function or entry point to your code.
+
+* Parameters for **filtering the dependencies**. Theese allow you to specify you want the client to show their dependencies:
+
+	* ``--unresolved`` shows only your cells' unresolved dependnecies; those that are unknown by biicode, and cannot be retrieved from our servers using the :ref:`find command<bii_find_command>`.
+	* ``--system`` make the command show only system dependencies for your cells.
+	* ``--implicit`` shows only implicit dependnecies for your cells.
+	* ``--explicit`` shows only thos dependencies explicitly referenced in your files.
+	* ``--data`` filters the results showing only data dependencies.
+
+* ``--graph``: This last option provides you a **visual representation** of your blocks and their dependencies, that is open in your web browser.
 
 .. _bii_find_command:
 
@@ -72,7 +88,7 @@ The retrieved files are copied on your file system, under the ``deps`` folder of
 ``bii open``: Reusing the code
 -------------------------------------------
 
-This command is tipically used when **you decide to do some modifications to one of your dependency blocks** (those blocks contained in the ``deps`` folder of your hive). Using this command the block is moved to the ``blocks`` folder within your hive, and their cells become editable source files that cab be modified by you and https://www.google.es/webhp?tab=ww&authuser=0&ei=lw7yUo3NELOS0QXF2IH4AQ&ved=0CBQQ1S4eventually published in a new branch (using the :ref:`publish command<bii_publish_command>`). 
+This command is tipically used when **you decide to do some modifications to one of your dependency blocks** (those blocks contained in the ``deps`` folder of your hive). Using this command the block is moved to the ``blocks`` folder within your hive, and their cells become editable source files that can be modified by you and eventually published in a new version of the same branch (if you have writting permissions for that branch) or in a new branch (using the :ref:`publish command<bii_publish_command>`).
 
 There are two ways of retrieving a block created by you or other biicode user to perform some modifications:
 
