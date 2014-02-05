@@ -3076,11 +3076,12 @@ body {
 }
 
 a {
-  color: #4671D5;
+  color: #3598d5;
   text-decoration: none;
 }
 a:hover {
-  color: #4671D5;
+  color: #3baaf0;
+  text-decoration: underline;
 }
 
 .link-danger {
@@ -4252,9 +4253,6 @@ nav.nav-side {
   transition: all .25s ease;
 }
 
-a:hover {
-  text-decoration: underline;
-}
 .side-nav-search, .menu-vertical {
   z-index: 150;  
 }
@@ -4294,54 +4292,65 @@ a:hover {
   text-align: right;
 }
 .toctree-wrapper {
-  border-radius: 5px;
+  /*border-radius: 3px;
+  background-color: #e6e6e6;
   padding: 10px;
-}
-
-.toctree-wrapper li {
-  list-style-type: none !important;
-}
-
-.toctree-wrapper li.toctree-l1 {
-  background-color: #333;
-  border-radius: 6px;
-  padding: 5px;
+  */
   margin-bottom: 10px;
+}
+.toctree-wrapper ul {
   padding: 0;
-  padding-bottom: 5px;
-}
-
-.toctree-wrapper li.toctree-l1 > a {
-  background-color: #ffaa00;
-  color: #000;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  padding: 5px;
-  border-bottom: 1px solid #fff;
-}
-
-.toctree-wrapper li.toctree-l1 > a:hover {
-  background-color: #333;
-  color: #ffaa00;
-}
-
-.toctree-wrapper li.toctree-l2 {
   margin: 0 !important;
+  border-radius: 3px;
+}
+
+.toctree-wrapper ul li {
+  list-style-type: none !important;
+  -webkit-transition: background-color .2s ease-in-out;
+     -moz-transition: background-color .2s ease-in-out;
+      -ms-transition: background-color .2s ease-in-out;
+       -o-transition: background-color .2s ease-in-out;
+          transition: background-color .2s ease-in-out;
+}
+
+.toctree-wrapper > ul > li {
+  background-color: #eee;
+  margin: 0;
+  color: #000;
+  padding: 5px;
+  padding-left: 20px;
+  margin: 0 !important;
+  border-bottom: 1px solid #fbfbfb;
+  border-top: 1px solid #c4c4c4;
+  font-weight: bold;
+}
+
+.toctree-wrapper > ul > li:hover {
+  background-color: #ffaa00;
+}
+
+.toctree-wrapper > ul > li a {
+  color: #3b3b3b;
+}
+
+.toctree-wrapper > ul > li > ul > li {
   padding: 3px;
   padding-left: 20px;
-  font-size: .95em;
-  border-bottom: 1px solid #555;
+  font-size: 14px;
+  margin-left: 10px !important;
+  font-weight: normal;
 }
 
-.toctree-wrapper li.toctree-l2:hover {
-  background-color: #444;
-  padding-left: 25px;
+.toctree-wrapper > ul > li > ul > li:hover {
+  background-color: #ffaa00;
 }
 
 .toctree-wrapper a {
-  color: #b3b3b3;
   text-decoration: none;
   display: block;
+}
+.toctree-wrapper a:hover {
+  color: #fff;
 }
 
 /* Extra top offset in sections, usefull for linking to sections avoiding the top bar */

@@ -1,6 +1,6 @@
 Install and setup guide
-===========================
-Follow these steips
+=======================
+Follow these steps
 
 .. toctree::
    :maxdepth: 2
