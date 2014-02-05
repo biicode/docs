@@ -48,7 +48,15 @@ After your block has been published and uploaded to the Biicode servers, the pro
 ``bii deps``: Analyzing code dependencies
 -----------------------------------------
 
-This command allows you to check the dependencies of any hive in your workspace.
+This command allows you to check the dependencies of any hive in your workspace. It's basic form, with no parameters, provides two pieces of invormation, giving you a general idea of which are your code dependencies:
+
+* The Dependencies Table: a list of the **blocks that contain cells your code depends on**.
+* The full list of your cell dependnecies.
+
+The command can also be used combining a series of additional parameters (you can obtain the full list typing ``bii deps --help`` inside your workspace):
+
+* ``--detail``: Provides a detailed view of your hive's dependencies, grouping your source cells with their corresponding source blocks (those contained within the ``blocks`` folder of your hive). For each file, the command shows information about it's type, 
+
 
 .. _bii_find_command:
 
