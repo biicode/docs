@@ -4076,32 +4076,43 @@ nav.nav-side {
 /***********************/
 
 .tabs {
-  border-bottom: 2px solid #666;
-  height: 30px;
+  border-bottom: 1px solid #666;
+  height: 38px;
 }
 
 .tabs .tab {
   text-align: center;
-  min-width: 80px;
-  padding: 3px;
+  min-width: 100px;
+  padding: 8px 3px;
   display: inline-block;
-  height: 30px;
-  background-color: #666;
-  border-top: 2px solid #555;
-  border-left: 2px solid #555;
-  border-right: 2px solid #555;
+  height: 36px;
+  background-color: #777;
+  border: 1px solid #777;  
+  border-bottom: 3px solid #666;
   cursor: pointer;
-  margin-left: 3px;
+  margin-right: 3px;
   color: #fff;
+  border-radius: 3px 3px 0 0;
+  
 }
 
+
+
 .tabs .tab:hover {
-  background-color: #bbb;
+  background-color: #999;
+}
+.tabs .tab:active {
+  background-color: #000;
+  border-color: #000;
 }
 
 .tabs .tab.current {
   background-color: #fff;
-  color: #666;
+  border-top: 2px solid #FFAA00;
+  color: #404040;
+  border-bottom : 0;
+  font-weight: bold;
+  height: 38px;  
 }
 .tabbed {
   display: none;
