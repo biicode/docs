@@ -24,6 +24,7 @@ Contents:
    examples   
    reference
    troubleshooting
+   upgrading
    faqs
 
 

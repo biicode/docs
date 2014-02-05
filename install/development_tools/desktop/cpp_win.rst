@@ -1,5 +1,7 @@
-Windows C++ development tools
-================================
+.. _cpp_desktop_win:
+
+C++ Windows
+===========
 
 
 * `MinGW, the minimalist GNU for Windows <http://www.mingw.org/>`_. This project provides an Open Source minimalist development environment for native Microsoft Windows applications. Follow `this link <http://sourceforge.net/projects/mingw/files/Installer/>`_ to get the installer, and choose while installing two additional packages, GCC and G++ package.

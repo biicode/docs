@@ -1,5 +1,5 @@
-Desktop C++ development tools
------------------------------
+Desktop C++
+===========
 
 .. toctree::
    :maxdepth: 2
