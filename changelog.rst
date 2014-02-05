@@ -3,7 +3,16 @@
 Changelog
 =========
 
-v. 0.7
+v. 0.8
+--------------------
+*(5-Feb-14)*
+
+* Merge bugfixes
+* Hive download bugfixes
+* Size and performance optimizations in macos and linux clients
+
+
+v. 0.7.2
 --------------------
 *(31-Jan-14)*
 
