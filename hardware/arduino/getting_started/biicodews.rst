@@ -3,18 +3,24 @@
 =======================================
 How to configure your biicode workspace
 =======================================
-
-``IMPORTANT:`` You can only have one language for Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
+This section teaches you as you can make easily an Arduino project.
 
 Download the Arduino Software
 =============================
-First, you have to download the latest release Arduino IDE from the `Arduino software website <http://arduino.cc/en/Main/Software>`_ and install it.
+You need to `download the Arduino software <http://arduino.cc/en/Main/Software>`_ first, it is important to choose a SDK compatible with your board. If you need more info visit the `official Arduino website <http://arduino.cc/en/Main/Software>`_.
+
+``Windows Users``: **Install** the Arduino software into **C:/Program Files/Arduino** and not into C:/Program Files/Arduino (x86). It is important because some CMake versions can not interpret correctly this path.
+
 
 Update your environment.bii
 ===========================
 
 If you haven't done so, you must first :ref:`create a biicode workspace <create_workspace>`.
+
+``IMPORTANT:`` You can only have one language for Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
+
 Then you will see in your ``bii_workspace/bii`` folder the following **enviroment.bii** file (depending on your OS) with this default configuration:
+
 
 Winodws
 ^^^^^^^
@@ -97,8 +103,9 @@ If you want to create all your hives with the same settings, you should change t
 
 Then you have the following options to change each one.
 
+
 Board
------
+^^^^^^
 
 ``Board`` is referred to Arduino Boards (SDK Arduino 1.0.5), and you have these choices:
 
@@ -132,46 +139,47 @@ Board
 
 	
 no_autolibs
------------
+^^^^^^^^^^^
 
 You can choose ``no_autolibs`` like **'false'** or **'true'**. This setting is made to disable Arduino library detection if it's **'false'**, else you can't use the Arduino libraries.
 
-This option is interesting because you could not want use these libraries if you have a better **Servo** library and you prefer use it.
+This option is interesting because you could not want use these libraries if you have a better one. For example, you have just done a **Servo** library with a lot of improvements and you prefer use it, then you would assign to ``no_autolibs`` **'true'**.
 
 
 port
-----
+^^^^
 
-USB where you have the Arduino board connected. It depends on your OS.
+``port`` USB where you have the Arduino board connected. It depends on your OS.
 
+	*	**Windows**
 
-**Linux**
+		When specifying the serial port name on Windows, use the following names:
 
-On Linux the Arduino serial device is named as follows (where X is the device number):
+		* ``com1`` ``com2`` ... ``comN``
 
-* ``/dev/ttyUSBX``
-* ``/dev/ttyACMX``
+	*	**Mac**
 
-Where ``/dev/ttyACMX`` is for the new Uno and Mega Arduino's, while ``/dev/ttyUSBX`` is for the old ones.
+		When specifying the serial port name on Mac OS X, use the following names (where XXX is a unique ID):
 
-**windows**
+		* ``/dev/tty.usbmodemXXX``
+		* ``/dev/tty.usbserialXXX``
+		
+		Where ``tty.usbmodemXXX`` is for new Uno and Mega Arduino's, while ``tty.usbserialXXX`` are the older ones.
 
-When specifying the serial port name on Windows, use the following names:
+	*	**Linux**
 
-* ``com1`` ``com2`` ... ``comN``
+		On Linux the Arduino serial device is named as follows (where X is the device number):
 
-**Mac**
+		* ``/dev/ttyUSBX``
+		* ``/dev/ttyACMX``
 
-When specifying the serial port name on Mac OS X, use the following names (where XXX is a unique ID):
+		Where ``/dev/ttyACMX`` is for the new Uno and Mega Arduino's, while ``/dev/ttyUSBX`` is for the old ones.
 
-* ``/dev/tty.usbmodemXXX``
-* ``/dev/tty.usbserialXXX``
-
-Where ``tty.usbmodemXXX`` is for new Uno and Mega Arduino's, while ``tty.usbserialXXX`` are the older ones.
 
 
 programmer
-----------
+^^^^^^^^^^
+
 ``programmer`` is referred to the Arduino Programmers (SDK Arduino 1.0.5)
 
 	* ``avrisp``: AVR ISP
