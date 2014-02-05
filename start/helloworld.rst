@@ -8,10 +8,9 @@ This example shows how to build a simple "Hello World" application with biicode.
 Create a new hive
 ^^^^^^^^^^^^^^^^^^
 
-Creating a new hive is as easy as executing the ``bii new`` command. Open your console, move to your biicode workspace and create a new hive named **"hello"**:
+Creating a new hive is as easy as executing the ``bii new`` command. Open your console, move to your biicode workspace and create a new hive named **"hello"** (some ouput informative messages are omitted):
 
 .. code-block:: bash
-	:emphasize-lines: 3
 
 	$ cd /path/to/your/biicode_workspace
 	$ bii new hello
@@ -20,35 +19,24 @@ Creating a new hive is as easy as executing the ``bii new`` command. Open your c
         Introduce lang (default:cpp): cpp
         INFO: Selected lang: cpp
 		Introduce block name (default:my_block): my_block
+		INFO: block name: my_block
         Generate a default hello world?  (YES/no) no
         Select IDE family: (Visual/CodeBlocks/Eclipse/NetBeans/None)
         Introduce ide (default:Eclipse): None
         Select build type: (None/Debug/Release/RelWithDebInfo/MinSizeRel)
-        Introduce build_type (default:Debug): None
+        Introduce build_type (default:Debug): Debug
         invoking cmake   -G "Unix Makefiles" -Wno-dev ../cmake
-        -- The C compiler identification is Clang 4.2.0
-        -- The CXX compiler identification is Clang 4.2.0
-        -- Check for working C compiler: /usr/bin/cc
-        -- Check for working C compiler: /usr/bin/cc -- works
-        -- Detecting C compiler ABI info
-        -- Detecting C compiler ABI info - done
-        -- Check for working CXX compiler: /usr/bin/c++
-        -- Check for working CXX compiler: /usr/bin/c++ -- works
-        -- Detecting CXX compiler ABI info
-        -- Detecting CXX compiler ABI info - done
-        -- Configuring done
-        -- Generating done
-        -- Build files have been written to:  /path/to/your/biicode_workspace/hello/build
+	        ... here your new hive is created in your workspace
+        -- Build files have been written to: /Users/luis/Workspace/biicode/production/temp/build
 
-
-In the previous figure, an assistant asks you for hive language, your block name, if you want to generate an hello world, your IDE family and your build type. The highlighted line indicates that the process worked fine. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``deps`` and ``blocks``.
+The command assistant will ask you some questions regarding your hive preferences. For this tutorial we have chosen ``cpp`` as our programming language, and no IDE configuration. We have also named the first hive in our block as ``my_block``. The assistant is also able to generate a default C++ 'hello world' block for you, but in this case we will write the files from scratch. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``deps`` and ``blocks``.
 
 Just code!
 ^^^^^^^^^^
 
-Our "hello" hive will have these files: ``hello.h``, ``hello.cpp`` and ``main.cpp``. Just create them into your hive ``hello/blocks/your_user_name/my_block`` folder with their appropriate content. Check :ref:`here<bii_cpp_wizard>` how you can create these files. 
+Our "hello" hive will have these files: ``hello.h``, ``hello.cpp`` and ``main.cpp``. Just create them into your hive ``hello/blocks/your_user_name/my_block`` and copy and paste the following code.
 
-This is the source code for your **hello block** in your **hello hive**.
+This is the source code for your **hello block** in your **hello hive**:
 
 **hello.h**
 
@@ -114,15 +102,8 @@ Once your have written, compiled and successfully executed some code, surely you
 	Introduce msg: My first project with biicode
 	  Reading Hive...
 	  Checking block your_user_name/your_user_name/my_block/master
-	  Permissions OK
+		  ... your block is being published here
 
-	  Preparing publication data for publish version 0
-
-	  Remote read block your_user_name/my_block(your_user_name/master): -1
-
-	  Sending data!
-
-	  Committing publish...
 	Successfully published your_user_name/my_block(your_user_name/master): 0
 
 If your code has been published correctly —as it is the case in the previous example—, you can navigate it here: ``www.biicode.com/user_name``
@@ -147,11 +128,14 @@ One of the most interesting aspects of biicode is the ability it provides to eas
 	$ bii new hellopretty
 	Created new Hive hellopretty
         ...
-	Introduce lang (default:None):
-	INFO: Selected lang: None
+	Introduce lang (default:cpp):
+	INFO: Selected lang: cpp
 	How would you like to name your first block?
 	Introduce block name (default:my_block): my_pretty_block
 	INFO: block name: my_pretty_block
+	Generate a default hello world?  (YES/no) no
+	Select IDE family: (Visual/CodeBlocks/Eclipse/NetBeans/None)
+	Introduce ide (default:Eclipse): None
         ...
 	$ cd hellopretty
 
@@ -202,13 +186,11 @@ In this case we are using of the ``hello()`` function, which is not explicitly d
 	Detected 3 files created, 0 updated
 	Processing hive
 	  Cell your_user_name/my_pretty_block/hellopretty.h is implemented by set(['your_user_name/my_pretty_block/hellopretty.cpp'])
-	...
-	...
+		...
 	#include "your_user_name/my_block/hello.h" //reusing hello.h header
 	         ^
 	1 error generated.
-	...
-	...
+		...
 	[!] Make failed
 
 However, biicode knows that you are trying to reuse the ``hello.h`` header. To resolve the missing dependencies we use the ``bii find`` command. Hopefully the server will find the dependencies, and you will see a success message on your screen:
@@ -217,21 +199,12 @@ However, biicode knows that you are trying to reuse the ``hello.h`` header. To r
 
 	$ bii find
 	Finding missing dependencies in server
-	Looking for your_user_name/hello...
-	  >> Block candidate: your_user_name/my_block(your_user_name/master)
-	  >> Version your_user_name/my_block(your_user_name/master): 0 (STABLE) valid due your policy!
-	  Found blocks: your_user_name/my_block(your_user_name/master): 0
-	Analyzing compatibility for found dependencies...
-	  Resolved block!
+		...
 	Dependencies resolved in server:
 	Find resolved new dependencies:
 		your_user_name/my_block(your_user_name/master): 0
-	All dependencies resolved
-	Saving files on disk
-	Computing dependencies
-	Retrieving resources from server
-	Retrieving resources from server
-	Saving dependences on disk
+	
+This is a successful ouput that indicates biicode has been able to resolve your dependencies. All needed files have been automatically downloaded and copied to your hive.
 
 Now you can try to compile and run again your new code. In this case the process will succeed:
 
@@ -239,8 +212,7 @@ Now you can try to compile and run again your new code. In this case the process
 
 	$ bii cpp:run
 	No deps to find
-	...
-	...
+		...
 	**********************************
 	Hello World!
 	**********************************
@@ -272,7 +244,7 @@ Execute your block, to make sure everything works as expected:
 
 	$ cd /path/to/your/biicode_workspace/hello
 	$ bii cpp:run
-	...
+		...
 	Hello biicode!
 
 Now, post your block to the biicode server just like you did before:
@@ -283,8 +255,7 @@ Now, post your block to the biicode server just like you did before:
 	block:     your_user_name/my_block
 	Introduce tag: STABLE
 	Introduce msg: My first block update
-	...
-	...
+		...
 	Successfully published your_user_name/my_block(your_user_name/master): 1
 
 As you can see, the version of your block changed from 0 to 1. Your can see both versions published online visiting your biicode user main page, as before.
@@ -292,35 +263,26 @@ As you can see, the version of your block changed from 0 to 1. Your can see both
 Update your hellopretty block with the new version of hello
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To update your **hellopretty** block you only need to search the server for any published new versions of your dependencies using the ``bii find`` command with the ``--update`` modifier. If the server finds new published versions of any dependencies, you'll see an indicative message on your screen:
+To update your **hellopretty** block you only need to search the server for any published new versions of your dependencies using the ``bii find`` command with the ``--update`` modifier. If the server finds new published versions for any of your dependencies, you'll see an indicative message on your screen:
 
 .. code-block:: bash
-	:emphasize-lines: 8,9
 
 	$ cd /path/to/your/biicode_workspace/hellopretty
 	$ bii find --update
 	Finding missing dependencies in server
-	Analyzing compatibility for found dependencies...
-	  Updated block!
-	Dependencies resolved in server:
-	All dependencies resolved
+		...
 	Updated dependencies:
 		your_user_name/your_user_name/my_block/master:#1
-
-	Saving files on disk
-	Computing dependencies
-	Retrieving resources from server
-	Retrieving resources from server
+		...
 	Saving dependences on disk
 
 
-Finally, you can input the ``bii cpp:run`` command to see how your block has been updated.
+Finally, you can input the ``bii cpp:run`` command to see how your block has been updated, showing on screen the new message.
 
 .. code-block:: bash
 
 	$ bii cpp:run
-	...
-	...
+		...
 	**********************************
 	Hello biicode!
 	**********************************

@@ -3491,7 +3491,7 @@ pre.literal-block:after {
 .breadcrumbs li {
   display: inline-block;
   vertical-align: text-top;
-  font-size: 12px;
+  font-size: 14px;
 }
 .breadcrumbs li.breadcrumbs-aside {
   float: right;
@@ -3974,12 +3974,11 @@ nav.nav-side {
 }
 .nav-rel a {
   vertical-align: middle;
-  padding: 3px;
+  padding: 5px 2px;
   display: block;
-  background-color: #eee;
   color: #3b3b3b;
-  font-size: 12px;
-  border-bottom: 3px solid #c6c6c6;
+  font-size: 14px;
+  border-radius: 3px;
   -webkit-transition: all .2s ease;
      -moz-transition: all .2s ease;
       -ms-transition: all .2s ease;
@@ -3988,7 +3987,6 @@ nav.nav-side {
 }
 .nav-rel a:hover {
   background-color: #ffaa00;
-  border-bottom-color: #3b3b3b;
   color: #fff;
   text-decoration: none;
 }
