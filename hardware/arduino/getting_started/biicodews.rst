@@ -6,14 +6,20 @@ How to configure your biicode workspace
 
 ``IMPORTANT:`` You can only have one language for Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
 
+Download the Arduino Software
+=============================
+First, you have to download the latest release Arduino IDE from the `Arduino software website <http://arduino.cc/en/Main/Software>`_ and install it.
+
 Update your environment.bii
 ===========================
 
 If you haven't done so, you must first :ref:`create a biicode workspace <create_workspace>`.
-Then, if it isn't there,  add the Arduino info on the **enviroment.bii**:
+Then you will see in your ``bii_workspace/bii`` folder the following **enviroment.bii** file (depending on your OS) with this default configuration:
 
+Winodws
+^^^^^^^
 .. code-block:: text
-	:emphasize-lines: 3, 8, 9
+	:emphasize-lines: 1, 7, 8, 9
 
 	arduino:
 	  boards:
@@ -28,11 +34,73 @@ Then, if it isn't there,  add the Arduino info on the **enviroment.bii**:
 	  - path: cmake
 		tool: {family: CMake}
 
-Boards information:
--------------------
+MacOS
+^^^^^
+.. code-block:: text
+	:emphasize-lines: 1, 7, 8, 9
+	
+	arduino:
+	  boards:
+	  - {board: uno, no_autolibs: 'false', port: /dev/tty.usbserial, programmer: usbtinyisp}
+	  builders:
+	  - path: make
+		tool: {family: MAKE}
+	  compilers:
+	  - path: /Applications/Arduino.app/Contents/Resources/Java
+		tool: {arch: AVR, family: GNU, version: 1.0.5}
+	  configurers:
+	  - path: cmake
+		tool: {family: CMake}
 
-Arduino Boards (SDK Arduino 1.0.5)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Linux
+^^^^^
+.. code-block:: text
+	:emphasize-lines: 1, 7, 8, 9
+	
+	arduino:
+	  boards:
+	  - {board: uno, no_autolibs: 'false', port: /dev/ttyUSB0, programmer: usbtinyisp}
+	  builders:
+	  - path: make
+		tool: {family: MAKE}
+	  compilers:
+	  - path: /usr/share/arduino
+		tool: {arch: AVR, family: GNU, version: 1.0.5}
+	  configurers:
+	  - path: cmake
+		tool: {family: CMake}
+
+Change the ``compilers path`` in the environment if you have installed the Arduino Software in other folder. By other side, you have the following tool info:
+
+	* ``arch``: AVR
+	* ``family``: MINGW (windows) or Gnu (linux/Mac)
+	* ``version``: 1.0.5
+
+You can see the version of your SDK into the file ``[Arduino_SDK_path]/revisions.txt``
+		
+Update your default_settings.bii
+================================
+
+If you want to create all your hives with the same settings, you should change this file. So, enter in ``bii_workspace/bii`` folder, open the **default_settings.bii** file and write the options according to your Arduino settings. These are the default settings:
+
+	*	Winodws
+
+		{``board``: uno, ``no_autolibs``: 'false', ``port``: COM3, ``programmer``: usbtinyisp}
+
+	*	MacOS
+	
+		{``board``: uno, ``no_autolibs``: 'false', ``port``: /dev/tty.usbserial, ``programmer``: usbtinyisp}
+
+	*	Linux
+	
+		{``board``: uno, ``no_autolibs``: 'false', ``port``: /dev/ttyUSB0, ``programmer``: usbtinyisp}
+
+Then you have the following options to change each one.
+
+Board
+-----
+
+``Board`` is referred to Arduino Boards (SDK Arduino 1.0.5), and you have these choices:
 
 	* ``uno``: Arduino Uno
 	* ``atmega328``: Arduino Duemilanove w/ ATmega328
@@ -61,14 +129,18 @@ Arduino Boards (SDK Arduino 1.0.5)
 	* ``atmega8``: Arduino NG or older w/ ATmega8
 	* ``robotControl``: Arduino Robot Control
 	* ``robotMotor``: Arduino Robot Motor
+
 	
 no_autolibs
-^^^^^^^^^^^
+-----------
 
-no_autolibs can be false or true. Disable Arduino library detection (default On).
+You can choose ``no_autolibs`` like **'false'** or **'true'**. This setting is made to disable Arduino library detection if it's **'false'**, else you can't use the Arduino libraries.
 
-USB port
-^^^^^^^^
+This option is interesting because you could not want use these libraries if you have a better **Servo** library and you prefer use it.
+
+
+port
+----
 
 USB where you have the Arduino board connected. It depends on your OS.
 
@@ -97,8 +169,10 @@ When specifying the serial port name on Mac OS X, use the following names (where
 
 Where ``tty.usbmodemXXX`` is for new Uno and Mega Arduino's, while ``tty.usbserialXXX`` are the older ones.
 
-Arduino Programmers (SDK Arduino 1.0.5)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+programmer
+----------
+``programmer`` is referred to the Arduino Programmers (SDK Arduino 1.0.5)
 
 	* ``avrisp``: AVR ISP
 	* ``avrispmkii``: AVRISP mkII
@@ -107,19 +181,3 @@ Arduino Programmers (SDK Arduino 1.0.5)
 	* ``parallel``: Parallel Programmer
 	* ``arduinoisp``: Arduino as ISP
 
-Compilers:
-----------
-
-Path to the Arduino SDK
-^^^^^^^^^^^^^^^^^^^^^^^
-
-Path where you installed arduino. It is important to choose a SDK compatible with your board. If you need to download a SDK or more info visit the `official Arduino website <http://arduino.cc/en/Main/Software>`_
-
-Tool info
-^^^^^^^^^
-
-* ``arch``: AVR
-* ``family``: MINGW (windows) or Gnu (linux/Mac)
-* ``version``: 1.0.5
-
-You can see de version of your SDK into the file ``[Arduino_SDK_path]/revisions.txt``
