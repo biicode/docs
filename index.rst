@@ -14,7 +14,7 @@ Contents:
    :maxdepth: 2
 
    intro-to-biicode
-   installing-biicode
+   install/install
    getting-started
    ides
    basic-usage
