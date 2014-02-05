@@ -2,6 +2,8 @@
 Create a new hive and code!
 ===========================
 
+``IMPORTANT:`` You can only have one language for Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
+
 Remember that you need to :ref:`configure your biicode workspace <arduinows>` with the Arduino SDK.
 
 Create your hive
@@ -19,14 +21,14 @@ Creating a new hive with the ``bii new`` command.
 	Introduce lang (default:None): arduino
 	
 	How would you like to name your first block?
-	Introduce block name (default:my_block): [ENTER]
-	INFO: block name: my_block
+	Introduce block name (default:arduino_block): arduino_block
+	INFO: block name: arduino_block
 	Generate a default firmware?  (YES/no) [ENTER]
 	INFO: Default extension file is '.cpp'. You can use '.c' extension too.
 
 	Creating a main file "main.cpp"
 
-	File main.cpp has been created in [HIVE_PATH]/blocks/[USER]/my_block/main.cpp
+	File main.cpp has been created in [HIVE_PATH]/blocks/[USER]/arduino_block/main.cpp
 
 With this command you create the next tree:
 
@@ -40,7 +42,7 @@ With this command you create the next tree:
 	|    +-- dep
 	|    +-- blocks
 	|         +-- my_user_name
-	|         |     +-- my_block
+	|         |     +-- arduino_block
 	|         |     |	|-- main.cpp
 	|         |     |	|-- bii
 	|         |     |	|	|-- mains.bii
@@ -93,7 +95,7 @@ biicode use this file to define main.cpp like a main file. You have all the :ref
 Configure your settings
 =======================
 
-Configure the hive settings.bii file whit the info about your board and serial port
+Configure the hive settings.bii file whit the info about your board and serial port.
 
 .. code-block:: text
 	:emphasize-lines: 2
@@ -104,7 +106,7 @@ Configure the hive settings.bii file whit the info about your board and serial p
 Build and Upload
 ================
 
-Now, you can compile your firmware and upload it in your Arduino. The command ``build`` compiles your firmware, and ``upload`` sends it to your Arduino.
+Now, you can compile your firmware and upload it in your Arduino. The command ``build`` compiles your firmware, and ``upload`` sends it to your Arduino. Enter into your arduino hive folder and execute:
 
 .. code-block:: bash
 	:emphasize-lines: 1, 7
@@ -113,7 +115,7 @@ Now, you can compile your firmware and upload it in your Arduino. The command ``
 	
 	...
 	
-	[100%] Built target [USER]_my_block_main
+	[100%] Built target [USER]_arduino_block_main
 	
 	$ bii arduino:upload
 	
@@ -127,7 +129,7 @@ Now, you can compile your firmware and upload it in your Arduino. The command ``
 
 	avrdude.exe done.  Thank you.
 
-	[100%] Built target [USER]_my_block_main-upload
+	[100%] Built target [USER]_arduino_block_main-upload
 	
 If you are sure to upload the program, you can try just the command ``upload``.
 
@@ -137,7 +139,7 @@ If you are sure to upload the program, you can try just the command ``upload``.
 	
 	...
 	
-	[100%] Built target [USER]_my_block_main
+	[100%] Built target [USER]_arduino_block_main
 	
 	...
 	
@@ -149,4 +151,4 @@ If you are sure to upload the program, you can try just the command ``upload``.
 
 	avrdude.exe done.  Thank you.
 
-	[100%] Built target [USER]_my_block_main-upload
+	[100%] Built target [USER]_arduino_block_main-upload

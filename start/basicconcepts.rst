@@ -3,7 +3,7 @@
 Basic concepts
 --------------
 
-This section describes some basic concepts regarding your Biicode workspace and projects. Biicode defines a very simple methodology, that helps you to organize your proyects and folders, putting a **strong focus on the software modularity** with the main goal of simplifying the code reutilization.
+This section describes some basic concepts regarding your Biicode workspace and projects. Biicode defines a very simple methodology, that helps you to organize your projects and folders, putting a **strong focus on the software modularity** with the main goal of simplifying the code reutilization.
 
 For a description of how these concepts are reflected on your disk folders structure read our :ref:`reference, workspace and hives layouts<layouts>`.
 
@@ -12,9 +12,9 @@ In the following sections you will learn about four basic concepts:
 * The **workspace**, a special folder that holds all your code.
 * The **hive**, or biicode project. A workspace can contain as many hives as you desire.
 * The **block**, or biicode basic code sharing unit. Any hive can contain multiple blocks of code; blocks of your own, and blocks of other users.
-* The **cell**, or file. Blocks are made up of one or more cells that contain source code and other resurces (images, data files, etc.)
+* The **cell**, or file. Blocks are made up of one or more cells that contain source code and other resources (images, data files, etc.)
 
-Now these conceps are explained in more detail:
+Now these concepts are explained in more detail:
 
 .. _workspace_definition:
 
@@ -60,7 +60,11 @@ It is important to emphasize the fact that not all cells (files) within a block 
 
 **Circular dependencies between blocks are not allowed**, as usually happens in other systems. If the cells of a block **A** depend on the cells of block **B**, then, the cells of block **B** cannot depend on cells belonging to block **A**.
 
+
+Remember to name each block differently.
+
 .. _cell_definition:
+
 
 Cell
 ^^^^
