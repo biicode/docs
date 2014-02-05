@@ -284,9 +284,9 @@ big, small {
   font-size: 100%;
 }
 
-.font-smooth, .icon:before, .inline-validate.inline-validate-success .input-context:before, .inline-validate.inline-validate-danger .input-context:before, .inline-validate.inline-validate-warning .input-context:before, .inline-validate.inline-validate-info .input-context:before, .tag-input-group .tag .tag-remove:before, .rst-content .admonition-title:before, .rst-content h1 .headerlink:before, .rst-content h2 .headerlink:before, .rst-content h3 .headerlink:before, .rst-content h4 .headerlink:before, .rst-content h5 .headerlink:before, .rst-content h6 .headerlink:before, .rst-content dl dt .headerlink:before, .alert, .rst-content .note, .rst-content .attention, .rst-content .caution, .rst-content .danger, .rst-content .error, .rst-content .hint, .rst-content .important, .rst-content .tip, .rst-content .warning, .btn, input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"], input[type="month"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="week"], input[type="number"], input[type="search"], input[type="tel"], input[type="color"], select, textarea, .tag-input-group, .menu-vertical li.on a, .menu-vertical li.current > a, .side-nav-search > a, .side-nav-search .dropdown > a, .nav-top a {
+/*.font-smooth, .icon:before, .inline-validate.inline-validate-success .input-context:before, .inline-validate.inline-validate-danger .input-context:before, .inline-validate.inline-validate-warning .input-context:before, .inline-validate.inline-validate-info .input-context:before, .tag-input-group .tag .tag-remove:before, .rst-content .admonition-title:before, .rst-content h1 .headerlink:before, .rst-content h2 .headerlink:before, .rst-content h3 .headerlink:before, .rst-content h4 .headerlink:before, .rst-content h5 .headerlink:before, .rst-content h6 .headerlink:before, .rst-content dl dt .headerlink:before, .alert, .rst-content .note, .rst-content .attention, .rst-content .caution, .rst-content .danger, .rst-content .error, .rst-content .hint, .rst-content .important, .rst-content .tip, .rst-content .warning, .btn, input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"], input[type="month"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="week"], input[type="number"], input[type="search"], input[type="tel"], input[type="color"], select, textarea, .tag-input-group, .menu-vertical li.on a, .menu-vertical li.current > a, .side-nav-search > a, .side-nav-search .dropdown > a, .nav-top a {
   -webkit-font-smoothing: antialiased;
-}
+}*/
 
 .clearfix {
   *zoom: 1;
@@ -3588,21 +3588,25 @@ pre.literal-block:after {
 .menu-vertical li.divide-bottom {
   border-bottom: solid 1px #404040;
 }
-.menu-vertical li.current {
+.menu-vertical li.toctree-l1.current {
   background: #e3e3e3;
 }
 .menu-vertical li.current a {
   color: gray;
   border-right: solid 1px #c9c9c9;
-  padding: 0.4045em 2.427em;
+  padding: 0.5em 2.4em;
 }
 .menu-vertical li.current a:hover {
   background: #d6d6d6;
 }
-.menu-vertical li.current a .current {
+.menu-vertical li.current li.current {
   background: #c9c9c9;
 }
-.menu-vertical li.on a, .menu-vertical li.current > a {
+.menu-vertical li.current li.current a {
+  font-weight: bold;
+  color: #555555;
+}
+.menu-vertical li.on a, .menu-vertical li.toctree-l1.current > a {
   color: #404040;
   padding: 0.4045em 1.618em;
   font-weight: bold;
@@ -3613,7 +3617,7 @@ pre.literal-block:after {
   padding-left: 1.618em -4px;
 }
 .menu-vertical li.on a:hover, .menu-vertical li.current > a:hover {
-  background: #fcfcfc;
+  /*background: #fcfcfc;*/
 }
 .menu-vertical li.current ul {
   display: block;
@@ -3955,7 +3959,7 @@ nav.nav-side {
 }
 .nav-rel span {
   display: inline;
-  line-height: 1em;
+  vertical-align: middle;
 }
 .nav-rel span.icon {
   content: " ";
@@ -3971,7 +3975,6 @@ nav.nav-side {
 .nav-rel a {
   vertical-align: middle;
   padding: 3px;
-  line-height: 1em;
   display: block;
   background-color: #eee;
   color: #3b3b3b;
