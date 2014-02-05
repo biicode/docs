@@ -22,7 +22,7 @@ If you haven't done so, you must first :ref:`create a biicode workspace <create_
 Then you will see in your ``bii_workspace/bii`` folder the following **enviroment.bii** file (depending on your OS) with this default configuration:
 
 
-Winodws
+Windows
 ^^^^^^^
 .. code-block:: text
 	:emphasize-lines: 1, 7, 8, 9
@@ -89,15 +89,15 @@ Update your default_settings.bii
 
 If you want to create all your hives with the same settings, you should change this file. So, enter in ``bii_workspace/bii`` folder, open the **default_settings.bii** file and write the options according to your Arduino settings. These are the default settings:
 
-	*	Winodws
+	*	**Winodws**
 
 		{``board``: uno, ``no_autolibs``: 'false', ``port``: COM3, ``programmer``: usbtinyisp}
 
-	*	MacOS
+	*	**MacOS**
 	
 		{``board``: uno, ``no_autolibs``: 'false', ``port``: /dev/tty.usbserial, ``programmer``: usbtinyisp}
 
-	*	Linux
+	*	**Linux**
 	
 		{``board``: uno, ``no_autolibs``: 'false', ``port``: /dev/ttyUSB0, ``programmer``: usbtinyisp}
 
