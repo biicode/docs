@@ -16,6 +16,8 @@ In the following sections you will learn about four basic concepts:
 
 Now these concepts are explained in more detail:
 
+.. _workspace_definition:
+
 Workspace
 ^^^^^^^^^
 
@@ -40,6 +42,8 @@ The concept of hive is very similar to that of a **conventional project**. In sh
 
 You can read :ref:`here about the hives folders structure<hive_layout>`.
 
+.. _block_definition:
+
 Block
 ^^^^^
 
@@ -56,12 +60,16 @@ It is important to emphasize the fact that not all cells (files) within a block 
 
 **Circular dependencies between blocks are not allowed**, as usually happens in other systems. If the cells of a block **A** depend on the cells of block **B**, then, the cells of block **B** cannot depend on cells belonging to block **A**.
 
+
 Remember to name each block differently.
+
+.. _cell_definition:
+
 
 Cell
 ^^^^
 
-A cell is the **basic biicode processing and reuse unit**, and is composed of both the file contents and metadata information. 
+A cell is the **basic biicode processing and reuse unit**, and is composed of **both the file contents and metadata information**. 
 
 Let's say the honey is the source code you put inside each one of your source files, and the cell structure is the metadata that relates such source file with the others. Actually, cells can be of any type (text, data, images), not just source code. In your code you can make references (includes, imports) to your cells or cells from any other user. 
 
