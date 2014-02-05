@@ -14,6 +14,9 @@ $( document ).ready(function() {
   });
   $("table.docutils:not(.field-list").wrap("<div class='table-responsive'></div>");
 
+
+
+
   /* Modal windows */
   // $(".modal").each(function() {
   //   console.log("modal__");
@@ -31,4 +34,10 @@ $( document ).ready(function() {
   //     return false;
   //   });
   // });
+
+  /* This hack is to display correctly l2 menu items pointing to section tags */
+  $(".toctree-l2").click(function() {
+    $(".toctree-l2").removeClass("current");
+    $(this).addClass("current");
+  });
 });
