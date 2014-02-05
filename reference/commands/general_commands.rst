@@ -86,7 +86,7 @@ The retrieved files are copied on your file system, under the ``deps`` folder of
 .. _bii_open_command:
 
 ``bii open``: Reusing the code
--------------------------------------------
+------------------------------
 
 This command is tipically used when **you decide to do some modifications to one of your dependency blocks** (those blocks contained in the ``deps`` folder of your hive). Using this command the block is moved to the ``blocks`` folder within your hive, and their cells become editable source files that can be modified by you and eventually published in a new version of the same branch (if you have writting permissions for that branch) or in a new branch (using the :ref:`publish command<bii_publish_command>`).
 

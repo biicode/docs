@@ -1,0 +1,17 @@
+<<<<<<< HEAD
+Install and setup guide
+=======================
+Follow these steps
+=======
+Installation and Setup
+=======================
+
+Follow these steps to use biicode:
+>>>>>>> 2947dbfab09adeecd2bd26e15eee4327d6f4b91f
+
+.. toctree::
+   :maxdepth: 2
+
+   installbii
+   development_tools/index
+   
