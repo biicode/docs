@@ -1,5 +1,6 @@
 Linux
-=========
+=====
+
 How to configure your linux for cross compiling 
 -----------------------------------------------
 

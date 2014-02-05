@@ -40,4 +40,30 @@ $( document ).ready(function() {
     $(".toctree-l2").removeClass("current");
     $(this).addClass("current");
   });
+  /* This hack is for including tabs */
+  var tabbed = $(".tabbed");
+  if (tabbed.length > 0) {
+    var first_tab = tabbed.first();
+    console.log(first_tab);
+    first_tab.addClass("current");
+    var titles = tabbed.find("h2");
+    var tabs_html = "";
+    for (var t=0; t<titles.length; t++) {
+      var class_name = (t==0) ? "tab current" : "tab";
+      tabs_html += "<span class='" + class_name + "'>" + $(titles[t])
+        .clone() //clone the element
+        .children() //select all the children
+        .remove()   //remove all the children
+        .end()  //again go back to selected element
+        .text() + "</span>";
+    };
+    first_tab.before($("<div class='tabs'>" + tabs_html + "</div>"));
+    $(".tab").click(function() {
+      var this_tab = $(this);
+      var index = $(".tab").removeClass("current").index(this_tab);
+      this_tab.addClass("current");
+      var sections = $(".tabbed").removeClass("current");
+      $(sections[index]).addClass("current");
+    });
+  };
 });

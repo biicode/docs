@@ -4069,6 +4069,42 @@ nav.nav-side {
   border-bottom: 2px solid #ffaa00;
 }
 
+
+
+/***********************/
+/* tabs (experimental) */
+/***********************/
+
+.tabs {
+  border-bottom: 1px solid #ddd;
+  height: 30px;
+}
+
+.tabs .tab {
+  text-align: center;
+  min-width: 80px;
+  padding: 3px;
+  display: inline-block;
+  height: 30px;
+  background-color: #eee;
+  border-top: 2px solid #555;
+  cursor: pointer;
+}
+
+.tabs .tab:hover {
+  background-color: #bbb;
+}
+
+.tabs .tab.current {
+  background-color: #666;
+  color: #fff;
+}
+.tabbed {
+  display: none;
+}
+.tabbed.current {
+  display: block;
+}
 /*********************/
 /* ALL MEDIA QUERIES */
 /*********************/
