@@ -4076,7 +4076,7 @@ nav.nav-side {
 /***********************/
 
 .tabs {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 2px solid #666;
   height: 30px;
 }
 
@@ -4086,9 +4086,13 @@ nav.nav-side {
   padding: 3px;
   display: inline-block;
   height: 30px;
-  background-color: #eee;
+  background-color: #666;
   border-top: 2px solid #555;
+  border-left: 2px solid #555;
+  border-right: 2px solid #555;
   cursor: pointer;
+  margin-left: 3px;
+  color: #fff;
 }
 
 .tabs .tab:hover {
@@ -4096,8 +4100,8 @@ nav.nav-side {
 }
 
 .tabs .tab.current {
-  background-color: #666;
-  color: #fff;
+  background-color: #fff;
+  color: #666;
 }
 .tabbed {
   display: none;
