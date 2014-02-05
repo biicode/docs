@@ -155,7 +155,7 @@ Remember that when generating the binary by cross compilation, you can only run 
 Send your binaries
 ^^^^^^^^^^^^^^^^^^
 
-To send your binary to Raspberry Pi, you just execute the ``rpi:send`` command and the file will be sent by rsync to the address that appears in your **settings.bii**:
+To send your binary to Raspberry Pi, you just execute the ``rpi:send`` command and the file will be send by rsync to the address that appears in your **settings.bii**:
 
 .. code-block:: bash
 
