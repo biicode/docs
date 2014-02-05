@@ -3953,7 +3953,15 @@ nav.nav-side {
   height: 30px;
   padding: 5px 0;
 }
+.nav-rel span {
+  display: inline;
+  line-height: 1em;
+}
+.nav-rel span.icon {
+  content: " ";
+}
 .nav-rel .trim {
+  display: inline-block;
   min-width: 100px;
   max-width: 300px;
   white-space: nowrap;
@@ -3961,7 +3969,9 @@ nav.nav-side {
   text-overflow: ellipsis;
 }
 .nav-rel a {
-  padding: 5px;
+  vertical-align: middle;
+  padding: 3px;
+  line-height: 1em;
   display: block;
   background-color: #eee;
   color: #3b3b3b;
@@ -3981,17 +3991,11 @@ nav.nav-side {
 }
 .nav-rel.prev {
   float: left;
-  text-align: left;
 }
 .nav-rel.next {
   float: right;
-  text-align: right;
 }
 .toctree-wrapper {
-  /*border-radius: 3px;
-  background-color: #e6e6e6;
-  padding: 10px;
-  */
   margin-bottom: 10px;
 }
 .toctree-wrapper ul {
