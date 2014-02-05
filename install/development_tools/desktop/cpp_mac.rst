@@ -1,9 +1,11 @@
-Mac C++ development tools
------------------------------
+.. _cpp_desktop_mac:
+
+C++ MacOS
+===========
 
 **C++**: You need to install:
 
-* The XCode Developeer Tools
+* The XCode Developer Tools
 
 .. code-block:: bash
 

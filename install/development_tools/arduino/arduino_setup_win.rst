@@ -1,13 +1,13 @@
-Arduino Windows development tools install
-============================================
+Arduino Windows
+===============
 
 Download the Arduino Software
 ---------------------------------
 You need to `download the Arduino software <http://arduino.cc/en/Main/Software>`_ first, it is important to choose a SDK compatible with your board. If you need more info visit the `official Arduino website <http://arduino.cc/en/Main/Software>`_.
 
-``Windows Users``: **Install** the Arduino software into **C:/Program Files/Arduino** and not into C:/Program Files/Arduino (x86). It is important because some CMake versions can not interpret correctly this path.
+**NOTE:** **Install** the Arduino software **into C:/Program Files/Arduino and not into C:/Program Files/Arduino (x86)**. It is important because some CMake versions can not interpret correctly this path.
 
-
+``IMPORTANT:`` Check you have installed the :ref:`C++ Development Tools<cpp_desktop_linux>`.
 
 
 
@@ -16,9 +16,9 @@ Update your environment.bii
 
 If you haven't done so, you must first :ref:`create a biicode workspace <create_workspace>`.
 
-``IMPORTANT:`` You can only have one language for Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
+``IMPORTANT:`` You can only have one coding language for each Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
 
-Then you will see in your ``bii_workspace/bii`` folder the following **enviroment.bii** file (depending on your OS) with this default configuration:
+Then you will see in your ``bii_workspace/bii`` folder the following **environment.bii** file with this default configuration:
 
 
 .. code-block:: text
@@ -38,13 +38,13 @@ Then you will see in your ``bii_workspace/bii`` folder the following **enviromen
 		tool: {family: CMake}
 
 
-Change the ``compilers path`` in the environment if you have installed the Arduino Software in other folder. By other side, you have the following tool info:
+Change the ``compilers path`` in the environment if you have installed the Arduino Software in other folder. On the other side, you have the following tool info:
 
 	* ``arch``: AVR
-	* ``family``: MINGW (windows) or Gnu (linux/Mac)
+	* ``family``: MINGW
 	* ``version``: 1.0.5
 
-You can see the version of your SDK into the file ``[Arduino_SDK_path]/revisions.txt``
+Don't forget to check you have the right version of your SDK. You can see your version in the file ``[Arduino_SDK_path]/revisions.txt``.
 		
 Update your default_settings.bii
 ---------------------------------
@@ -96,15 +96,15 @@ Board
 no_autolibs
 ^^^^^^^^^^^
 
-You can choose ``no_autolibs`` like **'false'** or **'true'**. This setting is made to disable Arduino library detection if it's **'false'**, else you can't use the Arduino libraries.
+You can choose ``no_autolibs`` between **'false'** or **'true'**. This setting disables Arduino library detection, so if it's **'false'** you can use Arduino libraries.
 
-This option is interesting because you could not want use these libraries if you have a better one. For example, you have just done a **Servo** library with a lot of improvements and you prefer use it, then you would assign to ``no_autolibs`` **'true'**.
+This option is interesting because you may not want to use these libraries if you have a better one. For example, you have just done a **Servo** library with a lot of improvements and you prefer to use it, then you would set ``no_autolibs`` value **'true'**.
 
 
 port
 ^^^^
 
-``port`` USB where you have the Arduino board connected. It depends on your OS.
+``port`` USB is where your Arduino board is connected.
 
 	*	**Windows**
 

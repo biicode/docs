@@ -1,11 +1,11 @@
-Install and setup guide
-=======================
-Follow these steps
+Installation and Setup
+======================
+
+Follow these steps to use biicode:
 
 .. toctree::
    :maxdepth: 2
 
    installbii
-   desktop/desktop
-   rpi/rpi
-   arduino/arduino
+   development_tools/index
+   
