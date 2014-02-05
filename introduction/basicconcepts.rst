@@ -1,7 +1,7 @@
 .. _basic_concepts:
 
 Basic concepts
---------------
+===============
 
 This section describes some basic concepts regarding your Biicode workspace and projects. Biicode defines a very simple methodology, that helps you to organize your projects and folders, putting a **strong focus on the software modularity** with the main goal of simplifying the code reutilization.
 
