@@ -12,20 +12,20 @@ This command creates a special ``bii`` folder in the root of your workspace, tha
 
 .. _bii_new_command:
 
-``bii new <hive_name>``: Creating new hives
+``bii new``: Creating new hives
 -------------------------------------------
 
-This is the command that **creates new hives inside your workspace**. It must be invoked inside a biicode workspace folder, and receives as the only parameter the name of the hive to be created. You can see :ref:`this basic 'hello world' example <hello_world>` to see how a typical hive is created.
+This is the command that **creates new hives inside your workspace**. It must be invoked inside a biicode workspace folder, and **receives as the only parameter the name of the hive to be created**. You can see :ref:`this basic 'hello world' example <hello_world>` to see how a typical hive is created.
 
-The command creates a new folder with the name of the hive, and the full folders structure where your blocks and cells will be located. After invoking the command, some questions are asked to the user:
+The ``bii new <hive_name>`` command creates a new folder within :ref:`your workspace<workspace_layout>` with the name of the hive. It also creates :ref:`the full folders structure where your blocks and cells will be located<hive_layout>. After invoking the command, some questions are asked to the user:
 
-* The programming **language** of your code. This information is used to define the project configuration, making use of the default settings defined in your workspace configuration default files. Available options are: *java*, *node*, *fortran*, *python*, *cpp*, *arduino* or *None*.
-* The name of the **first block** in your hive. A hive, as any other software project, is a logical structure that contains your source files. From a functional point of view, your source files are grouped in blocks. Any hive can hold as many blocks as you want, but at least on of them must be placed in the ``blocks`` folder of your hive, and contain the original code your are creating (or the modifications applied to other users blocks). In other works, **every hive must contain at least on block of code** under the ``blocks`` folder.
+* The **programming language** of your code. This information is used to define the project configuration, making use of the default settings defined in your workspace configuration default files. Available options are: *java*, *node*, *fortran*, *python*, *cpp*, *arduino* or *None*.
+* The name of the **first block** in your hive. A hive, as any other software project, is a logical structure that contains your source files. From a functional point of view, :ref:`your source files are grouped in blocks<block_definition>`. Any hive can hold as many blocks as you want, but at least on of them must be placed in the ``blocks`` folder of your hive, and contain the original code your are creating (or the modifications applied to other users blocks). In other works, **every hive must contain at least on block of code** under the ``blocks`` folder.
 
 In case you choose **cpp** as your programming language, there are some additional options that are supported by the client program, and help you to configure your project and build settings:
 
-* The option to create a default **'hello world'** for your language. These files are placed inside the first block whose name is defined in the previous step.
-* The name of the **IDE** you will be using when writing your code. This way, the command will be able to automatically create the project configuration for your favourite IDE. Available options are: *Visual*, *CodeBlocks*, *Eclipse*, *NetBeans*, or *None* if you don't need this configuration.
+* The option to create a default **'hello world'** block for your language. The sample code is placed inside the first block whose name is defined in the previous step.
+* The name of the **IDE** you will be using when writing your code. This way, the command will be able to automatically create the project configuration for your favourite IDE. Available options are: *Visual*, *CodeBlocks*, *Eclipse*, *NetBeans*, or *None* (in case you don't need this configuration).
 * Finally, the client asks for a **build type** for your code. Available options are: *None*, *Debug*, *Release*, *RelWithDebInfo*, or *MinSizeRel*.
 
 .. _bii_publish_command:
@@ -61,21 +61,25 @@ The retrieved files are copied on your file system, under the ``deps`` folder of
 
 .. _bii_open_command:
 
-``bii open <block_name>``: Reusing the code
+``bii open``: Reusing the code
 -------------------------------------------
 
-This command is tipically used when you decide you want to do some modifications to one of your dependency blocks (those blocks contained in the ``deps`` folder of your hive). There are two ways of retrieving a block created by you or other biicode user to perform some modifications:
+This command is tipically used when **you decide to do some modifications to one of your dependency blocks** (those blocks contained in the ``deps`` folder of your hive). Using this command the block is moved to the ``blocks`` folder within your hive, and their cells become editable source files that cab be modified by you and https://www.google.es/webhp?tab=ww&authuser=0&ei=lw7yUo3NELOS0QXF2IH4AQ&ved=0CBQQ1S4eventually published in a new branch (using the :ref:`publish command<bii_publish_command>`). 
+
+There are two ways of retrieving a block created by you or other biicode user to perform some modifications:
 
 That block is a dependency of your code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In this case, you are using some files from other user's block. This means that when you execute a ``bii find`` command those files are copied to the ``deps`` folder of your hive. Let's imagine your user name is ``peter``, and your block ``peter/my_block`` dependes on the code written by the user ``martha``. In particular it dependes from the block ``martha/her_block``.  After calling the ``bii find`` command, the files your block needs are copied under the ``deps`` folder of the hive you are working on. If you decide to make some modifications to the code you are using, you must call the ``bii open`` command, passing as a parameter the name of the block you intend to modify:
+This is the most general scenario. In this case, you are **using some cells from a previously published block** (originally created by you, or by another biicode user) . This means that yout have executed the :ref:`find command<_bii_find_command>` inside your hive, and some external dependencies have been retrieved from the biicode servers, and copied to the ``deps`` folder of your hive. Let's imagine your user name is ``peter``, and your block ``peter/my_block`` has dependencies on some files written by the user ``martha``. In particular your code contains references to the block ``martha/her_block``.  After calling the ``bii find`` command, only those files your block needs are copied under the ``deps`` folder of the hive you are working on. 
+
+If you decide to make some modifications to the code you are using, you must call the ``bii open`` command, passing as a parameter the name of the block you intend to modify:
 
 .. code-block:: bash
 
 	$ bii open martha/her_block
 
-Then, the biicode client copies martha's block to your ``blocks`` hive folder, and you can perform your modifications and publish that code as any other block.
+Then, the biicode client copies martha's full block to your ``blocks`` hive folder, and you can perform any modifications you need, and eventually publish the modifications on a new branch for that block.
 
 You have an empty hive
 ^^^^^^^^^^^^^^^^^^^^^^
