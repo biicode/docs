@@ -12,4 +12,4 @@ C++ Windows
   * ``C:/MinGW/bin``
   * ``C:/Program Files/CMake/bin``
 
-.. image:: _static/img/image_path.png
+.. image:: cpp_image/image_path.png
