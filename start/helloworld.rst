@@ -125,7 +125,16 @@ Once your have written, compiled and successfully executed some code, surely you
 	  Committing publish...
 	Successfully published your_user_name/my_block(your_user_name/master): 0
 
-If your code has been published correctly —as it is the case in the previous example—, you can navigate to it following :ref:`next step<web_access>`.
+If your code has been published correctly —as it is the case in the previous example—, you can navigate it here: ``www.biicode.com/user_name``
+
+Here is an example of sbaker's user:
+
+.. image:: user_image/sbaker1.png
+
+And this is his block's view:
+
+.. image:: user_image/sbaker2.png
+
 
 Reuse it!
 ^^^^^^^^^

@@ -109,6 +109,8 @@ port
 		
 		Where ``tty.usbmodemXXX`` is for new Uno and Mega Arduino's, while ``tty.usbserialXXX`` are the older ones.
 
+Want to know in which usb port is your Arduino connected? Use the command :ref:`arduino:usb<arduino_usb>`.
+
 programmer
 ^^^^^^^^^^
 

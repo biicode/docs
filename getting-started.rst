@@ -21,3 +21,5 @@ Before starting this guide, please `register <https://www.biicode.com/accounts/s
    start/basicconcepts
    start/createworkspace
    start/helloworld
+
+If you want to **try** some examples with **Arduino or Raspberry Pi**, check our tutorials :ref:`here<cross_platform_support>`.

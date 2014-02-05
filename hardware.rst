@@ -1,3 +1,5 @@
+.. _cross_platform_support:
+
 Cross platform support
 ======================
 
