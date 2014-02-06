@@ -1,10 +1,18 @@
 <div class="nav-rel-container">
 	{%- if prev %}
-	<div class="nav-rel prev"><a href="{{ prev.link|e }}"
-		title="{{ _('Previous Chapter: ') + prev.title|striptags }}">{{ "&laquo;"|safe }} {{ prev.title|striptags|truncate(length=30, killwords=True) }}</a></div>
+	<div class="nav-rel prev">
+		<a href="{{ prev.link|e }}" title="{{ _('Previous Chapter: ') + prev.title|striptags }}">
+			<span class="icon icon-arrow-circle-left"></span>
+			<span class="trim">{{ prev.title|striptags }}</span>
+		</a>
+	</div>
 	{%- endif %}
 	{%- if next %}
-		<div class="nav-rel next"><a href="{{ next.link|e }}"
-			title="{{ _('Next Chapter: ') + next.title|striptags }}">{{ next.title|striptags|truncate(length=30, killwords=True) }} {{ "&raquo;"|safe }}</a></div>
+		<div class="nav-rel next">
+			<a href="{{ next.link|e }}" title="{{ _('Next Chapter: ') + next.title|striptags }}">
+				<span class="trim">{{ next.title|striptags }}</span>
+				<span class="icon icon-arrow-circle-right"></span>
+			</a>
+		</div>
 	{%- endif %}
 </div>

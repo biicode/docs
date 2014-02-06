@@ -137,8 +137,56 @@ Links to web pages. `This is a link to biicode.com <http://www.biicode.com>`_
 
 Links to document sections. :ref:`This is a link to a the first section of this document <first-section>`.
 
-
-
-
 This is the title of a subsection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adding tabs
+===========
+
+You can add tabs to document using a simple hack. Just add the class to a document second-level section using the ``rst-class`` tag:
+
+.. code-block:: text
+	
+	.. rst-class:: tabbed
+
+	First section
+	-------------
+
+	contents for this section that will appear in a tab.
+
+	.. rst-class:: tabbed
+
+	Second section
+	--------------
+
+	contents for this section that will appear in a tab.
+
+	.. rst-class:: tabbed
+
+	Third section
+	-------------
+
+	contents for this section that will appear in a tab.
+
+here, you can see an example:
+
+.. rst-class:: tabbed
+
+First section
+-------------
+
+contents for this section that will appear in a tab.
+
+.. rst-class:: tabbed
+
+Second section
+--------------
+
+contents for this section that will appear in a tab.
+
+.. rst-class:: tabbed
+
+Third section
+-------------
+
+contents for this section that will appear in a tab.

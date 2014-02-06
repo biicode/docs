@@ -65,7 +65,7 @@ v. 0.3.4
 *(17-Dec-13)*
 
 * Init and new configuration wizards
-* Improved Eclipse support. You can read about it :ref:`here <use_ide>`
+* Improved Eclipse support. You can read about it :ref:`here <ide_eclipse>`
 * Improved Raspberry Pi support. You can read about it :ref:`here <raspberry_pi>`
 * Changed hive structure. You can read about new layout :ref:`here <hive_layout>`
 * User can edit cmakes http://docs.biicode.com/en/latest/reference/cpp_build_files.html

@@ -1,7 +1,5 @@
-.. _hello_world:
-
-"Hello World!" in C++
----------------------
+"Hello World!" in Arduino
+-------------------------
 
 This example shows how to build a simple "Hello World" application with biicode.
 

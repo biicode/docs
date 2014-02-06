@@ -53,7 +53,7 @@ This code is an example of the layout of your code. We read the input and define
 	
 **mains.bii**
 
-biicode use this file to define main.cpp like a main file. You have all the :ref:`info about mains.bii here <mains-bii>`. You need to create this file into [BLOCK_NAME]/bii/mains.bii
+biicode use this file to define main.cpp like a main file. You have all the :ref:`info about mains.bii here <mains_bii>`. You need to create this file into [BLOCK_NAME]/bii/mains.bii
 
 .. code-block:: text
 	:linenos:

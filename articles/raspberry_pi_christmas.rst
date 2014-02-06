@@ -5,7 +5,7 @@ Surprise your friends and family with a **moving doll** by following a few simpl
 
 .. raw:: html
 
-    <iframe width="560" height="315" src="//www.youtube.com/embed/S_oIqUt_CBo" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="//www.youtube.com/embed/_X9g1PrzcXM" frameborder="0" allowfullscreen></iframe>
 
 
 You just need paper, scissors, a servo, a Raspberry Pi and biicode!

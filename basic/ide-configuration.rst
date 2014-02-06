@@ -1,6 +1,6 @@
 .. _ide_configuration:
 
-Configuring an IDE
+IDEs configuration
 ==================
 
 If your are programming in C++, Biicode offers you **integration with some of the most commonly used IDEs**, and is able to do the appropriate corresponding project setup on your behalf. This way you can work on your biicode hive, using the underlying infrastructure and services provided by standard IDEs, just as it is was any other standard project. In fact, this configuration can be established from the very first momment, when you create a new hive with the ``bii new`` command (see :ref:`the commands reference for more information<bii_new_command>`).
@@ -41,6 +41,8 @@ After modifying this file, you mus execute the ``bii cpp:config`` command to app
 
 Some particular configuration options for :ref:`Eclipse<ide_eclipse>`, :ref:`Visual Studio<ide_visual>` and :ref:`CodeBlocks<ide_codeblocks>` are detailed in the following subsections:
 
+.. rst-class:: tabbed
+
 .. _ide_eclipse:
 
 Eclipse
@@ -68,6 +70,8 @@ If you are using **Mac** as developing platform, you will need some aditional se
 #. Click *OK*.
 
 And this is all you need to work as usual with the Eclipse IDE.
+
+.. rst-class:: tabbed
 
 .. _ide_visual:
 
@@ -110,24 +114,12 @@ Now, copy the code from your hello word tutorial into the block folder. You have
 	-- Generating done
 	-- Build files have been written to: [hive_build_folder]
 
-If you invoke the ``bii cpp:run`` command, you will see the following message:
-
-.. code-block:: bash
-	
-	$ bii cpp:run
-	invoking cmake  -G "Visual Studio 10" -Wno-dev ../blocks
-	-- Configuring done
-	-- Generating done
-	-- Build files have been written to: [hive_build_folder]
-	[!] You have configured an IDE setup
-	[!] Use VISUAL to build your project
-	[!] Use VISUAL to run your project
-
-Note: when you define any other IDE type, you have to compile and execute from the new IDE, as indicated in the last two lines of the output console.
 
 Finally, you are now ready to open your project with Visual Studio. Just double-click on the .sln file inside the build folder of your hive and a VS project will open with the folder structure that appears below. Your source code is located in the third folder:
 
-.. image:: _static/img/visual_studio_tree.jpg
+.. image:: ../_static/img/visual_studio_tree.jpg
+
+.. rst-class:: tabbed
 
 .. _ide_codeblocks:
 
@@ -178,7 +170,7 @@ Finally, you are ready to open your project with CodeBlocks. The first step is t
 
 Now you have your project in the CodeBlocks workspace showing a folders tree similar to this one:
 
-.. image:: _static/img/codeblocks_tree.png
+.. image:: ../_static/img/codeblocks_tree.png
 
 For this tutorial our user name is *tutorial* and our block simple name is *codeblocks*.
 
@@ -186,6 +178,6 @@ If you want to add any file, just click on *File > New > Empty file* and create 
 
 To run your project you need to select the main file on build target:
 
-.. image:: _static/img/codeblocks_build_target.png
+.. image:: ../_static/img/codeblocks_build_target.png
 
 And this is all you need to work as usual in CodeBlocks.

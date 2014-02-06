@@ -1,65 +1,22 @@
-.. _arduinows:
-
-=======================================
-How to configure your biicode workspace
-=======================================
-This section teaches you as you can make easily an Arduino project.
+Arduino Linux
+==============
 
 Download the Arduino Software
-=============================
+---------------------------------
 You need to `download the Arduino software <http://arduino.cc/en/Main/Software>`_ first, it is important to choose a SDK compatible with your board. If you need more info visit the `official Arduino website <http://arduino.cc/en/Main/Software>`_.
 
-``Windows Users``: **Install** the Arduino software into **C:/Program Files/Arduino** and not into C:/Program Files/Arduino (x86). It is important because some CMake versions can not interpret correctly this path.
-
+``IMPORTANT:`` Check you have installed the :ref:`C++ Development Tools<cpp_desktop_linux>`.
 
 Update your environment.bii
-===========================
+---------------------------------
 
 If you haven't done so, you must first :ref:`create a biicode workspace <create_workspace>`.
 
-``IMPORTANT:`` You can only have one language for Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
+``IMPORTANT:`` You can only have one coding language for each Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
 
-Then you will see in your ``bii_workspace/bii`` folder the following **enviroment.bii** file (depending on your OS) with this default configuration:
+Then you will see in your ``bii_workspace/bii`` folder the following **environment.bii** file with this default configuration:
 
 
-Windows
-^^^^^^^
-.. code-block:: text
-	:emphasize-lines: 1, 7, 8, 9
-
-	arduino:
-	  boards:
-	  - {board: uno, no_autolibs: 'false', port: COM3, programmer: usbtinyisp}
-	  builders:
-	  - path: mingw32-make
-		tool: {family: MINGW}
-	  compilers:
-	  - path: C:/Program Files/Arduino
-		tool: {arch: AVR, family: MINGW, version: 1.0.5}
-	  configurers:
-	  - path: cmake
-		tool: {family: CMake}
-
-MacOS
-^^^^^
-.. code-block:: text
-	:emphasize-lines: 1, 7, 8, 9
-	
-	arduino:
-	  boards:
-	  - {board: uno, no_autolibs: 'false', port: /dev/tty.usbserial, programmer: usbtinyisp}
-	  builders:
-	  - path: make
-		tool: {family: MAKE}
-	  compilers:
-	  - path: /Applications/Arduino.app/Contents/Resources/Java
-		tool: {arch: AVR, family: GNU, version: 1.0.5}
-	  configurers:
-	  - path: cmake
-		tool: {family: CMake}
-
-Linux
-^^^^^
 .. code-block:: text
 	:emphasize-lines: 1, 7, 8, 9
 	
@@ -76,26 +33,18 @@ Linux
 	  - path: cmake
 		tool: {family: CMake}
 
-Change the ``compilers path`` in the environment if you have installed the Arduino Software in other folder. By other side, you have the following tool info:
+Change the ``compilers path`` in the environment if you have installed the Arduino Software in other folder. On the other side, you have the following tool info:
 
 	* ``arch``: AVR
-	* ``family``: MINGW (windows) or Gnu (linux/Mac)
+	* ``family``: Gnu
 	* ``version``: 1.0.5
 
-You can see the version of your SDK into the file ``[Arduino_SDK_path]/revisions.txt``
+Don't forget to check you have the right version of your SDK. You can see your version in the file ``[Arduino_SDK_path]/revisions.txt``.
 		
 Update your default_settings.bii
-================================
+---------------------------------
 
 If you want to create all your hives with the same settings, you should change this file. So, enter in ``bii_workspace/bii`` folder, open the **default_settings.bii** file and write the options according to your Arduino settings. These are the default settings:
-
-	*	**Winodws**
-
-		{``board``: uno, ``no_autolibs``: 'false', ``port``: COM3, ``programmer``: usbtinyisp}
-
-	*	**MacOS**
-	
-		{``board``: uno, ``no_autolibs``: 'false', ``port``: /dev/tty.usbserial, ``programmer``: usbtinyisp}
 
 	*	**Linux**
 	
@@ -141,30 +90,15 @@ Board
 no_autolibs
 ^^^^^^^^^^^
 
-You can choose ``no_autolibs`` like **'false'** or **'true'**. This setting is made to disable Arduino library detection if it's **'false'**, else you can't use the Arduino libraries.
+You can choose ``no_autolibs`` between **'false'** or **'true'**. This setting disables Arduino library detection, so if it's **'false'** you can use Arduino libraries.
 
-This option is interesting because you could not want use these libraries if you have a better one. For example, you have just done a **Servo** library with a lot of improvements and you prefer use it, then you would assign to ``no_autolibs`` **'true'**.
+This option is interesting because you may not want to use these libraries if you have a better one. For example, you have just done a **Servo** library with a lot of improvements and you prefer to use it, then you would set ``no_autolibs`` value **'true'**.
 
 
 port
 ^^^^
 
-``port`` USB where you have the Arduino board connected. It depends on your OS.
-
-	*	**Windows**
-
-		When specifying the serial port name on Windows, use the following names:
-
-		* ``com1`` ``com2`` ... ``comN``
-
-	*	**Mac**
-
-		When specifying the serial port name on Mac OS X, use the following names (where XXX is a unique ID):
-
-		* ``/dev/tty.usbmodemXXX``
-		* ``/dev/tty.usbserialXXX``
-		
-		Where ``tty.usbmodemXXX`` is for new Uno and Mega Arduino's, while ``tty.usbserialXXX`` are the older ones.
+``port`` USB is where your Arduino board is connected.
 
 	*	**Linux**
 
@@ -175,7 +109,7 @@ port
 
 		Where ``/dev/ttyACMX`` is for the new Uno and Mega Arduino's, while ``/dev/ttyUSBX`` is for the old ones.
 
-
+Want to know in which usb port is your Arduino connected? Use the command :ref:`arduino:usb<arduino_usb>`.
 
 programmer
 ^^^^^^^^^^

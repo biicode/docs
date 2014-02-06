@@ -1,7 +1,8 @@
 .. _bii_arduino_tools:
 
 Arduino command list
-==================
+====================
+
 This section summarizes the **Arduino commands available to be used with the biicode client program**. You can see these tools if you execute:
 
 .. code-block:: bash
@@ -24,6 +25,7 @@ This section summarizes the **Arduino commands available to be used with the bii
 
 ``bii arduino:configure``: Configure your project
 -------------------------------------------------
+
 If you have configured your hive as a C/C++ project and you want to develop in arduino language, this command helps you! Enter it and configure your hive like an arduino project. It invokes arduino cross compiler and you are ready to start with your arduino.
 
 .. code-block:: bash
@@ -47,7 +49,8 @@ If you have configured your hive as a C/C++ project and you want to develop in a
 	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_HIVE]/build
 
 ``bii arduino:settings``: Show the hive settings
----------------------------------------------
+------------------------------------------------
+
 This command shows your settings about arduino or initializes the settings from default workspace settings in your hive if not existing.
 
 .. code-block:: bash
@@ -62,9 +65,11 @@ This command shows your settings about arduino or initializes the settings from 
 	INFO: If you want to change it, you have to modify this file:
 		[YOUR_BII_WORKSPACE/YOUR_HIVE]/bii/settings.bii
 
+.. _arduino_usb:
 
 ``bii arduino:usb``: Scan the USB devices
-------------------------------------------
+-----------------------------------------
+
 Shows us which is the port where you have connected your arduino, so you can configure your settings according to the port and board type.
 
 .. code-block:: bash
@@ -76,7 +81,7 @@ Shows us which is the port where you have connected your arduino, so you can con
 
 **Note**: For MacOS users output will less informative.
 
-..code-block:: bash
+.. code-block:: bash
 
 	$ bii arduino:usb
 	USB Devices:
@@ -89,6 +94,7 @@ In this case ``cu.usbmodem1a1221`` is the port you need to put in your settings.
 
 ``bii arduino:build``: Build the project
 ----------------------------------------
+
 This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX compiler -> avr-g++) to build and compile the project.
 
 .. code-block:: bash
@@ -115,6 +121,7 @@ This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX c
 
 ``bii arduino:upload``: Upload a firmware in Arduino
 ----------------------------------------------------
+
 When you want to deploy your code into the arduino, this command sends your previously built firmware to the arduino.
 
 .. code-block:: bash
@@ -142,4 +149,5 @@ When you want to deploy your code into the arduino, this command sends your prev
 
 ``bii arduino:wizard``: Create default classes or main files
 ------------------------------------------------------------
+
 This command has the same utilities like the :ref:`cpp:wizard tool<bii_cpp_wizard>`. The difference is only in the default classes and mains which creates them, because arduino needs other templates.
