@@ -52,31 +52,9 @@ These files have the following content:
 
 This is the main project file.
 
-.. code-block:: cpp
-
-	#if ARDUINO >= 100
-	#include "Arduino.h"
-	#else
-	#include "WProgram.h"
-	#endif
-
-	// Pin 13 has an LED connected on most Arduino boards.
-	// give it a name:
-	int led = 13;
-
-	// the setup routine runs once when you press reset:
-	void setup() {
-		// initialize the digital pin as an output.
-		pinMode(led, OUTPUT);
-	}
-
-	// the loop routine runs over and over again forever:
-	void loop() {
-		digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
-		delay(1000);               // wait for a second
-		digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
-		delay(1000);               // wait for a second
-	}
+.. literalinclude:: helloworld-arduino-code/main.cpp
+   :language: cpp
+   :linenos:
 
 **bii/mains.bii**
 
@@ -136,78 +114,23 @@ The following code use the method ``millis()`` and 2 control variables to count 
 
 **blink.h**
 
-.. code-block:: cpp
-
-	#pragma once
-
-	void blink_setup(int led, int interval_ms);
-	// the loop routine runs over and over again forever:
-	void blink_loop();
+.. literalinclude:: helloworld-arduino-code/blink.h
+   :language: cpp
+   :linenos:
 
 
 **blink.cpp**
 
-.. code-block:: cpp
-
-	#include "blink.h"
-	#if ARDUINO >= 100
-	#include "Arduino.h"
-	#else
-	#include "WProgram.h"
-	#endif
-
-	// TODO: Use a more elegant solution than global variables!
-	int ledState = LOW;             // ledState used to set the LED
-	long previousMillis = 0;        // will store last time LED was updated
-	int interval; 
-	int ledPin;
-
-	void blink_setup(int led, int interval_ms){
-		ledPin=led;
-		pinMode(ledPin, OUTPUT);
-		interval = interval_ms;
-	}
-	void blink_loop(){
-		unsigned long currentMillis = millis();
-		 
-		if(currentMillis - previousMillis > interval) {
-			// save the last time you blinked the LED 
-			previousMillis = currentMillis;   
-
-			// if the LED is off turn it on and vice-versa:
-			if (ledState == LOW)
-			  ledState = HIGH;
-			else
-			  ledState = LOW;
-
-			// set the LED with the ledState of the variable:
-			digitalWrite(ledPin, ledState);
-		  }
-	 }
-
+.. literalinclude:: helloworld-arduino-code/blink.cpp
+   :language: cpp
+   :linenos:
 
 **main.cpp**
 
 
-.. code-block:: cpp
-	
-	#if ARDUINO >= 100
-	#include "Arduino.h"
-	#else
-	#include "WProgram.h"
-	#endif 
-
-	#include "blink.h"
-
-	void setup() {
-	  // set the digital pin as output:
-	  blink_setup(13, 1000); //Led pin 13, 1000ms interval     
-	}
-
-	void loop(){
-	  blink_loop();
-	  //you can do other things here, blink won't block
-	}
+.. literalinclude:: helloworld-arduino-code/mainblink.cpp
+   :language: cpp
+   :linenos:
 	
 
 Publish your code

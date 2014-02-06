@@ -19,5 +19,4 @@ Biicode gives you several advantages for your Arduino experience.
    :maxdepth: 2
   
    arduino/tutorials
-   arduino/reuse
 

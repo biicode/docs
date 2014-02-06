@@ -40,19 +40,19 @@ This is the source code for your **hello block** in your **hello hive**:
 
 **hello.h**
 
-.. literalinclude:: helloworld_code/hello.h
+.. literalinclude:: helloworld-cpp-code/hello.h
    :language: cpp
    :linenos:
 
 **hello.cpp**
 
-.. literalinclude:: helloworld_code/hello.cpp
+.. literalinclude:: helloworld-cpp-code/hello.cpp
    :language: cpp
    :linenos:
 
 **main.cpp**
 
-.. literalinclude:: helloworld_code/main.cpp
+.. literalinclude:: helloworld-cpp-code/main.cpp
    :language: cpp
    :linenos:
 
@@ -126,41 +126,21 @@ Add the following files to the folder ``hellopretty/blocks/your_user_name/my_pre
 
 **hellopretty.h**
 
-.. code-block:: cpp
-	:linenos:
-
-	#pragma once
-
-	void hellopretty ();
+.. literalinclude:: helloworld-cpp-code/hellopretty.h
+   :language: cpp
+   :linenos:
 
 **hellopretty.cpp**
 
-.. code-block:: cpp
-	:linenos:
-
-	#include "your_user_name/my_block/hello.h" //reusing hello.h header
-	#include "hellopretty.h"
-	#include <iostream>
-
-	using namespace std;
-
-	void hellopretty (){
-	   cout<<"**********************************"<<endl;
-	   hello();
-	   cout<<"**********************************"<<endl;
-	}
+.. literalinclude:: helloworld-cpp-code/hellopretty.cpp
+   :language: cpp
+   :linenos:
 
 **main.cpp**
 
-.. code-block:: cpp
-	:linenos:
-
-	#include "hellopretty.h"
-
-	int main(){
-	    hellopretty();
-	    return 1;
-	}
+.. literalinclude:: helloworld-cpp-code/mainpretty.cpp
+   :language: cpp
+   :linenos:
 
 In this case we are using of the ``hello()`` function, which is not explicitly defined in the current hive. If you tried to compile and run this program using the ``bii cpp:run`` command, you would see an error message:
 
@@ -209,17 +189,9 @@ Modifying your code and publishing the results is easy with biicode. Now we´ll 
 
 **hello.cpp**
 
-.. code-block:: cpp
-	:linenos:
-	:emphasize-lines: 6
-
-	#include "hello.h"
-	#include  <iostream>
-	using namespace std;
-
-	void hello(){
-	 cout<<"Hello biicode!"<<endl;
-	}
+.. literalinclude:: helloworld-cpp-code/hellobiicode.cpp
+   :language: cpp
+   :linenos:
 
 Execute your block, to make sure everything works as expected:
 
