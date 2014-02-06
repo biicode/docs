@@ -1,286 +1,234 @@
 "Hello World!" in Arduino
--------------------------
+=============================
+``IMPORTANT:`` You can only have one language for Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
 
-This example shows how to build a simple "Hello World" application with biicode.
+Remember that you need to :ref:`configure your biicode workspace <arduinows>` with the Arduino SDK.
 
-Create a new hive
-^^^^^^^^^^^^^^^^^^
+Create your hive
+-------------------
 
-Creating a new hive is as easy as executing the ``bii new`` command. Open your console, move to your biicode workspace and create a new hive named **"hello"** (some ouput informative messages are omitted):
+Creating a new hive with the ``bii new`` command.
 
 .. code-block:: bash
+	:emphasize-lines: 1, 4, 6
 
-	$ cd /path/to/your/biicode_workspace
-	$ bii new hello
-        Created new hive hello
-        Select language: (java/node/fortran/python/cpp/None)
-        Introduce lang (default:cpp): cpp
-        INFO: Selected lang: cpp
-		Introduce block name (default:my_block): my_block
-		INFO: block name: my_block
-        Generate a default hello world?  (YES/no) no
-        Select IDE family: (Visual/CodeBlocks/Eclipse/NetBeans/None)
-        Introduce ide (default:Eclipse): None
-        Select build type: (None/Debug/Release/RelWithDebInfo/MinSizeRel)
-        Introduce build_type (default:Debug): Debug
-        invoking cmake   -G "Unix Makefiles" -Wno-dev ../cmake
-	        ... here your new hive is created in your workspace
-        -- Build files have been written to: /Users/luis/Workspace/biicode/production/temp/build
+	$ bii new arduino_hive
+	Created new hive arduino_hive
+	Select language: (java/node/fortran/python/cpp/arduino/None)
+	Introduce lang (default:None): arduino
+	How would you like to name your first block?
+	Introduce block name (default:arduino_block): arduino_block
+	INFO: block name: arduino_block
+	Generate a default firmware?  (YES/no) [ENTER]
+	INFO: Default extension file is '.cpp'. You can use '.c' extension too.
 
-The command assistant will ask you some questions regarding your hive preferences. For this tutorial we have chosen ``cpp`` as our programming language, and no IDE configuration. We have also named the first hive in our block as ``my_block``. The assistant is also able to generate a default C++ 'hello world' block for you, but in this case we will write the files from scratch. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``deps`` and ``blocks``.
+	Creating a main file "main.cpp"
 
-Just code!
-^^^^^^^^^^
+	File main.cpp has been created in [HIVE_PATH]/blocks/[USER]/arduino_block/main.cpp
 
-Our "hello" hive will have these files: ``hello.h``, ``hello.cpp`` and ``main.cpp``. Just create them into your hive ``hello/blocks/your_user_name/my_block`` and copy and paste the following code.
+With this command you create the next tree:
 
-This is the source code for your **hello block** in your **hello hive**:
+.. code-block:: text
+	:emphasize-lines: 9, 10, 11, 12
 
-**hello.h**
+	|-- arduino_hive
+	|    +-- bii
+	|    +-- bin
+	|    +-- build
+	|    +-- deps
+	|    +-- blocks
+	|         +-- my_user_name
+	|         |     +-- arduino_block
+	|         |     |		|-- main.cpp
+	|         |     |		|-- bii
+	|         |     |		|	|-- mains.bii
+	
 
-.. code-block:: cpp
-	:linenos:
 
-	#pragma once
 
-	//Method to print "Hello World!"
-	void hello();
-
-**hello.cpp**
-
-.. code-block:: cpp
-	:linenos:
-
-	#include "hello.h"
-	#include  <iostream>
-	using namespace std;
-
-	void hello(){
-	 cout<<"Hello World"<<endl;
-	}
+These files have the following content:
 
 **main.cpp**
 
+This is the main project file.
+
 .. code-block:: cpp
-	:linenos:
 
-	#include "hello.h"
+	#if ARDUINO >= 100
+	#include "Arduino.h"
+	#else
+	#include "WProgram.h"
+	#endif
 
-	int main() {
-	  hello();
-	  return 1;
+	// Pin 13 has an LED connected on most Arduino boards.
+	// give it a name:
+	int led = 13;
+
+	// the setup routine runs once when you press reset:
+	void setup() {
+		// initialize the digital pin as an output.
+		pinMode(led, OUTPUT);
 	}
 
-Build and run
-^^^^^^^^^^^^^^
+	// the loop routine runs over and over again forever:
+	void loop() {
+		digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
+		delay(1000);               // wait for a second
+		digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
+		delay(1000);               // wait for a second
+	}
 
-Once you have completed all the coding process, and the source files are located under ``hello/blocks/your_user_name/my_block``, you are ready to compile and run the application. Assuming that you are located in your biicode workspace folder, ``cd`` to your **"hello" hive folder**, and run the ``bii cpp:run`` command:
+**bii/mains.bii**
+
+biicode use this file to define main.cpp like a main file. You have all the :ref:`info about mains.bii here <mains_bii>`.
+
+.. code-block:: text
+
+	main.cpp
+	
+Configure your settings
+--------------------------------------
+
+Configure the hive settings.bii file with the info about your board and serial port.
+
+.. code-block:: text
+	:emphasize-lines: 2
+	
+	arduino:
+		board: {board: mega2560, no_autolibs: 'false', port: COM7, programmer: usbtinyisp}
+		
+Build and Upload
+-------------------
+
+Now, you can compile your firmware and upload it in your Arduino. The command ``build`` compiles your firmware, and ``upload`` sends it to your Arduino. Enter into your arduino hive folder and execute:
 
 .. code-block:: bash
+	:emphasize-lines: 2, 8
 
-	$ cd hello
-	$ bii cpp:run
+	$ cd arduino_hive
+	$ bii arduino:build
+	
+	...
+	
+	[100%] Built target [USER]_arduino_block_main
+	
+	$ bii arduino:upload
+	
+	...
+	
+	Writing | ################################################## | 100% 0.00s
 
-Note that the ``bii cpp:run`` command needs to be executed from a folder containing a hive. After some messages showing information about the compiling process, the output message will appear in your console:
+	avrdude.exe: 0 bytes of eeprom written
 
-.. code-block:: bash
+	avrdude.exe: safemode: Fuses OK
 
-	Hello World!
+	avrdude.exe done.  Thank you.
+
+	[100%] Built target [USER]_arduino_block_main-upload
+	
+	
+Creating reusable code
+---------------------------
+
+There is a problem with the above example. The use of delay blocks the execution flow of arduino, so if you want, for example, to control a motor, process serial port inputs, or whatever other work you have to do, you **cannot use** the previous blink version, as it blocks execution.
+The following code use the method ``millis()`` and 2 control variables to count the time in a period of time. when this time are equal to 1000 the status of the led change.
+	
+
+**blink.h**
+
+.. code-block:: cpp
+
+	#pragma once
+
+	void blink_setup(int led, int interval_ms);
+	// the loop routine runs over and over again forever:
+	void blink_loop();
+
+
+**blink.cpp**
+
+.. code-block:: cpp
+
+	#include "blink.h"
+	#if ARDUINO >= 100
+	#include "Arduino.h"
+	#else
+	#include "WProgram.h"
+	#endif
+
+	// TODO: Use a more elegant solution than global variables!
+	int ledState = LOW;             // ledState used to set the LED
+	long previousMillis = 0;        // will store last time LED was updated
+	int interval; 
+	int ledPin;
+
+	void blink_setup(int led, int interval_ms){
+		ledPin=led;
+		pinMode(ledPin, OUTPUT);
+		interval = interval_ms;
+	}
+	void blink_loop(){
+		unsigned long currentMillis = millis();
+		 
+		if(currentMillis - previousMillis > interval) {
+			// save the last time you blinked the LED 
+			previousMillis = currentMillis;   
+
+			// if the LED is off turn it on and vice-versa:
+			if (ledState == LOW)
+			  ledState = HIGH;
+			else
+			  ledState = LOW;
+
+			// set the LED with the ledState of the variable:
+			digitalWrite(ledPin, ledState);
+		  }
+	 }
+
+
+**main.cpp**
+
+
+.. code-block:: cpp
+	
+	#if ARDUINO >= 100
+	#include "Arduino.h"
+	#else
+	#include "WProgram.h"
+	#endif 
+
+	#include "blink.h"
+
+	void setup() {
+	  // set the digital pin as output:
+	  blink_setup(13, 1000); //Led pin 13, 1000ms interval     
+	}
+
+	void loop(){
+	  blink_loop();
+	  //you can do other things here, blink won't block
+	}
+	
 
 Publish your code
-^^^^^^^^^^^^^^^^^^
+----------------------------
 
 Once your have written, compiled and successfully executed some code, surely you are willing to share it with the biicode community! Uploading your code to biicode is really simple using the ``bii publish`` command. You will be requested to provide a **tag** and a **message**. Valid tags are ``STABLE``, ``ALPHA``, ``BETA``, and ``DEV``. They provide information about the development state of your hive. The message is any information describing your publication.
 
 .. code-block:: bash
 
 	$ bii publish
-	block:   your_user_name/my_block
+	block:   your_user_name/arduino_block
 	Introduce tag: STABLE
 	Introduce msg: My first project with biicode
 	  Reading Hive...
-	  Checking block your_user_name/your_user_name/my_block/master
+	  Checking block your_user_name/your_user_name/arduino_block/master
 		  ... your block is being published here
 
-	Successfully published your_user_name/my_block(your_user_name/master): 0
+	Successfully published your_user_name/arduino_block(your_user_name/master): 0
 
 If your code has been published correctly —as it is the case in the previous example—, you can navigate it here: ``www.biicode.com/user_name``
 
-Here is an example of sbaker's user:
-
-.. image:: user_image/sbaker1.png
-
-And this is his block's view:
-
-.. image:: user_image/sbaker2.png
-
-
 Reuse it!
-^^^^^^^^^
-
-One of the most interesting aspects of biicode is the ability it provides to easily reuse code. As the published files have already been uploaded to biicode servers, it is possible for anyone —even other biicode users— to use these files in new projects. We'll show the process creating a new hive named **"hellopretty"**. From your biicode workspace folder, execute again the ``bii new`` command to create a new hive:
-
-.. code-block:: bash
-
-	$ cd /path/to/your/biicode_workspace
-	$ bii new hellopretty
-	Created new Hive hellopretty
-        ...
-	Introduce lang (default:cpp):
-	INFO: Selected lang: cpp
-	How would you like to name your first block?
-	Introduce block name (default:my_block): my_pretty_block
-	INFO: block name: my_pretty_block
-	Generate a default hello world?  (YES/no) no
-	Select IDE family: (Visual/CodeBlocks/Eclipse/NetBeans/None)
-	Introduce ide (default:Eclipse): None
-        ...
-	$ cd hellopretty
-
-Add the following files to the folder ``hellopretty/blocks/your_user_name/my_pretty_block/`` (remember to substitute ``your_user_name`` with your actual biicode user name):
-
-**hellopretty.h**
-
-.. code-block:: cpp
-	:linenos:
-
-	#pragma once
-
-	void hellopretty ();
-
-**hellopretty.cpp**
-
-.. code-block:: cpp
-	:linenos:
-
-	#include "your_user_name/my_block/hello.h" //reusing hello.h header
-	#include "hellopretty.h"
-	#include <iostream>
-
-	using namespace std;
-
-	void hellopretty (){
-	   cout<<"**********************************"<<endl;
-	   hello();
-	   cout<<"**********************************"<<endl;
-	}
-
-**main.cpp**
-
-.. code-block:: cpp
-	:linenos:
-
-	#include "hellopretty.h"
-
-	int main(){
-	    hellopretty();
-	    return 1;
-	}
-
-In this case we are using of the ``hello()`` function, which is not explicitly defined in the current hive. If you tried to compile and run this program using the ``bii cpp:run`` command, you would see an error message:
-
-.. code-block:: bash
-
-	Detected 3 files created, 0 updated
-	Processing hive
-	  Cell your_user_name/my_pretty_block/hellopretty.h is implemented by set(['your_user_name/my_pretty_block/hellopretty.cpp'])
-		...
-	#include "your_user_name/my_block/hello.h" //reusing hello.h header
-	         ^
-	1 error generated.
-		...
-	[!] Make failed
-
-However, biicode knows that you are trying to reuse the ``hello.h`` header. To resolve the missing dependencies we use the ``bii find`` command. Hopefully the server will find the dependencies, and you will see a success message on your screen:
-
-.. code-block:: bash
-
-	$ bii find
-	Finding missing dependencies in server
-		...
-	Dependencies resolved in server:
-	Find resolved new dependencies:
-		your_user_name/my_block(your_user_name/master): 0
-	
-This is a successful ouput that indicates biicode has been able to resolve your dependencies. All needed files have been automatically downloaded and copied to your hive.
-
-Now you can try to compile and run again your new code. In this case the process will succeed:
-
-.. code-block:: bash
-
-	$ bii cpp:run
-	No deps to find
-		...
-	**********************************
-	Hello World!
-	**********************************
-
-You will find the ``your_user_name/my_block`` block along with the retrieved source files ``hello.h`` and ``hello.cpp`` in your  ``hellopretty/deps`` subfolder. Note that the ``main.cpp`` file of the **hello** block was not retrieved. That is because you don't need it to reuse the ``hello()`` function!
-
-Publish a new version of your hello block
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Modifying your code and publishing the results is easy with biicode. Now we´ll change the message displayed by the ``hello()`` function in the **hello** block. Update the ``hello.cpp`` as following:
-
-**hello.cpp**
-
-.. code-block:: cpp
-	:linenos:
-	:emphasize-lines: 6
-
-	#include "hello.h"
-	#include  <iostream>
-	using namespace std;
-
-	void hello(){
-	 cout<<"Hello biicode!"<<endl;
-	}
-
-Execute your block, to make sure everything works as expected:
-
-.. code-block:: bash
-
-	$ cd /path/to/your/biicode_workspace/hello
-	$ bii cpp:run
-		...
-	Hello biicode!
-
-Now, post your block to the biicode server just like you did before:
-
-.. code-block:: bash
-
-	$ bii publish
-	block:     your_user_name/my_block
-	Introduce tag: STABLE
-	Introduce msg: My first block update
-		...
-	Successfully published your_user_name/my_block(your_user_name/master): 1
-
-As you can see, the version of your block changed from 0 to 1. Your can see both versions published online visiting your biicode user main page, as before.
-
-Update your hellopretty block with the new version of hello
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To update your **hellopretty** block you only need to search the server for any published new versions of your dependencies using the ``bii find`` command with the ``--update`` modifier. If the server finds new published versions for any of your dependencies, you'll see an indicative message on your screen:
-
-.. code-block:: bash
-
-	$ cd /path/to/your/biicode_workspace/hellopretty
-	$ bii find --update
-	Finding missing dependencies in server
-		...
-	Updated dependencies:
-		your_user_name/your_user_name/my_block/master:#1
-		...
-	Saving dependences on disk
-
-
-Finally, you can input the ``bii cpp:run`` command to see how your block has been updated, showing on screen the new message.
-
-.. code-block:: bash
-
-	$ bii cpp:run
-		...
-	**********************************
-	Hello biicode!
-	**********************************
+---------------
+TODO:

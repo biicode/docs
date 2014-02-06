@@ -40,38 +40,21 @@ This is the source code for your **hello block** in your **hello hive**:
 
 **hello.h**
 
-.. code-block:: cpp
-	:linenos:
-
-	#pragma once
-
-	//Method to print "Hello World!"
-	void hello();
+.. literalinclude:: helloworld_code/hello.h
+   :language: cpp
+   :linenos:
 
 **hello.cpp**
 
-.. code-block:: cpp
-	:linenos:
-
-	#include "hello.h"
-	#include  <iostream>
-	using namespace std;
-
-	void hello(){
-	 cout<<"Hello World"<<endl;
-	}
+.. literalinclude:: helloworld_code/hello.cpp
+   :language: cpp
+   :linenos:
 
 **main.cpp**
 
-.. code-block:: cpp
-	:linenos:
-
-	#include "hello.h"
-
-	int main() {
-	  hello();
-	  return 1;
-	}
+.. literalinclude:: helloworld_code/main.cpp
+   :language: cpp
+   :linenos:
 
 Build and run
 ^^^^^^^^^^^^^^
