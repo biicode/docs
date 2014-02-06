@@ -7,6 +7,5 @@ you can find many examples on the `Arduino official website. <http://arduino.cc/
 .. toctree::
    :maxdepth: 2
   
-   tutorials/blink_without_delay
    advance/serial_interface
    advance/pid

@@ -18,7 +18,6 @@ Biicode gives you several advantages for your Arduino experience.
 .. toctree::
    :maxdepth: 2
   
-   arduino/getting_started
    arduino/tutorials
    arduino/reuse
 
