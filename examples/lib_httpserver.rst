@@ -15,7 +15,7 @@ A method ``call`` from your subclass object will be called with a Request* objec
 Just modify the body and/or headers of Response object in your method and the server will do all the work.
 
 
-How can i use it?
+How can I use it?
 -----------------
 
 * Just copy the files contained in the following section to a new block.
@@ -137,6 +137,6 @@ You can find more information in the **readme.txt** file of `lasote/httpserver <
 List of dependencies
 --------------------
 
-* `melikyan/ptypes <https://www.biicode.com/melikyan/blocks/melikyan/ptypes/branches/master>`_: PTypes (C++ Portable Types Library) is a simple alternative to the STL that includes multithreading and networking. It defines dynamic strings, variants, character sets, lists and other basic data types along with portable thread and synchronization objects, IP sockets and named pipes. Its main `target audience' is developers of complex network daemons, robots or non-visual client/server applications of any kind.
+* `melikyan/ptypes <https://www.biicode.com/melikyan/blocks/melikyan/ptypes/branches/master>`_: PTypes (C++ Portable Types Library) is a simple alternative to the STL that includes multithreading and networking. It defines dynamic strings, variants, character sets, lists and other basic data types along with portable thread and synchronization objects, IP sockets and named pipes. Its main 'target audience' is developers of complex network daemons, robots or non-visual client/server applications of any kind.
 * `lasote/genericipserver <https://www.biicode.com/lasote/blocks/lasote/genericipserver/branches/master>`_: Generic and extensible IP server.
 * `lasote/thread_jobs <https://www.biicode.com/lasote/blocks/lasote/thread_jobs/branches/master>`_: Execute your tasks in threads managed by a pool.

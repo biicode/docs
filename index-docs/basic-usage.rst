@@ -14,10 +14,10 @@ Biicode provides the tools for analyzing, publishing and reusing code and how to
 .. toctree::
 	:maxdepth: 2
 
-	basic/web-access
-	basic/hive-usage
-	basic/work-clean
-	basic/publish
-	basic/dependencies
-	basic/ide-configuration
+	../basic/web-access
+	../basic/hive-usage
+	../basic/work-clean
+	../basic/publish
+	../basic/dependencies
+	../basic/ide-configuration
 	

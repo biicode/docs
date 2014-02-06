@@ -1,7 +1,7 @@
 .. _bii_cpp_tools:
 
 C/C++ command list
-================
+===================
 This section summarizes the **C/C++ commands available to be used with the biicode client program**. You can see these tools if you execute:
 
 .. code-block:: bash
@@ -20,7 +20,7 @@ This section summarizes the **C/C++ commands available to be used with the biico
 **Note**: You need to have a cpp compiler :ref:`installed and configured <dev_tools_installation>`.
 
 ``bii cpp:configure``: Configure your project
----------------------------------------------
+----------------------------------------------
 If you have configured your hive as a C/C++ project and you want to develop in cpp language, this command helps you! Enter it and configure your hive like an cpp project. It invokes cpp compiler and you are ready to start with your cpp.
 
 .. code-block:: bash
@@ -43,7 +43,7 @@ If you have configured your hive as a C/C++ project and you want to develop in c
 	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_HIVE]/build
 
 ``bii cpp:settings``: Shows the hive settings
------------------------------------------
+----------------------------------------------
 This command shows your settings about cpp or initializes the settings from default workspace settings in your hive if they are missing.
 
 .. code-block:: bash
@@ -68,7 +68,7 @@ You can process, build and run a main file with this command. This command is re
 	$ bii cpp:run
 	
 ``bii cpp:build``: Build the project
-------------------------------------
+-------------------------------------
 This command invokes the C++ compiler to build your project.
 
 .. code-block:: bash
@@ -94,7 +94,7 @@ This command invokes the C++ compiler to build your project.
 	[100%] Built target your_user_name_block_cpp_block
 
 ``bii cpp:exe``: Run a binary or script
----------------------------------------
+----------------------------------------
 This command executes directly a created binary file. For example, if you have several binary files named *user_block_hello_pretty*, *user_block_hello* and *user_block_maths*, and the first shows in console "Hello pretty", then if you want to execute it:
 
 .. code-block:: bash
@@ -110,7 +110,7 @@ This command executes directly a created binary file. For example, if you have s
 .. _bii_cpp_wizard:
 
 ``bii cpp:wizard``: Create default classes or main files
---------------------------------------------------------
+---------------------------------------------------------
 
 This command has several utilities. It's a very simple way to create us a default class or main.cpp/main.c for your project. You have this options to execute the command:
 

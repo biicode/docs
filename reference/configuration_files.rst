@@ -22,8 +22,8 @@ These are the configuration files that will be explained in this section:
 All these configuration files are explained in detail in their corresponding subsections:
 
 .. toctree::
-	:maxdepth: 1
-
+   :maxdepth: 1
+   
    dependencies.bii: Configuring file dependencies <configuration_files/dependencies>
    filefilter.bii: Including and exluding cells in a hive <configuration_files/filefilter>
    mains.bii: Defining entry points in your code <configuration_files/mains>

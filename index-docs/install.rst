@@ -20,8 +20,8 @@ In this section you will learn how to download the biicode client and install it
 .. toctree::
    :maxdepth: 2
 
-   development_tools/desktop/desktop
-   development_tools/rpi/rpi
-   development_tools/arduino/arduino
+   ../install/development_tools/desktop/desktop
+   ../install/development_tools/rpi/rpi
+   ../install/development_tools/arduino/arduino
 
    

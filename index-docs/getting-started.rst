@@ -18,7 +18,7 @@ Before starting this guide, please `register <https://www.biicode.com/accounts/s
 .. toctree::
    :maxdepth: 1
 
-   start/helloworld
-   start/helloworld-rpi
+   ../start/helloworld
+   ../start/helloworld-rpi
 
 If you want to **try** some examples with **Arduino or Raspberry Pi**, check our tutorials :ref:`here<cross_platform_support>`.

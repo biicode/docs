@@ -52,7 +52,7 @@ How do I configure my settings to build executables with Visual Studio Compiler?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The tools biicode uses for building binaries and compiling the source code are specified into the settings.bii file, 
-located inside the bii folder of the hive. ::
+located inside the bii folder of the hive.
 
 An example of how to write the settings to build executables with Visual Studio 10: ::
 

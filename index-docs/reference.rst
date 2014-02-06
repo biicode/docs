@@ -8,8 +8,8 @@ Reference
 .. toctree::
    :maxdepth: 2
 
-   reference/layouts
-   reference/configuration_files
-   reference/cpp_build_files
-   reference/commands
-   reference/comments_tags
+   ../reference/layouts
+   ../reference/configuration_files
+   ../reference/cpp_build_files
+   ../reference/commands
+   ../reference/comments_tags

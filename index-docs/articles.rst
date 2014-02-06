@@ -7,4 +7,4 @@ In this section you will find articles about the fundamentals of biicode, design
    :maxdepth: 1
    :glob:
 
-   articles/raspberry_pi_christmas
+   ../articles/raspberry_pi_christmas

@@ -13,19 +13,19 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   intro-to-biicode
-   install/install
-   getting-started
-   ides
-   basic-usage
-   advanced-features
-   hardware
-   articles
-   examples   
-   reference
-   troubleshooting
-   upgrading
-   faqs
+   index-docs/intro-to-biicode
+   index-docs/install
+   index-docs/getting-started
+   index-docs/ides
+   index-docs/basic-usage
+   index-docs/advanced-features
+   index-docs/hardware
+   index-docs/articles
+   index-docs/examples   
+   index-docs/reference
+   index-docs/troubleshooting
+   index-docs/upgrading
+   index-docs/faqs
 
 
 
