@@ -12,7 +12,7 @@ You can do it this alternative way:
 	
 	$ sudo dpkg -i bii-ubuntu[ARCH]_[VERSION].deb
 
-For example, you want to install the new release biicode package *bii-ubuntu64_0_7_2.deb* in your Ubuntu 12.10 64 bits version, then you have to enter:
+For example, you want to install the new release biicode package, for example, *0.7.2* in your Ubuntu 12.10 64 bits version, then you have to enter:
 
 .. code-block:: bash
 	
