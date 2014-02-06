@@ -1,3 +1,5 @@
+.. _faqs_cpp:
+
 FAQs about C/C++
 ================
 

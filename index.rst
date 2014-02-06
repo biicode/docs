@@ -16,7 +16,6 @@ Contents:
    index-docs/intro-to-biicode
    index-docs/install
    index-docs/getting-started
-   index-docs/ides
    index-docs/basic-usage
    index-docs/advanced-features
    index-docs/hardware

@@ -22,7 +22,6 @@ Biicode gives you several advantages for your Raspberry Pi experience.
    rpi/wiringpi
    rpi/tutorials
    rpi/reuse
-   rpi/faqs
 
 
 You can use biicode directly in it but we suggest setting using the cross compilation feature built in biicode.

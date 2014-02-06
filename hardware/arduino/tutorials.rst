@@ -8,5 +8,5 @@ you can find many examples on the `Arduino official website. <http://arduino.cc/
    :maxdepth: 2
   
    tutorials/blink_without_delay
-   advance/serial_interface
-   advance/pid
+   tutorials/serial_interface
+   tutorials/pid

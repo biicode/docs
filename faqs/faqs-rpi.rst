@@ -1,3 +1,5 @@
+.. _faqs_rpi:
+
 FAQs about Raspberry Pi
 ========================
 
