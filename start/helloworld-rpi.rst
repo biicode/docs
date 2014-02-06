@@ -1,5 +1,5 @@
-"Hello World!" in Raspberry Pi Cross Compiling
------------------------------------------------
+"Hello World!"  C++ Raspberry Pi Cross Compiling
+--------------------------------------------------------
 
 This example shows how to build a simple "Hello World" application with biicode.
 
@@ -101,7 +101,7 @@ Just code!
 
 Our "hello" hive will have these files: ``hello.h``, ``hello.cpp`` and ``main.cpp``. Just create them into your hive ``hello/blocks/your_user_name/my_block`` and copy and paste the following code.
 
-This is the source code for your **hello block** in your **hello hive**:
+This is the source code for your **my_block block** in your **hello hive**:
 
 **hello.h**
 

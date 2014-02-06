@@ -114,20 +114,6 @@ Now, copy the code from your hello word tutorial into the block folder. You have
 	-- Generating done
 	-- Build files have been written to: [hive_build_folder]
 
-If you invoke the ``bii cpp:run`` command, you will see the following message:
-
-.. code-block:: bash
-	
-	$ bii cpp:run
-	invoking cmake  -G "Visual Studio 10" -Wno-dev ../blocks
-	-- Configuring done
-	-- Generating done
-	-- Build files have been written to: [hive_build_folder]
-	[!] You have configured an IDE setup
-	[!] Use VISUAL to build your project
-	[!] Use VISUAL to run your project
-
-Note: when you define any other IDE type, you have to compile and execute from the new IDE, as indicated in the last two lines of the output console.
 
 Finally, you are now ready to open your project with Visual Studio. Just double-click on the .sln file inside the build folder of your hive and a VS project will open with the folder structure that appears below. Your source code is located in the third folder:
 
