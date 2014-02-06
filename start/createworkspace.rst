@@ -25,4 +25,8 @@ needs to be done only once after the initial setup.
 
 As you can see, it's possible to set a default programming language as
 well as a default IDE. Now you have created the biicode workspace that
-will containt all your code!
+will contain all your code!
+
+
+If you haven't finished the Installation and Setup, keep going :ref:`here<installation>`.
+

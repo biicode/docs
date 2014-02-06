@@ -59,6 +59,7 @@ Some useful links:
 * `Sphinx documentation <http://sphinx-doc.org/>`_
 	
 	* `Brief introduction to reST concepts <http://sphinx-doc.org/rest.html>`_
+	* `Inline Markup <http://sphinx-doc.org/markup/inline.html>`_
 
 * The `reST documentation <http://docutils.sourceforge.net/rst.html>`_
 
