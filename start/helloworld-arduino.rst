@@ -54,7 +54,6 @@ This is the main project file.
 
 .. literalinclude:: helloworld-arduino-code/main.cpp
    :language: cpp
-   :linenos:
 
 **bii/mains.bii**
 
@@ -116,21 +115,18 @@ The following code use the method ``millis()`` and 2 control variables to count 
 
 .. literalinclude:: helloworld-arduino-code/blink.h
    :language: cpp
-   :linenos:
 
 
 **blink.cpp**
 
 .. literalinclude:: helloworld-arduino-code/blink.cpp
    :language: cpp
-   :linenos:
 
 **main.cpp**
 
 
 .. literalinclude:: helloworld-arduino-code/mainblink.cpp
    :language: cpp
-   :linenos:
 	
 
 Publish your code
