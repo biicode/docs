@@ -40,17 +40,17 @@ This is the source code for your **hello block** in your **hello hive**:
 
 **hello.h**
 
-.. literalinclude:: helloworld-cpp-code/hello.h
+.. literalinclude:: ../_static/code/cpp/hello-world/hello.h
    :language: cpp
 
 **hello.cpp**
 
-.. literalinclude:: helloworld-cpp-code/hello.cpp
+.. literalinclude:: ../_static/code/cpp/hello-world/hello.cpp
    :language: cpp
 
 **main.cpp**
 
-.. literalinclude:: helloworld-cpp-code/main.cpp
+.. literalinclude:: ../_static/code/cpp/hello-world/main.cpp
    :language: cpp
 
 Build and run
@@ -90,11 +90,11 @@ If your code has been published correctly —as it is the case in the previous e
 
 Here is an example of sbaker's user:
 
-.. image:: user_image/sbaker1.png
+.. image:: ../_static/img/sbaker1.png
 
 And this is his block's view:
 
-.. image:: user_image/sbaker2.png
+.. image:: ../_static/img/sbaker2.png
 
 
 Reuse it!
@@ -123,17 +123,17 @@ Add the following files to the folder ``hellopretty/blocks/your_user_name/my_pre
 
 **hellopretty.h**
 
-.. literalinclude:: helloworld-cpp-code/hellopretty.h
+.. literalinclude:: ../_static/code/cpp/hello-world/hellopretty.h
    :language: cpp
 
 **hellopretty.cpp**
 
-.. literalinclude:: helloworld-cpp-code/hellopretty.cpp
+.. literalinclude:: ../_static/code/cpp/hello-world/hellopretty.cpp
    :language: cpp
 
 **main.cpp**
 
-.. literalinclude:: helloworld-cpp-code/mainpretty.cpp
+.. literalinclude:: ../_static/code/cpp/hello-world/mainpretty.cpp
    :language: cpp
 
 In this case we are using of the ``hello()`` function, which is not explicitly defined in the current hive. If you tried to compile and run this program using the ``bii cpp:run`` command, you would see an error message:
@@ -183,7 +183,7 @@ Modifying your code and publishing the results is easy with biicode. Now we´ll 
 
 **hello.cpp**
 
-.. literalinclude:: helloworld-cpp-code/hellobiicode.cpp
+.. literalinclude:: ../_static/code/cpp/hello-world/hellobiicode.cpp
    :language: cpp
 
 Execute your block, to make sure everything works as expected:

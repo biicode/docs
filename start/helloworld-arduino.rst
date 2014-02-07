@@ -52,7 +52,7 @@ These files have the following content:
 
 This is the main project file.
 
-.. literalinclude:: helloworld-arduino-code/main.cpp
+.. literalinclude:: ../_static/code/arduino/hello-world/main.cpp
    :language: cpp
 
 **bii/mains.bii**
@@ -113,19 +113,19 @@ The following code use the method ``millis()`` and 2 control variables to count 
 
 **blink.h**
 
-.. literalinclude:: helloworld-arduino-code/blink.h
+.. literalinclude:: ../_static/code/arduino/hello-world/blink.h
    :language: cpp
 
 
 **blink.cpp**
 
-.. literalinclude:: helloworld-arduino-code/blink.cpp
+.. literalinclude:: ../_static/code/arduino/hello-world/blink.cpp
    :language: cpp
 
 **main.cpp**
 
 
-.. literalinclude:: helloworld-arduino-code/mainblink.cpp
+.. literalinclude:: ../_static/code/arduino/hello-world/mainblink.cpp
    :language: cpp
 	
 
