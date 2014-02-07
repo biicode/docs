@@ -40,6 +40,8 @@ Change the ``compilers path`` in the environment if you have installed the Ardui
 	* ``version``: 1.0.5
 
 Don't forget to check you have the right version of your SDK. You can see your version in the file ``[Arduino_SDK_path]/revisions.txt``.
+
+.. _arduino_default_settings_linux:
 		
 Update your default_settings.bii
 ---------------------------------

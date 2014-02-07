@@ -69,13 +69,19 @@ biicode use this file to define main.cpp like a main file. You have all the :ref
 Configure your settings
 --------------------------------------
 
-Configure the hive settings.bii file with the info about your board and serial port.
+Configure the hive settings.bii file with the info about your board and serial port. Here a Windows example:
 
 .. code-block:: text
 	:emphasize-lines: 2
 	
 	arduino:
 		board: {board: mega2560, no_autolibs: 'false', port: COM7, programmer: usbtinyisp}
+
+If you want to remember how configure your settings, review the section:
+
+	*	:ref:`Arduino settings in MacOS<arduino_default_settings_mac>`
+	*	:ref:`Arduino settings in Linux<arduino_default_settings_linux>`
+	*	:ref:`Arduino settings in Windows<arduino_default_settings_win>`
 		
 Build and Upload
 -------------------
