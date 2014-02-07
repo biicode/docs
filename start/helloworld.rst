@@ -93,11 +93,11 @@ If your code has been published correctly —as it is the case in the previous e
 
 Here is an example of sbaker's user:
 
-.. image:: ../_static/img/sbaker1.png
+.. image:: ../_static/img/sbaker1.PNG
 
 And this is his block's view:
 
-.. image:: ../_static/img/sbaker2.png
+.. image:: ../_static/img/sbaker2.PNG
 
 
 Reuse it!
