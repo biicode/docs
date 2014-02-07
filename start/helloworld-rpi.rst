@@ -121,7 +121,7 @@ This is the source code for your **my_block block** in your **hello hive**:
    :language: cpp
    :linenos:
 
-Download all the files: :download:`main.cpp <../_static/code/cpp/hello-world/main.cpp>` :download:`hello.cpp <../_static/code/cpp/hello-world/hello.cpp>` :download:`hello.h <../_static/code/cpp/hello-world/hello.h>`
+**Download all the files:** :download:`main.cpp <../_static/code/cpp/hello-world/main.cpp>` :download:`hello.cpp <../_static/code/cpp/hello-world/hello.cpp>` :download:`hello.h <../_static/code/cpp/hello-world/hello.h>`
    
 Build and send
 ^^^^^^^^^^^^^^
@@ -265,7 +265,7 @@ Add the following files to the folder ``hellopretty/blocks/your_user_name/my_pre
    :language: cpp
    :linenos:
 
-Download all the files: :download:`mainpretty.cpp <../_static/code/cpp/hello-world/mainpretty.cpp>` :download:`hellopretty.cpp <../_static/code/cpp/hello-world/hellopretty.cpp>` :download:`hellopretty.h <../_static/code/cpp/hello-world/hellopretty.h>`
+**Download all the files:** :download:`mainpretty.cpp <../_static/code/cpp/hello-world/mainpretty.cpp>` :download:`hellopretty.cpp <../_static/code/cpp/hello-world/hellopretty.cpp>` :download:`hellopretty.h <../_static/code/cpp/hello-world/hellopretty.h>`
 
 
 In this case we are using of the ``hello()`` function, which is not explicitly defined in the current hive. If you tried to compile and run this program using the ``bii cpp:run`` command, you would see an error message:
@@ -337,7 +337,7 @@ Modifying your code and publishing the results is easy with biicode. Now we'll c
    :language: cpp
    :linenos:
    
-Download the file: :download:`hello.cpp <../_static/code/cpp/hello-world/hellobiicode.cpp>`
+**Download the file:** :download:`hello.cpp <../_static/code/cpp/hello-world/hellobiicode.cpp>`
 
 Execute your block, to make sure everything works as expected:
 
