@@ -134,7 +134,7 @@ Add the following files to the folder ``hellopretty/blocks/your_user_name/my_pre
 .. literalinclude:: ../_static/code/cpp/hello-world/hellopretty.cpp
    :language: cpp
 
-**main.cpp**
+**mainpretty.cpp**
 
 .. literalinclude:: ../_static/code/cpp/hello-world/mainpretty.cpp
    :language: cpp
