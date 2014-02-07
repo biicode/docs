@@ -6,12 +6,16 @@ This example uses the famous library `googletest, a Google C++ Testing Framework
 Creating the hive
 -----------------
 
-Open your console and write the following command: ::
+Open your console and write the following command:
+
+.. code-block:: bash
 
 	$ cd ../biicode_workspace
 	$ bii new maths
 
-If the publication has been correctly created, you will see a message like the following: ::
+If the publication has been correctly created, you will see a message like the following:
+
+.. code-block:: bash
 
 	Created new Hive maths
 
@@ -24,74 +28,39 @@ We will start with a math example — the method to calculate the factorial of a
 
 **math_ext.h**
 
-.. code-block:: cpp
-	:linenos:
-	
-	int Factorial (int num);
+.. literalinclude:: ../_static/code/cpp/examples/google-test-tutorial/math_ext.h
+   :language: cpp
+   :linenos:
 
 **math_ext.cpp**
 
-.. code-block:: cpp
-	:linenos:
+.. literalinclude:: ../_static/code/cpp/examples/google-test-tutorial/math_ext.cpp
+   :language: cpp
+   :linenos:
 
-	#include "math_ext.h"
-	 
-	int Factorial (int num) {
-	  if (!num)return 1;
-	  if (num<0)return -1;
-	  return num*Factorial(num-1);
-	}
-
+**Download all the files:** :download:`math_ext.cpp <../_static/code/cpp/examples/google-test-tutorial/math_ext.cpp>` :download:`math_ext.h <../_static/code/cpp/examples/google-test-tutorial/math_ext.h>`
+   
+   
 Using Google Tests with biicode is very simple. You just have to include "google/gtest/gtest.h" which contains c files of gtest.
 
 To check that the factorial function runs fine, make a main.cpp like this:
 
 **main.cpp**
 
-.. code-block:: cpp
-	:linenos:
+.. literalinclude:: ../_static/code/cpp/examples/google-test-tutorial/main.cpp
+   :language: cpp
+   :linenos:
 
-	#include "math_ext.h"
-	#include "google/gtest/gtest.h"
-	#include "stdio.h"
-	 
-	// Tests Factorial()
-	 
-	// Tests factorial of negative numbers.
-	TEST(FactorialTest, Negative) {
-	    // This test is named "Negative", and belongs to the "FactorialTest"
-	    // test case  
-	    EXPECT_EQ(-1, Factorial(-5));
-	    EXPECT_EQ(-1, Factorial(-1));
-	    EXPECT_LT(Factorial(-10), 0);
-	}
-	 
-	// Tests factorial of 0.
-	TEST(FactorialTest, Zero) {
-	    EXPECT_EQ(1, Factorial(0));
-	}
-	 
-	// Tests factorial of positive numbers.
-	TEST(FactorialTest, Positive) {
-	    EXPECT_EQ(1, Factorial(1));
-	    EXPECT_EQ(2, Factorial(2));
-	    EXPECT_EQ(6, Factorial(3));
-	    EXPECT_EQ(40320, Factorial(8));
-	}
-	 
-	int main(int argc, char **argv) {
-	  printf("Running main() from sample1\n");
-	  testing::InitGoogleTest(&argc, argv);
-	  return RUN_ALL_TESTS();
-	}
 
-Put every files into the folder ~/maths/blocks/your_user_name/maths/ and  execute them: ::
+**Download the file:** :download:`main.cpp <../_static/code/cpp/examples/google-test-tutorial/main.cpp>` 
+   
+Put every files into the folder ~/maths/blocks/your_user_name/maths/ and  execute them:
 
+.. code-block:: bash
+	
 	$ bii work
 	Saving files on disk
 	Work done!
-
-::
 
 	$ bii find
 	Finding missing dependencies in server
@@ -106,7 +75,9 @@ Put every files into the folder ~/maths/blocks/your_user_name/maths/ and  execut
 	    google/google/gtest/master:#0
 	All dependencies resolved
 
-To run your tests: ::
+To run your tests:
+
+.. code-block:: bash
 
 	$ bii cpp:run main
 	Running main() from sample1
