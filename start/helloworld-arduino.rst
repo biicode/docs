@@ -55,6 +55,9 @@ This is the main project file.
 .. literalinclude:: ../_static/code/arduino/hello-world/main.cpp
    :language: cpp
 
+Download the file: :download:`main.cpp <../_static/code/arduino/hello-world/main.cpp>` 
+
+
 **bii/mains.bii**
 
 biicode use this file to define main.cpp like a main file. You have all the :ref:`info about mains.bii here <mains_bii>`.
@@ -122,12 +125,14 @@ The following code use the method ``millis()`` and 2 control variables to count 
 .. literalinclude:: ../_static/code/arduino/hello-world/blink.cpp
    :language: cpp
 
-**main.cpp**
+**mainblink.cpp**
 
 
 .. literalinclude:: ../_static/code/arduino/hello-world/mainblink.cpp
    :language: cpp
 	
+Download all the files: :download:`mainblink.cpp <../_static/code/arduino/hello-world/mainblink.cpp>` :download:`blink.cpp <../_static/code/arduino/hello-world/blink.cpp>` :download:`blink.h <../_static/code/arduino/hello-world/blink.h>`
+
 
 Publish your code
 ----------------------------
