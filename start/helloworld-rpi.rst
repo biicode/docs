@@ -121,6 +121,8 @@ This is the source code for your **my_block block** in your **hello hive**:
    :language: cpp
    :linenos:
 
+You can :download:`download this main.cpp <../_static/code/cpp/hello-world/main.cpp>`.
+   
 Build and send
 ^^^^^^^^^^^^^^
 
