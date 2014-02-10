@@ -165,8 +165,12 @@ Reuse it!
 Reusing your ``Blink`` class in other projects or blocks is straightforward. All you need to do is to include and do a ``bii find``. 
 You can use the Blink class wherever you want in your own code, this is only an example.
 
+**main_reuse.cpp**
+
 .. literalinclude:: ../_static/code/arduino/hello-world/main_reuse.cpp
    :language: cpp	
+
+**Download the file:** :download:`main_reuse.cpp <../_static/code/arduino/hello-world/main_reuse.cpp>`
 
 
 Assuming that your user name is *your_user_name* and the block where you published the code was named *your_block*, you could navigate to http://www.biicode.com, go to your profile and see your code there.
