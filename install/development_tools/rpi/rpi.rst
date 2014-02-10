@@ -1,3 +1,5 @@
+.. _rpi_installation:
+
 Raspberry PI
 =============
 

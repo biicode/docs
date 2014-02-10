@@ -1,9 +1,4 @@
 #include "blink.h"
-#if ARDUINO >= 100
-#include "Arduino.h"
-#else
-#include "WProgram.h"
-#endif
 
 // TODO: Use a more elegant solution than global variables!
 int ledState = LOW;             // ledState used to set the LED

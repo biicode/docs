@@ -1,4 +1,4 @@
-.. _arduinows:
+.. _arduino_installation:
 
 Arduino
 ========

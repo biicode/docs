@@ -20,7 +20,7 @@ This section summarizes the **Arduino commands available to be used with the bii
 	  arduino:wizard  Create a default class with constructor/destructor and a main.cpp or main.c
 
 
-**Note**: You need to have arduino :ref:`correctly set up <arduinows>`.
+**Note**: You need to have arduino :ref:`correctly set up <arduino_installation>`.
 
 
 ``bii arduino:configure``: Configure your project

@@ -1,5 +1,5 @@
-Linux
-=====
+Linux (cross compiling)
+========================
 
 How to configure your linux for cross compiling 
 -----------------------------------------------

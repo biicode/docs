@@ -1,4 +1,4 @@
-.. _dev_tools_installation:
+.. _desktop_installation:
 
 Desktop C++
 ===========

@@ -17,7 +17,7 @@ This section summarizes the **C/C++ commands available to be used with the biico
 	  cpp:wizard      Create a default class with constructor/destructor and a main.cpp or main.c
 
 
-**Note**: You need to have a cpp compiler :ref:`installed and configured <dev_tools_installation>`.
+**Note**: You need to have a cpp compiler :ref:`installed and configured <desktop_installation>`.
 
 ``bii cpp:configure``: Configure your project
 ----------------------------------------------

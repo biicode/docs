@@ -2,7 +2,7 @@
 =============================
 ``IMPORTANT:`` You can only have one language for Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
 
-Remember that you need to :ref:`configure your biicode workspace <arduinows>` with the Arduino SDK.
+Remember that you need to :ref:`configure your biicode workspace <arduino_installation>` with the Arduino SDK.
 
 Create your hive
 -------------------
@@ -160,5 +160,68 @@ Once your have written, compiled and successfully executed some code, surely you
 If your code has been published correctly —as it is the case in the previous example—, you can navigate it here: ``www.biicode.com/user_name``
 
 Reuse it!
----------------
-TODO:
+---------
+
+Reusing your ``Blink_lib`` class in other projects or blocks is straightforward. All you need to do is to include and do a *find*. 
+You can use the Blink_lib class wherever you want in your own code, this is only an example.
+
+.. code-block:: cpp
+	
+	//blink.cpp
+	#if ARDUINO >= 100
+	  #include "Arduino.h"
+	#else
+	  #include "WProgram.h"
+	#endif
+
+	#include "your_user_name/your_block/blink_lib.h"
+
+	void setup() {                
+		blink_setup(); // Setup for blinking
+	}
+
+	void loop() {
+		blink(2000); // Blink for a two seconds
+	}
+
+Assuming that your user name is *your_user_name* and the block where you published the code was named *your_block*, you could navigate to http://www.biicode.com, go to your profile and see your code there.
+
+Once you have the code, invoke ``find`` to resolve external dependencies, so the Blink_lib class is retrieved. Then, build and upload in your Arduino as usual. Not forget check your Arduino settings to upload correctly:
+
+.. code-block:: bash
+
+	$ bii find
+	...
+	$ bii arduino:build
+	...
+	$ bii arduino:upload
+
+	Uploading...[ 90%] Built target uno_CORE
+	[100%] Built target your_user_name_my_block_blink
+	Scanning dependencies of target [USER]_my_block_blink-upload
+
+	avrdude.exe: AVR device initialized and ready to accept instructions
+
+	Reading | ################################################## | 100% 0.00s
+
+	avrdude.exe: Device signature = 0x1e950f
+	avrdude.exe: reading input file "[USER]_my_block_blink.hex"
+	avrdude.exe: input file [USER]_my_block_blink.hex auto detected as Intel Hex
+	avrdude.exe: writing flash (1116 bytes):
+
+	Writing | ################################################## | 100% 0.18s
+
+	avrdude.exe: 1116 bytes of flash written
+	avrdude.exe: reading input file "[USER]_my_block_blink.eep"
+	avrdude.exe: writing eeprom (0 bytes):
+
+	Writing | ################################################## | 100% 0.00s
+
+	avrdude.exe: 0 bytes of eeprom written
+
+	avrdude.exe: safemode: Fuses OK
+
+	avrdude.exe done.  Thank you.
+
+	[100%] Built target [USER]_my_block_blink-upload
+
