@@ -61,7 +61,11 @@ This is the main project file.
    :language: cpp
    :linenos:
 
+**Download the file**
 
+Single files: :download:`main_arduino.cpp <../_static/code/arduino/hello-world/main_arduino.cpp>`
+
+	
 **bii/mains.bii**
 
 biicode uses this file to define main_arduino.cpp like a main file. You have all the :ref:`info about mains.bii here <mains_bii>`.
@@ -69,7 +73,8 @@ biicode uses this file to define main_arduino.cpp like a main file. You have all
 .. code-block:: text
 
 	main_arduino.cpp
-	
+
+
 Configure your settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -142,8 +147,15 @@ The following code use the method ``millis()`` and 2 control variables to count 
 .. literalinclude:: ../_static/code/arduino/hello-world/mainblink.cpp
    :language: cpp
    :linenos:
-	
 
+**Download all the files**
+	
+ZIP file: :download:`blink.zip <../_static/code/arduino/hello-world/blink.zip>`
+	
+Single files: :download:`mainblink.cpp <../_static/code/arduino/hello-world/mainblink.cpp>` :download:`blink.cpp <../_static/code/arduino/hello-world/blink.cpp>` :download:`blink.h <../_static/code/arduino/hello-world/blink.h>`
+
+
+	
 Publish your code and reuse it
 ---------------------------------
 
@@ -166,13 +178,18 @@ If your code has been published correctly —as it is the case in the previous e
 Reuse it!
 ^^^^^^^^^^
 
-Reusing your ``Blink`` class in other projects or blocks is straightforward. Create a new block or a new hive and add the following code to it.
+Reusing your ``Blink`` class in other projects or blocks is straightforward. Create a new hive, with a default firmware and modify it with this code.
 
 **main_reuse.cpp**
 
 .. literalinclude:: ../_static/code/arduino/hello-world/main_reuse.cpp
    :language: cpp
-   :linenos:   
+   :linenos:  
+
+**Download the file**
+
+Single files: :download:`main_reuse.cpp <../_static/code/arduino/hello-world/main_reuse.cpp>`
+
 
 **Note**: don't forget to define main_reuse.cpp like a main file! :ref:`More info about mains.bii here <mains_bii>`.
 
@@ -217,35 +234,3 @@ Once you have the code, invoke ``find`` to resolve external dependencies, so the
 
 	[100%] Built target [USER]_my_block_blink-upload
 
-
-	
-Downloads
-----------
-
-Here you can download the complete examples above in *.zip* format (each one include the folder *bii/mains.bii*), or the single files. Only copy the files to your block.
-
-**Example main_arduino**
-
-ZIP file:
-	*	:download:`main_arduino.zip <../_static/code/arduino/hello-world/main_arduino.zip>`
-	
-Single files:
-	*	:download:`main_arduino.cpp <../_static/code/arduino/hello-world/main_arduino.cpp>` 
-	
-**Example blink**
-  
-ZIP file:
-	*	:download:`blink.zip <../_static/code/arduino/hello-world/blink.zip>`
-	
-Single files:
-	*	:download:`mainblink.cpp <../_static/code/arduino/hello-world/mainblink.cpp>`
-	*	:download:`blink.cpp <../_static/code/arduino/hello-world/blink.cpp>`
-	*	:download:`blink.h <../_static/code/arduino/hello-world/blink.h>`
-
-**Example main to reuse**
-
-ZIP file:
-	*	:download:`main_reuse.zip <../_static/code/arduino/hello-world/main_reuse.zip>`
-	
-Single files:
-	*	:download:`main_reuse.cpp <../_static/code/arduino/hello-world/main_reuse.cpp>`
