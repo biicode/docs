@@ -1,11 +1,16 @@
-"Hello World!" in Arduino
-=============================
+"Blink" in Arduino
+===================
+This example shows how to build a simple *blink* application with biicode.
+
 ``IMPORTANT:`` You can only have one language for Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
 
 Remember that you need to :ref:`configure your biicode workspace <arduino_installation>` with the Arduino SDK.
 
-Create your hive
--------------------
+Start with an Arduino example
+-------------------------------
+
+Create a new hive
+^^^^^^^^^^^^^^^^^^
 
 Creating a new hive with the ``bii new`` command.
 
@@ -48,26 +53,25 @@ With this command you create the next tree:
 
 These files have the following content:
 
-**main.cpp**
+**main_arduino.cpp**
 
 This is the main project file.
 
-.. literalinclude:: ../_static/code/arduino/hello-world/main.cpp
+.. literalinclude:: ../_static/code/arduino/hello-world/main_arduino.cpp
    :language: cpp
-
-**Download the file:** :download:`main.cpp <../_static/code/arduino/hello-world/main.cpp>` 
+   :linenos:
 
 
 **bii/mains.bii**
 
-biicode use this file to define main.cpp like a main file. You have all the :ref:`info about mains.bii here <mains_bii>`.
+biicode uses this file to define main_arduino.cpp like a main file. You have all the :ref:`info about mains.bii here <mains_bii>`.
 
 .. code-block:: text
 
-	main.cpp
+	main_arduino.cpp
 	
 Configure your settings
---------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Configure the hive settings.bii file with the info about your board and serial port. Here a Windows example:
 
@@ -84,7 +88,7 @@ If you want to remember how configure your settings, review the section:
 	*	:ref:`Arduino settings in Windows<arduino_default_settings_win>`
 		
 Build and Upload
--------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Now, you can compile your firmware and upload it in your Arduino. The command ``build`` compiles your firmware, and ``upload`` sends it to your Arduino. Enter into your arduino hive folder and execute:
 
@@ -114,7 +118,7 @@ Now, you can compile your firmware and upload it in your Arduino. The command ``
 	
 	
 Creating reusable code
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 There is a problem with the above example. The use of delay blocks the execution flow of arduino, so if you want, for example, to control a motor, process serial port inputs, or whatever other work you have to do, you **cannot use** the previous blink version, as it blocks execution.
 The following code use the method ``millis()`` and 2 control variables to count the time in a period of time. when this time are equal to 1000 the status of the led change.
@@ -124,24 +128,24 @@ The following code use the method ``millis()`` and 2 control variables to count 
 
 .. literalinclude:: ../_static/code/arduino/hello-world/blink.h
    :language: cpp
+   :linenos:
 
 
 **blink.cpp**
 
 .. literalinclude:: ../_static/code/arduino/hello-world/blink.cpp
    :language: cpp
+   :linenos:
 
 **mainblink.cpp**
 
-
 .. literalinclude:: ../_static/code/arduino/hello-world/mainblink.cpp
    :language: cpp
+   :linenos:
 	
-**Download all the files:** :download:`mainblink.cpp <../_static/code/arduino/hello-world/mainblink.cpp>` :download:`blink.cpp <../_static/code/arduino/hello-world/blink.cpp>` :download:`blink.h <../_static/code/arduino/hello-world/blink.h>`
 
-
-Publish your code
-----------------------------
+Publish your code and reuse it
+---------------------------------
 
 Once your have written, compiled and successfully executed some code, surely you are willing to share it with the biicode community! Uploading your code to biicode is really simple using the ``bii publish`` command. You will be requested to provide a **tag** and a **message**. Valid tags are ``STABLE``, ``ALPHA``, ``BETA``, and ``DEV``. They provide information about the development state of your hive. The message is any information describing your publication.
 
@@ -160,18 +164,17 @@ Once your have written, compiled and successfully executed some code, surely you
 If your code has been published correctly —as it is the case in the previous example—, you can navigate it here: ``www.biicode.com/user_name``
 
 Reuse it!
----------
+^^^^^^^^^^
 
-Reusing your ``Blink`` class in other projects or blocks is straightforward. All you need to do is to include and do a ``bii find``. 
-You can use the Blink class wherever you want in your own code, this is only an example.
+Reusing your ``Blink`` class in other projects or blocks is straightforward. Create a new block or a new hive and add the following code to it.
 
 **main_reuse.cpp**
 
 .. literalinclude:: ../_static/code/arduino/hello-world/main_reuse.cpp
-   :language: cpp	
+   :language: cpp
+   :linenos:   
 
-**Download the file:** :download:`main_reuse.cpp <../_static/code/arduino/hello-world/main_reuse.cpp>`
-
+**Note**: don't forget to define main_reuse.cpp like a main file! :ref:`More info about mains.bii here <mains_bii>`.
 
 Assuming that your user name is *your_user_name* and the block where you published the code was named *your_block*, you could navigate to http://www.biicode.com, go to your profile and see your code there.
 
@@ -214,3 +217,35 @@ Once you have the code, invoke ``find`` to resolve external dependencies, so the
 
 	[100%] Built target [USER]_my_block_blink-upload
 
+
+	
+Downloads
+----------
+
+Here you can download the complete examples above in *.zip* format (each one include the folder *bii/mains.bii*), or the single files. Only copy the files to your block.
+
+**Example main_arduino**
+
+ZIP file:
+	*	:download:`main_arduino.zip <../_static/code/arduino/hello-world/main_arduino.zip>`
+	
+Single files:
+	*	:download:`main_arduino.cpp <../_static/code/arduino/hello-world/main_arduino.cpp>` 
+	
+**Example blink**
+  
+ZIP file:
+	*	:download:`blink.zip <../_static/code/arduino/hello-world/blink.zip>`
+	
+Single files:
+	*	:download:`mainblink.cpp <../_static/code/arduino/hello-world/mainblink.cpp>`
+	*	:download:`blink.cpp <../_static/code/arduino/hello-world/blink.cpp>`
+	*	:download:`blink.h <../_static/code/arduino/hello-world/blink.h>`
+
+**Example main to reuse**
+
+ZIP file:
+	*	:download:`main_reuse.zip <../_static/code/arduino/hello-world/main_reuse.zip>`
+	
+Single files:
+	*	:download:`main_reuse.cpp <../_static/code/arduino/hello-world/main_reuse.cpp>`

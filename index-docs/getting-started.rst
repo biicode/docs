@@ -1,7 +1,7 @@
 .. _gettingstarted:
 
 Getting started
-============================
+=================
 
 The biicode getting started guide will walk you through your first
 biicode project, and teach you the basic concepts of biicode as well
@@ -16,11 +16,11 @@ Before starting this guide, please `register <https://www.biicode.com/accounts/s
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   ../start/helloworld
-   ../start/helloworld-rpi
-   ../start/helloworld-arduino
+   ../getting-started/helloworld
+   ../getting-started/helloworld-rpi
+   ../getting-started/helloworld-arduino
 
 
 If you want to **try** some examples with **Arduino or Raspberry Pi**, check our tutorials :ref:`here<cross_platform_support>`.

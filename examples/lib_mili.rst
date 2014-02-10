@@ -7,14 +7,16 @@ You can find here the `MiLi biicode library site <https://www.biicode.com/daniel
 
 The following example shows a simple use for doing type-safe bitwise operations. You can find this and other examples in `the biicode MiLi samples block <https://www.biicode.com/danielgutson/blocks/danielgutson/milisamples/branches/master>`_ .
 
-.. literalinclude:: ../_static/code/cpp/examples/mili/main.cpp
+**main_mili.cpp**
+
+.. literalinclude:: ../_static/code/cpp/examples/mili/main_mili.cpp
    :language: cpp
    :linenos:
 
-**Download the file:** :download:`main.cpp <../_static/code/cpp/examples/mili/main.cpp>` 
+**Download the file:** :download:`main_mili.cpp <../_static/code/cpp/examples/mili/main_mili.cpp>` 
 
 
-First, you need to resolve all the dependencies of this ``main.cpp``
+First, you need to resolve all the dependencies of this ``main_mili.cpp``
 	
 .. code-block:: bash
 	

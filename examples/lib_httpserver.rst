@@ -33,11 +33,11 @@ The code
 
 These are the files you will need in your block to have your HTTP Server up and running:
 
-**main.cpp**
+**main_server.cpp**
 
 This file just instanciates the server and runs it with simple configuration parameters.
 
-.. literalinclude:: ../_static/code/cpp/examples/httpserver/main.cpp
+.. literalinclude:: ../_static/code/cpp/examples/httpserver/main_server.cpp
    :language: cpp
    :linenos:
         
@@ -60,7 +60,7 @@ Defines your HttpMiddleware subclass.
    :linenos:
 
    
-**Download all the files:** :download:`main.cpp <../_static/code/cpp/examples/httpserver/main.cpp>` :download:`my_http_middle_ware.h <../_static/code/cpp/examples/httpserver/my_http_middle_ware.h>` :download:`my_http_middle_ware.cpp <../_static/code/cpp/examples/httpserver/my_http_middle_ware.cpp>`
+**Download all the files:** :download:`main_server.cpp <../_static/code/cpp/examples/httpserver/main_server.cpp>` :download:`my_http_middle_ware.h <../_static/code/cpp/examples/httpserver/my_http_middle_ware.h>` :download:`my_http_middle_ware.cpp <../_static/code/cpp/examples/httpserver/my_http_middle_ware.cpp>`
  
 
 Supported Operating Systems

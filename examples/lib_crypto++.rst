@@ -7,10 +7,12 @@ You can find the biicode library site following this link.
 
 This first basic example shows hot to encrypt a message with SHA1 code.
 
-.. literalinclude:: ../_static/code/cpp/examples/crypto/main.cpp
+**main_crypto**
+
+.. literalinclude:: ../_static/code/cpp/examples/crypto/main_crypto.cpp
    :language: cpp
    :linenos:
 
 
-**Download the file:** :download:`main.cpp <../_static/code/cpp/examples/crypto/main.cpp>` 
+**Download the file:** :download:`main_crypto.cpp <../_static/code/cpp/examples/crypto/main_crypto.cpp>` 
   

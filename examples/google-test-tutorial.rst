@@ -43,16 +43,16 @@ We will start with a math example — the method to calculate the factorial of a
    
 Using Google Tests with biicode is very simple. You just have to include "google/gtest/gtest.h" which contains c files of gtest.
 
-To check that the factorial function runs fine, make a main.cpp like this:
+To check that the factorial function runs fine, make a main_test.cpp like this:
 
-**main.cpp**
+**main_test.cpp**
 
-.. literalinclude:: ../_static/code/cpp/examples/google-test-tutorial/main.cpp
+.. literalinclude:: ../_static/code/cpp/examples/google-test-tutorial/main_test.cpp
    :language: cpp
    :linenos:
 
 
-**Download the file:** :download:`main.cpp <../_static/code/cpp/examples/google-test-tutorial/main.cpp>` 
+**Download the file:** :download:`main_test.cpp <../_static/code/cpp/examples/google-test-tutorial/main_test.cpp>` 
    
 Put every files into the folder ~/maths/blocks/your_user_name/maths/ and  execute them:
 

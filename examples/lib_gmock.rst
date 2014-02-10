@@ -7,14 +7,16 @@ You can find here the `Gmock biicode library site <https://www.biicode.com/googl
 
 The following example shows a simple use of gmock test. You can find this and other examples in `the biicode gmock samples block <https://www.biicode.com/google/blocks/google/gmocksamples/branches/master>`_ .
 
-.. literalinclude:: ../_static/code/cpp/examples/gmock/main.cpp
+**main_gmock**
+
+.. literalinclude:: ../_static/code/cpp/examples/gmock/main_gmock.cpp
    :language: cpp
    :linenos:
 
 
-**Download the file:** :download:`main.cpp <../_static/code/cpp/examples/gmock/main.cpp>` 
+**Download the file:** :download:`main_gmock.cpp <../_static/code/cpp/examples/gmock/main_gmock.cpp>` 
 	
-First, you need to resolve all the dependencies of this *main.cpp*
+First, you need to resolve all the dependencies of this *main_gmock.cpp*
 	
 .. code-block:: bash
 	
