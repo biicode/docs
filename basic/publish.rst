@@ -18,7 +18,7 @@ Every publish also has a publish message. It is somewhat similar to a commit mes
 
 Publishing new versions of your code
 ------------------------------------
-You can publish new versions of your code from the same hive you were working as you want. For each publication you can define its own tag and message. Nothing special has to be done. The picture is different if you published your block and you want to open the published version in a new hive. This can be currently done by creating a new empty hive, then doing a ``bii open`` of such block:
+You can publish new versions of your code from the same hive you were working as you want. For each publication you can define its own tag and message. Nothing special has to be done. The picture is different if you published your block and you want to open the published version in a new hive. This can be currently done by creating a new empty hive, then doing a :ref:`bii open<bii_open_command>` of such block:
 
  .. code-block:: bash
 

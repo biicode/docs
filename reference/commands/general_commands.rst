@@ -85,12 +85,14 @@ The retrieved files are copied on your file system, under the ``deps`` folder of
 
 .. _bii_open_command:
 
-``bii open``: Reusing the code
+``bii open``: Editing code
 ------------------------------
 
-This command is tipically used when **you decide to do some modifications to one of your dependency blocks** (those blocks contained in the ``deps`` folder of your hive). Using this command the block is moved to the ``blocks`` folder within your hive, and their cells become editable source files that can be modified by you and eventually published in a new version of the same branch (if you have writting permissions for that branch) or in a new branch (using the :ref:`publish command<bii_publish_command>`).
+This command allows you to edit a published block.
+You can use this command to edit **one of your dependency blocks** or any block you have seen on the web and you want to edit.
+When you invoke this command the block is placed into the ``blocks`` folder within your hive, and their cells become editable source files that can be modified by you and eventually published in a new version of the same branch (if you have writting permissions for that branch) or in a new branch (using the :ref:`publish command<bii_publish_command>`).
 
-There are two ways of retrieving a block created by you or other biicode user to perform some modifications:
+There are different ways of retrieving a block created by you or other biicode user to perform some modifications:
 
 That block is a dependency of your code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -108,7 +110,12 @@ Then, the biicode client copies martha's full block to your ``blocks`` hive fold
 You have an empty hive
 ^^^^^^^^^^^^^^^^^^^^^^
 
-We know that whenever we create a new hive, a default new block is created for us with the name provided to the assistant. If we manually remove that block from the ``blocks`` folder of the hive, we can directly call the ``bii open <block_name>`` command and retrieve any published block from the Biicode servers. The code is then copied to the ``blocks`` folder of the **hive** we are working on, and we can modify it as any other source block.
+We can directly call the ``bii open <block_name>`` command and retrieve any published block from the Biicode servers. The code is then copied to the ``blocks`` folder of the **hive** we are working on, and we can modify it as any other source block.
+
+Your hive is not empty
+^^^^^^^^^^^^^^^^^^^^^^
+
+This case is very similar to the empty hive one except it may alter your current dependencies. If you already have edition blocks in your hive and you open another one that is not related to your other blocks, its dependencies will prevail over your existing dependencies. This means your dependencies can be upgraded or downgraded to match the ones in the block you are opening. If you want to enforce specic versions you can always do it editing your :ref:`policies file<policies>`.
 
 .. _bii_merge_command:
 
