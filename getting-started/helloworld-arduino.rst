@@ -31,10 +31,10 @@ Creating a new hive with the ``bii new`` command.
 
 	File main.cpp has been created in [HIVE_PATH]/blocks/[USER]/arduino_block/main.cpp
 
-With this command you create the next tree:
+With this command you create the next one:
 
 .. code-block:: text
-	:emphasize-lines: 9, 10, 11, 12
+	:emphasize-lines: 9
 
 	|-- arduino_hive
 	|    +-- bii
@@ -45,8 +45,6 @@ With this command you create the next tree:
 	|         +-- my_user_name
 	|         |     +-- arduino_block
 	|         |     |		|-- main.cpp
-	|         |     |		|-- bii
-	|         |     |		|	|-- mains.bii
 	
 
 
@@ -57,10 +55,15 @@ These files have the following content:
 
 This is the main project file.
 
+biicode uses the ``// bii:#entry_point()`` comment line to define main_arduino.cpp like a main file. It is important that you **add this comment in all** the files you want to be **Arduino main files**.
+
 .. literalinclude:: ../_static/code/arduino/hello-world/main_arduino.cpp
    :language: cpp
    :linenos:
+   :emphasize-lines: 17
 
+``// bii:#entry_point()``: biicode uses this line to define main_arduino.cpp like a main file.
+   
 **Download the file**
 
 .. |main_arduino| replace:: :download:`main_arduino.cpp <../_static/code/arduino/hello-world/main_arduino.cpp>`
@@ -69,17 +72,7 @@ This is the main project file.
 | ZIP        | Single files   |
 +============+================+
 |      -     | |main_arduino| |
-|            |                |
 +------------+----------------+
-	
-**bii/mains.bii**
-
-biicode uses this file to define main_arduino.cpp like a main file. You have all the :ref:`info about mains.bii here <mains_bii>`.
-
-.. code-block:: text
-
-	main_arduino.cpp
-
 
 Configure your settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -211,7 +204,6 @@ Reusing your ``Blink`` class in other projects or blocks is straightforward. Cre
 | ZIP        | Single files   |
 +============+================+
 |      -     | |main_reuse|   |
-|            |                |
 +------------+----------------+
 
 
