@@ -73,10 +73,18 @@ just install the dependencies manually like any other package:
 Download the Raspberry Pi cross-compiler tools
 ----------------------------------------------
 
-``Important:``  
-*If you wish that biicode download and configure this for you, go to the next section:* :ref:`How to configure your biicode workspace <config_raspberry_ws>`
+If you wish that biicode download and configure this for you, just need to use the ``setup:rpi`` command into your workspace folder. (you might need to install git with ``$ sudo apt-get install git``).
 
-Now, clone the Raspberry Pi repository with linux cross-compilers from Github (you might need to install git with ``$ sudo apt-get install git``).
+.. code-block:: bash
+
+	$ sudo apt-get install git-core
+	
+	...
+	
+	$ 
+
+
+If you prefer to install manually the cross compiler, clone the Raspberry Pi repository with linux cross-compilers from Github (you might need to install git with ``$ sudo apt-get install git``).
 
 .. code-block:: bash
 
