@@ -2,6 +2,15 @@
 
 Changelog
 =========
+v. 0.9
+--------------------
+*(13-02-14)*
+
+* minor bugfixes
+* improved :ref:`open command<bii_open_command>`
+* improved dependencies graph
+* improved depencies command output
+
 
 v. 0.8
 --------------------
