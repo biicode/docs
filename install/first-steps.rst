@@ -8,6 +8,7 @@ These are the right steps to start using biicode without problems.
 -------------
 Sign up in our biicode website for an account. It will take you less than 1 minute. Click `here to sign up <https://www.biicode.com/accounts/signup>`_.
 
+.. _download_client_binaries:
 
 2. Download the client binaries
 ----------------------------------
