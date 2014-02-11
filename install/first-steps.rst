@@ -17,10 +17,10 @@ For more information, check our evolution in the :ref:`changelog <changelog>`.
 
 If you are a biicode user, you may have to :ref:`upgrade<upgrading>`.
 
-Ubuntu users
-^^^^^^^^^^^^
+Alternative installation process for Ubuntu users
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can use *apt-get* adding biicode APT repository:
+You can use *apt-get* for install biicode using our APT repository:
 
 Quick install: 
 
