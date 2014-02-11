@@ -63,8 +63,14 @@ This is the main project file.
 
 **Download the file**
 
-Single files: :download:`main_arduino.cpp <../_static/code/arduino/hello-world/main_arduino.cpp>`
+.. |main_arduino| replace:: :download:`main_arduino.cpp <../_static/code/arduino/hello-world/main_arduino.cpp>`
 
++------------+----------------+
+| ZIP        | Single files   |
++============+================+
+|      -     | |main_arduino| |
+|            |                |
++------------+----------------+
 	
 **bii/mains.bii**
 
@@ -150,9 +156,20 @@ The following code use the method ``millis()`` and 2 control variables to count 
 
 **Download all the files**
 	
-ZIP file: :download:`blink.zip <../_static/code/arduino/hello-world/blink.zip>`
-	
-Single files: :download:`mainblink.cpp <../_static/code/arduino/hello-world/mainblink.cpp>` :download:`blink.cpp <../_static/code/arduino/hello-world/blink.cpp>` :download:`blink.h <../_static/code/arduino/hello-world/blink.h>`
+.. |blink.zip| replace:: :download:`blink.zip <../_static/code/arduino/hello-world/blink.zip>`
+.. |mainblink.cpp| replace:: :download:`mainblink.cpp <../_static/code/arduino/hello-world/mainblink.cpp>`
+.. |blink.cpp| replace:: :download:`blink.cpp <../_static/code/arduino/hello-world/blink.cpp>`
+.. |blink.h| replace:: :download:`blink.h <../_static/code/arduino/hello-world/blink.h>`
+
++------------+----------------+
+| ZIP        | Single files   |
++============+================+
+|            | |mainblink.cpp||
+|            +----------------+
+| |blink.zip|| |blink.cpp|    |
+|            +----------------+
+|            | |blink.h|      |
++------------+----------------+
 
 
 	
@@ -188,7 +205,15 @@ Reusing your ``Blink`` class in other projects or blocks is straightforward. Cre
 
 **Download the file**
 
-Single files: :download:`main_reuse.cpp <../_static/code/arduino/hello-world/main_reuse.cpp>`
+.. |main_reuse| replace:: :download:`main_reuse.cpp <../_static/code/arduino/hello-world/main_reuse.cpp>`
+
++------------+----------------+
+| ZIP        | Single files   |
++============+================+
+|      -     | |main_reuse|   |
+|            |                |
++------------+----------------+
+
 
 
 **Note**: don't forget to define main_reuse.cpp like a main file! :ref:`More info about mains.bii here <mains_bii>`.
