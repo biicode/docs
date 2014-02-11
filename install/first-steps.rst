@@ -2,7 +2,7 @@
 
 First Steps
 ===========
-These are the right steps to start using biicode without problems.
+
 
 1. Sign up
 -------------
