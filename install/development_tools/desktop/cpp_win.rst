@@ -15,7 +15,7 @@ C++ Windows
 .. image:: cpp_image/image_path.png
 
 Check installation
-==================
+------------------
 
 Open a terminal and run the following commands. If your output looks like these, the tools are successfully installed.
 
