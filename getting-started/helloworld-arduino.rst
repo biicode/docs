@@ -62,16 +62,15 @@ This is the main project file.
    :language: cpp
    :linenos:
 
-**Download the file**
+**Downloads**
 
 .. |main_arduino| replace:: :download:`main_arduino.cpp <../_static/code/arduino/hello-world/main_arduino.cpp>`
 
-+------------+----------------+
-| ZIP        | Single files   |
-+============+================+
-|      -     | |main_arduino| |
-|            |                |
-+------------+----------------+
++------------------+
+| Single file      |
++==================+
+| |main_arduino|   |
++------------------+
 	
 **bii/mains.bii**
 
@@ -155,22 +154,22 @@ The following code use the method ``millis()`` and 2 control variables to count 
    :language: cpp
    :linenos:
 
-**Download all the files**
+**Downloads**
 	
 .. |blink.zip| replace:: :download:`blink.zip <../_static/code/arduino/hello-world/blink.zip>`
 .. |mainblink.cpp| replace:: :download:`mainblink.cpp <../_static/code/arduino/hello-world/mainblink.cpp>`
 .. |blink.cpp| replace:: :download:`blink.cpp <../_static/code/arduino/hello-world/blink.cpp>`
 .. |blink.h| replace:: :download:`blink.h <../_static/code/arduino/hello-world/blink.h>`
 
-+------------+----------------+
-| ZIP        | Single files   |
-+============+================+
-|            | |mainblink.cpp||
-|            +----------------+
-| |blink.zip|| |blink.cpp|    |
-|            +----------------+
-|            | |blink.h|      |
-+------------+----------------+
++--------------------+----------------+
+| ZIP (all the files)| Single files   |
++====================+================+
+|                    | |mainblink.cpp||
+|                    +----------------+
+| |blink.zip|        | |blink.cpp|    |
+|                    +----------------+
+|                    | |blink.h|      |
++--------------------+----------------+
 
 
 	
@@ -204,16 +203,15 @@ Reusing your ``Blink`` class in other projects or blocks is straightforward. Cre
    :language: cpp
    :linenos:  
 
-**Download the file**
+**Downloads**
 
 .. |main_reuse| replace:: :download:`main_reuse.cpp <../_static/code/arduino/hello-world/main_reuse.cpp>`
 
-+------------+----------------+
-| ZIP        | Single files   |
-+============+================+
-|      -     | |main_reuse|   |
-|            |                |
-+------------+----------------+
++------------------+
+| Single file      |
++==================+
+| |main_reuse|     |
++------------------+
 
 
 

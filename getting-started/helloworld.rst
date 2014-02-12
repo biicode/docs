@@ -59,22 +59,22 @@ This is the source code for your **hello block** in your **hello hive**:
    :language: cpp
    :linenos:
 
-**Download all the files:**
+**Downloads**
 
 .. |hello.zip| replace:: :download:`hello.zip <../_static/code/cpp/hello-world/hello.zip>`
 .. |main.cpp| replace:: :download:`main.cpp <../_static/code/cpp/hello-world/main.cpp>`
 .. |hello.cpp| replace:: :download:`hello.cpp <../_static/code/cpp/hello-world/hello.cpp>`
 .. |hello.h| replace:: :download:`hello.h <../_static/code/cpp/hello-world/hello.h>`
 
-+------------+----------------+
-| ZIP        | Single files   |
-+============+================+
-|            | |main.cpp|     |
-|            +----------------+
-| |hello.zip|| |hello.cpp|    |
-|            +----------------+
-|            | |hello.h|      |
-+------------+----------------+
++--------------------+--------------+
+| ZIP (all the files)| Single files |
++====================+==============+
+|                    | |main.cpp|   |
+|                    +--------------+
+| |hello.zip|        | |hello.cpp|  |
+|                    +--------------+
+|                    | |hello.h|    |
++--------------------+--------------+
  
 
 	
@@ -164,22 +164,22 @@ Add the following files to the folder ``hellopretty/blocks/your_user_name/my_pre
    :language: cpp
    :linenos:
 
-**Download all the files:**
+**Downloads**
 
 .. |hello-pretty.zip| replace:: :download:`hello-pretty.zip <../_static/code/cpp/hello-world/hello-pretty.zip>`
 .. |mainpretty.cpp| replace:: :download:`mainpretty.cpp <../_static/code/cpp/hello-world/mainpretty.cpp>`
 .. |hellopretty.cpp| replace:: :download:`hellopretty.cpp <../_static/code/cpp/hello-world/hellopretty.cpp>`
 .. |hellopretty.h| replace:: :download:`hellopretty.h <../_static/code/cpp/hello-world/hellopretty.h>`
 
-+-------------------+------------------+
-| ZIP               | Single files     |
-+===================+==================+
-|                   | |mainpretty.cpp| |
-|                   +------------------+
-| |hello-pretty.zip|| |hellopretty.cpp||
-|                   +------------------+
-|                   | |hellopretty.h|  |
-+-------------------+------------------+
++--------------------+------------------+
+| ZIP (all the files)| Single files     |
++====================+==================+
+|                    | |mainpretty.cpp| |
+|                    +------------------+
+| |hello-pretty.zip| | |hellopretty.cpp||
+|                    +------------------+
+|                    | |hellopretty.h|  |
++--------------------+------------------+
 
 
 In this case we are using of the ``hello()`` function, which is not explicitly defined in the current hive. If you tried to compile and run this program using the ``bii cpp:run`` command, you would see an error message:
@@ -234,16 +234,15 @@ Modifying your code and publishing the results is easy with biicode. Now we´ll 
    :linenos:
 
 
-**Download the file**
+**Downloads**
 
 .. |hello(modified)| replace:: :download:`hello.cpp <../_static/code/cpp/hello-world/hello(modified).cpp>`
 
-+------------+------------------+
-| ZIP        | Single files     |
-+============+==================+
-|      -     | |hello(modified)||
-|            |                  |
-+------------+------------------+
++------------------+
+| Single file      |
++==================+
+| |hello(modified)||
++------------------+
 
    
    
