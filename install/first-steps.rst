@@ -18,8 +18,8 @@ For more information, check our evolution in the :ref:`changelog <changelog>`.
 
 If you are a biicode user, you may have to :ref:`upgrade<upgrading>`.
 
-Alternative installation for Ubuntu users
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Alternative install for Debian based distributions (Ubuntu, Raspbian)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can use *apt-get* for install biicode using our APT repository:
 
