@@ -2,7 +2,7 @@
 
 First Steps
 ===========
-These are the right steps to start using biicode without problems.
+
 
 1. Sign up
 -------------
@@ -12,12 +12,39 @@ Sign up in our biicode website for an account. It will take you less than 1 minu
 
 2. Download the client binaries
 ----------------------------------
-
 Now, `download the appropriate client binaries for your system <https://www.biicode.com/downloads>`_, execute the setup program and follow the instructions.
 
 For more information, check our evolution in the :ref:`changelog <changelog>`.
 
 If you are a biicode user, you may have to :ref:`upgrade<upgrading>`.
+
+Alternative install for Debian based distributions (Ubuntu, Raspbian)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can use *apt-get* for install biicode using our APT repository:
+
+Quick install: 
+
+.. code-block:: bash
+
+    wget http://apt.biicode.com/install.sh && chmod +x install.sh && ./install.sh
+
+
+Step by step install:
+
+.. code-block:: bash
+
+    # 1. Add this line to your /etc/apt/sources.list file
+    deb http://apt.biicode.com/debian/ stable non-free
+    
+    # 2. Add our public key executing:
+    wget -qO- http://apt.biicode.com/packages.biicode.key | sudo apt-key add -
+    
+    # 3. Execute apt-get update:
+    sudo apt-get update 
+    
+    # 4. Execute apt-get install: 
+    sudo apt-get install biicode
 
 	
 3. Choose your development tool

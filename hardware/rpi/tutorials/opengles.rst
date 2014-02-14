@@ -41,3 +41,14 @@ configuration file for user and IP address of RaspberryPi.
 
 Once executed this command you are ready to develop your awesome OpenGLES
 applications as usual with biicode. 
+
+Example
+-------
+
+**Download all the files**
+	
+:download:`OpenGLES_examples.zip <../../../_static/code/rpi/OpenGLES_examples.zip>`
+
+Just need to replace [USER]/[BLOCK] into the triangle.c file whit the info of your user and block name. add the following line to the filefilter.bii of your hive. ::
+	
+	ACCEPT    *.raw

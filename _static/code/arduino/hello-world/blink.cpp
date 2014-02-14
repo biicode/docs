@@ -11,6 +11,8 @@ void blink_setup(int led, int interval_ms){
 	pinMode(ledPin, OUTPUT);
 	interval = interval_ms;
 }
+
+// bii:#entry_point()
 void blink_loop(){
 	unsigned long currentMillis = millis();
 	 

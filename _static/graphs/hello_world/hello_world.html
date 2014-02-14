@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)file:///var/folders/k_/c3_b3s211d75brnl73jfb8g80000gn/T/tmpBp8FM6biicode/report/hive_graph.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Yout Hive Graph</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="./hello_world_files/d3.v3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./hello_world_files/hive_graph.css">
+  </head>
+
+  <body>
+       <div class="tools clearer">
+        <a id="indent-btn" class="btn">indent<span class="info">Indent elements by dependency level.</span></a>
+        <a id="explicit-btn" class="btn on">explicit<span class="info">Hide/Show explicit dependencies</span></a>
+        <a id="implicit-btn" class="btn on">implicit<span class="info">Hide/Show implicit dependencies</span></a>
+        <a id="system-btn" class="btn on">system<span class="info">Hide/Show system dependencies</span></a>
+        <a id="unresolved-btn" class="btn on">unresolved<span class="info">Hide/Show unresolved dependencies</span></a>
+        <a id="legend-btn" class="btn">legend<span class="info">Shapes and colors information</span></a>
+      </div>
+
+      <img id="legend" src="./hello_world_files/legend.svg">
+
+    <div id="graph"></div>
+  
+  <script type="text/javascript">
+    var data = {"user/hello_world": {"cells": {"hello_world.cpp": {"dep": {"e": [["user/hello_world", "hello_world.h"]], "s": [["system", "iostream"]]}, "has_main": false, "is_virtual": false, "resolved": true, "type": "CPP"}, "hello_world.h": {"dep": {"i": [["user/hello_world", "hello_world.cpp"]]}, "has_main": false, "is_virtual": false, "resolved": true, "type": "CPP"}, "main.cpp": {"dep": {"e": [["user/hello_world", "hello_world.h"]]}, "has_main": true, "is_virtual": false, "resolved": true, "type": "CPP"}}, "dep": {"system": {}}, "level": 0, "src": true, "track": "user/hello_world(user/master): 0"}, "system": {"cells": {"iostream": {"type": "SYS"}}, "dep": {}, "level": 1, "src": false}};
+  </script>
+  <script type="text/javascript" src="./hello_world_files/hive_graph.js"></script>
+</body></html>

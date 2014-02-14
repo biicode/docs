@@ -73,10 +73,59 @@ just install the dependencies manually like any other package:
 Download the Raspberry Pi cross-compiler tools
 ----------------------------------------------
 
-``Important:``  
-*If you wish that biicode download and configure this for you, go to the next section:* :ref:`How to configure your biicode workspace <config_raspberry_ws>`
+Automatic installation
+^^^^^^^^^^^^^^^^^^^^^^
 
-Now, clone the Raspberry Pi repository with linux cross-compilers from Github (you might need to install git with ``$ sudo apt-get install git``).
+If you wish that biicode download and configure this for you, just need to use the ``setup:rpi`` command into your workspace folder. (you might need to install git with ``$ sudo apt-get install git``).
+
+.. code-block:: bash
+
+	$ sudo apt-get install git-core
+
+biicode download and configure everything for you, you just have to run the ``bii setup:rpi`` command:
+
+.. code-block:: bash
+
+	$ bii setup:rpi
+
+	INFO: Cloning the ARM cross compiler into /usr/local/tools
+	
+	fatal: could not create work tree dir '/usr/local/tools'.: Permision denied
+	INFO: Cloning the ARM cross compiler with sudo
+	[sudo] password for [USER]:
+	
+	Cloning into '/usr/local/toos'
+	
+	Checking out files: 100% (10835/10835), done. 11% (1195/10835)
+	
+	...
+	   
+	done
+	
+If you already have downloaded the cross compilers the setup tool will indicate this with the following message:
+
+.. code-block:: bash
+
+	$ bii setup:rpi
+
+	INFO: Cloning the ARM cross compiler into /usr/local/tools
+	
+	INFO: The tools are already Downloaded
+	
+If you want to download the cross compilers another folder or if you already have downloaded to another directory, you just have to indicate the directory  where you want it to clone or where it is.
+
+.. code-block:: bash
+
+	$ bii setup:rpi [directory]
+
+	...
+	
+Once you have done this, a cross compilers will have downloaded and added to :ref:`enviroment.bii <layouts>`.
+
+Manual installation
+^^^^^^^^^^^^^^^^^^^
+
+If you prefer to install manually the cross compiler, clone the Raspberry Pi repository with linux cross-compilers from Github (you might need to install git with ``$ sudo apt-get install git``).
 
 .. code-block:: bash
 
@@ -88,6 +137,17 @@ If you don't want to install git on your computer, you can also `download it in 
 	
 You don't need to compile or install anything else. You can choose other directory where to clone the `Raspberry Pi tools <https://github.com/raspberrypi/tools>`_, but then you will need to take it into account in the next step when updating the :ref:`environment.bii <layouts>` file.
 
-If you have reached this point, and you haven't installed biicode yet, visit :ref:`Installation and setup <installation>` for instructions.
+.. _rpi_default_settings:
 
-Once you have installed biicode, you can proceed to :ref:`configure your biicode Raspberry Pi project <config_raspberry_ws>`.
+Configure your default_settings
+-------------------------------
+
+Update your ``bii/default_settings.bii`` into your workspace with the info of your Raspberry Pi ::
+	
+	rpi: {directory: /home/pi, ip: 192.168.1.68, password: raspberry, user: pi}
+	
+* **directory**: Raspberry Pi directory where you want to save the files you send for SCP
+* **ip**: Raspberry Pi IP address. You can find it under ``inet addr`` field executing ``ifconfig`` in a console inside the raspberry.
+* **user**: Raspberry Pi user name
+* **password**: Raspberry Pi password
+

@@ -14,6 +14,7 @@ void setup() {
 	pinMode(led, OUTPUT);
 }
 
+// bii:#entry_point()
 // the loop routine runs over and over again forever:
 void loop() {
 	digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)

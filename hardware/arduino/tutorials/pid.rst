@@ -34,6 +34,10 @@ This code is an example of the layout of your code. We read the input and define
 .. code-block:: cpp
 	:linenos:
 	
+	#include "Arduino.h"
+	
+	#include "david/pid_arduino/pid.h"
+	
 	void setup(){
 		PID pid_servo(6.0, 0.0, 0.0, 0, 180);
 		
@@ -41,6 +45,7 @@ This code is an example of the layout of your code. We read the input and define
 		
 	}
 
+	// bii:#entry_point()
 	void loop(){
 		input = analogRead(pin_input);
 		input = map(input, 0, 1023, 0, 180);
@@ -50,12 +55,3 @@ This code is an example of the layout of your code. We read the input and define
 		...
 	
 	}
-	
-**mains.bii**
-
-biicode use this file to define main.cpp like a main file. You have all the :ref:`info about mains.bii here <mains_bii>`. You need to create this file into [BLOCK_NAME]/bii/mains.bii
-
-.. code-block:: text
-	:linenos:
-
-	main.cpp

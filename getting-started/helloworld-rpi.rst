@@ -10,7 +10,7 @@ Start with a Raspberry Pi example
 -----------------------------------
 
 Create a new hive
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 Creating a new hive is as easy as executing the ``bii new`` command. Open your console, move to your biicode workspace and create a new hive named **"hello"** (some ouput informative messages are omitted):
 
@@ -21,58 +21,15 @@ Creating a new hive is as easy as executing the ``bii new`` command. Open your c
 	
 The command assistant will ask you some questions regarding your hive preferences. For this tutorial we have chosen ``cpp`` as our programming language, and no IDE configuration. We have also named the first hive in our block as ``hello_block``. The assistant is also able to generate a default C++ 'hello world' block for you, but in this case we will write the files from scratch. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``deps`` and ``blocks``.
 
-Let biicode download the cross compilers and configure your workspace
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-First, install git-core if it is not installed:
-
-.. code-block:: bash
-
-	$ sudo apt-get install git-core
-
-For biicode download and configure everything for you, you just have to run the ``bii rpi:setup`` command inside your hive:
-
-.. code-block:: bash
-
-	$ bii rpi:setup
-
-	INFO: Cloning the ARM cross compiler into /usr/local/tools
-	
-	fatal: could not create work tree dir '/usr/local/tools'.: Permision denied
-	INFO: Cloning the ARM cross compiler with sudo
-	[sudo] password for [USER]:
-	
-If you already have downloaded the cross compilers the setup tool will indicate this with the following message:
-
-.. code-block:: bash
-
-	$ bii rpi:setup
-
-	INFO: Cloning the ARM cross compiler into /usr/local/tools
-	
-	INFO: The tools are already Downloaded
-	
-If you want to download the cross compilers another folder or if you already have downloaded to another directory, you just have to indicate the directory  where you want it to clone or where it is
-
-.. code-block:: bash
-
-	$ bii rpi:setup [directory]
-
-	...
-	
-Once you have done this, a cross compilers will have downloaded and added to :ref:`enviroment.bii <layouts>`.
-
 Configure your settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Update your :ref:`hello/bii/settings.bii <settings>` into your hive with the info of your Raspberry Pi ::
 	
 	rpi: {directory: /home/pi, ip: 192.168.1.68, password: raspberry, user: pi}
-	
-* **directory**: Raspberry Pi directory where you want to save the files you send for SCP
-* **ip**: Raspberry Pi IP address. You can find it under ``inet addr`` field executing ``ifconfig`` in a console inside the raspberry.
-* **user**: Raspberry Pi user name
-* **password**: Raspberry Pi password
+
+If you want to remember how configure your settings, review the section :ref:`Configure your Raspberry Pi settings<rpi_default_settings>`.
+
 
 Change the architecture of the cpp compiler on the ``hello/bii/settings.bii`` into your hive. Where you see::
 
@@ -89,7 +46,7 @@ add ``arch: ARM``::
 	  configurer: {family: CMake}
 
 Just code!
-^^^^^^^^^^^^^^
+^^^^^^^^^^
 
 Our "hello" hive will have these files: ``hello.h``, ``hello.cpp`` and ``main.cpp``. Just create them into your hive ``hello/blocks/your_user_name/hello_block`` and copy and paste the following code.
 

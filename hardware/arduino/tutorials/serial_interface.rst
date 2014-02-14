@@ -66,11 +66,8 @@ Arduino app
 .. code-block:: cpp
 	:linenos:
 
-	#if ARDUINO >= 100
-		#include "Arduino.h"
-	#else
-		#include "WProgram.h"
-	#endif
+	#include "Arduino.h"
+
 	#include "arduino/libraries/servo/servo.h"
 	#include "david/serial_arduino/serial.h"
 
@@ -85,6 +82,7 @@ Arduino app
 		serialport.init();
 	}
 
+	// bii:#entry_point()
 	void loop() {
 
 		msg = serialport.read(); //read a message
@@ -102,15 +100,6 @@ Arduino app
 			premsg = msg;
 		}
 	}
-
-**mains.bii**
-
-biicode use this file to define main.cpp like a main file. You have all the :ref:`info about mains.bii here <mains_bii>`. You need to create this file into [BLOCK_NAME]/bii/mains.bii
-
-.. code-block:: text
-	:linenos:
-
-	main.cpp
 
 Run this Apps
 =============

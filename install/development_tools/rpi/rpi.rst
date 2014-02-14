@@ -1,7 +1,7 @@
 .. _rpi_installation:
 
-Raspberry PI
-=============
+Raspberry Pi
+============
 
 .. toctree::
    :maxdepth: 2
