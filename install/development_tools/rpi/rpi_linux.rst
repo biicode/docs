@@ -142,7 +142,7 @@ You don't need to compile or install anything else. You can choose other directo
 Configure your default_settings
 -------------------------------
 
-Update your `bii/default_settings.bii` into your workspace with the info of your Raspberry Pi ::
+Update your ``bii/default_settings.bii`` into your workspace with the info of your Raspberry Pi ::
 	
 	rpi: {directory: /home/pi, ip: 192.168.1.68, password: raspberry, user: pi}
 	
