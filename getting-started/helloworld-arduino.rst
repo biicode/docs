@@ -90,32 +90,18 @@ If you want to remember how configure your settings, review the section:
 Build and upload
 ----------------
 
-Now, you can compile your firmware and upload it in your Arduino. The command ``build`` compiles your firmware, and ``upload`` sends it to your Arduino. 
+Now, you can compile your firmware and upload it in your Arduino. The command ``upload`` compiles your firmware and sends it to your Arduino. If you only want to compiles your firmware you can use the command ``build``.
 Move into your arduino hive folder and execute:
 
 .. code-block:: bash
 	:emphasize-lines: 2, 8
 
 	$ cd arduino_hive
-	$ bii arduino:build
-	
-	...
-	
-	[100%] Built target [USER]_arduino_block_main
-	
 	$ bii arduino:upload
 	
 	...
 	
 	Writing | ################################################## | 100% 0.00s
-
-	avrdude.exe: 0 bytes of eeprom written
-
-	avrdude.exe: safemode: Fuses OK
-
-	avrdude.exe done.  Thank you.
-
-	[100%] Built target [USER]_arduino_block_main-upload
 
 	
 Creating reusable code
@@ -161,21 +147,26 @@ The following code use the method ``millis()`` and 2 control variables to count 
 |                    | |blink.h|      |
 +--------------------+----------------+
 
-Build and upload to your arduino again:
+Upload to your arduino again.
 
-.. raw:: html
-
-	<script type="text/javascript" src="https://asciinema.org/a/7645.js" id="asciicast-7645" async data-speed="2"></script>
-
-	
 Publish your code
 -----------------
 
 You can easily publish your code using the ``bii publish`` command. You will be requested to provide a **tag** and a **message**. Valid tags are ``STABLE``, ``ALPHA``, ``BETA``, and ``DEV``. They provide information about the development state of your hive. The message is any information describing your publication.
 
-.. raw:: html
+.. code-block:: bash
+	:emphasize-lines: 1, 5,6,7
 
-	<script type="text/javascript" src="https://asciinema.org/a/7629.js" id="asciicast-7629" async data-speed="2"></script>
+	$ bii publish                                                            
+	*****************************                                                   
+	***** Publishing public ****                                                    
+	*****************************                                                   
+	block:   phil/arduino_block                                                     
+	Introduce tag: STABLE                                                           
+	Introduce msg: My first arduino project with biicode                            
+	
+	INFO: Successfully published phil/arduino_block(phil/master): 0  
+
 
 If your code has been published correctly —as it is the case in the previous example—, you can navigate it here: ``www.biicode.com/user_name``
 
@@ -183,11 +174,6 @@ Reuse it!
 ---------
 
 Reusing your ``Blink`` class in other projects or blocks is straightforward. Create a new hive, with a default firmware.
-
-.. raw:: html
-
-	<script type="text/javascript" src="https://asciinema.org/a/7655.js" id="asciicast-7655" async data-speed="2"></script>
-
 
 Then modify it with this code and write your own user name.	
 	
@@ -210,19 +196,8 @@ Then modify it with this code and write your own user name.
 +------------+----------------+
 
 
-**Note**: don't forget to define main_reuse.cpp like a main file! :ref:`More info about mains.bii here <mains_bii>`.
+**Note**: don't forget to define main_reuse.cpp like a main file with ``// bii:#entry_point()``.
 
 Assuming that your user name is *your_user_name* and the block where you published the code was named *your_block*, you could navigate to http://www.biicode.com, go to your profile and see your code there.
 
-Once you have the code, invoke ``find`` to resolve external dependencies, so the Blink class is retrieved. Then, build and upload in your Arduino as usual. Not forget check your Arduino settings to upload correctly:
-
-
-.. raw:: html
-
-	<script type="text/javascript" src="https://asciinema.org/a/7649.js" id="asciicast-7649" async data-speed="2"></script>
-
-
-.. raw:: html
-
-	<script type="text/javascript" src="https://asciinema.org/a/7650.js" id="asciicast-7650" async data-speed="2"></script>
-
+Once you have the code, invoke ``find`` to resolve external dependencies, so the Blink class is retrieved. Then, build and upload in your Arduino as usual. Not forget check your Arduino settings to upload correctly.
