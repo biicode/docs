@@ -72,7 +72,21 @@ The command can also be used combining a series of **additional parameters** (yo
 	* ``--explicit`` shows only thos dependencies explicitly referenced in your files.
 	* ``--data`` filters the results showing only data dependencies.
 
-* ``--graph``: This last option provides you a **visual representation** of your blocks and their dependencies, that is open in your web browser.
+* ``--graph``: This last option provides a **visual representation** of your blocks and their dependencies. The client generates an interactive graph that is open in your web browser. Despite most of the code is saved on your local filesystem, you'll need an internet connection for loading some aditional libraries.
+
+	Bellow you can see an example of these representations generated for a sample *'hello world'* block. In this case there are no external dependencies, and only those blocks contained in the ``blocks`` folder of your hive (the ``user/hello_world`` bock) are represented, and grouped under the 'SRC' element. There is also one system dependency. You can click on the different nodes to expand and show their content. You can also drag every node, or pan and zoom the whole graphic.
+
+	.. raw:: html
+
+		<iframe src="/_static/graphs/hello_world/hello_world.html" width="100%" height="600px"></iframe>
+
+	* Double-clicking on any empty area **resets the pan and zoom** to their initial values.
+	* All dependencies are represented as **colored connections** (red for implicit dependencies, blue for explicit dependencies, and yellow for all system dependencies). All unresolved dependencies are displayed in a dark grey color.
+	* Virtual cells are related to their possible implementations using **green connections**.
+	* You can show or hide any type of dependency just clicking on their corresponding toolbar buttons.
+	* Dragging a node while holding the *shift* key allows you to move also all its descendant nodes (those folders and cells contained in that particular node, that are currently visible on the graph).
+	* The outer color of each cell corresponds to the color of its block, while the inner color gives information about the particular cell type (cpp, python, etc.).
+
 
 .. _bii_find_command:
 
