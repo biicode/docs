@@ -81,12 +81,12 @@ If you wish that biicode download and configure this for you, just need to use t
 .. code-block:: bash
 
 	$ sudo apt-get install git-core
-
-For biicode download and configure everything for you, you just have to run the ``bii rpi:setup`` command:
+pi
+For biicode download and configure everything for you, you just have to run the ``bii setup:rpi`` command:
 
 .. code-block:: bash
 
-	$ bii rpi:setup
+	$ bii setup:rpi
 
 	INFO: Cloning the ARM cross compiler into /usr/local/tools
 	
@@ -106,7 +106,7 @@ If you already have downloaded the cross compilers the setup tool will indicate 
 
 .. code-block:: bash
 
-	$ bii rpi:setup
+	$ bii setup:rpi
 
 	INFO: Cloning the ARM cross compiler into /usr/local/tools
 	
@@ -116,7 +116,7 @@ If you want to download the cross compilers another folder or if you already hav
 
 .. code-block:: bash
 
-	$ bii rpi:setup [directory]
+	$ bii setup:rpi [directory]
 
 	...
 	
@@ -137,6 +137,3 @@ If you don't want to install git on your computer, you can also `download it in 
 	
 You don't need to compile or install anything else. You can choose other directory where to clone the `Raspberry Pi tools <https://github.com/raspberrypi/tools>`_, but then you will need to take it into account in the next step when updating the :ref:`environment.bii <layouts>` file.
 
-If you have reached this point, and you haven't installed biicode yet, visit :ref:`Installation and setup <installation>` for instructions.
-
-Once you have installed biicode, you can proceed to :ref:`configure your biicode Raspberry Pi project <config_raspberry_ws>`.

@@ -18,10 +18,8 @@ Biicode gives you several advantages for your Raspberry Pi experience.
 .. toctree::
    :maxdepth: 2
 
-   rpi/configuration
    rpi/wiringpi
    rpi/tutorials
-   rpi/reuse
 
 
 You can use biicode directly in it but we suggest setting using the cross compilation feature built in biicode.
