@@ -31,25 +31,15 @@ Then you'll need to set up the development tools you're going to use as describe
 4. Create your first workspace
 ---------------------------------
 
-The first step is creating your own **biicode workspace**. This is the
-place where all your hives will be located. In general, this step
-needs to be done only once after the initial setup.
+The first step is creating your own **biicode workspace**. This is the place where all your hives will be located. In general, this step needs to be done only once after the initial setup.
 
 **NOTE:** Please **avoid creating biicode workspaces in paths with spaces or colons ':'**.
 
-.. code-block:: bash
+This example is created by a biicode user named "phil", you will have to enter the user name and password which you have chosen in the *Sign up* step:
 
-	$ mkdir biicode_workspace
-	$ cd ~/biicode_workspace
-	$ bii init
-	Username: your_user_name
-	Password for your_user_name: your_password
-	Would you like to set a default programming language? (cpp/None)
-	Introduce lang:
-	Would you like to set a default IDE? (eclipse/None)
-	Introduce ide:
-	Initialization correct, now you can create your first hive
+.. raw:: html
 
+	<script type="text/javascript" src="https://asciinema.org/a/7621.js" id="asciicast-7621" async data-speed="2"></script>
 
 As you can see, it's possible to set a default programming language as well as a default IDE. Now you have created the biicode workspace that will contain all your code!
 

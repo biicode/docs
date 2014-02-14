@@ -9,3 +9,4 @@ This sections summarizes some Frequently Asked Questions that our users hace pos
    ../faqs/faqs-biicode
    ../faqs/faqs-cpp
    ../faqs/faqs-rpi
+   ../faqs/faqs-arduino

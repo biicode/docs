@@ -14,25 +14,11 @@ Create a new hive
 
 Creating a new hive is as easy as executing the ``bii new`` command. Open your console, move to your biicode workspace and create a new hive named **"hello"** (some ouput informative messages are omitted):
 
-.. code-block:: bash
+.. raw:: html
 
-	$ cd /path/to/your/biicode_workspace
-	$ bii new hello
-        Created new hive hello
-        Select language: (java/node/fortran/python/cpp/None)
-        Introduce lang (default:cpp): cpp
-        INFO: Selected lang: cpp
-		Introduce block name (default:my_block): my_block
-		INFO: block name: my_block
-        Generate a default hello world?  (YES/no) no
-        Select IDE family: (Visual/CodeBlocks/Eclipse/NetBeans/None)
-        Introduce ide (default:Eclipse): None
-        Select build type: (None/Debug/Release/RelWithDebInfo/MinSizeRel)
-        Introduce build_type (default:Debug): Debug
-        invoking cmake   -G "Unix Makefiles" -Wno-dev ../cmake
-	        ... here your new hive is created in your workspace
-        -- Build files have been written to: /Users/luis/Workspace/biicode/production/temp/build
+	<script type="text/javascript" src="https://asciinema.org/a/7609.js" id="asciicast-7609" async></script>
 
+	
 The command assistant will ask you some questions regarding your hive preferences. For this tutorial we have chosen ``cpp`` as our programming language, and no IDE configuration. We have also named the first hive in our block as ``my_block``. The assistant is also able to generate a default C++ 'hello world' block for you, but in this case we will write the files from scratch. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``deps`` and ``blocks``.
 
 Let biicode download the cross compilers and configure your workspace
