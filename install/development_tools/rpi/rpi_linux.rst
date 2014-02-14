@@ -81,8 +81,8 @@ If you wish that biicode download and configure this for you, just need to use t
 .. code-block:: bash
 
 	$ sudo apt-get install git-core
-pi
-For biicode download and configure everything for you, you just have to run the ``bii setup:rpi`` command:
+
+biicode download and configure everything for you, you just have to run the ``bii setup:rpi`` command:
 
 .. code-block:: bash
 
