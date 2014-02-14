@@ -4,7 +4,7 @@ Desktop C++
 ===========
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    cpp_linux
    cpp_mac
