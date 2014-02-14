@@ -41,11 +41,9 @@ Configure your settings
 Update your :ref:`hello/bii/settings.bii <settings>` into your hive with the info of your Raspberry Pi ::
 	
 	rpi: {directory: /home/pi, ip: 192.168.1.68, password: raspberry, user: pi}
-	
-* **directory**: Raspberry Pi directory where you want to save the files you send for SCP
-* **ip**: Raspberry Pi IP address. You can find it under ``inet addr`` field executing ``ifconfig`` in a console inside the raspberry.
-* **user**: Raspberry Pi user name
-* **password**: Raspberry Pi password
+
+If you want to remember how configure your settings, review the section :ref:`Configure your Raspberry Pi settings<rpi_default_settings>`.
+
 
 Change the architecture of the cpp compiler on the ``hello/bii/settings.bii`` into your hive. Where you see::
 

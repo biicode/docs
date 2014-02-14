@@ -137,3 +137,17 @@ If you don't want to install git on your computer, you can also `download it in 
 	
 You don't need to compile or install anything else. You can choose other directory where to clone the `Raspberry Pi tools <https://github.com/raspberrypi/tools>`_, but then you will need to take it into account in the next step when updating the :ref:`environment.bii <layouts>` file.
 
+.. _rpi_default_settings:
+
+Configure your default_settings
+-------------------------------
+
+Update your `bii/default_settings.bii` into your workspace with the info of your Raspberry Pi ::
+	
+	rpi: {directory: /home/pi, ip: 192.168.1.68, password: raspberry, user: pi}
+	
+* **directory**: Raspberry Pi directory where you want to save the files you send for SCP
+* **ip**: Raspberry Pi IP address. You can find it under ``inet addr`` field executing ``ifconfig`` in a console inside the raspberry.
+* **user**: Raspberry Pi user name
+* **password**: Raspberry Pi password
+
