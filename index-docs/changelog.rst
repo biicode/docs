@@ -3,17 +3,20 @@
 Changelog
 =========
 v. 0.9
---------------------
+------
 *(13-02-14)*
 
+* There is a brand new visualization in browser of hives and dependencies with "$bii deps --graph"
 * minor bugfixes
-* improved :ref:`open command<bii_open_command>`
-* improved dependencies graph
-* improved depencies command output
+* improved :ref:`open command<bii_open_command>`, now any block can be open inside a hive
+* improved performance of finds in server and connections pools
+* setup totally new. Only setup:cpp working now experimentaly. Also rpi:setup moved to setup:rpi
+* apt-get repository for debian based (ubuntu, raspbian) distributions
+* new "bii info" command
 
 
 v. 0.8
---------------------
+------
 *(5-Feb-14)*
 
 * Merge bugfixes
@@ -22,7 +25,7 @@ v. 0.8
 
 
 v. 0.7.2
---------------------
+--------
 *(31-Jan-14)*
 
 * Merge bugfixes
@@ -31,7 +34,7 @@ v. 0.7.2
 
 
 v. 0.6.2
---------------------
+--------
 *(28-Jan-14)*
 
 * Added :ref:`arduino support <arduino>`
@@ -48,7 +51,7 @@ v. 0.6.2
 
 
 v. 0.5
---------------------
+------
 *(10-Jan-14)*
 
 
@@ -62,7 +65,7 @@ v. 0.5
 
 
 v. 0.4
--------------------
+------
 *(20-Dec-13)*
 
 * Improved wizards behavior
@@ -70,7 +73,7 @@ v. 0.4
 
 
 v. 0.3.4
---------------------
+--------
 *(17-Dec-13)*
 
 * Init and new configuration wizards
@@ -80,8 +83,8 @@ v. 0.3.4
 * User can edit cmakes http://docs.biicode.com/en/latest/reference/cpp_build_files.html
 
 
-v. 0.2.3  
---------------------
+v. 0.2.3
+--------
 *(2-Dec-13)*
 
 * Experimental upload-download of hives to biicode, so it is not necessary to publish to keep working in other computer.
