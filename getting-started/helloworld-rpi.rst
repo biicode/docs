@@ -19,7 +19,7 @@ Creating a new hive is as easy as executing the ``bii new`` command. Open your c
 	<script type="text/javascript" src="https://asciinema.org/a/7609.js" id="asciicast-7609" async></script>
 
 	
-The command assistant will ask you some questions regarding your hive preferences. For this tutorial we have chosen ``cpp`` as our programming language, and no IDE configuration. We have also named the first hive in our block as ``my_block``. The assistant is also able to generate a default C++ 'hello world' block for you, but in this case we will write the files from scratch. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``deps`` and ``blocks``.
+The command assistant will ask you some questions regarding your hive preferences. For this tutorial we have chosen ``cpp`` as our programming language, and no IDE configuration. We have also named the first hive in our block as ``hello_block``. The assistant is also able to generate a default C++ 'hello world' block for you, but in this case we will write the files from scratch. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``deps`` and ``blocks``.
 
 Let biicode download the cross compilers and configure your workspace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -91,9 +91,9 @@ add ``arch: ARM``::
 Just code!
 ^^^^^^^^^^^^^^
 
-Our "hello" hive will have these files: ``hello.h``, ``hello.cpp`` and ``main.cpp``. Just create them into your hive ``hello/blocks/your_user_name/my_block`` and copy and paste the following code.
+Our "hello" hive will have these files: ``hello.h``, ``hello.cpp`` and ``main.cpp``. Just create them into your hive ``hello/blocks/your_user_name/hello_block`` and copy and paste the following code.
 
-This is the source code for your **my_block block** in your **hello hive**:
+This is the source code for your **hello_block block** in your **hello hive**:
 
 **hello.h**
 
@@ -134,7 +134,7 @@ This is the source code for your **my_block block** in your **hello hive**:
 Build and send
 ----------------
 
-Once you have completed all the coding process, and the source files are located under ``hello/blocks/your_user_name/my_block``, you are ready to compile and run the application. Assuming that you are located in your biicode workspace folder, ``cd`` to your **"hello" hive folder**, and run the ``bii cpp:run`` command:
+Once you have completed all the coding process, and the source files are located under ``hello/blocks/your_user_name/hello_block``, you are ready to compile and run the application. Assuming that you are located in your biicode workspace folder, ``cd`` to your **"hello" hive folder**, and run the ``bii cpp:run`` command:
 
 .. code-block:: bash
 
@@ -211,14 +211,14 @@ Once your have written, compiled and successfully sended some code, surely you a
 .. code-block:: bash
 
 	$ bii publish
-	block:   your_user_name/my_block
+	block:   your_user_name/hello_block
 	Introduce tag: STABLE
 	Introduce msg: My first project with biicode
 	  Reading Hive...
-	  Checking block your_user_name/your_user_name/my_block/master
+	  Checking block your_user_name/your_user_name/hello_block/master
 		  ... your block is being published here
 
-	Successfully published your_user_name/my_block(your_user_name/master): 0
+	Successfully published your_user_name/hello_block(your_user_name/master): 0
 
 If your code has been published correctly —as it is the case in the previous example—, you can navigate it here: ``www.biicode.com/user_name``
 
@@ -299,7 +299,7 @@ In this case we are using of the ``hello()`` function, which is not explicitly d
 	Processing hive
 	  Cell your_user_name/my_pretty_block/hellopretty.h is implemented by set(['your_user_name/my_pretty_block/hellopretty.cpp'])
 		...
-	#include "your_user_name/my_block/hello.h" //reusing hello.h header
+	#include "your_user_name/hello_block/hello.h" //reusing hello.h header
 	         ^
 	1 error generated.
 		...
@@ -314,7 +314,7 @@ However, biicode knows that you are trying to reuse the ``hello.h`` header. To r
 		...
 	Dependencies resolved in server:
 	Find resolved new dependencies:
-		your_user_name/my_block(your_user_name/master): 0
+		your_user_name/hello_block(your_user_name/master): 0
 	
 This is a successful ouput that indicates biicode has been able to resolve your dependencies. All needed files have been automatically downloaded and copied to your hive.
 
@@ -347,7 +347,7 @@ Now you can try to compile and send again your new code. In this case the proces
 	Hello World!
 	**********************************
 
-You will find the ``your_user_name/my_block`` block along with the retrieved source files ``hello.h`` and ``hello.cpp`` in your  ``hellopretty/deps`` subfolder. Note that the ``main.cpp`` file of the **hello** block was not retrieved. That is because you don't need it to reuse the ``hello()`` function!
+You will find the ``your_user_name/hello_block`` block along with the retrieved source files ``hello.h`` and ``hello.cpp`` in your  ``hellopretty/deps`` subfolder. Note that the ``main.cpp`` file of the **hello** block was not retrieved. That is because you don't need it to reuse the ``hello()`` function!
 
 Publish a new version of your hello block
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -393,11 +393,11 @@ Now, post your block to the biicode server just like you did before:
 .. code-block:: bash
 
 	$ bii publish
-	block:     your_user_name/my_block
+	block:     your_user_name/hello_block
 	Introduce tag: STABLE
 	Introduce msg: My first block update
 		...
-	Successfully published your_user_name/my_block(your_user_name/master): 1
+	Successfully published your_user_name/hello_block(your_user_name/master): 1
 
 As you can see, the version of your block changed from 0 to 1. Your can see both versions published online visiting your biicode user main page, as before.
 
@@ -413,7 +413,7 @@ To update your **hellopretty** block you only need to search the server for any 
 	Finding missing dependencies in server
 		...
 	Updated dependencies:
-		your_user_name/your_user_name/my_block/master:#1
+		your_user_name/your_user_name/hello_block/master:#1
 		...
 	Saving dependences on disk
 
