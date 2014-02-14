@@ -13,16 +13,10 @@ This section summarizes the **Raspberry Pi commands available to be used with th
 	---------EXPERIMENTAL Raspberry Pi general tools commands--------
 	  rpi:initopengles Init OpenGLES project.
 	  rpi:send        Send by scp the bin folder into the specified directory
-	  rpi:setup       Setup cross compiler tools
 	  rpi:ssh         Connect by ssh with the Raspberry Pi
 
 	  
 	  
-``bii rpi:setup``: Setup the cross compiler tools
--------------------------------------------------
-This command configures your workspace to start with the Raspberry Pi without problems. See the command usage :ref:`here<config_raspberry_ws>`.
-
-
 ``bii rpi:send``: Send a bin folder
 -------------------------------------
 Send your binaries automatically to your Raspberry Pi from your PC. See the command usage  :ref:`here<bii_rpi_send>`.
