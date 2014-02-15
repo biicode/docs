@@ -200,4 +200,14 @@ Then modify it with this code and write your own user name.
 
 Assuming that your user name is *your_user_name* and the block where you published the code was named *your_block*, you could navigate to http://www.biicode.com, go to your profile and see your code there.
 
-Once you have the code, invoke ``find`` to resolve external dependencies, so the Blink class is retrieved. Then, build and upload in your Arduino as usual. Not forget check your Arduino settings to upload correctly.
+Once you have the code, invoke ``find`` to resolve external dependencies, so the Blink class is retrieved. Then, build and ``upload`` in your Arduino as usual. Not forget check your Arduino settings to upload correctly.
+
+.. code-block:: bash
+
+	$ bii find
+	
+	$ bii arduino:upload
+	
+	...
+	
+	Writing | ################################################## | 100% 0.00s
