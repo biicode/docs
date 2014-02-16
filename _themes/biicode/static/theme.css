@@ -3207,9 +3207,9 @@ pre.literal-block:after {
 }
 
 .hll {
-  background-color: #f8f8f8;
-  border: 1px solid #cccccc;
-  padding: 1.5px 5px;
+  background-color: #f4ee4a;
+  padding-right: 3px;
+  border-radius: 3px;
 }
 
 .c {
@@ -3350,7 +3350,7 @@ pre.literal-block:after {
 }
 
 .nb {
-  color: #0086b3;
+  color: #00b0ed;
 }
 
 .nc {
@@ -3385,7 +3385,7 @@ pre.literal-block:after {
 }
 
 .nv {
-  color: teal;
+  color: #20f517;
 }
 
 .ow {
@@ -3924,13 +3924,17 @@ li.toctree-l1 > a {
   display: block;
 }
 .highlight-bash, .highlight-bat {
-  background-color: #404040 !important;
+  background-color: #000 !important;
   color: #fff;
+  border-radius: 5px;
+  line-height: 1.4em !important;
 }
 
 .highlight-bash .hll, .highlight-bat .hll {
-  background-color: #cccc33;
-  font-weight: bold;
+  background-color: #fff;
+  color: #666;
+  padding-right: 3px;
+  border-radius: 3px;
 }
 
 nav.nav-side {
