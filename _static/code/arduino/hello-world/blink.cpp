@@ -12,7 +12,6 @@ void blink_setup(int led, int interval_ms){
 	interval = interval_ms;
 }
 
-// bii:#entry_point()
 void blink_loop(){
 	unsigned long currentMillis = millis();
 	 
@@ -21,6 +20,7 @@ void blink_loop(){
 		previousMillis = currentMillis;   
 
 		// if the LED is off turn it on and vice-versa:
+		//TODO: Check if ledState = !ledState; works
 		if (ledState == LOW)
 		  ledState = HIGH;
 		else

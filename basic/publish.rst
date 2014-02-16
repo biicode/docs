@@ -18,7 +18,20 @@ Every publish also has a publish message. It is somewhat similar to a commit mes
 
 Publishing new versions of your code
 ------------------------------------
-You can publish new versions of your code from the same hive you were working as you want. For each publication you can define its own tag and message. Nothing special has to be done. The picture is different if you published your block and you want to open the published version in a new hive. This can be currently done by creating a new empty hive, then doing a :ref:`bii open<bii_open_command>` of such block:
+What happens if you modify some code that you have just published? It is easy, you can publish
+a new version of such code, and other hives that depend (because they did a ``find``) on it can
+easily update so the new changes are obtained.
+
+From the same hive you published before
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can publish new versions of your code from the same hive you were working as you want.
+For each publication you can define its own tag and message. Nothing special has to be done.
+
+
+From a new hive
+^^^^^^^^^^^^^^^
+The picture is different if you published your block and you want to open the published version in a new hive.
+This can be currently done by creating a new empty hive, then doing a :ref:`bii open<bii_open_command>` of such block:
 
 .. code-block:: bash
 
@@ -29,5 +42,13 @@ You can publish new versions of your code from the same hive you were working as
 	  ... (edit your block)
 	$ bii publish
 
-The name of the block has to include your user name. You can specify to open a different branch or different version number with optional arguments (--branch and --version), but this is not the usual flow. Furthermore, you can only publish a new version if you have opened the last one of the block, otherwise it can still be published but in other branch, which is a subject of advanced usage. You can also open a block of another user, but usually you will not have write permissions, so you could publish your modifications only in a different branch.
+The name of the block has to include your user name.
+
+You can specify to open a different branch or different version number with
+optional arguments(--branch and --version), but this is not the usual flow.
+Furthermore, you can only publish a new version if you have opened the last one
+of the block, otherwise it can still be published but in other branch, which is
+a subject of advanced usage. You can also open a block of another user, but
+usually you will not have write permissions, so you could publish your
+modifications only in a different branch.
 

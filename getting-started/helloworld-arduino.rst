@@ -1,213 +1,188 @@
 "Blink" in Arduino
 ==================
 
-This example shows how to build a simple *blink* application with biicode.
-
-``IMPORTANT:`` It is not possible to develop C/C++ and Arduino apps simultaneously in the same hive.
+The typical tutorial for learning new tools is a "Hello World" one. In Arduino, the typical first example is the LED "blink" one.
+This example shows how to build a simple *blink* functionality with biicode that you can automatically integrate in
+any project.
 
 Remember that you need to :ref:`configure your biicode workspace <arduino_installation>` with CMake, MinGW and the Arduino SDK.
-
 
 Create a new hive
 -----------------
 The first step is to create a new hive (a biicode project) inside your workspace with the ``bii new`` command.
 
 .. code-block:: bash
-   :emphasize-lines: 1, 4, 6
 
-   $ bii new arduino_hive
-   Created new hive arduino_hive
+   $ bii new arduino_blink_hive
+
+The system will prompt you for your hive initial programming language, you can select among several options.
+Select ``arduino`` here.
+
+It will also prompt for your first block name. A block is a working unit you can publish and navigate in the web.
+You can have more than one block in your hives, but now lets start with just one. Enter a descriptive name,
+something that summarizes the functionality of all the files that will be in that block. Enter ``arduino_blink``.
+
+Last, it will prompt to generate a default firmware, i.e. a code file with a setup() and loop() functions.
+You can press ENTER to accept the default option here: ``yes``.
+
+.. code-block:: bash
+
    Select language: (java/node/fortran/python/cpp/arduino/None)
    Introduce lang (default:None): arduino
    How would you like to name your first block?
-   Introduce block name (default:arduino_block): arduino_block
-   INFO: block name: arduino_block
+   Introduce block name: arduino_blink
    Generate a default firmware?  (YES/no) [ENTER]
-   INFO: Default extension file is '.cpp'. You can use '.c' extension too.
 
-   Creating a main file "main.cpp"
-
-   File main.cpp has been created in [HIVE_PATH]/blocks/[USER]/arduino_block/main.cpp
-
-With this command you create the next folders
+This command will create the following layout:
 
 .. code-block:: text
 
-   |-- arduino_hive
+   |-- arduino_blink_hive
    |    +-- bin
    |    +-- blocks
-   |    |     +-- my_user_name
-   |    |    |     +-- arduino_block
+   |    |     +-- your_user_name
+   |    |    |     +-- arduino_blink
    |    |    |     |       +-- main.cpp
    |    +-- build
    |    +-- cmake
    |    +-- deps
   
 
-
-These files have the following content:
-
-**main.cpp**
-
-This is the main project file.
-
-biicode uses the ``// bii:#entry_point()`` comment line to define main.cpp like a main file. It is important that you **add this comment in all** the files you want to be **Arduino main files**.
+You can open the file **main.cpp** in your favorite editor.
+biicode uses the ``// bii:#entry_point()`` comment line to define **main.cpp** like the starting point for your firmware.
+Put **this comment in all** files you want to be **Arduino firmwares**, typically those files with a setup() and loop() functions.
 
 .. literalinclude:: ../_static/code/arduino/hello-world/main_arduino.cpp
    :language: cpp
-   :linenos:
    :emphasize-lines: 17
-
-``// bii:#entry_point()``: biicode uses this line to define main.cpp like a main file.
-   
-**Download the file**
-
-.. |main_arduino| replace:: :download:`main_arduino.cpp <../_static/code/arduino/hello-world/main_arduino.cpp>`
-
-+------------+----------------+
-| ZIP        | Single files   |
-+============+================+
-|      -     | |main_arduino| |
-+------------+----------------+
-
-Configure your settings
------------------------
-
-Configure the hive settings.bii file with the info about your board and serial port. Here a Windows example:
-
-.. code-block:: text
-	:emphasize-lines: 2
-	
-	arduino:
-		board: {board: mega2560, no_autolibs: 'false', port: COM7, programmer: usbtinyisp}
-
-If you want to remember how configure your settings, review the section:
-
-	*	:ref:`Arduino settings in MacOS<arduino_default_settings_mac>`
-	*	:ref:`Arduino settings in Linux<arduino_default_settings_linux>`
-	*	:ref:`Arduino settings in Windows<arduino_default_settings_win>`
 		
 Build and upload
 ----------------
-
-Now, you can compile your firmware and upload it in your Arduino. The command ``upload`` compiles your firmware and sends it to your Arduino. If you only want to compiles your firmware you can use the command ``build``.
-Move into your arduino hive folder and execute:
+Now, you can build your firmware and upload it to your Arduino with the command ``arduino:upload``.
+If you only want to build your firmware, just use ``arduino:build``.
 
 .. code-block:: bash
-	:emphasize-lines: 2, 8
 
 	$ cd arduino_hive
 	$ bii arduino:upload
-	
 	...
-	
 	Writing | ################################################## | 100% 0.00s
 
-	
+**Thats it!** Your board LED should start blinking. Try changing blink delay values in code and upload again.
+
+.. container:: infonote
+
+   The previous example will work with your default settings configured during the installation. If you need
+   you can change your hive settings.bii file (**arduino_hive/bii/settings.bii**) with the info about your board and serial port.
+   Here is a Windows example:
+
+   .. code-block:: text
+
+      arduino:
+         board: {board: mega2560, no_autolibs: 'false', port: COM7, programmer: usbtinyisp}
+
+   If you want to remember how configure your settings, check:
+
+      *  :ref:`Arduino settings in MacOS<arduino_default_settings_mac>`
+      *  :ref:`Arduino settings in Linux<arduino_default_settings_linux>`
+      *  :ref:`Arduino settings in Windows<arduino_default_settings_win>`
+
 Creating reusable code
 ----------------------
 
-There is a problem with the above example. The use of delay blocks the execution flow of arduino, so if you want, for example, to control a motor, process serial port inputs, or whatever other work you have to do, you **cannot use** the previous blink version, as it blocks execution.
-The following code use the method ``millis()`` and 2 control variables to count the time in a period of time. when this time are equal to 1000 the status of the led change. So replace the example before with the next files and don't forget to **change** ``blocks/your_user_name/arduino_block/bii/mains.bii`` **with mainblink.cpp name instead of main_arduino.cpp**. 
+There is a problem with the above example. The use of delay() stops the execution flow of arduino,
+so if you want, for example, to control a motor, process serial port inputs, or whatever other work
+you have to do, you **cannot use** the previous blink version, as it holds execution.
+The following code use the method ``millis()`` and 2 control variables to count the elapsed time
+and switch the LED accordingly.
+So replace the example before with the next files:
 	
-
 **blink.h**
 
 .. literalinclude:: ../_static/code/arduino/hello-world/blink.h
    :language: cpp
-   :linenos:
-
 
 **blink.cpp**
 
 .. literalinclude:: ../_static/code/arduino/hello-world/blink.cpp
    :language: cpp
-   :linenos:
 
 **mainblink.cpp**
 
 .. literalinclude:: ../_static/code/arduino/hello-world/mainblink.cpp
    :language: cpp
-   :linenos:
 
-**Downloads**
-	
-.. |blink.zip| replace:: :download:`blink.zip <../_static/code/arduino/hello-world/blink.zip>`
-.. |mainblink.cpp| replace:: :download:`mainblink.cpp <../_static/code/arduino/hello-world/mainblink.cpp>`
-.. |blink.cpp| replace:: :download:`blink.cpp <../_static/code/arduino/hello-world/blink.cpp>`
-.. |blink.h| replace:: :download:`blink.h <../_static/code/arduino/hello-world/blink.h>`
+You can download these files here: :download:`blink.zip <../_static/code/arduino/hello-world/blink.zip>`
 
-+--------------------+----------------+
-| ZIP (all the files)| Single files   |
-+====================+================+
-|                    | |mainblink.cpp||
-|                    +----------------+
-| |blink.zip|        | |blink.cpp|    |
-|                    +----------------+
-|                    | |blink.h|      |
-+--------------------+----------------+
-
-Upload to your arduino again.
+Upload the new version to your arduino again and check that it works ok!
 
 Publish your code
 -----------------
-
-You can easily publish your code using the ``bii publish`` command. You will be requested to provide a **tag** and a **message**. Valid tags are ``STABLE``, ``ALPHA``, ``BETA``, and ``DEV``. They provide information about the development state of your hive. The message is any information describing your publication.
+You can easily publish your code using the ``bii publish`` command.
+You will be requested to provide a **tag** and a **message**.
+Valid tags are ``STABLE``, ``ALPHA``, ``BETA``, and ``DEV``. They provide information about the development state of your hive.
+The message is any information describing your publication. You can read more about publishing :ref:`here <biipublish>`
 
 .. code-block:: bash
-	:emphasize-lines: 1, 5,6,7
 
 	$ bii publish                                                            
-	*****************************                                                   
-	***** Publishing public ****                                                    
-	*****************************                                                   
-	block:   phil/arduino_block                                                     
+
+	block:   your_user_name/arduino_blink
 	Introduce tag: STABLE                                                           
 	Introduce msg: My first arduino project with biicode                            
 	
-	INFO: Successfully published phil/arduino_block(phil/master): 0  
+	INFO: Successfully published your_user_name/arduino_blink(your_user_name/master): 0
 
 
-If your code has been published correctly —as it is the case in the previous example—, you can navigate it here: ``www.biicode.com/user_name``
+If your code has been published correctly, you can navigate it in: ``www.biicode.com/your_user_name``
 
 Reuse it!
 ---------
+Reusing your ``blink`` files in other projects is straightforward.
+Create a new hive ``arduino_reuse_blink``, with a default firmware, and a block named for example ``arduino_reuse_blink``
+(the block can be named the same as the hive, no problem):
 
-Reusing your ``Blink`` class in other projects or blocks is straightforward. Create a new hive, with a default firmware.
+.. code-block:: bash
 
-Then modify it with this code and write your own user name.	
+   $ bii new arduino_reuse_blink
+
+Then modify the main.cpp file with the following code and substitute your own user name in the #include directive.
 	
-**main_reuse.cpp**
+**main.cpp**
 
 .. literalinclude:: ../_static/code/arduino/hello-world/main_reuse.cpp
    :language: cpp
-   :emphasize-lines: 1
-   :linenos:  
-
-**Downloads**
-
-.. |main_reuse| replace:: :download:`main_reuse.cpp <../_static/code/arduino/hello-world/main_reuse.cpp>`
+   :emphasize-lines: 1, 7
 
 
-+------------+----------------+
-| ZIP        | Single files   |
-+============+================+
-|      -     | |main_reuse|   |
-+------------+----------------+
-
-
-**Note**: don't forget to define main_reuse.cpp like a main file with ``// bii:#entry_point()``.
-
-Assuming that your user name is *your_user_name* and the block where you published the code was named *your_block*, you could navigate to http://www.biicode.com, go to your profile and see your code there.
-
-Once you have the code, invoke ``find`` to resolve external dependencies, so the Blink class is retrieved. Then, build and ``upload`` in your Arduino as usual. Not forget check your Arduino settings to upload correctly.
+When you reference, or put #includes to files that have been published before, it is necessary to retrieve them.
+Run ``find`` to resolve external dependencies, so the blink files are retrieved.
 
 .. code-block:: bash
 
 	$ bii find
-	
+
+You should see a success message. You can also explore your hive/deps folder to check that you have there
+a copy of the blink files.
+
+.. container:: infonote
+
+   Although you have probably run this latter hive in the same computer as the above, you can do it
+   in any other computer. Biicode hosts your code for you, and serves as a central location or repository
+   where you can maintain and share your code, and recover it just with a simple #include in your
+   projects. No need to manually handle files any more!
+
+Now, you can ``upload`` in your arduino as usual (don't forget to set your arduino settings in this new hive if necessary).
+
+.. code-block:: bash
+
 	$ bii arduino:upload
-	
-	...
-	
-	Writing | ################################################## | 100% 0.00s
+
+Congratulations! Your blink files have been successfully reused!
+
+Now you might be interested in:
+
+   - If something went wrong, you might want to search for `help in the forum <http://forum.biicode.com>`_, and open a new topic if necessary.
+   - Seeing :ref:`more arduino examples <arduino>`
+   - What happens if I modify my blink files in the original hive? Read about :ref:`publishing new versions <biipublish>` and :ref:`updating <dependencies>`
+   - I don't want to publish my block, as it doesn't work yet, but I want to save my hive for continuing later in a different computer. :ref:`Read here to check how <hive_usage>`.

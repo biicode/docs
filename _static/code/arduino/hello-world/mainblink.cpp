@@ -1,7 +1,6 @@
 #include "blink.h"
 
 void setup() {
-  // set the digital pin as output:
   blink_setup(13, 1000); //Led pin 13, 1000ms interval     
 }
 

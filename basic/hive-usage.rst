@@ -1,7 +1,7 @@
 .. _hive_usage:
 
-Hive usage
-==========
+Hive management
+===============
 
 We :ref:`already know that a hive is basically a container for our blocks<hive_definition>`; or more simply said, a **biicode project**. Every single folder located inside your biicode workspace folder —other than the special ``bii`` workspace configuration folder— contains an individual hive, and these folders always exhibit :ref:`the same internal structure <hive_layout>`.
 
