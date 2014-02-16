@@ -54,7 +54,7 @@ Put **this comment in all** files you want to be **Arduino firmwares**, typicall
 
 .. literalinclude:: ../_static/code/arduino/hello-world/main_arduino.cpp
    :language: cpp
-   :emphasize-lines: 17
+   :emphasize-lines: 15
 		
 Build and upload
 ----------------
@@ -81,7 +81,7 @@ If you only want to build your firmware, just use ``arduino:build``.
       arduino:
          board: {board: mega2560, no_autolibs: 'false', port: COM7, programmer: usbtinyisp}
 
-   If you want to remember how configure your settings, check:
+   If you want to remember how to configure your settings:
 
       *  :ref:`Arduino settings in MacOS<arduino_default_settings_mac>`
       *  :ref:`Arduino settings in Linux<arduino_default_settings_linux>`
@@ -180,7 +180,7 @@ Now, you can ``upload`` in your arduino as usual (don't forget to set your ardui
 
 Congratulations! Your blink files have been successfully reused!
 
-Now you might be interested in:
+**Now you might be interested in:**
 
    - If something went wrong, you might want to search for `help in the forum <http://forum.biicode.com>`_, and open a new topic if necessary.
    - Seeing :ref:`more arduino examples <arduino>`
