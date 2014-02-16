@@ -3,6 +3,7 @@
 First Steps
 ===========
 
+This section describes the **first basic steps that are mandatory to use the biicode technology on any computer**, regardless the development platform (standard C++, raspberry Pi, Arduino…) or operating system.
 
 1. Sign up
 -------------
