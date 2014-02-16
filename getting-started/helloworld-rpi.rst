@@ -1,7 +1,7 @@
 "Hello World!"  C++ Raspberry Pi Cross Compiling
-=================================================
+================================================
 
-This example shows how to build a simple "Hello World" application with biicode.
+In this section you'll learn how to write, cross-compile and execute your first *'Hello World'* program in your Raspberry Pi using biicode.
 
 If you are not sure about the installation of all the necessary tools to use Raspberry Pi in biicode, you may need to see :ref:`this section <rpi_installation>`.
 

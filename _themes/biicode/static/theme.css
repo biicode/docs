@@ -4126,6 +4126,25 @@ nav.nav-side {
 .tabbed.current {
   display: block;
 }
+
+/******** infonotes **********/
+.infonote {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  color: #858585;
+  padding-left: 30px;
+  position: relative;
+}
+
+.infonote:before {
+  font-family: fontawesome-webfont;
+  content: "\f05a";
+  color: #ddd; 
+  position: absolute;
+  left: 5px;
+}
+
 /*********************/
 /* ALL MEDIA QUERIES */
 /*********************/

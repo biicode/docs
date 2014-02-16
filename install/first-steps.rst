@@ -3,49 +3,51 @@
 First Steps
 ===========
 
-This section describes the **first basic steps that are mandatory to use the biicode technology on any computer**, regardless the development platform (standard C++, raspberry Pi, Arduino…) or operating system.
+This section describes the **first basic steps that are mandatory in order to use the biicode technology on any computer**, regardless the target platform (desktop, raspberry Pi, Arduino…) or operating system.
 
 1. Sign up
--------------
-Sign up in our biicode website for an account. It will take you less than 1 minute. Click `here to sign up <https://www.biicode.com/accounts/signup>`_.
+----------
+
+First of all, `sign up in our biicode website <https://www.biicode.com/accounts/signup>`_ and get your own user account. It will take you less than 1 minute!
 
 .. _download_client_binaries:
 
 2. Download the client binaries
-----------------------------------
-Now, `download the appropriate client binaries for your system <https://www.biicode.com/downloads>`_, execute the setup program and follow the instructions.
+-------------------------------
 
-For more information, check our evolution in the :ref:`changelog <changelog>`.
+Now, `download the appropriate client binaries for your development platform <https://www.biicode.com/downloads>`_, execute the setup program and follow the instructions.
 
-If you are a biicode user, you may have to :ref:`upgrade<upgrading>`.
+**Biicode is an evolving technology**, and many modifications and improvements are introduced weekly with our releases. Rememeber to check frequently for new versions of the client, consult the :ref:`ChangeLog <changelog>`, and **make sure you are not using a deprecated version** reading our :ref:`upgrading section <upgrading>`.
 
-Alternative install for Debian based distributions (Ubuntu, Raspbian)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. container:: infonote
 
-You can use *apt-get* for install biicode using our APT repository:
-
-Quick install: 
-
-.. code-block:: bash
-
-    wget http://apt.biicode.com/install.sh && chmod +x install.sh && ./install.sh
+    **Alternative install for Debian based distributions (Ubuntu, Raspbian)**
 
 
-Step by step install:
+    You can use the ``apt-get`` program for installing biicode using our APT repository:
 
-.. code-block:: bash
+    Quick install: 
 
-    # 1. Add this line to your /etc/apt/sources.list file
-    deb http://apt.biicode.com/debian/ stable non-free
-    
-    # 2. Add our public key executing:
-    wget -qO- http://apt.biicode.com/packages.biicode.key | sudo apt-key add -
-    
-    # 3. Execute apt-get update:
-    sudo apt-get update 
-    
-    # 4. Execute apt-get install: 
-    sudo apt-get install biicode
+    .. code-block:: bash
+
+        wget http://apt.biicode.com/install.sh && chmod +x install.sh && ./install.sh
+
+
+    Step by step install:
+
+    .. code-block:: bash
+
+        # 1. Add this line to your /etc/apt/sources.list file
+        deb http://apt.biicode.com/debian/ stable non-free
+        
+        # 2. Add our public key executing:
+        wget -qO- http://apt.biicode.com/packages.biicode.key | sudo apt-key add -
+        
+        # 3. Execute apt-get update:
+        sudo apt-get update 
+        
+        # 4. Execute apt-get install: 
+        sudo apt-get install biicode
 
 	
 3. Choose your development tool

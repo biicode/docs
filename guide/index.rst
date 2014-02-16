@@ -191,3 +191,17 @@ Third section
 -------------
 
 contents for this section that will appear in a tab.
+
+
+
+Special notes
+==============
+
+
+You can include a special informative section for any particular topic: 
+
+.. container:: infonote
+
+    **Headline for the informative section**
+
+	Contents go here
