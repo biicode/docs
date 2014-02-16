@@ -3177,7 +3177,7 @@ a.text-neutral:hover {
 div[class^='highlight'] pre {
   white-space: pre;
   margin: 0;
-  padding: 12px 12px;
+  padding: 15px 15px 15px 30px;
   font-family: 'Droid Sans Mono', monospace;
   font-size: 12px;
   line-height: 1.5;
@@ -3210,6 +3210,22 @@ pre.literal-block:after {
   background-color: #f4ee4a;
   padding-right: 3px;
   border-radius: 3px;
+}
+
+.highlight-bash .hll, .highlight-bat .hll {
+  position: relative;
+  background-color: transparent;
+  /*background-color: #fff;
+  color: #666;
+  padding-right: 3px;
+  border-radius: 3px;*/
+}
+.highlight-bash .hll:before, .highlight-bat .hll:before {
+  font-family: fontawesome-webfont;
+  content: "\f0a4";
+  color: #bfbfbf;
+  position: absolute;
+  left: -20px;
 }
 
 .c {
@@ -3928,13 +3944,6 @@ li.toctree-l1 > a {
   color: #fff;
   border-radius: 5px;
   line-height: 1.4em !important;
-}
-
-.highlight-bash .hll, .highlight-bat .hll {
-  background-color: #fff;
-  color: #666;
-  padding-right: 3px;
-  border-radius: 3px;
 }
 
 nav.nav-side {
