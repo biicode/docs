@@ -3,7 +3,7 @@
 
 In this section you'll learn how to write, cross-compile and execute your first *'Hello World'* program for your Raspberry Pi using biicode.
 
-It is assumed that you have already :ref:`installed biicode on your system and created a workspace <first_steps>`, and :ref:`installed the tools for cross compiling <rpi_installation>`. These previous two steps are **mandatory** for the following instructions to work properly.
+It is assumed that you have already :ref:`installed biicode on your system and created a workspace <first_steps>`, and :ref:`installed the tools for cross compiling <rpi_corss_compiling>`. **These previous two steps are mandatory** for the following instructions to work properly.
 
 1. Create a new hive
 --------------------
@@ -41,15 +41,19 @@ Inside your workspace you will find a new folder named ``hello_rpi_hive`` contai
         +-- cmake
         +-- deps
 
-The ``bii`` folder contains specific configuration files for your hive. 
-Change the architecture of the cpp compiler on the ``hello/bii/settings.bii`` into your hive. Where you see::
+The ``bii`` folder contains specific configuration files for your hive. You must update your settings and change the architecture of the desired cpp compiler. To do so, edit your ``hello_rpi_hive/bii/settings.bii`` file, look for the following lines:
+
+.. code-block:: text
 
 	cpp:
 	  builder: {family: MAKE}
 	  compiler: {amily: GNU}
 	  configurer: {family: CMake}
 	 
-add ``arch: ARM``::
+and edit the *compiler* line as follows:
+
+.. code-block:: text
+	:emphasize-lines: 3
 	 
 	cpp:
 	  builder: {family: MAKE}
