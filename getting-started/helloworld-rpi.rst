@@ -35,22 +35,22 @@ Inside your workspace you will find a new folder named ``hello_rpi_hive`` contai
         +-- bii
         +-- bin
         +-- blocks
-        |    +-- your_user_name
+        |    +-- username
         |         +-- hello_rpi
         +-- build
         +-- cmake
         +-- deps
 
-The ``bii`` folder contains specific configuration files for your hive. You must update your settings and change the architecture of the desired cpp compiler. To do so, edit your ``hello_rpi_hive/bii/settings.bii`` file, look for the following lines:
+The ``bii`` folder contains specific configuration files for your hive. **You must update your settings and change the architecture** of the desired cpp compiler. To do so, open your ``hello_rpi_hive/bii/settings.bii`` file, look for the following lines:
 
 .. code-block:: text
 
 	cpp:
 	  builder: {family: MAKE}
-	  compiler: {amily: GNU}
+	  compiler: {arch: 32bit, family: GNU}
 	  configurer: {family: CMake}
 	 
-and edit the *compiler* line as follows:
+and edit the *compiler* configuration as follows:
 
 .. code-block:: text
 	:emphasize-lines: 3
@@ -60,12 +60,10 @@ and edit the *compiler* line as follows:
 	  compiler: {arch: ARM, family: GNU}
 	  configurer: {family: CMake}
 
-Just code!
-^^^^^^^^^^
+2. Just code!
+-------------
 
-Our "hello" hive will have these files: ``hello.h``, ``hello.cpp`` and ``main.cpp``. Just create them into your hive ``hello/blocks/your_user_name/hello_block`` and copy and paste the following code.
-
-This is the source code for your **hello_block block** in your **hello hive**:
+Our ``hello_rpi`` block will contain the following three files: ``hello.h``, ``hello.cpp`` and ``main.cpp``. Just create them into your hive ``hello_rpi_hive/blocks/username/hello_rpi`` folder and copy and paste the following code.
 
 **hello.h**
 
@@ -84,265 +82,175 @@ This is the source code for your **hello_block block** in your **hello hive**:
 .. literalinclude:: ../_static/code/cpp/hello-world/main.cpp
    :language: cpp
    :linenos:
-
-**Downloads**
-
-.. |hello.zip| replace:: :download:`hello.zip <../_static/code/cpp/hello-world/hello.zip>`
-.. |main.cpp| replace:: :download:`main.cpp <../_static/code/cpp/hello-world/main.cpp>`
-.. |hello.cpp| replace:: :download:`hello.cpp <../_static/code/cpp/hello-world/hello.cpp>`
-.. |hello.h| replace:: :download:`hello.h <../_static/code/cpp/hello-world/hello.h>`
-
-+--------------------+--------------+
-| ZIP (all the files)| Single files |
-+====================+==============+
-|                    | |main.cpp|   |
-|                    +--------------+
-| |hello.zip|        | |hello.cpp|  |
-|                    +--------------+
-|                    | |hello.h|    |
-+--------------------+--------------+
-
 	
-Build and send
-----------------
+2. Build, deploy and run your program
+-------------------------------------
 
-Once you have completed all the coding process, and the source files are located under ``hello/blocks/your_user_name/hello_block``, you are ready to compile and run the application. Assuming that you are located in your biicode workspace folder, ``cd`` to your **"hello" hive folder**, and run the ``bii cpp:run`` command:
+Now you are ready to compile and deploy your new application. First, **cross-compile your program** and make sure the binary is generated running ``bii cpp:build`` from your hive location:
 
 .. code-block:: bash
 
-	$ cd hello
 	$ bii cpp:build
+	...
+	Configuring cross compiler for ARM architecture:
+	...
+	[100%] Built target username_hello_rpi_main
 
-Note that the ``bii cpp:build`` command needs to be executed from a folder containing a hive like any other biicode project. After some messages showing information about the compiling process, the binaries will created in your ``bin folder``.
+The ouput indicates that the compiler has been configured for ARM architecture (using information provided in your workspace ``environment.bii`` configuration file, :ref:`as explained here<rpi_cc_tools>`).
 
-Remember that when generating the binary by cross compilation, you can only run on the Raspberry Pi.
+The binaries are created in your hive's ``bin`` folder, but remember that **you cannot run this program locally, as it has been generated for a different architecture** using the cross-compiling tools. You need to send the binary to your Raspberry Pi to be executed.
 
-Send your binaries
-^^^^^^^^^^^^^^^^^^^^
+**Note:** You can both compile and run locally your program restoring your ``hello_rpi_hive/bii/settings.bii`` configuration to the default ``32bit`` architecture. This is just simple C++ code, and you only need to change the compiler configuration!
 
-To send your binary to Raspberry Pi, you just execute the ``rpi:send`` command and the file will be send by rsync to the address that appears in your **settings.bii**:
+To **send your binary to Raspberry Pi**, you only need to execute the ``rpi:send`` command and the file will be sent by `rsync <http://en.wikipedia.org/wiki/Rsync>`_ to the address provided in your workspace ``default_settings.bii`` file during the :ref:`cross-compiling configuration process <rpi_default_settings>`.
 
 .. code-block:: bash
 
 	$ bii rpi:send
-
-	...
-	
 	Sending with rsync -Pravdtze ssh [HIVE_DIRECTORY]/bin/* [RPI_USER]@[RPI_IP]:[DIRECTORY]/[HIVE_NAME]
 
 	[RPI_USER]@[RPI_IP]'s password:
 
-Finally, the Raspberry Pi user's password will be asked. If you have not changed your password, for raspbian is **raspberry**.
+The Raspberry Pi user's password will be asked. If you have not changed your password, for Raspbian the default one is **raspberry**.
 
-If you want to send files to another Raspberry Pi or specify a different directory that appears in your **settings.bii**, you have the option of passing these parameters to the ``bii:send``. These parameters are not obligatory, can be passed only a new directory and use the other parameters of **settings.bii**.
+If you want to send programs to another Raspberry Pi or specify a directory other than the one that appears in your ``default_settings.bii``, you can pass additional parameters to the ``bii:send`` command (get all the information about these parameters with ``bii rpi:send --help``):
 
 .. code-block:: bash
 
-	$ bii rpi:send [directory] [user] [ip]
-	
-	...
-	
-	$ bii rpi:send [directory]
-	
+	$ bii rpi:send <directory> <user> <ip>
 
-You just have to go to your Raspberry Pi and execute the binaries as any computer.
-
-Connect with your Raspberry Pi
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can use the ``rpi:ssh`` command if you want a remotely access to your Raspberry Pi. With this command you **can run your binaries**.
+Finally, to **execute your program on your Raspberry Pi**, you need to establish a connection. You can use the ``rpi:ssh`` command if you want remote access. You'll find your program deployed in the path configured in your ``default_settings.bii`` file:
 
 .. code-block:: bash
 
 	$ bii rpi:ssh
-
 	...
+	Connecting with ssh <rpi_user>@<rpi_ip>
+	<rpi_user>@<rpi_ip>'s password:
 	
-	Connecting with ssh [RPI_USER]@[RPI_IP]
-
-	[RPI_USER]@[RPI_IP]'s password:
-	
-	pi@raspberrypi ~ $ cd hello
-	pi@raspberrypi ~/hello $ ls
-	[binary_name]
-	pi@raspberrypi ~/hello $ ./[binary_name]
+	pi@raspberrypi ~ $ cd hello_rpi
+	pi@raspberrypi ~/hello_rpi $ ls
+	username_hello_rpi_main
+	pi@raspberrypi ~/hello_rpi $ ./username_hello_rpi_main
 	Hello world!
 	
-If you want to send files to another Raspberry Pi that appears in your **settings.bii**, you have the option of passing these parameters to the ``bii:ssh``.
-
-.. code-block:: bash
-
-	$ bii rpi:ssh [user] [ip]
+And that's all. Your program is working!
 	
+3. Publish your code
+--------------------
 
-Publish your code and reuse it 
---------------------------------
-
-Once your have written, compiled and successfully sended some code, surely you are willing to share it with the biicode community! Uploading your code to biicode is really simple using the ``bii publish`` command. You will be requested to provide a **tag** and a **message**. Valid tags are ``STABLE``, ``ALPHA``, ``BETA``, and ``DEV``. They provide information about the development state of your hive. The message is any information describing your publication.
+Once your have written, compiled and successfully deployed your code, surely you are willing to share it with the biicode community! Uploading your code to biicode is really simple using the ``bii publish`` command. You will be requested to provide a **tag** and a **message**. Valid tags are ``STABLE``, ``ALPHA``, ``BETA``, and ``DEV``, providing information about the development state of your hive. The message is any information describing your publication. You can :ref:`read more about publishing here <biipublish>`.
 
 .. code-block:: bash
 
 	$ bii publish
-	block:   your_user_name/hello_block
-	Introduce tag: STABLE
-	Introduce msg: My first project with biicode
-	  Reading Hive...
-	  Checking block your_user_name/your_user_name/hello_block/master
-		  ... your block is being published here
+	block:   username/hello_rpi
+	Introduce tag: STABLE                                                           
+	Introduce msg: My first Raspberry Pi project with biicode                            
+	
+	INFO: Successfully published username/hello_rpi(username/master): 0
 
-	Successfully published your_user_name/hello_block(your_user_name/master): 0
+If your code has been published correctly —as it is the case in the previous example—, you can navigate it visiting the **www.biicode.com/username**, being *username* your biicode user name.
 
-If your code has been published correctly —as it is the case in the previous example—, you can navigate it here: ``www.biicode.com/user_name``
+4. Reuse it!
+------------
 
-Here is an example of sbaker's user:
-
-.. image:: ../_static/img/sbaker1.PNG
-
-And this is his block's view:
-
-.. image:: ../_static/img/sbaker2.PNG
-
-
-Reuse it!
-^^^^^^^^^^^^
-
-One of the most interesting aspects of biicode is the ability it provides to easily reuse code. As the published files have already been uploaded to biicode servers, it is possible for anyone —even other biicode users— to use these files in new projects. We'll show the process creating a new hive named **"hellopretty"**. From your biicode workspace folder, execute again the ``bii new`` command to create a new hive:
+One of the most interesting aspects of biicode is the ability it provides to easily reuse code. As the published files have already been uploaded to biicode servers, it is possible for anyone —even other biicode users— to use these files in new hives. We'll show the process with a new hive named ``pretty_hive``. From your biicode workspace folder, execute again the ``bii new`` command to create a new hive:
 
 .. code-block:: bash
 
-	$ cd /path/to/your/biicode_workspace
-	$ bii new hellopretty
-	Created new Hive hellopretty
-        ...
-	Introduce lang (default:cpp):
-	INFO: Selected lang: cpp
-	How would you like to name your first block?
-	Introduce block name (default:my_block): my_pretty_block
-	INFO: block name: my_pretty_block
-	Generate a default hello world?  (YES/no) no
-	Select IDE family: (Visual/CodeBlocks/Eclipse/NetBeans/None)
-	Introduce ide (default:Eclipse): None
-        ...
-	$ cd hellopretty
+	$ cd /path/to/your/biicode/workspace
+	$ bii new pretty_hive
 
-Add the following files to the folder ``hellopretty/blocks/your_user_name/my_pretty_block/`` (remember to substitute ``your_user_name`` with your actual biicode user name):
+Remember to provide adequate information about your new hive preferences: ``cpp`` as programming, language, and the name for the first block in your hive, ``hellopretty`` in our case.
+
+Now, include the following files into the ``pretty_hive/blocks/username/hellopretty/`` folder (remember to substitute ``username`` with your actual biicode user name):
 
 **hellopretty.h**
 
-.. literalinclude:: ../_static/code/cpp/hello-world/hellopretty.h
-   :language: cpp
+.. code-block:: cpp
    :linenos:
+
+	#pragma once
+	void hellopretty ();
 
 **hellopretty.cpp**
 
-.. literalinclude:: ../_static/code/cpp/hello-world/hellopretty.cpp
-   :language: cpp
+.. code-block:: cpp
    :linenos:
+
+	#include "username/hello_rpi/hello.h" // reusing the hello.h header
+	#include "hellopretty.h"
+	#include <iostream>
+	using namespace std;
+
+	void hellopretty () {
+		cout<<"**********************************"<<endl;
+		hello();
+		cout<<"**********************************"<<endl;
+	}
 
 **mainpretty.cpp**
 
-.. literalinclude:: ../_static/code/cpp/hello-world/mainpretty.cpp
-   :language: cpp
+.. code-block:: cpp
    :linenos:
 
-**Downloads**
+	#include "hellopretty.h"
 
-.. |hello-pretty.zip| replace:: :download:`hello-pretty.zip <../_static/code/cpp/hello-world/hello-pretty.zip>`
-.. |mainpretty.cpp| replace:: :download:`mainpretty.cpp <../_static/code/cpp/hello-world/mainpretty.cpp>`
-.. |hellopretty.cpp| replace:: :download:`hellopretty.cpp <../_static/code/cpp/hello-world/hellopretty.cpp>`
-.. |hellopretty.h| replace:: :download:`hellopretty.h <../_static/code/cpp/hello-world/hellopretty.h>`
+	int main() {
+		hellopretty();
+		return 1;
+	}
 
-+--------------------+------------------+
-| ZIP (all the files)| Single files     |
-+====================+==================+
-|                    | |mainpretty.cpp| |
-|                    +------------------+
-| |hello-pretty.zip| | |hellopretty.cpp||
-|                    +------------------+
-|                    | |hellopretty.h|  |
-+--------------------+------------------+
-
-
-In this case we are using of the ``hello()`` function, which is not explicitly defined in the current hive. If you tried to compile and run this program using the ``bii cpp:run`` command, you would see an error message:
-
-.. code-block:: bash
-
-	Detected 3 files created, 0 updated
-	Processing hive
-	  Cell your_user_name/my_pretty_block/hellopretty.h is implemented by set(['your_user_name/my_pretty_block/hellopretty.cpp'])
-		...
-	#include "your_user_name/hello_block/hello.h" //reusing hello.h header
-	         ^
-	1 error generated.
-		...
-	[!] Make failed
-
-However, biicode knows that you are trying to reuse the ``hello.h`` header. To resolve the missing dependencies we use the ``bii find`` command. Hopefully the server will find the dependencies, and you will see a success message on your screen:
+In this case we are using of the ``hello()`` function, which is not explicitly defined in the current hive. When you reference, or put #includes to files that have been published before, it is necessary to retrieve them. Biicode knows that you are trying to reuse the ``hello.h`` header from the ``username/hello_rpi`` block. To resolve the missing dependencies we use the ``bii find`` command:
 
 .. code-block:: bash
 
 	$ bii find
-	Finding missing dependencies in server
-		...
-	Dependencies resolved in server:
-	Find resolved new dependencies:
-		your_user_name/hello_block(your_user_name/master): 0
 	
-This is a successful ouput that indicates biicode has been able to resolve your dependencies. All needed files have been automatically downloaded and copied to your hive.
+You should see a success message indicating that biicode has been able to resolve your dependencies. Check that all necessary files have been stored in your hive's ``deps`` folder. Note that the ``main.cpp`` file of the ``username/hello_rpi`` block was not retrieved. That is because you don't need it to reuse the ``hello()`` function!
 
-Now you can try to compile and send again your new code. In this case the process will succeed:
+Now you are ready to compile and deploy your new program. Proceed as you learned before:
+
+.. code-block:: bash
+	
+	$ bii cpp:build
+	...
+	$ bii rpi:send
+	...
+	
+And finally, test your program working on your Raspberry Pi:
 
 .. code-block:: bash
 
-	$ bii rpi:send
-
-	...
-	
-	Sending with rsync -Pravdtze ssh [HIVE_DIRECTORY]/bin/* [RPI_USER]@[RPI_IP]:[DIRECTORY]/[HIVE_NAME]
-	
 	$ bii rpi:ssh
-
 	...
-	
-	Connecting with ssh [RPI_USER]@[RPI_IP]
-
-	[RPI_USER]@[RPI_IP]'s password:
-	
 	pi@raspberrypi ~ $ cd hellopretty
 	pi@raspberrypi ~/hellopretty $ ls
-	[binary_name]
-	pi@raspberrypi ~/hellopretty $ ./[binary_name]
-	
-		...
-	
+	<binary_name>
+	pi@raspberrypi ~/hellopretty $ ./<binary_name>
 	**********************************
 	Hello World!
 	**********************************
 
-You will find the ``your_user_name/hello_block`` block along with the retrieved source files ``hello.h`` and ``hello.cpp`` in your  ``hellopretty/deps`` subfolder. Note that the ``main.cpp`` file of the **hello** block was not retrieved. That is because you don't need it to reuse the ``hello()`` function!
+5. Publish a new version of your hello block
+--------------------------------------------
 
-Publish a new version of your hello block
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Modifying your code and publishing the results is easy with biicode. Now we'll change the message displayed by the ``hello()`` function in the **hello** block. Update the ``hello.cpp`` as following:
+Modifying your code and publishing the results is easy with biicode. Now we'll change the message displayed by the ``hello()`` function in the ``username/hello_rpi`` block. Update the ``hello.cpp`` as follows:
 
 **hello.cpp**
 
-.. literalinclude:: ../_static/code/cpp/hello-world/hello(modified).cpp
-   :language: cpp
+.. code-block:: cpp
    :linenos:
-   
+   :emphasize-lines: 6
 
-**Downloads**
+   	#include "hello.h"
+	#include  <iostream>
+	using namespace std;
 
-.. |hello(modified)| replace:: :download:`hello.cpp <../_static/code/cpp/hello-world/hello(modified).cpp>`
-
-+------------------+
-| Single file      |
-+==================+
-| |hello(modified)||
-+------------------+
-
+	void hello(){
+	 cout << "---- Hello biicode! ----" << endl;
+	}
 	
 Execute your block, to make sure everything works as expected:
 
@@ -355,54 +263,55 @@ Execute your block, to make sure everything works as expected:
 		...
 	$ bii rpi:ssh
 		...
-		
-	pi@raspberrypi ~/hello $ ./[binary_name]
 	
-	Hello biicode!
+	pi@raspberrypi ~/hellopretty $ ./<binay_name>
+	pi@raspberrypi ~/hellopretty 
+		
+	---- Hello biicode! ----
 
-Now, post your block to the biicode server just like you did before:
+Now, post your block to the biicode server just like you did before. From your hive folder:
 
 .. code-block:: bash
 
 	$ bii publish
-	block:     your_user_name/hello_block
+	block:     username/hello_rpi
 	Introduce tag: STABLE
-	Introduce msg: My first block update
-		...
-	Successfully published your_user_name/hello_block(your_user_name/master): 1
+	Introduce msg: My first block update for Raspberry Pi
+	...
+	Successfully published username/hello_rpi(username/master): 1
 
 As you can see, the version of your block changed from 0 to 1. Your can see both versions published online visiting your biicode user main page, as before.
 
-Update your hellopretty block with the new version of hello
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+6. Update your hellopretty block with the modifications
+-------------------------------------------------------
 
-To update your **hellopretty** block you only need to search the server for any published new versions of your dependencies using the ``bii find`` command with the ``--update`` modifier. If the server finds new published versions for any of your dependencies, you'll see an indicative message on your screen:
+To update your ``username/hellopretty`` block with the new modifications to the ``hello()`` function, you only need to search the server for any published new versions of your dependencies using the ``bii find`` command and the ``--update`` modifier. If the server finds new published versions for any of your dependencies, you'll see an indicative message on your screen:
 
 .. code-block:: bash
 
-	$ cd /path/to/your/biicode_workspace/hellopretty
+	$ cd /path/to/your/biicode/workspace
+	$ cd hellopretty
 	$ bii find --update
-	Finding missing dependencies in server
-		...
-	Updated dependencies:
-		your_user_name/your_user_name/hello_block/master:#1
-		...
-	Saving dependences on disk
+	...
 
-
-Finally, you can input the ``bii cpp:run`` command to see how your block has been updated, showing on screen the new message.
+Finally, you can test the updated code running on your Raspberry Pi.
 
 .. code-block:: bash
 
 	$ bii cpp:build
-		...
+	...
 	$ bii rpi:send
-		...
+	...
 	$ bii rpi:ssh
-		...
-		
+	...
+	
 	pi@raspberrypi ~/hellopretty $ ./[binary_name]
 	**********************************
-	Hello biicode!
+	---- Hello biicode! ----
 	**********************************
 
+**Now you might be interested in:**
+
+   - If something went wrong, you might want to `find some help in the forum <http://forum.biicode.com/category/cross-platform-support/raspberry-pi>`_, and open a new topic if necessary.
+   - Seeing :ref:`more Raspberry Pi examples <raspberry_pi>`.
+   - I don't want to publish my block, as it doesn't work yet, but I want to save my hive for continuing later in a different computer. :ref:`Read here to check how <hive_usage>`.
