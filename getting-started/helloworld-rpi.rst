@@ -1,38 +1,47 @@
-"Hello World!"  C++ Raspberry Pi Cross Compiling
-================================================
+"Hello World!" C++ Raspberry Pi Cross Compiling
+===============================================
 
 In this section you'll learn how to write, cross-compile and execute your first *'Hello World'* program for your Raspberry Pi using biicode.
 
-It is assumed that you have already :ref:`installed biicode on your system and created a workspace <first_steps>`, and :ref:`installed all the necessary tool for cross compiling <rpi_installation>`. These previous two steps are **mandatory** for the following instructions to work properly.
+It is assumed that you have already :ref:`installed biicode on your system and created a workspace <first_steps>`, and :ref:`installed the tools for cross compiling <rpi_installation>`. These previous two steps are **mandatory** for the following instructions to work properly.
 
 1. Create a new hive
 --------------------
 
-First of all, create a new hive in your workspace using the ``bii new`` command. Open your console, move to your biicode workspace and create a new hive named **'hello'**:
+First of all, create a new hive inside your workspace using the ``bii new`` command. Open your console, move to your biicode workspace and **create a new hive named** ``hello_rpi_hive``:
 
-..
-	.. code-block:: bash
+.. code-block:: bash
 
-		$ cd <path_to_your_workspace>
-		$ bii new hello
+	$ bii new hello_rpi_hive
 
-.. raw:: html
+The biicode assistant will ask you some questions regarding your **hive preferences**. For this tutorial we'll choose ``cpp`` as our programming language, and no IDE configuration. We'll create a new block named ``hello_rpi``. The assistant is also able to generate a default C++ *'hello world block'* for you, but in this case we will write the files from scratch. All in all, these are the options you should input when prompted:
 
-	<script type="text/javascript" src="https://asciinema.org/a/7609.js" id="asciicast-7609" async></script>
+.. code-block:: bash
 
-	
-The biicode assistant will ask you some questions regarding your hive preferences. For this tutorial we have chosen **cpp** as our programming language, and no IDE configuration. We have also named the first hive in our block as ``hello_block``. The assistant is also able to generate a default C++ 'hello world' block for you, but in this case we will write the files from scratch. Inside your workspace you will find a new folder named ``hello`` containing the subfolders ``bii``, ``deps`` and ``blocks``.
+	Created new hive hello_rpi_hive
+	Select language: (java/node/fortran/python/cpp/arduino/None)
+	Introduce lang (default:cpp): cpp
+	Generate a default hello world? (YES/no) no
+	Select IDE family: (Visual/CodeBlocks/Eclipse/NetBeans/None)
+	Introduce ide (default:None): none
+	Select build type: (None/Debug/Release/RelWithDebInfo/MinSizeRel)
+	Introduce build type (default:Debug): debug
 
-2. Configure your settings
---------------------------
+Inside your workspace you will find a new folder named ``hello_rpi_hive`` containing the subfolders ``bii`` (for your hive configuration files), ``deps`` and ``blocks``, and the following layout:
 
-Update your :ref:`hello/bii/settings.bii <settings>` into your hive with the info of your Raspberry Pi ::
-	
-	rpi: {directory: /home/pi, ip: 192.168.1.68, password: raspberry, user: pi}
+.. code-block:: text
 
-If you want to remember how configure your settings, review the section :ref:`Configure your Raspberry Pi settings<rpi_default_settings>`.
+   +-- hello_rpi_hive
+        +-- bii
+        +-- bin
+        +-- blocks
+        |    +-- your_user_name
+        |         +-- hello_rpi
+        +-- build
+        +-- cmake
+        +-- deps
 
-
+The ``bii`` folder contains specific configuration files for your hive. 
 Change the architecture of the cpp compiler on the ``hello/bii/settings.bii`` into your hive. Where you see::
 
 	cpp:
