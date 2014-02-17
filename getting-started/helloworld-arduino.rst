@@ -7,8 +7,9 @@ any project.
 
 Remember that you need to :ref:`configure your biicode workspace <arduino_installation>` with CMake, MinGW and the Arduino SDK.
 
-Create a new hive
------------------
+1. Create a new hive
+--------------------
+
 The first step is to create a new hive (a biicode project) inside your workspace with the ``bii new`` command.
 
 .. code-block:: bash
@@ -40,7 +41,7 @@ This command will create the following layout:
    |-- arduino_blink_hive
    |    +-- bin
    |    +-- blocks
-   |    |     +-- your_user_name
+   |    |     +-- username
    |    |    |     +-- arduino_blink
    |    |    |     |       +-- main.cpp
    |    +-- build
@@ -56,8 +57,9 @@ Put **this comment in all** files you want to be **Arduino firmwares**, typicall
    :language: cpp
    :emphasize-lines: 15
 		
-Build and upload
-----------------
+2. Build and upload
+-------------------
+
 Now, you can build your firmware and upload it to your Arduino with the command ``arduino:upload``.
 If you only want to build your firmware, just use ``arduino:build``.
 
@@ -87,60 +89,60 @@ If you only want to build your firmware, just use ``arduino:build``.
       *  :ref:`Arduino settings in Linux<arduino_default_settings_linux>`
       *  :ref:`Arduino settings in Windows<arduino_default_settings_win>`
 
-Creating reusable code
-----------------------
+3. Creating reusable code
+-------------------------
 
-There is a problem with the above example. The use of delay() stops the execution flow of arduino,
-so if you want, for example, to control a motor, process serial port inputs, or whatever other work
-you have to do, you **cannot use** the previous blink version, as it holds execution.
-The following code use the method ``millis()`` and 2 control variables to count the elapsed time
-and switch the LED accordingly.
-So replace the example before with the next files:
+There is a problem with the above example. The use of ``delay()`` halts the execution flow of arduino, so if you want, for example, to control a motor, process serial port inputs, or whatever other work you have to do, you **cannot use** the previous blink version, as it holds execution.
+
+The following code uses the method ``millis()`` and 2 control variables to count the elapsed time
+and switch the LED accordingly. Replace the previous example code with the next files:
 	
 **blink.h**
 
 .. literalinclude:: ../_static/code/arduino/hello-world/blink.h
    :language: cpp
+   :linenos:
 
 **blink.cpp**
 
 .. literalinclude:: ../_static/code/arduino/hello-world/blink.cpp
    :language: cpp
+   :linenos:
 
 **mainblink.cpp**
 
 .. literalinclude:: ../_static/code/arduino/hello-world/mainblink.cpp
    :language: cpp
+   :linenos:
 
 You can download these files here: :download:`blink.zip <../_static/code/arduino/hello-world/blink.zip>`
 
 Upload the new version to your arduino again and check that it works ok!
 
-Publish your code
------------------
-You can easily publish your code using the ``bii publish`` command.
-You will be requested to provide a **tag** and a **message**.
-Valid tags are ``STABLE``, ``ALPHA``, ``BETA``, and ``DEV``. They provide information about the development state of your hive.
-The message is any information describing your publication. You can read more about publishing :ref:`here <biipublish>`
+4. Publish your code
+--------------------
+
+You can easily publish your code using the ``bii publish`` command. You will be requested to provide a **tag** and a **message**. Valid tags are ``STABLE``, ``ALPHA``, ``BETA``, and ``DEV``. They provide information about the development state of your hive. The message is any information describing your publication. You can :ref:`read more about publishing here <biipublish>`.
 
 .. code-block:: bash
 
 	$ bii publish                                                            
 
-	block:   your_user_name/arduino_blink
+	block:   username/arduino_blink
 	Introduce tag: STABLE                                                           
 	Introduce msg: My first arduino project with biicode                            
 	
-	INFO: Successfully published your_user_name/arduino_blink(your_user_name/master): 0
+	INFO: Successfully published username/arduino_blink(username/master): 0
 
 
-If your code has been published correctly, you can navigate it in: ``www.biicode.com/your_user_name``
+If your code has been published correctly —as it is the case in the previous example—, you can navigate it visiting the **www.biicode.com/username**, being *username* your biicode user name.
 
-Reuse it!
----------
-Reusing your ``blink`` files in other projects is straightforward.
-Create a new hive ``arduino_reuse_blink``, with a default firmware, and a block named for example ``arduino_reuse_blink``
-(the block can be named the same as the hive, no problem):
+5. Reuse it!
+------------
+
+Reusing your ``blink`` files in other projects is straightforward. 
+
+First, create insed your workspace a new hive with name ``arduino_reuse_blink``, with a default firmware, and a block named for example ``arduino_reuse_blink`` (the block can be named the same as the hive, no problem):
 
 .. code-block:: bash
 
@@ -152,6 +154,7 @@ Then modify the main.cpp file with the following code and substitute your own us
 
 .. literalinclude:: ../_static/code/arduino/hello-world/main_reuse.cpp
    :language: cpp
+   :linenos:
    :emphasize-lines: 1, 7
 
 
@@ -162,8 +165,7 @@ Run ``find`` to resolve external dependencies, so the blink files are retrieved.
 
 	$ bii find
 
-You should see a success message. You can also explore your hive/deps folder to check that you have there
-a copy of the blink files.
+You should see a success message. You can also explore your hive/deps folder to check that you have there a copy of the blink files.
 
 .. container:: infonote
 
