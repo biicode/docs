@@ -1,4 +1,4 @@
-#include "your_user_name/my_block/hello.h" //reusing hello.h header
+#include "your_user_name/cpp_hello/hello.h" //reusing hello.h header
 #include "hellopretty.h"
 #include <iostream>
 
