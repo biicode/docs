@@ -69,19 +69,26 @@ Our ``hello_rpi`` block will contain the following three files: ``hello.h``, ``h
 
 .. literalinclude:: ../_static/code/cpp/hello-world/hello.h
    :language: cpp
-   :linenos:
+
 
 **hello.cpp**
 
 .. literalinclude:: ../_static/code/cpp/hello-world/hello.cpp
    :language: cpp
-   :linenos:
+
 
 **main.cpp**
 
 .. literalinclude:: ../_static/code/cpp/hello-world/main.cpp
    :language: cpp
+<<<<<<< HEAD
+
+
+You can download these files here: :download:`hello.zip <../_static/code/cpp/hello-world/hello.zip>`
+
+=======
    :linenos:
+>>>>>>> bii_docs/master
 	
 2. Build, deploy and run your program
 -------------------------------------
@@ -168,14 +175,33 @@ Now, include the following files into the ``pretty_hive/blocks/username/hellopre
 
 **hellopretty.h**
 
+<<<<<<< HEAD
+.. literalinclude:: ../_static/code/cpp/hello-world/hellopretty.h
+   :language: cpp
+
+
+**hellopretty.cpp**
+
+.. literalinclude:: ../_static/code/cpp/hello-world/hellopretty.cpp
+   :language: cpp
+
+=======
 .. code-block:: cpp
    :linenos:
 
 	#pragma once
 	void hellopretty ();
+>>>>>>> bii_docs/master
 
 **hellopretty.cpp**
 
+<<<<<<< HEAD
+.. literalinclude:: ../_static/code/cpp/hello-world/mainpretty.cpp
+   :language: cpp
+
+
+You can download these files here: :download:`hello-pretty.zip <../_static/code/cpp/hello-world/hello-pretty.zip>`
+=======
 .. code-block:: cpp
    :linenos:
 
@@ -191,6 +217,7 @@ Now, include the following files into the ``pretty_hive/blocks/username/hellopre
 	}
 
 **mainpretty.cpp**
+>>>>>>> bii_docs/master
 
 .. code-block:: cpp
    :linenos:
@@ -240,9 +267,20 @@ Modifying your code and publishing the results is easy with biicode. Now we'll c
 
 **hello.cpp**
 
+<<<<<<< HEAD
+.. literalinclude:: ../_static/code/cpp/hello-world/hello(modified).cpp
+   :language: cpp
+
+   
+
+**Downloads**
+
+.. |hello(modified)| replace:: :download:`hello.cpp <../_static/code/cpp/hello-world/hello(modified).cpp>`
+=======
 .. code-block:: cpp
    :linenos:
    :emphasize-lines: 6
+>>>>>>> bii_docs/master
 
    	#include "hello.h"
 	#include  <iostream>
