@@ -229,10 +229,10 @@ Now, post your block to the biicode server just like you did before. From your h
 As you can see, the version of your block changed from 0 to 1. Your can see both versions published online visiting your biicode user main page, as before.
 
 
-7. Update your hellopretty block with the modifications
--------------------------------------------------------
+7. Update your cpp_hellopretty block with the modifications
+-----------------------------------------------------------
 
-To update your ``username/cpp_hellopretty`` block with the new modifications to the ``hello()`` function, you only need to search the server for any published new versions of your dependencies using the ``bii find`` command and the ``--update`` modifier. If the server finds new published versions for any of your dependencies, you'll see an indicative message on your screen:
+To update your ``username/cpp_hellopretty`` block with the new modifications to the ``hello()`` function, **you only need to search the server for any published new versions of your dependencies** using the ``bii find`` command and the ``--update`` modifier. If the server finds new published versions for any of your dependencies, you'll see an indicative message on your screen:
 
 .. code-block:: bash
 
@@ -240,7 +240,7 @@ To update your ``username/cpp_hellopretty`` block with the new modifications to 
    $ bii find --update
    ...
 
-Finally, you can test the updated code running on your Raspberry Pi.
+Finally, you can test the updated code running:
 
 .. code-block:: bash
 
