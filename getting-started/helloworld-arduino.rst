@@ -131,12 +131,9 @@ You can easily publish your code using the ``bii publish`` command. You will be 
 	
 	INFO: Successfully published username/arduino_blink(username/master): 0
 
+If your code has been published correctly —as it is the case in the previous example—, you can already browse its conents online, on the biicode web site, visiting the url: ``www.biicode.com/your_user_name``. You can see `an example of a published block following this link <https://www.biicode.com/fenix/blocks/fenix/arduino_blink/branches/master/>`_. In this example the biicode user ``fenix`` has pusblished a block named ``arduino_blink``. You can browse online the block contents and files, and inspect all branches and versions for this block:
 
-If your code has been published correctly —as it is the case in the previous example—, you can navigate it visiting the **www.biicode.com/username**, being *username* your biicode user name.
-
-Here is an example of `fenix's user blink block <https://www.biicode.com/fenix/blocks/fenix/arduino_blink/branches/master/versions/0/cells/mainblink.cpp>`_:
-
-.. image:: ../_static/img/fenix_blink.PNG
+.. image:: ../_static/img/fenix_blink.png
 
 5. Reuse it!
 ------------
