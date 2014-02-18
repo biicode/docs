@@ -23,7 +23,7 @@ To develop C/C++ in windows you need:
 Assisted installation
 ---------------------
 
-The command ``bii setup:cpp´´ will try to automatically download, launch installer and configure the environment for you, for CMake, MinGW and Notepad++.
+The command ``bii setup:cpp`` will try to automatically download, launch installer and configure the environment for you, for CMake, MinGW and Notepad++.
 Execute the command and follow instructions. You might need to re-run the command after closing the console, to check everything went OK.
 
 .. code-block:: bash

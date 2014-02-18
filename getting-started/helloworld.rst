@@ -84,21 +84,18 @@ It would be interesting to create an example which can be reused by you or by ot
 
 .. literalinclude:: ../_static/code/cpp/hello-world/hello.h
    :language: cpp
-   :linenos:
 
 
 **hello.cpp**
 
 .. literalinclude:: ../_static/code/cpp/hello-world/hello.cpp
    :language: cpp
-   :linenos:
 
 
 **main.cpp**
 
 .. literalinclude:: ../_static/code/cpp/hello-world/main.cpp
    :language: cpp
-   :linenos:
 
 
 You can download these files here: :download:`hello.zip <../_static/code/cpp/hello-world/hello.zip>`, unzip and copy them into your ``cpp_hello`` block folder. Run the new program to verify that it works as expected!
@@ -121,27 +118,24 @@ Once your have written, compiled and successfully executed some code, surely you
 
 If your code has been published correctly —as it is the case in the previous example—, you can navigate it here: ``www.biicode.com/your_user_name``
 
-Here is an example of sbaker's user:
+Here is an example of `david's user hello block <https://www.biicode.com/david/blocks/david/hello/branches/master/versions/0/cells/main.cpp>`_:
 
-.. image:: ../_static/img/sbaker1.PNG
+.. image:: ../_static/img/david_hello.PNG
 
-And this is his block's view:
-
-.. image:: ../_static/img/sbaker2.PNG
 
 
 5. Reuse it!
 ------------
 
-One of the most interesting aspects of biicode is the ability it provides to easily reuse code. As the published files have already been uploaded to biicode servers, it is possible for anyone —even other biicode users— to use these files in new projects. We'll show the process creating a new hive named ``cpp_hello_pretty_hive``. From your biicode workspace folder, execute again the ``bii new`` command to create a new hive:
+One of the most interesting aspects of biicode is the ability it provides to easily reuse code. As the published files have already been uploaded to biicode servers, it is possible for anyone —even other biicode users— to use these files in new projects. We'll show the process creating a new hive named ``cpp_hellopretty_hive``. From your biicode workspace folder, execute again the ``bii new`` command to create a new hive:
 
 .. code-block:: bash
 
-   $ bii new cpp_hello_pretty_hive
+   $ bii new cpp_hellopretty_hive
 
 Now you should configure this hive as you did before, but in this case **the initial block must have a different name**: ``cpp_hellopretty``, for example.
 
-Add the following files to the folder ``cpp_hello_pretty_hive/blocks/your_user_name/cpp_hellopretty/`` (remember to substitute ``your_user_name`` with your actual biicode user name):
+Add the following files to the folder ``cpp_hellopretty_hive/blocks/your_user_name/cpp_hellopretty/`` (remember to substitute ``your_user_name`` with your actual biicode user name):
 
 **hellopretty.h**
 
@@ -191,4 +185,74 @@ Now you can try to compile and run again your new code. In this case the process
    Hello world!
    **********************************
 
-You will find the ``your_user_name/cpp_hello`` block along with the retrieved source files ``hello.h`` and ``hello.cpp`` in your ``cpp_hello_pretty_hive/deps`` subfolder. Note that the ``main.cpp`` file of the ``cpp_hello`` block was not retrieved. That is because you don't need it to reuse the ``hello()`` function!
+You will find the ``your_user_name/cpp_hello`` block along with the retrieved source files ``hello.h`` and ``hello.cpp`` in your ``cpp_hellopretty_hive/deps`` subfolder. Note that the ``main.cpp`` file of the ``cpp_hello`` block was not retrieved. That is because you don't need it to reuse the ``hello()`` function!
+
+
+6. Publish a new version of your hello block
+--------------------------------------------
+
+Modifying your code and publishing the results is easy with biicode. Now we'll change the message displayed by the ``hello()`` function in the ``username/cpp_hello`` block. Update the ``hello.cpp`` as follows:
+
+**hello.cpp**
+
+.. code-block:: cpp
+   :emphasize-lines: 6
+
+   #include "hello.h"
+   #include  <iostream>
+   using namespace std;
+
+   void hello(){
+    cout << "---- Hello biicode! ----" << endl;
+   }
+   
+Execute your block, to make sure everything works as expected:
+
+.. code-block:: bash
+
+   $ cd cpp_hello_hive
+   $ bii cpp:run
+   ...      
+   ---- Hello biicode! ----
+
+Now, post your block to the biicode server just like you did before. From your hive folder:
+
+.. code-block:: bash
+
+   $ bii publish
+   block:     username/cpp_hello
+   Introduce tag: STABLE
+   Introduce msg: My first hello block update
+   ...
+   Successfully published username/cpp_hello(username/master): 1
+
+As you can see, the version of your block changed from 0 to 1. Your can see both versions published online visiting your biicode user main page, as before.
+
+
+7. Update your hellopretty block with the modifications
+-------------------------------------------------------
+
+To update your ``username/cpp_hellopretty`` block with the new modifications to the ``hello()`` function, you only need to search the server for any published new versions of your dependencies using the ``bii find`` command and the ``--update`` modifier. If the server finds new published versions for any of your dependencies, you'll see an indicative message on your screen:
+
+.. code-block:: bash
+
+   $ cd cpp_hellopretty_hive
+   $ bii find --update
+   ...
+
+Finally, you can test the updated code running on your Raspberry Pi.
+
+.. code-block:: bash
+
+   $ bii cpp:run
+   ...
+   **********************************
+   ---- Hello biicode! ----
+   **********************************
+
+**Now you might be interested in:**
+
+   - If something went wrong, you might want to `find some help in the forum <http://forum.biicode.com/category/c-c>`_, and open a new topic if necessary.
+   - Seeing :ref:`more C/C++ examples <cpp_examples>`.
+   - I don't want to publish my block, as it doesn't work yet, but I want to save my hive for continuing later in a different computer. :ref:`Read here to check how <hive_usage>`.
+   - Specific :ref:`C/C++ commands list <bii_cpp_tools>`

@@ -38,7 +38,7 @@ This command will create the following layout:
 
 .. code-block:: text
 
-   |-- arduino_blink_hive
+   +-- arduino_blink_hive
    |    +-- bin
    |    +-- blocks
    |    |     +-- username
@@ -65,7 +65,7 @@ If you only want to build your firmware, just use ``arduino:build``.
 
 .. code-block:: bash
 
-	$ cd arduino_hive
+	$ cd arduino_blink_hive
 	$ bii arduino:upload
 	...
 	Writing | ################################################## | 100% 0.00s
@@ -75,7 +75,7 @@ If you only want to build your firmware, just use ``arduino:build``.
 .. container:: infonote
 
    The previous example will work with your default settings configured during the installation. If you need
-   you can change your hive settings.bii file (**arduino_hive/bii/settings.bii**) with the info about your board and serial port.
+   you can change your hive settings.bii file (**arduino_blink_hive/bii/settings.bii**) with the info about your board and serial port.
    Here is a Windows example:
 
    .. code-block:: text
@@ -101,19 +101,16 @@ and switch the LED accordingly. Replace the previous example code with the next 
 
 .. literalinclude:: ../_static/code/arduino/hello-world/blink.h
    :language: cpp
-   :linenos:
 
 **blink.cpp**
 
 .. literalinclude:: ../_static/code/arduino/hello-world/blink.cpp
    :language: cpp
-   :linenos:
 
 **mainblink.cpp**
 
 .. literalinclude:: ../_static/code/arduino/hello-world/mainblink.cpp
    :language: cpp
-   :linenos:
 
 You can download these files here: :download:`blink.zip <../_static/code/arduino/hello-world/blink.zip>`
 
@@ -137,16 +134,20 @@ You can easily publish your code using the ``bii publish`` command. You will be 
 
 If your code has been published correctly —as it is the case in the previous example—, you can navigate it visiting the **www.biicode.com/username**, being *username* your biicode user name.
 
+Here is an example of `fenix's user blink block <https://www.biicode.com/fenix/blocks/fenix/arduino_blink/branches/master/versions/0/cells/mainblink.cpp>`_:
+
+.. image:: ../_static/img/fenix_blink.PNG
+
 5. Reuse it!
 ------------
 
 Reusing your ``blink`` files in other projects is straightforward. 
 
-First, create insed your workspace a new hive with name ``arduino_reuse_blink``, with a default firmware, and a block named for example ``arduino_reuse_blink`` (the block can be named the same as the hive, no problem):
+First, create inside your workspace a new hive with name ``arduino_reuseblink_hive``, with a default firmware, and a block named for example ``arduino_reuseblink`` (the block could be named the same as the hive, no problem):
 
 .. code-block:: bash
 
-   $ bii new arduino_reuse_blink
+   $ bii new arduino_reuseblink_hive
 
 Then modify the main.cpp file with the following code and substitute your own user name in the #include directive.
 	
@@ -154,7 +155,6 @@ Then modify the main.cpp file with the following code and substitute your own us
 
 .. literalinclude:: ../_static/code/arduino/hello-world/main_reuse.cpp
    :language: cpp
-   :linenos:
    :emphasize-lines: 1, 7
 
 
@@ -182,9 +182,67 @@ Now, you can ``upload`` in your arduino as usual (don't forget to set your ardui
 
 Congratulations! Your blink files have been successfully reused!
 
+
+6. Publish a new version of your blink block
+--------------------------------------------
+
+Modifying your code and publishing the results is easy with biicode. Now we'll change the message displayed by the ``hello()`` function in the ``username/arduino_blink`` block. Update the ``blink.cpp`` as follows:
+
+**blink.cpp**
+
+.. literalinclude:: ../_static/code/arduino/hello-world/blink(modified).cpp
+   :language: cpp
+   :emphasize-lines: 15-36, 50, 55
+
+
+   
+Upload your block, to make sure everything works as expected:
+
+.. code-block:: bash
+
+   $ cd arduino_blink_hive
+   $ bii arduino:upload
+   ...      
+   Writing | ################################################## | 100% 0.00s
+
+Now, post your block to the biicode server just like you did before. From your hive folder:
+
+.. code-block:: bash
+
+   $ bii publish
+   block:     username/arduino_blink
+   Introduce tag: STABLE
+   Introduce msg: My first block update for Arduino
+   ...
+   Successfully published username/arduino_blink(username/master): 1
+
+As you can see, the version of your block changed from 0 to 1. Your can see both versions published online visiting your biicode user main page, as before.
+
+
+7. Update your arduino_reuseblink block with the modifications
+------------------------------------------------------------------
+
+To update your ``username/arduino_reuseblink`` block with the new modifications to the ``blink_loop()`` function, you only need to search the server for any published new versions of your dependencies using the ``bii find`` command and the ``--update`` modifier. If the server finds new published versions for any of your dependencies, you'll see an indicative message on your screen:
+
+.. code-block:: bash
+
+   $ cd arduino_reuseblink_hive
+   $ bii find --update
+   ...
+
+Finally, you can test the updated code uploading to your Arduino.
+
+.. code-block:: bash
+
+   $ bii arduino:upload
+   ...
+   Writing | ################################################## | 100% 0.00s
+
+**Thats it!**  Your board LED should start blinking in an intermittent and permanent way.
+
 **Now you might be interested in:**
 
    - If something went wrong, you might want to search for `help in the forum <http://forum.biicode.com>`_, and open a new topic if necessary.
    - Seeing :ref:`more arduino examples <arduino>`
-   - What happens if I modify my blink files in the original hive? Read about :ref:`publishing new versions <biipublish>` and :ref:`updating <dependencies>`
    - I don't want to publish my block, as it doesn't work yet, but I want to save my hive for continuing later in a different computer. :ref:`Read here to check how <hive_usage>`.
+   - Specific :ref:`Arduino commands list <bii_arduino_tools>`

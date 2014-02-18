@@ -32,14 +32,13 @@ Inside your workspace you will find a new folder named ``hello_rpi_hive`` contai
 .. code-block:: text
 
    +-- hello_rpi_hive
-        +-- bii
-        +-- bin
-        +-- blocks
-        |    +-- username
-        |         +-- hello_rpi
-        +-- build
-        +-- cmake
-        +-- deps
+   |    +-- bin
+   |    +-- blocks
+   |    |     +-- username
+   |    |    |     +-- hello_rpi
+   |    +-- build
+   |    +-- cmake
+   |    +-- deps
 
 The ``bii`` folder contains specific configuration files for your hive. **You must update your settings and change the architecture** of the desired cpp compiler. To do so, open your ``hello_rpi_hive/bii/settings.bii`` file, look for the following lines:
 
@@ -154,6 +153,11 @@ Once your have written, compiled and successfully deployed your code, surely you
 	INFO: Successfully published username/hello_rpi(username/master): 0
 
 If your code has been published correctly —as it is the case in the previous example—, you can navigate it visiting the **www.biicode.com/username**, being *username* your biicode user name.
+
+Here is an example of `david's user hello block <https://www.biicode.com/david/blocks/david/hello/branches/master/versions/0/cells/main.cpp>`_:
+
+.. image:: ../_static/img/david_hello.PNG
+
 
 5. Reuse it!
 ------------
@@ -315,3 +319,4 @@ Finally, you can test the updated code running on your Raspberry Pi.
    - If something went wrong, you might want to `find some help in the forum <http://forum.biicode.com/category/cross-platform-support/raspberry-pi>`_, and open a new topic if necessary.
    - Seeing :ref:`more Raspberry Pi examples <raspberry_pi>`.
    - I don't want to publish my block, as it doesn't work yet, but I want to save my hive for continuing later in a different computer. :ref:`Read here to check how <hive_usage>`.
+   - Specific :ref:`Raspberry Pi commands list<bii_rpi_tools>`
