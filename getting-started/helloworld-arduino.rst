@@ -220,7 +220,7 @@ As you can see, the version of your block changed from 0 to 1. Your can see both
 
 
 7. Update your arduino_reuseblink block with the modifications
-------------------------------------------------------------------
+--------------------------------------------------------------
 
 To update your ``username/arduino_reuseblink`` block with the new modifications to the ``blink_loop()`` function, you only need to search the server for any published new versions of your dependencies using the ``bii find`` command and the ``--update`` modifier. If the server finds new published versions for any of your dependencies, you'll see an indicative message on your screen:
 

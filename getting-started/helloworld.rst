@@ -103,7 +103,7 @@ You can download these files here: :download:`hello.zip <../_static/code/cpp/hel
 4. Publish your code
 --------------------
 
-Once your have written, compiled and successfully executed some code, surely you are willing to share it with the biicode community! Uploading your code to biicode is really simple using the ``bii publish`` command. You will be requested to provide a **tag** and a **message**. Valid tags are ``STABLE``, ``ALPHA``, ``BETA``, and ``DEV``. They provide information about the development state of your hive. The message is any information describing your publication.
+Once your have written, compiled and successfully executed some code, surely you are willing to share it with the biicode community! **Uploading your code to biicode** is really simple using the ``bii publish`` command. You will be requested to provide a **tag** and a **message**. Valid tags are ``STABLE``, ``ALPHA``, ``BETA``, and ``DEV``, providing information about the development state of your hive. The message must convey some information about your new publication, and the features it contains.
 
 .. code-block:: bash
 
@@ -116,12 +116,9 @@ Once your have written, compiled and successfully executed some code, surely you
    INFO: Successfully published your_user_name/cpp_hello(your_user_name/master): 0
 
 
-If your code has been published correctly —as it is the case in the previous example—, you can navigate it here: ``www.biicode.com/your_user_name``
-
-Here is an example of `david's user hello block <https://www.biicode.com/david/blocks/david/hello/branches/master/versions/0/cells/main.cpp>`_:
+If your code has been published correctly —as it is the case in the previous example—, you can already browse its conents online, on the biicode web site, visiting the url: ``www.biicode.com/your_user_name``. You can see `an example of a published block following this link <https://www.biicode.com/david/blocks/david/hello/branches/master>`_. In this example the biicode user ``david`` has pusblished a block named ``hello``. You acn browse online the block contents and files, and inspect all branches and versions for this block.
 
 .. image:: ../_static/img/david_hello.PNG
-
 
 
 5. Reuse it!
