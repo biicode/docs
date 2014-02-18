@@ -86,7 +86,7 @@ Our ``hello_rpi`` block will contain the following three files: ``hello.h``, ``h
 You can download these files here: :download:`hello.zip <../_static/code/cpp/hello-world/hello.zip>`
 
 	
-2. Build, deploy and run your program
+3. Build, deploy and run your program
 -------------------------------------
 
 Now you are ready to compile and deploy your new application. First, **cross-compile your program** and make sure the binary is generated running ``bii cpp:build`` from your hive location:
@@ -139,7 +139,7 @@ Finally, to **execute your program on your Raspberry Pi**, you need to establish
 	
 And that's all. Your program is working!
 	
-3. Publish your code
+4. Publish your code
 --------------------
 
 Once your have written, compiled and successfully deployed your code, surely you are willing to share it with the biicode community! Uploading your code to biicode is really simple using the ``bii publish`` command. You will be requested to provide a **tag** and a **message**. Valid tags are ``STABLE``, ``ALPHA``, ``BETA``, and ``DEV``, providing information about the development state of your hive. The message is any information describing your publication. You can :ref:`read more about publishing here <biipublish>`.
@@ -155,7 +155,7 @@ Once your have written, compiled and successfully deployed your code, surely you
 
 If your code has been published correctly —as it is the case in the previous example—, you can navigate it visiting the **www.biicode.com/username**, being *username* your biicode user name.
 
-4. Reuse it!
+5. Reuse it!
 ------------
 
 One of the most interesting aspects of biicode is the ability it provides to easily reuse code. As the published files have already been uploaded to biicode servers, it is possible for anyone —even other biicode users— to use these files in new hives. We'll show the process with a new hive named ``pretty_hive``. From your biicode workspace folder, execute again the ``bii new`` command to create a new hive:
@@ -234,7 +234,7 @@ And finally, test your program working on your Raspberry Pi:
 	Hello World!
 	**********************************
 
-5. Publish a new version of your hello block
+6. Publish a new version of your hello block
 --------------------------------------------
 
 Modifying your code and publishing the results is easy with biicode. Now we'll change the message displayed by the ``hello()`` function in the ``username/hello_rpi`` block. Update the ``hello.cpp`` as follows:
@@ -282,7 +282,7 @@ Now, post your block to the biicode server just like you did before. From your h
 
 As you can see, the version of your block changed from 0 to 1. Your can see both versions published online visiting your biicode user main page, as before.
 
-6. Update your hellopretty block with the modifications
+7. Update your hellopretty block with the modifications
 -------------------------------------------------------
 
 To update your ``username/hellopretty`` block with the new modifications to the ``hello()`` function, you only need to search the server for any published new versions of your dependencies using the ``bii find`` command and the ``--update`` modifier. If the server finds new published versions for any of your dependencies, you'll see an indicative message on your screen:

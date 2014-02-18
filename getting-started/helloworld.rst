@@ -6,7 +6,7 @@
 This example shows how to build a simple "Hello World" application with biicode.
 
 
-Create a new hive
+1. Create a new hive
 ----------------------
 
 Creating a new hive is as easy as executing the ``bii new`` command. Open your console, move to your biicode workspace and create a new hive named **"hello"** (some ouput informative messages are omitted):
@@ -63,7 +63,7 @@ You can open the file **main.cpp** in your favorite editor. It has the code bell
 
 
    
-Build and run
+2. Build and run
 ----------------
 
 Now, you can build your main file and run it to your Arduino with the command ``cpp:run``.
@@ -79,8 +79,8 @@ If you only want to build your main file, just use ``cpp:build``.
 **That's it!** Your console should show ``Hello world!`` message. You can try more complex outputs!
 
 
-Creating reusable code
-----------------------
+3. Creating reusable code
+--------------------------
 
 It would be interesting to create an example which can be resused by you or other users . So replace the example before with the next files:
 
@@ -107,8 +107,8 @@ You can download these files here: :download:`hello.zip <../_static/code/cpp/hel
 Run the new version to verify that it works ok!
 	
 
-Publish your code
--------------------
+4. Publish your code
+---------------------
 
 Once your have written, compiled and successfully executed some code, surely you are willing to share it with the biicode community! Uploading your code to biicode is really simple using the ``bii publish`` command. You will be requested to provide a **tag** and a **message**. Valid tags are ``STABLE``, ``ALPHA``, ``BETA``, and ``DEV``. They provide information about the development state of your hive. The message is any information describing your publication.
 
@@ -134,8 +134,8 @@ And this is his block's view:
 .. image:: ../_static/img/sbaker2.PNG
 
 
-Reuse it!
-----------
+5. Reuse it!
+--------------
 
 One of the most interesting aspects of biicode is the ability it provides to easily reuse code. As the published files have already been uploaded to biicode servers, it is possible for anyone —even other biicode users— to use these files in new projects. We'll show the process creating a new hive named **"hellopretty"**. From your biicode workspace folder, execute again the ``bii new`` command to create a new hive:
 
