@@ -131,7 +131,7 @@ You can easily publish your code using the ``bii publish`` command. You will be 
 	
 	INFO: Successfully published username/arduino_blink(username/master): 0
 
-If your code has been published correctly —as it is the case in the previous example—, you can already browse its conents online, on the biicode web site, visiting the url: ``www.biicode.com/your_user_name``. You can see `an example of a published block following this link <https://www.biicode.com/fenix/blocks/fenix/arduino_blink/branches/master/>`_. In this example the biicode user ``fenix`` has pusblished a block named ``arduino_blink``. You can browse online the block contents and files, and inspect all branches and versions for this block:
+If your code has been published correctly —as it is the case in the previous example—, you can already browse its contents online, on the biicode web site, visiting the url: ``www.biicode.com/your_user_name``. You can see `an example of a published block following this link <https://www.biicode.com/fenix/blocks/fenix/arduino_blink/branches/master/>`_. In this example the biicode user ``fenix`` has published a block named ``arduino_blink``. You can browse online the block contents and files, and inspect all branches and versions for this block:
 
 .. image:: ../_static/img/fenix_blink.png
 
@@ -185,7 +185,7 @@ Congratulations! Your blink files have been successfully reused! You can check, 
 
 Modifying your code and publishing the results is easy with biicode. 
 
-If you try again the reused example before, with a different interval or pinMode in the ``blink_setup`` function, you'll see that  the result is the same. For example:
+If you try again the reused example before, with a different interval or pin in the ``blink_setup`` function, you'll see that  the result is the same. For example:
 
 **main_reuse.cpp**
 
@@ -207,7 +207,8 @@ If you try again the reused example before, with a different interval or pinMode
 
 The LED, in pin 13, should not bright and its interval should be 4 seconds, but it follows being 1 second, why?
 
-It's because there is a little bug in the blink class and you are going to correct it. Go to ``arduino_blink_hive`` and change ``blink.cpp`` file like this:
+It's because there is a little bug in the blink class and you are going to correct it.
+Go to ``arduino_blink_hive`` and change ``blink.cpp`` file like this:
 
 **blink.cpp**
 
@@ -216,7 +217,7 @@ It's because there is a little bug in the blink class and you are going to corre
    :emphasize-lines: 8, 9
 
 
-Then, you can change successfully the pinMode and the interval of miliseconds.
+Then, you can change successfully the pin and the interval of milliseconds.
 
 Upload your block, to make sure everything works as expected:
 
@@ -227,7 +228,7 @@ Upload your block, to make sure everything works as expected:
    ...      
    Writing | ################################################## | 100% 0.00s
 
-Now, post your block to the biicode server just like you did before. From your hive folder:
+Now, publish again your block to the biicode server just like you did before. From your hive folder:
 
 .. code-block:: bash
 
