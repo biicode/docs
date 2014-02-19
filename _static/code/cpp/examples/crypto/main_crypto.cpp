@@ -1,4 +1,3 @@
-#include "math_ext.h"
 #include "cryptopp/cryptopp/sha.h"
 #include "cryptopp/cryptopp/filters.h"
 #include "cryptopp/cryptopp/hex.h"
