@@ -114,7 +114,7 @@ and switch the LED accordingly. Replace the previous example code with the next 
 
 You can download these files here: :download:`blink.zip <../_static/code/arduino/hello-world/blink.zip>`
 
-Upload the new version to your arduino again and check that it works ok!
+Upload the new version to your arduino again and check that it works ok! You'll see your Arduino LED turns on and turns off every second. 
 
 4. Publish your code
 --------------------
@@ -148,11 +148,11 @@ First, create inside your workspace a new hive with name ``arduino_reuseblink_hi
 
 Then modify the main.cpp file with the following code and substitute your own user name in the #include directive.
 	
-**main.cpp**
+**main_reuse.cpp**
 
 .. literalinclude:: ../_static/code/arduino/hello-world/main_reuse.cpp
    :language: cpp
-   :emphasize-lines: 1, 7
+   :emphasize-lines: 1
 
 
 When you reference, or put #includes to files that have been published before, it is necessary to retrieve them.
@@ -177,22 +177,47 @@ Now, you can ``upload`` in your arduino as usual (don't forget to set your ardui
 
 	$ bii arduino:upload
 
-Congratulations! Your blink files have been successfully reused!
+Congratulations! Your blink files have been successfully reused! You can check, it works ok!
 
 
 6. Publish a new version of your blink block
 --------------------------------------------
 
-Modifying your code and publishing the results is easy with biicode. Now we'll change the message displayed by the ``hello()`` function in the ``username/arduino_blink`` block. Update the ``blink.cpp`` as follows:
+Modifying your code and publishing the results is easy with biicode. 
+
+If you try again the reused example before, with a different interval or pinMode in the ``blink_setup`` function, you'll see that  the result is the same. For example:
+
+**main_reuse.cpp**
+
+.. code-block:: cpp
+   :emphasize-lines: 6
+   
+   #include "your_user_name/arduino_blink/blink.h"
+
+   Blink my_reuse_blink;
+
+   void setup() {
+     my_reuse_blink.blink_setup(15, 4000); 
+   }
+
+   // bii:#entry_point()
+   void loop(){
+     my_reuse_blink.blink_loop();  
+   }
+
+The LED, in pin 13, should not bright and its interval should be 4 seconds, but it follows being 1 second, why?
+
+It's because there is a little bug in the blink class and you are going to correct it. Go to ``arduino_blink_hive`` and change ``blink.cpp`` file like this:
 
 **blink.cpp**
 
 .. literalinclude:: ../_static/code/arduino/hello-world/blink(modified).cpp
    :language: cpp
-   :emphasize-lines: 15-36, 50, 55
+   :emphasize-lines: 8, 9
 
 
-   
+Then, you can change successfully the pinMode and the interval of miliseconds.
+
 Upload your block, to make sure everything works as expected:
 
 .. code-block:: bash
@@ -219,7 +244,7 @@ As you can see, the version of your block changed from 0 to 1. Your can see both
 7. Update your arduino_reuseblink block with the modifications
 --------------------------------------------------------------
 
-To update your ``username/arduino_reuseblink`` block with the new modifications to the ``blink_loop()`` function, you only need to search the server for any published new versions of your dependencies using the ``bii find`` command and the ``--update`` modifier. If the server finds new published versions for any of your dependencies, you'll see an indicative message on your screen:
+To update your ``username/arduino_reuseblink`` block with the new modifications to the ``blink_setup()`` function, you only need to search the server for any published new versions of your dependencies using the ``bii find`` command and the ``--update`` modifier. If the server finds new published versions for any of your dependencies, you'll see an indicative message on your screen:
 
 .. code-block:: bash
 
@@ -235,7 +260,7 @@ Finally, you can test the updated code uploading to your Arduino.
    ...
    Writing | ################################################## | 100% 0.00s
 
-**Thats it!**  Your board LED should start blinking in an intermittent and permanent way.
+**Thats it!**  Your board LED should start blinking with the desired interval.
 
 **Now you might be interested in:**
 

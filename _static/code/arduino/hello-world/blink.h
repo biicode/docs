@@ -6,5 +6,16 @@
 #include "WProgram.h"
 #endif
 
-void blink_setup(int led, int interval_ms);
-void blink_loop();
+
+class Blink
+{
+public:
+	void blink_setup(int led, int interval_ms);
+	void blink_loop();
+
+private:
+	int ledState;			// ledState used to set the LED
+	long previousMillis;	// will store last time LED was updated
+	int interval; 
+	int ledPin;
+};
