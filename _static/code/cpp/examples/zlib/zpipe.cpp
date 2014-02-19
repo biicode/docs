@@ -84,7 +84,7 @@ int main(void)
 	  }
   
 	  dest = fopen(name_file_dest.c_str(),"w");
-	  ret = def(source, dest);
+	  ret = inf(source, dest);
 	  if (ret != Z_OK)
 		 zerr(ret);
 	  else

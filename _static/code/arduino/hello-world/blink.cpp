@@ -1,18 +1,17 @@
 #include "blink.h"
 
-// TODO: Use a more elegant solution than global variables!
-int ledState = LOW;             // ledState used to set the LED
-long previousMillis = 0;        // will store last time LED was updated
-int interval; 
-int ledPin;
+void Blink::blink_setup(int led, int interval_ms)
+{
+	ledState = LOW;
+	previousMillis = 0;
 
-void blink_setup(int led, int interval_ms){
-	ledPin=led;
+	interval = 1000;
+	ledPin = 13;
 	pinMode(ledPin, OUTPUT);
-	interval = interval_ms;
 }
 
-void blink_loop(){
+void Blink::blink_loop(){
+
 	unsigned long currentMillis = millis();
 	 
 	if(currentMillis - previousMillis > interval) {
