@@ -30,7 +30,7 @@ Last, you will be asked to select an IDE family (``None`` by default) and a buil
 .. code-block:: bash
 
    Select language: (java/node/fortran/python/cpp/arduino/None)
-   Introduce lang (default:None): arduino
+   Introduce lang (default:None): cpp
    How would you like to name your first block?
    Introduce block name: cpp_hello
    Generate a default hello world?  (YES/no) [ENTER]
