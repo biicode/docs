@@ -2,6 +2,14 @@
 
 Changelog
 =========
+v 0.10
+------
+*(21-02-14)*:
+
+* node support
+* Debian wheezy support
+* Fix a bug that caused open to fail if the block was already in edition
+
 v. 0.9
 ------
 *(13-02-14)*
