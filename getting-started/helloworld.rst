@@ -9,7 +9,7 @@ This example shows how to build a simple *'Hello World'* application with biicod
 1. Create a new hive
 --------------------
 
-Creating a new hive is as easy as executing the ``bii new`` command. Open your console, move to your biicode workspace and create a new hive named ``cpp_hello_hive`` (some ouput informative messages are omitted):
+Creating a new hive is as easy as executing the ``bii new`` command. Open your console, move to your :ref:`biicode workspace <create_workspace>` and create a new hive named ``cpp_hello_hive`` (some ouput informative messages are omitted):
 
 .. code-block:: bash
 
