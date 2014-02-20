@@ -3,28 +3,27 @@ Google Test Tutorial
 
 This example uses the famous library `googletest, a Google C++ Testing Framework <http://code.google.com/p/googletest/>`_. If you are familiar with coding in C++, you probably know about this library and use it for testing your projects. Otherwise, you can learn more visiting the `googletest project Wiki page <http://code.google.com/p/googletest/w/list>`_.
 
-Creating the hive
------------------
+In this example we are going to create a factorial function and a test for it. This video shows the whole process described below:
 
-Open your console and write the following command:
+.. raw:: html
 
-.. code-block:: bash
+    <script type="text/javascript" src="https://asciinema.org/a/7763.js" id="asciicast-7763" async></script>
 
-	$ cd ../biicode_workspace
-	$ bii new maths
 
-If the publication has been correctly created, you will see a message like the following:
+1. Create a new hive
+---------------------
 
-.. code-block:: bash
+Create a new hive as described in the :ref:`hello world example <hello_world>`.
+For this example we should select ``cpp`` as programming language, name our hive ``gtest_hive`` and the block ``factorial``.
+We don't need to generate a default hello world.
 
-	Created new Hive maths
 
-Then, a hive folder named maths will be created in your workspace folder. Said folder will contain the following subfolders: bii, deps and blocks.
+2. Create a function and a test for it
+---------------------------------------
 
-Compile and execute your block
-------------------------------
+We will start with a math example — the function to calculate the factorial of a non-negative integer which returns -1 if the number is negative and the factorial if the number is positive.
 
-We will start with a math example — the method to calculate the factorial of a non-negative integer which returns -1 if the number is negative and the factorial if the number is positive:
+Put these files inside ``YOUR_WORKSPACE/gtest_hive/blocks/YOUR_USERNAME/factorial``
 
 **math_ext.h**
 
@@ -41,9 +40,8 @@ We will start with a math example — the method to calculate the factorial of a
 **Download all the files:** :download:`math_ext.cpp <../_static/code/cpp/examples/google-test-tutorial/math_ext.cpp>` :download:`math_ext.h <../_static/code/cpp/examples/google-test-tutorial/math_ext.h>`
    
    
-Using Google Tests with biicode is very simple. You just have to include "google/gtest/gtest.h" which contains c files of gtest.
-
-To check that the factorial function runs fine, make a main_test.cpp like this:
+Now than we have a class we can test it with Google Test. You just have to include ``google/gtest/gtest.h``.
+To check that the factorial function behaves as expected put main_test.cpp with the rest of source files:
 
 **main_test.cpp**
 
@@ -51,49 +49,60 @@ To check that the factorial function runs fine, make a main_test.cpp like this:
    :language: cpp
    :linenos:
 
-
 **Download the file:** :download:`main_test.cpp <../_static/code/cpp/examples/google-test-tutorial/main_test.cpp>` 
-   
-Put every files into the folder ~/maths/blocks/your_user_name/maths/ and  execute them:
+
+
+3. Find dependencies
+--------------------
+
+Now we have to ask biicode to find our dependencies. This will download Google Test to your machine 
+
 
 .. code-block:: bash
-	
-	$ bii work
-	Saving files on disk
-	Work done!
 
 	$ bii find
-	Finding missing dependencies in server
-	Looking for google/gtest...
-	  >> Block candidate: google/google/gtest/master
-	  >> Version google/google/gtest/master:#0 (STABLE) valid due your policy!
-	  Found blocks: google/google/gtest/master:#0
-	Analyzing compatibility for found dependencies...
-	  Resolved block!
-	Dependencies resolved in server:
+	INFO: Detected 3 files created, 0 updated
+	INFO: Settings changed
+	INFO: Compiler configuration changed, cleaning build
+	INFO: Finding missing dependencies in server
+	INFO: Looking for google/gtest...
+	INFO: Analyzing compatibility for found dependencies...
+	INFO: Dependencies resolved in server:
 	Find resolved new dependencies:
-	    google/google/gtest/master:#0
+		google/gtest(google/master): 2
 	All dependencies resolved
+	INFO: Saving files on disk
+	INFO: Retrieving resources from server
+	INFO: Computing dependencies
+	INFO: Saving dependences on disk
 
-To run your tests:
+
+4. Run your tests
+--------------------
+
+Now we are ready to unit-test our factorial function:
 
 .. code-block:: bash
 
-	$ bii cpp:run main
+	$ bii cpp:run test
+	Building[ 77%] Built target google_gtest
+	[100%] Built target hithwen_factorial_main_test
+	Running "hithwen_factorial_main_test"
 	Running main() from sample1
 	[==========] Running 3 tests from 1 test case.
 	[----------] Global test environment set-up.
 	[----------] 3 tests from FactorialTest
-	[ RUN ] FactorialTest.Negative
-	[ OK ] FactorialTest.Negative (0 ms)
-	[ RUN ] FactorialTest.Zero
-	[ OK ] FactorialTest.Zero (0 ms)
-	[ RUN ] FactorialTest.Positive
-	[ OK ] FactorialTest.Positive (0 ms)
+	[ RUN      ] FactorialTest.Negative
+	[       OK ] FactorialTest.Negative (0 ms)
+	[ RUN      ] FactorialTest.Zero
+	[       OK ] FactorialTest.Zero (0 ms)
+	[ RUN      ] FactorialTest.Positive
+	[       OK ] FactorialTest.Positive (0 ms)
 	[----------] 3 tests from FactorialTest (0 ms total)
 
 	[----------] Global test environment tear-down
-	[==========] 3 tests from 1 test cases ran. (0 ms total)
-	[ PASSED ] 3 tests.
+	[==========] 3 tests from 1 test case ran. (0 ms total)
+	[  PASSED  ] 3 tests.
+	
 
-You can find more google test samples in the `biicode gtestsamples block <https://www.biicode.com/google/blocks/google/gtestsamples/branches/master>`_.
+**Note:** You can find more google test samples in the `biicode gtestsamples block <https://www.biicode.com/google/blocks/google/gtestsamples/branches/master>`_.
