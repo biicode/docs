@@ -3,7 +3,7 @@ Google Test Tutorial
 
 This example uses the famous library `googletest, a Google C++ Testing Framework <http://code.google.com/p/googletest/>`_. If you are familiar with coding in C++, you probably know about this library and use it for testing your projects. Otherwise, you can learn more visiting the `googletest project Wiki page <http://code.google.com/p/googletest/w/list>`_.
 
-In this example we are going to create a factorial function and a test for it. This video shows the whole process described below:
+In this example **we are going to create a factorial function and a test for it**. This video shows the whole process described below:
 
 .. raw:: html
 
@@ -21,7 +21,11 @@ We don't need to generate a default hello world.
 2. Create a function and a test for it
 ---------------------------------------
 
-We will start with a math example — the function to calculate the factorial of a non-negative integer which returns -1 if the number is negative and the factorial if the number is positive.
+We will start with a math example: a **simple function to calculate the factorial of an integer number**, which returns
+
+* -1 if the number is negative,
+* 1 if the number is zero, or
+* the factorial if the number is positive, *(num)\*(num-1)\*(num-2)\*…\*1*.
 
 Put these files inside ``YOUR_WORKSPACE/gtest_hive/blocks/YOUR_USERNAME/factorial``
 
@@ -40,7 +44,7 @@ Put these files inside ``YOUR_WORKSPACE/gtest_hive/blocks/YOUR_USERNAME/factoria
 **Download all the files:** :download:`math_ext.cpp <../_static/code/cpp/examples/google-test-tutorial/math_ext.cpp>` :download:`math_ext.h <../_static/code/cpp/examples/google-test-tutorial/math_ext.h>`
    
    
-Now than we have a class we can test it with Google Test. You just have to include ``google/gtest/gtest.h``.
+**Now than we have our factorial function, we can test it with Google Test**. You just have to include ``google/gtest/gtest.h``.
 To check that the factorial function behaves as expected put main_test.cpp with the rest of source files:
 
 **main_test.cpp**
@@ -55,8 +59,7 @@ To check that the factorial function behaves as expected put main_test.cpp with 
 3. Find dependencies
 --------------------
 
-Now we have to ask biicode to find our dependencies. This will download Google Test to your machine 
-
+Now **we have to ask biicode to find our dependencies**. This will download Google Test to your machine, into your hive's ``deps`` folder.
 
 .. code-block:: bash
 
@@ -78,9 +81,9 @@ Now we have to ask biicode to find our dependencies. This will download Google T
 
 
 4. Run your tests
---------------------
+-----------------
 
-Now we are ready to unit-test our factorial function:
+Finally, we are ready to unit-test our factorial function:
 
 .. code-block:: bash
 
