@@ -131,8 +131,8 @@ If you want to have multiple test classes and run them all toghether you don't n
    :language: cpp
    :linenos:
 
-Note the tag comment ``// bii:#dependencies(+ test_factorial1.cpp test_factorial2.cpp)`` in the main file.
-This is telling biicode that the main file depends on those test files. You can read more about dependeny tag :ref:`here <bii_dependencies_tag>`
+Notice the tag comment ``// bii:#dependencies(+ test_factorial1.cpp test_factorial2.cpp)`` in the main file.
+This is telling biicode that the main file depends on those test files. You can read more about dependeny tag :ref:`here <bii_dependencies_tag>`.
 
 Now when we execute ``bii cpp:run`` we obtain exactly the same output:
 
