@@ -38,7 +38,7 @@ When your are happy with the state, functionality and performance of your code, 
 The ``bii publish`` command must be invoked inside a **hive** folder and has no parameters, but **will launch an assistant that will guide you** through the publishing process:
 
 * In case your **hive** contains multiple blocks under your ``blocks`` folder, it will ask you which of them you wish to publish. Remember that the name of a block is composed by the name of the original creator, and the simple name of the block joined by a *slash* (``/``) character: ``user_name/simple_name``.
-* You must define a **tag** for the published code. Available options are: *DEV*, *ALPHA*, *BETA* or *STABLE*, and they define the state of thevelopment for your code. This information is used in by the :ref:`policies<policies>` of the users that will use this blocks, allowing them to define which versions of your code are their preference.
+* You must define a **tag** for the published code. Available options are: *DEV*, *ALPHA*, *BETA* or *STABLE*, and they define the state of the development for your code. This information is used in by the :ref:`policies<policies>` of the users that will use this blocks, allowing them to define which versions of your code are their preference.
 * Finally, you must provide a short message describing the code your are publishing, and the new functionalities it provides (bugs fixed, or any other valuable information).
 
 After your block has been published and uploaded to the Biicode servers, the program shows a message with information about the name of the block (``user_name/simple_name``), the name of the branch (``user_name/branch_name``), and the numeric ID of the version that has been published in that particular branch.
@@ -64,12 +64,12 @@ The command can also be used combining a series of **additional parameters** (yo
 	* ``--virtual`` indicates the client to show only those virtual cells contained in your hive.
 	* ``--main`` is used for displaying information about cells that contain a ``main`` function or entry point to your code.
 
-* Parameters for **filtering the dependencies**. Theese allow you to specify you want the client to show their dependencies:
+* Parameters for **filtering the dependencies**. These allow you to specify you want the client to show their dependencies:
 
-	* ``--unresolved`` shows only your cells' unresolved dependnecies; those that are unknown by biicode, and cannot be retrieved from our servers using the :ref:`find command<bii_find_command>`.
+	* ``--unresolved`` shows only your cells' unresolved dependencies; those that are unknown by biicode, and cannot be retrieved from our servers using the :ref:`find command<bii_find_command>`.
 	* ``--system`` make the command show only system dependencies for your cells.
-	* ``--implicit`` shows only implicit dependnecies for your cells.
-	* ``--explicit`` shows only thos dependencies explicitly referenced in your files.
+	* ``--implicit`` shows only implicit dependencies for your cells.
+	* ``--explicit`` shows only those dependencies explicitly referenced in your files.
 	* ``--data`` filters the results showing only data dependencies.
 
 * ``--graph``: This last option provides a **visual representation** of your blocks and their dependencies. The client generates an interactive graph that is open in your web browser. Despite most of the code is saved on your local filesystem, you'll need an internet connection for loading some aditional libraries.
@@ -90,7 +90,7 @@ The command can also be used combining a series of **additional parameters** (yo
 
 .. _bii_find_command:
 
-``bii find``: Retrieveing dependencies
+``bii find``: Retrieving dependencies
 --------------------------------------
 
 This commands allows you to retrieve any code dependencies from the Biicode servers. The client analyzes your code, and find missing dependencies that cannot be resolved searching in your hive contents. The client then communicates with the biicode server and tries to find code that is missing in your workspace, and retrieves the best matching version according with your :ref:`policies<policies>`.
@@ -301,7 +301,7 @@ Now, you are ready to understand the following sequence of commands. Otherwise, 
 Merges information
 ^^^^^^^^^^^^^^^^^^
 
-This part of the ``bii info`` command output shows information **only in case you have performed any merges in your current hive**. Following the example introduced in the :ref:`section that exaplined the merge command<bii_merge_command>`, let's assume you have just merged a ``original/mathematyka(improver/better_math): 5`` version into your local copy of the ``mathematyka`` block, with branch and version: ``original/mathematyka(original/master): 25``. Now, the ouput of the client info utility would be as follows:
+This part of the ``bii info`` command output shows information **only in case you have performed any merges in your current hive**. Following the example introduced in the :ref:`section that exaplined the merge command<bii_merge_command>`, let's assume you have just merged a ``original/mathematyka(improver/better_math): 5`` version into your local copy of the ``mathematyka`` block, with branch and version: ``original/mathematyka(original/master): 25``. Now, the output of the client info utility would be as follows:
 
 .. code-block:: bash
 
