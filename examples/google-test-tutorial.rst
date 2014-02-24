@@ -111,7 +111,7 @@ Finally, we are ready to unit-test our factorial function:
 5. Creating test suites
 ------------------------
 
-If you want to have multiple test classes and run them all toghether you don't need to create multiple main methods, you just have to indicate which tests do you want to include in your suite. For example, we can split the ``main_test.cpp`` in the following three files:
+If you want to have multiple test classes and run them all toghether you don't need to create multiple main methods, you just have to indicate which tests you want to include in your suite. For example, we can split the ``main_test.cpp`` in the following three files:
 
 **test_factorial1.cpp**
 
@@ -132,7 +132,7 @@ If you want to have multiple test classes and run them all toghether you don't n
    :linenos:
 
 Notice the tag comment ``// bii:#dependencies(+ test_factorial1.cpp test_factorial2.cpp)`` in the main file.
-This is telling biicode that the main file depends on those test files. You can read more about dependeny tag :ref:`here <bii_dependencies_tag>`.
+This is telling biicode that the main file depends on those test files. You can read more about dependeny tags :ref:`here <bii_dependencies_tag>`.
 
 Now when we execute ``bii cpp:run`` we obtain exactly the same output:
 
@@ -156,6 +156,6 @@ Now when we execute ``bii cpp:run`` we obtain exactly the same output:
 	[  PASSED  ] 3 tests.
 
 
-You can aggregate as many tests as you want to a suite so organize your tests to fit your needs.
+You can aggregate as many tests as you want to a suite so you can organize your tests to fit your needs.
 
 **Note:** You can find more google test samples in the `biicode gtestsamples block <https://www.biicode.com/google/blocks/google/gtestsamples/branches/master>`_.
