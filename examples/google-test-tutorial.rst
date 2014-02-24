@@ -108,4 +108,54 @@ Finally, we are ready to unit-test our factorial function:
 	[  PASSED  ] 3 tests.
 	
 
+5. Creating test suites
+------------------------
+
+If you want to have multiple test classes and run them all toghether you don't need to create multiple main methods, you just have to indicate which tests do you want to include in your suite. For example, we can split the ``main_test.cpp`` in the following three files:
+
+**test_factorial1.cpp**
+
+.. literalinclude:: ../_static/code/cpp/examples/google-test-tutorial/test_factorial1.cpp
+   :language: cpp
+   :linenos:
+
+**test_factorial2.cpp**
+
+.. literalinclude:: ../_static/code/cpp/examples/google-test-tutorial/test_factorial2.cpp
+   :language: cpp
+   :linenos:
+
+**main_test2.cpp**
+
+.. literalinclude:: ../_static/code/cpp/examples/google-test-tutorial/main_test2.cpp
+   :language: cpp
+   :linenos:
+
+Notice the tag comment ``// bii:#dependencies(+ test_factorial1.cpp test_factorial2.cpp)`` in the main file.
+This is telling biicode that the main file depends on those test files. You can read more about dependeny tag :ref:`here <bii_dependencies_tag>`.
+
+Now when we execute ``bii cpp:run`` we obtain exactly the same output:
+
+.. code-block:: bash
+
+	Running "hithwen_my_gtest_main_test2"
+	Running main() from sample1
+	[==========] Running 3 tests from 1 test case.
+	[----------] Global test environment set-up.
+	[----------] 3 tests from FactorialTest
+	[ RUN      ] FactorialTest.Negative
+	[       OK ] FactorialTest.Negative (0 ms)
+	[ RUN      ] FactorialTest.Zero
+	[       OK ] FactorialTest.Zero (0 ms)
+	[ RUN      ] FactorialTest.Positive
+	[       OK ] FactorialTest.Positive (0 ms)
+	[----------] 3 tests from FactorialTest (0 ms total)
+	
+	[----------] Global test environment tear-down
+	[==========] 3 tests from 1 test case ran. (0 ms total)
+	[  PASSED  ] 3 tests.
+
+
+You can aggregate as many tests as you want to a suite so organize your tests to fit your needs.
+
 **Note:** You can find more google test samples in the `biicode gtestsamples block <https://www.biicode.com/google/blocks/google/gtestsamples/branches/master>`_.
