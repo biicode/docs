@@ -1,9 +1,9 @@
 .. _freeglut:
 
 Freeglut
-===========
+========
 
-This example shows you some basic code to get started in **OpenGL world**. ``Freeglut`` is a completely OpenSourced alternative to the OpenGL Utility Toolkit (GLUT) library and allows you to create and manage windows containing OpenGL contexts on a wide range of platforms (also read the mouse, keyboard and joystick functions). You can visit the following pages to learn more about OpenGL and GLUT (and hence freeglut):
+This example demonstrates how to get started using **OpenGL** with biicode. **Freeglut** is an `open source alternative to the OpenGL Utility Toolkit (GLUT) library <http://freeglut.sourceforge.net/>`_. It allows you to create and manage windows containing OpenGL contexts on a wide range of platforms, and dealing with user input from mouse, keyboard and joystick devices. You can visit the following pages to learn more about OpenGL and GLUT (and hence freeglut):
 
    1. `The Official Guide to Learning OpenGL v1.1 <http://glprogramming.com/red/>`_
    2. `List of OpenGL methods <http://www.talisman.org/opengl-1.1/Reference.html>`_
@@ -13,16 +13,17 @@ This example shows you some basic code to get started in **OpenGL world**. ``Fre
 1. Create a new hive
 --------------------
 
-Create a new hive as described in the :ref:`hello world example <hello_world>`.
-For this example we should select ``cpp`` as programming language, name our hive ``cpp_freeglut_hive`` and the block ``cpp_freeglut``.
-We don't need to generate a default hello world.
+First, create a new hive as described in the :ref:`hello world example <hello_world>`, using the following options:
+
+* Hive name: ``cpp_freeglut_hive``
+* Programming language: ``cpp`` 
+* Block name: ``cpp_freeglut``
+* Default Hello World project: ``no``
 
 .. code-block:: bash
-   :emphasize-lines: 1, 3, 5, 6
-
+   
    $ bii new cpp_freeglut_hive
    ...
-
    Select language: (java/node/fortran/python/cpp/arduino/None)
    Introduce lang (default:None): cpp
    How would you like to name your first block?
@@ -33,13 +34,13 @@ We don't need to generate a default hello world.
    Select build type: (None/Debug/Release/RelWithDebInfo/MinSizeRel)
    Introduce build_type (default:Debug): [ENTER]
 
-  
-
 
 2. Creating reusable code
 --------------------------
 
-It would be interesting to create an example which can be reused by you or by other biicode users.
+This is some example conde that makes use of GLUT functions. Note that **you must include a reference to a biicode GLUT wrapper** library. This is the only information biicode needs to fetch the required files when needed, taking into account your actual development platform. We'll see how this happens in the next step.
+
+Now, simply put the following code into your ``cpp_freeglut`` block folder (you can also download these files here: :download:`sphere-glut.zip <../_static/code/cpp/examples/freeglut/sphere-glut.zip>`, unzip and copy them into your block folder):
 
 **sphere.h**
 
@@ -60,35 +61,30 @@ It would be interesting to create an example which can be reused by you or by ot
    :language: cpp
 
 
-**You can download these files here:** :download:`sphere-glut.zip <../_static/code/cpp/examples/freeglut/sphere-glut.zip>`, unzip and copy them into your ``cpp_freeglut`` block folder.
-
-
 3. Find dependencies
-----------------------
+--------------------
 
-These files need to link with freeglut library, then you have to find this dependency in biicode with ``find`` command.
+Now is when the biicode magic takes place. The previous code needs to link with some library implementing the drawing functions being used. You can resolve all missing dependencies for your platform using the ``bii find`` command. **From your hive's folder location** execute:
 
 .. code-block:: bash
 
-   $ cd cpp_freeglut_hive
    $ bii find
 
-You should see a successful message that all dependencies have been resolved.
-
+**This will find and retrieve all missing files** from the biicode servers to your local filesystem, under the ``deps`` folder of your hive. You should see a success message confirming that all dependencies have been resolved.
 
 
 4. Build and run
----------------------
+----------------
 
-Finally, you can build your main file and run it with the ``bii cpp:run`` command. If you only want to build it, just use ``bii cpp:build``.
+Now it is time to see the result of the previous steps. You can both build and run your main file with the ``bii cpp:run`` command. If you only want to build it, just use ``bii cpp:build``.
 
 .. code-block:: bash
 
    $ bii cpp:run
 
-**That's it!** You should see a new window named "My World" and a solid white sphere in the middle of it like this:
+**That's it!** You should see a new window named "My World", containing a single white sphere in its center. Just like this!:
 
 .. image:: ../_static/img/sphere_freeglut.png
 
-If you have errors executing it, go to `forum biicode <http://forum.biicode.com/>`_ or :ref:`faqs about C/C++ <faqs_cpp>` and check if your problem is resolved there, else open a new topic in C/C++ category and we resolve it as soon as possible.
+If you experience any difficulties during the coding process, or get any errors during the program execution, visit `our forum <http://forum.biicode.com/>`_ and feel free to ask any questions. You can also refer to the :ref:`C/C++ FAQs <faqs_cpp>` and check if your problem is solved there.
 
