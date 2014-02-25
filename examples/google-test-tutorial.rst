@@ -65,19 +65,11 @@ Now **we have to ask biicode to find our dependencies**. This will download Goog
 
 	$ bii find
 	INFO: Detected 3 files created, 0 updated
-	INFO: Settings changed
-	INFO: Compiler configuration changed, cleaning build
-	INFO: Finding missing dependencies in server
-	INFO: Looking for google/gtest...
-	INFO: Analyzing compatibility for found dependencies...
-	INFO: Dependencies resolved in server:
+	...
 	Find resolved new dependencies:
 		google/gtest(google/master): 2
 	All dependencies resolved
-	INFO: Saving files on disk
-	INFO: Retrieving resources from server
-	INFO: Computing dependencies
-	INFO: Saving dependences on disk
+	...
 
 
 4. Run your tests
@@ -89,8 +81,8 @@ Finally, we are ready to unit-test our factorial function:
 
 	$ bii cpp:run test
 	Building[ 77%] Built target google_gtest
-	[100%] Built target hithwen_factorial_main_test
-	Running "hithwen_factorial_main_test"
+	[100%] Built target username_factorial_main_test
+	Running "username_factorial_main_test"
 	Running main() from sample1
 	[==========] Running 3 tests from 1 test case.
 	[----------] Global test environment set-up.
@@ -138,7 +130,7 @@ Now when we execute ``bii cpp:run`` we obtain exactly the same output:
 
 .. code-block:: bash
 
-	Running "hithwen_my_gtest_main_test2"
+	Running "username_my_gtest_main_test2"
 	Running main() from sample1
 	[==========] Running 3 tests from 1 test case.
 	[----------] Global test environment set-up.
