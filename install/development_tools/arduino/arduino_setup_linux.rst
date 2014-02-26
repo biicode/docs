@@ -8,13 +8,13 @@ You need to `download the Arduino software <http://arduino.cc/en/Main/Software>`
 ``IMPORTANT:`` Check you have installed the :ref:`C++ Development Tools<cpp_desktop_linux>`.
 
 Update your environment.bii
----------------------------------
+---------------------------
 
 If you haven't done so, you must first :ref:`create a biicode workspace <create_workspace>`.
 
-``IMPORTANT:`` You can only have one coding language for each Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
+**Note:** You can only have one coding language for each Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
 
-Then you will see in your ``bii_workspace/bii`` folder the following **environment.bii** file with this default configuration:
+Then you will see in your ``bii_workspace/bii`` folder the following ``environment.bii`` file with this default configuration:
 
 
 .. code-block:: text
@@ -43,16 +43,16 @@ Don't forget to check you have the right version of your SDK. You can see your v
 
 .. _arduino_default_settings_linux:
 		
-Update your default_settings.bii
----------------------------------
+Update your board configuration
+-------------------------------
 
-If you want to create all your hives with the same settings, you should change this file. So, enter in ``bii_workspace/bii`` folder, open the **default_settings.bii** file and write the options according to your Arduino settings. These are the default settings:
-
-	*	**Linux**
+Your workspace ``bii/environment.bii`` file also contains some specific settings for your actual Ardino board. This way, all new hives will share the same configuration. Edit the ``boards`` entry reflecting your current setup. These are the default settings you will find wen you open this file: ::
 	
-		{``board``: uno, ``no_autolibs``: 'false', ``port``: /dev/ttyUSB0, ``programmer``: usbtinyisp}
+	boards:
+	  - {board: uno, no_autolibs: 'false', port: /dev/ttyUSB0, programmer: usbtinyisp}
 
-Then you have the following options to change each one.
+
+You must specify the correct option for each of the fields: ``board``, ``no_autolibs``, ``port``, and ``programmer``:
 
 
 Board

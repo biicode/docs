@@ -48,17 +48,16 @@ Don't forget to check you have the right version of your SDK. You can see your v
 
 .. _arduino_default_settings_win:
 		
-Update your default_settings.bii
----------------------------------
+Update your board configuration
+-------------------------------
 
-If you want to create all your hives with the same settings, you should change this file. So, enter in ``bii_workspace/bii`` folder, open the **default_settings.bii** file and write the options according to your Arduino settings. These are the default settings:
+Your workspace ``bii/environment.bii`` file also contains some specific settings for your actual Ardino board. This way, all new hives will share the same configuration. Edit the ``boards`` entry reflecting your current setup. These are the default settings you will find wen you open this file: ::
 
-	*	**Winodws**
+	boards:
+	  - {board: uno, no_autolibs: 'false', port: COM3, programmer: usbtinyisp}
 
-		{``board``: uno, ``no_autolibs``: 'false', ``port``: COM3, ``programmer``: usbtinyisp}
 
-
-Then you have the following options to change each one.
+You must specify the correct option for each of the fields: ``board``, ``no_autolibs``, ``port``, and ``programmer``:
 
 
 Board
