@@ -76,7 +76,7 @@ Creating a new hive with the ``bii new`` command. :ref:`(command info) <bii_new_
 Configure your settings
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Update your :ref:`settings.bii <settings>` or :ref:`default_settings.bii <layouts>` with the info of your Raspberry Pi ::
+Update your :ref:`settings.bii <settings>` with the info of your Raspberry Pi ::
 	
 	rpi: {directory: /home/pi, ip: 192.168.1.68, password: raspberry, user: pi}
 	

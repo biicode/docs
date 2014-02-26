@@ -3,7 +3,9 @@
 Settings
 --------
 
-The ``settings.bii`` file defines the tools that you want to use and their corresponding settings. This file is created when you create a new hive inside the ``bii`` folder, as you can see in the examples in the :ref:`layouts section <layouts>`. Its contents are copied from the ``default_settings.bii`` template file located in the ``bii`` folder of your workspace. While this template contains common settings for all supported languages, the ``settings.bii`` file for your hive is particularized for the actual language of your project. It is important to keep the file format for correct interpretation. Format is as follows:
+The ``settings.bii`` file defines your preferred tools and specific configurations for one given hive. This file is created when you create a new hive, inside the ``bii`` folder, as you can see in the examples in the :ref:`layouts section <layouts>`. Its contents are copied from your ``environment.bii`` file located in your workspace's ``bii`` folder. 
+
+The workspace ``environment.bii`` acts as a template, containing common settings for all supported languages. On the other hand, a hive's ``settings.bii`` file only stores those adequate settings for any given project (language, compiler and other tools and configurations for that particular scenario). It is important to keep the file yaml format for correct interpretation. Format is as follows:
 
 Common settings:
 ^^^^^^^^^^^^^^^^

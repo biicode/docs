@@ -19,7 +19,6 @@ Workspace layout is as follows:::
 |    |-- bii
 |    |    |-- .local.db
 |    |    |-- default_filefilter.bii
-|    |    |-- default_settings.bii
 |    |    |-- default_policies.bii
 |    |    +-- environment.bii
 |    +-- my_hive1
@@ -30,9 +29,8 @@ As you see there is a ``bii`` folder containing a bunch of files and all your hi
 
 * **.local.db**: is the local cache, to optimize retrieval of dependencies. You don`t need to touch or modify this file, but don`t delete it either, it is necessary.
 * **default_filefilter**: holds default `filefilter <http://docs.biicode.com/en/latest/reference/filefilter.html>`_ configuration, . The filefilter is a file that allows to define which files are analyzed by biicode, and which files are just ignored.
-* **default_settings**: holds default `settings <http://docs.biicode.com/en/latest/reference/settings.html>`_ configuration. The settings files define things as the OS, the tools as compilers, IDEs, etc., and are used to define at each hive how the things are build or run. 
 * **default_policies**: holds default `policies <http://docs.biicode.com/en/latest/reference/policies.html>`_ configuration. The policies define how dependencies are found, what versions you want to use, etc.
-* **environment.bii**: Holds information about your system and tools such as your operating system and installed compilers. You can edit a path if the tool is not in your $PATH. You can have, for example, many IDEs defined in your environment, but only one can be defined in the default_settings.bii, as only one IDE can be used at the same time for each hive.
+* **environment.bii**: Holds information about your system and tools such as your operating system and installed compilers. You can edit a path if the tool is not in your $PATH. You can have, for example, many IDEs defined in your environment.
 
 The *default* files are copied to new hives as an initial template at the moment of creation of the hive, and they can be latter customized for such new hives, but **note that changes to default_xxx.bii files in the workspace bii folder are not propagated to already existing hives**
 
