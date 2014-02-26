@@ -104,7 +104,7 @@ The binaries are created in your hive's ``bin`` folder, but remember that **you 
 
 **Note:** You can both compile and run locally your program restoring your ``hello_rpi_hive/bii/settings.bii`` configuration to the default ``32bit`` architecture. This is just simple C++ code, and you only need to change the compiler configuration!
 
-To **send your binary to Raspberry Pi**, you only need to execute the ``rpi:send`` command and the file will be sent by `rsync <http://en.wikipedia.org/wiki/Rsync>`_ to the address provided in your workspace ``default_settings.bii`` file during the :ref:`cross-compiling configuration process <rpi_default_settings>`.
+To **send the binary to your Raspberry Pi**, you only need to execute the ``bii rpi:send`` command and the file will be sent by `rsync <http://en.wikipedia.org/wiki/Rsync>`_ to the address provided in your workspace ``environment.bii`` file during the :ref:`cross-compiling configuration process <rpi_default_settings>`.
 
 .. code-block:: bash
 
@@ -115,13 +115,13 @@ To **send your binary to Raspberry Pi**, you only need to execute the ``rpi:send
 
 The Raspberry Pi user's password will be asked. If you have not changed your password, for Raspbian the default one is **raspberry**.
 
-If you want to send programs to another Raspberry Pi or specify a directory other than the one that appears in your ``default_settings.bii``, you can pass additional parameters to the ``bii:send`` command (get all the information about these parameters with ``bii rpi:send --help``):
+If you want to send programs to another Raspberry Pi or specify a directory other than the one that appears in your ``environment.bii``, you can pass additional parameters to the ``bii:send`` command (get all the information about these parameters with ``bii rpi:send --help``):
 
 .. code-block:: bash
 
 	$ bii rpi:send <directory> <user> <ip>
 
-Finally, to **execute your program on your Raspberry Pi**, you need to establish a connection. You can use the ``rpi:ssh`` command if you want remote access. You'll find your program deployed in the path configured in your ``default_settings.bii`` file:
+Finally, to **execute your program on your Raspberry Pi**, you need to establish a connection. You can use the ``rpi:ssh`` command if you want remote access. You'll find your program deployed in the path configured in your ``environment.bii`` file:
 
 .. code-block:: bash
 
