@@ -49,6 +49,4 @@ Example
 	
 :download:`OpenGLES_examples.zip <../../../_static/code/rpi/OpenGLES_examples.zip>`
 
-Just need to replace [USER]/[BLOCK] into the triangle.c file whit the info of your user and block name. add the following line to the filefilter.bii of your hive. ::
-	
-	ACCEPT    *.raw
+Just need to replace [USER]/[BLOCK] into the triangle.c file whit the info of your user and block name.

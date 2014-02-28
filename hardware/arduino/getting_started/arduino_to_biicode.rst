@@ -19,7 +19,3 @@ If you have some existing Arduino projects, and want to start using them with Bi
 	#else
 		#include "WProgram.h"
 	#endif
-	
-**4th step**: Modify the ``filefilter.bii`` configuration file of your hive, located in ``<your_hive>/bii/`` folder, in order to indicate Biicode that must process all ``.ino`` files as ``.cpp`` files. To do so, add the following lines to the configuration (you can :ref:`learn more about the filefilter.bii file here<filefilter>`): ::
-
-	ACCEPT    *.ino     *.cpp
