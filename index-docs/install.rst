@@ -10,6 +10,7 @@ In this section you will learn how to download the biicode client and install it
 
    ../install/first-steps
    ../install/development_tools/desktop/desktop
+   ../install/development_tools/desktop/desktop_node
    ../install/development_tools/rpi/rpi
    ../install/development_tools/arduino/arduino
 

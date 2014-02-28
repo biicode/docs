@@ -21,6 +21,7 @@ Before starting this guide, please `register <https://www.biicode.com/accounts/s
    ../getting-started/helloworld
    ../getting-started/helloworld-rpi
    ../getting-started/helloworld-arduino
+   ../getting-started/helloworld-node
 
 
 If you want to **try** some examples with **Arduino or Raspberry Pi**, check our tutorials :ref:`here<cross_platform_support>`.
