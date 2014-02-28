@@ -1,7 +1,7 @@
 .. _cpp_examples:
 
 Examples
-==========
+========
 
 This doesn't aim to be a comprehensive list of all the contents of biicode, just some examples of already existing code that is ready for use.
 
@@ -11,6 +11,7 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
 
    ../examples/lib_httpserver   
    ../examples/google-test-tutorial
+   ../examples/eigen
    ../examples/lib_gmock
    ../examples/lib_box2s
    ../examples/lib_cimg
@@ -20,4 +21,5 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    ../examples/lib_mili
    ../examples/lib_zlib
    ../examples/c++challenge
+   ../examples/freeglut
    
