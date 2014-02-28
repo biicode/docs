@@ -21,10 +21,6 @@ Biicode offers you a set of configuration files across your workspace, hives, an
 	- Files located inside your block, but not inside your ``bii`` folder. These are files related with your code file types filtering settings: ``ignore.bii`` and ``types.bii``. As they are hierarchical configuration files (their contents apply to current and descendant folders files), theres is no sense in placing these files inside the block ``bii`` file, as it should not contain source code; just settings.
 
 
-You will learn more about the previously introduced configuration files in this section:
-
-* The :doc:`policies.bii<configuration_files/policies>` determines rules to be applied when finding or updating specific versions of the dependencies.
-
 **All these configuration files are explained in detail in their corresponding subsections**:
 
 .. toctree::
