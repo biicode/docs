@@ -3,7 +3,7 @@
 "Hello World!" in node.js
 =========================
 
-This example shows how to build a simple *'Hello World'* application with biicode.
+This example shows how to build a simple *'Hello World'* node application with biicode.
 
 
 1. Create a new hive
@@ -35,14 +35,14 @@ This command will create the following layout:
 
 .. code-block:: text
 
-   |-- cpp_hello_hive
-   |    +-- blocks
-   |    |     +-- your_user_name
-   |    |    |     +-- node_server
-   |    +-- deps
+   +-- node_hello_hive
+         +-- blocks
+         |     +-- username
+         |          +-- node_server
+         +-- deps
   
 
-You can create the ``main.js`` file in your favorite editor. This file contains the code shown bellow.
+Now, create create inside your ``username/node_server`` a ``main.js`` file with the following contents (you can use your favorite text editor):
 
 .. literalinclude:: ../_static/code/node/main.js
    :language: javascript
@@ -51,7 +51,7 @@ You can create the ``main.js`` file in your favorite editor. This file contains 
 2. Run
 ------
 
-Now, you can run your main file and run it with the ``bii node:run`` command.
+Now, you are ready to run your —yet— simple program using the ``bii node:run`` command.
 
 .. code-block:: bash
 
@@ -60,18 +60,15 @@ Now, you can run your main file and run it with the ``bii node:run`` command.
    ...
    Hello world!
 
-**That's it!** Your console should display now a ``Hello world!`` message. You can try changing the ouput message!
+**That's it!** Your console should display now a **Hello world!** message. You can try changing the ouput message!
+
 
 3. Creating reusable code
 -------------------------
 
-Last example it's not very interesting, and doesn't show biicode's potential.
-Let's create some code that could be reused by other biicode
-users.
+The previous example is not very interesting, and doesn't show biicode's potential. Let's create some code that could be reused by other biicode users.
 
-node.js give us as part of its standard library a basic http server, so we will
-create a small function that encapsulates creation of a http server that returns
-a given string as http body response.
+node.js provides as part of its standard library with a basic http server. We are going to create a small function that encapsulates the creation of a http server that returns a given string as http body response. Replace the previous simple ``main.js`` file with the following two new files:
 
 **server.js**
 
@@ -85,8 +82,7 @@ a given string as http body response.
    :language: javascript
 
 
-
-You can download these files here: :download:`hello_node.zip <../_static/code/node/hello_node.zip>`, unzip and copy them into your ``node_server`` block folder. Run the new program to verify that it works as expected! You can check opening the address http://localhost:8888 in your web browser.
+You can download these files here: :download:`hello_node.zip <../_static/code/node/hello_node.zip>`, unzip and copy them into your ``node_server`` block folder. Run the new program to verify that it works as expected! Now, open the address http://localhost:8888 in your web browser, and enjoy the result!
 
 4. Publish your code
 --------------------
@@ -97,14 +93,14 @@ Once your have written, and successfully executed some code, surely you are will
 
    $ bii publish                                                            
 
-   block:   your_user_name/node_server
+   block:   username/node_server
    Introduce tag: STABLE                                                           
    Introduce msg: My first http server
    
-   INFO: Successfully published your_user_name/node_server(your_user_name/master): 0
+   INFO: Successfully published username/node_server(username/master): 0
 
 
-If your code has been published correctly —as it is the case in the previous example—, you can already browse its conents online, on the biicode web site, visiting the url: ``www.biicode.com/your_user_name``. You can see `an example of a published block following this link <https://www.biicode.com/david/blocks/david/hello/branches/master>`_. In this example the biicode user ``david`` has pusblished a block named ``hello``. You can browse online the block contents and files, and inspect all branches and versions for this block:
+If your code has been published correctly —as it is the case in the previous example—, you can already browse its contents online, on the biicode web site, visiting the url: ``www.biicode.com/username``. You can see `an example of a published block following this link <https://www.biicode.com/david/blocks/david/hello/branches/master>`_. In this example the biicode user ``david`` has pusblished a block named ``hello``. You can browse online the block contents and files, and inspect all branches and versions for this block:
 
 .. image:: ../_static/img/david_hello.png
 
@@ -120,7 +116,7 @@ One of the most interesting aspects of biicode is the ability it provides to eas
 
 Now you should configure this hive as you did before, but in this case **the initial block must have a different name**: ``node_use``, for example.
 
-Add the following files to the folder ``node_use_server/blocks/your_user_name/node_use`` (remember to substitute ``your_user_name`` with your actual biicode user name):
+Add the following files to the folder ``node_use_server_hive/blocks/username/node_use`` (remember to substitute ``username`` with your actual biicode user name):
 
 **new_use.js**
 
@@ -136,7 +132,7 @@ In this case we are using of the ``start_http(text)`` function, which is not exp
    $ bii node:run
    ...
    ... : No such file or directory
-   Error: Cannot find module 'your_user_name/node_server/server'
+   Error: Cannot find module 'username/node_server/server'
 
 However, biicode knows that you are trying to reuse the ``server.js`` header contained in the ``node_server`` block. To resolve the missing dependencies we use the ``bii find`` command. Hopefully the server will find the dependencies, and you will see a success message on your screen:
 
@@ -144,9 +140,9 @@ However, biicode knows that you are trying to reuse the ``server.js`` header con
 
    $ bii find
 	
-This is a successful ouput that indicates biicode has been able to resolve your dependencies. All needed files have been automatically downloaded and copied to your hive.
+This is a successful ouput that indicates biicode has been able to resolve your dependencies. All needed files have been automatically downloaded and copied to your hive (you will find the ``username/node_server`` block along with the retrieved source file ``server.js`` inside your hive's ``deps`` subfolder).
 
-Now you can try to compile and run again your new code. In this case the process will succeed:
+Now you can try to run again your new code. In this case the process will succeed:
 
 .. code-block:: bash
 
@@ -154,23 +150,22 @@ Now you can try to compile and run again your new code. In this case the process
    ...
    Server has started.
 
-You will find the ``your_user_name/node_server`` block along with the retrieved source files ``server.js`` ``node_use/deps`` subfolder. Note that the ``caller.js`` file of the ``node_server`` block was not retrieved. That is because you don't need it to reuse the ``start_http(text)`` function!
+ Note that the ``caller.js`` file contained in the reused ``node_server`` block was not retrieved. That is because you don't need it to reuse the ``start_http(text)`` function!
 
 
 6. Publish a new version of your node_server block
 --------------------------------------------------
 
-Modifying your code and publishing the results is easy with biicode. 
-Now we'll change the message displayed by the ``start_http(message)`` function in the ``your_user_name/node_server`` block. Update the ``server.js`` as follows:
+Modifying your code and publishing the results is easy with biicode. Now we'll change the message displayed by the ``start_http(message)`` function in the ``username/node_server`` block. Update the ``server.js`` file with the following new code:
 
 **server.js**
 
 .. literalinclude:: ../_static/code/node/server_v2.js
    :language: javascript
    
-Execute your block, to make sure everything works as expected:
+Run your code, to make sure everything works as expected. The output message of the http server should have changed.
 
-Now, post your block to the biicode server just like you did before. From your hive folder:
+Now, post your updated block version to the biicode server just as you did before, using again the ``bii publish`` command. From your hive folder:
 
 .. code-block:: bash
 
@@ -187,7 +182,7 @@ As you can see, the version of your block changed from 0 to 1. Your can see both
 7. Update your node_use block with the modifications
 ----------------------------------------------------
 
-To update your ``username/cpp_hellopretty`` block with the new modifications to the ``start_http(text)`` function, **you only need to search the server for any published new versions of your dependencies** using the ``bii find`` command and the ``--update`` modifier. If the server finds new published versions for any of your dependencies, you'll see an indicative message on your screen:
+To update your ``username/node_server`` block with the new modifications to the ``start_http(text)`` function, **you only need to search the server for any published new versions of your dependencies** using the ``bii find`` command and the ``--update`` modifier. If the server finds new published versions for any of your dependencies, you'll see an indicative message on your screen:
 
 .. code-block:: bash
 
