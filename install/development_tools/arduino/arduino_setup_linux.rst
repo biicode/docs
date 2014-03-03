@@ -39,7 +39,18 @@ Change the ``compilers path`` in the environment if you have installed the Ardui
 	* ``family``: Gnu
 	* ``version``: 1.0.5
 
-Don't forget to check you have the right version of your SDK. You can see your version in the file ``[Arduino_SDK_path]/revisions.txt``.
+
+Don't forget to check you have the right version of your SDK. If you installed the arduino debian package you can see the SDK version entering ``dpkg --list arduino``:
+
+.. code-block:: text
+
+	||/ Name        Version            Arch   Description
+	+++-===========-==================-======-=========================
+	ii  arduino     1:1.0.5+dfsg2-1    all    AVR development board IDE
+
+
+In the above example version is **1.0.5**
+
 
 .. _arduino_default_settings_linux:
 		
