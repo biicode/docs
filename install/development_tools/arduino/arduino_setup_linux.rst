@@ -40,7 +40,7 @@ Change the ``compilers path`` in the environment if you have installed the Ardui
 	* ``version``: 1.0.5
 
 
-Don't forget to check you have the right version of your SDK. If you installed the arduino debian package you can see the SDK version entering ``dpkg --list arduino``:
+Please, make sure you have the right version of the Arduino SDK. If you installed the arduino debian package you can see the SDK version entering ``dpkg --list arduino``:
 
 .. code-block:: text
 
@@ -49,7 +49,7 @@ Don't forget to check you have the right version of your SDK. If you installed t
 	ii  arduino     1:1.0.5+dfsg2-1    all    AVR development board IDE
 
 
-In the above example version is **1.0.5**
+The previous output indicates the installed version is **1.0.5**.
 
 
 .. _arduino_default_settings_linux:
