@@ -116,7 +116,7 @@ Once your have written, compiled and successfully executed some code, surely you
    INFO: Successfully published your_user_name/cpp_hello(your_user_name/master): 0
 
 
-If your code has been published correctly —as it is the case in the previous example—, you can already browse its conents online, on the biicode web site, visiting the url: ``www.biicode.com/your_user_name``. You can see `an example of a published block following this link <https://www.biicode.com/david/blocks/david/hello/branches/master>`_. In this example the biicode user ``david`` has pusblished a block named ``hello``. You can browse online the block contents and files, and inspect all branches and versions for this block:
+If your code has been published correctly —as it is the case in the previous example—, you can already browse its contents online, on the biicode web site, visiting the url: ``www.biicode.com/your_user_name``. You can see `an example of a published block following this link <https://www.biicode.com/david/blocks/david/hello/branches/master>`_. In this example the biicode user ``david`` has pusblished a block named ``hello``. You can browse online the block contents and files, and inspect all branches and versions for this block:
 
 .. image:: ../_static/img/david_hello.png
 

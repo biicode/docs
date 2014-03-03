@@ -3,29 +3,33 @@
 Configuration files
 ===================
 
-In this section you will find a detailed description of the biicode configuration files. These files **extend the basic biicode functionality, providing you with additional tools for taking a deeper control and full flexibility configuring your hives and blocks**.
+Biicode offers you a set of configuration files across your workspace, hives, and blocks. These files empower you with full control of how biicode treats your code and dependencies. Some of these files were introduced in the :ref:`workspace and hives layouts section <layouts>`. They can be grouped in three main categories:
 
-All biicode configuration files have the ``.bii`` extension, and are located insinde ``bii`` folders across your workspace. Take a look at the :ref:`workspace <workspace_layout>` and :ref:`hives <hive_layout>` layouts, and see the examples trying to find the locations for different ``*.bii`` files, and their names.
+1. **Workspace-level configuration files**. They are contained in your workspace ``bii`` folder, and store general settings for all your hives:
+	
+	- Environment information in the ``environment.bii`` file. This file contains information about your system and preferences, which is used for generating particular hive settings.
+	- Default policies for dependencies retrieval in the ``default_policies.bii`` file. This file is used as a templeate for new hives' policies, described bellow.
+	- Default settings for file filtering in the ``ignore.bii`` file. Acts as a hierarchical configuration file across your hives and blocks, and this rules can be overriden or extended with other ``ignore.bii`` files located in deeper levels in the folders structure.
+2. **Hive-level configuration files**, with ``.bii`` extension, contained in every hive ``bii`` folder. These are two files, and are created when executing the ``bii new`` command:
+	
+	- The ``settings.bii`` file, contains specific information about your hive: language, building and running tools, and predefined IDE. Its contents are generated using the workspace ``environment.bii`` file as a template.
+	- The ``policies.bii`` file, which contains rules for downloading your dependencies (specifi branches and versions).
 
-* Configuration files contained in the ``bii`` folder of your workspace contain **general settings that are shared by all the hives and blocks in your workspace**. Their names start with the ``default_`` string, and that gives an idea of the characteristics of the rules contained in these files. The rules contained in this files are used as default settings when you create a new hive, and their contents are copied to the ``bii`` folder of the new hives. Examples of these files are ``default_policies.bii``, or ``default_filefilter.bii`` in the ``your_workspace/bii`` folder.
+3. **Block-level configuration files**. These files allow a fine control of how biicode process and publishes your source blocks. Block configuration files can be grouped in two categories:
 
-* Configuration files can also be placed inside the ``bii`` folder in a **hive** or **block**. These configurations provide **control of the settings for specific projects and groups of files**.
+	- Files located inside the block ``bii`` folder. The block configuration ``bii`` folder is not created by default by the biicode client. However, you can create it by yourself (:ref:`see the hive layout <hive_layout>`) and include the following optional configuration files: ``dependencies.bii``, ``mains.bii``, ``virtual.bii``. The purpose of these files is described bellow.
+	- Files located inside your block, but not inside your ``bii`` folder. These are files related with your code file types filtering settings: ``ignore.bii`` and ``types.bii``. As they are hierarchical configuration files (their contents apply to current and descendant folders files), theres is no sense in placing these files inside the block ``bii`` file, as it should not contain source code; just settings.
 
-These are the configuration files that will be explained in this section:
 
-* The :doc:`dependencies.bii<configuration_files/dependencies>` file contains information about **file dependencies** that cannot be automatically resolved by biicode, and allows you to take full control of the dependencies definition.
-* The :doc:`filefilter.bii<configuration_files/filefilter>` allows you to define which types of files will be included in your hive.
-* The :doc:`mains.bii<configuration_files/mains>` defines which cells contain entry points to executable code, or serve as static or dynamic libraries.
-* The :doc:`policies.bii<configuration_files/policies>` determines rules to be applied when finding or updating specific versions of the dependencies.
-* The :doc:`settings.bii<configuration_files/settings>` defines general settings about the tools you are using: compiler, configurer, IDE…
-
-All these configuration files are explained in detail in their corresponding subsections:
+**All these configuration files are explained in detail in their corresponding subsections**:
 
 .. toctree::
    :maxdepth: 1
    
-   dependencies.bii: Configuring file dependencies <configuration_files/dependencies>
-   filefilter.bii: Including and exluding cells in a hive <configuration_files/filefilter>
-   mains.bii: Defining entry points in your code <configuration_files/mains>
+   settings.bii: Defining your tools and preferences <configuration_files/settings>
    policies.bii: Defining the code you want to reuse <configuration_files/policies>
-   settings.bii Defining your tools and preferences <configuration_files/settings>
+   dependencies.bii: Configuring custom file dependencies <configuration_files/dependencies>
+   mains.bii: Defining entry points in your code <configuration_files/mains>
+   virtual.bii: Defining virtual resources <configuration_files/virtual>
+   ignore.bii: Filtering your files <configuration_files/ignore>
+   types.bii: Configuring non-standar file extensions <configuration_files/types>

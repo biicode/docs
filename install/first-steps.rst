@@ -59,7 +59,7 @@ Then you'll need to set up the development tools you're going to use as describe
 .. _create_workspace:
 
 4. Create your first workspace
----------------------------------
+------------------------------
 
 The first step is creating your own **biicode workspace**. This is the place where all your hives will be located. In general, this step needs to be done only once after the initial setup.
 

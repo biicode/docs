@@ -2,6 +2,14 @@
 
 Changelog
 =========
+
+v. 0.10
+-------
+*(date)*
+
+* Removed the workspace ``default_settings.bii`` file. Now, new hives' settings are obtained from the workspace ``environment.bii`` file.
+
+
 v. 0.9
 ------
 *(13-02-14)*

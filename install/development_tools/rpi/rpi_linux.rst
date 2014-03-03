@@ -73,12 +73,15 @@ Now you  only need to configure you workspace ``bii/environment.bii`` file as ex
 
 .. _rpi_default_settings:
 
-2. Configure your default settings
-----------------------------------
+2. Board configuration
+----------------------
 
-Now, you need to update your workspace ``bii/default_settings.bii`` file with some information about your Raspberry Pi. This information will be used for deploying your program into an appropriate location of your car file system, and will eventually be copied to your hive ``settings.bii`` configuration file. Just look for this line in your workspace ``default_settings.bii`` file and fill in the correct values: ::
+Now, you need to update your workspace ``bii/environment.bii`` file with some information about your Raspberry Pi. This information will be used for deploying your program into an appropriate location of your card file system, and will eventually be copied to your hive ``settings.bii`` configuration file. Just look for this line in your workspace ``environment.bii`` file and fill in the correct values: ::
 	
-	rpi: {directory: /home/pi, ip: 127.0.0.8, password: raspberry, user: pi}
+	rpi:
+	  rpis:
+	    - {directory: /home/pi, ip: 127.0.0.8, password: raspberry, user: pi}
+
 	
 * **directory**: Raspberry Pi directory where you want your programs to be saved.
 * **ip**: Raspberry Pi local IP address. Write here your Raspberry Pi network address, that you can find out executing the ``ifconfig`` in a console inside the raspberry.
