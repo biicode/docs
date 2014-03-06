@@ -82,7 +82,15 @@ node.js provides as part of its standard library with a basic http server. We ar
    :language: javascript
 
 
-You can download these files here: :download:`hello_node.zip <../_static/code/node/hello_node.zip>`, unzip and copy them into your ``node_server`` block folder. Run the new program to verify that it works as expected! Now, open the address http://localhost:8888 in your web browser, and enjoy the result!
+You can download these files here: :download:`hello_node.zip <../_static/code/node/hello_node.zip>`, unzip and copy them into your ``node_server`` block folder.
+
+Run the new program to verify that it works as expected! 
+
+.. code-block:: bash
+
+   $ bii node:run caller
+
+Now, open the address http://localhost:8888 in your web browser, and enjoy the result!
 
 4. Publish your code
 --------------------
