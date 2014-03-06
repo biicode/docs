@@ -1,3 +1,5 @@
-This is the biicode documentation repo for Read the Docs, accessible from http://docs.biicode.com
+# Biicode Documentation
 
-Please, **DO NOT** attempt to make any contributios yet; the structure of the documentation is being revised.
+This is the [biicode](http://www.biicode.com) documentation, accessible from [http://docs.biicode.com](http://docs.biicode.com)
+
+You can contribute to this documentation providing your own tutorials, articles and images.
