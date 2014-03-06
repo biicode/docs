@@ -1,7 +1,7 @@
 .. _arduino_installation:
 
 Arduino
-=======
+========
 
 .. toctree::
    :maxdepth: 2

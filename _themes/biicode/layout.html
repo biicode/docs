@@ -83,32 +83,11 @@
 
   {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
   <nav class="nav-top">
-
-    <div id="main-menu">
-      <header id="menu">
-        <div id="navbar" class="center">
-          <div id="logo">
-            <a href="/"><img src="https://biiwebproduction.s3.amazonaws.com/static/images/logo.png"></a>
-          </div>
-          <nav class="right">
-          <ul>
-            <li><a href="http://www.biicode.com">Home</a></li>
-            <li><a href="http://web.biicode.com/blog">Blog</a></li>
-            <li><a href="http://forum.biicode.com">Forum</a></li>
-            <li><a href="http://docs.biicode.com">Docs</a></li>
-            <li><a href="http://www.biicode.com/accounts/login">Login</a></li>
-            <li><a href="http://www.biicode.com/accounts/signup">Sign up</a></li>
-          </ul>
-          </nav>
-        </div>
-      </header>
-    </div>
-
+    <div id="biicode-logo"><a href="http://www.biicode.com">biicode</a></div>
     <div class="nav-top-mobile">
       <i data-toggle="nav-top" class="icon icon-reorder"></i>
       <a href="{{ pathto(master_doc) }}" class="icon icon-book"> {{ project }}</a>
     </div>
-    
     <div class="nav-top-standard">
       <ul class="main-menu">
         <li><a href="{{ pathto(master_doc) }}" class="icon icon-book"> {{ project }}</a></li>
