@@ -117,7 +117,7 @@ Now, copy the code from your hello word tutorial into the block folder. You have
 
 Finally, you are now ready to open your project with Visual Studio. Just double-click on the .sln file inside the build folder of your hive and a VS project will open with the folder structure that appears below. Your source code is located in the third folder:
 
-.. image:: ../_static/img/visual_studio_tree.jpg
+.. image:: /_static/img/visual_studio_tree.jpg
 
 .. rst-class:: tabbed
 
@@ -170,7 +170,7 @@ Finally, you are ready to open your project with CodeBlocks. The first step is t
 
 Now you have your project in the CodeBlocks workspace showing a folders tree similar to this one:
 
-.. image:: ../_static/img/codeblocks_tree.png
+.. image:: /_static/img/codeblocks_tree.png
 
 For this tutorial our user name is *tutorial* and our block simple name is *codeblocks*.
 
@@ -178,6 +178,6 @@ If you want to add any file, just click on *File > New > Empty file* and create 
 
 To run your project you need to select the main file on build target:
 
-.. image:: ../_static/img/codeblocks_build_target.png
+.. image:: /_static/img/codeblocks_build_target.png
 
 And this is all you need to work as usual in CodeBlocks.

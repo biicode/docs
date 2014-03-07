@@ -9,11 +9,11 @@ The following example shows a simple use for doing type-safe bitwise operations.
 
 **main_mili.cpp**
 
-.. literalinclude:: ../_static/code/cpp/examples/mili/main_mili.cpp
+.. literalinclude:: /_static/code/cpp/examples/mili/main_mili.cpp
    :language: cpp
    :linenos:
 
-**Download the file:** :download:`main_mili.cpp <../_static/code/cpp/examples/mili/main_mili.cpp>` 
+**Download the file:** :download:`main_mili.cpp </_static/code/cpp/examples/mili/main_mili.cpp>` 
 
 
 First, you need to resolve all the dependencies of this ``main_mili.cpp``

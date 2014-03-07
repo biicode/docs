@@ -3572,11 +3572,7 @@ pre.literal-block:after {
 }
 
 .menu-vertical {
-  overflow-y: scroll;
-  max-height: 500px;
-}
-.menu-vertical > ul {
-  min-height: 1200px;
+  margin-bottom: 100px;
 }
 
 .menu-vertical header {
@@ -3759,17 +3755,6 @@ pre.literal-block:after {
 
 .grid-for-nav {
   margin-top: 50px;
-}
-
-.nav-side {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 300px;
-  overflow: hidden;
-  min-height: 100%;
-  background: #343131;
-  z-index: 200;
 }
 
 .nav-top {
@@ -3969,6 +3954,11 @@ li.toctree-l1 > a {
 }
 
 nav.nav-side {
+  width: 300px;
+  min-height: 100%;
+  max-height: 100%;
+  background: #343131;
+  z-index: 200;
   position: fixed;
   top: 50px;
   -webkit-transition: all .25s ease;
@@ -3976,6 +3966,7 @@ nav.nav-side {
   -ms-transition: all .25s ease;
   -o-transition: all .25s ease;
   transition: all .25s ease;
+  overflow-y: auto;
 }
 
 .side-nav-search, .menu-vertical {

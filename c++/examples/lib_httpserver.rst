@@ -37,7 +37,7 @@ These are the files you will need in your block to have your HTTP Server up and 
 
 This file just instanciates the server and runs it with simple configuration parameters.
 
-.. literalinclude:: ../_static/code/cpp/examples/httpserver/main_server.cpp
+.. literalinclude:: /_static/code/cpp/examples/httpserver/main_server.cpp
    :language: cpp
    :linenos:
         
@@ -46,7 +46,7 @@ This file just instanciates the server and runs it with simple configuration par
 
 Defines your HttpMiddleware subclass.
 
-.. literalinclude:: ../_static/code/cpp/examples/httpserver/my_http_middle_ware.h
+.. literalinclude:: /_static/code/cpp/examples/httpserver/my_http_middle_ware.h
    :language: cpp
    :linenos:
 
@@ -55,12 +55,12 @@ Defines your HttpMiddleware subclass.
 
  Implements HttpMiddleware subclass. You should implement the ``call`` method, reading the header variables from the request, and modifying the response to return the output.
 
-.. literalinclude:: ../_static/code/cpp/examples/httpserver/my_http_middle_ware.cpp
+.. literalinclude:: /_static/code/cpp/examples/httpserver/my_http_middle_ware.cpp
    :language: cpp
    :linenos:
 
    
-**Download all the files:** :download:`main_server.cpp <../_static/code/cpp/examples/httpserver/main_server.cpp>` :download:`my_http_middle_ware.h <../_static/code/cpp/examples/httpserver/my_http_middle_ware.h>` :download:`my_http_middle_ware.cpp <../_static/code/cpp/examples/httpserver/my_http_middle_ware.cpp>`
+**Download all the files:** :download:`main_server.cpp </_static/code/cpp/examples/httpserver/main_server.cpp>` :download:`my_http_middle_ware.h </_static/code/cpp/examples/httpserver/my_http_middle_ware.h>` :download:`my_http_middle_ware.cpp </_static/code/cpp/examples/httpserver/my_http_middle_ware.cpp>`
  
 
 Supported Operating Systems

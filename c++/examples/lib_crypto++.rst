@@ -9,10 +9,10 @@ This first basic example shows hot to encrypt a message with SHA1 code.
 
 **main_crypto**
 
-.. literalinclude:: ../_static/code/cpp/examples/crypto/main_crypto.cpp
+.. literalinclude:: /_static/code/cpp/examples/crypto/main_crypto.cpp
    :language: cpp
    :linenos:
 
 
-**Download the file:** :download:`main_crypto.cpp <../_static/code/cpp/examples/crypto/main_crypto.cpp>` 
+**Download the file:** :download:`main_crypto.cpp </_static/code/cpp/examples/crypto/main_crypto.cpp>` 
   

@@ -8,7 +8,7 @@ $( document ).ready(function() {
       $("body").addClass("arduino");
     } else if (pathname.match(/\/raspberrypi\/|\/raspberrypi.html/)) {
       $("body").addClass("raspberrypi");
-    } else if (pathname.match(/\/c\+\+\/|\/c++.html/)) {
+    } else if (pathname.match(/\/c\+\+\/|\/c\+\+\.html/)) {
       $("body").addClass("cpp");
     } else if (pathname.match(/\/nodejs\/|nodejs.html/)) {
       $("body").addClass("nodejs");

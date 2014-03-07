@@ -9,12 +9,12 @@ The following example shows a simple use of gmock test. You can find this and ot
 
 **main_gmock**
 
-.. literalinclude:: ../_static/code/cpp/examples/gmock/main_gmock.cpp
+.. literalinclude:: /_static/code/cpp/examples/gmock/main_gmock.cpp
    :language: cpp
    :linenos:
 
 
-**Download the file:** :download:`main_gmock.cpp <../_static/code/cpp/examples/gmock/main_gmock.cpp>` 
+**Download the file:** :download:`main_gmock.cpp </_static/code/cpp/examples/gmock/main_gmock.cpp>` 
 	
 First, you need to resolve all the dependencies of this *main_gmock.cpp*
 	

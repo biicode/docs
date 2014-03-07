@@ -4,7 +4,7 @@ FAQs about Raspberry Pi
 ========================
 
 Installing the biicode package from downloads page is too slow
-------------------------------------------------------------------
+---------------------------------------------------------------
 	
 You can do it this alternative way:
 

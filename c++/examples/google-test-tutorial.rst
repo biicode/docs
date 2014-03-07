@@ -31,17 +31,17 @@ Put these files inside ``YOUR_WORKSPACE/gtest_hive/blocks/YOUR_USERNAME/factoria
 
 **math_ext.h**
 
-.. literalinclude:: ../_static/code/cpp/examples/google-test-tutorial/math_ext.h
+.. literalinclude:: /_static/code/cpp/examples/google-test-tutorial/math_ext.h
    :language: cpp
    :linenos:
 
 **math_ext.cpp**
 
-.. literalinclude:: ../_static/code/cpp/examples/google-test-tutorial/math_ext.cpp
+.. literalinclude:: /_static/code/cpp/examples/google-test-tutorial/math_ext.cpp
    :language: cpp
    :linenos:
 
-**Download all the files:** :download:`math_ext.cpp <../_static/code/cpp/examples/google-test-tutorial/math_ext.cpp>` :download:`math_ext.h <../_static/code/cpp/examples/google-test-tutorial/math_ext.h>`
+**Download all the files:** :download:`math_ext.cpp </_static/code/cpp/examples/google-test-tutorial/math_ext.cpp>` :download:`math_ext.h </_static/code/cpp/examples/google-test-tutorial/math_ext.h>`
    
    
 **Now than we have our factorial function, we can test it with Google Test**. You just have to include ``google/gtest/gtest.h``.
@@ -49,11 +49,11 @@ To check that the factorial function behaves as expected put main_test.cpp with 
 
 **main_test.cpp**
 
-.. literalinclude:: ../_static/code/cpp/examples/google-test-tutorial/main_test.cpp
+.. literalinclude:: /_static/code/cpp/examples/google-test-tutorial/main_test.cpp
    :language: cpp
    :linenos:
 
-**Download the file:** :download:`main_test.cpp <../_static/code/cpp/examples/google-test-tutorial/main_test.cpp>` 
+**Download the file:** :download:`main_test.cpp </_static/code/cpp/examples/google-test-tutorial/main_test.cpp>` 
 
 
 3. Find dependencies
@@ -107,19 +107,19 @@ If you want to have multiple test classes and run them all toghether you don't n
 
 **test_factorial1.cpp**
 
-.. literalinclude:: ../_static/code/cpp/examples/google-test-tutorial/test_factorial1.cpp
+.. literalinclude:: /_static/code/cpp/examples/google-test-tutorial/test_factorial1.cpp
    :language: cpp
    :linenos:
 
 **test_factorial2.cpp**
 
-.. literalinclude:: ../_static/code/cpp/examples/google-test-tutorial/test_factorial2.cpp
+.. literalinclude:: /_static/code/cpp/examples/google-test-tutorial/test_factorial2.cpp
    :language: cpp
    :linenos:
 
 **main_test2.cpp**
 
-.. literalinclude:: ../_static/code/cpp/examples/google-test-tutorial/main_test2.cpp
+.. literalinclude:: /_static/code/cpp/examples/google-test-tutorial/main_test2.cpp
    :language: cpp
    :linenos:
 

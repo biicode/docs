@@ -40,24 +40,24 @@ First, create a new hive as described in the :ref:`hello world example <hello_wo
 
 This is some example conde that makes use of GLUT functions. Note that **you must include a reference to a biicode GLUT wrapper** library. This is the only information biicode needs to fetch the required files when needed, taking into account your actual development platform. We'll see how this happens in the next step.
 
-Now, simply put the following code into your ``cpp_freeglut`` block folder (you can also download these files here: :download:`sphere-glut.zip <../_static/code/cpp/examples/freeglut/sphere-glut.zip>`, unzip and copy them into your block folder):
+Now, simply put the following code into your ``cpp_freeglut`` block folder (you can also download these files here: :download:`sphere-glut.zip </_static/code/cpp/examples/freeglut/sphere-glut.zip>`, unzip and copy them into your block folder):
 
 **sphere.h**
 
-.. literalinclude:: ../_static/code/cpp/examples/freeglut/sphere.h
+.. literalinclude:: /_static/code/cpp/examples/freeglut/sphere.h
    :language: cpp
    :emphasize-lines: 2
 
 
 **sphere.cpp**
 
-.. literalinclude:: ../_static/code/cpp/examples/freeglut/sphere.cpp
+.. literalinclude:: /_static/code/cpp/examples/freeglut/sphere.cpp
    :language: cpp
 
 
 **main.cpp**
 
-.. literalinclude:: ../_static/code/cpp/examples/freeglut/main.cpp
+.. literalinclude:: /_static/code/cpp/examples/freeglut/main.cpp
    :language: cpp
 
 
@@ -84,7 +84,7 @@ Now it is time to see the result of the previous steps. You can both build and r
 
 **That's it!** You should see a new window named "My World", containing a single white sphere in its center. Just like this!:
 
-.. image:: ../_static/img/sphere_freeglut.png
+.. image:: /_static/img/sphere_freeglut.png
 
 If you experience any difficulties during the coding process, or get any errors during the program execution, visit `our forum <http://forum.biicode.com/>`_ and feel free to ask any questions. You can also refer to the :ref:`C/C++ FAQs <faqs_cpp>` and check if your problem is solved there.
 

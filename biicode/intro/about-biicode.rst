@@ -1,4 +1,4 @@
-.. _what_is_biicode:
+.. _about_biicode:
 
 What is biicode
 =================

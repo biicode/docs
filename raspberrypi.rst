@@ -8,7 +8,8 @@ Raspberry Pi Documentation
 .. toctree::
    :maxdepth: 2
 
-   installation
-   reference
-   faqs
+   raspberrypi/installation
+   raspberrypi/getting-started
+   raspberrypi/examples
+   raspberrypi/faqs
 

@@ -14,7 +14,7 @@ The following code would be in each one.
 
 **infdef.h**
 
-.. literalinclude:: ../_static/code/cpp/examples/zlib/infdef.h
+.. literalinclude:: /_static/code/cpp/examples/zlib/infdef.h
    :language: cpp
    :linenos:
    :emphasize-lines: 3,4,5,16
@@ -23,7 +23,7 @@ The following code would be in each one.
 
 **infdef.cpp**
 
-.. literalinclude:: ../_static/code/cpp/examples/zlib/infdef.cpp
+.. literalinclude:: /_static/code/cpp/examples/zlib/infdef.cpp
    :language: cpp
    :linenos:
 
@@ -31,12 +31,12 @@ The following code would be in each one.
 
 **zpipe.cpp**
 
-.. literalinclude:: ../_static/code/cpp/examples/zlib/zpipe.cpp
+.. literalinclude:: /_static/code/cpp/examples/zlib/zpipe.cpp
    :language: cpp
    :linenos:
 
    
-**Download all the files:** :download:`zpipe.cpp <../_static/code/cpp/examples/zlib/zpipe.cpp>` :download:`infdef.h <../_static/code/cpp/examples/zlib/infdef.h>` :download:`infdef.cpp <../_static/code/cpp/examples/zlib/infdef.cpp>`
+**Download all the files:** :download:`zpipe.cpp </_static/code/cpp/examples/zlib/zpipe.cpp>` :download:`infdef.h </_static/code/cpp/examples/zlib/infdef.h>` :download:`infdef.cpp </_static/code/cpp/examples/zlib/infdef.cpp>`
     
 
 

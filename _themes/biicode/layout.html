@@ -38,11 +38,6 @@
   };
   </script>
 
-  {%- for script in theme_scripts %}
-  <script type="text/javascript" src="{{ pathto(script, 1) }}"></script>
-  {%- endfor %}
-  {% endif %}
-
   {% for style in theme_styles %}
   <link rel="stylesheet" href="{{ pathto(style, 1) }}" type="text/css" />
   {% endfor %}
@@ -75,7 +70,12 @@
   {%- endblock %}
   {%- block extrahead %} {% endblock %}
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+
+  {%- for script in theme_scripts %}
+  <script type="text/javascript" src="{{ pathto(script, 1) }}"></script>
+  {%- endfor %}
+  {% endif %}
 
 </head>
 
