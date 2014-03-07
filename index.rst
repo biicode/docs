@@ -11,6 +11,17 @@ Here you will find all the information to get started using biicode with your pr
 
 Contents:
 
+.. toctree::
+   :maxdepth: 3
+
+   general
+   c++
+   arduino
+   raspberrypi
+   python
+   nodejs
+
+
 * :ref:`General biicode documentation <general-index>`
 * :ref:`C and C++ documentation <cpp-index>`
 * :ref:`Arduino documentation <arduino-index>`

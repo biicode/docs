@@ -6,6 +6,6 @@ Desktop C++
 .. toctree::
    :maxdepth: 1
 
-   cpp_linux
-   cpp_mac
-   cpp_win
+   installation/cpp_linux
+   installation/cpp_mac
+   installation/cpp_win

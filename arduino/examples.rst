@@ -15,8 +15,15 @@ Biicode gives you several advantages for your Arduino experience.
 	2. **Reuse yours and other users´ code**. Reuse make easy, just #include the file you need and you get it. No more copy and paste files from project to project.
 	3. This is a very **simple** and **fast** way to **compile and upload** your code in your Arduino.
 
+
+================
+Arduino examples
+================
+
+you can find many examples on the `Arduino official website. <http://arduino.cc/en/Tutorial/HomePage>`_
+
 .. toctree::
    :maxdepth: 2
-  
-   arduino/tutorials
 
+   tutorials/serial_interface
+   tutorials/pid

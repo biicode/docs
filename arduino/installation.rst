@@ -1,7 +1,9 @@
 .. _arduino_installation:
 
-Arduino
-========
+Arduino Installation
+====================
+
+This section describes how to install…
 
 .. toctree::
    :maxdepth: 2

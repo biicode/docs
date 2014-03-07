@@ -1,19 +1,19 @@
 .. _upgrading:
 
-=========
 Upgrading
 =========
 
-Upgrades of biicode are straightforward:
-download the new package, install it over the existing package.
-The installer will handle the work of removing old files.
+Biicode software updates are straightforward: **download** the new package and **install** it over the existing package. The installer will handle the work of removing old files.
+
+However, as biicode is an evolving technology, sometimes you will need to perform some workspace, hives and blocks upgrades manually.
 
 
 Updating your workspace from older versions
 -------------------------------------------
 
 0.6.2
-^^^^^^
+^^^^^
+
 **Important note users upgrading from previous versions to 0.6**: in this version  :ref:`policies configuration file <policies>` has changed so you'll need to re-add your custom policies
 
 

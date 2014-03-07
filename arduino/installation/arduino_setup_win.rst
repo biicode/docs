@@ -2,7 +2,8 @@ Arduino Windows
 ===============
 
 Download the Arduino Software
----------------------------------
+-----------------------------
+
 You need to `download the Arduino software <http://arduino.cc/en/Main/Software>`_ first, it is important to choose a SDK compatible with your board. If you need more info visit the `official Arduino website <http://arduino.cc/en/Main/Software>`_.
 
 **NOTE:** **Install** the Arduino software **into C:/Program Files/Arduino and not into C:/Program Files/Arduino (x86)**. It is important because some CMake versions can not interpret correctly this path.
@@ -10,9 +11,8 @@ You need to `download the Arduino software <http://arduino.cc/en/Main/Software>`
 ``IMPORTANT:`` Check you have installed the :ref:`C++ Development Tools<cpp_desktop_win>`.
 
 
-
 Update your environment.bii
----------------------------------
+---------------------------
 
 If you haven't done so, you must first :ref:`create a biicode workspace <create_workspace>`.
 
