@@ -25,5 +25,5 @@ you can find many examples on the `Arduino official website. <http://arduino.cc/
 .. toctree::
    :maxdepth: 2
 
-   tutorials/serial_interface
-   tutorials/pid
+   examples/serial_interface
+   examples/pid

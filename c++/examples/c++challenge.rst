@@ -3,7 +3,17 @@
 Solving the C++ challenge
 =========================
 
-In this section we explain, step by step, how to solve `the C++ challenge <http://web.biicode.com/challenge>`_ with the help of biicode.
+We have proposed a `C++ challenge <http://web.biicode.com/challenge>`_ for showing the benefits of our technology. The goal is to build a wrapper around two linear systems solver; one dense, and the other one sparse.
+
+The `source files <https://github.com/biicode/challenge>`_ have dependencies to 3 well known open source libraries:
+
+* `Eigen Library <http://eigen.tuxfamily.org>`_ is headers-only.
+* `CSparse  <http://www.cise.ufl.edu/research/sparse/CSparse/>`_ is very simple, just a \*.h and some \*.c files
+* `Google GTest <https://code.google.com/p/googletest/>`_ is also very portable, independent and prepared to be integrated in other projects.
+
+The challenge consists in building and runing the code, in three different platforms: Windows, Linux and Mac. Try solving it by your own means, and then solve the problem with biicode. You'll see how much easier and natural it is!
+
+In this section we explain, step by step, how to solve this challenge with the help of biicode.
 
 Create a new hive
 -----------------
