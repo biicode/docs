@@ -14,7 +14,7 @@ $( document ).ready(function() {
       $("body").addClass("nodejs");
     } else if (pathname.match(/\/python\/|python.html/)) {
       $("body").addClass("python");
-    }
+    };
   })();
   // Shift nav in mobile when clicking the menu.
   $("[data-toggle='nav-top']").click(function() {
