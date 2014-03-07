@@ -14,7 +14,7 @@ Contents:
 .. toctree::
    :maxdepth: 3
 
-   general
+   biicode
    c++
    arduino
    raspberrypi

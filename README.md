@@ -9,7 +9,7 @@ Structure is as follows:
 * **_guide** Contains some geheral style guides and [reStructuredText](http://docutils.sourceforge.net/rst.html) basic information.
 * **_static** Contains static resurces; mainly images and code examples.
 * **_tehems** Contains the biicode theme, used for generationg the documentation in html format.
-* **general** Contains general information about biicode: conceps, philosophy and commands reference.
+* **biicode** Contains general information about biicode: conceps, philosophy and commands reference.
 * **c-c++** Contains sepcific information, FAQs and reference for C and C++ programming languages.
 * **arduino** Contains sepcific information, FAQs and reference for [Arduino](http://www.arduino.cc/) development.
 * **raspberrypi** Contains sepcific information, FAQs and reference for [Raspberry Pi](http://www.raspberrypi.org/) development.
