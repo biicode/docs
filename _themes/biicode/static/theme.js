@@ -2,9 +2,7 @@ $( document ).ready(function() {
   // Section class selector
   (function setSectionClass() {
     var pathname = window.location.pathname;
-    if (pathname.match(/\/general\/|\/general.html/)) {
-      $("body").addClass("general");
-    } else if (pathname.match(/\/arduino\/|\/arduino.html/)) {
+    if (pathname.match(/\/arduino\/|\/arduino.html/)) {
       $("body").addClass("arduino");
     } else if (pathname.match(/\/raspberrypi\/|\/raspberrypi.html/)) {
       $("body").addClass("raspberrypi");
@@ -14,6 +12,8 @@ $( document ).ready(function() {
       $("body").addClass("nodejs");
     } else if (pathname.match(/\/python\/|python.html/)) {
       $("body").addClass("python");
+    } else {
+      $("body").addClass("biicode");
     };
   })();
   // Shift nav in mobile when clicking the menu.

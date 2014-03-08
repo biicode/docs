@@ -3761,6 +3761,11 @@ a:hover
   color:#3baaf0;
   text-decoration:underline;
 }
+a.biisection:hover {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 3px solid #fff;
+}
 
 .link-danger
 {
@@ -4677,6 +4682,7 @@ pre.literal-block:after
 {
   border-bottom:1px solid #eee;
   padding-bottom:5px;
+  padding-top: 10px;
 }
 
 .breadcrumbs li
@@ -4927,14 +4933,26 @@ pre.literal-block:after
 
 .side-nav-search
 {
-  background-color:#fa0;
-  /* border-bottom:1px solid #fff; */
   color:#fcfcfc;
   display:block;
-  /* margin-bottom:10px; */
   padding: 15px;
   text-align:center;
   z-index:200;
+}
+body.biicode .side-nav-search {
+  background-color:#fa0;
+}
+body.cpp .side-nav-search {
+  background-color:#3480ff;
+}
+body.arduino .side-nav-search {
+  background-color:#00979c;
+}
+body.raspberrypi .side-nav-search {
+  background-color:#bb0000;
+}
+body.nodejs .side-nav-search {
+  background-color:#80bd01;
 }
 
 .side-nav-search input[type=search]
@@ -5523,12 +5541,26 @@ nav.nav-side
 
 .biicode-sections {
     position: absolute;
-  
     top: 0;
     background: #ffaa00;
     left: 0;
     height: 60px;
     width: 100%;
+}
+body.biicode .biicode-sections {
+  background-color:#fa0;
+}
+body.cpp .biicode-sections {
+  background-color:#3480ff;
+}
+body.arduino .biicode-sections {
+  background-color:#00979c;
+}
+body.raspberrypi .biicode-sections {
+  background-color:#bb0000;
+}
+body.nodejs .biicode-sections {
+  background-color:#80bd01;
 }
 
 .biisection {
@@ -5537,6 +5569,15 @@ nav.nav-side
   font-size: 12px;
   padding: 20px;
   color: #fff;
+}
+body.biicode .biisection.biicode,
+body.cpp .biisection.cpp,
+body.arduino .biisection.arduino,
+body.raspberrypi .biisection.raspberrypi,
+body.nodejs .biisection.nodejs
+ {
+  font-weight: bold;
+  border-bottom: 3px solid #fff;
 }
 
 @media print {

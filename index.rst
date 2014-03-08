@@ -21,10 +21,10 @@ Contents:
    python
    nodejs
 
-
-* :ref:`General biicode documentation <general-index>`
-* :ref:`C and C++ documentation <cpp-index>`
-* :ref:`Arduino documentation <arduino-index>`
-* :ref:`Raspberry Pi documentation <raspberrypi-index>`
-* :ref:`Python documentation <python-index>`
-* :ref:`Node.js documentation <nodejs-index>`
+..
+   * :ref:`General biicode documentation <general-index>`
+   * :ref:`C and C++ documentation <cpp-index>`
+   * :ref:`Arduino documentation <arduino-index>`
+   * :ref:`Raspberry Pi documentation <raspberrypi-index>`
+   * :ref:`Python documentation <python-index>`
+   * :ref:`Node.js documentation <nodejs-index>`
