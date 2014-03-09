@@ -4912,7 +4912,7 @@ body.nodejs .menu-vertical li.toctree-l2.current {
   
 }
 .menu-vertical li.toctree-l2.current ul {
-  background-color: #fff;
+  background-color: #fcfcfc;
 }
 
 .menu-vertical li.toctree-l2:not(.current) ul
