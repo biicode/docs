@@ -4787,6 +4787,9 @@ pre.literal-block:after
 {
   margin-bottom:100px;
 }
+.menu.menu-vertical > ul {
+    border-right: 1px solid #ccc;
+}
 
 .menu-vertical header
 {
@@ -4818,51 +4821,98 @@ pre.literal-block:after
 
 .menu-vertical li.toctree-l1.current
 {
-  background:#e3e3e3;
+  background:#ececec;
 }
 
 .menu-vertical li.current a
 {
-  border-right:solid 1px #c9c9c9;
+  /*border-right:solid 1px #c9c9c9;*/
   color:gray;
   padding:.5em 2.4em;
 }
 
 .menu-vertical li.current a:hover
 {
-  background:#d6d6d6;
+  background:#ddd;
 }
+
 
 .menu-vertical li.current li.current
 {
-  background:#c9c9c9;
+  /* background:#c9c9c9; */
 }
 
 .menu-vertical li.current li.current a
 {
-  color:#555;
-  font-weight:700;
+  color:#333;
 }
 
-.menu-vertical li.toctree-l1 > a
+.menu-vertical li.toctree-l1:not(.current) > a
 {
   display:none;
+}
+.menu-vertical li.toctree-l1.current > a
+{
+  color: #fff;
+  padding: 15px;
+  font-size: 16px;
+}
+body.biicode .menu-vertical li.toctree-l1.current > a
+{
+  background-color: #fa0;
+}
+body.cpp .menu-vertical li.toctree-l1.current > a
+{
+  background-color: #3480ff;
+}
+body.arduino .menu-vertical li.toctree-l1.current > a
+{
+  background-color: #00979c;
+}
+body.raspberrypi .menu-vertical li.toctree-l1.current > a
+{
+  background-color: #b00;
+}
+body.nodejs .menu-vertical li.toctree-l1.current > a
+{
+  background-color: #80bd01;
 }
 
 .menu-vertical li.toctree-l2 > a
 {
   border:none;
   border-bottom:solid 1px #c9c9c9;
-  padding:12px 20px;
+  padding:14px 10px;
+}
+.menu-vertical li.toctree-l2 {
+  border-left:5px solid #ccc;
+}
+body.biicode .menu-vertical li.toctree-l2.current {
+  border-left:5px solid #fa0;
+}
+body.cpp .menu-vertical li.toctree-l2.current {
+  border-left:5px solid #3480ff;
+}
+body.arduino .menu-vertical li.toctree-l2.current {
+  border-left:5px solid #00979c;
+}
+body.raspberrypi .menu-vertical li.toctree-l2.current {
+  border-left:5px solid #b00;
+}
+body.nodejs .menu-vertical li.toctree-l2.current {
+  border-left:5px solid #80bd01;
 }
 
 .menu-vertical li.toctree-l2.current > a
 {
   background:#fcfcfc;
-  border-left:5px solid #fa0;
   color:#404040;
   font-weight:700;
-  padding:12px 20px;
+  border-bottom: none;
+  
+}
+.menu-vertical li.toctree-l2.current ul {
+  background-color: #fff;
 }
 
 .menu-vertical li.toctree-l2:not(.current) ul
@@ -4872,27 +4922,24 @@ pre.literal-block:after
 
 .menu-vertical li.toctree-l3 > a
 {
-  background:#eee;
-  border:none;
-  border-bottom:solid 1px #c9c9c9;
-  border-right:solid 1px #c9c9c9;
-  margin-left:5px;
-  padding:8px 0 8px 30px;
+  /*border:none;
+  border-bottom:solid 1px #ddd;
+  border-right:solid 1px #ddd;*/
+  padding:4px 0 6px 25px;
+  font-weight: normal;
 }
 
 .menu-vertical li.toctree-l3.current > a
 {
   border:none;
-  border-bottom:solid 1px #c9c9c9;
-  border-right:solid 1px #c9c9c9;
   color:#404040;
-  font-weight:700;
-  text-decoration:underline;
+  font-weight: bold;
 }
 
 .menu-vertical li.current ul
 {
   display:block;
+  padding-bottom: 15px;
 }
 
 .menu-vertical li ul
@@ -5291,11 +5338,17 @@ footer
   height: 46px;
 }
 
-li.toctree-l1 > a
+.menu-vertical li.toctree-l1:not(.current) > a
 {
-  display:block;
+  display:none;
 }
 
+.menu-vertical li.toctree-l1:not(.current) > a {
+  background-color: #00979c;
+  color: #fff;
+  font-size: 18px;
+  padding: 15px;  
+}
 .highlight-bash,.highlight-bat
 {
   background-color:#000!important;
@@ -5420,7 +5473,7 @@ nav.nav-side
 
 .toctree-wrapper > ul > li:hover
 {
-  background-color:#fa0;
+  background-color: #ddd;
 }
 
 .toctree-wrapper > ul > li a
@@ -5438,7 +5491,7 @@ nav.nav-side
 
 .toctree-wrapper > ul > li > ul > li:hover
 {
-  background-color:#fa0;
+  /* background-color:#fa0; */
 }
 
 .toctree-wrapper a
@@ -5449,7 +5502,8 @@ nav.nav-side
 
 .toctree-wrapper a:hover
 {
-  color:#fff;
+  /* color:#fff; */
+  text-decoration: underline;
 }
 
 .section h1,.section h2,.section h3
@@ -5457,16 +5511,48 @@ nav.nav-side
   padding-bottom:8px;
   padding-top:50px;
 }
-
 .section h1
+{
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
+}
+.section h2
+{
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+body.biicode .section h1,
+body.biicode .section h2
+{
+  border-bottom-color: #fa0;
+}
+body.cpp .section h1,
+body.cpp .section h2
+{
+  border-bottom-color: #3480ff;
+}
+body.arduino .section h1,
+body.arduino .section h2
+{
+  border-bottom-color: #00979c;
+}
+body.raspberrypi .section h1,
+body.raspberrypi .section h2
+{
+  border-bottom-color: #b00;
+}
+body.biicode .section h1,
+body.biicode .section h2
 {
   border-bottom:3px solid #fa0;
 }
-
-.section h2
+body.nodejs .section h1,
+body.nodejs .section h2
 {
-  border-bottom:2px solid #fa0;
+  border-bottom-color: #80bd01;
 }
+
+
 
 .tabs
 {
