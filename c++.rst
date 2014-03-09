@@ -1,7 +1,7 @@
 .. _cpp-index:
 
-C and C++ Documentation
-=======================
+C/C++ Documentation
+===================
 
 .. toctree::
 	:maxdepth: 2

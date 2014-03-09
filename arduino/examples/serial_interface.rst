@@ -1,9 +1,8 @@
-Serial Interface: Arduino & C++
-===============================
+Arduino Serial Interface
+========================
 
 With this serial interface you can define your own commands for the arduino. You will be able to send commands from a console in your PC to the arduino.
 In this example we use a desktop console app to move a servo attached to the Arduino, we just have to send the "servo" command  and the angle.
-
 
 How does it work?
 -----------------
@@ -11,19 +10,16 @@ How does it work?
 Just need to use the methods ``read`` and ``write`` to communicate with the device through serial port. Those functions are defined in `david/serial_arduino <https://www.biicode.com/david/blocks/david/serial_arduino/branches/master>`_ and `david/serial_cpp <https://www.biicode.com/david/blocks/david/serial_cpp/branches/master>`_ libraries.
 You can find the whole api definition in the blocks web!
 
-
 How do I use it?
 -----------------
 
 * You need to create two hives arduino_app and cpp_app, one will contain the code that will be uploaded to arduino and the other one the client application that will run in your PC.
 * Copy the example code, C++ app code goes into your your pc hive and arduino code goes into the hive with arduino code.
 
-The code
+C++ code
 --------
-At the moment, it's only compatible with Windows OS.
 
-C++ app
-=======
+At this moment, the following code is only compatible with Windows OS.
 
 **main.cpp**
 
@@ -57,8 +53,8 @@ C++ app
 	}
 
 
-Arduino app
-===========
+Arduino code
+------------
 
 **main.cpp**
 
@@ -100,8 +96,8 @@ Arduino app
 		}
 	}
 
-Run this Apps
-=============
+Just run your code!
+-------------------
 
 Execute following commands in each hive:
 

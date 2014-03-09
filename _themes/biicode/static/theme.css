@@ -5469,12 +5469,15 @@ body.nodejs .nav-rel a:hover {
 .toctree-wrapper > ul > li
 {
   background-color:#eee;
-  border-bottom:1px solid #fbfbfb;
-  border-top:1px solid #c4c4c4;
+  border-top:1px solid #ccc;
   color:#000;
   font-weight:700;
   margin:0!important;
-  padding:5px 5px 5px 20px;
+  padding:12px 5px 5px 20px;
+}
+.toctree-wrapper > ul > li:first-child
+{
+  border: none;
 }
 
 .toctree-wrapper > ul > li:hover

@@ -1,3 +1,5 @@
+.. _rpi_install_raspbian:
+
 Raspbian
 ===========
 
