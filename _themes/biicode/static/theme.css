@@ -4928,6 +4928,9 @@ body.nodejs .menu-vertical li.toctree-l2.current {
   padding:4px 0 6px 25px;
   font-weight: normal;
 }
+.menu-vertical li.toctree-l3:last-child {
+  padding-bottom: 15px;
+}
 
 .menu-vertical li.toctree-l3.current > a
 {
@@ -4939,7 +4942,6 @@ body.nodejs .menu-vertical li.toctree-l2.current {
 .menu-vertical li.current ul
 {
   display:block;
-  padding-bottom: 15px;
 }
 
 .menu-vertical li ul
@@ -5169,7 +5171,7 @@ body.nodejs .side-nav-search {
   height:100%;
   margin:auto;
   width: 800px;
-  padding: 60px 20px;
+  padding: 70px 40px;
 }
 
 .body-mask
@@ -5416,16 +5418,30 @@ nav.nav-side
   color:#3b3b3b;
   display:block;
   font-size:14px;
-  padding:5px 2px;
+  padding:5px;
   transition:all .2s ease;
   vertical-align:middle;
 }
 
 .nav-rel a:hover
 {
-  background-color:#fa0;
   color:#fff;
   text-decoration:none;
+}
+body.biicode .nav-rel a:hover {
+ background-color:#fa0; 
+}
+body.cpp .nav-rel a:hover {
+ background-color:#3480ff; 
+}
+body.arduino .nav-rel a:hover {
+ background-color:#00979c; 
+}
+body.raspberrypi .nav-rel a:hover {
+ background-color:#b00; 
+}
+body.nodejs .nav-rel a:hover {
+ background-color:#80bd01; 
 }
 
 .nav-rel.prev
