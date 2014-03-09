@@ -5635,20 +5635,20 @@ body.nodejs .section h2
 }
 
 .biicode-sections {
-    position: absolute;
-    top: 0;
-    background: #ffaa00;
-    left: 0;
-    height: 60px;
-    width: 100%;
+  position: absolute;
+  top: 0;
+  background: #ffaa00;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 body.biicode .biicode-sections {
   background-color:#fa0;
 }
 body.cpp .biicode-sections {
-  background-color:#3480ff;
-  overflow-x: auto;
-  white-space: nowrap;
+  background-color:#3480ff; 
 }
 body.arduino .biicode-sections {
   background-color:#00979c;
