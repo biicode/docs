@@ -6,6 +6,5 @@ Advanced features
 
    advanced/settings
    advanced/virtualcells
-   advanced/cpprules
    advanced/policies
    advanced/collaboration

@@ -9,4 +9,5 @@ C/C++ Documentation
 	c++/installation
 	c++/getting-started
 	c++/examples
+	c++/reference
 	c++/faqs

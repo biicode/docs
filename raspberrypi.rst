@@ -17,5 +17,6 @@ Using biicode, you'll benefit from several advantages for your Raspberry Pi expe
    raspberrypi/installation
    raspberrypi/getting-started
    raspberrypi/examples
+   raspberrypi/reference
    raspberrypi/faqs
 

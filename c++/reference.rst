@@ -6,3 +6,4 @@ Reference
 
    reference/commands
    reference/cpp-build-files
+   reference/cpprules

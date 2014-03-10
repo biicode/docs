@@ -1,8 +1,7 @@
-
 .. _compilation_rules:
 
 C/C++ Build rules
-======================
+=================
 
 Sometimes your project need to define some preprocessor variables or maybe you need to link with some dynamic library provided by the system. Biicode gives you the option to define these special compilation needs.
 
