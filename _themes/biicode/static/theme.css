@@ -4938,6 +4938,16 @@ body.nodejs .menu-vertical li.toctree-l2.current {
   color:#404040;
   font-weight: bold;
 }
+.menu-vertical li.toctree-l3:not(.current) ul
+{
+  display: none;
+}
+
+.menu-vertical li.toctree-l4 a
+{
+  font-size: .8em;
+  color: #777;
+}
 
 .menu-vertical li.current ul
 {
@@ -5518,7 +5528,7 @@ body.nodejs .nav-rel a:hover {
 .section h1,.section h2,.section h3
 {
   padding-bottom:8px;
-  padding-top:50px;
+  padding-top:55px;
 }
 .section h1
 {

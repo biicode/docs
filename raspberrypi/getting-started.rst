@@ -1,5 +1,5 @@
-"Hello World!" C++ Raspberry Pi Cross Compiling
-===============================================
+"Hello World!" C++ Raspberry Pi (cross compiling)
+=================================================
 
 In this section you'll learn how to write, cross-compile and execute your first *'Hello World'* program for your Raspberry Pi using biicode.
 

@@ -1,5 +1,6 @@
 The best part: share and reuse code with biicode!
 =================================================
+
 **And now, the best part, check how easy is to share and reuse code using the biicode platform.**
 
 Remember that you can also do the :ref:`"How to configure your biicode workspace" <config_raspberry_ws>` example.

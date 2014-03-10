@@ -14,8 +14,8 @@ Using biicode, you'll benefit from several advantages for your Raspberry Pi expe
 .. toctree::
    :maxdepth: 2
 
-   raspberrypi/installation
-   raspberrypi/getting-started
+   Installation <raspberrypi/installation>
+   Getting Started with Raspberry Pi <raspberrypi/getting-started>
    raspberrypi/examples
    raspberrypi/faqs
 

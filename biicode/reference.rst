@@ -10,6 +10,5 @@ Reference
 
    reference/layouts
    reference/configuration_files
-   reference/cpp_build_files
    reference/commands
    reference/comments_tags
