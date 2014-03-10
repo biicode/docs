@@ -1,7 +1,7 @@
 .. _cpp_examples:
 
-C/C++ examples
-==============
+Examples
+========
 
 This doesn't aim to be a comprehensive list of all the contents of biicode, just some examples of already existing code that is ready for use.
 
@@ -9,7 +9,7 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    :maxdepth: 1
    :glob:
 
-   examples/lib_httpserver   
+   examples/lib_httpserver
    examples/google-test-tutorial
    examples/eigen
    examples/lib_gmock

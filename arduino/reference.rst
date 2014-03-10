@@ -1,5 +1,5 @@
-Arduino reference
-=================
+Reference
+=========
 
 .. toctree::
    :maxdepth: 2

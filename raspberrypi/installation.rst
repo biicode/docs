@@ -1,7 +1,7 @@
 .. _rpi_installation:
 
-Raspberry Pi biicode installation
-=================================
+Installation
+============
 
 .. toctree::
    :maxdepth: 2

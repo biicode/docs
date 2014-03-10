@@ -1,5 +1,5 @@
-C/C++ reference
-===============
+Reference
+=========
 
 .. toctree::
    :maxdepth: 2

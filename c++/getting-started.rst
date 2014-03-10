@@ -1,7 +1,7 @@
 .. _hello_world:
 
-"Hello World!" in C++
-=====================
+Getting Started
+===============
 
 This example shows how to build a simple *'Hello World'* application with biicode.
 

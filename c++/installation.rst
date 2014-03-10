@@ -1,7 +1,7 @@
 .. _desktop_installation:
 
-C/C++ Installation
-==================
+Installation
+============
 
 .. toctree::
    :maxdepth: 1

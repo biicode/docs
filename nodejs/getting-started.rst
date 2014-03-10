@@ -1,7 +1,7 @@
 .. _hello_world_node:
 
-"Hello World!" in node.js
-=========================
+Getting Started
+===============
 
 This example shows how to build a simple *'Hello World'* node application with biicode.
 

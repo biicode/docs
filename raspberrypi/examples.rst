@@ -1,7 +1,7 @@
 .. _raspberry_pi:
 
-Raspberry Pi examples
-=====================
+Examples
+========
 
 In this section you will find some examples, showing the benefints of using biicode technology with your Raspberry Pi projects.
 

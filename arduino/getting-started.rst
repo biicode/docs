@@ -1,5 +1,5 @@
-"Blink" in Arduino
-==================
+Getting Started
+===============
 
 The typical tutorial for learning new tools is a "Hello World" one. In Arduino, the typical first example is the LED "blink" one.
 This example shows how to build a simple *blink* functionality with biicode that you can automatically integrate in

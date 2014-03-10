@@ -1,5 +1,5 @@
-Raspberry Pi reference
-======================
+Reference
+=========
 
 .. toctree::
    :maxdepth: 2

@@ -1,7 +1,7 @@
 .. _faqs_rpi:
 
-FAQs about Raspberry Pi
-=======================
+FAQs
+====
 
 Installing the biicode package from downloads page is too slow
 ---------------------------------------------------------------

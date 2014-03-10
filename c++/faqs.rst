@@ -1,7 +1,7 @@
 .. _faqs_cpp:
 
-FAQs about C/C++
-================
+FAQs
+====
 
 How do I configure my settings to build executables with Visual Studio Compiler?
 ---------------------------------------------------------------------------------

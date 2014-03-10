@@ -1,7 +1,7 @@
 .. _arduino_installation:
 
-Arduino Installation
-====================
+Installation
+============
 
 This section describes how to set up your development environment for working on Arduino projects with biicode. Select your current platform from the list bellow:
 

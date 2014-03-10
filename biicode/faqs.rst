@@ -1,7 +1,7 @@
 .. _faqs_biicode:
 
-FAQs about biicode
-===================
+FAQs
+====
 
 Is biicode free?
 ------------------

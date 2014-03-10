@@ -1,7 +1,7 @@
 .. _faqs_arduino:
 
-FAQs about Arduino
-==================
+FAQs
+====
 
 Launching Arduino IDE, I get an error **./arduino: 22: ./arduino: java: not found** in Ubuntu
 ---------------------------------------------------------------------------------------------
