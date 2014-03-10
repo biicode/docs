@@ -5560,11 +5560,6 @@ body.raspberrypi .section h2
 {
   border-bottom-color: #b00;
 }
-body.biicode .section h1,
-body.biicode .section h2
-{
-  border-bottom:3px solid #fa0;
-}
 body.nodejs .section h1,
 body.nodejs .section h2
 {
