@@ -4,32 +4,38 @@ FAQs
 ====
 
 Is biicode free?
-------------------
+----------------
+
 **Yes, and it will be free forever for open source projects**. As long as you share your code, you will enjoy all the functionality and benefits of biicode totally free. However, if you prefer to keep your code private and only accessible to you and your collaborators, you'll have to upgrade to a **premium account** (not available at this moment, although we are working on it).
 
 
 Is biicode an editor in the cloud?
------------------------------------
+----------------------------------
+
 **No. In biicode you develop as usual, with your favourite platform and tools**. We provide a software tool that, once installed in your system, and using a very simple project layout (bin, build, src), is able to manage your source code in a powerful manner. Biicode allows you to reuse any single source file from any given project in any other project. So you can use your favourite IDE, builder, debugger... Now we have some fixed settings, that allow to define some tools as Visual, Eclipse, Mingw, CMake, but it will be soon generalized to all settings, and in any case, you have always the source code very well structured in your hive (project).
 
 
 Is biicode a VCS?
--------------------
+-----------------
+
 No. If you need real version control for your projects, you can still use any available solution (git, svn, plasticscm). However, biicode does track and manage versions of the published code in order to provide a powerful, deterministic and scalable dependency manager that also allows easy collaboration on the platform without relaying on other tools.
 
 
 Can I use biicode with my favourite VCS?
-------------------------------------------
+----------------------------------------
+
 Yes, but this feature is still experimental. You can manage any of your biicode hives (projects) as a separate project under version control. You can zip and send by email, sync with dropbox, or put it into a VCS repository. But we store meta-information in a DB in binary format, as it doesn't allow straightforward merging by VCS. We are working on the merging process of such meta-information in case of conflicts that will likely arise, but this is an ongoing work.
 
 
-Can I use biicode for the XXX programming language?
-----------------------------------------------------
+What languages are supported?
+-----------------------------
+
 We have released our beta with a strong focus on C++, which lacks a multiOS dependency manager. We are experimenting with other languages as Python, Node, Java or Fortran. The support for these languages will mature during the next months, and new languages will enter the pipeline too.
 
 
 How does biicode relate to Maven, NPM, PyPI...?
-------------------------------------------------
+-----------------------------------------------
+
 Biicode manages your code dependencies and retrieves the missing files from a central repository to your local machine. However, there are some differences with these services: 
 
 * Biicode **always retrieves source code**. If necessary, artifacts (libs, jars) will be built locally for efficiency, but all the management is done with source code. In this way it is easier to develop, debug and collaborate on that source code if necessary. 
@@ -40,5 +46,6 @@ All that said, biicode does not try to compete against the power of such establi
 
 
 What is a workspace, a block, a hive?
---------------------------------------
+-------------------------------------
+
 Please, see :ref:`Introduction: Basic concepts <basic_concepts>`.
