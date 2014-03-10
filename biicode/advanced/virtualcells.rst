@@ -3,7 +3,7 @@
 Virtual Cells
 ================
 
-Virtual resources are those whose actual implementation depends on the current compilation platform, or any other conditions you may want to specify. These conditions are specified in a special ``virtual.bii`` file, for every block, using simple python code.
+Virtual resources are **those whose actual implementation depends on the current compilation platform, or any other conditions** you may want to specify. These conditions are specified in a special ``virtual.bii`` file, for every block, using simple python code.
 
 Imagine you want different code to be compiled or executed depending on different conditions, like whether you are in a production or a testing environment, Windows or Linux platforms, or even the compiler version. This is possible making use of **virtual resources**.
 

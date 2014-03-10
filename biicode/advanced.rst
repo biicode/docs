@@ -1,3 +1,5 @@
+.. _advanced_features:
+
 Advanced features
 =================
 

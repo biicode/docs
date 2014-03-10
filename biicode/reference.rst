@@ -1,3 +1,5 @@
+.. _biicode_reference:
+
 Reference
 =========
 

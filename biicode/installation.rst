@@ -68,7 +68,7 @@ As you can see, it is possible to set a default programming language as well as 
 4. Install the development tools
 --------------------------------
 
-Finally, you may need to install some additional tools dependending on your development language. Select your language from the list bellow. You will be redirected to the specific documentation section for that particular section, where you will find more information and resources.
+Finally, **you may need to install some additional tools dependending on your development language**. Select your language from the list bellow. You will be redirected to the specific documentation section for that particular language, where you will find more information and resources. Don't forget to come back to this general section, and learn more about biicode :ref:`basic <basic_usage>` and :ref:`advanced <advanced_features>` features, and check the :ref:`reference <biicode_reference>`.
 
 * :ref:`C/C++ development tools installation <cpp_installation>`
 * :ref:`Arduino development tools installation <arduino_installation>`
