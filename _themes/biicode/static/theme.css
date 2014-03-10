@@ -4947,6 +4947,7 @@ body.nodejs .menu-vertical li.toctree-l2.current {
 {
   font-size: .8em;
   color: #777;
+  padding-left: 40px;
 }
 
 .menu-vertical li.current ul

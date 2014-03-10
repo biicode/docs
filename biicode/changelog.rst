@@ -46,7 +46,7 @@ v. 0.6.2
 *(28-Jan-14)*
 
 * Added :ref:`arduino support <arduino>`
-* Created :ref:`raspbian native client <installation>`
+* Created raspbian native client
 * Improved python native libraries
 * Improved :ref:`virtual cells <virtual_cells>` management
 * :ref:`Policies <policies>` made easier and now  user find their own DEV (in master branches) versions by default

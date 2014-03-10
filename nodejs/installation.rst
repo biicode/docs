@@ -1,4 +1,4 @@
-.. _desktop_node_installation:
+.. _node_installation:
 
 Installation
 ============
