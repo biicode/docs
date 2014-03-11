@@ -144,54 +144,33 @@ This is the title of a subsection
 Adding tabs
 ===========
 
-You can add tabs to document using a simple hack. Just add the class to a document second-level section using the ``rst-class`` tag:
+You can add tabs to document using a simple hack. Just add the class to a document section using the container tag:
 
-.. code-block:: text
-	
-	.. rst-class:: tabbed
+.. container:: tabs-section
 
-	First section
-	-------------
+	.. container:: tabs-item
 
-	contents for this section that will appear in a tab.
+		.. rst-class:: tabs-title
+			
+			First section
 
-	.. rst-class:: tabbed
+		First section contents, that will appear in a tab
 
-	Second section
-	--------------
+	.. container:: tabs-item
 
-	contents for this section that will appear in a tab.
+		.. rst-class:: tabs-title
+			
+			Second section
 
-	.. rst-class:: tabbed
+		Second section contents, that will appear in a tab
 
-	Third section
-	-------------
+	.. container:: tabs-item
 
-	contents for this section that will appear in a tab.
+		.. rst-class:: tabs-title
 
-here, you can see an example:
+			Third Section
 
-.. rst-class:: tabbed
-
-First section
--------------
-
-contents for this section that will appear in a tab.
-
-.. rst-class:: tabbed
-
-Second section
---------------
-
-contents for this section that will appear in a tab.
-
-.. rst-class:: tabbed
-
-Third section
--------------
-
-contents for this section that will appear in a tab.
-
+		Third section contents, that will appear in a tab
 
 
 Special notes
