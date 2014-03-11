@@ -5529,7 +5529,7 @@ body.nodejs .nav-rel a:hover {
 
 .section h1,.section h2,.section h3
 {
-  padding-bottom:8px;
+  padding-bottom: 2px;
   padding-top:55px;
 }
 .section h1
@@ -5568,77 +5568,88 @@ body.nodejs .section h2
   border-bottom-color: #80bd01;
 }
 
-
+.tabs-section {
+  
+}
 
 .tabs
 {
-  border-bottom:1px solid #666;
+  border-bottom:2px solid #ccc;
+  border-left:1px solid #fff;
   height:38px;
 }
 
 .tabs .tab
 {
-  background-color:#777;
-  border:1px solid #777;
-  border-bottom:3px solid #666;
+  background-color:#eaeaea;
+  border-left:1px solid #ccc;
+  border-top:1px solid #ccc;
+  border-right:1px solid #ccc;
   border-radius:3px 3px 0 0;
-  color:#fff;
+  color:#666;
   cursor:pointer;
   display:inline-block;
   height:36px;
   margin-right:3px;
   min-width:100px;
-  padding:8px 3px;
+  padding:10px;
   text-align:center;
+  font-size: 12px;
 }
 
 .tabs .tab:hover
 {
-  background-color:#999;
-}
-
-.tabs .tab:active
-{
-  background-color:#000;
-  border-color:#000;
+  border-top: 2px solid #bbb;
+  border-bottom: none;
 }
 
 .tabs .tab.current
 {
-  background-color:#fff;
   border-bottom:0;
   border-top:2px solid #FA0;
-  color:#404040;
-  font-weight:700;
+  color:#000;
   height:38px;
+  background-color: #fff;
 }
 
-.tabbed
+.tabs-item
 {
+  padding: 25px 20px;
   display:none;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
 }
 
-.tabbed.current
+.tabs-title {
+  font-weight: bold;
+}
+
+.tabs-item.current
 {
   display:block;
 }
 
 .infonote
 {
-  border:1px solid #ddd;
-  border-radius:5px;
-  color:#858585;
-  padding:10px 10px 10px 30px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #777;
+  padding: 20px 20px 10px 40px;
   position:relative;
 }
 
 .infonote:before
 {
-  color:#ddd;
+  color: #aaa;
+  background-color: #fff;
   content:"\f05a";
   font-family:fontawesome-webfont;
-  left:5px;
+  left: -13px;
+  top: 12px;
   position:absolute;
+  font-size: 30px;
 }
 
 .biicode-sections {
@@ -5952,7 +5963,7 @@ body.nodejs .biisection.nodejs
     margin:auto;
     width: 800px;
     float: right;
-    padding: 70px 40px;
+    padding: 70px 50px;
     position: relative;
 }
   
