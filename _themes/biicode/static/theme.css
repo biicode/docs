@@ -4872,7 +4872,7 @@ body.arduino .menu-vertical li.toctree-l1.current > a
 }
 body.raspberrypi .menu-vertical li.toctree-l1.current > a
 {
-  background-color: #b00;
+  background-color: #d6264f;
 }
 body.nodejs .menu-vertical li.toctree-l1.current > a
 {
@@ -4898,7 +4898,7 @@ body.arduino .menu-vertical li.toctree-l2.current {
   border-left:5px solid #00979c;
 }
 body.raspberrypi .menu-vertical li.toctree-l2.current {
-  border-left:5px solid #b00;
+  border-left:5px solid #d6264f;
 }
 body.nodejs .menu-vertical li.toctree-l2.current {
   border-left:5px solid #80bd01;
@@ -5010,7 +5010,7 @@ body.arduino .side-nav-search {
   background-color:#00979c;
 }
 body.raspberrypi .side-nav-search {
-  background-color:#bb0000;
+  background-color:#d6264f;
 }
 body.nodejs .side-nav-search {
   background-color:#80bd01;
@@ -5440,7 +5440,7 @@ body.arduino .nav-rel a:hover {
  background-color:#00979c; 
 }
 body.raspberrypi .nav-rel a:hover {
- background-color:#b00; 
+ background-color:#d6264f; 
 }
 body.nodejs .nav-rel a:hover {
  background-color:#80bd01; 
@@ -5560,7 +5560,7 @@ body.arduino .section h2
 body.raspberrypi .section h1,
 body.raspberrypi .section h2
 {
-  border-bottom-color: #b00;
+  border-bottom-color: #d6264f;
 }
 body.nodejs .section h1,
 body.nodejs .section h2
@@ -5661,7 +5661,7 @@ body.arduino .biicode-sections {
   background-color:#00979c;
 }
 body.raspberrypi .biicode-sections {
-  background-color:#bb0000;
+  background-color:#d6264f;
 }
 body.nodejs .biicode-sections {
   background-color:#80bd01;

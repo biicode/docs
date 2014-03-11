@@ -92,13 +92,15 @@
   <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}"/>
   {%- endif %}
   {%- endblock %}
-  {%- block extrahead %} {% endblock %}
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
-
   {%- for script in theme_scripts %}
   <script type="text/javascript" src="{{ pathto(script, 1) }}"></script>
   {%- endfor %}
+  
+  {%- block extrahead %} {% endblock %}
+
+  
   {% endif %}
 
 </head>
