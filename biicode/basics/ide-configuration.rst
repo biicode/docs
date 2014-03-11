@@ -3,12 +3,12 @@
 IDEs configuration
 ==================
 
-If your are programming in C++, Biicode offers you **integration with some of the most commonly used IDEs**, and is able to do the appropriate corresponding project setup on your behalf. This way you can work on your biicode hive, using the underlying infrastructure and services provided by standard IDEs, just as it is was any other standard project. In fact, this configuration can be established from the very first momment, when you create a new hive with the ``bii new`` command (see :ref:`the commands reference for more information<bii_new_command>`).
+If your are programming in C++, Biicode offers you **integration with some of the most commonly used IDEs**, and is able to do the appropriate corresponding project setup on your behalf. This way you can work on your biicode hive, using the underlying infrastructure and services provided by standard IDEs, just like any other standard project. In fact, this configuration can be established from the very first momment, when you create a new hive with the ``bii new`` command (see :ref:`the commands reference for more information<bii_new_command>`).
 
 This section details the steps you should follow to achieve this integration.
 
-Configure your project
-----------------------
+1. Configure your project
+-------------------------
 
 First of all, you need to configure your hive for the particular IDE of your choice. If you already did so when creating the hive with the help of the ``bii new`` command, you can skip this section. Otherwise, you can define your preferences in the ``settings.bii`` configuration of your hive.
 
@@ -26,7 +26,7 @@ Initialize your default C++ settings writting:
 
 	 ./hive_name/bii/settings.bii
 
-Inside the ``bii`` folder of you hive, update the ``settings.bii`` file including the information about your desired **ide** and **build_type** (leaving the rest of the file as it is in your particular platform). This is an example with a *debug* build type and *Eclipse* as the desired IDE.
+Update your hive's ``bii/settings.bii`` file including the information about your desired **IDE** and **build_type** (leaving the rest of the file as it is in your particular platform). This is an example with a *debug* build type and *Eclipse* as the desired IDE.
 
 .. code-block:: text
 
@@ -37,7 +37,7 @@ Inside the ``bii`` folder of you hive, update the ``settings.bii`` file includin
 		build_type: debug
 	os: {arch: 32bit, family: Windows, subfamily: '8', version: 6.2.9200}
 
-After modifying this file, you mus execute the ``bii cpp:config`` command to apply all chantes and generate the project files.
+After modifying this file, you must execute the ``bii cpp:config`` command to apply all chantes and **generate the project files**.
 
 Some particular configuration options for :ref:`Eclipse<ide_eclipse>`, :ref:`Visual Studio<ide_visual>` and :ref:`CodeBlocks<ide_codeblocks>` are detailed in the following subsections:
 
@@ -59,7 +59,7 @@ Some particular configuration options for :ref:`Eclipse<ide_eclipse>`, :ref:`Vis
 
 		If you want to add new files to your block, just right-click on the folder of your block and create a new file.
 
-		Note: If you add new dependencies to your project you'll need to manually invoke ``bii find``.
+		**Note:** If you add new dependencies to your project you'll need to manually invoke ``bii find``.
 
 		You can build your application in *Project > Build project* if you don't have automated builds set.
 

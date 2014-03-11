@@ -53,7 +53,6 @@ $( document ).ready(function() {
       var tabbed = tabs_group.find(".tabs-item");
       tabbed.addClass(group_class);
       var first_tab = tabbed.first();
-      console.log("first: ", first_tab);
       first_tab.addClass("current");
       var titles = tabbed.find(".tabs-title");
       var tabs_html = "";
@@ -71,10 +70,11 @@ $( document ).ready(function() {
       $(".tab").click(function() {
         var this_tab = $(this);
         var group_class = this_tab.attr("data-group");
-        console.log(group_class);
         var index = $(".tab").removeClass("current").index(this_tab);
         this_tab.addClass("current");
-        var sections = $(".tabs-item ."+group_class).removeClass("current");
+        var sections = $(".tabs-item."+group_class);
+        console.log(sections);
+        var sections = sections.removeClass("current");
         $(sections[index]).addClass("current");
       });
     }

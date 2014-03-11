@@ -3837,12 +3837,12 @@ h6
 
 code,.rst-content dl dt,.rst-content dl dl dt,.rst-content tt.literal
 {
-  background: #ddd;
+  background: #eee;
   border-radius: 2px;
   border: solid 1px #bbb;
   color: #000;
   font-family:'Droid Sans Mono', monospace;
-  font-size:80%;
+  font-size:75%;
   max-width:100%;
   overflow-x:auto;
   padding: 1px 4px;
