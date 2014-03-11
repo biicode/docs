@@ -5654,11 +5654,12 @@ body.nodejs .tabs .tab.current
 
 .infonote
 {
+  position: relative;
+  margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 3px;
   color: #777;
   padding: 20px 20px 10px 40px;
-  position:relative;
 }
 
 .infonote:before

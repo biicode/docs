@@ -3,7 +3,7 @@
 Installation
 ============
 
-This section describes how to set up your development environment for working on Arduino projects with biicode. Select your current platform from the list bellow:
+This section describes how to set up your development environment for working on Arduino projects with biicode. The installation steps depend on you current development platform. Simply select your operating system from the options you will find in the sections bellow.
 
 .. toctree::
    :maxdepth: 2
