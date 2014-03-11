@@ -1,7 +1,7 @@
 .. _bii_arduino_tools:
 
-Arduino command list
-====================
+Command list
+============
 
 This section summarizes the **Arduino commands available to be used with the biicode client program**. You can see these tools if you execute:
 

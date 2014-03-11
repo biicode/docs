@@ -1,14 +1,11 @@
 .. _ide_configuration:
 
-IDEs configuration
-==================
+IDE configuration
+=================
 
-If your are programming in C++, Biicode offers you **integration with some of the most commonly used IDEs**, and is able to do the appropriate corresponding project setup on your behalf. This way you can work on your biicode hive, using the underlying infrastructure and services provided by standard IDEs, just like any other standard project. In fact, this configuration can be established from the very first momment, when you create a new hive with the ``bii new`` command (see :ref:`the commands reference for more information<bii_new_command>`).
+Biicode offers **integration with some of the most commonly used IDEs** for C++ programmers. It is able to do the appropriate project setup on your behalf. This way you can work on your biicode hive, using the underlying infrastructure and services provided by standard IDEs, just like any other standard project. In fact, this configuration can be established from the very first momment, when you create a new hive with the ``bii new`` command (see :ref:`the commands reference for more information<bii_new_command>`).
 
 This section details the steps you should follow to achieve this integration.
-
-1. Configure your project
--------------------------
 
 First of all, you need to configure your hive for the particular IDE of your choice. If you already did so when creating the hive with the help of the ``bii new`` command, you can skip this section. Otherwise, you can define your preferences in the ``settings.bii`` configuration of your hive.
 
@@ -26,7 +23,9 @@ Initialize your default C++ settings writting:
 
 	 ./hive_name/bii/settings.bii
 
-Update your hive's ``bii/settings.bii`` file including the information about your desired **IDE** and **build_type** (leaving the rest of the file as it is in your particular platform). This is an example with a *debug* build type and *Eclipse* as the desired IDE.
+Update your hive's ``bii/settings.bii`` file including the information about your desired **IDE** and **build_type** (leaving the rest of the file as it is in your particular platform). 
+
+This is an example with a *debug* build type and *Eclipse* as the desired IDE.
 
 .. code-block:: text
 
@@ -175,7 +174,7 @@ Some particular configuration options for :ref:`Eclipse<ide_eclipse>`, :ref:`Vis
 		Finally, you are ready to open your project with CodeBlocks. The first step is to open the project:
 
 		#. From the main menu, select *File > open...*
-		#. Find the ``build`` folder of your hive and select the **hive_name.cbp** file.
+		#. Find the ``build`` folder of your hive and select the ``hive_name.cbp`` file.
 		#. Click *open*.
 
 		Now you have your project in the CodeBlocks workspace showing a folders tree similar to this one:
@@ -189,5 +188,6 @@ Some particular configuration options for :ref:`Eclipse<ide_eclipse>`, :ref:`Vis
 		To run your project you need to select the main file on build target:
 
 		.. image:: /_static/img/codeblocks_build_target.png
+		
 
 		And this is all you need to work as usual in CodeBlocks.

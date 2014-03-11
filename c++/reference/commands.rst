@@ -1,7 +1,7 @@
 .. _bii_cpp_tools:
 
-C/C++ command list
-==================
+Commands list
+=============
 
 This section summarizes the **C/C++ commands available to be used with the biicode client program**. You can see these tools if you execute:
 

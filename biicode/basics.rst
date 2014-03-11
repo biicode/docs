@@ -18,5 +18,4 @@ Biicode provides the tools for analyzing, publishing and reusing code and how to
 	basics/work-clean
 	basics/publish
 	basics/dependencies
-	basics/ide-configuration
 	

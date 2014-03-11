@@ -1,7 +1,7 @@
 .. _cpp_build_files:
 
-C++ build files
-===============
+Build files
+===========
 
 When building a C++ hive project, there are several important folders to take into account: ::
 

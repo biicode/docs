@@ -3858,7 +3858,7 @@ code.code-large,.rst-content dl dt.code-large,.rst-content tt.code-large.literal
 {
   line-height:24px;
   list-style:disc;
-  margin-bottom:24px;
+  margin-bottom: 0;
 }
 
 .plain-list-disc li,.rst-content .section ul li,.rst-content ul.simple li,.rst-content ul.stimple ul li,.rst-content .toctree-wrapper ul li
@@ -4327,7 +4327,7 @@ pre.literal-block:after
 
 .hll
 {
-  background-color:#f4ee4a;
+  background-color:#efefa6;
   border-radius:3px;
   padding-right:3px;
 }
@@ -4560,7 +4560,7 @@ pre.literal-block:after
 
 .nv
 {
-  color:#20f517;
+  color:#4cd932;
 }
 
 .ow
@@ -4883,7 +4883,7 @@ body.nodejs .menu-vertical li.toctree-l1.current > a
 {
   border:none;
   border-bottom:solid 1px #c9c9c9;
-  padding:14px 10px;
+  padding:12px 10px;
 }
 .menu-vertical li.toctree-l2 {
   border-left:5px solid #ccc;
@@ -5605,11 +5605,32 @@ body.nodejs .section h2
 
 .tabs .tab.current
 {
-  border-bottom:0;
-  border-top:2px solid #FA0;
+  border-top-width: 2px;
+  border-top-style: solid;
   color:#000;
   height:38px;
   background-color: #fff;
+}
+
+body.biicode .tabs .tab.current
+{
+  border-top-color: #fa0;
+}
+body.cpp .tabs .tab.current
+{
+  border-top-color: #3480ff;
+}
+body.arduino .tabs .tab.current
+{
+  border-top-color: #00979c;
+}
+body.raspberrypi .tabs .tab.current
+{
+  border-top-color: #d6264f;
+}
+body.nodejs .tabs .tab.current
+{
+  border-top-color: #80bd01;
 }
 
 .tabs-item

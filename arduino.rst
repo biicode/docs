@@ -18,6 +18,6 @@ Here you will learn how to set up your system, and create your first Arduino pro
 
 	arduino/installation
 	arduino/getting-started
-	arduino/reference
 	arduino/examples
+	arduino/reference
 	arduino/faqs
