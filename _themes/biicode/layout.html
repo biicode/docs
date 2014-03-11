@@ -2,10 +2,32 @@
 {%- set url_root = pathto('', 1) %}
 {%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
 {%- if not embedded and docstitle %}
-{%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
+{#- set titlesuffix = " &mdash; "|safe + docstitle|e #}
+{%- set titlesuffix = " &mdash; "|safe + " [biicode docs]" %}
 {%- else %}
 {%- set titlesuffix = "" %}
 {%- endif %}
+
+{# SEO hack for setting current section in title #}
+{% set find = pagename|replace("c++/", "") %}
+{% if find != pagename %}
+{% set titleprefix = "C++: " %}
+{% endif %}
+
+{% set find = pagename|replace("arduino/", "") %}
+{% if find != pagename %}
+{% set titleprefix = "Arduino: " %}
+{% endif %}
+
+{% set find = pagename|replace("raspberrypi/", "") %}
+{% if find != pagename %}
+{% set titleprefix = "Raspberry Pi: " %}
+{% endif %}
+
+{% set find = pagename|replace("nodejs/", "") %}
+{% if find != pagename %}
+{% set titleprefix = "Nodej.js: " %}
+{% endif %}
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -14,7 +36,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% block htmltitle %}
-  <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+  <title>{{titleprefix}} {{ title|striptags|e }} {{ titlesuffix }}</title>
   {% endblock %}
 
   {# FAVICON #}

@@ -3,14 +3,14 @@
 Changelog
 =========
 
-Version 0.10
+Release 0.10
 ------------
 .. *(03-03-14)*
 
 * Removed the workspace ``default_settings.bii`` file. Now, new hives' settings are obtained from the workspace ``environment.bii`` file.
 
 
-Version 0.09
+Release 0.09
 ------------
 .. *(13-02-14)*
 
@@ -23,7 +23,7 @@ Version 0.09
 * new "bii info" command
 
 
-Version 0.08
+Release 0.08
 ------------
 .. *(5-Feb-14)*
 
@@ -32,7 +32,7 @@ Version 0.08
 * Size and performance optimizations in macos and linux clients
 
 
-Version 0.07.2
+Release 0.07.2
 --------------
 .. *(31-Jan-14)*
 
@@ -41,7 +41,7 @@ Version 0.07.2
 * Deps output improved
 
 
-Version 0.06.2
+Release 0.06.2
 --------------
 .. *(28-Jan-14)*
 
@@ -58,7 +58,7 @@ Version 0.06.2
 * Improved cpp wizard
 
 
-Version 0.05
+Release 0.05
 ------------
 .. *(10-Jan-14)*
 
@@ -72,7 +72,7 @@ Version 0.05
 * Fixed bug of not finding new dependencies of files in already dependents blocks
 
 
-Version 0.04
+Release 0.04
 ------------
 .. *(20-Dec-13)*
 
@@ -80,7 +80,7 @@ Version 0.04
 * Added cookies announcement in web as dictated by law
 
 
-Version 0.03.4
+Release 0.03.4
 --------------
 .. *(17-Dec-13)*
 
@@ -91,7 +91,7 @@ Version 0.03.4
 * User can edit cmakes http://docs.biicode.com/en/latest/reference/cpp_build_files.html
 
 
-Version 0.02.3
+Release 0.02.3
 --------------
 .. *(2-Dec-13)*
 
@@ -102,7 +102,7 @@ Version 0.02.3
 * Improved use of biicode for C/C++ dev with RaspberryPI (linux only)
 
 
-Version 0.01.11
+Release 0.01.11
 ---------------
 .. *(28-Oct-13)*
 
@@ -118,12 +118,12 @@ Version 0.01.11
 * Ctrl+C when init bug fixed (it created empty, wrong workspace)
 * Applied some limits and constraints to block sizes, file sizes, number of files in a block and in a hive
 
-Version 0.01.10.1
+Release 0.01.10.1
 -----------------
 
 * Fixed bug of crash when dep folder had connected cpp_rules files
 
-Version 0.01.10
+Release 0.01.10
 ---------------
 
 * Setup & install in windows problem with setting PATH of biicode solved
@@ -140,7 +140,7 @@ Version 0.01.10
 * checkout --deps --force flow improved
 * Use system proxy
 
-Version 0.01.9
+Release 0.01.9
 --------------
 
 * Added check of client version, so clients are informed about new releases and deprecated versions, with a download URL
