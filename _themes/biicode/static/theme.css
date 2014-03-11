@@ -3837,14 +3837,15 @@ h6
 
 code,.rst-content dl dt,.rst-content dl dl dt,.rst-content tt.literal
 {
-  background:#FFF;
-  border:solid 1px #e1e4e5;
-  color:#e74c3c;
+  background: #ddd;
+  border-radius: 2px;
+  border: solid 1px #bbb;
+  color: #000;
   font-family:'Droid Sans Mono', monospace;
   font-size:80%;
   max-width:100%;
   overflow-x:auto;
-  padding:0 5px;
+  padding: 1px 4px;
   white-space:nowrap;
 }
 

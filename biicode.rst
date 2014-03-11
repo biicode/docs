@@ -14,4 +14,5 @@ This is the biicode general documentation.
    biicode/basics
    biicode/advanced
    biicode/reference
+   biicode/changelog
    biicode/faqs
