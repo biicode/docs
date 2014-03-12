@@ -267,28 +267,3 @@ programmer
 	* ``usbasp``: USBasp
 	* ``parallel``: Parallel Programmer
 	* ``arduinoisp``: Arduino as ISP
-
-
-
-.. container:: tabs-section
-	
-	.. container:: tabs-item
-
-		.. rst-class:: tabs-title
-			
-			Linux
-
-
-	.. container:: tabs-item
-
-		.. rst-class:: tabs-title
-			
-			MacOS
-
-
-	.. container:: tabs-item
-
-		.. rst-class:: tabs-title
-
-			Windows
-
