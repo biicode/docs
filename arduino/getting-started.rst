@@ -83,11 +83,7 @@ If you only want to build your firmware, just use ``arduino:build``.
       arduino:
          board: {board: mega2560, no_autolibs: 'false', port: COM7, programmer: usbtinyisp}
 
-   If you want to remember how to configure your settings:
-
-      *  :ref:`Arduino settings in MacOS<arduino_default_settings_mac>`
-      *  :ref:`Arduino settings in Linux<arduino_default_settings_linux>`
-      *  :ref:`Arduino settings in Windows<arduino_default_settings_win>`
+   If you want to remember how to configure your settings, :ref:`follow this link <arduino_settings>`.
 
 3. Creating reusable code
 -------------------------

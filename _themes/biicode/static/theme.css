@@ -5720,22 +5720,23 @@ body.nodejs .tabs .tab.current
 {
   position: relative;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 3px;
   color: #777;
-  padding: 20px 20px 10px 40px;
+  padding: 20px 20px 10px 20px;
+  border-left-width: 30px;
 }
 
 .infonote:before
 {
-  color: #aaa;
-  background-color: #fff;
+  color: #fff;
+  /* background-color: #fff; */
   content:"\f05a";
   font-family:fontawesome-webfont;
-  left: -13px;
-  top: 12px;
+  left: -26px;
+  top: 4px;
   position:absolute;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .biicode-sections {

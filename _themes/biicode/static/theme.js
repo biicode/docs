@@ -109,7 +109,7 @@ $( document ).ready(function() {
   var tabs_sections = $(".tabs-section");
   if (tabs_sections.length > 0) {
     for (var i=0; i<tabs_sections.length; i++) {
-      var tabs_group = $(tabs_sections[i]);
+      var tabs_group = $(tabs_sections[i]); // current tab container
       var group_class = "tabs-group-" + i;
       tabs_group.addClass(group_class);
 
@@ -130,13 +130,13 @@ $( document ).ready(function() {
             .text() + "</span>";
       };
       first_tab.before($("<div class='tabs'>" + tabs_html + "</div>"));
-      $(".tab").click(function() {
+      tabs_group.find(".tab").click(function() {
         var this_tab = $(this);
         var group_class = this_tab.attr("data-group");
-        var index = $(".tab").removeClass("current").index(this_tab);
+        var group = $(".tabs-section."+group_class);
+        var index = group.find(".tab").removeClass("current").index(this_tab);
         this_tab.addClass("current");
-        var sections = $(".tabs-item."+group_class);
-        var sections = sections.removeClass("current");
+        var sections = group.find(".tabs-item").removeClass("current");
         $(sections[index]).addClass("current");
       });
     }
