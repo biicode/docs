@@ -181,6 +181,7 @@ Please, make sure you have the right version of the Arduino SDK.
 	The previous output indicates the installed version is **1.0.5**.
 
 .. _arduino_settings:
+
 4. Update your board configuration
 ----------------------------------
 
@@ -196,8 +197,9 @@ Your workspace ``bii/environment.bii`` file also contains **some specific settin
 
 		.. code-block:: text
 
-			boards:
-		  	  - {board: uno, no_autolibs: 'false', port: /dev/ttyUSB0, programmer: usbtinyisp}
+			arduino:
+			  boards:
+		  	    - {board: uno, no_autolibs: 'false', port: /dev/ttyUSB0, programmer: usbtinyisp}
 
 	.. container:: tabs-item
 
@@ -206,9 +208,10 @@ Your workspace ``bii/environment.bii`` file also contains **some specific settin
 			MacOS
 
 		.. code-block:: text
-
-			boards:
-	  	  	  - {board: uno, no_autolibs: 'false', port: /dev/tty.usbserial, programmer: usbtinyisp}
+		
+			arduino:
+			  boards:
+	  	  	    - {board: uno, no_autolibs: 'false', port: /dev/tty.usbserial, programmer: usbtinyisp}
 
 	.. container:: tabs-item
 
@@ -217,9 +220,10 @@ Your workspace ``bii/environment.bii`` file also contains **some specific settin
 			Windows
 
 		.. code-block:: text
-
-			boards:
-			  - {board: uno, no_autolibs: 'false', port: COM3, programmer: usbtinyisp}
+			
+			arduino:
+			  boards:
+			    - {board: uno, no_autolibs: 'false', port: COM3, programmer: usbtinyisp}
 	
 As you can see, the only different between operating systems is in the ``port`` field configuration. You must specify the appropriate information for each of the fields: ``board``, ``no_autolibs``, ``port``, and ``programmer``:
 
