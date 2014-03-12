@@ -1,7 +1,7 @@
 .. _rpi_install_raspbian:
 
 Raspbian
-===========
+========
 
 Download and install the Linux image
 ------------------------------------
@@ -35,82 +35,96 @@ Before starting the process, first download Raspbian. The image comes as a zip f
 Burn Raspbian Image to an SD Card
 ---------------------------------
 
-Linux
-^^^^^
 
-Insert your SD card into the card reader.
+.. container:: tabs-section
 
-First, you need to identify the device name for the SD card. For that, you can use Gparted.
- 
-Launch Gparted, and you will see a drop-down disk selection menu in the top right corner which shows a list of hard drives. In this example, the SD card is mapped to "/dev/sdc". Make a note of this device name as you need it later.
+	.. container:: tabs-item
 
-.. image:: /_static/img/rpi/burn_linux_gparted.jpg
+		.. rst-class:: tabs-title
+			
+			Linux
 
-You do not need to create or format any partition on the SD card. If there is already a partition or filesystem created on the SD card, it will be overwritten by dd command subsequently anyway.
-If the SD card is mounted, make sure to unmount it now.
-Finally, run the following dd command to write Raspberry Pi image to the SD card.
+		Insert your SD card into the card reader.
 
-.. code-block:: bash
+		First, you need to identify the device name for the SD card. For that, you can use Gparted.
+		 
+		Launch Gparted, and you will see a drop-down disk selection menu in the top right corner which shows a list of hard drives. In this example, the SD card is mapped to "/dev/sdc". Make a note of this device name as you need it later.
 
-	$ sudo dd bs=4M if=/path/to/image of=/dev/sdc
+		.. image:: /_static/img/rpi/burn_linux_gparted.jpg
 
-The ``bs`` argument sets the block size to 4 MB. Normally the ``bs`` argument will work with 4M, but you can change to 1M, which will take longer time to write. The ``if`` argument sets the full path to Raspbian image, and the ``of`` argument specifies the device name of the SD card. Here ``/dev/sdc`` is the device name you identified with Gparted earlier. Note that the dd command will not give you any feedback during its operation, and it will look like freezing. So be patient until writing is finished.
+		You do not need to create or format any partition on the SD card. If there is already a partition or filesystem created on the SD card, it will be overwritten by dd command subsequently anyway.
+		If the SD card is mounted, make sure to unmount it now.
+		Finally, run the following dd command to write Raspberry Pi image to the SD card.
 
-Besides using dd command, you can also try other image writer applications such as `usb-imagerwriter <https://launchpad.net/usb-imagewriter>`_ for deb based distributions, and `imagewriter <http://rpm.pbone.net/index.php3/stat/4/idpl/23633559/dir/redhat_el_6/com/imagewriter-1.10-7.1.el6.x86_64.rpm.html>`_ for rpm based distributions. These tools will make the image writing process more user-friendly than dd command.
+		.. code-block:: bash
 
-Windows
-^^^^^^^
+			$ sudo dd bs=4M if=/path/to/image of=/dev/sdc
 
-First, download and install SD Card Formatter from `SD Associations <https://www.sdcard.org/downloads/formatter_4/eula_windows/>`_.
-Insert your SD card into the card reader, and then format the SD card with SD Card Formatter. Formatting options do not matter, as the formatted filesystem will be overwritten during the subsequent image writing step. The reason why we format the SD card is to make the card recognized by the operating system.
+		The ``bs`` argument sets the block size to 4 MB. Normally the ``bs`` argument will work with 4M, but you can change to 1M, which will take longer time to write. The ``if`` argument sets the full path to Raspbian image, and the ``of`` argument specifies the device name of the SD card. Here ``/dev/sdc`` is the device name you identified with Gparted earlier. Note that the dd command will not give you any feedback during its operation, and it will look like freezing. So be patient until writing is finished.
 
-.. image:: /_static/img/rpi/burn_win_sd.png
+		Besides using dd command, you can also try other image writer applications such as `usb-imagerwriter <https://launchpad.net/usb-imagewriter>`_ for deb based distributions, and `imagewriter <http://rpm.pbone.net/index.php3/stat/4/idpl/23633559/dir/redhat_el_6/com/imagewriter-1.10-7.1.el6.x86_64.rpm.html>`_ for rpm based distributions. These tools will make the image writing process more user-friendly than dd command.
 
-Next, download and install `win32diskimager <http://sourceforge.net/projects/win32diskimager/>`_ application which can flash an SD Card.
-Launch win32diskimager. After locating the extracted Raspbian raw image via a built-in file dialog box, write the image to an SD card. It will take some times to finish writing the image into the SD card.
+	.. container:: tabs-item
 
-.. image:: /_static/img/rpi/burn_win_win32diskimager.jpg
+		.. rst-class:: tabs-title
+			
+			Mac OS X
 
-After the writing process is finished, eject the SD card and plug in to the Raspberry Pi.
-
-Mac
-^^^
-You can try `RPi SD Card Builder <http://alltheware.wordpress.com/2012/12/11/easiest-way-sd-card-setup/>`_ or follow this tutorial:
+		You can try `RPi SD Card Builder <http://alltheware.wordpress.com/2012/12/11/easiest-way-sd-card-setup/>`_ or follow this tutorial:
 
 
-First, download and install SD Card Formatter from `SD Associations <https://www.sdcard.org/downloads/formatter_4/eula_mac/>`_.
-Insert your SD card into the card reader, select "Overwrite Format" and then format the SD card with SD Card Formatter.  The reason why we format the SD card is to make the card recognized by the operating system.
+		First, download and install SD Card Formatter from `SD Associations <https://www.sdcard.org/downloads/formatter_4/eula_mac/>`_.
+		Insert your SD card into the card reader, select "Overwrite Format" and then format the SD card with SD Card Formatter.  The reason why we format the SD card is to make the card recognized by the operating system.
 
-.. image:: /_static/img/rpi/burn_win_sd.png
+		.. image:: /_static/img/rpi/burn_win_sd.png
 
-Now you need to find out under which /dev directory your sdcard is:
+		Now you need to find out under which /dev directory your sdcard is:
 
-.. code-block:: bash
+		.. code-block:: bash
 
-	bii:~ $ df -h
-	Filesystem      Size   Used  Avail Capacity  iused     ifree %iused  Mounted on
-	/dev/disk2     698Gi  135Gi  562Gi    20% 35525778 147326043   19%   /
-	devfs          186Ki  186Ki    0Bi   100%      644         0  100%   /dev
-	map -hosts       0Bi    0Bi    0Bi   100%        0         0  100%   /net
-	map auto_home    0Bi    0Bi    0Bi   100%        0         0  100%   /home
-	/dev/disk0s1    15Gi  2.4Mi   15Gi     1%        0         0  100%   /Volumes/BIIBERRY
+			bii:~ $ df -h
+			Filesystem      Size   Used  Avail Capacity  iused     ifree %iused  Mounted on
+			/dev/disk2     698Gi  135Gi  562Gi    20% 35525778 147326043   19%   /
+			devfs          186Ki  186Ki    0Bi   100%      644         0  100%   /dev
+			map -hosts       0Bi    0Bi    0Bi   100%        0         0  100%   /net
+			map auto_home    0Bi    0Bi    0Bi   100%        0         0  100%   /home
+			/dev/disk0s1    15Gi  2.4Mi   15Gi     1%        0         0  100%   /Volumes/BIIBERRY
 
-From the output you can see that the SD card (named BIIBERRY) is in **/dev/disk0s1**
+		From the output you can see that the SD card (named BIIBERRY) is in **/dev/disk0s1**
 
-Before proceeding you need to ensure nobody is using the SD card or you might get a **Resource busy** error:
+		Before proceeding you need to ensure nobody is using the SD card or you might get a **Resource busy** error:
 
-* Open Disk Utility
-* You'll see all storage devices connected to your Mac and all their partitions
-* Select BIIBERRY, the only partition of your SD card, right click on it and select "Unmount BIIBERRY", do not eject it.
+		* Open Disk Utility
+		* You'll see all storage devices connected to your Mac and all their partitions
+		* Select BIIBERRY, the only partition of your SD card, right click on it and select "Unmount BIIBERRY", do not eject it.
 
 
-Finally, run the following dd command to write Raspberry Pi image to the SD card.
+		Finally, run the following dd command to write Raspberry Pi image to the SD card.
 
-.. code-block:: bash
+		.. code-block:: bash
 
-	$ sudo dd bs=4m if=/path/to/image of=/dev/disk0s1
+			$ sudo dd bs=4m if=/path/to/image of=/dev/disk0s1
 
-The ``bs`` argument sets the block size to 4 MB. Normally the ``bs`` argument will work with 4m, but you can change to 1m, which will take longer time to write. The ``if`` argument sets the full path to Raspbian image, and the ``of`` argument specifies the device name of the SD card. Note that the **dd command will not give you any feedback during its operation**, and it will look as it it was frozen. Be patient, it could easily take half an hour to complete. You can see how much it has written in Activity Monitor selecting "Disk" tab.
+		The ``bs`` argument sets the block size to 4 MB. Normally the ``bs`` argument will work with 4m, but you can change to 1m, which will take longer time to write. The ``if`` argument sets the full path to Raspbian image, and the ``of`` argument specifies the device name of the SD card. Note that the **dd command will not give you any feedback during its operation**, and it will look as it it was frozen. Be patient, it could easily take half an hour to complete. You can see how much it has written in Activity Monitor selecting "Disk" tab.
+
+	.. container:: tabs-item
+
+		.. rst-class:: tabs-title
+
+			Windows
+
+		First, download and install SD Card Formatter from `SD Associations <https://www.sdcard.org/downloads/formatter_4/eula_windows/>`_.
+		Insert your SD card into the card reader, and then format the SD card with SD Card Formatter. Formatting options do not matter, as the formatted filesystem will be overwritten during the subsequent image writing step. The reason why we format the SD card is to make the card recognized by the operating system.
+
+		.. image:: /_static/img/rpi/burn_win_sd.png
+
+		Next, download and install `win32diskimager <http://sourceforge.net/projects/win32diskimager/>`_ application which can flash an SD Card.
+		Launch win32diskimager. After locating the extracted Raspbian raw image via a built-in file dialog box, write the image to an SD card. It will take some times to finish writing the image into the SD card.
+
+		.. image:: /_static/img/rpi/burn_win_win32diskimager.jpg
+
+		After the writing process is finished, eject the SD card and plug in to the Raspberry Pi.
+
 
 Configuration
 -------------

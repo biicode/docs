@@ -139,6 +139,6 @@ $( document ).ready(function() {
         var sections = group.find(".tabs-item").removeClass("current");
         $(sections[index]).addClass("current");
       });
-    }
+    };
   };
 });

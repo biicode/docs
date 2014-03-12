@@ -3,6 +3,8 @@
 Installation
 ============
 
+If you are here, is because you want to develop your Raspberry Pi projects with biicode.
+
 .. toctree::
    :maxdepth: 2
 
