@@ -128,7 +128,7 @@ The previous output indicates the installed version is **1.0.5**.
 4. Update your board configuration
 ----------------------------------
 
-Your workspace ``bii/environment.bii`` file also contains some specific settings for your actual Ardino board. This way, all new hives will share the same configuration. Edit the ``boards`` entry reflecting your current setup. These are the default settings you will find wen you open this file:
+Your workspace ``bii/environment.bii`` file also contains **some specific settings for your actual Ardino board**. This way, all new hives will share the same configuration. Edit the ``boards`` entry reflecting your current setup. These are the default settings you will find wen you open this file (select your operating system):
 
 .. container:: tabs-section
 	
@@ -141,7 +141,7 @@ Your workspace ``bii/environment.bii`` file also contains some specific settings
 		.. code-block:: text
 
 			boards:
-		  	- {board: uno, no_autolibs: 'false', port: /dev/ttyUSB0, programmer: usbtinyisp}
+		  	  - {board: uno, no_autolibs: 'false', port: /dev/ttyUSB0, programmer: usbtinyisp}
 
 	.. container:: tabs-item
 
@@ -152,7 +152,7 @@ Your workspace ``bii/environment.bii`` file also contains some specific settings
 		.. code-block:: text
 
 			boards:
-	  	  	- {board: uno, no_autolibs: 'false', port: /dev/tty.usbserial, programmer: usbtinyisp}
+	  	  	  - {board: uno, no_autolibs: 'false', port: /dev/tty.usbserial, programmer: usbtinyisp}
 
 	.. container:: tabs-item
 
@@ -160,18 +160,14 @@ Your workspace ``bii/environment.bii`` file also contains some specific settings
 
 			Windows
 
-		..code-block:: text
+		.. code-block:: text
 
 			boards:
 			  - {board: uno, no_autolibs: 'false', port: COM3, programmer: usbtinyisp}
 	
-You must specify the correct option for each of the fields: ``board``, ``no_autolibs``, ``port``, and ``programmer``:
+As you can see, the only different between operating systems is in the ``port`` field configuration. You must specify the appropriate information for each of the fields: ``board``, ``no_autolibs``, ``port``, and ``programmer``:
 
-
-Board
-^^^^^
-
-``Board`` is referred to Arduino Boards (SDK Arduino 1.0.5), and you have these choices:
+* **board**: This is your Arduino Board model. It must be compatible with the Arduino SDK v. 1.0.5, and must have one of the following values:
 
 	* ``uno``: Arduino Uno
 	* ``atmega328``: Arduino Duemilanove w/ ATmega328
@@ -202,64 +198,54 @@ Board
 	* ``robotMotor``: Arduino Robot Motor
 
 	
-no_autolibs
-^^^^^^^^^^^
+* **no_autolibs**: You can set ``no_autolibs`` to ``false`` or ``true`` values. This setting disables Arduino library detection, so if it's ``false`` you can use Arduino libraries.
 
-You can choose ``no_autolibs`` between **'false'** or **'true'**. This setting disables Arduino library detection, so if it's **'false'** you can use Arduino libraries.
+	This option is useful because you may not want to use these libraries if you have a better one. For example, you have just done a **Servo** library with a lot of improvements and you prefer to use it. In this case you only need to set the ``no_autolibs`` value to ``true``.
 
-This option is interesting because you may not want to use these libraries if you have a better one. For example, you have just done a **Servo** library with a lot of improvements and you prefer to use it, then you would set ``no_autolibs`` value **'true'**.
+* **port**: the USB interface where your Arduino board is connected. As mentioned before, this configuration varies from one operating system to another:
 
-
-port
-^^^^
-
-``port`` USB is where your Arduino board is connected.
-
-.. container:: tabs-section
-	
-	.. container:: tabs-item
-
-		.. rst-class:: tabs-title
-			
-			Linux
-
-		On Linux the Arduino serial device is named as follows (where X is the device number):
-
-		* ``/dev/ttyUSBX``
-		* ``/dev/ttyACMX``
-
-		Where ``/dev/ttyACMX`` is for the new Uno and Mega Arduino's, while ``/dev/ttyUSBX`` is for the old ones.
-
-	.. container:: tabs-item
-
-		.. rst-class:: tabs-title
-			
-			MacOS
-
-		When specifying the serial port name on Mac OS X, use the following names (where XXX is a unique ID):
-
-		* ``/dev/tty.usbmodemXXX``
-		* ``/dev/tty.usbserialXXX``
+	.. container:: tabs-section
 		
-		Where ``tty.usbmodemXXX`` is for new Uno and Mega Arduino's, while ``tty.usbserialXXX`` are the older ones.
+		.. container:: tabs-item
 
-	.. container:: tabs-item
+			.. rst-class:: tabs-title
+				
+				Linux
 
-		.. rst-class:: tabs-title
+			On Linux the Arduino serial device is named as follows (where X is the device number):
 
-			Windows
+			* ``/dev/ttyUSBX``
+			* ``/dev/ttyACMX``
 
-		When specifying the serial port name on Windows, use the following names:
+			Where ``/dev/ttyACMX`` is for the new Uno and Mega Arduino's, while ``/dev/ttyUSBX`` is for the old ones.
 
-		* ``COM1``, ``COM2``, etc.
+		.. container:: tabs-item
+
+			.. rst-class:: tabs-title
+				
+				MacOS
+
+			When specifying the serial port name on Mac OS X, use the following names (where XXX is a unique ID):
+
+			* ``/dev/tty.usbmodemXXX``
+			* ``/dev/tty.usbserialXXX``
+			
+			Where ``tty.usbmodemXXX`` is for new Uno and Mega Arduino's, while ``tty.usbserialXXX`` are the older ones.
+
+		.. container:: tabs-item
+
+			.. rst-class:: tabs-title
+
+				Windows
+
+			When specifying the serial port name on Windows, use the following names:
+
+			* ``COM1``, ``COM2``, etc.
 
 
-You can use the ``bii arduino:usb`` :ref:`arduino:usb<arduino_usb>` command to identify the connection port of your Arduino board (:ref:`learn more about this command following this link<arduino_usb>`).
+	You can use the ``bii arduino:usb`` command to identify the connection port of your Arduino board (:ref:`learn more about this command following this link<arduino_usb>`).
 
-programmer
-^^^^^^^^^^
-
-``programmer`` is referred to the Arduino Programmers (SDK Arduino 1.0.5)
+* **programmer**: This field indicates the Arduino Programmers (SDK Arduino 1.0.5). Available options are:
 
 	* ``avrisp``: AVR ISP
 	* ``avrispmkii``: AVRISP mkII
