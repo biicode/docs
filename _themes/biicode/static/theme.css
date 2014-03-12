@@ -4878,6 +4878,70 @@ body.nodejs .menu-vertical li.toctree-l1.current > a
 {
   background-color: #80bd01;
 }
+/* Go Back button */
+.goback {
+  padding: 2px 15px;
+  display: none;
+}
+.goback.on {
+  display: block;
+}
+.goback .link {
+  display: inline-block;
+  font-size: 70%; 
+  width: 100%;
+  padding: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #F8F8F8;
+}
+.goback .link:hover {
+  background-color: #fff;
+  font-weight: bold;
+}
+
+.goback .link.biicode
+{
+  color: #fa0;
+}
+.goback .link.cpp
+{
+  color: #3480ff;
+}
+.goback .link.arduino
+{
+  color: #00979c;
+}
+.goback .link.raspberrypi
+{
+  color: #d6264f;
+}
+.goback .link.nodejs
+{
+  color: #80bd01;
+}
+
+body.biicode .goback
+{
+  background-color: #fa0;
+}
+body.cpp .goback
+{
+  background-color: #3480ff;
+}
+body.arduino .goback
+{
+  background-color: #00979c;
+}
+body.raspberrypi .goback
+{
+  background-color: #d6264f;
+}
+body.nodejs .goback
+{
+  background-color: #80bd01;
+}
+/* End Go Back button */
 
 .menu-vertical li.toctree-l2 > a
 {
