@@ -52,59 +52,59 @@ $( document ).ready(function() {
     $(this).addClass("current");
   });
   /* This hack is for navigation 'go back' option inter sections */
-  (function goBack() {
-    function getSection(path) {
-      var section = "biicode";
-      if (path.match(/[_build\/html\/|^\/]c\+\+/)) section = "cpp";
-      else if (path.match(/[_build\/html\/|^\/]arduino/)) section = "arduino";
-      else if (path.match(/[_build\/html\/\^\/]raspberrypi/)) section = "raspberrypi";
-      else if (path.match(/[_build\/html\/\^\/]nodejs/)) section = "nodejs"; 
-      return section;
-    }
-    /* Clear local cache if needed (referrer info, only in production) */
-    var hostName = window.location.hostname;
-    if ((hostName!="") && (hostName!="localhost") && checkLocalStorage()) {
-      if (!document.referrer.match("docs.biicode.com"))
-        localStorage.clear();
-    }
-    /* Init function for all page links */
-    $("a").click(function(e) {
-      var current = getSection(window.location.pathname),
-          destination = getSection(this.href);
-      if ((current != destination) && checkLocalStorage()) {
-        var navData = {
-          title: window.document.title.replace(" — [biicode docs]", ""),
-          href: window.location.href,
-          className: current
-        };
-        var navigation = [];
-        if (localStorage.navigation) navigation = JSON.parse(localStorage.navigation);
-        navigation.push(navData);
-        localStorage.navigation = JSON.stringify(navigation);
-      };
-    });
-    /* Check if navigation data present, and init go back button */
-    if (checkLocalStorage() && (localStorage.navigation)) {
-      var navData = JSON.parse(localStorage.navigation).slice(-1)[0];
-      if (navData) {
-        var backLink = $(".goback").addClass("on").find(".link");
-        backLink.html("Back to " + navData.title);
-        backLink.attr("data-link", navData.href);
-        backLink.addClass(navData.className);
-      } else {
-        $(".goback").removeClass("on"); // hide button
-      };
-    };
-    /* Back link button */
-    $(".goback .link").click(function(e) {
-      // clear last navigation element data
-      var navigation = JSON.parse(localStorage.navigation);
-      navigation.pop();
-      localStorage.navigation = JSON.stringify(navigation);
-      // redirect window:
-      window.location.href = $(this).attr("data-link");
-    });
-  })();
+  // (function goBack() {
+  //   function getSection(path) {
+  //     var section = "biicode";
+  //     if (path.match(/[_build\/html\/|^\/]c\+\+/)) section = "cpp";
+  //     else if (path.match(/[_build\/html\/|^\/]arduino/)) section = "arduino";
+  //     else if (path.match(/[_build\/html\/\^\/]raspberrypi/)) section = "raspberrypi";
+  //     else if (path.match(/[_build\/html\/\^\/]nodejs/)) section = "nodejs"; 
+  //     return section;
+  //   }
+  //   /* Clear local cache if needed (referrer info, only in production) */
+  //   var hostName = window.location.hostname;
+  //   if ((hostName!="") && (hostName!="localhost") && checkLocalStorage()) {
+  //     if (!document.referrer.match("docs.biicode.com"))
+  //       localStorage.clear();
+  //   }
+  //   /* Init function for all page links */
+  //   $("a").click(function(e) {
+  //     var current = getSection(window.location.pathname),
+  //         destination = getSection(this.href);
+  //     if ((current != destination) && checkLocalStorage()) {
+  //       var navData = {
+  //         title: window.document.title.replace(" — [biicode docs]", ""),
+  //         href: window.location.href,
+  //         className: current
+  //       };
+  //       var navigation = [];
+  //       if (localStorage.navigation) navigation = JSON.parse(localStorage.navigation);
+  //       navigation.push(navData);
+  //       localStorage.navigation = JSON.stringify(navigation);
+  //     };
+  //   });
+  //   /* Check if navigation data present, and init go back button */
+  //   if (checkLocalStorage() && (localStorage.navigation)) {
+  //     var navData = JSON.parse(localStorage.navigation).slice(-1)[0];
+  //     if (navData) {
+  //       var backLink = $(".goback").addClass("on").find(".link");
+  //       backLink.html("Back to " + navData.title);
+  //       backLink.attr("data-link", navData.href);
+  //       backLink.addClass(navData.className);
+  //     } else {
+  //       $(".goback").removeClass("on"); // hide button
+  //     };
+  //   };
+  //   /* Back link button */
+  //   $(".goback .link").click(function(e) {
+  //     // clear last navigation element data
+  //     var navigation = JSON.parse(localStorage.navigation);
+  //     navigation.pop();
+  //     localStorage.navigation = JSON.stringify(navigation);
+  //     // redirect window:
+  //     window.location.href = $(this).attr("data-link");
+  //   });
+  // })();
   /* This hack is for including tabs */
   var tabs_sections = $(".tabs-section");
   if (tabs_sections.length > 0) {
