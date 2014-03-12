@@ -1,9 +1,11 @@
+.. _rpi_getting_started:
+
 Getting Started
 ===============
 
 In this section you'll learn how to write, cross-compile and execute your first *'Hello World'* program for your Raspberry Pi using biicode.
 
-It is assumed that you have already :ref:`installed biicode on your system and created a workspace <first_steps>`, and :ref:`installed the tools for cross compiling <rpi_corss_compiling>`. **These previous two steps are mandatory** for the following instructions to work properly.
+It is assumed that you have already :ref:`installed biicode on your system and created a workspace <first_steps>`, and :ref:`installed the tools for cross compiling <rpi_cross_compiling>`. **These previous two steps are mandatory** for the following instructions to work properly.
 
 1. Create a new hive
 --------------------
@@ -84,7 +86,7 @@ Our ``hello_rpi`` block will contain the following three files: ``hello.h``, ``h
 
 You can download these files here: :download:`hello.zip <../_static/code/cpp/hello-world/hello.zip>`
 
-	
+
 3. Build, deploy and run your program
 -------------------------------------
 

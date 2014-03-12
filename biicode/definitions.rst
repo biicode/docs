@@ -21,7 +21,7 @@ Now these concepts are explained in more detail:
 Workspace
 ^^^^^^^^^
 
-This is a **special folder** which is created on your system during the :ref:`installation process <installation>`. The concept is pretty much the same as in IDEs; **the place where all your projects —which in biicode terminology are called hives— are located**. The workspace contains all your code and related metadata, so keep it private under your system user account, and do not share it with untrusted people.
+This is a **special folder** which is created on your system during the :ref:`installation process <first_steps>`. The concept is pretty much the same as in IDEs; **the place where all your projects —which in biicode terminology are called hives— are located**. The workspace contains all your code and related metadata, so keep it private under your system user account, and do not share it with untrusted people.
 
 Simply speaking, your workspace **will hold your hives**, or projects.
 

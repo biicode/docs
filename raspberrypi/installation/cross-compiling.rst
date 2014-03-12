@@ -1,4 +1,4 @@
-.. _rpi_corss_compiling:
+.. _rpi_cross_compiling:
 
 Cross-compiling set up
 ======================

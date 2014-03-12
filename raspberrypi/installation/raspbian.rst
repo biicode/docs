@@ -9,4 +9,4 @@ Once you have installed the Raspbian distribution on your board, you are ready t
 
 However, **you can also work on your Linux desktop computer or laptop, and cross-compile your programs** for your RPi. This way the compilation process will be faster, and you can benefit from other advantages your usual development (Linux) environment provides. 
 
-If you want to learn how biicode simplifies the cross-compiling process for your RPi board, :ref:`continue reading <rpi_corss_compiling>`!
+If you want to learn how biicode simplifies the cross-compiling process for your RPi board, :ref:`continue reading <rpi_cross_compiling>`!

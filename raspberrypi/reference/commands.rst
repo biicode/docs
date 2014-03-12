@@ -21,13 +21,13 @@ This section summarizes the **Raspberry Pi commands available to be used with th
 ``bii rpi:send``: Send a bin folder
 -----------------------------------
 
-Send your binaries automatically to your Raspberry Pi from your PC. See the command usage  :ref:`here<bii_rpi_send>`.
+Send your binaries automatically to your Raspberry Pi from your PC. See the command usage  :ref:`here<rpi_getting_started>`.
 
 
 ``bii rpi:ssh``: Connect by ssh with the Raspberry Pi
 -----------------------------------------------------
 
-If you want a remotely access to your Raspberry Pi you can get it with this command. See its usage :ref:`here<bii_rpi_ssh>`.
+If you want a remotely access to your Raspberry Pi you can get it with this command. See its usage :ref:`here<rpi_getting_started>`.
 	
 
 ``bii rpi:initopengles``: Init OpenGLES project
