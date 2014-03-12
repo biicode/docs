@@ -79,32 +79,85 @@ You need to `download the Arduino software <http://arduino.cc/en/Main/Software>`
 
 **Note:** In Windows, install the Arduino software into ``C:/Program Files/Arduino`` and not into ``C:/Program Files/Arduino (x86)``. This is important because some CMake versions can not interpret correctly this path.
 
-3. Update your ``environment.bii`` file 
----------------------------------------
+3. Update your workspace configuration
+--------------------------------------
 
 If you haven't done so, you must first :ref:`create a biicode workspace <create_workspace>`.
 
-**Note:** You can only have one coding language for each Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps.
+**Note:** You can only have one coding language for each Hive, so do not mix blocks with  Arduino and C/C++ Desktop apps in the same hive.
 
-Then you will see in your ``workspace/bii/environment.bii`` file containing this default configuration:
+Your workspace ``bii/environment.bii`` file contains this default configuration (select your operating system):
 
+.. container:: tabs-section
 
+	.. container:: tabs-item
 
-.. code-block:: text
-	:emphasize-lines: 1, 7, 8, 9
-	
-	arduino:
-	  boards:
-	  - {board: uno, no_autolibs: 'false', port: /dev/ttyUSB0, programmer: usbtinyisp}
-	  builders:
-	  - path: make
-		tool: {family: MAKE}
-	  compilers:
-	  - path: /usr/share/arduino
-		tool: {arch: AVR, family: GNU, version: 1.0.5}
-	  configurers:
-	  - path: cmake
-		tool: {family: CMake}
+		.. rst-class:: tabs-title
+			
+			Linux
+
+		Default arduino configuration in your workspace ``bii/environment.bii`` file:
+
+		.. code-block:: text
+			
+			arduino:
+			  boards:
+			  - {board: uno, no_autolibs: 'false', port: /dev/ttyUSB0, programmer: usbtinyisp}
+			  builders:
+			  - path: make
+				tool: {family: MAKE}
+			  compilers:
+			  - path: /usr/share/arduino
+				tool: {arch: AVR, family: GNU, version: 1.0.5}
+			  configurers:
+			  - path: cmake
+				tool: {family: CMake}
+
+	.. container:: tabs-item
+
+		.. rst-class:: tabs-title
+			
+			Mac OS X
+
+		Default arduino configuration in your workspace ``bii/environment.bii`` file:
+
+		.. code-block:: text
+			
+			arduino:
+			  boards:
+			  - {board: uno, no_autolibs: 'false', port: /dev/tty.usbserial, programmer: usbtinyisp}
+			  builders:
+			  - path: make
+			        tool: {family: MAKE}
+			  compilers:
+			  - path: /Applications/Arduino.app/Contents/Resources/Java
+			        tool: {arch: AVR, family: GNU, version: 1.0.5}
+			  configurers:
+			  - path: cmake
+			        tool: {family: CMake}
+
+	.. container:: tabs-item
+
+		.. rst-class:: tabs-title
+
+			Windows
+
+		Default arduino configuration in your workspace ``bii/environment.bii`` file:
+
+		.. code-block:: text
+			
+			arduino:
+			  boards:
+			  - {board: uno, no_autolibs: 'false', port: COM3, programmer: usbtinyisp}
+			  builders:
+			  - path: mingw32-make
+			        tool: {family: MINGW}
+			  compilers:
+			  - path: C:/Program Files/Arduino
+			        tool: {arch: AVR, family: MINGW, version: 1.0.5}
+			  configurers:
+			  - path: cmake
+			        tool: {family: CMake}
 
 Change the ``compilers path`` in the environment if you have installed the Arduino Software in other folder. On the other side, you have the following tool info:
 
@@ -112,17 +165,20 @@ Change the ``compilers path`` in the environment if you have installed the Ardui
 	* ``family``: Gnu
 	* ``version``: 1.0.5
 
+Please, make sure you have the right version of the Arduino SDK. 
 
-Please, make sure you have the right version of the Arduino SDK. If you installed the arduino debian package you can see the SDK version entering ``dpkg --list arduino``:
+.. container:: infotool
 
-.. code-block:: text
+	If you installed the arduino debian package you can see the SDK version entering ``dpkg --list arduino``:
 
-	||/ Name        Version            Arch   Description
-	+++-===========-==================-======-=========================
-	ii  arduino     1:1.0.5+dfsg2-1    all    AVR development board IDE
+	.. code-block:: text
+
+		||/ Name        Version            Arch   Description
+		+++-===========-==================-======-=========================
+		ii  arduino     1:1.0.5+dfsg2-1    all    AVR development board IDE
 
 
-The previous output indicates the installed version is **1.0.5**.
+	The previous output indicates the installed version is **1.0.5**.
 
 .. _arduino_settings:
 4. Update your board configuration
