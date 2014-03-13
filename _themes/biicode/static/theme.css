@@ -5187,6 +5187,9 @@ body.nodejs .side-nav-search {
   display:none;
   width: 1100px;
 }
+.nav-sections-standard {
+  width: 1100px;
+}
 
 #menu > div.nav-top-standard.center > nav > ul > li {
   display: inline-block;
@@ -5439,7 +5442,7 @@ nav.nav-side
   /* top: 60px; */
   transition:all .25s ease;
   width:300px;
-  /* z-index:200; */
+  z-index: 500;
 }
 
 .side-nav-search,.menu-vertical
@@ -5753,13 +5756,18 @@ body.nodejs .tabs .tab.current
   position: fixed;
   top: 60px;
   background: #ffaa00;
-  left: 402px;
   height: 50px;
-  width: 800px;
+  width: 1100px;
+  padding-left: 300px;
   overflow-x: auto;
   white-space: nowrap;
-  z-index: 300;
+  text-align: left;
 }
+.biicode-sections a {
+  color: #fff;
+  font-weight: normal !important;
+}
+
 body.biicode .biicode-sections {
   background-color:#fa0;
 }
@@ -5777,9 +5785,9 @@ body.nodejs .biicode-sections {
 }
 
 .biisection {
-  height: 42px;
+  height: 40px !important;
   display: inline-block;
-  font-size: 12px;
+  font-size: 12px !important;
   padding: 10px 20px;
   color: #fff;
   height: 35px;
