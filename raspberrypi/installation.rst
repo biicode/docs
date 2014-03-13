@@ -9,11 +9,21 @@ Additionally, you will need a **Raspbian image** installed. That's because both 
 
 Here you will learn **how to set up your system for developing with biicode using the C++ programming language**. The steps involve:
 
+#. Installing the biicode software on your machine
 #. Installing a Raspbian distribution on your board.
 #. Install some additional tools for cross-compiling from a Linux system.
 
-.. toctree::
-   :maxdepth: 1
 
-   installation/raspbian
-   installation/cross-compiling
+1. Biicode initial setup
+------------------------
+
+First of all, **you need to complete the biicode general installation**. Follow :ref:`the instructions in the general documentation, following this link <first_steps>`. You must: 
+
+* **Sign up** with biicode
+* Download and install the **client binaries** for your operating system
+* Create a biicode **workspace**
+
+After you have complete these steps, proceed with the following sections:
+
+.. include:: installation/raspbian.rst
+.. include:: installation/cross-compiling.rst

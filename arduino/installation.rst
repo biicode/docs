@@ -5,8 +5,18 @@ Installation
 
 This section describes how to **set up your development environment for working on Arduino projects with biicode**. The installation steps depend on you current development platform. Simply select your operating system from the options you will find in the sections bellow.
 
+1. Biicode initial setup
+------------------------
 
-1. Install the development tools
+First of all, **you need to complete the biicode general installation**. Follow :ref:`the instructions in the general documentation, following this link <first_steps>`. You must: 
+
+* **Sign up** with biicode
+* Download and install the **client binaries** for your operating system
+* Create a biicode **workspace**
+
+After you have complete these steps, proceed with the following sections:
+
+2. Install the development tools
 --------------------------------
 
 In order to configure and compile your Arduino projects with biicode, you need to install some additional tools. CMake is an open source tool that manages the software building process in a compiler-independent manner. Select your operating system bellow, and follow the instructions.
@@ -72,14 +82,14 @@ Now, you can check CMake is working properly. Open a terminal window and run the
 	cmake version [version]
 
 
-2. Install Arduino software
+3. Install Arduino software
 ---------------------------
 
 You need to `download the Arduino software <http://arduino.cc/en/Main/Software>`_ first, it is important to choose a SDK compatible with your board. If you need more info visit the `official Arduino website <http://arduino.cc/en/Main/Software>`_.
 
 **Note:** In Windows, install the Arduino software into ``C:/Program Files/Arduino`` and not into ``C:/Program Files/Arduino (x86)``. This is important because some CMake versions can not interpret correctly this path.
 
-3. Update your workspace configuration
+4. Update your workspace configuration
 --------------------------------------
 
 If you haven't done so, you must first :ref:`create a biicode workspace <create_workspace>`.
@@ -182,7 +192,7 @@ Please, make sure you have the right version of the Arduino SDK.
 
 .. _arduino_settings:
 
-4. Update your board configuration
+5. Update your board configuration
 ----------------------------------
 
 Your workspace ``bii/environment.bii`` file also contains **some specific settings for your actual Ardino board**. This way, all new hives will share the same configuration. Edit the ``boards`` entry reflecting your current setup. These are the default settings you will find wen you open this file (select your operating system):

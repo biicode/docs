@@ -1,7 +1,7 @@
 .. _rpi_cross_compiling:
 
-Cross-compiling set up
-======================
+3. Cross-compiling set up
+-------------------------
 
 This section describes how to **configure a Linux system for cross-compiling your Raspberry Pi C++ programs with biicode**. You will need a Linux distribution installed on your machine (or you can use a virtual machine). We recommend using `Ubuntu <http://www.ubuntu.com/>`_, but any Debian distribution should work just as fine. It is assumed :ref:`you have already installed a Raspbian image on your RPi board <raspbian_installation>`.
 
@@ -16,8 +16,8 @@ These three steps are described bellow. If you experience any issues, please `co
 **Note:** If your are using a **64-bit version of Linux** as development environment, :ref:`see this note about how to install 32-bit support on your machine <rpi_32bi_support>`.
 
 
-1. C++ tools installation
--------------------------
+3.1. C++ tools installation
+...........................
 
 Install the required development tools as root:
 
@@ -27,8 +27,8 @@ Install the required development tools as root:
 
 .. _rpi_cc_tools:
 
-2. Raspberry Pi tools installation
-----------------------------------
+3.2. Raspberry Pi tools installation
+.....................................
 
 One essencial step for cross-compiling your programs is downloading and installing `the Raspberry Pi tools from this Github repository <https://github.com/raspberrypi/tools/>`_. You'll need Git installed on your Linux system. You can install an existing package on your Ubuntu platform with the following command:
 
@@ -108,8 +108,8 @@ Now, you can choose whether to manually install these tools by yourself, or let 
 
 .. _rpi_default_settings:
 
-3. Board configuration
-----------------------
+3.3. Board configuration
+........................
 
 The last step is to update the workspace ``bii/environment.bii`` file with some information about your Raspberry Pi. This information will be used for deploying your program into an appropriate location of your card file system. Just look for this line in your workspace ``bii/environment.bii`` file and fill in the correct values: ::
 	

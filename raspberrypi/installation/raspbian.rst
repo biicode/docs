@@ -1,7 +1,7 @@
 .. _raspbian_installation:
 
-Raspbian installation
----------------------
+2. Raspbian installation
+------------------------
 
 First of all, you need a `Raspbian <http://www.raspbian.org/>`_ image running on your RPi board. The easiest path is to `download and install the New Out Of Box Software (NOOBS) provided by the Raspberry Pi foundation <http://www.raspberrypi.org/downloads>`_.
 

@@ -12,7 +12,18 @@ Also, **it is suggested installing some IDE** for better management of your hive
 
 The steps for the installation of these tools vary from one operaing system to another. Here you will find detailed instructions for your actual development platform.
 
-1. Install the development tools
+1. Biicode initial setup
+------------------------
+
+First of all, **you need to complete the biicode general installation**. Follow :ref:`the instructions in the general documentation, following this link <first_steps>`. You must: 
+
+* **Sign up** with biicode
+* Download and install the **client binaries** for your operating system
+* Create a biicode **workspace**
+
+After you have complete these steps, proceed with the following sections:
+
+2. Install the development tools
 --------------------------------
 
 Follow the instructions bellow to install these tools for your particular development platform:
@@ -93,7 +104,7 @@ Follow the instructions bellow to install these tools for your particular develo
 		You might need to close and open again any ``cmd`` windows in order to load the new value for the ``PATH`` variable.
 
 
-2. Verify your installation
+3. Verify your installation
 ---------------------------
 
 Once you have installed the tools, you should check they are working properly. Open a terminal window and run the following commands. If the output messages look similar to these, the tools are successfully installed.
