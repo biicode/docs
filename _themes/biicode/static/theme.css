@@ -1,9 +1,8 @@
-@font-face
-{
-  font-family:fontawesome-webfont;
-  font-style:normal;
-  font-weight:400;
-  src:url(font/fontawesome-webfont.eot?#iefix) format(embedded-opentype), url(font/fontawesome-webfont.woff) format(woff), url(font/fontawesome-webfont.ttf) format(truetype), url(font/fontawesomewebfont.svg#fontawesome-webfont) format(svg);
+@font-face {
+  font-family:'fontawesome-webfont';
+  font-style: normal;
+  font-weight: 400;
+  src:url('font/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), url('font/fontawesome-webfont.woff') format('woff'), url('font/fontawesome-webfont.ttf') format('truetype'), url('font/fontawesomewebfont.svg#fontawesome-webfont') format('svg');
 }
 
 *
@@ -5762,6 +5761,7 @@ body.nodejs .tabs .tab.current
   overflow-x: auto;
   white-space: nowrap;
   text-align: left;
+  z-index: 200;
 }
 .biicode-sections a {
   color: #fff;
@@ -5785,10 +5785,10 @@ body.nodejs .biicode-sections {
 }
 
 .biisection {
-  height: 40px !important;
+  height: 30px !important;
   display: inline-block;
   font-size: 12px !important;
-  padding: 10px 20px;
+  padding: 20px 20px;
   color: #fff;
   height: 35px;
 }
