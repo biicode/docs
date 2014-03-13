@@ -42,24 +42,24 @@ Inside your workspace you will find a new folder named ``hello_rpi_hive`` contai
    |    +-- cmake
    |    +-- deps
 
-The ``bii`` folder contains specific configuration files for your hive. **You must update your settings and change the architecture** of the desired cpp compiler. To do so, open your ``hello_rpi_hive/bii/settings.bii`` file, look for the following lines:
+Now, **you must update your settings** about your Raspberry Pi. To do so, use the ``rpi:settings`` command:
+	
+.. code-block:: bash
+	
+	$ bii rpi:settings
 
-.. code-block:: text
+	Define RPI settings for external C/C++ cross-building
+	If you are working onboard the RPI, you don't need these settings
 
-	cpp:
-	  builder: {family: MAKE}
-	  compiler: {arch: 32bit, family: GNU}
-	  configurer: {family: CMake}
-	 
-and edit the *compiler* configuration as follows:
-
-.. code-block:: text
-	:emphasize-lines: 3
-	 
-	cpp:
-	  builder: {family: MAKE}
-	  compiler: {arch: ARM, family: GNU}
-	  configurer: {family: CMake}
+	RPI username (pi): [RPI_USER]
+	RPI IP Address: [RPI_IP]
+	RPI directory to upload (bin): [RPI_FOLDER]
+	Cross building? (NO/yes): yes
+	
+* **RPI username (pi)**: Raspberry Pi user name. Default value is ``pi``.
+* **RPI IP Address**: Raspberry Pi local IP address. Write here your Raspberry Pi network address, that you can find out executing the ``ifconfig`` in a console inside the RPi.
+* **RPI directory to upload (bin)**: Raspberry Pi directory where you want your programs to be saved. Default value is the ``bin`` user home folder.
+* **Cross building?**: Activate the croos building. Default value is ``NO``.
 
 2. Just code!
 -------------
@@ -100,13 +100,11 @@ Now you are ready to compile and deploy your new application. First, **cross-com
 	...
 	[100%] Built target username_hello_rpi_main
 
-The ouput indicates that the compiler has been configured for ARM architecture (using information provided in your workspace ``environment.bii`` configuration file, :ref:`as explained here<rpi_cc_tools>`).
-
 The binaries are created in your hive's ``bin`` folder, but remember that **you cannot run this program locally, as it has been generated for a different architecture** using the cross-compiling tools. You need to send the binary to your Raspberry Pi to be executed.
 
 **Note:** You can both compile and run locally your program restoring your ``hello_rpi_hive/bii/settings.bii`` configuration to the default ``32bit`` architecture. This is just simple C++ code, and you only need to change the compiler configuration!
 
-To **send the binary to your Raspberry Pi**, you only need to execute the ``bii rpi:send`` command and the file will be sent by `rsync <http://en.wikipedia.org/wiki/Rsync>`_ to the address provided in your workspace ``environment.bii`` file during the :ref:`cross-compiling configuration process <rpi_default_settings>`.
+To **send the binary to your Raspberry Pi**, you only need to execute the ``bii rpi:send`` command and the file will be sent by `rsync <http://en.wikipedia.org/wiki/Rsync>`_ to the address provided in your settings.
 
 .. code-block:: bash
 
@@ -117,13 +115,7 @@ To **send the binary to your Raspberry Pi**, you only need to execute the ``bii 
 
 The Raspberry Pi user's password will be asked. If you have not changed your password, for Raspbian the default one is **raspberry**.
 
-If you want to send programs to another Raspberry Pi or specify a directory other than the one that appears in your ``environment.bii``, you can pass additional parameters to the ``bii:send`` command (get all the information about these parameters with ``bii rpi:send --help``):
-
-.. code-block:: bash
-
-	$ bii rpi:send <directory> <user> <ip>
-
-Finally, to **execute your program on your Raspberry Pi**, you need to establish a connection. You can use the ``rpi:ssh`` command if you want remote access. You'll find your program deployed in the path configured in your ``environment.bii`` file:
+Finally, to **execute your program on your Raspberry Pi**, you need to establish a connection. You can use the ``rpi:ssh`` command if you want remote access. You'll find your program deployed in the path configured in your settings:
 
 .. code-block:: bash
 
