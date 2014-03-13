@@ -5524,7 +5524,16 @@ body.nodejs .nav-rel a:hover {
 {
   margin-bottom:10px;
 }
-
+.toctree-wrapper tt {
+    font-size: 90% !important;
+}
+.menu.menu-vertical tt {
+    font-size: 12px !important;
+    border: 1px solid #ccc;
+    padding: 2px;
+    border-radius: 3px;
+    background-color: #f3f3f3;
+}
 .toctree-wrapper ul
 {
   border-radius:3px;
