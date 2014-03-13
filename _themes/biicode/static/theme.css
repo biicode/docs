@@ -5175,7 +5175,7 @@ body.nodejs .side-nav-search {
   position:fixed;
   text-align:center;
   width:100%;
-  z-index: 500;
+  z-index: 1000;
   zoom:1;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid #ccc;
@@ -5446,7 +5446,7 @@ nav.nav-side
 
 .side-nav-search,.menu-vertical
 {
-  z-index:150;
+  /* z-index:150; */
 }
 
 .nav-rel-container
