@@ -1,0 +1,1 @@
+This is an auxiliary folder containing articles to be published in our corporate blog.

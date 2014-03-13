@@ -2,10 +2,32 @@
 {%- set url_root = pathto('', 1) %}
 {%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
 {%- if not embedded and docstitle %}
-{%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
+{#- set titlesuffix = " &mdash; "|safe + docstitle|e #}
+{%- set titlesuffix = " &mdash; "|safe + " [biicode docs]" %}
 {%- else %}
 {%- set titlesuffix = "" %}
 {%- endif %}
+
+{# SEO hack for setting current section in title #}
+{% set find = pagename|replace("c++/", "") %}
+{% if find != pagename %}
+{% set titleprefix = "C++: " %}
+{% endif %}
+
+{% set find = pagename|replace("arduino/", "") %}
+{% if find != pagename %}
+{% set titleprefix = "Arduino: " %}
+{% endif %}
+
+{% set find = pagename|replace("raspberrypi/", "") %}
+{% if find != pagename %}
+{% set titleprefix = "Raspberry Pi: " %}
+{% endif %}
+
+{% set find = pagename|replace("nodejs/", "") %}
+{% if find != pagename %}
+{% set titleprefix = "Nodej.js: " %}
+{% endif %}
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -14,7 +36,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% block htmltitle %}
-  <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+  <title>{{titleprefix}} {{ title|striptags|e }} {{ titlesuffix }}</title>
   {% endblock %}
 
   {# FAVICON #}
@@ -23,10 +45,12 @@
   {% endif %}
 
   <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
   
   {# JS #}    
   {% if not embedded %}
+
+  <script type="text/javascript" src="//use.typekit.net/gpi5lyx.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   
   <script type="text/javascript">
   var DOCUMENTATION_OPTIONS = {
@@ -37,11 +61,6 @@
     HAS_SOURCE:  {{ has_source|lower }}
   };
   </script>
-
-  {%- for script in theme_scripts %}
-  <script type="text/javascript" src="{{ pathto(script, 1) }}"></script>
-  {%- endfor %}
-  {% endif %}
 
   {% for style in theme_styles %}
   <link rel="stylesheet" href="{{ pathto(style, 1) }}" type="text/css" />
@@ -73,49 +92,79 @@
   <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}"/>
   {%- endif %}
   {%- endblock %}
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+  {%- for script in theme_scripts %}
+  <script type="text/javascript" src="{{ pathto(script, 1) }}"></script>
+  {%- endfor %}
+  
   {%- block extrahead %} {% endblock %}
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  
+  {% endif %}
 
 </head>
 
 <body class="body-for-nav">
 
   {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
-  <nav class="nav-top">
-    <div id="biicode-logo"><a href="http://www.biicode.com">biicode</a></div>
-    <div class="nav-top-mobile">
-      <i data-toggle="nav-top" class="icon icon-reorder"></i>
-      <a href="{{ pathto(master_doc) }}" class="icon icon-book"> {{ project }}</a>
-    </div>
-    <div class="nav-top-standard">
-      <ul class="main-menu">
-        <li><a href="{{ pathto(master_doc) }}" class="icon icon-book"> {{ project }}</a></li>
-      </ul>
-    </div>
-  </nav>
 
+  <header id="menu" class="nav-top">
+
+      <div class="nav-top-mobile">
+        <i data-toggle="nav-top" class="icon icon-bars"></i>
+        <a href="{{ pathto(master_doc) }}"> {{ project }}</a>
+      </div>
+
+      <div class="nav-top-standard center">
+        <div id="biicode-logo"><a href="http://www.biicode.com"></a></div>
+        <nav class="right">
+          <ul class="main-menu">
+            <li><a href="http://web.biicode.com/blog">Blog</a></li>
+            <li><a href="http://forum.biicode.com">Forum</a></li>
+            <li><a href="{{ pathto(master_doc) }}">Docs</a></li>
+            <li><a href="http://www.biicode.com/accounts/login">Login</a></li>
+            <li><a href="http://www.biicode.com/accounts/signup">Sign up</a></li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+
+  <div class="nav-sections-standard center">
+    <nav class="biicode-sections">
+      <a href="{{ pathto('biicode.html',1) }}" class="biicode biisection">General</a>
+      <a href="{{ pathto('c++.html',1) }}" class="cpp biisection">C/C++</a>
+      <a href="{{ pathto('arduino.html',1) }}" class="arduino biisection">Arduino</a>
+      <a href="{{ pathto('raspberrypi.html',1) }}" class="raspberrypi biisection">Raspberry Pi</a>
+      <a href="{{ pathto('nodejs.html',1) }}" class="nodejs biisection">Node.js</a>
+    </nav>
+  </div>
 
 
   <div class="grid-for-nav">
 
     {# SIDE NAV, TOGGLES ON MOBILE #}
-    <nav data-toggle="nav-shift" class="nav-side">
-      <div class="side-nav-search">
-        {% include "searchbox.html" %}
-      </div>
+    <div class="nav-container">
+     
 
-      <div class="menu menu-vertical" data-spy="affix">
-        {% set toctree = toctree(maxdepth=2, collapse=False) %}
-        {% if toctree %}
-        {{ toctree }}
-        {% else %}
-        {{ toc }}
-        {% endif %}
-      </div>
-      {% include "versions.html" %}
-      &nbsp;
-    </nav>
+      <nav data-toggle="nav-shift" class="nav-side">
+        <div class="side-nav-search">
+          {% include "searchbox.html" %}
+        </div>
+
+        <div class="goback"><div class="link"></div></div>
+
+        <div class="menu menu-vertical" data-spy="affix">
+          {% set toctree = toctree(maxdepth=4, collapse=False) %}
+          {% if toctree %}
+          {{ toctree }}
+          {% else %}
+          {{ toc }}
+          {% endif %}
+        </div>
+        {% include "versions.html" %}
+      </nav>
+    </div>
 
     <section data-toggle="nav-shift" class="nav-content-wrap">
 
