@@ -5060,7 +5060,7 @@ body.nodejs .menu-vertical li.toctree-l2.current {
 {
   color:#fcfcfc;
   display:block;
-  padding: 15px;
+  padding: 10px 15px;
   text-align:center;
   z-index:200;
 }
@@ -5750,14 +5750,15 @@ body.nodejs .tabs .tab.current
 }
 
 .biicode-sections {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 60px;
   background: #ffaa00;
-  left: 0;
-  height: 60px;
-  width: 100%;
+  left: 402px;
+  height: 50px;
+  width: 800px;
   overflow-x: auto;
   white-space: nowrap;
+  z-index: 300;
 }
 body.biicode .biicode-sections {
   background-color:#fa0;
@@ -5779,8 +5780,9 @@ body.nodejs .biicode-sections {
   height: 42px;
   display: inline-block;
   font-size: 12px;
-  padding: 20px;
+  padding: 10px 20px;
   color: #fff;
+  height: 35px;
 }
 body.biicode .biisection.biicode,
 body.cpp .biisection.cpp,

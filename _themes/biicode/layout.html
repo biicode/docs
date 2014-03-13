@@ -136,6 +136,14 @@
 
     {# SIDE NAV, TOGGLES ON MOBILE #}
     <div class="nav-container">
+      <nav class="biicode-sections">
+        <a href="{{ pathto('biicode.html',1) }}" class="biicode biisection">General</a>
+        <a href="{{ pathto('c++.html',1) }}" class="cpp biisection">C/C++</a>
+        <a href="{{ pathto('arduino.html',1) }}" class="arduino biisection">Arduino</a>
+        <a href="{{ pathto('raspberrypi.html',1) }}" class="raspberrypi biisection">Raspberry Pi</a>
+        <a href="{{ pathto('nodejs.html',1) }}" class="nodejs biisection">Node.js</a>
+      </nav>
+
       <nav data-toggle="nav-shift" class="nav-side">
         <div class="side-nav-search">
           {% include "searchbox.html" %}
@@ -159,14 +167,6 @@
 
       {# PAGE CONTENT #}
       <div class="nav-content">
-        <nav class="biicode-sections">
-          <a href="{{ pathto('biicode.html',1) }}" class="biicode biisection">General</a>
-          <a href="{{ pathto('c++.html',1) }}" class="cpp biisection">C/C++</a>
-          <a href="{{ pathto('arduino.html',1) }}" class="arduino biisection">Arduino</a>
-          <a href="{{ pathto('raspberrypi.html',1) }}" class="raspberrypi biisection">Raspberry Pi</a>
-          <a href="{{ pathto('nodejs.html',1) }}" class="nodejs biisection">Node.js</a>
-        </nav>
-
         <div class="rst-content">
           {% include "breadcrumbs.html" %}
           {% include "prevnext.html" %}
