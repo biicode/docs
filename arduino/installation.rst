@@ -5,8 +5,8 @@ Installation
 
 This section describes how to **work on Arduino projects with biicode**. The installation steps depend on you current development platform. Simply select your operating system from the options you will find in the sections bellow.
 
-1. Biicode initiall setup
--------------------------
+1. Biicode initial setup
+------------------------
 
 First of all, **you need to complete the biicode general installation**. Follow :ref:`the instructions in the general documentation, following this link <first_steps>`. You must: 
 
@@ -16,21 +16,20 @@ First of all, **you need to complete the biicode general installation**. Follow 
 
 After you have complete these steps, proceed with the following section:
 
-2. Automatic Installation
--------------------------
+2. Install the development tools
+--------------------------------
 
-You can easily install the requirement tools using the ``bii setup:arduino`` command.
+**Just write** ``bii setup:arduino`` in your console and all needed tools will be installed automatically.
 
-.. code-block:: bash
+		.. code-block:: bash
 
-	$ bii setup:arduino
+		   $ bii setup:arduino
 
-If you have any problem with the automatic installation, try to do the manual installation.                                                            
+Type the previous command and follow the instructions. You might need to close your console and open a new one to reload the updated environment variables. In the new console window, re-run the ``bii setup:arduino`` command to verify everything is properly installed.
 
-3. Manual Installation
-----------------------
+If something went wrong please notify us at our `forum <http://forum.biicode.com/category/arduino>`_, and  we'll try to solve your problem as soon as possible.
 
-**If you have any problem with the automatic installation, try to install the tools manually.**     
+**Something went wrong & you are in a hurry? Try the manual installation:**
 
 Install the development tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
