@@ -1,17 +1,18 @@
 .. _rpi_cross_compiling:
 
-3. Cross-compiling set up
--------------------------
+3. Raspberry Pi Cross-compiling: automatic set up
+-------------------------------------------------
 
-This section describes how to **configure a Linux system for cross-compiling your Raspberry Pi C++ programs with biicode**. You will need a Linux distribution installed on your machine (or you can use a virtual machine). We recommend using `Ubuntu <http://www.ubuntu.com/>`_, but any Debian distribution should work just as fine. It is assumed :ref:`you have already installed a Raspbian image on your RPi board <raspbian_installation>`.
+This section describes how to **configure a Linux system for cross-compiling Raspberry Pi C++ programs with biicode**. You will need a Linux distribution installed on your machine (you can also use a virtual machine). We recommend using `Ubuntu <http://www.ubuntu.com/>`_, but any Debian distribution should work just as fine. It is assumed :ref:`you have already installed a Raspbian image on your RPi board <raspbian_installation>`.
 
-Basically, you must:
+Biicode provides with its client program a command-line tool that will download and install all needed tools for your. These tools are:
 
-#. Install **CMake and some development tools**.
-#. Download and install the **Raspberry Pi tools**, and 
-#. **Configure** your settings.
+#. **CMake and some development tools**
 
-These three steps are described bellow. If you experience any issues, please `contact us using our forum <http://forum.biicode.com/category/cross-platform-support/raspberry-pi>`_, and feel free to ask any questions.
+	To get them installed, simply execute the ``bii setup:cpp``.
+#. The **Raspberry Pi tools** for cross-compiling
+
+These three steps are described bellow. If you experience any issues, please `contact us using our forum <http://forum.biicode.com/category/raspberry-pi>`_, and feel free to ask any questions.
 
 **Note:** If your are using a **64-bit version of Linux** as development environment, :ref:`see this note about how to install 32-bit support on your machine <rpi_32bi_support>`.
 
