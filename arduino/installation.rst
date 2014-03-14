@@ -16,8 +16,8 @@ First of all, **you need to complete the biicode general installation**. Follow 
 
 After you have complete these steps, proceed with the following section:
 
-2. Install the development tools
---------------------------------
+2. Arduino tools installation
+-----------------------------
 
 **Just write** ``bii setup:arduino`` in your console and all needed tools will be installed automatically.
 
@@ -27,9 +27,14 @@ After you have complete these steps, proceed with the following section:
 
 Type the previous command and follow the instructions. You might need to close your console and open a new one to reload the updated environment variables. In the new console window, re-run the ``bii setup:arduino`` command to verify everything is properly installed.
 
-If something went wrong please notify us at our `forum <http://forum.biicode.com/category/arduino>`_, and  we'll try to solve your problem as soon as possible.
+If something went wrong please `notify us at our forum <http://forum.biicode.com/category/arduino>`_, and  we'll try to solve your problem as soon as possible.
 
 **Something went wrong & you are in a hurry? Try the manual installation:**
+
+Optional: Manual installation
+-----------------------------
+
+If something went wrong with the manual installation, please proceed as explained bellow:
 
 Install the development tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -95,7 +100,6 @@ Now, you can check CMake is working properly. Open a terminal window and run the
 
 	$ cmake --version
 	cmake version [version]
-
 
 Install Arduino software
 ^^^^^^^^^^^^^^^^^^^^^^^^

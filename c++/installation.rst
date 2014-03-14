@@ -24,8 +24,8 @@ First of all, **you need to complete the biicode general installation**. Follow 
 
 **After** you have complete these steps, proceed with the following sections:
 
-2. Install the development tools
---------------------------------
+2. C++ tools installation
+-------------------------
 
 **Just write** ``bii setup:cpp`` in your console and all needed the C++ tools will be installed automatically.
 
@@ -35,11 +35,10 @@ First of all, **you need to complete the biicode general installation**. Follow 
 
 Type the previous command and follow the instructions. You might need to close your console and open a new one to reload the updated environment variables. In the new console window, re-run the ``bii setup:cpp`` command to verify everything is properly installed.
 
-If something went wrong please notify us at our `forum <http://forum.biicode.com/category/c-c/>`_, and  we'll try to solve your problem as soon as possible.
+If something went wrong please `notify us at our forum <http://forum.biicode.com/category/c-c/>`_, and  we'll try to solve your problem as soon as possible.
 
 **Something went wrong & you are in a hurry? Try the manual installation:**
 
-    
 .. container:: tabs-section
 	 
 	.. _cpp_desktop_linux:
