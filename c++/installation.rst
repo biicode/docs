@@ -5,7 +5,8 @@ Installation
 
 This section describes how to install, set up and verify some **tools needed for building C and C++ projects with biicode**. These tools are:
 
-* a compiler, and
+* a compiler,
+* make, and
 * `CMake <http://www.cmake.org/>`_ , used by biicode for managing the compilation process. 
 
 Also, **it is suggested installing some IDE** for better management of your hives. Supported C++ IDEs are Eclipse, and Visual Studio C++ in Windows. However, it is up to you whether to install an IDE or not. If you do so, you will find additional instructions in the :ref:`IDE configuration section <ide_configuration>` of this documentation.
@@ -21,23 +22,22 @@ First of all, **you need to complete the biicode general installation**. Follow 
 * Download and install the **client binaries** for your operating system
 * Create a biicode **workspace**
 
-After you have complete these steps, proceed with the following sections:
+**After** you have complete these steps, proceed with the following sections:
 
 2. Install the development tools
 --------------------------------
 
-	**Just write** ``bii setup:cpp`` in your console and everything will be installed automatically.
+**Just write** ``bii setup:cpp`` in your console and all needed the C++ tool will be installed automatically.
 
-			.. code-block:: bash
+		.. code-block:: bash
 
-			   $ bii setup:cpp
+		   $ bii setup:cpp
 
-	Type the command and follow the instructions. You might need to close your console and re-run the command after the installation, to check everything went fine.
-	
-	If something went wrong please notify us at our `forum. <http://forum.biicode.com/>`_  we'll try to solve it as soon as possible.
-	
-	
-	**It didn't work & you are in a hurry? Try installing manually:**
+Type the previous command and follow the instructions. You might need to close your console and open a new one to reload the updated environment variables. In the new console window, re-run the ``bii setup:cpp`` command to verify everything is properly installed.
+
+If something went wrong please notify us at our `forum <http://forum.biicode.com/>`_, and  we'll try to solve your problem as soon as possible.
+
+**Something went wrong & you are in a hurry? Try the manual installation:**
 
     
 .. container:: tabs-section
@@ -110,7 +110,7 @@ After you have complete these steps, proceed with the following sections:
 3. Verify your installation
 ---------------------------
 
-Once you have installed the tools, you should check they are working properly. Open a terminal window and run the following commands. If the output messages look similar to these, the tools are successfully installed.
+Once you have installed the tools, **you should check they are working properly**. Open a terminal window and run the following commands. If the output messages look similar to these, the tools are successfully installed.
 
 .. code-block:: bash
 
