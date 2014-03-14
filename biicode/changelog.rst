@@ -7,16 +7,16 @@ Release 0.11.1
 --------------
 .. *(14-03-14)*
 
-* Development tools installation wizards
-* Autodetect arduino port and remove ``arduino:usb`` command
-* Removed environment config file
-* Add direct access icon in windows installation
+* New installation wizards for C++, Arduino, and Raspberry Pi
+* Arduino port automatic detection. The ``bii arduino:usb`` command is deprecated
+* Removed ``environment.bii`` config file
+* Add direct access icon for Windows biicode client
 * Fix find bug
 * Fix local cache bug
 * Nicer ``bii arduino:monitor`` in MacOS
-* Removed ``--default`` option in ``init`` and ``new``, added params to `new
-* Auto detect files with ``setup`` and ``loop`` as arduino entry points
-* Adding import as valid preprocessor directive.
+* Removed ``--default`` option in ``bii init`` and ``bii new``. New parameters for ``bii new``command.
+* Enry points automatic detection in files with ``setup`` and ``loop`` functions
+* Adding ``import`` as valid preprocessor directive.
 
 Release 0.10
 ------------
