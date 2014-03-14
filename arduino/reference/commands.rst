@@ -63,33 +63,6 @@ This command shows your settings about arduino or initializes the settings from 
 	INFO: If you want to change it, you have to modify this file:
 		[YOUR_BII_WORKSPACE/YOUR_HIVE]/bii/settings.bii
 
-.. _arduino_usb:
-
-``bii arduino:usb``: Scan the USB devices
------------------------------------------
-
-Shows us which is the port where you have connected your arduino, so you can configure your settings according to the port and board type.
-
-.. code-block:: bash
-
-	$ bii arduino:usb
-	USB Devices:
-
-	  Arduino Uno (COM3)
-
-**Note**: For MacOS users output will less informative.
-
-.. code-block:: bash
-
-	$ bii arduino:usb
-	USB Devices:
-	  /dev/cu.Bluetooth-Incoming-Port
-	  /dev/cu.Bluetooth-Modem
-	  /dev/cu.usbmodem1a1221
-
-In this case ``cu.usbmodem1a1221`` is the port you need to put in your settings.
-
-
 ``bii arduino:build``: Build the project
 ----------------------------------------
 

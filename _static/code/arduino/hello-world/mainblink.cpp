@@ -6,7 +6,6 @@ void setup() {
   my_blink.blink_setup(13, 1000); //pin = 13, interval = 1000 ms,
 }
 
-// bii:#entry_point()
 void loop(){
 
   my_blink.blink_loop();
