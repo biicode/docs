@@ -12,8 +12,8 @@ First of all, `sign up in our biicode website <https://www.biicode.com/accounts/
 
 .. _download_client_binaries:
 
-2. Download the client binaries
--------------------------------
+2. Download Biicode Installer
+-----------------------------
 
 Now, `download the appropriate client binaries for your development platform <https://www.biicode.com/downloads>`_, execute the setup program and follow the instructions.
 
