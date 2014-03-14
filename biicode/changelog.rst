@@ -3,6 +3,21 @@
 Changelog
 =========
 
+Release 0.11.1
+--------------
+.. *(14-03-14)*
+
+* Development tools installation wizards
+* Autodetect arduino port and remove ``arduino:usb`` command
+* Removed environment config file
+* Add direct access icon in windows installation
+* Fix find bug
+* Fix local cache bug
+* Nicer ``bii arduino:monitor`` in MacOS
+* Removed ``--default`` option in ``init`` and ``new``, added params to `new
+* Auto detect files with ``setup`` and ``loop`` as arduino entry points
+* Adding import as valid preprocessor directive.
+
 Release 0.10
 ------------
 .. *(03-03-14)*
