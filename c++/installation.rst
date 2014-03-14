@@ -26,10 +26,22 @@ After you have complete these steps, proceed with the following sections:
 2. Install the development tools
 --------------------------------
 
-Follow the instructions bellow to install these tools for your particular development platform:
+	**Just write** ``bii setup:cpp`` in your console and everything will be installed automatically.
 
-.. container:: tabs-section
+			.. code-block:: bash
+
+			   $ bii setup:cpp
+
+	Type the command and follow the instructions. You might need to close your console and re-run the command after the installation, to check everything went fine.
 	
+	If something went wrong please notify us at our `forum. <http://forum.biicode.com/>`_  we'll try to solve it as soon as possible.
+	
+	
+	**It didn't work & you are in a hurry? Try installing manually:**
+
+    
+.. container:: tabs-section
+	 
 	.. _cpp_desktop_linux:
 	.. container:: tabs-item
 
@@ -79,15 +91,6 @@ Follow the instructions bellow to install these tools for your particular develo
 		   - `MinGW <http://www.mingw.org/>`_ (make sure to include gcc, g++, and mingw32-make with your installation)
 		   - Visual Studio C++
 
-		.. container:: infonote
-
-			The command ``bii setup:cpp`` is able to automatically download and install CMake and MinGW, and configure the environment for you.
-
-			.. code-block:: bash
-
-			   $ bii setup:cpp
-
-			Execute the command and follow the instructions. You might need to close your console and re-run the command after the installation, to check everything went fine.
 
 		These are the **steps for manual installation** of our recommended tools:
 
