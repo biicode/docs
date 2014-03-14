@@ -5,7 +5,9 @@ The typical tutorial for learning new tools is a "Hello World" one. In Arduino, 
 This example shows how to build a simple *blink* functionality with biicode that you can automatically integrate in
 any project.
 
-Remember that you need to :ref:`configure your biicode workspace <arduino_installation>` with CMake, MinGW and the Arduino SDK.
+.. image:: ../_static/img/arduino/arduino_led.png
+
+Remember that you need to :ref:`install <arduino_installation>` CMake, MinGW and the Arduino SDK.
 
 1. Create a new hive
 --------------------
@@ -23,16 +25,25 @@ It will also prompt for your first block name. A block is a working unit you can
 You can have more than one block in your hives, but now lets start with just one. Enter a descriptive name,
 something that summarizes the functionality of all the files that will be in that block. Enter ``arduino_blink``.
 
-Last, it will prompt to generate a default firmware, i.e. a code file with a setup() and loop() functions.
+Then, it will prompt to generate a default firmware, i.e. a code file with a setup() and loop() functions.
 You can press ENTER to accept the default option here: ``yes``.
+
+Last, it will prompt the name of your arduino board. You can find a :ref:`list of boards supported in the references section <arduino_boards>` .
 
 .. code-block:: bash
 
    Select language: (java/node/fortran/python/cpp/arduino/None)
-   Introduce lang (default:None): arduino
+   Introduce lang: arduino
+
    How would you like to name your first block?
    Introduce block name: arduino_blink
+
    Generate a default firmware?  (YES/no) [ENTER]
+
+   Creating a main file "main.cpp"
+
+   Introduce board: mega2560
+   Arduino detected on port /dev/ttyACM0
 
 This command will create the following layout:
 
@@ -47,15 +58,11 @@ This command will create the following layout:
    |    +-- build
    |    +-- cmake
    |    +-- deps
-  
 
 You can open the file **main.cpp** in your favorite editor.
-biicode uses the ``// bii:#entry_point()`` comment line to define **main.cpp** like the starting point for your firmware.
-Put **this comment in all** files you want to be **Arduino firmwares**, typically those files with a setup() and loop() functions.
 
 .. literalinclude:: ../_static/code/arduino/hello-world/main_arduino.cpp
    :language: cpp
-   :emphasize-lines: 15
 		
 2. Build and upload
 -------------------
@@ -74,16 +81,12 @@ If you only want to build your firmware, just use ``arduino:build``.
 
 .. container:: infonote
 
-   The previous example will work with your default settings configured during the installation. If you need
-   you can change your hive settings.bii file (**arduino_blink_hive/bii/settings.bii**) with the info about your board and serial port.
+   If you need you can change your settings with the info about your board and serial port just execute ``arduino:settings``.
    Here is a Windows example:
 
-   .. code-block:: text
+   .. code-block:: bash
 
-      arduino:
-         board: {board: mega2560, no_autolibs: 'false', port: COM7, programmer: usbtinyisp}
-
-   If you want to remember how to configure your settings, :ref:`follow this link <arduino_settings>`.
+      $ bii arduino:settings
 
 3. Creating reusable code
 -------------------------
@@ -196,7 +199,6 @@ If you try again the reused example before, with a different interval or pin in 
      my_reuse_blink.blink_setup(15, 4000); 
    }
 
-   // bii:#entry_point()
    void loop(){
      my_reuse_blink.blink_loop();  
    }
@@ -262,6 +264,6 @@ Finally, you can test the updated code uploading to your Arduino.
 **Now you might be interested in:**
 
    - If something went wrong, you might want to search for `help in the forum <http://forum.biicode.com>`_, and open a new topic if necessary.
-   - Seeing :ref:`more arduino examples <arduino>`
+   - Seeing :ref:`more arduino examples <arduino>`.
    - I don't want to publish my block, as it doesn't work yet, but I want to save my hive for continuing later in a different computer. :ref:`Read here to check how <hive_usage>`.
-   - Specific :ref:`Arduino commands list <bii_arduino_tools>`
+   - Specific :ref:`Arduino commands list <bii_arduino_tools>`.

@@ -36,7 +36,7 @@ One essencial step for cross-compiling your programs is downloading and installi
 
 	$ sudo apt-get install git
 
-Now, you can choose whether to manually install these tools by yourself, or let biicode do all the work for you. Select and option bellow:
+Now, let biicode do all the work for you with the **automatic installation**. If you have any problem, try to do the manual installation. 
 
 .. container:: tabs-section
 
@@ -58,23 +58,8 @@ Now, you can choose whether to manually install these tools by yourself, or let 
 			...
 			done
 
-		After a while (this time varies dependending on your connection speed, so be patient) all necessary files will be downloaded into your ``/usr/local/tools`` folder. Also, your workspace ``bii/environment.bii`` file will be updated with this information:
-
-		.. code-block:: text
-
-			cpp:
-			  compilers:
-		        - path: /usr/local/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-gcc
-		          tool: {arch: ARM, family: GNU, subfamily: C}
-		        - path: /usr/local/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-g++
-		          tool: {arch: ARM, family: GNU, subfamily: CPP}
+		After a while (this time varies dependending on your connection speed, so be patient) all necessary files will be downloaded into your ``/usr/local/tools`` folder.
 			
-		If you want to download the cross compilers into a different location, or if you already have downloaded them, simply indicate this information to the configuration program. For example, to download and configure the tools into your home folder, type:
-
-		.. code-block:: bash
-
-			$ bii setup:rpi ~/tools
-
 	.. container:: tabs-item
 
 		.. rst-class:: tabs-title
@@ -87,41 +72,6 @@ Now, you can choose whether to manually install these tools by yourself, or let 
 
 			$ cd ~
 			$ sudo git clone https://github.com/raspberrypi/tools.git
-
-		Now you  only need to configure you workspace ``bii/environment.bii`` file. You can do so  with the help ot the ``bii setup:rpi`` utility (executed from your biicode workspace path) providing the location of the corss-compiling tools.
-
-		.. code-block:: bash
-
-			$ bii setup:rpi <tools_path>
-
-		Now, your ``bii/environment.bii`` should contain the lines displayed bellow:
-
-		.. code-block:: text
-
-			cpp:
-			  compilers:
-		        - path: [path_to_the_tools]/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-gcc
-		          tool: {arch: ARM, family: GNU, subfamily: C}
-		        - path: [path_to_the_tools]/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-g++
-		          tool: {arch: ARM, family: GNU, subfamily: CPP}
-
-
-.. _rpi_default_settings:
-
-3.3. Board configuration
-........................
-
-The last step is to update the workspace ``bii/environment.bii`` file with some information about your Raspberry Pi. This information will be used for deploying your program into an appropriate location of your card file system. Just look for this line in your workspace ``bii/environment.bii`` file and fill in the correct values: ::
-	
-	rpi:
-	  rpis:
-	    - {directory: /home/pi, ip: 127.0.0.8, password: raspberry, user: pi}
-	
-* **directory**: Raspberry Pi directory where you want your programs to be saved. Default value is the ``pi`` user home folder.
-* **ip**: Raspberry Pi local IP address. Write here your Raspberry Pi network address, that you can find out executing the ``ifconfig`` in a console inside the RPi.
-* **user**: Raspberry Pi user name. Default value is ``pi``.
-* **password**: Raspberry Pi password.
-
 
 .. _rpi_32bi_support:
 
