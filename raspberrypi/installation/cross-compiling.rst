@@ -36,7 +36,7 @@ One essencial step for cross-compiling your programs is downloading and installi
 
 	$ sudo apt-get install git
 
-Now, you can choose whether to manually install these tools by yourself, or let biicode do all the work for you. Select and option bellow:
+Now, let biicode do all the work for you with the **automatic installation**. If you have any problem, try to do the manual installation. 
 
 .. container:: tabs-section
 

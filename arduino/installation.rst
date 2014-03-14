@@ -14,7 +14,7 @@ First of all, **you need to complete the biicode general installation**. Follow 
 * Download and install the **client binaries** for your operating system
 * Create a biicode **workspace**
 
-After you have complete these steps, proceed with the following sections:
+After you have complete these steps, proceed with the following section:
 
 2. Automatic Installation
 -------------------------
@@ -23,10 +23,14 @@ You can easily install the requirement tools using the ``bii setup:arduino`` com
 
 .. code-block:: bash
 
-	$ bii setup:arduino                                                            
+	$ bii setup:arduino
+
+If you have any problem with the automatic installation, try to do the manual installation.                                                            
 
 3. Manual Installation
 ----------------------
+
+**If you have any problem with the automatic installation, try to install the tools manually.**     
 
 Install the development tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

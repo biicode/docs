@@ -5,6 +5,8 @@ The typical tutorial for learning new tools is a "Hello World" one. In Arduino, 
 This example shows how to build a simple *blink* functionality with biicode that you can automatically integrate in
 any project.
 
+.. image:: ../_static/img/arduino/arduino_led.png
+
 Remember that you need to :ref:`install <arduino_installation>` CMake, MinGW and the Arduino SDK.
 
 1. Create a new hive
