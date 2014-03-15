@@ -6,9 +6,9 @@ C/C++ Documentation
 .. toctree::
 	:maxdepth: 2
 
-	c++/installation
-	c++/getting-started
-	c++/examples
-	c++/ide-configuration
-	c++/reference
-	c++/faqs
+	c++/c++-set-up
+	c++/c++-getting-started
+	c++/c++-examples
+	c++/c++-ide-configuration
+	c++/c++-reference
+	c++/c++-faqs

@@ -184,3 +184,10 @@ You can include a special informative section for any particular topic:
     **Headline for the informative section**
 
 	Contents go here
+
+Special styles
+==============
+
+:underline:`Underlined text`
+:underline_bold:`Underlined and bold text`
+

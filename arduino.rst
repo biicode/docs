@@ -16,8 +16,8 @@ Here you will learn how to set up your system, and create your first Arduino pro
 .. toctree::
 	:maxdepth: 2
 
-	arduino/installation
-	arduino/getting-started
-	arduino/examples
-	arduino/reference
-	arduino/faqs
+	arduino/arduino-set-up
+	arduino/arduino-getting-started
+	arduino/arduino-examples
+	arduino/arduino-reference
+	arduino/arduino-faqs

@@ -8,5 +8,5 @@ Node.js Documentation
 .. toctree::
    :maxdepth: 2
 
-   nodejs/installation
-   nodejs/getting-started
+   nodejs/nodejs-set-up
+   nodejs/nodejs-getting-started

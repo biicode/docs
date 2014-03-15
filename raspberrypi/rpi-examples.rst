@@ -1,4 +1,4 @@
-.. _raspberry_pi:
+.. _raspberry_pi_examples:
 
 Examples
 ========
