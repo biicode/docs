@@ -19,7 +19,11 @@ Now, `download the appropriate client binaries for your development platform <ht
 
 **Biicode is an evolving technology**, and many modifications and improvements are introduced weekly with our releases. Rememeber to check frequently for new versions of the client, consult the :ref:`ChangeLog <changelog>`, and **make sure you are not using a deprecated version** reading our :ref:`upgrading section <upgrading>`.
 
+
+.. _alternative_install_debian:
+
 .. container:: infonote
+
 
     **Alternative install for Debian based distributions (Ubuntu, Raspbian)**
 
