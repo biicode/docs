@@ -1,7 +1,7 @@
 .. _cpp_installation:
 
-Installation
-============
+C++ set up
+==========
 
 This section describes how to install, set up and verify some **tools needed for building C and C++ projects with biicode**. These tools are:
 

@@ -1,7 +1,7 @@
 .. _node_installation:
 
-Installation
-============
+Node.js set up
+==============
 
 This section describes how to set uo your system and install the software to develop Node.js programs with biicode.
 

@@ -5731,7 +5731,7 @@ body.nodejs .tabs .tab.current
 .infonote
 {
   position: relative;
-  margin-bottom: 20px;
+  margin: 20px 0;
   border: 1px solid #ddd;
   border-radius: 3px;
   color: #777;
@@ -5763,6 +5763,29 @@ body.nodejs .tabs .tab.current
   text-align: left;
   z-index: 200;
 }
+
+.todo {
+  border-width: 1px 1px 1px 30px;
+  border-style: solid;
+  padding: 10px;
+  border-radius: 3px;
+  position: relative;
+}
+.todo:before {
+  font-family: fontawesome-webfont;
+  content:"\f14e";
+  position: absolute;
+  font-size: 26px;
+  left: -26px;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.raspberrypi .todo {
+  border-color: #d6264f;
+}
+
 .biicode-sections a {
   color: #fff;
   font-weight: normal !important;
@@ -5778,7 +5801,7 @@ body.arduino .biicode-sections {
   background-color:#00979c;
 }
 body.raspberrypi .biicode-sections {
-  background-color:#d6264f;
+  background-color: #d6264f;
 }
 body.nodejs .biicode-sections {
   background-color:#80bd01;
@@ -5800,6 +5823,40 @@ body.nodejs .biisection.nodejs
  {
   font-weight: bold;
   border-bottom: 3px solid #fff;
+}
+
+.underline {
+  text-decoration: underline;
+}
+.bold {
+  font-weight: bold;
+}
+
+.moreinfo {
+  cursor:pointer;
+  width: 1.5em;
+  display:inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 1em;
+  font-size: .7em;
+  color: #666;
+  padding: 2px;
+  -webkit-transition: width .5s ease;
+     -moz-transition: width .5s ease;
+      -ms-transition: width .5s ease;
+       -o-transition: width .5s ease;
+          
+  transition: all .5s ease;
+}
+.moreinfo:before {
+  content: "[?]  ";
+}
+.moreinfo:hover {
+  width: auto;
+  cursor: auto;
+  background-color: #666;
+  color: #fff;
 }
 
 @media print {

@@ -69,6 +69,19 @@ exclude_patterns = ['_build', '_guide', '_articles']
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
 
+# biicode configuration for custom classes:
+rst_prolog = """
+.. role:: underline
+	:class: underline
+
+.. role:: underline_bold
+	:class: underline bold
+
+.. role:: moreinfo
+	:class: moreinfo
+
+"""
+
 # If true, '()' will be appended to :func: etc. cross-reference text.
 #add_function_parentheses = True
 
