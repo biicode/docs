@@ -308,7 +308,7 @@ Finally, you can test the updated code running on your Raspberry Pi.
 
 **Now you might be interested in:**
 
-   - If something went wrong, you might want to `find some help in the forum <http://forum.biicode.com/category/cross-platform-support/raspberry-pi>`_, and open a new topic if necessary.
-   - Seeing :ref:`more Raspberry Pi examples <raspberry_pi>`.
+   - If something went wrong, you might want to `find some help in the forum <http://forum.biicode.com/category/raspberry-pi>`_, and open a new topic if necessary.
+   - Seeing :ref:`more Raspberry Pi examples <raspberry_pi_examples>`.
    - I don't want to publish my block, as it doesn't work yet, but I want to save my hive for continuing later in a different computer. :ref:`Read here to check how <hive_usage>`.
    - Specific :ref:`Raspberry Pi commands list<bii_rpi_tools>`

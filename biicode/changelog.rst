@@ -29,6 +29,7 @@ Release 0.10
 
 Release 0.09
 ------------
+
 .. *(13-02-14)*
 
 * There is a brand new visualization in browser of hives and dependencies with "$bii deps --graph"
@@ -103,7 +104,7 @@ Release 0.03.4
 
 * Init and new configuration wizards
 * Improved Eclipse support. You can read about it :ref:`here <ide_eclipse>`
-* Improved Raspberry Pi support. You can read about it :ref:`here <raspberry_pi>`
+* Improved Raspberry Pi support.
 * Changed hive structure. You can read about new layout :ref:`here <hive_layout>`
 * User can edit cmakes http://docs.biicode.com/en/latest/reference/cpp_build_files.html
 

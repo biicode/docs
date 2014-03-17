@@ -4,4 +4,5 @@ _build
 .pydevproject
 .settings
 .project
+Thumbs.db
 *.pyc
