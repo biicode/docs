@@ -27,11 +27,11 @@ The layout will be::
 	|    |          +-- hello (block maya/hello)
 	|    |       	        |-- hello.cpp
 	|    |        	        |-- hello.h
-	|    |                  └── main.cpp
+	|    |                  +-- main.cpp
 	|    +-- cmake
 	|    |    |-- CMakeLists.txt
-	|    |    ├── bii_targets.cmake
-	|    |    └── bii_vars.cmake
+	|    |    |-- bii_targets.cmake
+	|    |    +-- bii_vars.cmake
 
 
 CMakeLists.txt file

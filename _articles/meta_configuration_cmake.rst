@@ -50,7 +50,7 @@ In biicode, each project is called a hive, and it has the following simplified l
 |    |          |       |-- hello.h
 |    |          +-- my_other_block
 |    |        	        |-- foo.c
-|    |                  └── bar.h
+|    |                  +-- bar.h
 |    +-- build (to store generated project and build files)
 |    +-- cmake (stores the generated CMake files)
 |    +-- deps (stores source code of dependencies)
@@ -67,11 +67,11 @@ The layout will be::
 |    |          +-- hello (block maya/hello)
 |    |       	        |-- hello.cpp
 |    |        	        |-- hello.h
-|    |                  └── main.cpp
+|    |                  +-- main.cpp
 |    +-- cmake
 |    |    |-- CMakeLists.txt
-|    |    ├── bii_targets.cmake
-|    |    └── bii_vars.cmake
+|    |    |-- bii_targets.cmake
+|    |    +-- bii_vars.cmake
 
 
 Generated CMake files
@@ -147,7 +147,7 @@ For example, imagine that the user **willy** has developed a similar application
 |    |          +-- bye (block willy/bye)
 |    |       	        |-- bye.cpp
 |    |        	        |-- bye.h
-|    |                  └── main.cpp
+|    |                  +-- main.cpp
 
 Willy can very easily publish and share his code, with the command (see HYPERLINK to DOCU):
 
