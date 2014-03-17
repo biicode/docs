@@ -1,6 +1,6 @@
 #!/bin/sh
 while [ true ]
 do
-    make html
+    sphinx-build -b html . _build/html
     sleep 5
 done

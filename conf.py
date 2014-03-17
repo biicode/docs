@@ -1,3 +1,12 @@
+import sys, os
+
+sys.path.append( os.path.abspath('.'))
+
+from conf_sitemap import generate_sitemap
+
+def setup(app):
+    app.connect('build-finished', generate_sitemap)
+
 # -*- coding: utf-8 -*-
 #
 # biicode docs documentation build configuration file, created by
@@ -11,7 +20,6 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sys, os
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -181,7 +189,7 @@ html_static_path = ['_static']
 # If true, an OpenSearch description file will be output, and all pages will
 # contain a <link> tag referring to it.  The value of this option must be the
 # base URL from which the finished HTML is served.
-#html_use_opensearch = ''
+#html_use_opensearch = 'open_search_file.txt'
 
 # This is the file name suffix for HTML files (e.g. ".xhtml").
 #html_file_suffix = None
