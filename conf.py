@@ -2,6 +2,7 @@ import sys, os
 
 sys.path.append( os.path.abspath('.'))
 
+# sitemap generation
 from conf_sitemap import generate_sitemap
 
 def setup(app):
