@@ -16,3 +16,5 @@ This is the biicode general documentation.
    biicode/reference
    biicode/changelog
    biicode/faqs
+   biicode/upgrading
+   biicode/troubleshooting

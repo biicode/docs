@@ -1,3 +1,5 @@
+.. _arduino_getting_started:
+
 Getting Started
 ===============
 

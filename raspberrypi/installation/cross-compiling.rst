@@ -12,24 +12,24 @@ Biicode provides with its client program a command-line utility that will downlo
 
 First, try the automatic installation provided by biicode. Only if something goes wrong, proceed with the manual installation described at the end of this section.
 
-2.1 Automatic installation
+3.1 Automatic installation
 ..........................
 
-To **automaticaly set up your system for cross-compiling Raspberry Pi projects**, simply execute the following commands:
+To **automatically set up your system for cross-compiling Raspberry Pi projects**, **simply execute** the following commands:
 
 #. ``bii setup:cpp``. This will install generic compilation tools for your Linux platform. Run the command and follow the instructions
 #. ``bii setup:rpi``. This will install the cross-compiling tools. Again, run the command and follow the on-screen instructions.
 
-**If something fails with the automatic installation**, please `contact us using our forum <http://forum.biicode.com/category/raspberry-pi>`_, and feel free to ask any questions. Then, **proceed with the alternataive manual installation** described bellow.
+**If something fails with the automatic installation**, please `contact us at our forum <http://forum.biicode.com/category/raspberry-pi>`_, and feel free to ask any questions. Then, **proceed with the alternative manual installation** described bellow.
 
-2.2 Manual installation
+3.2 Manual installation
 .......................
 
-This section describes the manual installation of the cross-compiling tools. You only need to go through this section if something failed during the automatic installation explained before. If you experience any issues during this manual installation, please `contact us using our forum <http://forum.biicode.com/category/raspberry-pi>`_, and we'll try to solve your problem as soon as possible.
+This section describes the manual installation of the cross-compiling tools. You only need to go through this section if something failed during the automatic installation explained before. If you experience any issues during this manual installation, please `contact us at our forum <http://forum.biicode.com/category/raspberry-pi>`_, and we'll try to solve your problem as soon as possible.
 
 **Note:** If your are using a **64-bit version of Linux** as development environment, :ref:`see this note about how to install 32-bit support on your machine <rpi_32bi_support>`.
 
-2.2.a. C++ tools installation
+3.2.a. C++ tools installation
 +++++++++++++++++++++++++++++
 
 Install the required development tools as root:
@@ -40,7 +40,7 @@ Install the required development tools as root:
 
 .. _rpi_cc_tools:
 
-2.2.b. Raspberry Pi tools installation
+3.2.b. Raspberry Pi tools installation
 ++++++++++++++++++++++++++++++++++++++
 
 One essencial step for cross-compiling your programs is downloading `the Raspberry Pi tools from this Github repository <https://github.com/raspberrypi/tools/>`_. You'll need Git installed on your Linux system. You can install an existing package on your Ubuntu platform with the following command:
@@ -66,7 +66,7 @@ After a while, the RPi cross-compiling tools will be available in your system. T
 4. What to do next?
 -------------------
 
-You have successfully set up your system for developing C++ RPi programs with biicode. Now we present some resources that will help you:
+You have successfully set up your system for developing C++ RPi programs with biicode. These are some resources that will help you:
 
 .. container:: todo
 	
@@ -97,7 +97,7 @@ You have successfully set up your system for developing C++ RPi programs with bi
 
 	.. code-block:: bash
 
-		$ sudo apt-get install ia32-libs
+		$ sudo apt-get install lib32ncurses5 
 		
 	It is possible that you encounter some of the following errors:
 

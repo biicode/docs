@@ -18,8 +18,14 @@ After you have complete these steps, proceed with the following section:
 
 2. Arduino tools installation
 -----------------------------
+This section describes **how to configure your system for Arduino programs with biicode.**
 
-**Just write** ``bii setup:arduino`` in your console and all needed tools will be installed automatically.
+First, try the automatic installation provided by biicode. Only if something goes wrong, proceed with the manual installation described at the end of this section.
+
+2.1 Automatic installation
+..........................
+
+**Just execute** ``bii setup:arduino`` in your console and all needed tools will be installed automatically.
 
 		.. code-block:: bash
 
@@ -27,17 +33,16 @@ After you have complete these steps, proceed with the following section:
 
 Type the previous command and follow the instructions. You might need to close your console and open a new one to reload the updated environment variables. In the new console window, re-run the ``bii setup:arduino`` command to verify everything is properly installed.
 
-If something went wrong please `notify us at our forum <http://forum.biicode.com/category/arduino>`_, and  we'll try to solve your problem as soon as possible.
+**If something fails with the automatic installation**, please `contact us at our forum <http://forum.biicode.com/category/arduino>`_, and feel free to ask any questions. Then, **proceed with the alternative manual installation** described bellow.
 
-**Something went wrong & you are in a hurry? Try the manual installation:**
 
-Optional: Manual installation
------------------------------
+2.2. Manual installation
+........................
 
-If something went wrong with the manual installation, please proceed as explained bellow:
+This section describes the manual installation of Arduino tools. You only need to go through this section if something failed during the automatic installation explained before. If you experience any issues during this manual installation, please `contact us at our forum <http://forum.biicode.com/category/raspberry-pi>`_, and we'll try to solve your problem as soon as possible.
 
-Install the development tools
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2.2.a. Install the development tools
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In order to configure and compile your Arduino projects with biicode, you need to install some additional tools. CMake is an open source tool that manages the software building process in a compiler-independent manner. Select your operating system bellow, and follow the instructions.
 
@@ -101,8 +106,8 @@ Now, you can check CMake is working properly. Open a terminal window and run the
 	$ cmake --version
 	cmake version [version]
 
-Install Arduino software
-^^^^^^^^^^^^^^^^^^^^^^^^
+2.2.b. Install Arduino software
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You need to `download the Arduino software <http://arduino.cc/en/Main/Software>`_ first, it is important to choose a SDK compatible with your board. If you need more info visit the `official Arduino website <http://arduino.cc/en/Main/Software>`_.
 
@@ -139,3 +144,16 @@ You must install the SDK in the following path.
 		.. code-block:: text
 			
 			C:/Program Files(x86) /Arduino
+
+4. What to do next?
+-------------------
+
+You have successfully set up your system for developing Arduino programs with biicode. These are some resources that will help you:
+
+.. container:: todo
+	
+	* Read the :ref:`Arduino getting started guide <arduino_getting_started>`. You'll learn how to create, build and execute your first biicode hive project.
+	* Visit the :ref:`Arduino examples section <arduino>`.
+	* Read the reference for :ref:`Arduino biicode commands <arduino_reference>`
+	* `Visit our forum and make any questions <http://forum.biicode.com/category/arduino>`_
+
