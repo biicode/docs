@@ -11,6 +11,23 @@ However, as biicode is an evolving technology, sometimes you will need to perfor
 Updating your workspace from older versions
 -------------------------------------------
 
+0.11.1
+^^^^^^
+**Important:** in this version there's no :ref:`enviroment.bii` file. 
+
+There are new installation wizards for C/C++, Arduino and Raspberry Pi. You don’t need to manually download external tools anymore. To set them up you only need to execute one of the following commands in your console: 
+C/C++: ``bii setup:cpp`` 
+Arduino:``bii setup:arduino`` 
+Raspberry Pi: ``bii setup:rpi`` 
+
+Whenever you are establishing or changing your settings, just write 
+bii arduino:settings or bii rpi:settings and answer the wizard’s questions!
+
+Also, **it automatically detects which port is your Arduino connected**.
+
+Any trouble, `check our troubleshooting for Biicode version 0.11.1 <http://docs.biicode.com/biicode/troubleshooting.html>`_ 
+
+
 0.6.2
 ^^^^^
 
