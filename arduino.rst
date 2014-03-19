@@ -19,5 +19,6 @@ Here you will learn how to set up your system, and create your first Arduino pro
 	arduino/arduino-set-up
 	arduino/arduino-getting-started
 	arduino/arduino-examples
+	arduino/arduino-ide-configuration
 	arduino/arduino-reference
 	arduino/arduino-faqs
