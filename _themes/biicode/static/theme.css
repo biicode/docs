@@ -5782,8 +5782,20 @@ body.nodejs .tabs .tab.current
   -moz-osx-font-smoothing: grayscale;
 }
 
+body.biicode .todo {
+  border-color:#fa0;
+}
+body.cpp .todo {
+  border-color:#3480ff; 
+}
+body.arduino .todo {
+  border-color:#00979c;
+}
 body.raspberrypi .todo {
   border-color: #d6264f;
+}
+body.nodejs .todo {
+  border-color:#80bd01;
 }
 
 .biicode-sections a {
