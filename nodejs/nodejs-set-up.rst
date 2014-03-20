@@ -21,4 +21,13 @@ After you have complete these steps, proceed with the following section:
 
 In order to use biicode technology with you Node.js programs, you only need to install on your system the appropriate `version of Node.js <http://nodejs.org/download>`_ . 
 
-Then :ref:`follow this link to see a simple 'Hello World' Node.js program <hello_world_node>`.
+3. What to do next?
+-------------------
+
+You have successfully set up your system for developing Node.js programs with biicode. These are some resources that will help you:
+
+.. container:: todo
+	
+	* Read the :ref:`Node.js getting started guide <hello_world_node>`. You'll learn how to create, build and execute your first biicode hive project.
+	* `Visit our forum and make any questions <http://forum.biicode.com/category/arduino>`_
+

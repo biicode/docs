@@ -25,7 +25,7 @@ This is a **special folder** which is created on your system during the :ref:`in
 
 Simply speaking, your workspace **will hold your hives**, or projects.
 
-While you create a new Workspace, the ``bii init`` command will generate a special folder, ``bii``. This folder contains some important :ref:`configuration files section<config_files>` for the client program and general settings for your hives, so do not remove it!
+While you create a new Workspace, the ``bii init`` command will generate a special folder, ``bii``. This folder contains some important :ref:`configuration files section<config_files>` for the biicode client program and general settings for your hives, so do not remove it!
 
 :ref:`Here can learn more about the workspace folders layout<workspace_layout>`.
 

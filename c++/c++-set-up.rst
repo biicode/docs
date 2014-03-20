@@ -11,7 +11,7 @@ This section describes how to install, set up and verify some **tools needed for
 
 Also, **it is suggested installing some IDE** for better management of your hives. Supported C++ IDEs are Eclipse, and Visual Studio C++ in Windows. However, it is up to you whether to install an IDE or not. If you do so, you will find additional instructions in the :ref:`IDE configuration section <ide_configuration>` of this documentation.
 
-The steps for the installation of these tools vary from one operaing system to another. Here you will find detailed instructions for your actual development platform.
+The steps for the installation of these tools vary from one operating system to another. Here you will find detailed instructions for your actual development platform.
 
 1. Biicode initial setup
 ------------------------
@@ -26,8 +26,14 @@ First of all, **you need to complete the biicode general installation**. Follow 
 
 2. C++ tools installation
 -------------------------
+This section describes **how to configure your system for C/C++ programs with biicode.**
 
-**Just write** ``bii setup:cpp`` in your console and all needed the C++ tools will be installed automatically.
+First, try the automatic installation provided by biicode. Only if something goes wrong, proceed with the manual installation described at the end of this section.
+
+2.1 Automatic installation
+..........................
+
+**Just execute** ``bii setup:cpp`` in your console and all needed the C++ tools will be installed automatically.
 
 		.. code-block:: bash
 
@@ -35,9 +41,12 @@ First of all, **you need to complete the biicode general installation**. Follow 
 
 Type the previous command and follow the instructions. You might need to close your console and open a new one to reload the updated environment variables. In the new console window, re-run the ``bii setup:cpp`` command to verify everything is properly installed.
 
-If something went wrong please `notify us at our forum <http://forum.biicode.com/category/c-c/>`_, and  we'll try to solve your problem as soon as possible.
+**If something fails with the automatic installation**, please `contact us at our forum <http://forum.biicode.com/category/arduino>`_, and feel free to ask any questions. Then, **proceed with the alternative manual installation** described bellow.
 
-**Something went wrong & you are in a hurry? Try the manual installation:**
+2.2. Manual installation
+........................
+
+This section describes the manual installation of the C/C++ tools. You only need to go through this section if something failed during the automatic installation explained before. If you experience any issues during this manual installation, please `contact us at our forum <http://forum.biicode.com/category/raspberry-pi>`_, and we'll try to solve your problem as soon as possible.
 
 .. container:: tabs-section
 	 
@@ -133,5 +142,16 @@ Once you have installed the tools, **you should check they are working properly*
 	$ mingw32-make --version
 	GNU Make [version]
 	...
+4. What to do next?
+-------------------
+
+You have successfully set up your system for developing C++ programs with biicode. These are some resources that will help you:
+
+.. container:: todo
+	
+	* Read the :ref:`C/C++ getting started guide <hello_world>`. You'll learn how to create, build and execute your first biicode hive project.
+	* Visit the :ref:`C/C++ examples section <cpp_examples>`.
+	* Read the reference for :ref:`C/C++ biicode commands <biicode_reference>`
+	* `Visit our forum and make any questions <http://forum.biicode.com/>`_
 
 

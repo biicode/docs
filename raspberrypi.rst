@@ -12,6 +12,7 @@ Using biicode, you'll benefit from several advantages for your Raspberry Pi expe
 	1. Easy **Cross-compiling**, including support for OpenGL ES apps. 
 	2. **Reuse yours and other users' code**. Code reusing is made easy; you only need to ``#include`` the file you need. Biicode automatically downloads all missing code, and builds your projects.
 	3. Biicode also provides **a simple way to send information and communicate via SSH** with your board.
+	4. You can also install biicode in the raspberry if you want to.
 
 In this part of the documentation you will find resources and tutorials for installing all necessary tools, create your first Raspberry Pi C++ project, examples, and technology reference.
 
