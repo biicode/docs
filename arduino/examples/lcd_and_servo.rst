@@ -6,9 +6,9 @@ With this example we display the angle of a servo into a LCD. We use the servo.h
 What do we need?
 ----------------
 
-* Standard servo.
-* Display lcd 2x16.
-* Potentiometer.
+* One standard servo.
+* One display lcd 2x16.
+* One potentiometer.
 
 Scheme
 ------
