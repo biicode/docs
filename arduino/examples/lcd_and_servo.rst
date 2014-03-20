@@ -30,8 +30,9 @@ The code: Display the servo angle into a LCD
 	Servo myservo;
 
 	void write_angle_lcd(int pos){
-		lcd.setCursor(0, 1);
-	    lcd.print(pos);lcd.print(" ");
+	    lcd.setCursor(0, 1);
+	    lcd.print(pos);
+	    lcd.print(" ");
 	}
 
 	void setup() {
@@ -48,7 +49,7 @@ The code: Display the servo angle into a LCD
 	    write_angle_lcd(pos);
 	    delay(50);
 	  } 
-	  for(pos = 180; pos>=0; pos-=1)
+	  for(pos = 180; pos >= 0; pos -= 1)
 	  {                       
 	    myservo.write(pos);
 	    write_angle_lcd(pos);

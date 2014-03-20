@@ -1,15 +1,17 @@
-arduino code's adaptation guide
-===============================
+How to adapt your code
+======================
+
+This section describes how to adapt your Arduino projects to use with biicode. The adaptation steps depend on the complexity of your project. Simply select the section best suits to your project from the options you will find bellow and follow it.
 
 1. Simple .ino file
 -------------------
 
 **General rules**
 
-* Change the file extension from .ino to .cpp, ex. ``sweep.ino`` to ``sweep.cpp``.
-* Include the Arduino.h library, ex. ``#include"Arduino.h"``.
-* Change the arcuino core library includes to the biicode format, ex. ``Servo.h`` to ``arduino/libraries/servo/servo.h``.
-* Put the function prototypes at the code's beginning, ex. ``void servo_loop();``.
+* Change the file extension from .ino to .cpp, for example ``sweep.ino`` to ``sweep.cpp``.
+* Include the Arduino.h library, for example ``#include"Arduino.h"``.
+* Change the arcuino core library includes to the biicode format, for example ``Servo.h`` to ``arduino/libraries/servo/servo.h``.
+* Put the function prototypes at the code's beginning, for example ``void servo_loop();``.
 
 .. container:: tabs-section
 	
@@ -84,7 +86,7 @@ arduino code's adaptation guide
 
 **General rules**
 
-* Change the extension to the main file to .cpp and the other to .h, ex. ``sweep.ino`` to ``sweep.cpp`` and ``servo_functions.ino`` to ``servo_functions.h``
+* Change the extension to the main file to .cpp and the other to .h, for example ``sweep.ino`` to ``sweep.cpp`` and ``servo_functions.ino`` to ``servo_functions.h``
 
 .. code-block:: text
 
@@ -98,9 +100,9 @@ arduino code's adaptation guide
    |    +-- sweep.cpp
    |    +-- servo_functions.h
 
-* Include the Arduino.h library, ex. ``#include"Arduino.h"``.
-* Change the arcuino core library includes to the biicode format, ex. ``Servo.h`` to ``arduino/libraries/servo/servo.h``.
-* Put the function prototypes, if you need, at the code's beginning, ex. ``void servo_loop();``.
+* Include the Arduino.h library, for example ``#include"Arduino.h"``.
+* Change the arcuino core library includes to the biicode format, for example ``Servo.h`` to ``arduino/libraries/servo/servo.h``.
+* Put the function prototypes, if you need, at the code's beginning, for example ``void servo_loop();``.
 
 .. container:: tabs-section
 	
