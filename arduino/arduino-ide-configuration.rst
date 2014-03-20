@@ -1,11 +1,11 @@
 IDE configuration
 =================
 
-Biicode offers **integration with Eclipse** for Arduino programmers. It is able to do the appropriate project setup on your behalf. This way you can work on your biicode hive, using the underlying infrastructure and services provided by standard IDEs, just like any other standard project. In fact, this configuration can be established from the very first momment, when you create a new hive with the ``bii new`` command (see :ref:`the commands reference for more information<bii_new_command>`).
+Biicode offers integration with `Eclipse <https://www.eclipse.org/downloads/>`_ for Arduino programmers. It is able to do the appropriate project setup on your behalf. This way you can work on your biicode hive, using the underlying infrastructure and services provided by standard IDEs, just like any other standard project. In fact, this configuration can be established from the very first momment, when you create a new hive with the ``bii new`` command (see :ref:`the commands reference for more information<bii_new_command>`).
 
 This section details the steps you should follow to achieve this integration.
 
-First of all, you need to configure your hive for **Eclipse**. If you already did so when creating the hive with the help of the ``bii new`` command, you can skip this section. Otherwise, you can define your preferences in your Arduino settings with ``arduino:settings``:
+First of all, you need to configure your hive for **Eclipse IDE for C/C++**. If you already did so when creating the hive with the help of the ``bii new`` command, you can skip this section. Otherwise, you can define your preferences in your Arduino settings with ``arduino:settings``:
 
 .. code-block:: bash
 
@@ -17,7 +17,7 @@ First of all, you need to configure your hive for **Eclipse**. If you already di
 
 After modifying your settings, you must execute the ``bii arduino:configure`` command to apply all chantes and **generate the project files**.
 
-If you have cofigured your hive settings as in the previous example, your are ready to import your project into the Eclipse IDE.
+If you have cofigured your hive settings as in the previous example, your are ready to import your project into the Eclipse IDE. It is important that you use a version of Eclipse that contains the C/C++ Toolkit. So we recommend using `Eclipse IDE for C/C++ Developers <https://www.eclipse.org/downloads/>`_.
 
 How to import your project
 --------------------------
