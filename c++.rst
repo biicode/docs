@@ -9,11 +9,12 @@ storing all the necessary source code files in your project.
 
 In this context, biicode technology gives you several advantages for enriching your C++ experience:
 
-	1. **Reuse yours and other users' code**. Reusing made easy: just ``#include`` the file you need and you get it. No more copy and paste files from project to project or dowloading and compiling external libraries.
-   2. Biicode uses `cmake <http://web.biicode.com/blog/meta-configuration-of-cc-projects-with-cmake-1>`_, if you know cmake you can `customize your builds <http://docs.biicode.com/c++/reference/cpp-build-files.html>`_, if you don't, biicode will automatically handle builds for you. 
-	3. Great for rapid prototyping and trying out new libraries/versions.
-	4. Smart management and finding of dependencies. We look for jointly compatible versions and allow `full control of your dependencies <http://docs.biicode.com/biicode/reference/configuration_files/policies.html?highlight=policies>`_.
-	5. Many of `examples <http://docs.biicode.com/c++/c++-examples.html>`_ to get started with.
+   #. Reusing made easy: just ``#include`` the file you need and you get it. No more copy and paste files from project to project or dowloading and compiling external libraries.
+   #. Great for rapid prototyping and trying out new libraries/versions.
+   #. Smart management and finding of dependencies. We look for jointly compatible versions and allow `full control of your dependencies <http://docs.biicode.com/biicode/reference/configuration_files/policies.html?highlight=policies>`_.
+   #. Many of `examples <http://docs.biicode.com/c++/c++-examples.html>`_ to get started with.
+   #. Biicode uses `cmake <http://web.biicode.com/blog/meta-configuration-of-cc-projects-with-cmake-1>`_, if you know cmake you can `customize your builds <http://docs.biicode.com/c++/reference/cpp-build-files.html>`_, if you don't, biicode will automatically handle builds for you.
+
 
 .. toctree::
 	:maxdepth: 2
