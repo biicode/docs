@@ -26,20 +26,17 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 
 			#include <Servo.h>
 
-			void setup()
-			{
+			void setup(){
 			}
 
-			void loop()
-			{
+			void loop(){
 			  servo_loop(9);
 			}
 
 			void servo_loop(int pin) {
 			  Servo myservo;
 			  myservo.attach(pin);
-			  for (int pos = 0; pos <= 180; pos += 1)
-			  {
+			  for (int pos = 0; pos <= 180; pos += 1){
 			    myservo.write(pos);
 			    delay(15);
 			  }
@@ -60,20 +57,17 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 
 			void servo_loop();
 			 
-			void setup() 
-			{ 
+			void setup(){ 
 			} 
 			 
-			void loop()
-			{
+			void loop(){
 			  servo_loop(9);
 			}
 
-			void servo_loop(int pin) {
+			void servo_loop(int pin){
 			  Servo myservo;
 			  myservo.attach(pin);
-			  for (int pos = 0; pos <= 180; pos += 1)
-			  {
+			  for (int pos = 0; pos <= 180; pos += 1){
 			    myservo.write(pos);
 			    delay(15);
 			  }
@@ -116,12 +110,10 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 
 		.. code-block:: cpp
 
-			void setup()
-			{
+			void setup(){
 			}
 
-			void loop()
-			{
+			void loop(){
 			  servo_loop(9);
 			}
 
@@ -132,11 +124,10 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 
 			#include <Servo.h>
 
-			void servo_loop(int pin) {
+			void servo_loop(int pin){
 			  Servo myservo;
 			  myservo.attach(pin);
-			  for (int pos = 0; pos <= 180; pos += 1)
-			  {
+			  for (int pos = 0; pos <= 180; pos += 1){
 			    myservo.write(pos);
 			    delay(15);
 			  }
@@ -155,12 +146,10 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 
 			#include "servo_functions.h"
 
-			void setup()
-			{
+			void setup(){
 			}
 
-			void loop()
-			{
+			void loop(){
 			  servo_loop(9);
 			}
 
@@ -172,11 +161,10 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 			#include "Arduino.h"
 			#include <arduino/libraries/servo/servo.h>
 
-			void servo_loop(int pin) {
+			void servo_loop(int pin){
 			  Servo myservo;
 			  myservo.attach(pin);
-			  for (int pos = 0; pos <= 180; pos += 1)
-			  {
+			  for (int pos = 0; pos <= 180; pos += 1){
 			    myservo.write(pos);
 			    delay(15);
 			  }
