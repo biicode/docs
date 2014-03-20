@@ -4,7 +4,7 @@ arduino code's adaptation guide
 1. Simple .ino file
 -------------------
 
-**Generals rules**
+**General rules**
 
 * Change the file extension from .ino to .cpp, ex. ``sweep.ino`` to ``sweep.cpp``.
 * Include the Arduino.h library, ex. ``#include"Arduino.h"``.
@@ -82,7 +82,7 @@ arduino code's adaptation guide
 2. multiple .ino files
 ----------------------
 
-**Generals rules**
+**General rules**
 
 * Change the extension to the main file to .cpp and the other to .h, ex. ``sweep.ino`` to ``sweep.cpp`` and ``servo_functions.ino`` to ``servo_functions.h``
 
