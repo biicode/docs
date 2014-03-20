@@ -145,7 +145,7 @@ You must install the SDK in the following path.
 			
 			C:/Program Files(x86) /Arduino
 
-4. What to do next?
+3. What to do next?
 -------------------
 
 You have successfully set up your system for developing Arduino programs with biicode. These are some resources that will help you:
