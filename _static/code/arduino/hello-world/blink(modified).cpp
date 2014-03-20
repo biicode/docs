@@ -1,6 +1,6 @@
 #include "blink.h"
 
-void Blink::blink_setup(int led, int interval_ms)
+void Blink::setup(int led, int interval_ms)
 {
 	ledState = LOW;
 	previousMillis = 0;
@@ -10,7 +10,7 @@ void Blink::blink_setup(int led, int interval_ms)
 	pinMode(ledPin, OUTPUT);
 }
 
-void Blink::blink_loop(){
+void Blink::loop(){
 
 	unsigned long currentMillis = millis();
 	 
