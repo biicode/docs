@@ -2,15 +2,18 @@
 
 C/C++ Documentation
 ===================
-**Biicode simplifies how you reuse C/C++ libraries in your programs**. With our technology, you only need to include the appropriate file requirements in your source files. Biicode will automatically analize your code, and retrieve from the cloud all missing file dependencies, storing them in your local file system.
+**Biicode simplifies how you reuse C/C++ source code in your programs**. 
+With our technology, you only need to write #includes in your source files.
+Biicode will automatically analize your code, and retrieve from biicode all missing dependencies,
+storing all the necessary source code files in your project.
 
 In this context, biicode technology gives you several advantages for enriching your C++ experience:
 
-	1. `CMake integration <http://web.biicode.com/blog/meta-configuration-of-cc-projects-with-cmake-1>`_, if you know cmake you can `customize your builds <http://docs.biicode.com/c++/reference/cpp-build-files.html>`_, if you dont biicode will do it for you. 
-	2. **Reuse yours and other users' code**. Reusing made easy: just ``#include`` the file you need and you get it. No more copy and paste files from project to project or dowloading and compiling external libraries.
-	3. Great for rapid prototyping and trying out new libraries/versions
-	4. Smart management and finding of dependencies. We look for jointly compatible versions and allow `Full control of your dependencies <http://docs.biicode.com/biicode/reference/configuration_files/policies.html?highlight=policies>`_.
-	5. Plenty of `examples <http://docs.biicode.com/c++/c++-examples.html>`_ to get started with.
+	1. **Reuse yours and other users' code**. Reusing made easy: just ``#include`` the file you need and you get it. No more copy and paste files from project to project or dowloading and compiling external libraries.
+   2. Biicode uses `cmake <http://web.biicode.com/blog/meta-configuration-of-cc-projects-with-cmake-1>`_, if you know cmake you can `customize your builds <http://docs.biicode.com/c++/reference/cpp-build-files.html>`_, if you don't, biicode will automatically handle builds for you. 
+	3. Great for rapid prototyping and trying out new libraries/versions.
+	4. Smart management and finding of dependencies. We look for jointly compatible versions and allow `full control of your dependencies <http://docs.biicode.com/biicode/reference/configuration_files/policies.html?highlight=policies>`_.
+	5. Many of `examples <http://docs.biicode.com/c++/c++-examples.html>`_ to get started with.
 
 .. toctree::
 	:maxdepth: 2
