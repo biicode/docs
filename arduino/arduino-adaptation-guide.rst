@@ -106,7 +106,7 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 			
 			sweep ino project
 
-		sweep.ino
+		**sweep.ino**
 
 		.. code-block:: cpp
 
@@ -117,7 +117,7 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 			  servo_loop(9);
 			}
 
-		servo_functions.ino
+		**servo_functions.ino**
 
 		.. code-block:: cpp
 			:emphasize-lines: 1
@@ -139,7 +139,7 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 			
 			sweep C/C++ project
 
-		sweep.cpp
+		**sweep.cpp**
 
 		.. code-block:: cpp
 			:emphasize-lines: 1
@@ -153,7 +153,7 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 			  servo_loop(9);
 			}
 
-		servo_functions.h
+		**servo_functions.h**
 
 		.. code-block:: cpp
 			:emphasize-lines: 1,2
