@@ -9,7 +9,7 @@ Release 0.12
 * Allow to define MS Visual version from cpp:settings
 * Arduino bugfixes
 * Git support improvements
-* Added sttings wizards for C++, RaspberryPi and Arduino
+* Added settings wizards for C++, RaspberryPi and Arduino
 
 
 Release 0.11.1
