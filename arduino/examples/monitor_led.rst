@@ -1,7 +1,7 @@
 Arduino Monitor-Led
 =====================
 
-This example shows you how to run biicode's Arduino monitor interface and turn ON/OFF one LED easily. If you don't know how to start using Arduino with biicode, check out our :ref:`Arduino Getting Started <arduino_getting_started>`.
+This example shows you how to run biicode's Arduino Serial Monitor Interface and turn ON/OFF one LED easily. If you don't know how to start using Arduino with biicode, check out our :ref:`Arduino Getting Started <arduino_getting_started>`.
 
 C++ code
 ----------
