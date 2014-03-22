@@ -13,9 +13,9 @@ This section summarizes the **Arduino commands available to be used with the bii
 	---------EXPERIMENTAL Arduino general tools commands--------
 	  arduino:build   Build the project (with Make, Mingw32-make or NMake)
 	  arduino:configure Configure project with cmake
-	  arduino:settings Shows (initializes from default if not existing) hive settings
+	  arduino:monitor EXPERIMENTAL open serial monitor
+	  arduino:settings Configure hive settings for arduino
 	  arduino:upload  Upload a firmware in Arduino
-	  arduino:usb     Scans the USB devices
 	  arduino:wizard  Create a default class with constructor/destructor and a main.cpp or main.c
 
 
@@ -46,22 +46,18 @@ If you have configured your hive as a C/C++ project and you want to develop in a
 	-- Generating done
 	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_HIVE]/build
 
-``bii arduino:settings``: Show the hive settings
+``bii arduino:settings``: Configure hive settings for arduino
 ------------------------------------------------
 
-This command shows your settings about arduino or initializes the settings from default workspace settings in your hive if not existing.
+This command update your settings with the info about your board and the IDE, if you want to use one.
 
 .. code-block:: bash
 
 	$ bii arduino:settings
-	INFO: These are your arduino settings for this hive
-	INFO: board: {board: uno, no_autolibs: 'false', port: COM3, programmer: usbtinyisp}
-	builder: {family: MINGW}
-	compiler: {arch: AVR, family: MINGW, version: 1.0.5}
-	configurer: {family: CMake}
-
-	INFO: If you want to change it, you have to modify this file:
-		[YOUR_BII_WORKSPACE/YOUR_HIVE]/bii/settings.bii
+	Introduce board: uno
+	Arduino detected on port COM13
+	Select IDE: (eclipse/none) 
+	Introduce ide (default:None) (/o list options): none
 
 ``bii arduino:build``: Build the project
 ----------------------------------------
