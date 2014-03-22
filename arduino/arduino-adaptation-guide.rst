@@ -137,7 +137,7 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 
 		.. rst-class:: tabs-title
 			
-			sweep C/C++ project (Easy mode)
+			sweep C/C++ project (easy mode)
 
 		**sweep.cpp**
 
@@ -174,7 +174,7 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 
 		.. rst-class:: tabs-title
 			
-			sweep C/C++ project (Best mode)
+			sweep C/C++ project (best practice)
 
 		**sweep.cpp**
 
