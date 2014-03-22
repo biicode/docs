@@ -78,15 +78,3 @@ The USB interface where your Arduino board is connected. As mentioned before, th
 			When specifying the serial port name on Windows, use the following names:
 
 			* ``COM1``, ``COM2``, etc.
-
-programmers
------------
-
-This field indicates the Arduino Programmers (SDK Arduino 1.0.5). Available options are:
-
-	* ``avrisp``: AVR ISP
-	* ``avrispmkii``: AVRISP mkII
-	* ``usbtinyisp``: USBtinyISP
-	* ``usbasp``: USBasp
-	* ``parallel``: Parallel Programmer
-	* ``arduinoisp``: Arduino as ISP
