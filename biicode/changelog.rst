@@ -2,6 +2,13 @@
 
 Changelog
 =========
+Release 0.12
+------------
+.. *(21-03-14)*
+
+* Allow to define MS Visual version from cpp:settings
+* Arduino bugfixes
+* Git support improvements
 
 Release 0.11.1
 --------------

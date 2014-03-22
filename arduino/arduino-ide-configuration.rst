@@ -1,7 +1,7 @@
 IDE configuration
 =================
 
-Biicode offers integration with `Eclipse <https://www.eclipse.org/downloads/>`_ for Arduino programmers. It is able to do the appropriate project setup on your behalf. This way you can work on your biicode hive, using the underlying infrastructure and services provided by standard IDEs, just like any other standard project. In fact, this configuration can be established from the very first momment, when you create a new hive with the ``bii new`` command (see :ref:`the commands reference for more information<bii_new_command>`).
+Biicode offers integration with `Eclipse <https://www.eclipse.org/downloads/>`_ for Arduino programmers. It is able to do the appropriate project setup on your behalf. This way you can work on your biicode hive, using the underlying infrastructure and services provided by Eclipse. In fact, this configuration can be established from the very first momment, when you create a new hive with the ``bii new`` command (see the :ref:`commands reference <bii_new_command>` for more information).
 
 This section details the steps you should follow to achieve this integration.
 
