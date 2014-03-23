@@ -1,17 +1,35 @@
 How to adapt your code
 ======================
 
-This section describes how to adapt your Arduino projects to use with biicode. The adaptation steps depend on the complexity of your project. Simply select the section best suits to your project from the options you will find bellow and follow it.
+This section describes **how to adapt your current Arduino projects to bicode**. The adaptation steps depend on the complexity of your project: whether it contains one single ``.ino`` file, or multiple ``.ino`` files. Simply follow the instructions contained in the section that best suits to your current project configuration.
 
-1. Simple .ino file
--------------------
+1. Projects with one single .ino file
+-------------------------------------
+
+This is the simplest case. Adaptation is almost inmediate:
 
 **General rules**
 
-* Change the file extension from .ino to .cpp, for example ``sweep.ino`` to ``sweep.cpp``.
-* Include the Arduino.h library, for example ``#include"Arduino.h"``.
-* Change the arcuino core library includes to the biicode format, for example ``Servo.h`` to ``arduino/libraries/servo/servo.h``.
-* Put the function prototypes at the code's beginning, for example ``void servo_loop();``.
+#. **Change** your ``.ino`` file **extension** to ``.cpp``. For example, the file ``sweep.ino`` would become ``sweep.cpp``.
+#. **Include** the ``Arduino.h`` **library** in your code with the following line at the beginning of your file:
+
+	.. code-block:: cpp
+
+		#include "Arduino.h"
+
+#. **Rewrite** the Arduino core library includes to **comply with the biicode includes format**. For the arduino core libraries this format is ``arduino/libraries/<path_to_file>`` (in general, all included files in biicode projects must follow the pattern ``<username>/<blockname>/<path_to_file>``, so here we are including files from the ``libraries`` block of the biicode ``arduino`` user). 
+
+	For instance, if you are using the ``Servo.h`` library, you should write the following include directive:
+
+	.. code-block:: cpp
+
+		#include "arduino/libraries/servo/servo.h"
+
+	Please, note that all letters are **lowercase**. You can browse `all available Arduino core libraries available in biicode <https://www.biicode.com/arduino/blocks/arduino/libraries/branches/master>`_.
+		
+#. Declare all function prototypes at the beginning of your code. For example: ``void servo_loop();``.
+
+Following there is an example of a full ``.ino`` file adaptation:
 
 .. container:: tabs-section
 	
@@ -19,7 +37,7 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 
 		.. rst-class:: tabs-title
 			
-			sweep.ino
+			Original sweep.ino file
 
 		.. code-block:: cpp
 			:emphasize-lines: 1,12
@@ -37,8 +55,8 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 			  Servo myservo;
 			  myservo.attach(pin);
 			  for (int pos = 0; pos <= 180; pos += 1){
-			    myservo.write(pos);
-			    delay(15);
+				myservo.write(pos);
+				delay(15);
 			  }
 			}
 
@@ -46,7 +64,7 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 
 		.. rst-class:: tabs-title
 			
-			sweep.cpp
+			Adapted sweep.cpp file
 
 		.. code-block:: cpp
 			:emphasize-lines: 1, 2, 4
@@ -68,35 +86,55 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 			  Servo myservo;
 			  myservo.attach(pin);
 			  for (int pos = 0; pos <= 180; pos += 1){
-			    myservo.write(pos);
-			    delay(15);
+				myservo.write(pos);
+				delay(15);
 			  }
 			}
 
 
 
-2. multiple .ino files
-----------------------
+2. Projects with multiple .ino files
+------------------------------------
 
 **General rules**
 
-* Change the extension to the main file to .cpp and the other to .h, for example ``sweep.ino`` to ``sweep.cpp`` and ``servo_functions.ino`` to ``servo_functions.h``
+#. Change the extension to the main file to ``.cpp``. Also, change the extension of other ``.ino`` files to ``.h``. For example, if your project has the following layout, being ``sweep.ino`` the main file:
 
-.. code-block:: text
+	.. code-block:: text
 
-   +-- sweep
-   |    +-- sweep.ino
-   |    +-- servo_functions.ino
+	   +-- sweep
+	   |    +-- sweep.ino
+	   |    +-- servo_functions.ino
 
-.. code-block:: text
+	You should modify the extensions to the following biicode-compliant layout and file names:
 
-   +-- name_you_prefer
-   |    +-- sweep.cpp
-   |    +-- servo_functions.h
+	.. code-block:: text
 
-* Include the Arduino.h library, for example ``#include"Arduino.h"``.
-* Change the arcuino core library includes to the biicode format, for example ``Servo.h`` to ``arduino/libraries/servo/servo.h``.
-* Put the function prototypes, if you need, at the code's beginning, for example ``void servo_loop();``.
+	   +-- <biicode_block_name>
+	   |    +-- sweep.cpp
+	   |    +-- servo_functions.h
+
+   Note that ``sweep.ino`` has been renamed to ``sweep.cpp``, and ``servo_functions.ino`` has been renamed to ``servo_functions.h``.
+
+#. **Include** the ``Arduino.h`` **library** in your code with the following line at the beginning of your file:
+
+	.. code-block:: cpp
+
+		#include "Arduino.h"
+
+#. **Rewrite** the Arduino core library includes to **comply with the biicode includes format**. For the arduino core libraries this format is ``arduino/libraries/<path_to_file>`` (in general, all included files in biicode projects must follow the pattern ``<username>/<blockname>/<path_to_file>``, so here we are including files from the ``libraries`` block of the biicode ``arduino`` user). 
+
+	For instance, if you are using the ``Servo.h`` library, you should write the following include directive:
+
+	.. code-block:: cpp
+
+		#include "arduino/libraries/servo/servo.h"
+
+	Please, note that all letters are **lowercase**. You can browse `all available Arduino core libraries available in biicode <https://www.biicode.com/arduino/blocks/arduino/libraries/branches/master>`_.
+
+#. Declare the function prototypes, if you need, at the beginning of your code. For example ``void servo_loop();``.
+
+Following you will find an example of a full adaptation of an Arduino project containing multiple files. First tab shows the original project, while the second one displays the easy adaptation described befor. The third tab shows an alternative, more advanced adaptation, recommended for complex projects, and as a best practice for the general structure of your projects:
 
 .. container:: tabs-section
 	
@@ -104,7 +142,7 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 
 		.. rst-class:: tabs-title
 			
-			sweep ino project
+			Original sweep Arduino project
 
 		**sweep.ino**
 
@@ -128,8 +166,8 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 			  Servo myservo;
 			  myservo.attach(pin);
 			  for (int pos = 0; pos <= 180; pos += 1){
-			    myservo.write(pos);
-			    delay(15);
+				myservo.write(pos);
+				delay(15);
 			  }
 			}
 
@@ -137,7 +175,7 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 
 		.. rst-class:: tabs-title
 			
-			sweep C/C++ project (easy mode)
+			Easy adaptation
 
 		**sweep.cpp**
 
@@ -165,8 +203,8 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 			  Servo myservo;
 			  myservo.attach(pin);
 			  for (int pos = 0; pos <= 180; pos += 1){
-			    myservo.write(pos);
-			    delay(15);
+				myservo.write(pos);
+				delay(15);
 			  }
 			}
 
@@ -174,7 +212,12 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 
 		.. rst-class:: tabs-title
 			
-			sweep C/C++ project (best practice)
+			Advanced adaptation
+
+		This is an alternative way to adapt your code to biicode. It is recommended as a **best practice** that splits your code into declarations, or interface, and implementations. This separation between **interface** (contained in *header* files, with ``.h`` extension) and **implementation** (contained in ``.cpp`` files) provides many benefits:
+
+		* The header declares **what** the code does, while the implementation contains **how** to do it. This is somehow a nice way of structuring your code.
+		* Compilation times are reduced, and also the need to recompile all your code when only some parts of the implementation have changed.
 
 		**sweep.cpp**
 
@@ -211,13 +254,7 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 			  Servo myservo;
 			  myservo.attach(pin);
 			  for (int pos = 0; pos <= 180; pos += 1){
-			    myservo.write(pos);
-			    delay(15);
+				myservo.write(pos);
+				delay(15);
 			  }
 			}
-
-		**why it is the best practice?**
-
-		The main reason would be for separating the interface from the implementation. The header declares "what" will do what is being implemented , while the cpp file defines "how" it will perform those features.
-
-		This reduces dependencies so that code that uses the header doesn't necessarily need to know all the details of the implementation and any other classes/headers needed only for that. This will reduce compilation times and also the amount of recompilation needed when something in the implementation changes.
