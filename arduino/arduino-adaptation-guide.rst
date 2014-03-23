@@ -26,20 +26,17 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 
 			#include <Servo.h>
 
-			void setup()
-			{
+			void setup(){
 			}
 
-			void loop()
-			{
+			void loop(){
 			  servo_loop(9);
 			}
 
 			void servo_loop(int pin) {
 			  Servo myservo;
 			  myservo.attach(pin);
-			  for (int pos = 0; pos <= 180; pos += 1)
-			  {
+			  for (int pos = 0; pos <= 180; pos += 1){
 			    myservo.write(pos);
 			    delay(15);
 			  }
@@ -60,20 +57,17 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 
 			void servo_loop();
 			 
-			void setup() 
-			{ 
+			void setup(){ 
 			} 
 			 
-			void loop()
-			{
+			void loop(){
 			  servo_loop(9);
 			}
 
-			void servo_loop(int pin) {
+			void servo_loop(int pin){
 			  Servo myservo;
 			  myservo.attach(pin);
-			  for (int pos = 0; pos <= 180; pos += 1)
-			  {
+			  for (int pos = 0; pos <= 180; pos += 1){
 			    myservo.write(pos);
 			    delay(15);
 			  }
@@ -112,31 +106,28 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 			
 			sweep ino project
 
-		sweep.ino
+		**sweep.ino**
 
 		.. code-block:: cpp
 
-			void setup()
-			{
+			void setup(){
 			}
 
-			void loop()
-			{
+			void loop(){
 			  servo_loop(9);
 			}
 
-		servo_functions.ino
+		**servo_functions.ino**
 
 		.. code-block:: cpp
 			:emphasize-lines: 1
 
 			#include <Servo.h>
 
-			void servo_loop(int pin) {
+			void servo_loop(int pin){
 			  Servo myservo;
 			  myservo.attach(pin);
-			  for (int pos = 0; pos <= 180; pos += 1)
-			  {
+			  for (int pos = 0; pos <= 180; pos += 1){
 			    myservo.write(pos);
 			    delay(15);
 			  }
@@ -146,25 +137,23 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 
 		.. rst-class:: tabs-title
 			
-			sweep C/C++ project
+			sweep C/C++ project (easy mode)
 
-		sweep.cpp
+		**sweep.cpp**
 
 		.. code-block:: cpp
 			:emphasize-lines: 1
 
 			#include "servo_functions.h"
 
-			void setup()
-			{
+			void setup(){
 			}
 
-			void loop()
-			{
+			void loop(){
 			  servo_loop(9);
 			}
 
-		servo_functions.h
+		**servo_functions.h**
 
 		.. code-block:: cpp
 			:emphasize-lines: 1,2
@@ -172,12 +161,63 @@ This section describes how to adapt your Arduino projects to use with biicode. T
 			#include "Arduino.h"
 			#include <arduino/libraries/servo/servo.h>
 
-			void servo_loop(int pin) {
+			void servo_loop(int pin){
 			  Servo myservo;
 			  myservo.attach(pin);
-			  for (int pos = 0; pos <= 180; pos += 1)
-			  {
+			  for (int pos = 0; pos <= 180; pos += 1){
 			    myservo.write(pos);
 			    delay(15);
 			  }
 			}
+
+	.. container:: tabs-item
+
+		.. rst-class:: tabs-title
+			
+			sweep C/C++ project (best practice)
+
+		**sweep.cpp**
+
+		.. code-block:: cpp
+			:emphasize-lines: 1
+
+			#include "servo_functions.h"
+
+			void setup(){
+			}
+
+			void loop(){
+			  servo_loop(9);
+			}
+
+		**servo_functions.h**
+
+		.. code-block:: cpp
+			:emphasize-lines: 1
+
+			#include "Arduino.h"
+
+			void servo_loop(int pin);
+
+		**servo_functions.cpp**
+
+		.. code-block:: cpp
+			:emphasize-lines: 1,2
+
+			#include "servo_functions.h"
+			#include <arduino/libraries/servo/servo.h>
+
+			void servo_loop(int pin){
+			  Servo myservo;
+			  myservo.attach(pin);
+			  for (int pos = 0; pos <= 180; pos += 1){
+			    myservo.write(pos);
+			    delay(15);
+			  }
+			}
+
+		**why it is the best practice?**
+
+		The main reason would be for separating the interface from the implementation. The header declares "what" will do what is being implemented , while the cpp file defines "how" it will perform those features.
+
+		This reduces dependencies so that code that uses the header doesn't necessarily need to know all the details of the implementation and any other classes/headers needed only for that. This will reduce compilation times and also the amount of recompilation needed when something in the implementation changes.

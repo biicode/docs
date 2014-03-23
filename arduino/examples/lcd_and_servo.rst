@@ -35,22 +35,20 @@ The code: Display the servo angle into a LCD
 	    lcd.print(" ");
 	}
 
-	void setup() {
+	void setup(){
 	  myservo.attach(10);
 	  lcd.begin(16, 2);
 	  lcd.print("SERVO ANGLE");
 	  lcd.setCursor(0, 1);
 	}
-	void loop() {
+	void loop(){
 	  int pos; 
-	  for(pos = 0; pos <= 180; pos += 1)
-	  {
+	  for(pos = 0; pos <= 180; pos += 1){
 	    myservo.write(pos);
 	    write_angle_lcd(pos);
 	    delay(50);
 	  } 
-	  for(pos = 180; pos >= 0; pos -= 1)
-	  {                       
+	  for(pos = 180; pos >= 0; pos -= 1){                       
 	    myservo.write(pos);
 	    write_angle_lcd(pos);
 	    delay(50);
