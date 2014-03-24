@@ -10,4 +10,4 @@ Advanced features
    advanced/virtualcells
    advanced/policies
    advanced/collaboration
-   advanced/git
+   advanced/git-integration
