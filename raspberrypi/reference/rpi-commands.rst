@@ -16,11 +16,12 @@ This section summarizes the **Raspberry Pi commands available to be used with th
 	  rpi:send        Send by scp the bin folder into the specified directory
 	  rpi:ssh         Connect by ssh with the Raspberry Pi
 
+.. _bii_rpi_settings:
 
-``bii rpi:settings``: Configure your Raspberry Pi settings
------------------------------------------------------------
+``bii rpi:settings``: Managing your hive settings
+-------------------------------------------------
 
-If you want an easy way to configure your Raspberry Pi settings you can get it with this command. 
+This command provides an easy way to configure your Raspberry Pi settings.
 
 .. code-block:: bash
 	
@@ -39,7 +40,8 @@ If you want an easy way to configure your Raspberry Pi settings you can get it w
 * **RPI directory to upload (bin)**: Raspberry Pi directory where you want your programs to be saved. Default value is the ``bin`` user home folder.
 * **Cross building?**: Activate the croos building. Default value is ``NO``.
 
-	  
+.. _bii_rpi_send:
+
 ``bii rpi:send``: Send a bin folder
 -----------------------------------
 
@@ -54,6 +56,7 @@ Send your binaries automatically to your Raspberry Pi from your PC.
 
 The Raspberry Pi user's password will be asked. If you have not changed your password, for Raspbian the default one is **raspberry**.
 
+.. _bii_rpi_ssh:
 
 ``bii rpi:ssh``: Connect by ssh with the Raspberry Pi
 -----------------------------------------------------
@@ -68,7 +71,8 @@ If you want a remotely access to your Raspberry Pi you can get it with this comm
 	<rpi_user>@<rpi_ip>'s password:
 	
 	pi@raspberrypi ~ $
-	
+
+.. _bii_rpi_initopengles:
 
 ``bii rpi:initopengles``: Init OpenGLES project
 -----------------------------------------------

@@ -46,8 +46,10 @@ If you have configured your hive as a C/C++ project and you want to develop in a
 	-- Generating done
 	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_HIVE]/build
 
-``bii arduino:settings``: Configure hive settings for arduino
-------------------------------------------------
+.. _bii_arduino_settings:
+
+``bii arduino:settings``: Managing your hive settings
+-----------------------------------------------------
 
 This command update your settings with the info about your board and the IDE, if you want to use one.
 

@@ -44,8 +44,11 @@ If you have configured your hive as a C/C++ project and you want to develop in c
 	-- Generating done
 	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_HIVE]/build
 
-``bii cpp:settings``: Shows the hive settings
----------------------------------------------
+
+.. _bii_cpp_settings:
+
+``bii cpp:settings``: Managing your hive settings
+-------------------------------------------------
 
 This command shows your settings about cpp or initializes the settings from default workspace settings in your hive if they are missing.
 
