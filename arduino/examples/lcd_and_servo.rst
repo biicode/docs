@@ -25,7 +25,8 @@ The code: Display the servo angle into a LCD
 	
 	#include "Arduino.h"
 	#include <arduino/libraries/liquidcrystal/liquidcrystal.h>
-	#include <arduino/libraries/servo/servo.h> 
+	#include <arduino/libraries/servo/servo.h>
+	
 	LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 	Servo myservo;
 
