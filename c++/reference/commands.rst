@@ -12,7 +12,6 @@ This section summarizes the **C/C++ commands available to be used with the biico
 	---------Cpp tools commands--------
 	  cpp:build       Build the project (with Make, Mingw32-make or NMake)
 	  cpp:configure   Configure project with cmake
-	  cpp:exe         Run a binary or script, without any processing changes nor building
 	  cpp:run         Runs a binary or script, processing changes and building if necessary
 	  cpp:settings    Shows (initializes from default if not existing) hive settings
 	  cpp:wizard      Create a default class with constructor/destructor and a main.cpp or main.c
@@ -100,21 +99,6 @@ This command invokes the C++ compiler to build your project.
 	...
 
 	[100%] Built target your_user_name_block_cpp_block
-
-``bii cpp:exe``: Run a binary or script
----------------------------------------
-
-This command executes directly a created binary file. For example, if you have several binary files named *user_block_hello_pretty*, *user_block_hello* and *user_block_maths*, and the first shows in console "Hello pretty", then if you want to execute it:
-
-.. code-block:: bash
-
-	$ bii cpp:exe pretty
-
-	...
-
-	Hello pretty
-
-**Note**: Pay attention to the executable name because you don't need to enter the full name, only the part that's different from the others.
 
 .. _bii_cpp_wizard:
 
