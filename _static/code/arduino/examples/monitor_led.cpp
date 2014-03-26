@@ -1,8 +1,4 @@
-#if ARDUINO >= 100
 #include "Arduino.h"
-#else
-#include "WProgram.h"
-#endif
 
 // Pin 13 has an LED connected on most Arduino boards
 int led = 13;
