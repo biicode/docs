@@ -353,3 +353,9 @@ This information about the merges performed in your code is only available local
 	No merges found in this hive.
 
 
+.. _bii_git_command:
+
+``bii git``: Git integration
+-----------------------------
+
+This is a collection of commands to integrate your blocks with git. You can read about how to use them in :ref:`advanced section <git_integration>`.
