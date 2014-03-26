@@ -14,7 +14,7 @@ This section summarizes the **C/C++ commands available to be used with the biico
 	  cpp:configure   Configure project with cmake
 	  cpp:exe         Run a binary or script, without any processing changes nor building
 	  cpp:run         Runs a binary or script, processing changes and building if necessary
-	  cpp:settings    Shows (initializes from default if not existing) hive settings
+	  cpp:settings    Configure hive cpp settings
 	  cpp:wizard      Create a default class with constructor/destructor and a main.cpp or main.c
 
 
@@ -50,19 +50,39 @@ If you have configured your hive as a C/C++ project and you want to develop in c
 ``bii cpp:settings``: Managing your hive settings
 -------------------------------------------------
 
-This command shows your settings about cpp or initializes the settings from default workspace settings in your hive if they are missing.
+This command helps you to configure the IDE you'll use to build your project:
+
+	*	``visual``: **Microsoft Visual Studio** (avaliable **versions** between **6-12**, 32 and 64 bits)
+	*	``eclipse``: **Eclipse IDE**
+	*	``none``: you are going to work with your console
 
 .. code-block:: bash
 
 	$ bii cpp:settings
-	INFO: These are your cpp settings for this hive
-	INFO: build_type: Debug
-	builder: {family: MINGW}
-	compiler: {arch: 32bit, family: MINGW}
-	configurer: {family: CMake}
 
-	INFO: If you want to change it, you have to modify this file:
-		[YOUR_BII_WORKSPACE/YOUR_HIVE]/bii/settings.bii
+	Introduce ide (default:None) (/o list options): /o
+	Available options:
+	--------------------------
+  	  eclipse
+  	  visual
+  	  none
+	--------------------------
+	Introduce ide (default:None) (/o list options): visual
+	Visual version (6-12)? : 10
+
+
+.. container:: infonote
+
+
+    **Working with Visual Studio 64 bits version**
+
+    If you want to work with this version (by default the ``cpp:settings`` command creates projects in 32 bits), you have only to change your settings file:
+
+    *	Go to ``~/your_hive/bii/`` folder
+    *	Open the ``settings.bii`` file
+    *	Add to the line where is declared your ide, *arch: Win64*, like this example:
+
+    		ide: {family: visual, version: '10', **arch: Win64**}
 
 
 ``bii cpp:run``: Process, build and run

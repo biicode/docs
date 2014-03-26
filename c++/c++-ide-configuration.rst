@@ -9,34 +9,25 @@ This section details the steps you should follow to achieve this integration.
 
 First of all, you need to configure your hive for the particular IDE of your choice. If you already did so when creating the hive with the help of the ``bii new`` command, you can skip this section. Otherwise, you can define your preferences in the ``settings.bii`` configuration of your hive.
 
-Initialize your default C++ settings writting:
+Change your default C++ settings writting:
 
 .. code-block:: bash
 
 	$ bii cpp:settings
-	...
-	These are your default settings for this Hive
-	Builder: MINGW
-	Compiler: MINGW
 
-	If you want to change it, you have to modify this file:
+	Introduce ide (default:None) (/o list options): eclipse
 
-	 ./hive_name/bii/settings.bii
-
-Update your hive's ``bii/settings.bii`` file including the information about your desired **IDE** and **build_type** (leaving the rest of the file as it is in your particular platform). 
-
-This is an example with a *debug* build type and *Eclipse* as the desired IDE.
+This is an example with *Eclipse* as the desired IDE.
 
 .. code-block:: text
 
 	cpp:
-		builder: {family: MINGW}
-		compiler: {family: MINGW}
-		ide: {family: ECLIPSE, subfamily: CDT}
-		build_type: debug
+	  build_type: Debug
+	  builder: {family: make, subfamily: mingw}
+	  ide: {family: eclipse, subfamily: CDT}
 	os: {arch: 32bit, family: Windows, subfamily: '8', version: 6.2.9200}
 
-After modifying this file, you must execute the ``bii cpp:config`` command to apply all chantes and **generate the project files**.
+After modifying this file, you must execute the ``bii cpp:configure`` command to apply all chantes and **generate the project files**.
 
 Some particular configuration options for :ref:`Eclipse<ide_eclipse>`, :ref:`Visual Studio<ide_visual>` and :ref:`CodeBlocks<ide_codeblocks>` are detailed in the following subsections:
 
