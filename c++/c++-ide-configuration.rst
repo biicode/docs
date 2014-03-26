@@ -3,7 +3,7 @@
 IDE configuration
 =================
 
-Biicode offers **integration with some of the most commonly used IDEs** for C++ programmers. It is able to do the appropriate project setup on your behalf. This way you can work on your biicode hive, using the underlying infrastructure and services provided by standard IDEs, just like any other standard project. In fact, this configuration can be established from the very first momment, when you create a new hive with the ``bii new`` command (see :ref:`the commands reference for more information<bii_new_command>`).
+Biicode offers **integration with some of the most commonly used IDEs** for C++ programmers. It is able to do the appropriate project setup on your behalf. This way you can work on your biicode hive, using the underlying infrastructure and services provided by standard IDEs. In fact, this configuration can be established from the very first momment, when you create a new hive with the ``bii new`` command (see :ref:`the commands reference for more information<bii_new_command>`).
 
 This section details the steps you should follow to achieve this integration.
 
@@ -17,7 +17,7 @@ Change your default C++ settings writting:
 
 	Introduce ide (default:None) (/o list options): eclipse
 
-This is an example with *Eclipse* as the desired IDE.
+Choose one of the available options. This will automatically update your hive ``settings.bii`` file. This is an example for this file with *Eclipse* as the chosen IDE.
 
 .. code-block:: text
 
@@ -26,6 +26,8 @@ This is an example with *Eclipse* as the desired IDE.
 	  builder: {family: make, subfamily: mingw}
 	  ide: {family: eclipse, subfamily: CDT}
 	os: {arch: 32bit, family: Windows, subfamily: '8', version: 6.2.9200}
+
+You can learn more about this command in the :ref:`commands reference section <bii_cpp_settings>`.
 
 After modifying this file, you must execute the ``bii cpp:configure`` command to apply all chantes and **generate the project files**.
 

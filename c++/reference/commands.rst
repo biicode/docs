@@ -3,7 +3,7 @@
 Commands list
 =============
 
-This section summarizes the **C/C++ commands available to be used with the biicode client program**. You can see these tools if you execute:
+This section summarizes the **C/C++ commands available to be used with the biicode client program**. You can see these the full list of commands for C/C++ language as follows:
 
 .. code-block:: bash
 
@@ -14,14 +14,14 @@ This section summarizes the **C/C++ commands available to be used with the biico
 	  cpp:configure   Configure project with cmake
 	  cpp:exe         Run a binary or script, without any processing changes nor building
 	  cpp:run         Runs a binary or script, processing changes and building if necessary
-	  cpp:settings    Configure hive cpp settings
+	  cpp:settings    Hive settings configuration
 	  cpp:wizard      Create a default class with constructor/destructor and a main.cpp or main.c
 
 
 **Note**: You need to have a cpp compiler :ref:`installed and configured <cpp_installation>`.
 
 ``bii cpp:configure``: Configure your project
-----------------------------------------------
+---------------------------------------------
 
 If you have configured your hive as a C/C++ project and you want to develop in cpp language, this command helps you! Enter it and configure your hive like an cpp project. It invokes cpp compiler and you are ready to start with your cpp.
 
@@ -70,19 +70,22 @@ This command helps you to configure the IDE you'll use to build your project:
 	Introduce ide (default:None) (/o list options): visual
 	Visual version (6-12)? : 10
 
+Just introduce your desired IDE, and your hive ``settings.bii`` file will be updated in accordance.
 
 .. container:: infonote
 
 
     **Working with Visual Studio 64 bits version**
 
-    If you want to work with this version (by default the ``cpp:settings`` command creates projects in 32 bits), you have only to change your settings file:
+    By default, the ``bii cpp:settings`` command selects the 32 bits version of VIsual Studio compiler. If you want to use the 64 bits version, you need to manually edit your hive ``settings.bii`` file as follows:
 
-    *	Go to ``~/your_hive/bii/`` folder
-    *	Open the ``settings.bii`` file
-    *	Add to the line where is declared your ide, *arch: Win64*, like this example:
+    #. Go to ``your_hive/bii/`` folder
+    #. Open the ``settings.bii`` file
+    #. Modify your IDE declaration line updating the ``arch`` parameter as follows, writing the ``Win64`` option:
 
-    		ide: {family: visual, version: '10', **arch: Win64**}
+    .. code-block:: text
+
+    	ide: {family: visual, version: '10', arch: Win64}
 
 
 ``bii cpp:run``: Process, build and run
