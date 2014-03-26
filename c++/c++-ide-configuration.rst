@@ -31,7 +31,7 @@ You can learn more about this command in the :ref:`commands reference section <b
 
 After modifying this file, you must execute the ``bii cpp:configure`` command to apply all chantes and **generate the project files**.
 
-Some particular configuration options for :ref:`Eclipse<ide_eclipse>`, :ref:`Visual Studio<ide_visual>` and :ref:`CodeBlocks<ide_codeblocks>` are detailed in the following subsections:
+Some particular configuration options for **Eclipse**, **Visual Studio** and **CodeBlocks** are detailed in the following subsections:
 
 .. container:: tabs-section
 
