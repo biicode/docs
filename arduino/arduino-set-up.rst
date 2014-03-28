@@ -154,6 +154,6 @@ You have successfully set up your system for developing Arduino programs with bi
 	
 	* Read the :ref:`Arduino getting started guide <arduino_getting_started>`. You'll learn how to create, build and execute your first biicode hive project.
 	* Visit the :ref:`Arduino examples section <arduino>`.
-	* Read the reference for :ref:`Arduino biicode commands <arduino_reference>`
+	* Read the reference for :ref:`general biicode commands <biicode_reference>` and for :ref:`Arduino specific biicode commands <arduino_reference>`
 	* `Visit our forum and make any questions <http://forum.biicode.com/category/arduino>`_
 

@@ -151,7 +151,7 @@ You have successfully set up your system for developing C++ programs with biicod
 	
 	* Read the :ref:`C/C++ getting started guide <hello_world>`. You'll learn how to create, build and execute your first biicode hive project.
 	* Visit the :ref:`C/C++ examples section <cpp_examples>`.
-	* Read the reference for :ref:`C/C++ biicode commands <biicode_reference>`
+	*  Read the reference for :ref:`general biicode commands <biicode_reference>` and for :ref:`C/C++ specific biicode commands <cpp_reference>`
 	* `Visit our forum and make any questions <http://forum.biicode.com/>`_
 
 
