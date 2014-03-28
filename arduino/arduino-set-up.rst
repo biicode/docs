@@ -33,13 +33,13 @@ First, try the automatic installation provided by biicode. Only if something goe
 
 Type the previous command and follow the instructions. You might need to close your console and open a new one to reload the updated environment variables. In the new console window, re-run the ``bii setup:arduino`` command to verify everything is properly installed.
 
-**If something fails with the automatic installation**, please `contact us at our forum <http://forum.biicode.com/category/arduino>`_, and feel free to ask any questions. Then, **proceed with the alternative manual installation** described bellow.
+**If something fails with the automatic installation**, please `contact us at our forum <http://forum.biicode.com/category/arduino>`__, and feel free to ask any questions. Then, **proceed with the alternative manual installation** described bellow.
 
 
 2.2. Manual installation
 ........................
 
-This section describes the manual installation of Arduino tools. You only need to go through this section if something failed during the automatic installation explained before. If you experience any issues during this manual installation, please `contact us at our forum <http://forum.biicode.com/category/raspberry-pi>`_, and we'll try to solve your problem as soon as possible.
+This section describes the manual installation of Arduino tools. You only need to go through this section if something failed during the automatic installation explained before. If you experience any issues during this manual installation, please `contact us at our forum <http://forum.biicode.com/category/raspberry-pi>`__, and we'll try to solve your problem as soon as possible.
 
 2.2.a. Install the development tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

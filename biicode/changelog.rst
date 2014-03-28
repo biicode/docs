@@ -3,7 +3,7 @@
 Changelog
 =========
 Release 0.13.1
-------------
+--------------
 .. *(28-03-14)*
 
 * Bugfixes in arduino build
@@ -35,7 +35,7 @@ Release 0.11.1
 * Nicer ``bii arduino:monitor`` in MacOS
 * Removed ``--default`` option in ``bii init`` and ``bii new``. New parameters for ``bii new`` command.
 * Enry points automatic detection in files with ``setup`` and ``loop`` functions
-* Adding ``import` as valid preprocessor directive.
+* Adding ``import`` as valid preprocessor directive.
 
 Release 0.10
 ------------
@@ -48,7 +48,6 @@ Release 0.10
 
 Release 0.09
 ------------
-
 .. *(13-02-14)*
 
 * There is a brand new visualization in browser of hives and dependencies with "$bii deps --graph"
