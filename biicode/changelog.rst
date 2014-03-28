@@ -2,6 +2,15 @@
 
 Changelog
 =========
+Release 0.13.1
+------------
+.. *(28-03-14)*
+
+* Bugfixes in arduino build
+* Now you can upload to the arduino from the serial monitor
+* Imrpovements in node support
+* bii clean now deletes build folder
+
 Release 0.12
 ------------
 .. *(21-03-14)*
