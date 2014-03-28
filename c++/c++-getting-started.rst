@@ -19,26 +19,23 @@ Creating a new hive is as easy as executing the ``bii new`` command. Open your c
 The system will prompt you for your hive initial programming language, you can select among several options.
 Select ``cpp`` here.
 
-It will also prompt for **your first block name**. A block is a working unit you can publish and navigate in the web.
-You can have more than one block in your hives, but now lets start with just one. Enter a descriptive name,
-something that summarizes the functionality of all the files that will be in that block. Enter ``cpp_hello``.
+It will also prompt for **your first block name**. A block is a working unit you can publish and navigate in the web. You can have more than one block in your hives, but now let's start with just one. Enter a descriptive name, something that summarizes the functionality of your code. In this example, enter ``cpp_hello``.
 
-Later, it will prompt to **generate a default hello world**, i.e. a code file with a ``main()`` function. You can press ENTER to accept the default option here: ``yes``.
+In the next step, the asistant will offer **to create a default hello world**, i.e. a source file with a ``main()`` function. You can press ``[ENTER]`` to accept the default option here (``YES``).
 
-Last, you will be asked to select an IDE family (``None`` by default) and a build type (``Debug`` by default). You can press ENTER again to accept the default options.
+Last, you will be asked to select an IDE family (``None`` by default).
 
 .. code-block:: bash
 
    Select language: (java/node/fortran/python/cpp/arduino/None)
-   Introduce lang (default:None): cpp
+   Introduce lang: cpp
+   INFO: Selected lang: cpp
    How would you like to name your first block?
    Introduce block name: cpp_hello
-   Generate a default hello world?  (YES/no) [ENTER]
-   Select IDE family: (Visual/CodeBlocks/Eclipse/NetBeans/None)
-   Introduce ide (default:None): [ENTER]
-   Select build type: (None/Debug/Release/RelWithDebInfo/MinSizeRel)
-   Introduce build_type (default:Debug): [ENTER]
-
+   INFO: Selected block name: cpp_hello
+   Generate default hello world?  (YES/no): [ENTER]
+   Select IDE: (eclipse/visual/none)
+   Introduce ide (default:None) (/o list options): [ENTER] 
    
 This command will create the following layout:
 
