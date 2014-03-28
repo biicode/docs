@@ -3,11 +3,9 @@
 Getting Started
 ===============
 
-The typical tutorial for learning new tools is a "Hello World" one. In Arduino, the typical first example is the LED "blink" one.
-This example shows how to build a simple *blink* functionality with biicode that you can automatically integrate in
-any project.
+A typical tutorial for learning new tools and languages is the classical *'Hello World'* program. In Arduino, the typical initial example is the *'Blinking LED'*. This example shows how to build a simple *blink* functionality with biicode that you can automatically integrate with any project.
 
-Remember that you need to :ref:`install <arduino_installation>` CMake, MinGW and the Arduino SDK.
+Remember that, **first of all, you need to install some tools on your machine**. If you haven't done so, :ref:`follow the set up guide for Arduino <arduino_installation>`.  Then, proceed to create your first Arduino :ref:`hive <hive_definition>` and :ref:`block <block_definition>` following these instructions:
 
 1. Create a new hive
 --------------------

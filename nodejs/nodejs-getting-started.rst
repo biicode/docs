@@ -5,6 +5,8 @@ Getting Started
 
 This example shows how to build a simple *'Hello World'* node application with biicode.
 
+Remember that, **first of all, you need to install some tools on your machine**. If you haven't done so, :ref:`follow the set up guide for Node.js <node_installation>`.  Then, proceed to create your first Node.js :ref:`hive <hive_definition>` and :ref:`block <block_definition>` following these instructions:
+
 1. Create a new hive
 --------------------
 

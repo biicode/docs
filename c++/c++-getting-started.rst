@@ -3,8 +3,7 @@
 Getting Started
 ===============
 
-This example shows how to build a simple *'Hello World'* application with biicode.
-
+This example shows how to build a simple *'Hello World'* application with biicode. Remember that, **first of all, you need to install some tools on your machine**. If you haven't done so, :ref:`follow the set up guide for C/C++ <cpp_installation>`.  Then, proceed to create your first C++ :ref:`hive <hive_definition>` and :ref:`block <block_definition>` following these instructions:
 
 1. Create a new hive
 --------------------
@@ -56,7 +55,6 @@ You can open the ``main.cpp`` file in your favorite editor. This file contains t
 
 .. literalinclude:: ../_static/code/cpp/hello-world/default-main.cpp
    :language: cpp
-
 
 2. Build and run
 ----------------
