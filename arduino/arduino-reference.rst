@@ -1,3 +1,5 @@
+.. _arduino_reference:
+
 Reference
 =========
 
