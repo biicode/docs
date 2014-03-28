@@ -23,7 +23,7 @@ It will also prompt for **your first block name**. A block is a working unit you
 
 In the next step, the asistant will offer **to create a default hello world**, i.e. a source file with a ``main()`` function. You can press ``[ENTER]`` to accept the default option here (``YES``).
 
-Last, you will be asked to select an IDE family (``None`` by default).
+Last, you will be asked to select an IDE family (``None`` by default). Again, press ``[ENTER]``.
 
 .. code-block:: bash
 
