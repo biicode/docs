@@ -8,11 +8,11 @@ Release 0.13.1
 
 * Bugfixes in arduino build
 * Now you can upload to the arduino from the serial monitor
-* Imrpovements in node support
-* bii clean now deletes build folder
+* Better Node.js support
+* ``bii clean`` command now deletes the build folder
 * Removed main and class creation wizards
-* Removed cpp:exe
-* Now hives and blocks can be deleted on web
+* Removed ``bii cpp:exe`` command
+* Hives and Blocks can now be deleted from your user profile web page
 
 Release 0.12
 ------------
