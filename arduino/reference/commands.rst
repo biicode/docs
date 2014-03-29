@@ -112,11 +112,3 @@ When you want to deploy your code into the arduino, this command sends your prev
 	avrdude.exe done.  Thank you.
 
 	[100%] Built target [USER]_my_block_main-upload
-
-
-.. _bii_arduino_wizard:
-
-``bii arduino:wizard``: Create default classes or main files
-------------------------------------------------------------
-
-This command has the same utilities like the :ref:`cpp:wizard tool<bii_cpp_wizard>`. The difference is only in the default classes and mains which creates them, because arduino needs other templates.

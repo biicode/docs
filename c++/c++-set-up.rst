@@ -41,7 +41,7 @@ First, try the automatic installation provided by biicode. Only if something goe
 
 Type the previous command and follow the instructions. You might need to close your console and open a new one to reload the updated environment variables. In the new console window, re-run the ``bii setup:cpp`` command to verify everything is properly installed.
 
-**If something fails with the automatic installation**, please `contact us at our forum <http://forum.biicode.com/category/arduino>`_, and feel free to ask any questions. Then, **proceed with the alternative manual installation** described bellow.
+**If something fails with the automatic installation**, please `contact us at our forum <http://forum.biicode.com/category/arduino>`__, and feel free to ask any questions. Then, **proceed with the alternative manual installation** described bellow.
 
 2.2. Manual installation
 ........................
@@ -142,6 +142,7 @@ Once you have installed the tools, **you should check they are working properly*
 	$ mingw32-make --version
 	GNU Make [version]
 	...
+	
 4. What to do next?
 -------------------
 
@@ -151,7 +152,6 @@ You have successfully set up your system for developing C++ programs with biicod
 	
 	* Read the :ref:`C/C++ getting started guide <hello_world>`. You'll learn how to create, build and execute your first biicode hive project.
 	* Visit the :ref:`C/C++ examples section <cpp_examples>`.
-	* Read the reference for :ref:`C/C++ biicode commands <biicode_reference>`
-	* `Visit our forum and make any questions <http://forum.biicode.com/>`_
-
+	* Read the reference for :ref:`general biicode commands <biicode_reference>` and for :ref:`C/C++ specific biicode commands <cpp_reference>`
+	* You can also `visit our forum and make any questions <http://forum.biicode.com/>`_.
 

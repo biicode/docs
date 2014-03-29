@@ -2,6 +2,18 @@
 
 Changelog
 =========
+Release 0.13.1
+--------------
+.. *(28-03-14)*
+
+* Bugfixes in arduino build
+* Now you can upload to the arduino from the serial monitor
+* Better Node.js support
+* ``bii clean`` command now deletes the build folder
+* Removed main and class creation wizards
+* Removed ``bii cpp:exe`` command
+* Hives and Blocks can now be deleted from your user profile web page
+
 Release 0.12
 ------------
 .. *(21-03-14)*
@@ -23,7 +35,7 @@ Release 0.11.1
 * Nicer ``bii arduino:monitor`` in MacOS
 * Removed ``--default`` option in ``bii init`` and ``bii new``. New parameters for ``bii new`` command.
 * Enry points automatic detection in files with ``setup`` and ``loop`` functions
-* Adding ``import` as valid preprocessor directive.
+* Adding ``import`` as valid preprocessor directive.
 
 Release 0.10
 ------------
@@ -36,7 +48,6 @@ Release 0.10
 
 Release 0.09
 ------------
-
 .. *(13-02-14)*
 
 * There is a brand new visualization in browser of hives and dependencies with "$bii deps --graph"
