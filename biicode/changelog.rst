@@ -2,6 +2,16 @@
 
 Changelog
 =========
+Release 0.14
+--------------
+.. *(03-04-14)*
+
+* Fixed Ubuntu 64b installation issues
+* Arduino serial monitor (GUI) improvements
+* Bugfixes
+* Node integration improvement
+* Improved block deletion support
+
 Release 0.13.1
 --------------
 .. *(28-03-14)*
