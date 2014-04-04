@@ -131,7 +131,7 @@ For plain text examples or configuration files, use the marker for literal code 
 
 
 
-Anohter section: linking
+Another section: linking
 ------------------------
 
 Links to web pages. `This is a link to biicode.com <http://www.biicode.com>`_

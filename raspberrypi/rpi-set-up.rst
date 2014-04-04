@@ -131,7 +131,7 @@ You have successfully set up your system for developing C++ RPi programs with bi
 
 .. container:: infonote
 
-	**Install ia32-libs (only for 64-bit linux versions)**
+	**Install lib32z1 (only for 64-bit linux versions)**
 
 	To find if your Linux is 32 or 64 bits, just type:
 	 
@@ -148,7 +148,7 @@ You have successfully set up your system for developing C++ RPi programs with bi
 
 	.. code-block:: bash
 
-		$ sudo apt-get install lib32ncurses5 
+		$ sudo apt-get install lib32z1
 		
 	It is possible that you encounter some of the following errors:
 
