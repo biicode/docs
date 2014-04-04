@@ -5,7 +5,7 @@ Here you will find all the information to get started using biicode with your pr
 
 The documentation is structured as follows:
 
-* **Biicode General Information**: Contains general information about how biicode works. Here you will learn how register and download the client binaries for your platform, and some basic conceptos about biicode projects layout and important folders and configuration files. You'll also get access to the general referenc for the client commands and tools.
+* **Biicode General Information**: Contains general information about how biicode works. Here you will learn how register and download the biicode installer for your platform, and some basic conceptos about biicode projects layout and important folders and configuration files. You'll also get access to the general referenc for the client commands and tools.
 * **C/C++ Documentation**: contains information about the biicode support for C and C++ projects. Specific tools and configuraton options are explained in detail. You will also find a basic "Hello World" example project, and many more examples using different libraries.
 * **Arduino Documentation** contains specific documentation for Arduino projects. Here you'll learn how biicode simplifies working with Arduino boards and reusing Arduino libraries.
 * **Raspberry Pi Documentation** explains how to develop for your Raspberry Pi boards using biicode. Biicode technology simplifies these projects making easier both native compiling and cross compiling. You'll find a simple getting-started project along with many others.

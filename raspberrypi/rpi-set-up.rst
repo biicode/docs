@@ -36,7 +36,7 @@ Once you have installed the Raspbian distribution on your board, you are ready t
 Whether you intend to develop on your RPi board, or on your usual Linux Development Environment (**LDE**) cross-compiling your code, **you need to install the biicode software**. Read the :ref:`instructions in the general section of this documentation <first_steps>`. There you'll learn how to:
 
 * **Sign up** with biicode
-* Download and install the **client binaries** for your operating system (Raspbian in your RPi board, or a Debian-based distro for cross-compiling)
+* Download and install the **biicode installer** for your operating system (Raspbian in your RPi board, or a Debian-based distro for cross-compiling)
 * Create a biicode **workspace**
 
 .. container:: infonote
@@ -131,7 +131,7 @@ You have successfully set up your system for developing C++ RPi programs with bi
 
 .. container:: infonote
 
-	**Install ia32-libs (only for 64-bit linux versions)**
+	**Install lib32z1 (only for 64-bit linux versions)**
 
 	To find if your Linux is 32 or 64 bits, just type:
 	 
@@ -148,7 +148,7 @@ You have successfully set up your system for developing C++ RPi programs with bi
 
 	.. code-block:: bash
 
-		$ sudo apt-get install lib32ncurses5 
+		$ sudo apt-get install lib32z1
 		
 	It is possible that you encounter some of the following errors:
 
