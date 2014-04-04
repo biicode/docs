@@ -36,7 +36,7 @@ Once you have installed the Raspbian distribution on your board, you are ready t
 Whether you intend to develop on your RPi board, or on your usual Linux Development Environment (**LDE**) cross-compiling your code, **you need to install the biicode software**. Read the :ref:`instructions in the general section of this documentation <first_steps>`. There you'll learn how to:
 
 * **Sign up** with biicode
-* Download and install the **client binaries** for your operating system (Raspbian in your RPi board, or a Debian-based distro for cross-compiling)
+* Download and install the **biicode installer** for your operating system (Raspbian in your RPi board, or a Debian-based distro for cross-compiling)
 * Create a biicode **workspace**
 
 .. container:: infonote
