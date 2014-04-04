@@ -11,7 +11,7 @@ This section describes how to set uo your system and install the software to dev
 First of all, **you need to complete the biicode general installation**. Follow :ref:`the instructions in the general documentation, following this link <first_steps>`. You must: 
 
 * **Sign up** with biicode
-* Download and install the **biicode installer** for your operating system
+* Download and install the **biicode software** for your operating system
 * Create a biicode **workspace**
 
 After you have complete these steps, proceed with the following section:
