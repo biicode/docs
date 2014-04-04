@@ -13,7 +13,7 @@ As biicode is a rapidly evolving technology —right now we are releasing new ve
 C/C++ hives in Windows
 ^^^^^^^^^^^^^^^^^^^^^^
 
-This problem affects to **Windows user that compile their C or C++ hives with MinGW** compilation tools. In this case, there is an issue if you have installed the Windows Shell Command Tool, ``sh.exe`` on your system. In this case, check if your ``PATH`` environment variable containes the ``sh.exe`` program, and if it does, remove it. To do so:
+This problem affects to **Windows user that compile their C or C++ hives with MinGW** compilation tools. In this case, there is an issue if you have installed the Windows Shell Command Tool, ``sh.exe`` on your system. In this case, check if your ``PATH`` environment variable contains the ``sh.exe`` program, and if it does, remove it. To do so:
 
 #. Right-click on *My Computer* icon, choose properties from the context menu. (Alternatively, you can double-click on the *System* icon in the *Control Panel*)
 
