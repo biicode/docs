@@ -16,6 +16,28 @@ As biicode is a rapidly evolving technology —right now we are releasing new ve
 
 After these simple actions, everything should be back to normal.
 
+
+Windows: biicode stopped working
+--------------------------------
+.. container:: infonote
+
+    **Can this be your **
+
+	If you're using Eclipse or Visual Studio, stop reading, this doesn't affect you.
+
+    So if you are a windows user and can't even create a hive, keep reading. 
+
+Check if your path has ``sh.exe`` take it out.
+
+How can you achieve this?
+
+Right-click on My Computer icon, choose properties from the context menu. (Alternatively, you can double-click on the System icon in the Control Panel)
+
+Now go to Advaced System Settings Tab, click the Enviroment Variables button-> Path and edit. 
+
+Is your problem solved? If it isn't, please `contact us at our forum <http://forum.biicode.com/>`__, and we'll try to solve your problem as soon as possible.
+
+
 Old hives don't work properly with Biicode 0.11.1
 -------------------------------------------------
 
@@ -48,4 +70,3 @@ and for Raspberry Pi hives:
 
     bii rpi:settings   
  
-
