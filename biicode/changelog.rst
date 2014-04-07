@@ -2,7 +2,16 @@
 
 Changelog
 =========
-Release 0.14
+Release 0.15
+------------
+.. *(7-04-14)
+
+* Now work, find and upload can be done from arduino monitor GUI
+* Output information improvements
+* Auto remove empty dep folders
+* Arduino selection improvements, now you can select among different connected devices
+
+Release 0.14.1
 --------------
 .. *(03-04-14)*
 
