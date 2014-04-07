@@ -13,7 +13,7 @@ Updating your workspace from older versions
 
 0.11.1
 ^^^^^^
-**Important:** in this version there's no :ref:`enviroment.bii` file. 
+**Important:** in this version the **enviroment.bii** configuration file is deprecated, and no longer used. 
 
 There are new installation wizards for C/C++, Arduino and Raspberry Pi. You don’t need to manually download external tools anymore. To set them up you only need to execute one of the following commands in your console: 
 C/C++: ``bii setup:cpp`` 
