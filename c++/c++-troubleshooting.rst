@@ -23,4 +23,4 @@ If you are getting this error, please proceed as follows:
 #. Select Mach-O 64 Parser.
 #. Click *OK*.
 
-You can :ref:`read more in this section about configuring and IDE with your C/C++ projects <ide_configuration>`.
+You can :ref:`read more in this section about configuring an IDE with your C/C++ projects <ide_configuration>`.
