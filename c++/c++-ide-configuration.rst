@@ -55,15 +55,7 @@ Some particular configuration options for **Eclipse**, **Visual Studio** and **C
 
 		You can build your application in *Project > Build project* if you don't have automated builds set.
 
-		If you are using **Mac** as developing platform, you will need some aditional setup:
-
-		#. Right-click on your project and select *Properties*.
-		#. Select *C/C++ Make project* and click on the *Binary Parser* subsection tab.
-		#. Unselect Mach-O Parser (deprecated).
-		#. Select Mach-O 64 Parser.
-		#. Click *OK*.
-
-		And this is all you need to work as usual with the Eclipse IDE.
+		If you are using  Eclipse with **OS X** as development platform, you will need some aditional setup to execute your binaries within this IDE. :ref:`Read this troubleshooting section for more information <eclipse_osx_binaries>`.
 
 	.. _ide_visual:
 	.. container:: tabs-item

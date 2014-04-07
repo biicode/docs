@@ -25,3 +25,4 @@ In this context, biicode technology gives you several advantages for enriching y
 	c++/c++-ide-configuration
 	c++/c++-reference
 	c++/c++-faqs
+	c++/troubleshooting
