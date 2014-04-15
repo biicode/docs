@@ -9,3 +9,4 @@ Raspberry Pi examples
    tutorials/pwm
    tutorials/servo
    tutorials/opengles
+   tutorials/raspberry_pi_christmas
