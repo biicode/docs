@@ -16,5 +16,5 @@ You can compile this projects directly on your Raspberry Pi, :ref:`using this se
    examples/pwm
    examples/servo
    examples/opengles
-   examples/raspberry_pi_moving_doll
+   examples/raspberry-pi-moving-doll
 
