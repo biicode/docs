@@ -12,9 +12,6 @@ You can compile this projects directly on your Raspberry Pi, :ref:`using this se
 
    examples/wiringpi
    examples/httpserver
-   examples/blink
-   examples/pwm
-   examples/servo
    examples/opengles
    examples/raspberry_pi_moving_doll
 
