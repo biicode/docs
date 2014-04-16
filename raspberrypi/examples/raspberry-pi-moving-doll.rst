@@ -1,5 +1,5 @@
-How to make a funny moving doll with Raspberry PI and biicode
-=============================================================
+A funny moving doll with Raspberry PI and biicode
+=================================================
 
 Surprise your friends and family with a **moving doll**, just follow these few simple steps.
 
