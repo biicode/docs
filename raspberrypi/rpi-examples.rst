@@ -8,7 +8,13 @@ In this section you will find some examples, showing the benefints of using biic
 You can compile this projects directly on your Raspberry Pi, :ref:`using this setup <raspbian_installation>`. However, for performance reasons, we suggest :ref:`using the cross compilation feature built in biicode <rpi_cross_compiling>`. Cross compilation only works in Linux at the moment.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    examples/wiringpi
-   examples/tutorials
+   examples/httpserver
+   examples/blink
+   examples/pwm
+   examples/servo
+   examples/opengles
+   examples/raspberry_pi_moving_doll
+
