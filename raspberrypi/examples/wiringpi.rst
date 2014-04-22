@@ -3,7 +3,7 @@
 WiringPi: C GPIO library
 ========================
 
-With the WiringPi library you can use your Raspberry Pi GPIO in a simple way. It is designed to be familiar to Arduino users.
+WiringPi is an implementation of most of the Arduino Wiring functions for the Raspberry Pi, this library provides easy access to the Raspberry Pi GPIOs. The library supports the UART port, spi, i2c and pwm. `In the project page <http://wiringpi.com/reference/>`_ you will find all the information in more detail.
 
 +--------------------------------------------------------------------------------------------------+
 | Author: **Gordon Henderson**                                                                     |
@@ -15,13 +15,13 @@ With the WiringPi library you can use your Raspberry Pi GPIO in a simple way. It
 | `WiringPi home page <http://wiringpi.com/>`_                                                     |
 +--------------------------------------------------------------------------------------------------+
 
-WiringPi tutorials
-------------------
+WiringPi examples
+-----------------
 
 How to make a led blink
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-With this example we will have a LED flash every half second on pin 0 using the  (:ref:`WiringPi library <rpigpio>` 17).
+With this example we will have a LED flash every half second on pin 0 using the  (:ref:`GPIO <rpigpio>` 17).
 
 Remember to execute the ``bii:find`` command :ref:`(command info) <biifind>`.
 
