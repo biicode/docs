@@ -12,8 +12,8 @@ You just need paper, scissors, a servo, a Raspberry Pi and biicode!
 -------------------------------------------------------------------
 
 * Sing up to `biicode <https://www.biicode.com/>`_
-* :ref:`Install <installation>` biicode in a few easy steps.
-* Get :ref:`here <raspberry_pi>` all the info you need to use your Raspberry Pi with biicode.
+* :ref:`Install <first_steps>` biicode in a few easy steps.
+* Get :ref:`here <rpi_getting_started>` all the info you need to use your Raspberry Pi with biicode.
 * To move the servo, just use the :ref:`WiringPi library <wiringpi>`, ready to be used at biicode.
 
 .. code-block:: cpp

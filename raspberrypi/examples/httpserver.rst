@@ -28,7 +28,7 @@ Once you have the code, invoke ``bii find`` to resolve external dependencies. Th
 
 * Open your web browser and go to *http://localhost:9000*
 
-.. image:: ../../../_static/img/rpi/httpserverrpi.png
+.. image:: /_static/img/rpi/examples/httpserverrpi.png
 
 main.cpp
 ^^^^^^^^
