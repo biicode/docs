@@ -18,6 +18,17 @@ This example is a small modification of the code originaly programmed by `Ali Ba
 
 You can `explore the source code block for this example following this link <https://www.biicode.com/luispedraza/blocks/luispedraza/glui_example/branches/master>`__. In order to try this example, you only need to follow these steps:
 
+.. container:: infonote
+
+    **Ubuntu users may need to install some additional software**
+
+	If you are using Ubuntu Linux, you may need to install some additional packages. To do so, execute:
+
+	.. code-block:: bash
+
+		sudo apt-get install mesa-common-dev libglu1-mesa-dev libxi-dev	
+
+
 1. Create a **new hive with and empty block** in your biicode workspace. Provide ``none`` as the name of your first block (this way no block will be created) and the ``<hive_name>`` of your preference:
 
 .. code-block:: bash
