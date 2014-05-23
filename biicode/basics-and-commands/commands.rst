@@ -1,6 +1,6 @@
 .. _bii_commands:
 
-Biicode commands
+Global commands
 ================
 
 This section summarizes the general **commands available to be used with the biicode client program**. The biicode client is the main utility that allows you to:
@@ -12,6 +12,7 @@ This section summarizes the general **commands available to be used with the bii
 * **reuse** other users' code.
 
 All these functionalities are achieved using appropriate commands that are explained and used in many examples along this documentation, and are compiled here in a list for your convenience and reference.
+
 
 .. contents:: List of commands
    :local:
@@ -44,12 +45,42 @@ In case you choose **cpp** as your programming language, there are some addition
 * The name of the **IDE** you will be using when writing your code. This way, the command will be able to automatically create the project configuration for your favourite IDE. Available options are: *Visual*, *CodeBlocks*, *Eclipse*, *NetBeans*, or *None* (in case you don't need this configuration).
 * Finally, the client asks for a **build type** for your code. Available options are: *None*, *Debug*, *Release*, *RelWithDebInfo*, or *MinSizeRel*.
 
+
+.. _biiwork:
+
+``bii work``: Processing the code
+---------------------------------
+
+The ``bii work`` command is a very basic command that performs the main processing of biicode for your current hive. It checks what files you have modified, analyzes and search dependencies among your hive files (i.e. locally), and fills the ``deps`` folder. Most times it is not necessary to invoke this command explicitly, because it is automatically called by development commands as ``cpp:run``, ``cpp:build`` or ``cpp:configure``.
+
+.. code-block:: bash
+
+	$ bii work
+
+
+.. _biiclean:
+
+``bii clean``: Cleaning meta-information
+-----------------------------------------
+
+The ``bii clean`` command cleans most of biicode internal hive meta-information, keeping the strictly minimum required to reconstruct everything in a subsequent command. In theory, this command should not exist, but it is sometimes necessary, especially when new versions of biicode client are released that might have backwards incompatibilities.
+
+.. code-block:: bash
+
+	$ bii clean
+
+
 .. _bii_publish_command:
 
 ``bii publish``: Sharing your code
 ----------------------------------
 
-When your are happy with the state, functionality and performance of your code, you can publish your blocks and share them with other users. This way they will be able to reuse your code, including references to your blocks cells in their source files, and making use of the ``bii find`` command, explained bellow.
+When your are happy with the state, functionality and performance of your code, you can **publish your blocks and share them** with other users thanks to ``bii publish`` command. This way they will be able to reuse your code, including references to your blocks cells in their source files, and making use of the ``bii find`` command, explained in this section. The level of the reuse can be defined by the ``tag``, which can be one of:
+
+	* ``DEV``: It means that the code you are publishing is ready to be reused by yourself (or maybe your dev team) in another projects or contexts.
+	* ``ALPHA``: The code is ready to be reused by some friends or colleagues you explicitly invite to test your code
+	* ``BETA``: The code could be used by anyone in the world willing to test others code
+	* ``STABLE``: Ready to be reused by anyone in the world. This is typically the tag you want to use for your usual dependencies, and it is the default in the find policies.
 
 The ``bii publish`` command must be invoked inside a **hive** folder and has no parameters, but **will launch an assistant that will guide you** through the publishing process:
 
@@ -57,7 +88,58 @@ The ``bii publish`` command must be invoked inside a **hive** folder and has no 
 * You must define a **tag** for the published code. Available options are: *DEV*, *ALPHA*, *BETA* or *STABLE*, and they define the state of the development for your code. This information is used in by the :ref:`policies<policies>` of the users that will use this blocks, allowing them to define which versions of your code are their preference.
 * Finally, you must provide a short message describing the code your are publishing, and the new functionalities it provides (bugs fixed, or any other valuable information).
 
-After your block has been published and uploaded to the Biicode servers, the program shows a message with information about the name of the block (``user_name/simple_name``), the name of the branch (``user_name/branch_name``), and the numeric ID of the version that has been published in that particular branch.
+After your block has been published and uploaded to the biicode servers, the program shows a message with information about the name of the block (``user_name/simple_name``), the name of the branch (``user_name/branch_name``), and the numeric ID of the version that has been published in that particular branch.
+
+.. code-block:: bash
+
+	$ bii publish
+	*****************************
+	***** Publishing public ****
+	*****************************
+	Introduce block (/o list options): [USER]/[BLOCK_NAME]
+	Introduce tag (/o list options): STABLE
+	Introduce msg : Optimized C library for graphs computation
+
+	INFO: Successfully published [USER]/[BLOCK_NAME]([USER]/[BRANCH]): [VERSION]
+	INFO: You can find your block at [URL_TO_YOUR_PUBLISHED_BLOCK]
+
+Publishing new versions of your code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+What happens if you modify some code that you have just published? It is easy, you can publish
+a new version of such code, and other hives that depend (because they did a ``find``) on it can
+easily update so the new changes are obtained.
+
+
+.. _biiupload:
+
+``bii upload``: Uploading your hive
+------------------------------------
+
+The ``bii upload`` command allows you to upload any hive with all its contained blocks to the biicode servers. **This is not the same as publishing a block** with the ``bii publish`` command:
+
+* Any uploaded hive **is private**; only you can see them on your biicode profile web page, and no other biicode user has access to them.
+* There aren no *tags* or *publish messages* involved.
+* You cannot reuse any blocks which are in this hive from other hives; :ref:`you must publish them first <biipublish>` using the :ref:`bii publish command<bii_publish_command>`. This means that your unpublished blocks do not exist outside of the hive where they lay.
+
+.. code-block:: bash
+
+	$ bii upload
+
+.. _biidownload:
+
+``bii download``: Downloading your hive
+----------------------------------------
+
+You can download any hive you have previously uploaded. You only need the **name of the uploaded hive** and the help of the ``bii download`` command, that must be executed inside a biicode workspace:
+
+.. code-block:: bash
+	
+	$ cd my_workspace
+	$ bii download --hive <your_hive_name>
+
+**Note:** Remember **any downloaded hive is just a copy of the original one**. If you make changes to your hive and upload them later, it will overwrite the oldest files in biicode servers.
+
 
 .. _bii_deps_command:
 
@@ -75,8 +157,8 @@ The command can also be used combining a series of **additional parameters** (yo
 
 * Parameters for **filtering the cells to be analyzed**, whose dependencies are to be displayed. The command provides 4 different options for filtering the results:
 
-	* ``--blocks`` allows you to filter dependencies by block name.
-	* ``--files`` receives a list of cell names to be included in the result. Those files not contained in the list are omitted.
+	* ``--blocks [BLOCKS]`` allows you to filter dependencies by block name. Example: ``bii deps --blocks fenix/blink``
+	* ``--files [FILES]`` receives a list of cell names to be included in the result. Those files not contained in the list are omitted. Example: ``bii deps --files fenix/blink/blink.h``
 	* ``--virtual`` indicates the client to show only those virtual cells contained in your hive.
 	* ``--main`` is used for displaying information about cells that contain a ``main`` function or entry point to your code.
 
@@ -106,12 +188,44 @@ The command can also be used combining a series of **additional parameters** (yo
 
 .. _bii_find_command:
 
-``bii find``: Retrieving dependencies
---------------------------------------
+``bii find``: Finding dependencies
+----------------------------------
 
 This commands allows you to retrieve any code dependencies from the Biicode servers. The client analyzes your code, and find missing dependencies that cannot be resolved searching in your hive contents. The client then communicates with the biicode server and tries to find code that is missing in your workspace, and retrieves the best matching version according with your :ref:`policies<policies>`.
 
+.. code-block:: bash
+
+	$ bii find
+
 The retrieved files are copied on your file system, under the ``deps`` folder of your hive, following a folder structure that reproduces the name of the retrieved blocks: ``<block_name> = <user_name>/<simple_name>`` (see the :ref:`basic concepts<basic_concepts>` and how a **block** is uniquely identified).
+
+If you want to update already defined dependencies (as well as finding unresolved ones in the same step):
+
+.. code-block:: bash
+
+	$ bii find --update
+
+Biicode uses user defined policies to resolve dependencies. The configuration file for configuring your policies for this is named "policies.bii" in your hive "bii" folder. Note that all find commands depend on the values configured in such file. You can for example try to update your dependencies, but if there are no compatible versions that match your policies, you will not get such updates. E.g. a new ALPHA version for one of your dependencies will not be updated if you do not change your policy.
+
+If you want to find compatible downgrades:
+
+.. code-block:: bash
+
+	$ bii find --downgrade
+
+These options can be combined:
+
+.. code-block:: bash
+
+	$ bii find --update --downgrade
+
+If you want to find any possible matching compatible version (not just updates or downgrades from your current one), type:
+
+.. code-block:: bash
+
+	$ bii find --modify
+
+
 
 .. _bii_open_command:
 
@@ -146,6 +260,19 @@ Your hive is not empty
 ^^^^^^^^^^^^^^^^^^^^^^
 
 This case is very similar to the empty hive one except it may alter your current dependencies. If you already have edition blocks in your hive and you open another one that is not related to your other blocks, its dependencies will prevail over your existing dependencies. This means your dependencies can be upgraded or downgraded to match the ones in the block you are opening. If you want to enforce specic versions you can always do it editing your :ref:`policies file<policies>`.
+
+
+.. _bii_close_command:
+
+``bii close``: Finish editing the code
+----------------------------------------
+
+You can use ``bii close <block_name>`` command to close a block under edition in ``blocks``, i.e., a block that you have done a ``bii open`` and have be editing it. If it's a dependency of any block yours, moves it to ``deps`` folder.
+
+.. code-block:: bash
+
+	$ bii close martha/her_block
+
 
 .. _bii_merge_command:
 
@@ -352,4 +479,48 @@ This information about the merges performed in your code is only available local
 	============
 	No merges found in this hive.
 
+.. _bii_settings_command:
+
+``bii settings``: Hive information
+------------------------------------
+
+This command shows your current hive settings. An example:
+
+.. code-block:: bash
+
+	$ bii settings
+	INFO: These are your settings for this hive
+	INFO: arduino:
+	  board: uno
+	  builder: {family: make, subfamily: mingw}
+	  port: None
+	  programmer: usbtinyisp
+	os: {arch: 32bit, family: Windows, subfamily: '8', version: 6.2.9200}
+
+	INFO: If you want to change it, you have to modify this file:
+	    [HIVE_PATH]\[USER]\bii\settings.bii
+
+
+
+
+.. _bii_setup_command:
+
+``bii setup``: Hive information
+-----------------------------------
+
+
+
+
+.. _bii_status_command:
+
+``bii status``: Hive information
+-----------------------------------
+
+
+
+
+.. _bii_diff_command:
+
+``bii diff``: Hive information
+------------------------------
 

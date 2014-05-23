@@ -23,7 +23,6 @@ The workspace layout is as follows: ::
 |    |    |-- .bii.db
 |    |    |-- ignore.bii
 |    |    |-- default_policies.bii
-|    |    +-- environment.bii
 |    +-- my_hive1
 |    +-- my_hive2
 
@@ -33,7 +32,6 @@ As you can see there is a ``bii`` folder containing several files with ``.bii`` 
 * ``.bii.db``: is a local cache, that allows us to optimize dependencies retrieval for your hives. It contains information about previously downloaded dependencies, with the main purpose of accelerating future retrievals. You **must not edit or delete this file** under any circumstances.
 * ``ignore.bii``: holds **default file filtering rules**. Its format is simmilar to a `.gitignore file <http://git-scm.com/docs/gitignore>`_, and indicates biicode **which files must be ignored** when processing and publishing your files. This configuration is applied hierarchically across all desdendant workspace folders, but can be overriden from any local block, creating custom specific configurations. :ref:`Learn more about ignore files following this link <ignore>`.
 * ``default_policies.bii``: holds your workspace default `policies <http://docs.biicode.com/en/latest/reference/policies.html>`_ configuration. These policies define **how dependencies are found and which versions are retrieved** to your local filesystem. The contents of this file are copied to your hive's ``policies.bii`` configuration file whenever you create a new hive. You can think of this file as a template policies configuration for your new hives.
-* ``environment.bii``: contains general **information about your development system and tools**, such as your operating system and installed compilers and IDEs. You can edit any tool path location if it is not present in your ``$PATH``. You can have, for instance, several IDEs defined in your environment. The contents of this file are eployed for generating specific settings for your hives.
 
 As we already know, the workspace folder is :ref:`the top-level container for all your hives<basic_concepts>`. Every single hive in your workspace as also a predefined folders structure that mus be observed, which is described below.
 
@@ -65,9 +63,9 @@ A typical hive layout is as follows: ::
 |    |    |   	      |-- foo.c
 |    |    |           +-- bar.h
 |    |    +-- other_user_name
-|    |          +-- bii
-|    |          |     |-- mains.bii
 |    |          +-- block_im_editing
+|	 |                +-- bii
+|	 |                |    |-- mains.bii
 |    |        	      |-- message.c
 |    |                +-- message.h
 |    +-- build
