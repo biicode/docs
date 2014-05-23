@@ -9,9 +9,8 @@ This is the biicode general documentation.
    :maxdepth: 2
 
    biicode/intro
-   biicode/definitions
    biicode/installation
-   biicode/basics
+   biicode/basics_and_commands
    biicode/advanced
    biicode/reference
    biicode/changelog

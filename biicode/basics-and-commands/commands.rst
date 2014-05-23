@@ -58,18 +58,6 @@ The ``bii work`` command is a very basic command that performs the main processi
 	$ bii work
 
 
-.. _biiclean:
-
-``bii clean``: Cleaning meta-information
------------------------------------------
-
-The ``bii clean`` command cleans most of biicode internal hive meta-information, keeping the strictly minimum required to reconstruct everything in a subsequent command. In theory, this command should not exist, but it is sometimes necessary, especially when new versions of biicode client are released that might have backwards incompatibilities.
-
-.. code-block:: bash
-
-	$ bii clean
-
-
 .. _bii_publish_command:
 
 ``bii publish``: Sharing your code
@@ -111,81 +99,6 @@ a new version of such code, and other hives that depend (because they did a ``fi
 easily update so the new changes are obtained.
 
 
-.. _biiupload:
-
-``bii upload``: Uploading your hive
-------------------------------------
-
-The ``bii upload`` command allows you to upload any hive with all its contained blocks to the biicode servers. **This is not the same as publishing a block** with the ``bii publish`` command:
-
-* Any uploaded hive **is private**; only you can see them on your biicode profile web page, and no other biicode user has access to them.
-* There aren no *tags* or *publish messages* involved.
-* You cannot reuse any blocks which are in this hive from other hives; :ref:`you must publish them first <biipublish>` using the :ref:`bii publish command<bii_publish_command>`. This means that your unpublished blocks do not exist outside of the hive where they lay.
-
-.. code-block:: bash
-
-	$ bii upload
-
-.. _biidownload:
-
-``bii download``: Downloading your hive
-----------------------------------------
-
-You can download any hive you have previously uploaded. You only need the **name of the uploaded hive** and the help of the ``bii download`` command, that must be executed inside a biicode workspace:
-
-.. code-block:: bash
-	
-	$ cd my_workspace
-	$ bii download --hive <your_hive_name>
-
-**Note:** Remember **any downloaded hive is just a copy of the original one**. If you make changes to your hive and upload them later, it will overwrite the oldest files in biicode servers.
-
-
-.. _bii_deps_command:
-
-``bii deps``: Analyzing code dependencies
------------------------------------------
-
-This command allows you to check the dependencies of any hive in your workspace. It's basic form, with no parameters, provides two pieces of information, giving you a general idea of which are your code dependencies:
-
-* The **Dependencies Table**: a list of the **blocks that contain cells your code depends on**.
-* The full list of your cell dependencies.
-
-The command can also be used combining a series of **additional parameters** (you can obtain the full list typing ``bii deps --help`` inside your workspace):
-
-* ``--detail``: Provides a detailed view of your hive's dependencies, grouping your source cells with their corresponding source blocks (those contained within the ``blocks`` folder of your hive). For each file, the command shows information about it's name and type, the presence or not of a ``main`` function, and the full list of dependencies for each particular cell, grouped under the *explicit* (those dependencies explicitly referenced in your code, as C++ includes or python imports), *implicit* (deduced from code inspection, i.e. C++ implementation files of symbols defined in a header file), and *system* (grouping all system dependencies of a file) sections.
-
-* Parameters for **filtering the cells to be analyzed**, whose dependencies are to be displayed. The command provides 4 different options for filtering the results:
-
-	* ``--blocks [BLOCKS]`` allows you to filter dependencies by block name. Example: ``bii deps --blocks fenix/blink``
-	* ``--files [FILES]`` receives a list of cell names to be included in the result. Those files not contained in the list are omitted. Example: ``bii deps --files fenix/blink/blink.h``
-	* ``--virtual`` indicates the client to show only those virtual cells contained in your hive.
-	* ``--main`` is used for displaying information about cells that contain a ``main`` function or entry point to your code.
-
-* Parameters for **filtering the dependencies**. These allow you to specify you want the client to show their dependencies:
-
-	* ``--unresolved`` shows only your cells' unresolved dependencies; those that are unknown by biicode, and cannot be retrieved from our servers using the :ref:`find command<bii_find_command>`.
-	* ``--system`` make the command show only system dependencies for your cells.
-	* ``--implicit`` shows only implicit dependencies for your cells.
-	* ``--explicit`` shows only those dependencies explicitly referenced in your files.
-	* ``--data`` filters the results showing only data dependencies.
-
-* ``--graph``: This last option provides a **visual representation** of your blocks and their dependencies. The client generates an interactive graph that is open in your web browser. Despite most of the code is saved on your local filesystem, you'll need an internet connection for loading some aditional libraries.
-
-	Bellow you can see an example of these representations generated for a sample *'hello world'* block. In this case there are no external dependencies, and only those blocks contained in the ``blocks`` folder of your hive (the ``user/hello_world`` bock) are represented, and grouped under the 'SRC' element. There is also one system dependency. You can click on the different nodes to expand and show their content. You can also drag every node, or pan and zoom the whole graphic.
-
-	.. raw:: html
-
-		<iframe src="/_static/graphs/hello_world/hello_world.html" width="100%" height="600px"></iframe>
-
-	* Double-clicking on any empty area **resets the pan and zoom** to their initial values.
-	* All dependencies are represented as **colored connections** (red for implicit dependencies, blue for explicit dependencies, and yellow for all system dependencies). All unresolved dependencies are displayed in a dark grey color.
-	* Virtual cells are related to their possible implementations using **green connections**.
-	* You can show or hide any type of dependency just clicking on their corresponding toolbar buttons.
-	* Dragging a node while holding the *shift* key allows you to move also all its descendant nodes (those folders and cells contained in that particular node, that are currently visible on the graph).
-	* The outer color of each cell corresponds to the color of its block, while the inner color gives information about the particular cell type (cpp, python, etc.).
-
-
 .. _bii_find_command:
 
 ``bii find``: Finding dependencies
@@ -225,6 +138,110 @@ If you want to find any possible matching compatible version (not just updates o
 
 	$ bii find --modify
 
+
+.. _biiupload:
+
+``bii upload``: Uploading your hive
+------------------------------------
+
+The ``bii upload`` command allows you to upload any hive with all its contained blocks to the biicode servers. **This is not the same as publishing a block** with the ``bii publish`` command:
+
+* Any uploaded hive **is private**; only you can see them on your biicode profile web page, and no other biicode user has access to them.
+* There aren no *tags* or *publish messages* involved.
+* You cannot reuse any blocks which are in this hive from other hives; **you must publish them first** using the :ref:`bii publish command<bii_publish_command>`. This means that your unpublished blocks do not exist outside of the hive where they lay.
+
+.. code-block:: bash
+
+	$ bii upload
+
+.. _biidownload:
+
+``bii download``: Downloading your hive
+----------------------------------------
+
+You can download any hive you have previously uploaded. You only need the **name of the uploaded hive** and the help of the ``bii download`` command, that must be executed inside a biicode workspace:
+
+.. code-block:: bash
+	
+	$ cd my_workspace
+	$ bii download --hive <your_hive_name>
+
+**Note:** Remember **any downloaded hive is just a copy of the original one**. If you make changes to your hive and upload them later, it will overwrite the oldest files in biicode servers.
+
+
+.. _biiclean:
+
+``bii clean``: Cleaning meta-information
+-----------------------------------------
+
+The ``bii clean`` command cleans most of biicode internal hive meta-information, keeping the strictly minimum required to reconstruct everything in a subsequent command. In theory, this command should not exist, but it is sometimes necessary, especially when new versions of biicode client are released that might have backwards incompatibilities.
+
+.. code-block:: bash
+
+	$ bii clean
+
+
+.. _bii_deps_command:
+
+``bii deps``: Analyzing code dependencies
+-----------------------------------------
+
+This command allows you to check the dependencies of any hive in your workspace. It's basic form, with no parameters, provides two pieces of information, giving you a general idea of which are your code dependencies:
+
+* The **Dependencies Table**: a list of the **blocks that contain cells your code depends on**.
+* The full list of your cell dependencies.
+
+The command can also be used combining a series of **additional parameters** (you can obtain the full list typing ``bii deps --help`` inside your workspace):
+
+.. code-block:: bash
+
+	usage: bii deps [-h] [--detail] [--unresolved] [--system] [--implicit]
+	                [--explicit] [--data] [--blocks BLOCKS [BLOCKS ...]]
+	                [--files FILES [FILES ...]] [--virtual] [--main] [--graph]
+
+	...
+
+* ``--detail``: Provides a detailed view of your hive's dependencies, grouping your source cells with their corresponding source blocks (those contained within the ``blocks`` folder of your hive). For each file, the command shows information about it's name and type, the presence or not of a ``main`` function, and the full list of dependencies for each particular cell, grouped under the *explicit* (those dependencies explicitly referenced in your code, as C++ includes or python imports), *implicit* (deduced from code inspection, i.e. C++ implementation files of symbols defined in a header file), and *system* (grouping all system dependencies of a file) sections.
+
+* Parameters for **filtering the cells to be analyzed**, whose dependencies are to be displayed. The command provides 4 different options for filtering the results:
+
+	* ``--blocks [BLOCKS]`` allows you to filter dependencies by block name. Example:
+
+		.. code-block:: bash
+
+			$ bii deps --blocks fenix/blink
+
+	* ``--files [FILES]`` receives a list of cell names to be included in the result. Those files not contained in the list are omitted. Example:
+
+		.. code-block:: bash
+
+			$ bii deps --files fenix/blink/blink.h
+
+	* ``--virtual`` indicates the client to show only those virtual cells contained in your hive.
+	* ``--main`` is used for displaying information about cells that contain a ``main`` function or entry point to your code.
+
+* Parameters for **filtering the dependencies**. These allow you to specify you want the client to show their dependencies:
+
+	* ``--unresolved`` shows only your cells' unresolved dependencies; those that are unknown by biicode, and cannot be retrieved from our servers using the :ref:`find command<bii_find_command>`.
+	* ``--system`` make the command show only system dependencies for your cells.
+	* ``--implicit`` shows only implicit dependencies for your cells.
+	* ``--explicit`` shows only those dependencies explicitly referenced in your files.
+	* ``--data`` filters the results showing only data dependencies.
+
+* ``--graph``: This last option provides a **visual representation** of your blocks and their dependencies. The client generates an interactive graph that is open in your web browser. Despite most of the code is saved on your local filesystem, you'll need an internet connection for loading some aditional libraries.
+
+	Bellow you can see an example of these representations generated for a sample *'hello world'* block. In this case there are no external dependencies, and only those blocks contained in the ``blocks`` folder of your hive (the ``user/hello_world`` bock) are represented, and grouped under the 'SRC' element. There is also one system dependency. You can click on the different nodes to expand and show their content. You can also drag every node, or pan and zoom the whole graphic.
+
+	.. raw:: html
+
+		<iframe src="/_static/graphs/hello_world/hello_world.html" width="100%" height="600px"></iframe>
+
+	* Double-clicking on any empty area **resets the pan and zoom** to their initial values.
+	* All dependencies are represented as **colored connections** (red for implicit dependencies, blue for explicit dependencies, and yellow for all system dependencies). All unresolved dependencies are displayed in a dark grey color.
+	* Virtual cells are related to their possible implementations using **green connections**.
+	* You can show or hide any type of dependency just clicking on their corresponding toolbar buttons.
+	* Dragging a node while holding the *shift* key allows you to move also all its descendant nodes (those folders and cells contained in that particular node, that are currently visible on the graph).
+	* The outer color of each cell corresponds to the color of its block, while the inner color gives information about the particular cell type (cpp, python, etc.).
 
 
 .. _bii_open_command:
@@ -479,12 +496,90 @@ This information about the merges performed in your code is only available local
 	============
 	No merges found in this hive.
 
+
+.. _bii_status_command:
+
+``bii status``: Hive status
+-----------------------------------
+
+``bii status`` command indicates you if there are changes in your code.
+
+For example, if you have not changes:
+
+.. code-block:: bash
+
+	$ bii status
+	INFO: Everything up to date
+
+If you have changes in a ``main.cpp`` file:
+
+.. code-block:: bash
+
+	$ bii status
+	[USER]/[BLOCK_NAME]
+
+	  Modified:
+	    [USER]/[BLOCK_NAME]/main.cpp
+
+
+.. _bii_diff_command:
+
+``bii diff``: Compare files
+------------------------------
+
+Compare files and show differences with ``bii diff <block_name>`` command. You can compare your current hive with previous published versions or compare between published versions.
+
+For example, if you want to see the changes in your local block with the saved last current version.
+
+.. code-block:: bash
+
+	$ bii diff [user]/[block]
+
+Now you have published new two versions and you'd want to know the ``diff`` between your ``current local block`` with the first version (``version=0``) published in biicode:
+
+.. code-block:: bash
+
+	$ bii diff [user]/[block] --v1 0
+
+Now, if you'd want to know the ``diff`` between the ``version=0`` and ``version=1`` published:
+
+.. code-block:: bash
+
+	$ bii diff [user]/[block] --v1 0 --v2 1
+
+
+.. _bii_setup_command:
+
+``bii setup``: Set Up tool
+-----------------------------
+
+This command helps you to set up all the necessary tools to start to use biicode.
+
+Setup for installing cpp third party tools
+
+.. code-block:: bash
+
+	$ bii setup:cpp
+
+Setup for installing cpp third party tools and Arduino SW
+
+.. code-block:: bash
+
+	$ bii setup:arduino
+
+Setup cross compiler tools for Raspberry Pi (must be linux)
+
+.. code-block:: bash
+
+	$ bii setup:rpi
+
+
 .. _bii_settings_command:
 
-``bii settings``: Hive information
-------------------------------------
+``bii settings``: Hive settings 
+----------------------------------
 
-This command shows your current hive settings. An example:
+This command shows your current hive settings. This is an example about a hive with Arduino language:
 
 .. code-block:: bash
 
@@ -498,29 +593,4 @@ This command shows your current hive settings. An example:
 	os: {arch: 32bit, family: Windows, subfamily: '8', version: 6.2.9200}
 
 	INFO: If you want to change it, you have to modify this file:
-	    [HIVE_PATH]\[USER]\bii\settings.bii
-
-
-
-
-.. _bii_setup_command:
-
-``bii setup``: Hive information
------------------------------------
-
-
-
-
-.. _bii_status_command:
-
-``bii status``: Hive information
------------------------------------
-
-
-
-
-.. _bii_diff_command:
-
-``bii diff``: Hive information
-------------------------------
-
+	    [HIVE_PATH]/[USER]/bii/settings.bii
