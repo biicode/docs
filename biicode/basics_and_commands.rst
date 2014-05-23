@@ -8,7 +8,7 @@ This section describes **the most common use cases that you will find when using
 * Some people share their code, publishing their blocks, and uploading their source code to our servers. We analyze every single block, establishing all internal and external dependencies, and making them available to the rest of biicode users.
 * Some people reuse code. These are developers reusing previously published versions of their own or other's code.
 
-Biicode provides the tools for analyzing, publishing and reusing code and how to build or execute it. The basic biicode commands for these activities are explained in the following lines (a more detailed description of some of these commands can be found in the :ref:`commands reference <bii_commands>`):
+Biicode provides the tools for analyzing, publishing and reusing code and how to build or execute it. The basic biicode commands for these activities are explained in the following lines:
 
 .. toctree::
 	:maxdepth: 2

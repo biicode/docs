@@ -34,16 +34,22 @@ This command creates a special ``bii`` folder in the root of your workspace, tha
 
 This is the command that **creates new hives inside your workspace**. It must be invoked inside a biicode workspace folder, and **receives as the only parameter the name of the hive to be created**. You can see :ref:`this basic 'hello world' example <hello_world>` to see how a typical hive is created.
 
-The ``bii new <hive_name>`` command creates a new folder within :ref:`your workspace<workspace_layout>` with the name of the hive. It also creates :ref:`the full folders structure where your blocks and cells will be located<hive_layout>`. After invoking the command, some questions are asked to the user:
+.. code-block:: bash
 
-* The **programming language** of your code. This information is used to define the project configuration, making use of the default settings defined in your workspace configuration default files. Available options are: *java*, *node*, *fortran*, *python*, *cpp*, *arduino* or *None*.
-* The name of the **first block** in your hive. A hive, as any other software project, is a logical structure that contains your source files. From a functional point of view, :ref:`your source files are grouped in blocks<block_definition>`. Any hive can hold as many blocks as you want, but at least on of them must be placed in the ``blocks`` folder of your hive, and contain the original code your are creating (or the modifications applied to other users blocks). In other works, **every hive must contain at least on block of code** under the ``blocks`` folder.
+	$ bii new hello_hive
 
-In case you choose **cpp** as your programming language, there are some additional options that are supported by the client program, and help you to configure your project and build settings:
+The ``bii new <hive_name>`` command creates a new folder within :ref:`your workspace<workspace_layout>` with the name of the hive. It also creates :ref:`the full folders structure where your blocks and cells will be located<hive_layout>`. After invoking the command, **some questions are asked to the user**:
 
-* The option to create a default **'hello world'** block for your language. The sample code is placed inside the first block whose name is defined in the previous step.
-* The name of the **IDE** you will be using when writing your code. This way, the command will be able to automatically create the project configuration for your favourite IDE. Available options are: *Visual*, *CodeBlocks*, *Eclipse*, *NetBeans*, or *None* (in case you don't need this configuration).
-* Finally, the client asks for a **build type** for your code. Available options are: *None*, *Debug*, *Release*, *RelWithDebInfo*, or *MinSizeRel*.
+* The **programming language** of your code. Available options are: ``node``, ``fortran``, ``python``, ``cpp``, ``arduino`` or ``None``.
+
+* The name of the **first block** in your hive. From a functional point of view, :ref:`your source files are grouped in blocks<block_definition>`. Any hive can hold as many blocks as you want but **every hive must contain at least one block of code** under the ``blocks`` folder.
+
+* The option to create a default **'hello world'** file for your language. The sample code is placed inside the first block whose name is defined in the previous step.
+
+Then some specific questions, depending on the chosen programming language, could be:
+
+* The name of the **IDE** you will be using when writing your code. This way, the command will be able to automatically create the project configuration for your favourite IDE. Available options are (depending on language): ``Visual``, ``CodeBlocks``, ``Eclipse``, ``NetBeans``, or ``None`` (in case you don't need this configuration).
+* The **build type** for your code. Available options are: ``None``, ``Debug``, ``Release``, ``RelWithDebInfo``, or ``MinSizeRel``.
 
 
 .. _biiwork:
@@ -63,17 +69,19 @@ The ``bii work`` command is a very basic command that performs the main processi
 ``bii publish``: Sharing your code
 ----------------------------------
 
-When your are happy with the state, functionality and performance of your code, you can **publish your blocks and share them** with other users thanks to ``bii publish`` command. This way they will be able to reuse your code, including references to your blocks cells in their source files, and making use of the ``bii find`` command, explained in this section. The level of the reuse can be defined by the ``tag``, which can be one of:
-
-	* ``DEV``: It means that the code you are publishing is ready to be reused by yourself (or maybe your dev team) in another projects or contexts.
-	* ``ALPHA``: The code is ready to be reused by some friends or colleagues you explicitly invite to test your code
-	* ``BETA``: The code could be used by anyone in the world willing to test others code
-	* ``STABLE``: Ready to be reused by anyone in the world. This is typically the tag you want to use for your usual dependencies, and it is the default in the find policies.
+When your are happy with the state, functionality and performance of your code, you can **publish your blocks and share them** with other users thanks to ``bii publish`` command. This way they will be able to reuse your code, including references to your blocks cells in their source files, and making use of the ``bii find`` command, explained in this section.
 
 The ``bii publish`` command must be invoked inside a **hive** folder and has no parameters, but **will launch an assistant that will guide you** through the publishing process:
 
-* In case your **hive** contains multiple blocks under your ``blocks`` folder, it will ask you which of them you wish to publish. Remember that the name of a block is composed by the name of the original creator, and the simple name of the block joined by a *slash* (``/``) character: ``user_name/simple_name``.
-* You must define a **tag** for the published code. Available options are: *DEV*, *ALPHA*, *BETA* or *STABLE*, and they define the state of the development for your code. This information is used in by the :ref:`policies<policies>` of the users that will use this blocks, allowing them to define which versions of your code are their preference.
+* In case your **hive** contains multiple blocks under your ``blocks`` folder, it will ask you which of them (``user_name/simple_name``) you wish to publish.
+* You must define a **tag** for the published code. Available options are: 	
+
+	* ``DEV``: The code you are publishing is ready to be reused by yourself (or maybe your dev team)
+	* ``ALPHA``: The code is ready to be reused by some friends or colleagues you explicitly invite to test your code
+	* ``BETA``: The code could be used by anyone in the world willing to test others code
+	* ``STABLE``: Ready to be reused by anyone in the world.
+
+ They define the state of the development for your code. This information is used in by the :ref:`policies<policies>` of the users that will use this blocks.
 * Finally, you must provide a short message describing the code your are publishing, and the new functionalities it provides (bugs fixed, or any other valuable information).
 
 After your block has been published and uploaded to the biicode servers, the program shows a message with information about the name of the block (``user_name/simple_name``), the name of the branch (``user_name/branch_name``), and the numeric ID of the version that has been published in that particular branch.
@@ -104,7 +112,7 @@ easily update so the new changes are obtained.
 ``bii find``: Finding dependencies
 ----------------------------------
 
-This commands allows you to retrieve any code dependencies from the Biicode servers. The client analyzes your code, and find missing dependencies that cannot be resolved searching in your hive contents. The client then communicates with the biicode server and tries to find code that is missing in your workspace, and retrieves the best matching version according with your :ref:`policies<policies>`.
+This commands allows you to retrieve any code dependencies from the biicode servers. The client analyzes your code, and find missing dependencies that cannot be resolved searching in your hive contents. The client then communicates with the biicode server and tries to find code that is missing in your workspace, and retrieves the best matching version according with your :ref:`policies<policies>`.
 
 .. code-block:: bash
 
