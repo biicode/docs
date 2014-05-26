@@ -32,3 +32,5 @@ Biicode offers you a set of configuration files across your workspace, hives, an
    virtual.bii: Defining virtual resources <configuration_files/virtual>
    ignore.bii: Filtering your files <configuration_files/ignore>
    types.bii: Configuring non-standar file extensions <configuration_files/types>
+   requirements.bii: Filtering your files <configuration_files/requirements>
+   parents.bii: Editing your tracking information <configuration_files/parents>

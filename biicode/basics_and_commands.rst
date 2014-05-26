@@ -1,7 +1,7 @@
 .. _basic_usage:
 
-Basic concepts & Commands
-=========================
+Basics & Commands
+===================
 
 This section describes **the most common use cases that you will find when using biicode**. Biicode is a powerful tool that automates the resolution of code dependencies, project management, building, cross-compiling etc. To do so, it is able to analyze and understand your code, and find in our servers any missing dependencies. It is clear that all this process relies on two very important activities that are at the very basis of biicode philosophy: **sharing and reusing of source code**.
 

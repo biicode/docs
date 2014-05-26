@@ -13,7 +13,7 @@ This is the biicode general documentation.
    biicode/basics_and_commands
    biicode/advanced
    biicode/reference
+   biicode/upgrading
    biicode/changelog
    biicode/faqs
-   biicode/upgrading
    biicode/troubleshooting
