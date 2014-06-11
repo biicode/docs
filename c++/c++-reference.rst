@@ -7,5 +7,4 @@ Reference
    :maxdepth: 2
 
    reference/commands
-   reference/cpp-build-files
-   reference/cpprules
+   reference/cpp-ide-configuration

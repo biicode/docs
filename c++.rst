@@ -20,10 +20,10 @@ In this context, biicode technology gives you several advantages for enriching y
 .. toctree::
 	:maxdepth: 2
 
-	c++/c++-set-up
 	c++/c++-getting-started
+	c++/c++-set-up
 	c++/c++-examples
-	c++/c++-ide-configuration
+	c++/c++-cmake
 	c++/c++-reference
 	c++/c++-faqs
 	c++/c++-troubleshooting
