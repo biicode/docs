@@ -21,9 +21,8 @@ In this context, biicode technology gives you several advantages for enriching y
 	:maxdepth: 2
 
 	c++/c++-getting-started
-	c++/c++-set-up
+	c++/c++-howto
+	c++/c++-features
 	c++/c++-examples
-	c++/c++-cmake
-	c++/c++-reference
 	c++/c++-faqs
 	c++/c++-troubleshooting

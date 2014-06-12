@@ -1,5 +1,5 @@
-CMake
-=====
+Configure yours own CMake
+=========================
 
 .. toctree::
    :maxdepth: 2

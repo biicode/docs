@@ -5,8 +5,8 @@ Getting Started
 
 This example shows how to install biicode and code a C++ test with GTest. You don't need to have installed GTest, biicode will download and configure it automatically for you.
 
-1. Installing the Tools
------------------------
+1. Installing biicode and C/C++ tools
+-------------------------------------
 
 For reuse code, you need to install biicode and a group of external tools (CMake and MinGW or GCC).
 
@@ -17,6 +17,9 @@ For reuse code, you need to install biicode and a group of external tools (CMake
 
    $ bii setup:cpp
 
+.. container:: infonote
+
+    If you have any problem installing the C/C++ tools, you can see :ref:`how to install C/C++ tools manually <cpp_installation>`
 
 2. Create your project
 ----------------------
@@ -40,7 +43,8 @@ Now, we will create a block. a block is the place where you must place your code
 
 .. code-block:: bash
 
-   $ bii init cpp_hello_project --hello=cpp
+   $ cd cpp_hello_project
+   $ bii new cpp_hello_project --hello=cpp
 
 This command will create the following layout:
 
@@ -56,7 +60,7 @@ This command will create the following layout:
 
 .. container:: infonote
 
-    **why this?**
+    **why this layout?**
 
     This layout is because biicode analyse the dependencies of yours blocks and download it into de deps folder. It is important because biicode configure and build your project following this layout.
 
@@ -92,3 +96,7 @@ Now, edit your main.cpp file with the following code and execute ``bii find``.
    $ bii find
 
 Now, execute ``bii cpp:build`` and biicode will configure your project and compile your code into the bin folder.
+
+.. code-block:: bash
+
+   $ bii cpp:build

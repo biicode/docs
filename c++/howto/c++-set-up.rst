@@ -1,8 +1,8 @@
 
 .. _cpp_installation:
 
-C++ set up
-==========
+install C/C++ tools manually 
+============================
 
 This section describes how to install, set up and verify some **tools needed for building C and C++ projects with biicode**. These tools are:
 
@@ -13,8 +13,6 @@ The steps for the installation of these tools vary from one operating system to 
 
 1. C++ tools installation
 -------------------------
-This section describes **how to configure your system for C/C++ programs with biicode.**
-
 First of all, **you need install biicode**.
 
 Now, try the automatic installation. Only if something goes wrong, proceed with the manual installation described at the end of this section.
@@ -131,16 +129,3 @@ Once you have installed the tools, **you should check they are working properly*
 	$ mingw32-make --version
 	GNU Make [version]
 	...
-	
-3. What to do next?
--------------------
-
-You have successfully set up your system for developing C++ programs with biicode. These are some resources that will help you:
-
-.. container:: todo
-	
-	* Read the :ref:`C/C++ getting started guide <hello_world>`. You'll learn how to create, build and execute your first biicode hive project.
-	* Visit the :ref:`C/C++ examples section <cpp_examples>`.
-	* Read the reference for :ref:`general biicode commands <biicode_reference>` and for :ref:`C/C++ specific biicode commands <cpp_reference>`
-	* You can also `visit our forum and make any questions <http://forum.biicode.com/>`_.
-
