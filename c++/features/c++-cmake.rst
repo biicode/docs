@@ -1,7 +1,7 @@
-Configure yours own CMake
-=========================
+CMake layout
+============
 
 .. toctree::
    :maxdepth: 2
 
-   cmake/cpp-build-files
+   cmake/c++-build-files

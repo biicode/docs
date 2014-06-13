@@ -3,14 +3,24 @@
 Getting Started
 ===============
 
-This example shows how to install biicode and code a C++ test with GTest. You don't need to have installed GTest, biicode will download and configure it automatically for you.
+This example shows **how to install biicode and code a C++ test with GTest**. You don't need to have installed GTest, biicode will download and configure it automatically for you.
+
+You will learn how to use the ``gtest.h`` file of the ``gtest`` block owner of ``google`` with the code line ``#include "google/gtest/gtest.h"`` .
 
 1. Installing biicode and C/C++ tools
 -------------------------------------
 
 For reuse code, you need to install biicode and a group of external tools (CMake and MinGW or GCC).
 
-   - `Download the biicode installer <https://www.biicode.com/downloads>`_ 
+   - `Download the biicode installer <https://www.biicode.com/downloads>`_.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|Latest version 1.0                                                                                                                                                                                                                                                                                                           |
++----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+
+|`MacOS <https://www.biicode.com/downloads>`_        |`Raspberry Pi <https://www.biicode.com/downloads>`_ |`Ubuntu 32 <https://www.biicode.com/downloads>`_    |`Ubuntu 64 <https://www.biicode.com/downloads>`_    |`Windows <https://www.biicode.com/downloads>`_      |`Devian Wheezy <https://www.biicode.com/downloads>`_|
++----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+
+
+
    - Execute ``bii setup:cpp`` in your console and all the C++ tools will be installed automatically.
 
 .. code-block:: bash
@@ -44,7 +54,7 @@ Now, we will create a block. a block is the place where you must place your code
 .. code-block:: bash
 
    $ cd cpp_hello_project
-   $ bii new cpp_hello_project --hello=cpp
+   $ bii new anonymous/my_first_block --hello=cpp
 
 This command will create the following layout:
 
