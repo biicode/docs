@@ -1,19 +1,16 @@
 .. _general-index:
 
-Biicode General Information
-===========================
+General Information
+====================
 
 This is the biicode general documentation.
 
 .. toctree::
    :maxdepth: 2
 
-   biicode/intro
+   biicode/biicode
    biicode/installation
-   biicode/basics_and_commands
-   biicode/advanced
-   biicode/reference
-   biicode/upgrading
-   biicode/changelog
+   biicode/features
+   biicode/release_notes
    biicode/faqs
    biicode/troubleshooting
