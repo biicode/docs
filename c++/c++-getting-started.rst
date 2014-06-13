@@ -12,7 +12,7 @@ You will learn how to use the ``gtest.h`` file of the ``gtest`` block owner of `
 
 For reuse code, you need to install biicode and a group of external tools (CMake and MinGW or GCC).
 
-   - `Download the biicode installer <https://www.biicode.com/downloads>`_.
+   - Download the biicode installer.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |Latest version 1.0                                                                                                                                                                                                                                                                                                           |
@@ -25,7 +25,7 @@ For reuse code, you need to install biicode and a group of external tools (CMake
 
 .. code-block:: bash
 
-   $ bii setup:cpp
+   ~$ bii setup:cpp
 
 .. container:: infonote
 
@@ -38,7 +38,7 @@ To create a new project running ``bii init`` with the project name as a paramete
 
 .. code-block:: bash
 
-   $ bii init cpp_hello_project
+   ~$ bii init cpp_hello_project
    
 This command will create the following layout:
 
@@ -49,12 +49,12 @@ This command will create the following layout:
    |    +-- blocks
    |    +-- deps
 
-Now, we will create a block. a block is the place where you must place your code. To create a block execute ``bii new anonymous/my_fist_block`` into the project folder.
+Now, we will create a block. a block is the place where you must place your code. Execute ``bii new anonymous/my_fist_block`` into the project folder to create a block.
 
 .. code-block:: bash
 
-   $ cd cpp_hello_project
-   $ bii new anonymous/my_first_block --hello=cpp
+   ~$ cd cpp_hello_project
+   ~/cpp_hello_project$ bii new anonymous/my_first_block --hello=cpp
 
 This command will create the following layout:
 
@@ -103,10 +103,12 @@ Now, edit your main.cpp file with the following code and execute ``bii find``.
 
 .. code-block:: bash
 
-   $ bii find
+   ~/cpp_hello_project$ bii find
 
 Now, execute ``bii cpp:build`` and biicode will configure your project and compile your code into the bin folder.
 
 .. code-block:: bash
 
-   $ bii cpp:build
+   ~/cpp_hello_project$ bii cpp:build
+   ~/cpp_hello_project$ cd bin
+   ~/cpp_hello_project/bin$ #execute your test
