@@ -12,17 +12,13 @@ This section summarizes the **C/C++ commands available to be used with the biico
 	---------Cpp tools commands--------
 	  cpp:build       Build the project (with Make, Mingw32-make or NMake)
 	  cpp:configure   Configure project with cmake
-	  cpp:run         Runs a binary or script, processing changes and building if necessary
 	  cpp:settings    Hive settings configuration
-	  cpp:wizard      Create a default class with constructor/destructor and a main.cpp or main.c
 
 
-**Note**: You need to have a cpp compiler :ref:`installed and configured <cpp_installation>`.
+bii cpp:configure
+-----------------
 
-``bii cpp:configure``: Configure your project
----------------------------------------------
-
-If you have configured your hive as a C/C++ project and you want to develop in cpp language, this command helps you! Enter it and configure your hive like an cpp project. It invokes cpp compiler and you are ready to start with your cpp.
+This command configure your project as a C/C++ project automatically and adding the characteristics of your CMake files if you have it.
 
 .. code-block:: bash
 
@@ -46,8 +42,8 @@ If you have configured your hive as a C/C++ project and you want to develop in c
 
 .. _bii_cpp_settings:
 
-``bii cpp:settings``: Managing your hive settings
--------------------------------------------------
+bii cpp:settings
+----------------
 
 This command helps you to configure the IDE you'll use to build your project:
 
@@ -86,18 +82,9 @@ Just introduce your desired IDE, and your hive ``settings.bii`` file will be upd
 
     	ide: {family: visual, version: '10', arch: Win64}
 
-
-``bii cpp:run``: Process, build and run
----------------------------------------
-
-You can process, build and run a main file with this command. This command is responsible for making the executable if your code is correct.
-
-.. code-block:: bash
-
-	$ bii cpp:run
 	
-``bii cpp:build``: Build the project
-------------------------------------
+bii cpp:build
+-------------
 
 This command invokes the C++ compiler to build your project.
 
