@@ -13,7 +13,7 @@ This example demonstrates how to get started using **OpenGL** with biicode. **Fr
 1. Create a new hive
 --------------------
 
-First, create a new hive as described in the :ref:`hello world example <hello_world>`, using the following options:
+First, create a new hive as described in the :ref:`hello world example <cpp_getting_started>`, using the following options:
 
 * Hive name: ``cpp_freeglut_hive``
 * Programming language: ``cpp`` 

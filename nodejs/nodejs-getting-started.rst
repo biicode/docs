@@ -1,4 +1,4 @@
-.. _hello_world_node:
+.. _node_getting_started:
 
 Getting Started
 ===============

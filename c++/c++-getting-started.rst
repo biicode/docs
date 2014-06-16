@@ -1,4 +1,4 @@
-.. _hello_world:
+.. _cpp_getting_started:
 
 Getting Started
 ===============

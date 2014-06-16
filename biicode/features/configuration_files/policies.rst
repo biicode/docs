@@ -3,7 +3,7 @@
 policies.bii
 ============
 
-Policies are the rules applied when finding or updating dependencies. They can be configured globally in your_workspace/bii/default_policies.bii or individually in your_hive/bii/policies.bii as you can see in the :ref:`layouts section <layouts>`.
+Policies are the rules applied when finding or updating dependencies. They can be configured in your_project/bii/policies.bii as you can see in the :ref:`layouts section <project_layout>`.
 
 ``policies.bii`` have this format as self-documented:::
 
@@ -64,11 +64,11 @@ Policies are the rules applied when finding or updating dependencies. They can b
 Policies tutorial
 -----------------
 
-Start with a new hive in your **biicode workspace** directory:
+Start with a new project:
 
 .. code-block:: bash
 
-	$ bii new policies
+	$ bii init policies
 
 Create a ``main.cpp`` file which includes the block ``policyadvanced`` to use the ``hello()`` method declared in the ``hello.h`` file. Given that the owner of this block is the ``tutorial`` user we should write the following code:
 
@@ -150,7 +150,7 @@ The reason why your program has executed ``hello()`` of ``STABLE`` version is as
 	  version: tag==STABLE
 	  priority: 1
 
-Then, your policy for this hive makes your searches are in master branchs of anyone user block and all the blocks as ``STABLE`` versions.
+Then, your policy for this project makes your searches are in master branchs of anyone user block and all the blocks as ``STABLE`` versions.
 
 **Note**: Make sure you have defined any policy name as ``default:`` or any you want, else you'll get an error.
 
@@ -201,7 +201,7 @@ Modify the ``policies.bii`` file as shown here: ::
 	  version: tag==BETA
 	  priority: 1
 
-You have just modified your default policy file. Now, you only need to update your hive to reflect the changes using the following command:
+You have just modified your default policy file. Now, you only need to update your project to reflect the changes using the following command:
 
 .. code-block:: bash
 
@@ -299,10 +299,3 @@ You could get an older version after using an updated one just like this:
 	Saving files on disk
 	Computing dependencies
 	Saving dependences on disk
-
-Changing your policy file for all your new hives
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You could be sure to keep a specified policies for all the new hives. It is possible!
-
-In your biicode workspace, inside the ``bii`` folder, you will find another policy file named ``default_policies.bii``. The changes that you make here will be copied to all new hives and not old hives.

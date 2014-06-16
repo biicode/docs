@@ -125,7 +125,7 @@ Release Notes
 * Init and new configuration wizards
 * Improved Eclipse support. You can read about it :ref:`here <ide_eclipse>`
 * Improved Raspberry Pi support.
-* Changed hive structure. You can read about new layout :ref:`here <hive_layout>`
+* Changed hive structure. You can read about new layout :ref:`here <project_layout>`
 * User can edit cmakes http://docs.biicode.com/en/latest/reference/cpp_build_files.html
 
 |

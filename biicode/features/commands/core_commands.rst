@@ -1,25 +1,5 @@
 .. _bii_core_commands:
 
-Core commands
-=============
-
-This section summarizes the general **commands available to be used with the biicode client program**. The biicode client is the main utility that allows you to:
-
-* **manage** your hives and blocks locally, on your computer,
-* determine their internal and external **dependencies**,
-* **retrieve** any missing code dependencies from the biicode servers,
-* **publish** your code, and
-* **reuse** other users' code.
-
-All these functionalities are achieved using appropriate commands that are explained and used in many examples along this documentation, and are compiled here in a list for your convenience and reference.
-
-
-.. contents:: List of commands
-   :local:
-   :depth: 1
-
-
-
 .. _bii_setup_command:
 
 bii setup
@@ -52,32 +32,20 @@ Setup cross compiler tools for Raspberry Pi (must be linux)
 bii new
 -------
 
-This is the command that **creates new hives inside your workspace**. It must be invoked inside a biicode workspace folder, and **receives as the only parameter the name of the hive to be created**. You can see :ref:`this basic 'hello world' example <hello_world>` to see how a typical hive is created.
+This is the command that **creates new block inside your project**. It must be invoked inside a biicode project folder, and **receives as the only parameter the name of the block to be created**. You can see :ref:`this basic 'hello world' example <cpp_getting_started>` to see how a typical block is created.
 
 .. code-block:: bash
 
-	$ bii new hello_hive
+	$ bii new user/hello_block
 
-The ``bii new <hive_name>`` command creates a new folder within :ref:`your workspace<workspace_layout>` with the name of the hive. It also creates :ref:`the full folders structure where your blocks and cells will be located<hive_layout>`. After invoking the command, **some questions are asked to the user**:
-
-* The **programming language** of your code. Available options are: ``node``, ``fortran``, ``python``, ``cpp``, ``arduino`` or ``None``.
-
-* The name of the **first block** in your hive. From a functional point of view, :ref:`your source files are grouped in blocks<block_definition>`. Any hive can hold as many blocks as you want but **every hive must contain at least one block of code** under the ``blocks`` folder.
-
-* The option to create a default **'hello world'** file for your language. The sample code is placed inside the first block whose name is defined in the previous step.
-
-Then some specific questions, depending on the chosen programming language, could be:
-
-* The name of the **IDE** you will be using when writing your code. This way, the command will be able to automatically create the project configuration for your favourite IDE. Available options are (depending on language): ``Visual``, ``CodeBlocks``, ``Eclipse``, ``NetBeans``, or ``None`` (in case you don't need this configuration).
-* The **build type** for your code. Available options are: ``None``, ``Debug``, ``Release``, ``RelWithDebInfo``, or ``MinSizeRel``.
-
+The ``bii new <user_name/block_name>`` command creates a new folder within :ref:`your project<project_layout>` with the name of the block.
 
 .. _biiwork:
 
 bii work
 --------
 
-The ``bii work`` command is a very basic command that performs the main processing of biicode for your current hive. It checks what files you have modified, analyzes and search dependencies among your hive files (i.e. locally), and fills the ``deps`` folder. Most times it is not necessary to invoke this command explicitly, because it is automatically called by development commands as ``cpp:run``, ``cpp:build`` or ``cpp:configure``.
+The ``bii work`` command is a very basic command that performs the main processing of biicode for your current project. It checks what files you have modified, analyzes and search dependencies among your project files (i.e. locally), and fills the ``deps`` folder. Most times it is not necessary to invoke this command explicitly, because it is automatically called by development commands as ``cpp:run``, ``cpp:build`` or ``cpp:configure``.
 
 .. code-block:: bash
 
@@ -91,9 +59,9 @@ bii publish
 
 When your are happy with the state, functionality and performance of your code, you can **publish your blocks and share them** with other users thanks to ``bii publish`` command. This way they will be able to reuse your code, including references to your blocks cells in their source files, and making use of the ``bii find`` command, explained in this section.
 
-The ``bii publish`` command must be invoked inside a **hive** folder and has no parameters, but **will launch an assistant that will guide you** through the publishing process:
+The ``bii publish`` command must be invoked inside a **project** folder and has no parameters, but **will launch an assistant that will guide you** through the publishing process:
 
-* In case your **hive** contains multiple blocks under your ``blocks`` folder, it will ask you which of them (``user_name/block_name``) you wish to publish.
+* In case your **project** contains multiple blocks under your ``blocks`` folder, it will ask you which of them (``user_name/block_name``) you wish to publish.
 * You must define a **tag** for the published code. Available options are: 	
 
 	* ``DEV``: The code you are publishing is ready to be reused by yourself (or maybe your dev team)
@@ -123,7 +91,7 @@ Publishing new versions of your code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 What happens if you modify some code that you have just published? It is easy, you can publish
-a new version of such code, and other hives that depend (because they did a ``find``) on it can
+a new version of such code, and other projects that depend (because they did a ``find``) on it can
 easily update so the new changes are obtained.
 
 
@@ -132,13 +100,13 @@ easily update so the new changes are obtained.
 bii find
 --------
 
-This commands allows you to retrieve any code dependencies from the biicode servers. The client analyzes your code, and find missing dependencies that cannot be resolved searching in your hive contents. The client then communicates with the biicode server and tries to find code that is missing in your workspace, and retrieves the best matching version according with your :ref:`policies<policies>`.
+This commands allows you to retrieve any code dependencies from the biicode servers. The client analyzes your code, and find missing dependencies that cannot be resolved searching in your project contents. The client then communicates with the biicode server and tries to find code that is missing in your project, and retrieves the best matching version according with your :ref:`policies<policies>`.
 
 .. code-block:: bash
 
 	$ bii find
 
-The retrieved files are copied on your file system, under the ``deps`` folder of your hive, following a folder structure that reproduces the name of the retrieved blocks: ``<block_name> = <user_name>/<simple_name>`` (see the :ref:`basic concepts<basic_concepts>` and how a **block** is uniquely identified).
+The retrieved files are copied on your file system, under the ``deps`` folder of your project, following a folder structure that reproduces the name of the retrieved blocks: ``<block_name> = <user_name>/<simple_name>`` (see the :ref:`basic concepts<basic_concepts>` and how a **block** is uniquely identified).
 
 If you want to update already defined dependencies (as well as finding unresolved ones in the same step):
 
@@ -146,7 +114,7 @@ If you want to update already defined dependencies (as well as finding unresolve
 
 	$ bii find --update
 
-Biicode uses user defined policies to resolve dependencies. The configuration file for configuring your policies for this is named "policies.bii" in your hive "bii" folder. Note that all find commands depend on the values configured in such file. You can for example try to update your dependencies, but if there are no compatible versions that match your policies, you will not get such updates. E.g. a new ALPHA version for one of your dependencies will not be updated if you do not change your policy.
+Biicode uses user defined policies to resolve dependencies. The configuration file for configuring your policies for this is named "policies.bii" in your project "bii" folder. Note that all find commands depend on the values configured in such file. You can for example try to update your dependencies, but if there are no compatible versions that match your policies, you will not get such updates. E.g. a new ALPHA version for one of your dependencies will not be updated if you do not change your policy.
 
 If you want to find compatible downgrades:
 
@@ -171,7 +139,7 @@ If you want to find any possible matching compatible version (not just updates o
 bii clean
 ---------
 
-The ``bii clean`` command cleans most of biicode internal hive meta-information, keeping the strictly minimum required to reconstruct everything in a subsequent command. In theory, this command should not exist, but it is sometimes necessary, especially when new versions of biicode client are released that might have backwards incompatibilities.
+The ``bii clean`` command cleans most of biicode internal project meta-information, keeping the strictly minimum required to reconstruct everything in a subsequent command. In theory, this command should not exist, but it is sometimes necessary, especially when new versions of biicode client are released that might have backwards incompatibilities.
 
 .. code-block:: bash
 
