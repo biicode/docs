@@ -22,7 +22,7 @@ What is biicode?
 * **Configurable**: you can define (if desired) manually in configuration files many things, such as dependencies, your own CMakeLists.txt, etc.
 |
 * **Highly automated**. We are able to create projects and build scripts.
-|
+
 .. container:: infonote
 
 	Biicode is now in an early Beta stage but we are already open, also we have many users that are giving us a lot of feedback that we have to process and further improve the usability of the system. We are doing our best to quickly attend our current users feedback.
@@ -33,7 +33,7 @@ What is biicode?
 .. _basic_concepts:
 
 Basic concepts
------------------
+--------------
 
 biicode defines a very simple methodology, that helps you to organize your projects and folders, putting a **strong focus on the software modularity** with the main goal of simplifying the code reutilization.
 
@@ -50,7 +50,7 @@ Now these concepts are explained in more detail:
 .. _project_definition:
 
 Biicode project
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 The concept is very similar to that of a **conventional project**. In short, they are first level folders  and their contents. In these folders you edit, build and run your code. You can think of them as a sandbox where you can play around with your code before sharing it. 
 

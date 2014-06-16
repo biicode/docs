@@ -84,7 +84,7 @@ This command will create the following layout:
 3. Resolve your dependencies
 ----------------------------
 
-Now, edit your main.cpp file with the following code and execute ``bii find``.
+Now, edit your main.cpp file with the following code and execute ``bii find``. With this command, all your dependencies will be downloaded.
 
 **main.cpp**
 
@@ -112,3 +112,5 @@ Now, execute ``bii cpp:build`` and biicode will configure your project and compi
    ~/cpp_hello_project$ bii cpp:build
    ~/cpp_hello_project$ cd bin
    ~/cpp_hello_project/bin$ #execute your test
+
+And that's all. Your program is working!

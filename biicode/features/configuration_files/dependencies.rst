@@ -1,7 +1,7 @@
 .. _dependencies_bii:
 
-Dependencies configuration
---------------------------
+dependencies.bii
+================
 
 The ``dependencies.bii`` file is used to **define those dependencies that cannot be automatically inferred from your code in a direct way**. Filling this configuration file you can also add dependencies to custom :ref:`compilation rules files<compilation_rules>` for each file or group of files, or even define a license file to be downloaded and/or used whenever someone reuses your code. This is an optional configuration file, and should be placed inside the ``bii`` folder contained in every block, as you can see in the :ref:`hive layout <hive_layout>` section. Optionally, you may specify custom dependencies making use of :ref:`tags inserted in the file comments, as explained in this section<bii_dependencies_tag>`.
 

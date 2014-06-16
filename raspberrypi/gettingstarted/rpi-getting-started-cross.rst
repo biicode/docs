@@ -1,16 +1,20 @@
-.. _arduino_getting_started:
+Cross Compilation Getting Started
+=================================
 
-Getting Started
-===============
+This example shows **how to install biicode, code a C++ led blink with WiringPi, make the cross compillation and send the executable to your Raspberry Pi**. You don't need to have installed WiringPi, biicode will download and configure it automatically for you.
 
-This example shows **how to install biicode and code a Arduino not blocking blink ith the blick library**. You don't need to have installed blick library, biicode will download and configure it automatically for you.
+You will learn how to use the ``wiringpi.h`` file of the ``wiringpi/wiringpi`` block owner of ``drogon`` with the code line ``#include "drogon/wiringpi/wiringpi/wiringpi.h"``.
 
-You will learn how to use the ``blink.h`` file of the ``blink`` block owner of ``fenix`` with the code line ``#include "fenix/blink/blink.h"`` .
+1. Installing biicode and C/C++ cross compilation tools
+-------------------------------------------------------
 
-1. Installing biicode and Arduino tools
----------------------------------------
+.. container:: infonote
 
-For reuse code, you need to install biicode and a group of external tools (Arduino SDK, CMake and MinGW or GCC).
+    **Debian linux distribution required**
+
+    You need to use a native debian linux or in a virtual machine because the cross compillation tools need it.
+
+For reuse code, you need to install biicode and a group of external tools.
 
    - Download the biicode installer.
 
@@ -21,15 +25,15 @@ For reuse code, you need to install biicode and a group of external tools (Ardui
 +----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+
 
 
-   - Execute ``bii setup:arduino`` in your console and all the Arduino tools will be installed automatically.
+   - Execute ``bii setup:rpi`` in your console and all the C/C++ cross compilation tools will be installed automatically.
 
 .. code-block:: bash
 
-   ~$ bii setup:arduino
+   ~$ bii setup:rpi
 
 .. container:: infonote
 
-    If you have any problem installing the Arduino tools, you can see :ref:`how to install Arduino tools manually <arduino_installation>`
+    If you have any problem installing the C/C++ cross compilation tools, you can see :ref:`how to install C/C++ cross compilation tools manually <cpp_installation>`
 
 2. Create your project
 ----------------------
@@ -38,13 +42,13 @@ To create a new project running ``bii init`` with the project name as a paramete
 
 .. code-block:: bash
 
-   ~$ bii init arduino_hello_project
+   ~$ bii init rpi_hello_project
    
 This command will create the following layout:
 
 .. code-block:: text
 
-   |-- arduino_hello_project
+   |-- rpi_hello_project
    |    +-- bii
    |    +-- blocks
    |    +-- deps
@@ -53,14 +57,14 @@ Now, we will create a block. a block is the place where you must place your code
 
 .. code-block:: bash
 
-   ~$ cd arduino_hello_project
-   ~/arduino_hello_project$ bii new anonymous/my_first_block --hello=arduino
+   ~$ cd rpi_hello_project
+   ~/rpi_hello_project$ bii new anonymous/my_first_block --hello=cpp
 
 This command will create the following layout:
 
 .. code-block:: text
 
-   +-- arduino_hello_project
+   +-- rpi_hello_project
    |    +-- bii
    |    +-- blocks
    |    |    +-- anonymous
@@ -81,8 +85,8 @@ This command will create the following layout:
 
     If you want to change the user of a block into your blocks folder, just change the name folder where are this block.
 
-3. Resolve your dependencies
-----------------------------
+3. Resolve your dependencies and send your executable to your Raspberry Pi
+--------------------------------------------------------------------------
 
 Now, edit your main.cpp file with the following code and execute ``bii find``. With this command, all your dependencies will be downloaded.
 
@@ -91,30 +95,54 @@ Now, edit your main.cpp file with the following code and execute ``bii find``. W
 .. code-block:: cpp
    :emphasize-lines: 1
 
-	#include "fenix/blink/blink.h"
-	Blink my_blink;
-	void setup() {
-	  //pin = 13, interval = 1000 ms
-	  my_blink.setup(13, 1000); 
-	}
-	void loop() {
-	  my_blink.loop(); 
-	}
+   #include "drogon/wiringpi/wiringpi/wiringpi.h"
+   #define LED 0
+   int main (void){
+       wiringPiSetup () ;
+       pinMode (LED, OUTPUT) ;
+       digitalWrite (LED, HIGH) ; // On
+   }
 
 .. code-block:: bash
 
-   ~/arduino_hello_project$ bii find
-   
-4. Build and upload
--------------------
+   ~/rpi_hello_project$ bii find
 
-Now, you can build your firmware and upload it to your Arduino with the command ``arduino:upload``.
-If you only want to build your firmware, just use ``arduino:build``.
+Now you are ready to compile and deploy your new application. First, **cross-compile your program** and make sure the binary is generated running ``bii cpp:build`` from your hive location:
 
 .. code-block:: bash
 
-	~/arduino_hello_project$ bii arduino:upload
+	$ bii cpp:build
 	...
-	Writing | ################################################## | 100% 0.00s
+	Configuring cross compiler for ARM architecture:
+	...
+	[100%] Built target username_hello_rpi_main
 
+The binaries are created in your hive's ``bin`` folder, but remember that **you cannot run this program locally, as it has been generated for a different architecture** using the cross-compiling tools. You need to send the binary to your Raspberry Pi to be executed.
+
+To **send the binary to your Raspberry Pi**, you only need to execute the ``bii rpi:send`` command and the file will be sent by `rsync <http://en.wikipedia.org/wiki/Rsync>`_ to the address provided in your settings.
+
+.. code-block:: bash
+
+	$ bii rpi:send
+	Sending with rsync -Pravdtze ssh [HIVE_DIRECTORY]/bin/* [RPI_USER]@[RPI_IP]:[DIRECTORY]/[HIVE_NAME]
+
+	[RPI_USER]@[RPI_IP]'s password:
+
+The Raspberry Pi user's password will be asked. If you have not changed your password, for Raspbian the default one is **raspberry**.
+
+Finally, to **execute your program on your Raspberry Pi**, you need to establish a connection. You can use the ``rpi:ssh`` command if you want remote access. You'll find your program deployed in the path configured in your settings:
+
+.. code-block:: bash
+
+	$ bii rpi:ssh
+	...
+	Connecting with ssh <rpi_user>@<rpi_ip>
+	<rpi_user>@<rpi_ip>'s password:
+	
+	pi@raspberrypi ~ $ cd hello_rpi
+	pi@raspberrypi ~/hello_rpi $ ls
+	username_hello_rpi_main
+	pi@raspberrypi ~/hello_rpi $ ./username_hello_rpi_main
+	Hello world!
+	
 And that's all. Your program is working!

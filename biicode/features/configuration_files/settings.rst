@@ -1,14 +1,22 @@
 .. _settings_bii:
 
-Settings
---------
+settings.bii
+============
 
 The ``settings.bii`` file defines your preferred tools and specific configurations for one given hive. This file is created when you create a new hive, inside the ``bii`` folder, as you can see in the examples in the :ref:`layouts section <layouts>`.
 
-A hive's ``settings.bii`` file stores preferences for any given project (language, compiler and other tools and configurations for that particular scenario). It is important to keep the file yaml format for correct interpretation. Format is as follows:
+A hive's ``settings.bii`` file stores preferences for any given project (language, compiler and other tools and configurations for that particular scenario). It is important to keep the file yaml format for correct interpretation.
+
+You don't need to manually edit this file. **Each language or platform provides its own command for settings customization**:
+
+* :ref:`bii cpp:settings for C/C++ hives<bii_cpp_settings>`
+* :ref:`bii arduino:settings for Arduino hives<bii_arduino_settings>`
+* :ref:`bii rpi:settings for Raspberry Pi hives<bii_rpi_settings>`
+
+Format is as follows:
 
 Common settings:
-^^^^^^^^^^^^^^^^
+----------------
 
 Configurable parameters common (may exist or not) for all languages. 
 
@@ -35,7 +43,7 @@ Configurable parameters common (may exist or not) for all languages.
 
 
 C++ settings:
-^^^^^^^^^^^^^
+-------------
 * Builder:
 
 	* Builder type: to define the different types of builder you want to use:

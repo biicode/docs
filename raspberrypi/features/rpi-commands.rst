@@ -18,8 +18,8 @@ This section summarizes the **Raspberry Pi commands available to be used with th
 
 .. _bii_rpi_settings:
 
-``bii rpi:settings``: Managing your hive settings
--------------------------------------------------
+bii rpi:settings
+----------------
 
 This command provides an easy way to configure your Raspberry Pi settings.
 
@@ -42,8 +42,8 @@ This command provides an easy way to configure your Raspberry Pi settings.
 
 .. _bii_rpi_send:
 
-``bii rpi:send``: Send a bin folder
------------------------------------
+bii rpi:send
+------------
 
 Send your binaries automatically to your Raspberry Pi from your PC.
 
@@ -58,8 +58,8 @@ The Raspberry Pi user's password will be asked. If you have not changed your pas
 
 .. _bii_rpi_ssh:
 
-``bii rpi:ssh``: Connect by ssh with the Raspberry Pi
------------------------------------------------------
+bii rpi:ssh
+-----------
 
 If you want a remotely access to your Raspberry Pi you can get it with this command.
 
@@ -74,7 +74,7 @@ If you want a remotely access to your Raspberry Pi you can get it with this comm
 
 .. _bii_rpi_initopengles:
 
-``bii rpi:initopengles``: Init OpenGLES project
------------------------------------------------
+``bii rpi:initopengles
+----------------------
 
 This command lets you develop OpenGLES applications in the Raspberry Pi. See the command usage :ref:`here<opengles>`.
