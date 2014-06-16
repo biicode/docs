@@ -1,11 +1,10 @@
 .. _changelog:
 
-Changelog
-=========
+Release Notes
+================
 
-Release 0.15.2
---------------
-.. *(11-04-14)
+**0.15.2 (11-04-14)**
+
 
 * Now work, find and upload can be done from arduino monitor GUI
 * Output information improvements
@@ -14,9 +13,8 @@ Release 0.15.2
 * Improved readme.md layout
 * Relative imports within the same block allowed
 
-Release 0.14.1
---------------
-.. *(03-04-14)*
+|
+**0.14.1 (03-04-14)**
 
 * Fixed Ubuntu 64b installation issues
 * Arduino serial monitor (GUI) improvements
@@ -24,9 +22,8 @@ Release 0.14.1
 * Node integration improvement
 * Improved block deletion support
 
-Release 0.13.1
---------------
-.. *(28-03-14)*
+|
+**0.13.1 (28-03-14)**
 
 * Bugfixes in arduino build
 * Now you can upload to the arduino from the serial monitor
@@ -36,17 +33,15 @@ Release 0.13.1
 * Removed ``bii cpp:exe`` command
 * Hives and Blocks can now be deleted from your user profile web page
 
-Release 0.12
-------------
-.. *(21-03-14)*
+|
+**0.12 (21-03-14)**
 
 * Allow to define MS Visual version from cpp:settings
 * Arduino bugfixes
 * Git support improvements
 
-Release 0.11.1
---------------
-.. *(14-03-14)*
+|
+**0.11.1 (14-03-14)**
 
 * New installation wizards for C++, Arduino, and Raspberry Pi
 * Arduino port automatic detection. The ``bii arduino:usb`` command is deprecated
@@ -59,18 +54,16 @@ Release 0.11.1
 * Enry points automatic detection in files with ``setup`` and ``loop`` functions
 * Adding ``import`` as valid preprocessor directive.
 
-Release 0.10
-------------
-.. *(21-02-14)*
+|
+**0.10 (21-02-14)**
 
 * Removed the workspace ``default_settings.bii`` file. Now, new hives' settings are obtained from the workspace ``environment.bii`` file.
 * Node.js support
 * Debian wheezy support
 * Fix a bug that caused open to fail if the block was already in edition
 
-Release 0.09
-------------
-.. *(13-02-14)*
+|
+**0.09 (13-02-14)**
 
 * There is a brand new visualization in browser of hives and dependencies with "$bii deps --graph"
 * minor bugfixes
@@ -80,28 +73,22 @@ Release 0.09
 * apt-get repository for debian based (ubuntu, raspbian) distributions
 * new "bii info" command
 
-
-Release 0.08
-------------
-.. *(5-Feb-14)*
+|
+**0.08 (5-Feb-14)**
 
 * Merge bugfixes
 * Hive download bugfixes
 * Size and performance optimizations in macos and linux clients
 
-
-Release 0.07.2
---------------
-.. *(31-Jan-14)*
+|
+**0.07.2 (31-Jan-14)**
 
 * Merge bugfixes
 * Various bugfixes
 * Deps output improved
 
-
-Release 0.06.2
---------------
-.. *(28-Jan-14)*
+|
+**0.06.2 (28-Jan-14)**
 
 * Added :ref:`arduino support <arduino>`
 * Created raspbian native client
@@ -115,11 +102,8 @@ Release 0.06.2
 * Adding :ref:`OpenGL ES for RPI <opengles>` project generation
 * Improved cpp wizard
 
-
-Release 0.05
-------------
-.. *(10-Jan-14)*
-
+|
+**0.05 (10-Jan-14)**
 
 * Raspberry now using rsync instead of scp
 * Wizard rpi:setup for automatic install of cross compilers
@@ -129,18 +113,14 @@ Release 0.05
 * Improved normalization of endlines, for handling also \\r
 * Fixed bug of not finding new dependencies of files in already dependents blocks
 
-
-Release 0.04
-------------
-.. *(20-Dec-13)*
+|
+**0.04 (20-Dec-13)**
 
 * Improved wizards behavior
 * Added cookies announcement in web as dictated by law
 
-
-Release 0.03.4
---------------
-.. *(17-Dec-13)*
+|
+**0.03.4 (17-Dec-13)**
 
 * Init and new configuration wizards
 * Improved Eclipse support. You can read about it :ref:`here <ide_eclipse>`
@@ -148,10 +128,8 @@ Release 0.03.4
 * Changed hive structure. You can read about new layout :ref:`here <hive_layout>`
 * User can edit cmakes http://docs.biicode.com/en/latest/reference/cpp_build_files.html
 
-
-Release 0.02.3
---------------
-.. *(2-Dec-13)*
+|
+**0.02.3 (2-Dec-13)**
 
 * Experimental upload-download of hives to biicode, so it is not necessary to publish to keep working in other computer.
 * Navigation of uploaded hives in the web
@@ -159,10 +137,8 @@ Release 0.02.3
 * Creation (experimental) of dynamic libraries from C code. Integration from python code with cffi.
 * Improved use of biicode for C/C++ dev with RaspberryPI (linux only)
 
-
-Release 0.01.11
----------------
-.. *(28-Oct-13)*
+|
+**0.01.11 (28-Oct-13)**
 
 * Fixed bug in Eclipse Cmake generated project with empty targets
 * Fixed bug that failed when trying to reuse just a data file from another published block (not reusing sources)
@@ -176,13 +152,13 @@ Release 0.01.11
 * Ctrl+C when init bug fixed (it created empty, wrong workspace)
 * Applied some limits and constraints to block sizes, file sizes, number of files in a block and in a hive
 
-Release 0.01.10.1
------------------
+|
+**0.01.10.1**
 
 * Fixed bug of crash when dep folder had connected cpp_rules files
 
-Release 0.01.10
----------------
+|
+**0.01.10**
 
 * Setup & install in windows problem with setting PATH of biicode solved
 * Defined C++0x as default, with possibility of changing it in settings
@@ -198,8 +174,8 @@ Release 0.01.10
 * checkout --deps --force flow improved
 * Use system proxy
 
-Release 0.01.9
---------------
+|
+**0.01.9**
 
 * Added check of client version, so clients are informed about new releases and deprecated versions, with a download URL
 * bii deps --detail command improved showing data dependencies and type of file

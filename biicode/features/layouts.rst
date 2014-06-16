@@ -1,52 +1,17 @@
-.. _layouts:
+.. _project_layout:
 
-Workspace and hives layouts
-===========================
+Projects layouts
+===================
 
-This section describes the **folders structure of a typical biicode workspace**, and the hives it contains. If you haven't done so, we recommend reading these :ref:`basic biicode concepts <basic_concepts>` first, understandig the conceps of workspace, hive, block and cell.
+This section describes the **folders structure of a typical biicode project**. If you haven't done so, we recommend reading these :ref:`basic biicode concepts <basic_concepts>` first, understandig the conceps of workspace, hive, block and cell.
 
 Some special biicode configuration files are also mentioned. You can read in detail about these files in the :ref:`configuration files section <config_files>`.
-
-.. _workspace_layout:
-
-Workspace layout
-----------------
-
-A biicode workspace is :ref:`the special folder you initialize<create_workspace>` using the ``bii init`` command. It contains cached data from server, general information about your machine, system and tools, and default configurations for your hives. It is also the **container for all your hives** or working projects.
-
-Every biicode workspace contains a special ``bii`` folder with **configuration files** holding information about your development environment and programming preferences.
-
-The workspace layout is as follows: ::
-
-|-- myworkspace
-|    |-- bii
-|    |    |-- .bii.db
-|    |    |-- ignore.bii
-|    |    |-- default_policies.bii
-|    |    +-- environment.bii
-|    +-- my_hive1
-|    +-- my_hive2
-
-
-As you can see there is a ``bii`` folder containing several files with ``.bii`` extension. These are global configuration files, and their contents affect all your hives.
-
-* ``.bii.db``: is a local cache, that allows us to optimize dependencies retrieval for your hives. It contains information about previously downloaded dependencies, with the main purpose of accelerating future retrievals. You **must not edit or delete this file** under any circumstances.
-* ``ignore.bii``: holds **default file filtering rules**. Its format is simmilar to a `.gitignore file <http://git-scm.com/docs/gitignore>`_, and indicates biicode **which files must be ignored** when processing and publishing your files. This configuration is applied hierarchically across all desdendant workspace folders, but can be overriden from any local block, creating custom specific configurations. :ref:`Learn more about ignore files following this link <ignore>`.
-* ``default_policies.bii``: holds your workspace default `policies <http://docs.biicode.com/en/latest/reference/policies.html>`_ configuration. These policies define **how dependencies are found and which versions are retrieved** to your local filesystem. The contents of this file are copied to your hive's ``policies.bii`` configuration file whenever you create a new hive. You can think of this file as a template policies configuration for your new hives.
-* ``environment.bii``: contains general **information about your development system and tools**, such as your operating system and installed compilers and IDEs. You can edit any tool path location if it is not present in your ``$PATH``. You can have, for instance, several IDEs defined in your environment. The contents of this file are eployed for generating specific settings for your hives.
-
-As we already know, the workspace folder is :ref:`the top-level container for all your hives<basic_concepts>`. Every single hive in your workspace as also a predefined folders structure that mus be observed, which is described below.
-
-.. _hive_layout:
-
-Hives and blocks layout
------------------------
 
 A biicode workspace can hold **as many hives as you want**. Rememeber that a biicode hive is no other thing that a working project: a special folder that contains both your code and your code dependencies, and some custom configuration files, specific for that hive.
 
 A typical hive layout is as follows: ::
 
-|-- my_hive
+|-- my_project
 |    +-- bii
 |    |    |-- .hive.db
 |    |    |-- settings.bii
@@ -56,26 +21,26 @@ A typical hive layout is as follows: ::
 |    |	  +-- my_user_name
 |    |    |     +-- my_block
 |    |    |     |     +-- bii
-|    |    |     |     |    |-- dependencies.bii
+|    |    |     |     |    |-- requirements.bii
+|    |    |     |     |    |-- parents.bii
 |    |    |     |     |    |-- mains.bii
-|    |    |     |     |    +-- virtual.bii
+|    |    |     |     |    |-- virtual.bii
 |    |    |  	|     |-- hello.c
-|    |    |     |     +-- hello.h
+|    |    |     |     |-- hello.h
 |    |    |     +-- my_other_block
 |    |    |   	      |-- foo.c
-|    |    |           +-- bar.h
+|    |    |           |-- bar.h
 |    |    +-- other_user_name
-|    |          +-- bii
-|    |          |     |-- mains.bii
 |    |          +-- block_im_editing
+|	 |                +-- bii
+|	 |                |    |-- mains.bii
 |    |        	      |-- message.c
-|    |                +-- message.h
+|    |                |-- message.h
 |    +-- build
 |    +-- cmake
 |    |    |-- CMakeLists.txt
-|    |    |-- bii_functions.cmake
-|    |    |-- bii_targets.cmake
-|    |    +-- bii_vars.cmake
+|    |    |-- biicode.cmake
+|    |    |-- bii_vars.cmake
 |    +-- deps
 
 As you can see, the **hive** contains a collection of folders. We will go through each one of them:
