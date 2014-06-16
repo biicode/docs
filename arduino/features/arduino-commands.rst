@@ -21,8 +21,8 @@ This section summarizes the **Arduino commands available to be used with the bii
 
 **Note**: You need to have arduino :ref:`correctly set up <arduino_installation>`.
 
-``bii arduino:configure``: Configure your project
--------------------------------------------------
+bii arduino:configure
+---------------------
 
 If you have configured your hive as a C/C++ project and you want to develop in arduino language, this command helps you! Enter it and configure your hive like an arduino project. It invokes arduino cross compiler and you are ready to start with your arduino.
 
@@ -48,8 +48,8 @@ If you have configured your hive as a C/C++ project and you want to develop in a
 
 .. _bii_arduino_settings:
 
-``bii arduino:settings``: Managing your hive settings
------------------------------------------------------
+bii arduino:settings
+--------------------
 
 This command update your settings with the info about your board and the IDE, if you want to use one.
 
@@ -61,8 +61,8 @@ This command update your settings with the info about your board and the IDE, if
 	Select IDE: (eclipse/none) 
 	Introduce ide (default:None) (/o list options): none
 
-``bii arduino:build``: Build the project
-----------------------------------------
+bii arduino:build
+-----------------
 
 This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX compiler -> avr-g++) to build and compile the project.
 
@@ -88,8 +88,8 @@ This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX c
 	[100%] Built target your_user_name_block_firmware
 
 
-``bii arduino:upload``: Upload a firmware in Arduino
-----------------------------------------------------
+bii arduino:upload
+------------------
 
 When you want to deploy your code into the arduino, this command sends your previously built firmware to the arduino.
 

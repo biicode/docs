@@ -9,4 +9,5 @@ Features
    features/commands
    features/layouts
    features/configuration_files
-   features/commment_tags
+   features/comments_tags
+   features/advanced/collaboration

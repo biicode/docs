@@ -1,11 +1,11 @@
 .. _mains_bii:
 
-Entry points configuration
---------------------------
+mains.bii
+=========
 
 Biicode automatically detects entry points to your programs by examining which files contain a ``main`` function definition —or the equivalent one in your programming language—. However, there are certain cases where a specific framework requires a more complex setup. In those cases you might want to **explicitly tell biicode where are your entry points**. 
 
-You can do so making use of the ``mains.bii`` file located in ``your_block/bii/`` folder as you can see in the :ref:`hives layout <hive_layout>` section. Optionally, you can use the biicode tag ``#bii:entry_point`` described in :ref:`this section<bii_entry_point_tag>`.
+You can do so making use of the ``mains.bii`` file located in ``your_block/bii/`` folder as you can see in the :ref:`project layout <hive_layout>` section. Optionally, you can use the biicode tag ``#bii:entry_point`` described in :ref:`this section<bii_entry_point_tag>`.
 
 Any ``mains.bii`` file contains lines with rules matching the following structure: ::
 

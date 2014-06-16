@@ -1,7 +1,7 @@
 .. _requirements_bii:
 
-Requirements
-===============
+requirements.bii
+================
 
 Every hive contains **a special yaml file which allows you to define some custom settings for your project**. This file is located in the ``bii`` folder of your hive, and its name is ``settings.bii``.
 

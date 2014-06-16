@@ -1,16 +1,14 @@
-.. _arduino_getting_started:
+Native Getting Started
+======================
 
-Getting Started
-===============
+This example shows **how to install biicode and code a C++ led blink with WiringPi**. You don't need to have installed WiringPi, biicode will download and configure it automatically for you.
 
-This example shows **how to install biicode and code a Arduino not blocking blink ith the blick library**. You don't need to have installed blick library, biicode will download and configure it automatically for you.
+You will learn how to use the ``wiringpi.h`` file of the ``wiringpi/wiringpi`` block owner of ``drogon`` with the code line ``#include "drogon/wiringpi/wiringpi/wiringpi.h"`` .
 
-You will learn how to use the ``blink.h`` file of the ``blink`` block owner of ``fenix`` with the code line ``#include "fenix/blink/blink.h"`` .
+1. Installing biicode and C/C++ tools
+-------------------------------------
 
-1. Installing biicode and Arduino tools
----------------------------------------
-
-For reuse code, you need to install biicode and a group of external tools (Arduino SDK, CMake and MinGW or GCC).
+For reuse code, you need to install biicode and a group of external tools (CMake and MinGW or GCC).
 
    - Download the biicode installer.
 
@@ -21,15 +19,15 @@ For reuse code, you need to install biicode and a group of external tools (Ardui
 +----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+
 
 
-   - Execute ``bii setup:arduino`` in your console and all the Arduino tools will be installed automatically.
+   - Execute ``bii setup:cpp`` in your console and all the C++ tools will be installed automatically.
 
 .. code-block:: bash
 
-   ~$ bii setup:arduino
+   ~$ bii setup:cpp
 
 .. container:: infonote
 
-    If you have any problem installing the Arduino tools, you can see :ref:`how to install Arduino tools manually <arduino_installation>`
+    If you have any problem installing the C/C++ tools, you can see :ref:`how to install C/C++ tools manually <cpp_installation>`
 
 2. Create your project
 ----------------------
@@ -38,13 +36,13 @@ To create a new project running ``bii init`` with the project name as a paramete
 
 .. code-block:: bash
 
-   ~$ bii init arduino_hello_project
+   ~$ bii init rpi_hello_project
    
 This command will create the following layout:
 
 .. code-block:: text
 
-   |-- arduino_hello_project
+   |-- rpi_hello_project
    |    +-- bii
    |    +-- blocks
    |    +-- deps
@@ -53,14 +51,14 @@ Now, we will create a block. a block is the place where you must place your code
 
 .. code-block:: bash
 
-   ~$ cd arduino_hello_project
-   ~/arduino_hello_project$ bii new anonymous/my_first_block --hello=arduino
+   ~$ cd rpi_hello_project
+   ~/rpi_hello_project$ bii new anonymous/my_first_block --hello=cpp
 
 This command will create the following layout:
 
 .. code-block:: text
 
-   +-- arduino_hello_project
+   +-- rpi_hello_project
    |    +-- bii
    |    +-- blocks
    |    |    +-- anonymous
@@ -91,30 +89,24 @@ Now, edit your main.cpp file with the following code and execute ``bii find``. W
 .. code-block:: cpp
    :emphasize-lines: 1
 
-	#include "fenix/blink/blink.h"
-	Blink my_blink;
-	void setup() {
-	  //pin = 13, interval = 1000 ms
-	  my_blink.setup(13, 1000); 
-	}
-	void loop() {
-	  my_blink.loop(); 
-	}
+   #include "drogon/wiringpi/wiringpi/wiringpi.h"
+   #define LED 0
+   int main (void){
+       wiringPiSetup () ;
+       pinMode (LED, OUTPUT) ;
+       digitalWrite (LED, HIGH) ; // On
+   }
 
 .. code-block:: bash
 
-   ~/arduino_hello_project$ bii find
-   
-4. Build and upload
--------------------
+   ~/rpi_hello_project$ bii find
 
-Now, you can build your firmware and upload it to your Arduino with the command ``arduino:upload``.
-If you only want to build your firmware, just use ``arduino:build``.
+Now, execute ``bii cpp:build`` and biicode will configure your project and compile your code into the bin folder.
 
 .. code-block:: bash
 
-	~/arduino_hello_project$ bii arduino:upload
-	...
-	Writing | ################################################## | 100% 0.00s
+   ~/rpi_hello_project$ bii cpp:build
+   ~/rpi_hello_project$ cd bin
+   ~/rpi_hello_project/bin$ #execute your blink
 
 And that's all. Your program is working!

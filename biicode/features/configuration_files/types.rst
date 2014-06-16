@@ -1,7 +1,7 @@
 .. _types_bii:
 
-The types.bii file
-------------------
+types.bii
+=========
 
 This is a special configuration file that **allows you to specify how your files are interpreted and processed by biicode**. In some cases, we find projects containing —for some reason— non-standard extensions for certain file types. 
 

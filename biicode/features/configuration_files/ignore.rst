@@ -1,7 +1,7 @@
 .. _ignore:
 
-The ignore.bii file
--------------------
+ignore.bii
+==========
 
 The ``ignore.bii`` file allows you to specify which files will be ignored by biicode when processing and publishing your blocks. The concept is similar to the ``.gitignore`` files in a git repository (`explained here <http://git-scm.com/docs/gitignore>`_), and allows you to define which local files will be excluded from publication to our servers. 
 
