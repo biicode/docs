@@ -1,7 +1,7 @@
 .. _project_layout:
 
 Projects layouts
-===================
+================
 
 This section describes the **folders structure of a typical biicode project**. If you haven't done so, we recommend reading these :ref:`basic biicode concepts <basic_concepts>` first, understandig the conceps of project and block.
 
