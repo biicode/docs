@@ -24,10 +24,10 @@ The layout will be::
 	|-- hello (the hive - project)
 	|    +-- blocks
 	|    |	  +-- maya
-	|    |          +-- hello (block maya/hello)
-	|    |       	        |-- hello.cpp
-	|    |        	        |-- hello.h
-	|    |                  +-- main.cpp
+	|    |         +-- hello (block maya/hello)
+	|    |       	    |-- hello.cpp
+	|    |        	    |-- hello.h
+	|    |              +-- main.cpp
 	|    +-- cmake
 	|    |    |-- CMakeLists.txt
 	|    |    |-- bii_targets.cmake
