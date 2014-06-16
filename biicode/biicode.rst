@@ -33,11 +33,11 @@ What is biicode?
 .. _basic_concepts:
 
 Basic concepts
-===============
+-----------------
 
 biicode defines a very simple methodology, that helps you to organize your projects and folders, putting a **strong focus on the software modularity** with the main goal of simplifying the code reutilization.
 
-For a description of how these concepts are reflected on your disk folders structure read our :ref:`project layouts<layouts>`.
+For a description of how these concepts are reflected on your disk folders structure read our :ref:`project layouts<project_layout>`.
 
 In the following sections you will learn about four basic concepts:
 
@@ -49,7 +49,7 @@ Now these concepts are explained in more detail:
 
 .. _project_definition:
 
-biicode project
+Biicode project
 ^^^^^^^^^^^^^^^^
 
 The concept is very similar to that of a **conventional project**. In short, they are first level folders  and their contents. In these folders you edit, build and run your code. You can think of them as a sandbox where you can play around with your code before sharing it. 
