@@ -22,7 +22,7 @@ How to make a LED blink with Raspberry Pi
 
 With this example we will have a **LED flashing every half second using the WiringPi pin 0** (or RPi GPIO-17; it's physical location is pin 11 on the GPIO connector). You can learn more about the :ref:`Raspberry Pi GPIO pin layout in this documentation<rpigpio>`, or reading `the Embedded Linux Wiki <http://elinux.org/RPi_Low-level_peripherals>`__.
 
-You must create a new ``hive`` and a new empty ``block``, as explained in the :ref:`biicode RPi getting started guide<rpi_getting_started>`. Then, place the following source file inside your ``block``, and execute the ``bii find`` command. All needed source files will be downloaded to the ``deps`` folder of your ``hive`` (you can also read the :ref:`reference for the bii find command<biifind>`).
+You must create a new ``hive`` and a new empty ``block``, as explained in the :ref:`biicode RPi getting started guide<rpi_getting_started>`. Then, place the following source file inside your ``block``, and execute the ``bii find`` command. All needed source files will be downloaded to the ``deps`` folder of your ``hive`` (you can also read the :ref:`reference for the bii find command<bii_find_command>`).
 
 **Example: blink.c**
 
@@ -112,7 +112,7 @@ In this example we make use of the `WiringPi softservo.h header <https://www.bii
 * ``softServoSetup (int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)``. With this function we provide the number of pins to be used as controllers. For more information about the GPIO go to: :ref:`Raspberry Pi GPIO Pin Layout <rpigpio>`.
 * ``softServoWrite (int servoPin, int value)``. With this function we assign to a pin configured previously the value that we want to move. The values that support has a range of **-250 to 1250**. In order to understand this range, we must analyze how this function works: the function adds 1000 to the value that is passed as a parameter, so the final range is from 750 to 2.250 and the average stay in 1500, which is the default value that the library gives servo 90 degrees.
 
-With this example we set a servo in its central position using the WiringPi pin 0 (:ref:`GPIO-17 <rpigpio>`) as a control signal. Place the following example source file inside an empty block of a new hive, and execute the ``bii:find`` :ref:`(command info) <biifind>` to retrieve all dependencies.
+With this example we set a servo in its central position using the WiringPi pin 0 (:ref:`GPIO-17 <rpigpio>`) as a control signal. Place the following example source file inside an empty block of a new hive, and execute the ``bii:find`` :ref:`(command info) <bii_find_command>` to retrieve all dependencies.
 
 The generated binary only works on your Raspberry Pi and must be run as sudo because it works on the hardware.
 

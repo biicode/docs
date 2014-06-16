@@ -1,36 +1,16 @@
 .. _bii_info_commands:
 
-Information commands
-====================
-
-This section summarizes the general **commands available to be used with the biicode client program**. The biicode client is the main utility that allows you to:
-
-* **manage** your hives and blocks locally, on your computer,
-* determine their internal and external **dependencies**,
-* **retrieve** any missing code dependencies from the biicode servers,
-* **publish** your code, and
-* **reuse** other users' code.
-
-All these functionalities are achieved using appropriate commands that are explained and used in many examples along this documentation, and are compiled here in a list for your convenience and reference.
-
-
-.. contents:: List of commands
-   :local:
-   :depth: 1
-
-
-
 .. _bii_deps_command:
 
 bii deps
 --------
 
-This command allows you to check the dependencies of any hive in your workspace. It's basic form, with no parameters, provides two pieces of information, giving you a general idea of which are your code dependencies:
+This command allows you to check the dependencies of any project. It's basic form, with no parameters, provides two pieces of information, giving you a general idea of which are your code dependencies:
 
 * The **Dependencies Table**: a list of the **blocks that contain cells your code depends on**.
 * The full list of your cell dependencies.
 
-The command can also be used combining a series of **additional parameters** (you can obtain the full list typing ``bii deps --help`` inside your workspace):
+The command can also be used combining a series of **additional parameters** (you can obtain the full list typing ``bii deps --help``):
 
 .. code-block:: bash
 	
@@ -41,7 +21,7 @@ The command can also be used combining a series of **additional parameters** (yo
 
 	...
 
-* ``--detail``: Provides a detailed view of your hive's dependencies, grouping your source cells with their corresponding source blocks (those contained within the ``blocks`` folder of your hive). For each file, the command shows information about it's name and type, the presence or not of a ``main`` function, and the full list of dependencies for each particular cell, grouped under the *explicit* (those dependencies explicitly referenced in your code, as C++ includes or python imports), *implicit* (deduced from code inspection, i.e. C++ implementation files of symbols defined in a header file), and *system* (grouping all system dependencies of a file) sections.
+* ``--detail``: Provides a detailed view of your project's dependencies, grouping your source cells with their corresponding source blocks (those contained within the ``blocks`` folder of your project). For each file, the command shows information about it's name and type, the presence or not of a ``main`` function, and the full list of dependencies for each particular cell, grouped under the *explicit* (those dependencies explicitly referenced in your code, as C++ includes or python imports), *implicit* (deduced from code inspection, i.e. C++ implementation files of symbols defined in a header file), and *system* (grouping all system dependencies of a file) sections.
 
 * Parameters for **filtering the cells to be analyzed**, whose dependencies are to be displayed. The command provides 4 different options for filtering the results:
 
@@ -57,7 +37,7 @@ The command can also be used combining a series of **additional parameters** (yo
 
 			$ bii deps --files fenix/blink/blink.h
 
-	* ``--virtual`` indicates the client to show only those virtual cells contained in your hive.
+	* ``--virtual`` indicates the client to show only those virtual cells contained in your project.
 	* ``--main`` is used for displaying information about cells that contain a ``main`` function or entry point to your code.
 
 * Parameters for **filtering the dependencies**. These allow you to specify you want the client to show their dependencies:
@@ -113,7 +93,7 @@ If you have changes in a ``main.cpp`` file:
 bii diff
 --------
 
-Compare files and show differences with ``bii diff <block_name>`` command. You can compare your current hive with previous published versions or compare between published versions.
+Compare files and show differences with ``bii diff <block_name>`` command. You can compare your current project with previous published versions or compare between published versions.
 
 For example, if you want to see the changes in your local block with the saved last current version.
 

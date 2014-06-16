@@ -114,19 +114,6 @@ After a while, the RPi cross-compiling tools will be available in your system. T
 	$ bii setup:rpi
 	INFO: The arm gnu is already downloaded
 
-4. What to do next?
--------------------
-
-You have successfully set up your system for developing C++ RPi programs with biicode. These are some resources that will help you:
-
-.. container:: todo
-	
-	* Read the :ref:`Raspberry Pi getting started guide <rpi_getting_started>`. You'll learn how to create, build and execute your first biicode hive project.
-	* Visit the :ref:`Raspberry Pi examples section <raspberry_pi_examples>`.
-	* Read the reference for :ref:`general biicode commands <biicode_reference>` and for :ref:`RPi specific biicode commands <bii_rpi_tools>`
-	* `Visit our forum and make any questions <http://forum.biicode.com/category/raspberry-pi>`_
-
-
 .. _rpi_32bi_support:
 
 .. container:: infonote

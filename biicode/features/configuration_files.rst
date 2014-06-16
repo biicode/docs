@@ -3,7 +3,7 @@
 Configuration files
 ===================
 
-Biicode offers you a set of configuration files across your workspace, hives, and blocks. These files empower you with full control of how biicode treats your code and dependencies. Some of these files were introduced in the :ref:`project layout section <project_layout>`. They can be grouped in two main categories:
+Biicode offers you a set of configuration files across your projects and blocks. These files empower you with full control of how biicode treats your code and dependencies. Some of these files were introduced in the :ref:`project layout section <project_layout>`. They can be grouped in two main categories:
 
 1. **Project-level configuration files**, with ``.bii`` extension, contained in every project ``bii`` folder. These are two files, and are created when executing the ``bii init`` command:
 	

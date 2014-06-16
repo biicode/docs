@@ -3,7 +3,7 @@
 Comments tags
 =============
 
-One of the reason why biicode is a powerful tool for any software developer, is that not only automatically configures your project and builds it if needed, but also **provides the tools that allow you to take full control of the project configuration and settings**. This control is provided on one hand via specific :ref:`configuration files<config_files>`. On the other hand, you can make use of **special tags included in your code comments**, that provide Biicode with valuable information about your specific necessities and desires about any hive or block. 
+One of the reason why biicode is a powerful tool for any software developer, is that not only automatically configures your project and builds it if needed, but also **provides the tools that allow you to take full control of the project configuration and settings**. This control is provided on one hand via specific :ref:`configuration files<config_files>`. On the other hand, you can make use of **special tags included in your code comments**, that provide Biicode with valuable information about your specific necessities and desires about any project or block. 
 
 You can think of these tags as inline configuration instructions that are placed inside your files, and in most cases the instructions syntax is identical to the respective configuration files. Please, take into account that this configuration flavour is complementary to the use of :ref:`configuration files<config_files>`; it is up to you to use the most convenient one for your necessities. Hovever, try not to include incompatible declarations in your configuration files, and in your code comments tags.
 

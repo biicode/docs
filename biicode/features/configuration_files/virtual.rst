@@ -32,7 +32,7 @@ Note that the ``main.cpp`` file includes the ``sphere.h`` header file, but makes
 
 You need to create this file in your block's ``bii`` folder, and write the code that selects the virtual resource to be used in each case. **Every rule is implemented as a python function** —you can give it whatever name you want, that has no relevance—, **whose docstring contains the list of resources affected by that particular rule, and returns a literal python string with the name of the folder containing the desired implementations of the virtual resources**. This function will receive as a parameter your project settings configuration.
 
-In this example we are defining a python function that decides which implementation of the ``sphere.h`` and ``sphere.cpp`` resurces is to be used depending on the value of the user defined variable ``model`` in the user's :ref:`hive settings file<settings>`. In this case we are returning the name of the ``test`` folder, or the ``develop`` folder, and we must include in this locations appropriate implementations for each of these resources.
+In this example we are defining a python function that decides which implementation of the ``sphere.h`` and ``sphere.cpp`` resurces is to be used depending on the value of the user defined variable ``model`` in the user's :ref:`project settings file<settings_bii>`. In this case we are returning the name of the ``test`` folder, or the ``develop`` folder, and we must include in this locations appropriate implementations for each of these resources.
 
 .. code-block:: python
 	:linenos:

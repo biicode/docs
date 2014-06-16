@@ -3,18 +3,14 @@
 parents.bii
 ===========
 
-Every hive contains **a special yaml file which allows you to define some custom settings for your project**. This file is located in the ``bii`` folder of your hive, and its name is ``settings.bii``.
+This file is created when you publish a block inside the ``bii`` block folder and provides insight about the origins of each of the blocks currently contained in the blocks folder of your hive, which are being edited by you and are susceptible of being shared in a new publication. This is the block, branch and version of the code you are currently editing. This information can find its origin in three different types of events regarding your blocks:
 
-The biicode client generates a **default settings file** for you when you create a new hive. Initially, it contains only information regarding your platform: architecture, operating system, and version.
+* You have published at least one version of a block, and you continue working on it. In this case the parent information contains the last published version of your code: ``<block_name>(branch_name): <version>``.
+|
+* You have performed an open of a given block in order to make some modifications or adaptations. In this case the source code of this block is automatically copied by the biicode client to the blocks folder of your hive, and the parent information reflects the fact that the code contained in this particular block is based on the code of the opened block.
+|
+* You have just created a new unpublished block in your hive. In this case, no parent information is available. You’ll have to publish your block first!
 
-You can also specify your own settings for any particular project. These settings depend on your programming language. For instance, if you are working on a C/C++ hive, you can specify here your IDE, allowing :ref:`biicode integration with your preferred code editor <ide_configuration>`. For other hives, such as Arduino o Raspberry Pi projects, you provide information about your boards configuration using this file.
+In the first two scenarios, the parent information provides details about the code that serves as the basis for your edition. You can think of this information as the code that is in the same track as your unpublished block, just one step before. When you perform a new publication of your block this information will be updated precisely with the name of the branch and version just published.
 
-You don't need to manually edit this file. **Each language or platform provides its own command for settings customization**:
-
-* :ref:`bii cpp:settings for C/C++ hives<bii_cpp_settings>`
-* :ref:`bii arduino:settings for Arduino hives<bii_arduino_settings>`
-* :ref:`bii rpi:settings for Raspberry Pi hives<bii_rpi_settings>`
-
-
-You can :ref:`read more about the settings.bii file here<parents_bii>`.
-
+This file can be modify manually with the concrete version you need.
