@@ -1,5 +1,5 @@
-Configure the CMake file of a block that depend
-===============================================
+Configure the CMake file of dependencie
+=======================================
 
 Just make a file wwith the name ``biicode.configure`` with the biicode macro ``BII_ADD_INTERFACE(user-name block-name)``.
 

@@ -1,7 +1,7 @@
 .. _advanced_features:
 
 Features
-=================
+========
 
 .. toctree::
    :maxdepth: 2
