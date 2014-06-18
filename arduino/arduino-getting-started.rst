@@ -10,7 +10,7 @@ You will learn how to use the ``blink.h`` file of the ``blink`` block owner of `
 1. Installing biicode and Arduino tools
 ---------------------------------------
 
-For reuse code, you need to install biicode and a group of external tools (Arduino SDK, CMake and MinGW or GCC).
+To reuse code, you need to install biicode and a group of external tools (Arduino SDK, CMake and MinGW or GCC).
 
    - Download the biicode installer.
 
@@ -34,12 +34,12 @@ For reuse code, you need to install biicode and a group of external tools (Ardui
 2. Create your project
 ----------------------
 
-To create a new project running ``bii init`` with the project name as a parameter.
+To create a new project runn ``bii init <project_name>`` with the project name as a parameter.
 
 .. code-block:: bash
 
    ~$ bii init arduino_hello_project
-   
+
 This command will create the following layout:
 
 .. code-block:: text
@@ -70,16 +70,15 @@ This command will create the following layout:
 
 .. container:: infonote
 
-    **why this layout?**
+    **What is the reason behind this layout?**
 
-    This layout is because biicode analyse the dependencies of yours blocks and download it into de deps folder. It is important because biicode configure and build your project following this layout.
+    This layout is enforced because biicode analyzes the dependencies of your blocks and downloads them into de deps folder. It is important because biicode configures and build your project following this layout.
 
-    For this reason, all the code you want to be analyzed must place into a block inside the blocks folder.
+    For this reason, all the code you want to be analyzed must be placed into a block inside the blocks folder.
 
-    The structure of this blocks is composed by two parts, the user owner and the block name. In this example we use the anonymous user, but if you want to publish your own blocks in the future, you need to create a biicode user and use that user name.
+    The structure of these blocks is composed by two parts, the owner (username) and the block name. In this example we use an anonymous user, but if you want to publish your own blocks in the future, you will need to register and user your username.
 
-
-    If you want to change the user of a block into your blocks folder, just change the name folder where are this block.
+    If you want to change the user of a block into your blocks folder, just change the name of the owner folder where this block lies.
 
 3. Resolve your dependencies
 ----------------------------
@@ -95,21 +94,21 @@ Now, edit your main.cpp file with the following code and execute ``bii find``. W
 	Blink my_blink;
 	void setup() {
 	  //pin = 13, interval = 1000 ms
-	  my_blink.setup(13, 1000); 
+	  my_blink.setup(13, 1000);
 	}
 	void loop() {
-	  my_blink.loop(); 
+	  my_blink.loop();
 	}
 
 .. code-block:: bash
 
    ~/arduino_hello_project$ bii find
-   
+
 4. Build and upload
 -------------------
 
-Now, you can build your firmware and upload it to your Arduino with the command ``arduino:upload``.
-If you only want to build your firmware, just use ``arduino:build``.
+You can now build your firmware and upload it to your Arduino with the command ``arduino:upload``.
+If you just want to build it execute ``arduino:build``.
 
 .. code-block:: bash
 
