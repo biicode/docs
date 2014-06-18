@@ -15,9 +15,9 @@ First of all, you need to configure your hive for **Eclipse IDE for C/C++**. If 
 	Select IDE: (eclipse/none)
 	Introduce ide (default:None) (/o list options): eclipse
 
-After modifying your settings, you must execute the ``bii arduino:configure`` command to apply all chantes and **generate the project files**.
+After modifying your settings, you must execute the ``bii arduino:configure`` command to apply all changes and **generate the project files**.
 
-If you have cofigured your hive settings as in the previous example, your are ready to import your project into the Eclipse IDE. It is important that you use a version of Eclipse that contains the C/C++ Toolkit. So we recommend using `Eclipse IDE for C/C++ Developers <https://www.eclipse.org/downloads/>`_.
+If you have configured your hive settings as in the previous example, your are ready to import your project into the Eclipse IDE. It is important that you use a version of Eclipse that contains the C/C++ Toolkit. So we recommend using `Eclipse IDE for C/C++ Developers <https://www.eclipse.org/downloads/>`_.
 
 How to import your project
 --------------------------

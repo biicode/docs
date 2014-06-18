@@ -29,7 +29,7 @@ To reuse code, you need to install biicode and a group of external tools (CMake 
 
 .. container:: infonote
 
-    If you have any problem installing the C/C++ tools, you can see :ref:`how to install C/C++ tools manually <cpp_installation>`
+    If you encounter any problem installing the C/C++ tools, you can see :ref:`how to install C/C++ tools manually <cpp_installation>`
 
 2. Create your project
 ----------------------
