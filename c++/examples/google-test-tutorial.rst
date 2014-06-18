@@ -13,7 +13,7 @@ In this example **we are going to create a factorial function and a test for it*
 1. Create a new hive
 ---------------------
 
-Create a new hive as described in the :ref:`hello world example <hello_world>`.
+Create a new hive as described in the :ref:`hello world example <cpp_getting_started>`.
 For this example we should select ``cpp`` as programming language, name our hive ``gtest_hive`` and the block ``factorial``.
 We don't need to generate a default hello world.
 

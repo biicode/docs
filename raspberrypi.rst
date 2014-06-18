@@ -19,9 +19,7 @@ In this part of the documentation you will find resources and tutorials for inst
 .. toctree::
    :maxdepth: 2
 
-   raspberrypi/rpi-set-up
    raspberrypi/rpi-getting-started
+   raspberrypi/rpi-features
    raspberrypi/rpi-examples
-   raspberrypi/rpi-reference
    raspberrypi/rpi-faqs
-
