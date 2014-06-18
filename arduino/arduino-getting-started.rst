@@ -29,7 +29,7 @@ To reuse code, you need to install biicode and a group of external tools (Arduin
 
 .. container:: infonote
 
-    If you have any problem installing the Arduino tools, you can see :ref:`how to install Arduino tools manually <arduino_installation>`
+    If you encounter any problem installing the Arduino tools, you can see :ref:`how to install Arduino tools manually <arduino_installation>`
 
 2. Create your project
 ----------------------
