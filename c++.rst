@@ -3,12 +3,12 @@
 C/C++ Documentation
 ===================
 
-**Biicode simplifies how you reuse C/C++ source code in your programs**. 
+**Biicode simplifies how you reuse C/C++ source code in your programs**.
 With our technology, you only need to write #includes in your source files.
 Biicode will automatically analize your code, and retrieve from biicode all missing dependencies,
 storing all the necessary source code files in your project.
 
-In this context, biicode technology gives you several advantages for enriching your C++ experience:
+In this context, biicode technology gives you several advantages to enrich your C++ experience:
 
    #. Reusing made easy: just ``#include`` the file you need and you get it. No more copy and paste files from project to project or dowloading and compiling external libraries.
    #. Great for rapid prototyping and trying out new libraries/versions.
