@@ -10,7 +10,7 @@ You will learn how to use the ``gtest.h`` file of the ``gtest`` block owner of `
 1. Installing biicode and C/C++ tools
 -------------------------------------
 
-For reuse code, you need to install biicode and a group of external tools (CMake and MinGW or GCC).
+To reuse code, you need to install biicode and a group of external tools (CMake and MinGW, Visual Studio or GCC).
 
    - Download the biicode installer.
 
@@ -29,17 +29,17 @@ For reuse code, you need to install biicode and a group of external tools (CMake
 
 .. container:: infonote
 
-    If you have any problem installing the C/C++ tools, you can see :ref:`how to install C/C++ tools manually <cpp_installation>`
+    If you encounter any problem installing the C/C++ tools, you can see :ref:`how to install C/C++ tools manually <cpp_installation>`
 
 2. Create your project
 ----------------------
 
-To create a new project running ``bii init`` with the project name as a parameter.
+To create a new project run ``bii init <project_name>`` with the project name as a parameter.
 
 .. code-block:: bash
 
    ~$ bii init cpp_hello_project
-   
+
 This command will create the following layout:
 
 .. code-block:: text
@@ -49,7 +49,7 @@ This command will create the following layout:
    |    +-- blocks
    |    +-- deps
 
-Now, we will create a block. a block is the place where you must place your code. Execute ``bii new anonymous/my_fist_block`` into the project folder to create a block.
+Now, we will create a block. A block is the place where you must place your code. Execute ``bii new anonymous/my_fist_block`` into the project folder to create a block.
 
 .. code-block:: bash
 
@@ -78,12 +78,9 @@ This command will create the following layout:
 
 .. container:: infonote
 
-    **why this layout?**
+    **What is the reason behind this layout?**
 
-    This layout is because biicode analyse the dependencies of yours blocks and download it into de deps folder. It is important because biicode configure and build your project following this layout.
-
-    For this reason, all the code you want to be analyzed must place into a block inside the blocks folder.
-
+    This layout is enforced because biicode analyzes the dependencies of your blocks and downloads them into de deps folder. It is important because biicode configures and build your project following this layout.
 
 3. Resolve your dependencies
 ----------------------------
@@ -96,10 +93,10 @@ Now, edit your main.cpp file with the following code and execute ``bii find``. W
    :emphasize-lines: 1
 
    #include "google/gtest/gtest.h"
-   int sum(int a, int b) {return a+b;} 
+   int sum(int a, int b) {return a+b;}
    TEST(Sum, Normal) {
      EXPECT_EQ(5, sum(2, 3));
-   } 
+   }
    int main(int argc, char **argv) {
      testing::InitGoogleTest(&argc, argv);
      return RUN_ALL_TESTS();
@@ -117,4 +114,4 @@ Now, execute ``bii cpp:build`` and biicode will configure your project and compi
    ~/cpp_hello_project$ cd bin
    ~/cpp_hello_project/bin$ #execute your test
 
-And that's all. Your program is working!
+And that's all. Your program is working, you can go to the bin folder and execute it!
