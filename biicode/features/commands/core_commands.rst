@@ -1,5 +1,20 @@
 .. _bii_core_commands:
 
+.. _bii_init_command:
+
+bii init
+--------
+
+This is the command that **creates new project**. It can **receives as a parameter the name of the project to be created** or **create the project in the current folder where you execute the commnad**. If you pass the name of the project, this command create a folder with the name passed as parameter and initialize the project inside.
+
+.. code-block:: bash
+
+	$ bii init <project_name>
+
+.. code-block:: bash
+
+	$ bii init
+
 .. _bii_setup_command:
 
 bii setup
@@ -45,7 +60,7 @@ The ``bii new <user_name/block_name>`` command creates a new folder within :ref:
 bii work
 --------
 
-The ``bii work`` command is a very basic command that performs the main processing of biicode for your current project. It checks what files you have modified, analyzes and search dependencies among your project files (i.e. locally), and fills the ``deps`` folder. Most times it is not necessary to invoke this command explicitly, because it is automatically called by development commands as ``cpp:run``, ``cpp:build`` or ``cpp:configure``.
+The ``bii work`` command is a very basic command that performs the main processing of biicode for your current project. It checks what files you have modified, analyzes and search dependencies among your project files (i.e. locally), and fills the ``deps`` folder. Most times it is not necessary to invoke this command explicitly, because it is automatically called by development commands as ``cpp:build`` or ``cpp:configure``.
 
 .. code-block:: bash
 
@@ -57,9 +72,7 @@ The ``bii work`` command is a very basic command that performs the main processi
 bii publish
 -----------
 
-When your are happy with the state, functionality and performance of your code, you can **publish your blocks and share them** with other users thanks to ``bii publish`` command. This way they will be able to reuse your code, including references to your blocks cells in their source files, and making use of the ``bii find`` command, explained in this section.
-
-The ``bii publish`` command must be invoked inside a **project** folder and has no parameters, but **will launch an assistant that will guide you** through the publishing process:
+The ``bii publish`` command is used to publish your code into biicode. it must be invoked inside a **project** folder and has no parameters, but **will launch an assistant that will guide you** through the publishing process:
 
 * In case your **project** contains multiple blocks under your ``blocks`` folder, it will ask you which of them (``user_name/block_name``) you wish to publish.
 * You must define a **tag** for the published code. Available options are: 	

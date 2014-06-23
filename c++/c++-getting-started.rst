@@ -56,6 +56,14 @@ Now, we will create a block. a block is the place where you must place your code
    ~$ cd cpp_hello_project
    ~/cpp_hello_project$ bii new anonymous/my_first_block --hello=cpp
 
+.. container:: infonote
+
+    **why anonymous/my_first_block?**
+
+    The structure of this blocks is composed by two parts, the user owner and the block name. In this example we use the anonymous user, but if you want to publish your own blocks in the future, you need to create a biicode user and use that user name.
+
+    If you want to change the user of a block into your blocks folder, just change the name folder where are this block.
+
 This command will create the following layout:
 
 .. code-block:: text
@@ -76,10 +84,6 @@ This command will create the following layout:
 
     For this reason, all the code you want to be analyzed must place into a block inside the blocks folder.
 
-    The structure of this blocks is composed by two parts, the user owner and the block name. In this example we use the anonymous user, but if you want to publish your own blocks in the future, you need to create a biicode user and use that user name.
-
-
-    If you want to change the user of a block into your blocks folder, just change the name folder where are this block.
 
 3. Resolve your dependencies
 ----------------------------

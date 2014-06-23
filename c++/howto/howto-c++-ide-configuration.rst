@@ -3,11 +3,11 @@
 IDE configuration
 =================
 
-Biicode offers **integration with some of the most commonly used IDEs** for C++ programmers. It is able to do the appropriate project setup on your behalf. This way you can work on your biicode hive, using the underlying infrastructure and services provided by standard IDEs. In fact, this configuration can be established from the very first momment, when you create a new hive with the ``bii new`` command (see :ref:`the commands reference for more information<bii_new_command>`).
+Biicode offers **integration with some of the most commonly used IDEs** for C++ programmers. It is able to do the appropriate project setup on your behalf. This way you can work on your biicode project, using the underlying infrastructure and services provided by standard IDEs. In fact, this configuration can be established from the very first momment, when you create a new project with the ``bii init`` command (see :ref:`the commands reference for more information<bii_init_command>`).
 
 This section details the steps you should follow to achieve this integration.
 
-First of all, you need to configure your hive for the particular IDE of your choice. If you already did so when creating the hive with the help of the ``bii new`` command, you can skip this section. Otherwise, you can define your preferences in the ``settings.bii`` configuration of your hive.
+First of all, you need to configure your project for the particular IDE of your choice. If you already did so when creating the project with the help of the ``bii init`` command, you can skip this section. Otherwise, you can define your preferences in the ``settings.bii`` configuration of your project.
 
 Change your default C++ settings writting:
 
@@ -17,7 +17,7 @@ Change your default C++ settings writting:
 
 	Introduce ide (default:None) (/o list options): eclipse
 
-Choose one of the available options. This will automatically update your hive ``settings.bii`` file. This is an example for this file with *Eclipse* as the chosen IDE.
+Choose one of the available options. This will automatically update your project ``settings.bii`` file. This is an example for this file with *Eclipse* as the chosen IDE.
 
 .. code-block:: text
 
@@ -42,11 +42,11 @@ Some particular configuration options for **Eclipse**, **Visual Studio** and **C
 			
 			Eclipse
 
-		If you have cofigured your hive ``settings.bii`` file as in the previous example, your are ready to import your project into the Eclipse IDE.
+		If you have cofigured your project ``settings.bii`` file as in the previous example, your are ready to import your project into the Eclipse IDE.
 
 		#. From the main Eclipse menu choose: *File > import...*
 		#. Now, select *general > Existing Projects into Workspace*, and clic next.
-		#. Select the root directory as the **root folder of your hive**.
+		#. Select the root directory as the **root folder of your project**.
 		#. You should see a project already selected in the *projects* box. Click *finish*.
 
 		If you want to add new files to your block, just right-click on the folder of your block and create a new file.
@@ -103,10 +103,10 @@ Some particular configuration options for **Eclipse**, **Visual Studio** and **C
 			-- Detecting CXX compiler ABI info - done
 			-- Configuring done
 			-- Generating done
-			-- Build files have been written to: [hive_build_folder]
+			-- Build files have been written to: [project_build_folder]
 
 
-		Finally, you are now ready to open your project with Visual Studio. Just double-click on the .sln file inside the build folder of your hive and a VS project will open with the folder structure that appears below. Your source code is located in the third folder:
+		Finally, you are now ready to open your project with Visual Studio. Just double-click on the .sln file inside the build folder of your project and a VS project will open with the folder structure that appears below. Your source code is located in the third folder:
 
 		.. image:: /_static/img/visual_studio_tree.jpg
 
@@ -118,9 +118,9 @@ Some particular configuration options for **Eclipse**, **Visual Studio** and **C
 
 			CodeBlocks
 
-		First of all, you need to configure your project. Initialize your default C++ settings as explained before, using the ``bii cpp:settings`` command from your hive folder.
+		First of all, you need to configure your project. Initialize your default C++ settings as explained before, using the ``bii cpp:settings`` command from your project folder.
 
-		Inside the ``bii`` folder of you hive, change the file ``settings.bii`` including the following lines for the ``ide`` family and ``build_type``:
+		Inside the ``bii`` folder of you project, change the file ``settings.bii`` including the following lines for the ``ide`` family and ``build_type``:
 
 		.. code-block:: text
 
@@ -153,13 +153,13 @@ Some particular configuration options for **Eclipse**, **Visual Studio** and **C
 			-- Detecting CXX compiler ABI info - done
 			-- Configuring done
 			-- Generating done
-			-- Build files have been written to: [hive_build_folder]
+			-- Build files have been written to: [project_build_folder]
 
 
 		Finally, you are ready to open your project with CodeBlocks. The first step is to open the project:
 
 		#. From the main menu, select *File > open...*
-		#. Find the ``build`` folder of your hive and select the ``hive_name.cbp`` file.
+		#. Find the ``build`` folder of your project and select the ``project_name.cbp`` file.
 		#. Click *open*.
 
 		Now you have your project in the CodeBlocks workspace showing a folders tree similar to this one:

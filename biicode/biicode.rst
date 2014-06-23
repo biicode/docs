@@ -115,8 +115,8 @@ A typical project layout is as follows: ::
 |    |    |           |-- bar.h
 |    |    +-- other_user_name
 |    |          +-- block_im_editing
-|	 |                +-- bii
-|	 |                |    |-- mains.bii
+|    |                +-- bii
+|    |                |    |-- mains.bii
 |    |        	      |-- message.c
 |    |                |-- message.h
 |    +-- build
