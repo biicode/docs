@@ -45,7 +45,7 @@ Biicode manages your code dependencies and retrieves the missing files from a ce
 All that said, biicode does not try to compete against the power of such established systems nor tries to replace them, but to coexist with them as another source, and we are working hard with that purpose.
 
 
-What is a workspace, a block, a hive?
+What is a project, a block?
 -------------------------------------
 
 Please, see :ref:`Introduction: Basic concepts <basic_concepts>`.
