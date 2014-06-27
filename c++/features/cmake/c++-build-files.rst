@@ -5,8 +5,7 @@ Build files
 
 When building a C++ hive project, there are several important folders to take into account: ::
 
-	|-- my_hive
-	|    +-- blocks (the user source code is here)
+	|-- my_project	|    +-- blocks (the user source code is here)
 	|    +-- build (to store generated project and build files)
 	|    +-- cmake (generated CMake files)
 	|    +-- bin (build binaries)

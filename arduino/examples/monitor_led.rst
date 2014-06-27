@@ -1,3 +1,4 @@
+
 Arduino Serial Monitor
 =======================
 
@@ -6,7 +7,7 @@ This example shows you how to run **biicode's Arduino Serial Monitor Interface**
 C++ code
 --------
 
-Put the following file in your ``~/hive_name/blocks/your_user_name/block_name/``:
+Put the following file in your ``~/project_name/blocks/your_user_name/block_name/``:
 
 **monitor_led.cpp**
 

@@ -40,9 +40,9 @@ Biicode approach to C++ projects meta-configuration
 ------------------------------------------------------
 Biicode is a free tool (and it will always be free for OSS) created by C/C++ lovers to manage source code files dependencies in a novel way, facilitating the process of sharing and reusing source code.
 
-In biicode, each project is called a hive, and it has the following simplified layout::
+In biicode, each project has the following simplified layout::
 
-|-- my_hive
+|-- my_project
 |    +-- blocks (the user source code is here)
 |    |	  +-- my_user_name
 |    |          +-- my_block
@@ -58,10 +58,10 @@ In biicode, each project is called a hive, and it has the following simplified l
 
 The user's source code is arranged in blocks, each one in the form *username/blockname*. These blocks are the units that are published and reused, somewhat (but different, really) similar to repositories in a version control system.
 
-Let's assume that the username for this example is **maya**, the hive is called **hello**, and the blockname in this case (this is not necessary), is also **hello**.
+Let's assume that the username for this example is **maya**, the project is called **hello**, and the blockname in this case (this is not necessary), is also **hello**.
 The layout will be::
 
-|-- hello (the hive - project)
+|-- hello (the project)
 |    +-- blocks
 |    |	  +-- maya
 |    |          +-- hello (block maya/hello)
@@ -141,7 +141,7 @@ It is retrieved as source code, not as binaries, so it has to be built locally. 
 
 For example, imagine that the user **willy** has developed a similar application that says goodbye instead of hello, with the following layout::
 
-|-- bye (the hive - project)
+|-- bye (the project)
 |    +-- blocks
 |    |	  +-- willy
 |    |          +-- bye (block willy/bye)

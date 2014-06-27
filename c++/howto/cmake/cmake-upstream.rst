@@ -1,5 +1,5 @@
-Configure the CMake file of dependencie
-=======================================
+Configure the CMake file of dependencies
+========================================
 
 In this section, it explain the way to write cmake files for your dependencies.
 
