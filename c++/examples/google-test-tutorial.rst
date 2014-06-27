@@ -10,11 +10,11 @@ In this example **we are going to create a factorial function and a test for it*
     <script type="text/javascript" src="https://asciinema.org/a/7763.js" id="asciicast-7763" async></script>
 
 
-1. Create a new hive
----------------------
+1. Create a new project
+-------------------------
 
-Create a new hive as described in the :ref:`hello world example <cpp_getting_started>`.
-For this example we should select ``cpp`` as programming language, name our hive ``gtest_hive`` and the block ``factorial``.
+Create a new project as described in the :ref:`hello world example <cpp_getting_started>`.
+For this example we should select ``cpp`` as programming language, name our project ``gtest_project`` and the block ``factorial``.
 We don't need to generate a default hello world.
 
 
@@ -27,7 +27,7 @@ We will start with a math example: a **simple function to calculate the factoria
 * 1 if the number is zero, or
 * the factorial if the number is positive, *(num)\*(num-1)\*(num-2)\*…\*1*.
 
-Put these files inside ``YOUR_WORKSPACE/gtest_hive/blocks/YOUR_USERNAME/factorial``
+Put these files inside ``YOUR_WORKSPACE/gtest_project/blocks/YOUR_USERNAME/factorial``
 
 **math_ext.h**
 
@@ -59,7 +59,7 @@ To check that the factorial function behaves as expected put main_test.cpp with 
 3. Find dependencies
 --------------------
 
-Now **we have to ask biicode to find our dependencies**. This will download Google Test to your machine, into your hive's ``deps`` folder.
+Now **we have to ask biicode to find our dependencies**. This will download Google Test to your machine, into your project's ``deps`` folder.
 
 .. code-block:: bash
 

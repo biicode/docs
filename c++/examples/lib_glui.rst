@@ -29,11 +29,11 @@ You can `explore the source code block for this example following this link <htt
 		sudo apt-get install mesa-common-dev libglu1-mesa-dev libxi-dev	
 
 
-1. Create a **new hive with and empty block** in your biicode workspace. Provide ``none`` as the name of your first block (this way no block will be created) and the ``<hive_name>`` of your preference:
+1. Create a **new project with and empty block** in your biicode workspace. Provide ``none`` as the name of your first block (this way no block will be created) and the ``<project_name>`` of your preference:
 
 .. code-block:: bash
 
-		PATH_TO_WORKSPACE$ bii new <hive_name>
+		PATH_TO_WORKSPACE$ bii new <project_name>
 		Select language: (java/node/fortran/python/cpp/arduino/None)
 		Introduce lang (/o list options): cpp
 		INFO: Selected lang: cpp
@@ -42,30 +42,30 @@ You can `explore the source code block for this example following this link <htt
 		INFO: No block will be created
 		Select IDE: (eclipse/visual/none)
 		Introduce ide (default:None) (/o list options): none
-		Successfully created new hive test2
+		Successfully created biicode project test2
 
 
-2. **Open this block**. It will be downloaded to your hive's `block` folder. Inside your hive folder, execute the command:
-
-.. code-block:: bash
-
-		PATH_TO_WORKSPACE/<hive_name>$ bii open luispedraza/glui_example
-
-
-3. **Retrieve all missing dependencies** using the ``bii find`` command. This way all missing dependencies will be downloaded into the ``deps`` folder of your hive.
+2. **Open this block**. It will be downloaded to your project's `block` folder. Inside your project folder, execute the command:
 
 .. code-block:: bash
 
-		PATH_TO_WORKSPACE/<hive_name>$ bii find
+		PATH_TO_WORKSPACE/<project_name>$ bii open luispedraza/glui_example
+
+
+3. **Retrieve all missing dependencies** using the ``bii find`` command. This way all missing dependencies will be downloaded into the ``deps`` folder of your project.
+
+.. code-block:: bash
+
+		PATH_TO_WORKSPACE/<project_name>$ bii find
 
 
 4. Finally, **compile your program** using the ``bii cpp:build`` command:
 
 .. code-block:: bash
 
-		PATH_TO_WORKSPACE/<hive_name>$ bii cpp:build
+		PATH_TO_WORKSPACE/<project_name>$ bii cpp:build
 
-If there were no errors during compilation, you'll find a new executable file inside your hive's ``bin`` folder. If you run this program, you should see something similar to this screen capture. If you found any problems, `please contact us at our forum <http://forum.biicode.com/category/c-c>`__.
+If there were no errors during compilation, you'll find a new executable file inside your project's ``bin`` folder. If you run this program, you should see something similar to this screen capture. If you found any problems, `please contact us at our forum <http://forum.biicode.com/category/c-c>`__.
 
 .. image:: /_static/img/c++/examples/glui_example.png
 

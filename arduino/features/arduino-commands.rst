@@ -14,7 +14,7 @@ This section summarizes the **Arduino commands available to be used with the bii
 	  arduino:build   Build the project (with Make, Mingw32-make or NMake)
 	  arduino:configure Configure project with cmake
 	  arduino:monitor EXPERIMENTAL open serial monitor
-	  arduino:settings Configure hive settings for arduino
+	  arduino:settings Configure project settings for arduino
 	  arduino:upload  Upload a firmware in Arduino
 	  arduino:wizard  Create a default class with constructor/destructor and a main.cpp or main.c
 
@@ -24,7 +24,7 @@ This section summarizes the **Arduino commands available to be used with the bii
 bii arduino:configure
 ---------------------
 
-If you have configured your hive as a C/C++ project and you want to develop in arduino language, this command helps you! Enter it and configure your hive like an arduino project. It invokes arduino cross compiler and you are ready to start with your arduino.
+If you have configured your project as a C/C++ project and you want to develop in arduino language, this command helps you! Enter it and configure your project like an arduino project. It invokes arduino cross compiler and you are ready to start with your arduino.
 
 .. code-block:: bash
 
@@ -44,7 +44,7 @@ If you have configured your hive as a C/C++ project and you want to develop in a
 	-- Detecting CXX compiler ABI info - done
 	-- Configuring done
 	-- Generating done
-	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_HIVE]/build
+	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_PROJECT]/build
 
 .. _bii_arduino_settings:
 

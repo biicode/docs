@@ -10,10 +10,10 @@ The biicode client stopped working
 
 As biicode is a rapidly evolving technology —right now we are releasing new versions of the product at least weekly—, you may find that suddenly some features have stopped working as expected. 
 
-C/C++ hives in Windows
-^^^^^^^^^^^^^^^^^^^^^^
+C/C++ biicode projects in Windows
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This problem affects to **Windows user that compile their C or C++ hives with MinGW** compilation tools. In this case, there is an issue if you have installed the Windows Shell Command Tool, ``sh.exe`` on your system. In this case, check if your ``PATH`` environment variable contains the ``sh.exe`` program, and if it does, remove it. To do so:
+This problem affects to **Windows user that compile their C or C++ projects with MinGW** compilation tools. In this case, there is an issue if you have installed the Windows Shell Command Tool, ``sh.exe`` on your system. In this case, check if your ``PATH`` environment variable contains the ``sh.exe`` program, and if it does, remove it. To do so:
 
 #. Right-click on *My Computer* icon, choose properties from the context menu. (Alternatively, you can double-click on the *System* icon in the *Control Panel*)
 
@@ -33,10 +33,10 @@ If biicode client isn't working, this can be due to some update in the logic of 
 After these simple actions, everything should get back to normal. However, if your problem isn't solved yet, please `contact us at our forum <http://forum.biicode.com/category/client/>`__, and we'll try to provide a solution as soon as possible.
 
 
-Old hives don't work properly with Biicode 0.11.1
--------------------------------------------------
+Old biicode projects don't work properly with Biicode 0.11.1
+---------------------------------------------------------------
 
-When we improved user experience in version 0.11.1, we realized that there was a worthy inconvenience: your local hives may need some editing.
+When we improved user experience in version 0.11.1, we realized that there was a worthy inconvenience: your local projects may need some editing.
 
 So if you get this error:
 
@@ -46,20 +46,20 @@ So if you get this error:
    MINGW is not a valid BuilderFamily. Possible values are set (['ant','maven','make','msbuild','nmake'])
    
 To fix it, you have to update the file settings.bii, for C/C++ you have to do it manually:
-Either by creating a new hive and copying it's settings.bii file or changing yours so it has this information:
+Either by creating a new project and copying it's settings.bii file or changing yours so it has this information:
 
 .. code-block:: text
 
     cpp: {builder: {family: make, subfamily: mingw}}
 
 
-If it's an Arduino hive just type this in your console:
+If it's an Arduino project just type this in your console:
 
 .. code-block:: bash
 
     bii arduino:settings
     
-and for Raspberry Pi hives:
+and for Raspberry Pi projects:
     
 .. code-block:: bash
 

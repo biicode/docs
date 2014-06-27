@@ -15,10 +15,10 @@ The challenge consists in building and runing the code, in three different platf
 
 In this section we explain, step by step, how to solve this challenge with the help of biicode.
 
-Create a new hive
------------------
+Create a new project
+---------------------
 
-Open your console, move to your biicode workspace and create a new hive named "challenge":
+Open your console, move to your biicode workspace and create a new project named "challenge":
 
 .. code-block:: bash
 
@@ -32,14 +32,14 @@ Copy the code
 Download the `challenge sources from github <https://github.com/biicode/challenge>`_ or in `zipped format from this link <https://biicorporateproduction.s3.amazonaws.com/media/uploads/challenge.zip>`_. Copy all the files into ``challenge/blocks/your_user_name/challenge``.
 If you got the sources from github, you need to replace the #include directives as follows: (#include "sparse/cs.h" => #include "tdavis/sparse/cs.h", #include <eigen/Dense> => #include <eigen/eigen/Dense>, #include "gtest/include/gtest/gtest.h" => #include "google/gtest/include/gtest/gtest.h")
 
-Now you can check for all the code dependencies of the current hive using the ``bii deps`` command. Please, note that while most of the dependencies are correctly solved, three of them are not. Theses **unresolved dependencies** have been highlighted in the following figure:
+Now you can check for all the code dependencies of the current project using the ``bii deps`` command. Please, note that while most of the dependencies are correctly solved, three of them are not. Theses **unresolved dependencies** have been highlighted in the following figure:
 
 .. code-block:: bash
 	:emphasize-lines: 18,19,20,21
 
 	$ bii deps
 	Detected 5 files created, 0 updated
-	Processing hive
+	Processing project
 	  Cell your_user_name/challenge/systemsolver.h is implemented by set([\'your_user_name/challenge/systemsolver.cpp\'])
 
 	Find resources with include to gtest ['your_user_name/challenge/test1.cpp']
@@ -73,7 +73,7 @@ Now you can check for all the code dependencies of the current hive using the ``
 Find and retrieve dependencies
 ------------------------------
 
-Now that we know that our hive has some missing dependencies, we'll show you how easily biicode helps you to automatically retrieve all of them. You only need to write the ``bii find`` command. You'll be asked to provide your biicode password, and the client will find and retrieve from our servers any missing dependencies:
+Now that we know that our project has some missing dependencies, we'll show you how easily biicode helps you to automatically retrieve all of them. You only need to write the ``bii find`` command. You'll be asked to provide your biicode password, and the client will find and retrieve from our servers any missing dependencies:
 
 .. code-block:: bash
 	:emphasize-lines: 23,24,25,26,27,28
@@ -114,12 +114,12 @@ Now that we know that our hive has some missing dependencies, we'll show you how
 	Retrieving resources from server
 	Saving dependences on disk
 
-At this point, you'll find some new folders and files in your ``challenge/dep`` folder. These are the blocks that biicode considers as needed for compiling the hive.
+At this point, you'll find some new folders and files in your ``challenge/dep`` folder. These are the blocks that biicode considers as needed for compiling the project.
 
 Build and run
 -------------
 
-The final step is to actually compile and run the app. You can accomplish this task with the ``bii cpp:run`` command. As this hive contains more than one executable binary, you also need to provide the name of the task you wish to execute:
+The final step is to actually compile and run the app. You can accomplish this task with the ``bii cpp:run`` command. As this project contains more than one executable binary, you also need to provide the name of the task you wish to execute:
 
 .. code-block:: bash
 
