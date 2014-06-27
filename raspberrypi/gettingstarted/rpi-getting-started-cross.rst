@@ -107,7 +107,7 @@ Now, edit your main.cpp file with the following code and execute ``bii find``. W
 
    ~/rpi_hello_project$ bii find
 
-Now you are ready to compile and deploy your new application. First, **cross-compile your program** and make sure the binary is generated running ``bii cpp:build`` from your hive location:
+Now you are ready to compile and deploy your new application. First, **cross-compile your program** and make sure the binary is generated running ``bii cpp:build`` from your project location:
 
 .. code-block:: bash
 
@@ -124,7 +124,7 @@ To **send the binary to your Raspberry Pi**, you just need to execute the ``bii 
 .. code-block:: bash
 
 	$ bii rpi:send
-	Sending with rsync -Pravdtze ssh [HIVE_DIRECTORY]/bin/* [RPI_USER]@[RPI_IP]:[DIRECTORY]/[HIVE_NAME]
+	Sending with rsync -Pravdtze ssh [PROJECT_DIRECTORY]/bin/* [RPI_USER]@[RPI_IP]:[DIRECTORY]/[PROJECT_NAME]
 
 	[RPI_USER]@[RPI_IP]'s password:
 

@@ -21,10 +21,10 @@ Once you have the code, invoke ``bii find`` to resolve external dependencies. Th
 	...
 	$ bii rpi:ssh
 	...
-	pi@raspberrypi ~ $ cd [hive_name]
-	pi@raspberrypi ~/[hive_name] $ ls
+	pi@raspberrypi ~ $ cd [project_name]
+	pi@raspberrypi ~/[project_name] $ ls
 	[binary_name]
-	pi@raspberrypi ~/[hive_name] $ sudo ./[binary_name]
+	pi@raspberrypi ~/[project_name] $ sudo ./[binary_name]
 
 * Open your web browser and go to *http://localhost:9000*
 

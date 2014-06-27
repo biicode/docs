@@ -18,7 +18,7 @@ How can I do it?
 -----------------
 
 First of all make sure that your RaspberryPi is connected to your local network,
-and you have permissions grants to access it. Then you should create a new hive,
+and you have permissions grants to access it. Then you should create a new project,
 let's call it triangle.
 
 .. code-block:: bash
@@ -27,7 +27,7 @@ let's call it triangle.
     ..
     you@yourmachine ~/bii_ws $ cd triangle
 
-When you have your shining new hive, you should execute the following command:
+When you have your shining new project, you should execute the following command:
 
 .. code-block:: bash
 

@@ -12,7 +12,7 @@ This section summarizes the **C/C++ commands available to be used with the biico
 	---------Cpp tools commands--------
 	  cpp:build       Build the project (with Make, Mingw32-make or NMake)
 	  cpp:configure   Configure project with cmake
-	  cpp:settings    Hive settings configuration
+	  cpp:settings    Project settings configuration
 
 
 bii cpp:configure
@@ -37,7 +37,7 @@ This command configure your project as a C/C++ project automatically and adding 
 	-- Detecting CXX compiler ABI info - done
 	-- Configuring done
 	-- Generating done
-	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_HIVE]/build
+	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_PROJECT]/build
 
 
 .. _bii_cpp_settings:
@@ -65,16 +65,16 @@ This command helps you to configure the IDE you'll use to build your project:
 	Introduce ide (default:None) (/o list options): visual
 	Visual version (6-12)? : 10
 
-Just introduce your desired IDE, and your hive ``settings.bii`` file will be updated in accordance.
+Just introduce your desired IDE, and your project ``settings.bii`` file will be updated in accordance.
 
 .. container:: infonote
 
 
     **Working with Visual Studio 64 bits version**
 
-    By default, the ``bii cpp:settings`` command selects the 32 bits version of VIsual Studio compiler. If you want to use the 64 bits version, you need to manually edit your hive ``settings.bii`` file as follows:
+    By default, the ``bii cpp:settings`` command selects the 32 bits version of VIsual Studio compiler. If you want to use the 64 bits version, you need to manually edit your project ``settings.bii`` file as follows:
 
-    #. Go to ``your_hive/bii/`` folder
+    #. Go to ``your_project/bii/`` folder
     #. Open the ``settings.bii`` file
     #. Modify your IDE declaration line updating the ``arch`` parameter as follows, writing the ``Win64`` option:
 

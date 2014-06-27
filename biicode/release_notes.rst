@@ -31,7 +31,7 @@ Release Notes
 * ``bii clean`` command now deletes the build folder
 * Removed main and class creation wizards
 * Removed ``bii cpp:exe`` command
-* Hives and Blocks can now be deleted from your user profile web page
+* Projects and Blocks can now be deleted from your user profile web page
 
 |
 **0.12 (21-03-14)**
@@ -57,7 +57,7 @@ Release Notes
 |
 **0.10 (21-02-14)**
 
-* Removed the workspace ``default_settings.bii`` file. Now, new hives' settings are obtained from the workspace ``environment.bii`` file.
+* Removed the workspace ``default_settings.bii`` file. Now, new projects' settings are obtained from the workspace ``environment.bii`` file.
 * Node.js support
 * Debian wheezy support
 * Fix a bug that caused open to fail if the block was already in edition
@@ -65,9 +65,9 @@ Release Notes
 |
 **0.09 (13-02-14)**
 
-* There is a brand new visualization in browser of hives and dependencies with "$bii deps --graph"
+* There is a brand new visualization in browser of projects and dependencies with "$bii deps --graph"
 * minor bugfixes
-* improved :ref:`open command<bii_open_command>`, now any block can be open inside a hive
+* improved :ref:`open command<bii_open_command>`, now any block can be open inside a project
 * improved performance of finds in server and connections pools
 * setup totally new. Only setup:cpp working now experimentaly. Also rpi:setup moved to setup:rpi
 * apt-get repository for debian based (ubuntu, raspbian) distributions
@@ -77,7 +77,7 @@ Release Notes
 **0.08 (5-Feb-14)**
 
 * Merge bugfixes
-* Hive download bugfixes
+* Project download bugfixes
 * Size and performance optimizations in macos and linux clients
 
 |
@@ -108,7 +108,7 @@ Release Notes
 * Raspberry now using rsync instead of scp
 * Wizard rpi:setup for automatic install of cross compilers
 * New breadcrumb navigation bar for blocks in browser
-* Reduced computation by an order of magnitude, especially noticeable in large hives
+* Reduced computation by an order of magnitude, especially noticeable in large projects
 * Fixed bugs in parsers, that kept old state even the file was modified
 * Improved normalization of endlines, for handling also \\r
 * Fixed bug of not finding new dependencies of files in already dependents blocks
@@ -125,14 +125,14 @@ Release Notes
 * Init and new configuration wizards
 * Improved Eclipse support. You can read about it :ref:`here <ide_eclipse>`
 * Improved Raspberry Pi support.
-* Changed hive structure. You can read about new layout :ref:`here <project_layout>`
+* Changed project structure. You can read about new layout :ref:`here <project_layout>`
 * User can edit cmakes http://docs.biicode.com/en/latest/reference/cpp_build_files.html
 
 |
 **0.02.3 (2-Dec-13)**
 
-* Experimental upload-download of hives to biicode, so it is not necessary to publish to keep working in other computer.
-* Navigation of uploaded hives in the web
+* Experimental upload-download of projects to biicode, so it is not necessary to publish to keep working in other computer.
+* Navigation of uploaded projects in the web
 * Updated exe creation to pyinstaller2.1, as 2.0 had some problems in some windows installs.
 * Creation (experimental) of dynamic libraries from C code. Integration from python code with cffi.
 * Improved use of biicode for C/C++ dev with RaspberryPI (linux only)
@@ -146,11 +146,11 @@ Release Notes
 * Improved NMake support, launching vcvarsall in a .bat file to include environment variables
 * Web loads much improved, loading of files with Ajax, rendering of color syntax highlighting with JS, client side and paginated to handle large files
 * Web styles improvements, back and forward buttons
-* Solved bug of hive with multiple src blocks, that was overwriting references to dep blocks
+* Solved bug of project with multiple src blocks, that was overwriting references to dep blocks
 * WxWidgets binary support improved
 * Improved handling of python imports, solved bug that didnt renamed properly to absolute imports
 * Ctrl+C when init bug fixed (it created empty, wrong workspace)
-* Applied some limits and constraints to block sizes, file sizes, number of files in a block and in a hive
+* Applied some limits and constraints to block sizes, file sizes, number of files in a block and in a project
 
 |
 **0.01.10.1**
@@ -182,8 +182,8 @@ Release Notes
 * Solved bugs in virtual resources that didn't let reuse published virtual resources
 * cpp_rules files now can accept multiple statements per rule as well as rules without condition and else clauses
 * Improved merge, but still very experimental
-* Solved bug that allowed to "find" dependencies with cycles to own hive blocks
-* bii deps --graph now working, showing hive block graph in browser
+* Solved bug that allowed to "find" dependencies with cycles to own project blocks
+* bii deps --graph now working, showing project block graph in browser
 * Fixed problem with renaming files.
 * Solved bug with user login upper-lower case mismatch
 * Improved possibility of editing directly in dep folder, but still discouraged practice.

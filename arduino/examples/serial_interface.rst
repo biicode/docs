@@ -13,8 +13,8 @@ You can find the whole api definition in the blocks web!
 How do I use it?
 -----------------
 
-* You need to create two hives arduino_app and cpp_app, one will contain the code that will be uploaded to arduino and the other one the client application that will run in your PC.
-* Copy the example code, C++ app code goes into your your pc hive and arduino code goes into the hive with arduino code.
+* You need to create two projects arduino_app and cpp_app, one will contain the code that will be uploaded to arduino and the other one the client application that will run in your PC.
+* Copy the example code, C++ app code goes into your pc project and arduino code goes into the project with arduino code.
 
 C++ code
 --------
@@ -99,7 +99,7 @@ Arduino code
 Just run your code!
 -------------------
 
-Execute following commands in each hive:
+Execute following commands in each project:
 
 **Arduino App**
 

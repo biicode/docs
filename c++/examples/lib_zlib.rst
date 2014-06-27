@@ -8,7 +8,7 @@ This is the biicode library site and this is the biicode library examples.
 Usage example (difficulty: medium)
 ----------------------------------
 
-To check this library, we're making an example to compress and decompress a single file. Then you could create a \*.h and a \*.cpp file named infdef (inflate and deflate) and a zpipe.cpp which would be, for example, in ``~/hive_directory/src/user_name/hive_name/``.
+To check this library, we're making an example to compress and decompress a single file. Then you could create a \*.h and a \*.cpp file named infdef (inflate and deflate) and a zpipe.cpp which would be, for example, in ``~/project_directory/src/user_name/project_name/``.
 
 The following code would be in each one.
 
@@ -54,7 +54,7 @@ Next, you can already run the code:
 
 Then you'll be requested to select compression or decompression any file, and the file source name and file destination name.
 
-This will be the output if you would want to compress a file.txt which is in your desktop directory and the compressed name file would be file.gz. The last one will be created in your ~/hive_directory/bin/ directory
+This will be the output if you would want to compress a file.txt which is in your desktop directory and the compressed name file would be file.gz. The last one will be created in your ~/project_directory/bin/ directory
 
 .. code-block:: bash
 
@@ -83,6 +83,6 @@ Now, if you want to decompress the file.gz to check all is correct, run the code
 	The original file size is: 5152
 	The file size after being decompressed is: 16944
 
-Finally, you can see that the new file, myfile.txt, has been created in the ~/hive_directory/bin/ directory and it´s exactly like the file.txt in terms of size and content.
+Finally, you can see that the new file, myfile.txt, has been created in the ~/project_directory/bin/ directory and it´s exactly like the file.txt in terms of size and content.
 
 

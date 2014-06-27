@@ -10,19 +10,19 @@ This example demonstrates how to get started using **OpenGL** with biicode. **Fr
    3. `The Free OpenGL Utility Toolkit <http://freeglut.sourceforge.net/>`_
    4. `List of GLUT methods <http://www.opengl.org/documentation/specs/glut/spec3/node1.html>`_
 
-1. Create a new hive
---------------------
+1. Create a new project
+-------------------------
 
-First, create a new hive as described in the :ref:`hello world example <cpp_getting_started>`, using the following options:
+First, create a new project as described in the :ref:`hello world example <cpp_getting_started>`, using the following options:
 
-* Hive name: ``cpp_freeglut_hive``
+* Project name: ``cpp_freeglut_project``
 * Programming language: ``cpp`` 
 * Block name: ``cpp_freeglut``
 * Default Hello World project: ``no``
 
 .. code-block:: bash
    
-   $ bii new cpp_freeglut_hive
+   $ bii new cpp_freeglut_project
    ...
    Select language: (java/node/fortran/python/cpp/arduino/None)
    Introduce lang (default:None): cpp
@@ -64,13 +64,13 @@ Now, simply put the following code into your ``cpp_freeglut`` block folder (you 
 3. Find dependencies
 --------------------
 
-Now is when the biicode magic takes place. The previous code needs to link with some library implementing the drawing functions being used. You can resolve all missing dependencies for your platform using the ``bii find`` command. **From your hive's folder location** execute:
+Now is when the biicode magic takes place. The previous code needs to link with some library implementing the drawing functions being used. You can resolve all missing dependencies for your platform using the ``bii find`` command. **From your project's folder location** execute:
 
 .. code-block:: bash
 
    $ bii find
 
-**This will find and retrieve all missing files** from the biicode servers to your local filesystem, under the ``deps`` folder of your hive. You should see a success message confirming that all dependencies have been resolved.
+**This will find and retrieve all missing files** from the biicode servers to your local filesystem, under the ``deps`` folder of your project. You should see a success message confirming that all dependencies have been resolved.
 
 
 4. Build and run
