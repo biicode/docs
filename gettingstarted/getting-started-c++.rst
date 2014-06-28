@@ -115,3 +115,7 @@ Now, execute ``bii cpp:build``, this configures your project and compiles your c
    ~/cpp_hello_project/bin$ #execute your test
 
 And that's all. Your program is working, you can open your bin folder and execute!
+
+.. container:: infonote
+
+    If you want to learn more about C/C++ & biicode, check the :ref:`C/C++ section <cpp-index>`

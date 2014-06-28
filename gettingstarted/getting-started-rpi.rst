@@ -148,3 +148,7 @@ Finally, to **execute your program on your Raspberry Pi**, you need to establish
 	Hello world!
 
 And that's all. Your program is working!
+
+.. container:: infonote
+
+    If you want to learn more about Raspberry Pi & biicode, check the :ref:`Raspberry Pi section <rpi-index>`

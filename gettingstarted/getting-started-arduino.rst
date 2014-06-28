@@ -117,3 +117,7 @@ If you just want to build it execute ``arduino:build``.
 	Writing | ################################################## | 100% 0.00s
 
 And that's all. Your program is working!
+
+.. container:: infonote
+
+    If you want to learn more about Arduino & biicode, check the :ref:`Arduino section <arduino-index>`

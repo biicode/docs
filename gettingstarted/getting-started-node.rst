@@ -104,3 +104,7 @@ Now, execute your script main.js.
    ~/node_hello_project/blocks/my_first_block$ #execute your script
 
 And that's all. Your program is working!
+
+.. container:: infonote
+
+    If you want to learn more about node.js & biicode, check the :ref:`node.js section <nodejs-index>`
