@@ -4861,6 +4861,10 @@ body.biicode .menu-vertical li.toctree-l1.current > a
 {
   background-color: #fa0;
 }
+body.gettingstarted .menu-vertical li.toctree-l1.current > a
+{
+  background-color: #3C3C3C;
+}
 body.cpp .menu-vertical li.toctree-l1.current > a
 {
   background-color: #3480ff;
@@ -4903,6 +4907,10 @@ body.nodejs .menu-vertical li.toctree-l1.current > a
 {
   color: #fa0;
 }
+.goback .link.gettingstarted
+{
+  color: #3C3C3C;
+}
 .goback .link.cpp
 {
   color: #3480ff;
@@ -4923,6 +4931,10 @@ body.nodejs .menu-vertical li.toctree-l1.current > a
 body.biicode .goback
 {
   background-color: #fa0;
+}
+body.gettingstarted .goback
+{
+  background-color: #3C3C3C;
 }
 body.cpp .goback
 {
@@ -4953,6 +4965,9 @@ body.nodejs .goback
 }
 body.biicode .menu-vertical li.toctree-l2.current {
   border-left:5px solid #fa0;
+}
+body.gettingstarted .menu-vertical li.toctree-l2.current {
+  border-left:5px solid #3C3C3C;
 }
 body.cpp .menu-vertical li.toctree-l2.current {
   border-left:5px solid #3480ff;
@@ -5065,6 +5080,9 @@ body.nodejs .menu-vertical li.toctree-l2.current {
 }
 body.biicode .side-nav-search {
   background-color:#fa0;
+}
+body.gettingstarted .side-nav-search {
+  background-color:#3C3C3C;
 }
 body.cpp .side-nav-search {
   background-color:#3480ff;
@@ -5499,6 +5517,9 @@ nav.nav-side
 body.biicode .nav-rel a:hover {
  background-color:#fa0; 
 }
+body.gettingstarted .nav-rel a:hover {
+ background-color:#3C3C3C; 
+}
 body.cpp .nav-rel a:hover {
  background-color:#3480ff; 
 }
@@ -5622,6 +5643,11 @@ body.biicode .section h2
 {
   border-bottom-color: #fa0;
 }
+body.gettingstarted .section h1,
+body.gettingstarted .section h2
+{
+  border-bottom-color: #3C3C3C;
+}
 body.cpp .section h1,
 body.cpp .section h2
 {
@@ -5691,6 +5717,10 @@ body.nodejs .section h2
 body.biicode .tabs .tab.current
 {
   border-top-color: #fa0;
+}
+body.gettingstarted .tabs .tab.current
+{
+  border-top-color: #3C3C3C;
 }
 body.cpp .tabs .tab.current
 {
@@ -5785,6 +5815,9 @@ body.nodejs .tabs .tab.current
 body.biicode .todo {
   border-color:#fa0;
 }
+body.gettingstarted .todo {
+  border-color:#3C3C3C;
+}
 body.cpp .todo {
   border-color:#3480ff; 
 }
@@ -5805,6 +5838,9 @@ body.nodejs .todo {
 
 body.biicode .biicode-sections {
   background-color:#fa0;
+}
+body.gettingstarted .biicode-sections {
+  background-color:#3C3C3C;
 }
 body.cpp .biicode-sections {
   background-color:#3480ff; 
@@ -5828,6 +5864,7 @@ body.nodejs .biicode-sections {
   height: 35px;
 }
 body.biicode .biisection.biicode,
+body.gettingstarted .biisection.gettingstarted,
 body.cpp .biisection.cpp,
 body.arduino .biisection.arduino,
 body.raspberrypi .biisection.raspberrypi,

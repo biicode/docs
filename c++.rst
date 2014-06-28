@@ -20,9 +20,8 @@ In this context, biicode technology gives you several advantages to enrich your 
 .. toctree::
 	:maxdepth: 2
 
-	c++/c++-getting-started
-	c++/c++-howto
 	c++/c++-features
+	c++/c++-howto
 	c++/c++-examples
 	c++/c++-faqs
 	c++/c++-troubleshooting

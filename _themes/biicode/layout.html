@@ -29,6 +29,11 @@
 {% set titleprefix = "Nodej.js: " %}
 {% endif %}
 
+{% set find = pagename|replace("gettingstarted/", "") %}
+{% if find != pagename %}
+{% set titleprefix = "Getting Started: " %}
+{% endif %}
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -130,6 +135,7 @@
   <div class="nav-sections-standard center">
     <nav class="biicode-sections">
       <a href="{{ pathto('biicode.html',1) }}" class="biicode biisection">General</a>
+      <a href="{{ pathto('gettingstarted.html',1) }}" class="gettingstarted biisection">Getting Started</a>
       <a href="{{ pathto('c++.html',1) }}" class="cpp biisection">C/C++</a>
       <a href="{{ pathto('arduino.html',1) }}" class="arduino biisection">Arduino</a>
       <a href="{{ pathto('raspberrypi.html',1) }}" class="raspberrypi biisection">Raspberry Pi</a>
