@@ -9,7 +9,7 @@ You will learn how to use the ``redis`` file of the ``noderedis`` block owner of
 1. Installing biicode and node.js
 ---------------------------------
 
-For reuse code, you need to install biicode and node.js.
+First, install biicode and node.js.
 
    - Download the biicode installer.
 
@@ -105,6 +105,6 @@ Now, execute your script main.js.
 
 And that's all. Your program is working!
 
-.. container:: infonote
+.. container:: todo
 
-    If you want to learn more about node.js & biicode, check the :ref:`node.js section <nodejs-index>`
+    If you want to learn more about node.js & biicode, check the :ref:`node.js section <nodejs-index>`.

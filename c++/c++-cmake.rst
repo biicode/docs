@@ -1,5 +1,5 @@
-CMake layout
-============
+CMake with biicode
+==================
 
 .. toctree::
    :maxdepth: 2

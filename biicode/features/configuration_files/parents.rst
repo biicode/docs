@@ -14,3 +14,6 @@ This file is created when you publish a block inside the ``bii`` block folder an
 In the first two scenarios, the parent information provides details about the code that serves as the basis for your edition. You can think of this information as the code that is in the same track as your unpublished block, just one step before. When you perform a new publication of your block this information will be updated precisely with the name of the branch and version just published.
 
 This file can be modify manually with the concrete version you need.
+
+parents.bii
+===========

@@ -19,6 +19,6 @@ Feel free to select the documentation section of your interest from the followin
    biicode
    gettingstarted
    c++
-   arduino
    raspberrypi
+   arduino
    nodejs

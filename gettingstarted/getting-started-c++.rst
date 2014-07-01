@@ -10,7 +10,7 @@ You will learn how to use Gtest functions just by including the ``gtest.h`` file
 1. Installing biicode and C/C++ tools
 -------------------------------------
 
-To reuse code, you need to install biicode and a group of external tools (CMake and MinGW, Visual Studio or GCC).
+First, install biicode and a group of external tools (CMake and MinGW, Visual Studio or GCC).
 
    - Download the biicode installer.
 
@@ -116,6 +116,6 @@ Now, execute ``bii cpp:build``, this configures your project and compiles your c
 
 And that's all. Your program is working, you can open your bin folder and execute!
 
-.. container:: infonote
+.. container:: todo
 
-    If you want to learn more about C/C++ & biicode, check the :ref:`C/C++ section <cpp-index>`
+    If you want to learn more about C/C++ & biicode, check the :ref:`C/C++ section <cpp-index>`.

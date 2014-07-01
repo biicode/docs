@@ -10,7 +10,7 @@ You will learn how to use the ``blink.h`` file of the ``blink`` block owner of `
 1. Installing biicode and Arduino tools
 ---------------------------------------
 
-To reuse code, you need to install biicode and a group of external tools (Arduino SDK, CMake and MinGW or GCC).
+First, install biicode and a group of external tools (Arduino SDK, CMake and MinGW or GCC).
 
    - Download the biicode installer.
 
@@ -118,6 +118,6 @@ If you just want to build it execute ``arduino:build``.
 
 And that's all. Your program is working!
 
-.. container:: infonote
+.. container:: todo
 
-    If you want to learn more about Arduino & biicode, check the :ref:`Arduino section <arduino-index>`
+    If you want to learn more about Arduino & biicode, check the :ref:`Arduino section <arduino-index>`.

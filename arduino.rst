@@ -19,7 +19,6 @@ Here you will learn how to set up your system, and create your first Arduino pro
 	:maxdepth: 2
 
 	arduino/arduino-features
-	arduino/arduino-howto
 	arduino/arduino-examples
 	arduino/arduino-faqs
 	arduino/arduino-troubleshooting
