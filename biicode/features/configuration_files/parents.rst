@@ -2,8 +2,7 @@
 
 parents.bii
 ===========
-
-This file is **automatically created**, **when you publish a block**, inside the ``bii`` block folder ::
+``parents.bii`` is **created whenever you publish a block**, inside the ``bii`` block folder ::
 
 |-- my_project
 |    +-- bii
@@ -31,8 +30,12 @@ What say us?
 * Branch: ``master`` (in this case, it doesn't appear because it's the default branch)
 * Version block: ``0``
 |
-Take a look at the asterisk, it indicates you who's your block parent.
-Now, you decide to make a branch of this block named *my_pretty_branch*, and you have published two versions (versions 0 and 1), then your parents.bii would be like this:
+.. container:: infonote
+
+	Take a look at the asterisk, it indicates you who's your block parent.
+
+
+Now, you decide to make a branch of this block named *my_pretty_branch*, and you have published two versions (versions 0 and 1), then your ``parents.bii`` would be like this:
 
 .. code-block:: text
 
@@ -45,7 +48,7 @@ It means:
 * Branch: ``my_pretty_branch`` 
 * Version block: ``1``
 |
-Finally, if you want to merge this branch to *master* branch, the parents.bii content would be:
+Finally, if you want to merge this branch to *master* branch, the ``parents.bii`` content would be:
 
 .. code-block:: text
 
@@ -53,6 +56,10 @@ Finally, if you want to merge this branch to *master* branch, the parents.bii co
 	* user25/my_hello_block: 0
 	user25/my_hello_block(my_pretty_branch): 1
 
-So, information gives us is that ``user25/my_hello_block(my_pretty_branch):1`` (merge branch) has been merged to ``user25/my_hello_block(master):0`` (parent branch).
+So, information gives us:
 
+* ``user25/my_hello_block(my_pretty_branch):1`` (merge branch) has been merged to ``user25/my_hello_block(master):0`` (parent branch).
 
+.. container:: infonote
+
+	Visit the section: :ref:`how to publish branches and make merges <publish_branch_merge>`
