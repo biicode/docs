@@ -137,7 +137,7 @@ A typical project layout is as follows: ::
 |    +-- cmake
 |    |    |-- CMakeLists.txt
 |    |    |-- biicode.cmake
-|    |    |-- bii_vars.cmake
+|    |    |-- bii_target_vars.cmake
 |    +-- deps
 
 As you can see, the **project** contains a collection of folders. We will go through each one of them:

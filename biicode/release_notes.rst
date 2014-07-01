@@ -3,7 +3,14 @@
 Release Notes
 =============
 
-**0.15.2 (11-04-14)**
+**0.17.3**
+* Bugfixes in arduino build
+* Bugfixes in Raspberry Pi commands
+* Reduced Arduino.cmake and CMakelists.txt for arduino projects
+
+
+|
+**0.15.3 (11-04-14)**
 
 
 * Now work, find and upload can be done from arduino monitor GUI
