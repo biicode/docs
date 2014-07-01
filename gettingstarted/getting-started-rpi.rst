@@ -75,6 +75,14 @@ Now, we will create a block. a block is the place where you must place your code
    ~$ cd rpi_hello_project
    ~/rpi_hello_project$ bii new anonymous/my_first_block --hello=cpp
 
+.. container:: infonote
+
+    **why anonymous/my_first_block?**
+
+    Because you distinguish a block by its owner's user-name and the block name. ``anonymous/my_first_block`` is what you write when you are not registered yet, but to publish your own blocks, you need to use your biicode user name.
+
+    If you want to change the user-name of a block into your blocks folder, just change the folder name where the block is at.
+
 This command will create the following layout:
 
 .. code-block:: text
@@ -89,16 +97,9 @@ This command will create the following layout:
 
 .. container:: infonote
 
-    **What is the reason behind this layout?**
+    **What's the reason behind this layout?**
 
-    This layout is enforced because biicode analyzes the dependencies of your blocks and downloads them into de deps folder. It is important because biicode configures and build your project following this layout.
-
-    For this reason, all the code you want to be analyzed must be placed into a block inside the blocks folder.
-
-    The structure of these blocks is composed by two parts, the owner (username) and the block name. In this example we use an anonymous user, but if you want to publish your own blocks in the future, you will need to register and user your username.
-
-    If you want to change the user of a block into your blocks folder, just change the name of the owner folder where this block lies.
-
+    With this layout, biicode analyzes your block's dependencies and downloads them into the deps folder. It is also used to configure and build your project.
 
 3. Resolve your dependencies and send your executable to your Raspberry Pi
 --------------------------------------------------------------------------

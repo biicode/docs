@@ -47,6 +47,14 @@ Now, we will create a block. a block is the place where you must place your code
    ~$ cd node_hello_project
    ~/node_hello_project$ bii new anonymous/my_first_block --hello=node
 
+.. container:: infonote
+
+    **why anonymous/my_first_block?**
+
+    Because you distinguish a block by its owner's user-name and the block name. ``anonymous/my_first_block`` is what you write when you are not registered yet, but to publish your own blocks, you need to use your biicode user name.
+
+    If you want to change the user-name of a block into your blocks folder, just change the folder name where the block is at.
+
 This command will create the following layout:
 
 .. code-block:: text
@@ -61,17 +69,9 @@ This command will create the following layout:
 
 .. container:: infonote
 
-    **why this layout?**
+    **What's the reason behind this layout?**
 
-    This layout is because biicode analyse the dependencies of yours blocks and download it into de deps folder. It is important because biicode configure and build your project following this layout.
-
-    For this reason, all the code you want to be analyzed must place into a block inside the blocks folder.
-
-    The structure of this blocks is composed by two parts, the user owner and the block name. In this example we use the anonymous user, but if you want to publish your own blocks in the future, you need to create a biicode user and use that user name.
-
-
-    If you want to change the user of a block into your blocks folder, just change the name folder where are this block.
-
+    With this layout, biicode analyzes your block's dependencies and downloads them into the deps folder. It is also used to configure and build your project.
 
 3. Resolve your dependencies
 ----------------------------

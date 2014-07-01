@@ -27,7 +27,8 @@ You will see next console output after executing the command:
 	
 .. code-block:: bash
 
-	$ bii cpp:run
+	$ cd bin
+	$ #run executable
 	
 	...
 	

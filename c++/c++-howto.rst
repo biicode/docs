@@ -1,7 +1,7 @@
-.. _faqs_cpp:
+.. _howto_cpp:
 
-FAQs
-====
+How to
+======
 
 .. toctree::
    :maxdepth: 2
@@ -10,4 +10,3 @@ FAQs
    howto/howto-c++-cmake
    howto/howto-c++-ide-configuration
    howto/howto-c++-build_with_vs
-

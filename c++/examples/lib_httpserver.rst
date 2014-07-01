@@ -24,7 +24,8 @@ How can I use it?
 .. code-block:: bash
 
     $ bii find
-    $ bii cpp:run
+    $ cd bin
+	$ #run server executable
 
 * Open your web browser and go to *http://localhost:9000*
 

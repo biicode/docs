@@ -11,4 +11,3 @@ Here you will find some code examples showing the advantages of using biicode wi
    examples/monitor_led
    examples/lcd_and_servo
    examples/serial_interface
-   examples/pid

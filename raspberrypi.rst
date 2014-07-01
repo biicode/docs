@@ -21,5 +21,5 @@ In this part of the documentation you will find resources and tutorials for inst
 
    raspberrypi/rpi-commands
    raspberrypi/rpi-examples
-   raspberrypi/rpi-faqs
+   raspberrypi/rpi-howto
    raspberrypi/rpi-troubleshooting
