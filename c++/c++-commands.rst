@@ -7,12 +7,18 @@ This section summarizes the **C/C++ commands available to be used with the biico
 
 .. code-block:: bash
 
-	$ bii cpp -h
-	...
-	---------Cpp tools commands--------
+	$ bii -h cpp
+	
+	SYNOPSIS:
+	    $ bii COMMAND [options]
+	For help about a command:
+	    $ bii COMMAND --help
+	To change verbosity, use options --quiet --verbose
+
+	---------C/C++ commands--------
 	  cpp:build       Build the project (with Make, Mingw32-make or NMake)
 	  cpp:configure   Configure project with cmake
-	  cpp:settings    Project settings configuration
+	  cpp:settings    Configure project cpp settings
 
 
 bii cpp:configure
@@ -39,6 +45,32 @@ This command configure your project as a C/C++ project automatically and adding 
 	-- Generating done
 	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_PROJECT]/build
 
+bii cpp:build
+-------------
+
+This command invokes the C++ compiler to build your project.
+
+.. code-block:: bash
+
+	$ bii cpp:build
+	
+	...
+	
+	invoking cmake -D CMAKE_BUILD_TYPE=Debug  -G "MinGW Makefiles" -Wno-dev ../cmake
+	-- The C compiler identification is GNU 4.8.1
+	-- The CXX compiler identification is GNU 4.8.1
+	-- Check for working C compiler: C:/MinGW/bin/gcc.exe
+	-- Check for working C compiler: C:/MinGW/bin/gcc.exe -- works
+	-- Detecting C compiler ABI info
+	-- Detecting C compiler ABI info - done
+	-- Check for working CXX compiler: C:/MinGW/bin/g++.exe
+	-- Check for working CXX compiler: C:/MinGW/bin/g++.exe -- works
+	-- Detecting CXX compiler ABI info
+	-- Detecting CXX compiler ABI info - done
+
+	...
+
+	[100%] Built target your_user_name_block_cpp_block
 
 .. _bii_cpp_settings:
 
@@ -81,31 +113,3 @@ Just introduce your desired IDE, and your project ``settings.bii`` file will be 
     .. code-block:: text
 
     	ide: {family: visual, version: '10', arch: Win64}
-
-	
-bii cpp:build
--------------
-
-This command invokes the C++ compiler to build your project.
-
-.. code-block:: bash
-
-	$ bii cpp:build
-	
-	...
-	
-	invoking cmake -D CMAKE_BUILD_TYPE=Debug  -G "MinGW Makefiles" -Wno-dev ../cmake
-	-- The C compiler identification is GNU 4.8.1
-	-- The CXX compiler identification is GNU 4.8.1
-	-- Check for working C compiler: C:/MinGW/bin/gcc.exe
-	-- Check for working C compiler: C:/MinGW/bin/gcc.exe -- works
-	-- Detecting C compiler ABI info
-	-- Detecting C compiler ABI info - done
-	-- Check for working CXX compiler: C:/MinGW/bin/g++.exe
-	-- Check for working CXX compiler: C:/MinGW/bin/g++.exe -- works
-	-- Detecting CXX compiler ABI info
-	-- Detecting CXX compiler ABI info - done
-
-	...
-
-	[100%] Built target your_user_name_block_cpp_block

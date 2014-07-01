@@ -18,12 +18,11 @@ In this section we explain, step by step, how to solve this challenge with the h
 Create a new project
 ---------------------
 
-Open your console, move to your biicode workspace and create a new project named "challenge":
+Open your console and create a new project named "challenge":
 
 .. code-block:: bash
 
-	$ cd ../biicode_workspace
-	$ bii new challenge
+	$ bii init challenge
 	$ cd challenge
 
 Copy the code
@@ -119,11 +118,16 @@ At this point, you'll find some new folders and files in your ``challenge/dep`` 
 Build and run
 -------------
 
-The final step is to actually compile and run the app. You can accomplish this task with the ``bii cpp:run`` command. As this project contains more than one executable binary, you also need to provide the name of the task you wish to execute:
+The final step is to actually compile and run the app. You can accomplish this task with the ``bii cpp:build`` command and run the executable inside the bin folder:
 
 .. code-block:: bash
 
-	$ bii cpp:run solver
+	$ bii cpp:build
+
+	...
+
+	$ cd bin
+	$ #run solver executable
 	No deps to find
 	...
 	...
@@ -154,7 +158,9 @@ Running the tests is really easy too. Note that in this case one of the tests fa
 
 .. code-block:: bash
 
-	$ bii cpp:run gtest
+	$ cd bin
+	$ #run test executable
+
 	No deps to find
 	...
 	...

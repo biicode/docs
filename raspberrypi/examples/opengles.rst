@@ -23,7 +23,7 @@ let's call it triangle.
 
 .. code-block:: bash
 
-    you@yourmachine ~/bii_ws $ bii new triangle
+    you@yourmachine ~$ bii init triangle
     ..
     you@yourmachine ~/bii_ws $ cd triangle
 

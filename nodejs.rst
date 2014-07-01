@@ -15,3 +15,5 @@ have some ideas, please `tell us <http://forum.biicode.com/category/nodejs>`_!
 .. toctree::
    :maxdepth: 2
 
+   nodejs/nodejs-howto
+

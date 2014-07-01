@@ -50,7 +50,8 @@ Next, you can already run the code:
 
 .. code-block:: bash
 
-	$ bii cpp:run
+	$ cd bin
+	$ #run executable
 
 Then you'll be requested to select compression or decompression any file, and the file source name and file destination name.
 

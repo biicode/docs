@@ -1,7 +1,7 @@
-.. _faqs_rpi:
+.. _howto_rpi:
 
-FAQs
-====
+How to
+======
 
 Installing the biicode package from downloads page is too slow
 ---------------------------------------------------------------

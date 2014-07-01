@@ -14,9 +14,6 @@ In this example **we are going to create a factorial function and a test for it*
 -------------------------
 
 Create a new project as described in the :ref:`hello world example <cpp_getting_started>`.
-For this example we should select ``cpp`` as programming language, name our project ``gtest_project`` and the block ``factorial``.
-We don't need to generate a default hello world.
-
 
 2. Create a function and a test for it
 ---------------------------------------
@@ -75,6 +72,17 @@ Now **we have to ask biicode to find our dependencies**. This will download Goog
 4. Run your tests
 -----------------
 
+The final step is to actually compile and run the test. You can accomplish this task with the ``bii cpp:build`` command and run the executable inside the bin folder:
+
+.. code-block:: bash
+
+	$ bii cpp:build
+
+	...
+
+	$ cd bin
+	$ #run test executable
+
 Finally, we are ready to unit-test our factorial function:
 
 .. code-block:: bash
@@ -126,7 +134,7 @@ If you want to have multiple test classes and run them all toghether you don't n
 Notice the tag comment ``// bii:#dependencies(+ test_factorial1.cpp test_factorial2.cpp)`` in the main file.
 This is telling biicode that the main file depends on those test files. You can read more about dependeny tags :ref:`here <bii_dependencies_tag>`.
 
-Now when we execute ``bii cpp:run`` we obtain exactly the same output:
+Now when we execute your tests we obtain exactly the same output:
 
 .. code-block:: bash
 

@@ -15,24 +15,10 @@ This example demonstrates how to get started using **OpenGL** with biicode. **Fr
 
 First, create a new project as described in the :ref:`hello world example <cpp_getting_started>`, using the following options:
 
-* Project name: ``cpp_freeglut_project``
-* Programming language: ``cpp`` 
-* Block name: ``cpp_freeglut``
-* Default Hello World project: ``no``
-
 .. code-block:: bash
-   
-   $ bii new cpp_freeglut_project
-   ...
-   Select language: (java/node/fortran/python/cpp/arduino/None)
-   Introduce lang (default:None): cpp
-   How would you like to name your first block?
-   Introduce block name: cpp_freeglut
-   Generate a default hello world?  (YES/no) no
-   Select IDE family: (Visual/CodeBlocks/Eclipse/NetBeans/None)
-   Introduce ide (default:None): [ENTER]
-   Select build type: (None/Debug/Release/RelWithDebInfo/MinSizeRel)
-   Introduce build_type (default:Debug): [ENTER]
+
+   ~$ cd cpp_freeglut_project
+   ~/cpp_freeglut_project$ bii new anonymous/cpp_freeglut --hello=cpp
 
 
 2. Creating reusable code
@@ -76,15 +62,17 @@ Now is when the biicode magic takes place. The previous code needs to link with 
 4. Build and run
 ----------------
 
-Now it is time to see the result of the previous steps. You can both build and run your main file with the ``bii cpp:run`` command. If you only want to build it, just use ``bii cpp:build``.
+Now it is time to see the result of the previous steps. You can build your main file with the ``bii cpp:run`` command and and run the executable inside the bin folder.
 
 .. code-block:: bash
 
-   $ bii cpp:run
+   $ bii cpp:build
+   $ cd bin
+   $ #run your executable
 
 **That's it!** You should see a new window named "My World", containing a single white sphere in its center. Just like this!:
 
 .. image:: /_static/img/sphere_freeglut.png
 
-If you experience any difficulties during the coding process, or get any errors during the program execution, visit `our forum <http://forum.biicode.com/>`_ and feel free to ask any questions. You can also refer to the :ref:`C/C++ FAQs <faqs_cpp>` and check if your problem is solved there.
+If you experience any difficulties during the coding process, or get any errors during the program execution, visit `our forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
 
