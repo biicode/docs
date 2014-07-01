@@ -18,7 +18,7 @@ Here you will learn how to set up your system, and create your first Arduino pro
 .. toctree::
 	:maxdepth: 2
 
-	arduino/arduino-features
+	arduino/arduino-commands
 	arduino/arduino-examples
 	arduino/arduino-faqs
 	arduino/arduino-troubleshooting
