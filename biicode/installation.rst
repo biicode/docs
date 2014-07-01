@@ -12,7 +12,7 @@ This section describes the **first basic steps that are mandatory in order to us
 
 Now, `download the appropriate installer for your development platform <https://www.biicode.com/downloads>`_, execute the setup program and follow the instructions.
 
-**Biicode is an evolving technology**, and many modifications and improvements are introduced weekly with our releases. Rememeber to check frequently for new versions of the client, consult the :ref:`ChangeLog <changelog>`.
+**Biicode is an evolving technology**, and many modifications and improvements are introduced weekly with our releases. Rememeber to check frequently for new versions of the client, consult the :ref:`release notes <changelog>`.
 
 
 .. _alternative_install_debian:
