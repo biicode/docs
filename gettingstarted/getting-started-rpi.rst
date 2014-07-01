@@ -1,5 +1,7 @@
-Cross Compilation Getting Started
-=================================
+.. _rpi_getting_started:
+
+Raspberry Pi Cross Compilation 
+==============================
 
 This example shows **how to install biicode, code a C++ led blink with WiringPi, make the cross compilation and send the executable to your Raspberry Pi**. You don't need to have WiringPi installed in your computer or the rpi. Biicode will download and configure it automatically for you.
 
@@ -12,18 +14,17 @@ You will learn how to use the ``wiringpi.h`` file of the ``wiringpi/wiringpi`` b
 
     **Debian linux distribution required**
 
-    You need to use a native debian linux or in a virtual machine because the cross compilation tools needs it.
+    You need to use a native debian linux or in a virtual machine to use the cross compilation tools.
 
-To reuse code, you need to install biicode and a group of external tools.
+First, install biicode and a group of external tools.
 
-   - Download the biicode installer.
+   - Download the Ubuntu biicode installer.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|Latest version 1.0                                                                                                                                                                                                                                                                                                           |
-+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+
-|`MacOS <https://www.biicode.com/downloads>`_        |`Raspberry Pi <https://www.biicode.com/downloads>`_ |`Ubuntu 32 <https://www.biicode.com/downloads>`_    |`Ubuntu 64 <https://www.biicode.com/downloads>`_    |`Windows <https://www.biicode.com/downloads>`_      |`Devian Wheezy <https://www.biicode.com/downloads>`_|
-+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+
-
++---------------------------------------------------------------------------------------------------------+
+|Latest version 1.0                                                                                       |
++----------------------------------------------------+----------------------------------------------------+
+|`Ubuntu 32 <https://www.biicode.com/downloads>`_    |`Ubuntu 64 <https://www.biicode.com/downloads>`_    |
++----------------------------------------------------+----------------------------------------------------+
 
    - Execute ``bii setup:rpi`` in your console and all the C/C++ cross compilation tools will be installed automatically.
 
@@ -33,12 +34,12 @@ To reuse code, you need to install biicode and a group of external tools.
 
 .. container:: infonote
 
-    If you encounter any problem installing the C/C++ cross compilation tools, you can see :ref:`how to install C/C++ cross compilation tools manually <cpp_installation>`
+    If you encounter any problem installing the C/C++ cross compilation tools, you can see :ref:`how to install C/C++ cross compilation tools manually <rpi_installation>`
 
 2. Create your project
 ----------------------
 
-To create a new project running ``bii init`` with the project name as a parameter.
+Create a new project running ``bii init`` with the project name as a parameter.
 
 .. code-block:: bash
 
@@ -52,6 +53,20 @@ This command will create the following layout:
    |    +-- bii
    |    +-- blocks
    |    +-- deps
+
+
+Configure your project to the cross compiling running ``bii rpi:settings``:
+
+.. code-block:: bash
+
+   ~$ cd rpi_hello_project
+   ~/rpi_hello_project$ bii rpi:settings
+   Define RPI settings for external C/C++ cross-building
+   If you are working onboard the RPI, you don't need these settings
+   RPI username (pi): [ENTER]
+   RPI IP Address: 192.168.1.44
+   RPI directory to upload (bin): [ENTER] #This folder must exist into your Raspberry Pi.
+   Cross building? (NO/yes): yes
 
 Now, we will create a block. a block is the place where you must place your code. Execute ``bii new anonymous/my_fist_block`` into the project folder to create a block.
 
@@ -146,3 +161,7 @@ Finally, to **execute your program on your Raspberry Pi**, you need to establish
 	Hello world!
 
 And that's all. Your program is working!
+
+.. container:: todo
+
+    If you want to learn more about Raspberry Pi & biicode, check the :ref:`Raspberry Pi section <rpi-index>`.

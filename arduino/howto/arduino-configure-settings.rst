@@ -1,10 +1,25 @@
+Congure your port and board
+===========================
+
+I changed my Arduino's port, what happens now?
+----------------------------------------------
+Port detection is automatic, so whenever you execute ``bii arduino:upload`` the port is redetected.
+
+Anyway, if you experience problems changing your port or your arduino board, just execute ``bii arduino:settings``
+
+
+How can I change my Arduino project properties?
+-----------------------------------------------
+
+Execute ``bii arduino:settings`` and fill the requested info with the new data.
+
 Settings options
-================
+----------------
 
 .. _arduino_boards:
 
 boards
-------
+^^^^^^
 
 This is your Arduino Board model. It must be compatible with the Arduino SDK v. 1.0.5, and must have one of the following values:
 
@@ -37,7 +52,7 @@ This is your Arduino Board model. It must be compatible with the Arduino SDK v. 
 	* ``robotMotor``: Arduino Robot Motor
 
 usb port
---------
+^^^^^^^^
 
 The USB interface where your Arduino board is connected. As mentioned before, this configuration varies from one operating system to another:
 

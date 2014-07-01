@@ -12,6 +12,8 @@ $( document ).ready(function() {
       $("body").addClass("nodejs");
     } else if (pathname.match(/\/python\/|python.html/)) {
       $("body").addClass("python");
+    } else if (pathname.match(/\/gettingstarted\/|gettingstarted.html/)) {
+      $("body").addClass("gettingstarted");
     } else {
       $("body").addClass("biicode");
     };

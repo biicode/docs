@@ -1,7 +1,7 @@
 .. _node_getting_started:
 
-Getting Started
-===============
+Node.js
+=======
 This example shows **how to install biicode and code a node.js redis client**. You don't need to have installed redis, biicode will download for you.
 
 You will learn how to use the ``redis`` file of the ``noderedis`` block owner of ``mrnney`` with the code line ``require("mranney/noderedis/redis")`` .
@@ -9,7 +9,7 @@ You will learn how to use the ``redis`` file of the ``noderedis`` block owner of
 1. Installing biicode and node.js
 ---------------------------------
 
-For reuse code, you need to install biicode and node.js.
+First, install biicode and node.js.
 
    - Download the biicode installer.
 
@@ -104,3 +104,7 @@ Now, execute your script main.js.
    ~/node_hello_project/blocks/my_first_block$ #execute your script
 
 And that's all. Your program is working!
+
+.. container:: todo
+
+    If you want to learn more about node.js & biicode, check the :ref:`node.js section <nodejs-index>`.

@@ -63,3 +63,4 @@ So, information gives us:
 .. container:: infonote
 
 	Visit the section: :ref:`how to publish branches and make merges <publish_branch_merge>`
+
