@@ -1,5 +1,8 @@
-Collaboration (editing something you depend on)
-===============================================
+.. _edit_dependecies:
+
+
+Edit something you depend on
+================================
 
 If you want to edit a block you depend on, you can do it with the :ref:`open command<bii_open_command>` it and move it to your project. You can do so by executing:
 

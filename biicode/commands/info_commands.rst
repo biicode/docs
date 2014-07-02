@@ -1,5 +1,9 @@
 .. _bii_info_commands:
 
+
+Info commands
+===============
+
 .. _bii_deps_command:
 
 bii deps
