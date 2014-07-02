@@ -10,3 +10,5 @@ Getting Started
    gettingstarted/getting-started-arduino
    gettingstarted/getting-started-rpi
    gettingstarted/getting-started-node
+   gettingstarted/getting-started-web
+   
