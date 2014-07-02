@@ -3,11 +3,24 @@
 Release Notes
 =============
 
-**0.17.3**
-* Bugfixes in arduino build
+**1.0 (7-07-2014)**
+
+
+|
+**0.17.3 (28-06-2014)**
+
+
+* Bugfixes in arduino build (bad transitive dependencies)
 * Bugfixes in Raspberry Pi commands
 * Reduced Arduino.cmake and CMakelists.txt for arduino projects
+* Bugfixes in deps command
 
+|
+**0.16 (24-04-2014)**
+
+
+* Improved project graph visualization
+* Bugfixes in publish command
 
 |
 **0.15.3 (11-04-14)**
