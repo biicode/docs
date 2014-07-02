@@ -14,8 +14,7 @@ This section summarizes the general **commands available to be used with the bii
 All these functionalities are achieved using appropriate commands that are explained and used in many examples along this documentation, and are compiled here in a list for your convenience and reference.
 
 .. toctree::
-	:maxdepth: 1
+	:maxdepth: 2
 
 	commands/core_commands
-	commands/edition_commands
 	commands/info_commands

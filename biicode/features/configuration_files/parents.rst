@@ -62,5 +62,7 @@ So, information gives us:
 
 .. container:: infonote
 
-	Visit the section: :ref:`how to publish branches and make merges <publish_branch_merge>`
+	* Don't edit this file.
+	* Visit the section: :ref:`how to publish branches <publish_branches>`
+	* Visit the section: :ref:`how to merge branches <merge_branches>`
 

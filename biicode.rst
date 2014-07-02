@@ -10,6 +10,8 @@ This is the biicode general documentation.
 
    biicode/biicode
    biicode/installation
+   biicode/commands
+   biicode/how-to
    biicode/features
    biicode/release_notes
    biicode/faqs

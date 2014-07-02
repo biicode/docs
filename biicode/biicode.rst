@@ -120,6 +120,7 @@ A typical project layout is as follows: ::
 |    |    |     |     +-- bii
 |    |    |     |     |    |-- requirements.bii
 |    |    |     |     |    |-- parents.bii
+|    |    |     |     |    |-- dependencies.bii
 |    |    |     |     |    |-- mains.bii
 |    |    |     |     |    |-- virtual.bii
 |    |    |  	|     |-- hello.c
@@ -127,12 +128,14 @@ A typical project layout is as follows: ::
 |    |    |     +-- my_other_block
 |    |    |   	      |-- foo.c
 |    |    |           |-- bar.h
+|    |    |           |-- types.bii
 |    |    +-- other_user_name
 |    |          +-- block_im_editing
 |    |                +-- bii
 |    |                |    |-- mains.bii
 |    |        	      |-- message.c
 |    |                |-- message.h
+|    |                |-- ignore.bii
 |    +-- build
 |    +-- cmake
 |    |    |-- CMakeLists.txt

@@ -186,7 +186,7 @@ Or
 	
 	$ bii find -p my_policy
 
-If you don't specify any policy name, you call to ``default:`` policies.
+If you don't specify any policy name, you call to ``default`` policies.
 	
 
 Changing your policy tag
