@@ -1,7 +1,7 @@
 .. _requirements_bii:
 
-requirements.bii
-================
+``requirements.bii``: configure the version of your blocks
+=============================================================
 
 You can find the ``requirements.bii`` file inside the ``bii`` block folder ::
 

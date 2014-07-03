@@ -146,7 +146,7 @@ Release Notes
 * Improved Eclipse support. You can read about it :ref:`here <ide_eclipse>`
 * Improved Raspberry Pi support.
 * Changed project structure. You can read about new layout :ref:`here <project_layout>`
-* User can edit cmakes http://docs.biicode.com/en/latest/reference/cpp_build_files.html
+* `User can edit cmakes <http://docs.biicode.com/en/latest/reference/cpp_build_files.html>`_
 
 |
 **0.02.3 (2-Dec-13)**

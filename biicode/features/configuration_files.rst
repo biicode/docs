@@ -8,14 +8,15 @@ Biicode offers you a set of configuration files across your projects and blocks.
 **All these configuration files are explained in detail in their corresponding subsections**:
 
 .. toctree::
-   :maxdepth: 1
-   
-   settings.bii: Defining your tools and preferences <configuration_files/settings>
-   policies.bii: Defining the policies of the code you want to reuse <configuration_files/policies>
-   dependencies.bii: Configuring custom file dependencies <configuration_files/dependencies>
-   mains.bii: Defining entry points in your code <configuration_files/mains>
-   virtual.bii: Defining virtual resources <configuration_files/virtual>
-   ignore.bii: Filtering your files <configuration_files/ignore>
-   types.bii: Configuring non-standar file extensions <configuration_files/types>
-   requirements.bii: Configure the version of your blocks dependencies<configuration_files/requirements>
-   parents.bii: See your tracking information <configuration_files/parents>
+   :maxdepth: 2
+
+   configuration_files/requirements
+   configuration_files/parents
+   configuration_files/settings
+   configuration_files/policies
+   configuration_files/dependencies
+   configuration_files/mains
+   configuration_files/virtual
+   configuration_files/ignore
+   configuration_files/types
+

@@ -1,7 +1,7 @@
 .. _parents_bii:
 
-parents.bii
-===========
+``parents.bii``: see your tracking information
+==================================================
 ``parents.bii`` is **created whenever you publish a block**, inside the ``bii`` block folder ::
 
 |-- my_project

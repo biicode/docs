@@ -142,6 +142,14 @@ A typical project layout is as follows: ::
 |    |    |-- biicode.cmake
 |    |    |-- bii_target_vars.cmake
 |    +-- deps
+|    |	  +-- reused_user_name
+|    |    |     +-- math_block
+|    |    |     |     +-- bii
+|    |    |     |     |    |-- requirements.bii
+|    |    |     |     |    |-- parents.bii
+|    |    |  	|     |-- algorithm.c
+|    |    |     |     |-- algorithm.h
+
 
 As you can see, the **project** contains a collection of folders. We will go through each one of them:
 
