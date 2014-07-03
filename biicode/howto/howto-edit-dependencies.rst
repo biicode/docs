@@ -4,7 +4,7 @@
 Edit something you depend on
 ================================
 
-If you want to edit a block you depend on, you can do it with the :ref:`open command<bii_open_command>` it and move it to your project. You can do so by executing:
+If you want to edit a block you depend on, you can do it with the ``bii open command`` it and move it to your project. You can do so by executing:
 
 .. code-block:: bash
 
@@ -31,26 +31,11 @@ Then you can close the block to remove it from your blocks folder:
 Your code will now depend on the version you have just published.
 
 
-Merge a branch
---------------
-
-Imagine you have a published block and someone just published a bugfix in a new branch and you want to incorporate those changes to the master version of your block.
-
-Merging a branch is very simple:
-
-.. code-block:: bash
-
-	$ bii merge --block BLOCK_NAME --version VERSION_NUMBER
-
-Then you can review changes and publish your new version as usual.
-
-.. code-block:: bash
-
-	$ bii publish BLOCK_NAME
-
 Manually configuring dependencies
 ---------------------------------
 
 There are some special cases in which biicode can't detect some dependencies. In these cases **you can manually configure your dependencies**.
 
 For this purpose you can use :ref:`dependencies.bii <dependencies_bii>`
+
+

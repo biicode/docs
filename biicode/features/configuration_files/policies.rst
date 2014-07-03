@@ -1,7 +1,7 @@
 .. _policies:
 
-policies.bii
-============
+``policies.bii``: defining the policies of the code you want to reuse
+======================================================================
 
 Policies are the rules applied when finding or updating dependencies. They can be configured in your_project/bii/policies.bii as you can see in the :ref:`layouts section <project_layout>`.
 

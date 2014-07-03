@@ -53,7 +53,10 @@ Now, `download the appropriate installer for your development platform <https://
 
 Finally, **you may need to install some additional tools dependending on your development language**. Select your language from the list bellow. You will be redirected to the specific documentation section for that particular language, where you will find more information and resources. Don't forget to come back to this general section, and learn more about :ref:`advanced features <advanced_features>`.
 
-* :ref:`C/C++ development tools installation <cpp_getting_started>`
-* :ref:`Arduino development tools installation <arduino_getting_started>`
-* :ref:`Raspberry Pi development tools installation <rpi_getting_started>`
-* :ref:`Node.js development tools installation <node_getting_started>`
+
+.. container:: todo
+
+    * :ref:`C/C++ Getting Started <cpp_getting_started>`
+    * :ref:`Arduino Getting Started <arduino_getting_started>`
+    * :ref:`Raspberry Pi (cross compiling) Getting Started <rpi_getting_started>`
+    * :ref:`Node.js Getting Started <node_getting_started>`

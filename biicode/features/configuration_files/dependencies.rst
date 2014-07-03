@@ -1,7 +1,7 @@
 .. _dependencies_bii:
 
-dependencies.bii
-================
+``dependencies.bii``: configuring custom file dependencies
+===========================================================
 
 The ``dependencies.bii`` file is used to **define those dependencies that cannot be automatically inferred from your code in a direct way**. This is an optional configuration file, and should be placed inside the ``bii`` folder contained in every block, as you can see in the :ref:`project layout <project_layout>` section. Optionally, you may specify custom dependencies making use of :ref:`tags inserted in the file comments, as explained in this section<bii_dependencies_tag>`.
 

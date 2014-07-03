@@ -1,7 +1,7 @@
 .. _settings_bii:
 
-settings.bii
-============
+``settings.bii``: defining your tools and preferences
+======================================================
 
 The ``settings.bii`` file defines your preferred tools and specific configurations for one given project. This file is created when you create a new project, inside the ``bii`` folder, as you can see in the examples in the :ref:`layouts section <project_layout>`.
 
@@ -15,7 +15,7 @@ You don't need to manually edit this file. **Each language or platform provides 
 
 Format is as follows:
 
-Common settings:
+Common settings
 ----------------
 
 Configurable parameters common (may exist or not) for all languages. 
@@ -42,7 +42,7 @@ Configurable parameters common (may exist or not) for all languages.
 	* Subfamily: CDT, PYDEV, JAVA, J2EE
 
 
-C++ settings:
+C++ settings
 -------------
 * Builder:
 
