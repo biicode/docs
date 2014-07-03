@@ -21,8 +21,8 @@ This section summarizes the **C/C++ commands available to be used with the biico
 	  cpp:settings    Configure project cpp settings
 
 
-bii cpp:configure
------------------
+``bii cpp:configure``: configure your project
+-------------------------------------------
 
 This command configure your project as a C/C++ project automatically and adding the characteristics of your CMake files if you have it.
 
@@ -45,8 +45,8 @@ This command configure your project as a C/C++ project automatically and adding 
 	-- Generating done
 	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_PROJECT]/build
 
-bii cpp:build
--------------
+``bii cpp:build``: build your project
+-----------------------------------------
 
 This command invokes the C++ compiler to build your project.
 
@@ -74,8 +74,8 @@ This command invokes the C++ compiler to build your project.
 
 .. _bii_cpp_settings:
 
-bii cpp:settings
-----------------
+``bii cpp:settings``: configure the IDE
+-------------------------------------------
 
 This command helps you to configure the IDE you'll use to build your project:
 

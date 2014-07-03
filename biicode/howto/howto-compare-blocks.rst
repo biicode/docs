@@ -10,7 +10,7 @@ Cases
 
 Imagine you are ``fenix`` user, you have ``armadillo`` block in your current project and you have already published ``4`` versions to branch ``master`` and ``5`` versions to branch ``develop``. Now, we'll see the different possibilities:
 
-* Comparing your current block (``master`` branch) with your last published current block version.
+* Comparing your current block with your last published current block version.
 
 	.. code-block:: bash
 

@@ -6,15 +6,9 @@ How to
 Run your node programs
 ----------------------
 
-You can run your scripts as usual. However, biicode has a script to execute node.js programs, just execute ``noderunner <block_name>/<script_name>`` inside the ``bin`` folder:
+You can run your scripts as usual. However, biicode has a script to execute node.js programs, just execute ``noderunner <block_name>/<script_name>`` inside the ``blocks`` folder:
 
 .. code-block:: bash
 
-	 ~$ cd bin
-	 ~/bin$ noderunner <block_name>/<script_name>
-
-.. code-block:: bash
-
-   ~/<project_name>$ cd blocks/<block_name>
-   ~/<project_name>/blocks/<block_name>$ #execute your script
-
+	 ~/PROJECT_DIR$ cd blocks
+	 ~/PROJECT_DIR/blocks$ noderunner <block_name>/<script_name>
