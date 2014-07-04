@@ -128,9 +128,6 @@ The final step is to actually compile and run the app. You can accomplish this t
 
 	$ cd bin
 	$ #run solver executable
-	No deps to find
-	...
-	...
 	*************** SPARSE ***************
 	0: 1
 	1: 0.5
@@ -160,11 +157,6 @@ Running the tests is really easy too. Note that in this case one of the tests fa
 
 	$ cd bin
 	$ #run test executable
-
-	No deps to find
-	...
-	...
-	Running main() from gtest_main.cc
 	[==========] Running 2 tests from 1 test case.
 	[----------] Global test environment set-up.
 	[----------] 2 tests from Solver

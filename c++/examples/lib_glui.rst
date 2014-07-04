@@ -29,14 +29,14 @@ You can `explore the source code block for this example following this link <htt
 		sudo apt-get install mesa-common-dev libglu1-mesa-dev libxi-dev	
 
 
-1. Create a **new project with and empty block**:
+1. Create a **new project**:
 
 .. code-block:: bash
 
    $ bii init <project_name>
+   $ cd <project_name>
 
-
-2. **Open this block**. It will be downloaded to your project's `block` folder. Inside your project folder, execute the command:
+2. **Open "luispedraza/glui_example" block**. Download the ``luispedraza/glui_example`` block to your project's `blocks` folder. Inside your project folder, execute the command:
 
 .. code-block:: bash
 

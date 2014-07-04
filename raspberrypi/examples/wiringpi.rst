@@ -26,32 +26,12 @@ You must create a new ``project`` and a new empty ``block``, as explained in the
 
 **Example: blink.c**
 
-.. code-block:: cpp
-	:linenos:
+.. literalinclude:: /_static/code/rpi/examples/wiringpi/blink.c
+   :language: cpp
+   :linenos:
 
-	#include <stdio.h>
-	#include <drogon/wiringpi/wiringpi/wiringpi.h>
 
-	// LED Pin - wiringPi pin 0 is BCM_GPIO 17.
-
-	#define	LED	0
-
-	int main (void)
-	{
-	  printf ("Raspberry Pi blink\n") ;
-
-	  wiringPiSetup () ;
-	  pinMode (LED, OUTPUT) ;
-
-	  for (;;)
-	  {
-		digitalWrite (LED, HIGH) ;	// On
-		delay (500) ;		// mS
-		digitalWrite (LED, LOW) ;	// Off
-		delay (500) ;
-	  }
-	  return 0 ;
-	}
+**Download:** :download:`blink.c </_static/code/rpi/examples/wiringpi/blink.c>`
 
 Note that the previous file includes the `main header file of drogon's WiringPi library, available from biicode <https://www.biicode.com/drogon/blocks/drogon/wiringpi/branches/master/versions/1/cells/wiringpi/wiringpi.h>`__. Now you are ready to build your program using the ``bii cpp:build`` command, and send it to your board using the ``bii rpi:send`` command, as described in the :ref:`biicode RPi getting started guide<rpi_getting_started>`. 
 
@@ -64,43 +44,13 @@ With this example we will have a PWM sawtooth function on WiringPi pin 0 (:ref:`
 
 **Example: pwm.c**
 
-.. code-block:: cpp
-	:linenos:
 
-	#include <drogon/wiringpi/wiringpi/wiringpi.h>
+.. literalinclude:: /_static/code/rpi/examples/wiringpi/pwm.c
+   :language: cpp
+   :linenos:
 
-	#include <stdio.h>
-	#include <stdlib.h>
-	#include <stdint.h>
+**Download:** :download:`pwm.c </_static/code/rpi/examples/wiringpi/pwm.c>`
 
-	int main (void)
-	{
-	  int bright ;
-
-	  printf ("Raspberry Pi wiringPi PWM test program\n") ;
-
-	  if (wiringPiSetup () == -1)
-		exit (1) ;
-
-	  pinMode (1, PWM_OUTPUT) ;
-
-	  for (;;)
-	  {
-		for (bright = 0 ; bright < 1024 ; ++bright)
-		{
-		  pwmWrite (1, bright) ;
-		  delay (1) ;
-		}
-
-		for (bright = 1023 ; bright >= 0 ; --bright)
-		{
-		  pwmWrite (1, bright) ;
-		  delay (1) ;
-		}
-	  }
-
-	  return 0 ;
-	}
 
 Note that in this example we only need to include the `WiringPi main header file <https://www.biicode.com/drogon/blocks/drogon/wiringpi/branches/master/versions/1/cells/wiringpi/wiringpi.h>`__. You must execute the binary on your Raspberry Pi using the ``sudo`` command.
 
@@ -118,38 +68,8 @@ The generated binary only works on your Raspberry Pi and must be run as sudo bec
 
 **Example: servo.c**
 
-.. code-block:: cpp
-	:linenos:
+.. literalinclude:: /_static/code/rpi/examples/wiringpi/servo.c
+   :language: cpp
+   :linenos:
 
-	#include <stdio.h>
-	#include <errno.h>
-	#include <string.h>
-
-	#include <drogon/wiringpi/wiringpi/wiringpi.h>
-	#include <drogon/wiringpi/wiringpi/softservo.h>
-
-	int main ()
-	{
-	  if (wiringPiSetup () == -1)
-	  {
-		fprintf (stdout, "oops: %s\n", strerror (errno)) ;
-		return 1 ;
-	  }
-
-	  softServoSetup (0, 1, 2, 3, 4, 5, 6, 7) ;
-
-	  softServoWrite (0,  500) ;
-	/*
-	  softServoWrite (1, 1000) ;
-	  softServoWrite (2, 1100) ;
-	  softServoWrite (3, 1200) ;
-	  softServoWrite (4, 1300) ;
-	  softServoWrite (5, 1400) ;
-	  softServoWrite (6, 1500) ;
-	  softServoWrite (7, 2200) ;
-	*/
-
-	  for (;;)
-		delay (10) ;
-
-	}
+**Download:** :download:`servo.c </_static/code/rpi/examples/wiringpi/servo.c>`

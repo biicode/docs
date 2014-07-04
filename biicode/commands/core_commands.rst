@@ -8,7 +8,7 @@ Core commands
 .. _bii_init_command:
 
 ``bii init``: creates a new project
----------------------------------
+------------------------------------
 
 This is the command that **creates new project**. It can **receives as a parameter the name of the project to be created** or **create the project in the current folder where you execute the command**. If you pass the name of the project, this command create a folder with the name passed as parameter and initialize the project inside.
 
@@ -115,7 +115,7 @@ After your block has been published and uploaded to the biicode servers, the pro
 .. _bii_find_command:
 
 ``bii find``: find your external dependencies
-------------------------------------------
+-----------------------------------------------
 
 This commands allows you to retrieve any code dependencies from the biicode servers. The client analyzes your code, and find missing dependencies that cannot be resolved searching in your project contents. The client then communicates with the biicode server and tries to find code that is missing in your project, and retrieves the best matching version according with your :ref:`policies<policies>`.
 
