@@ -47,8 +47,6 @@ applications as usual with biicode.
 Example
 -------
 
-**Download all the files**
-	
-:download:`OpenGLES_examples.zip </_static/code/rpi/OpenGLES_examples.zip>`
+**Download the complete example**: :download:`OpenGLES_examples.zip </_static/code/rpi/examples/OpenGLES/OpenGLES_examples.zip>`
 
 Just need to replace [USER]/[BLOCK] into the triangle.c file whit the info of your user and block name.

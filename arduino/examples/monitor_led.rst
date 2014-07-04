@@ -11,11 +11,11 @@ Put the following file in your ``~/project_name/blocks/your_user_name/block_name
 
 **monitor_led.cpp**
 
-.. literalinclude:: ../../_static/code/arduino/examples/monitor_led.cpp
+.. literalinclude:: ../../_static/code/arduino/examples/monitor_led/monitor_led.cpp
    :language: cpp
 
 
-If you want, you can :download:`download the main file <../../_static/code/arduino/examples/monitor_led.cpp>`
+**Download**: :download:`monitor_led.cpp <../../_static/code/arduino/examples/monitor_led/monitor_led.cpp>`
 
 
 Turn ON/OFF one LED

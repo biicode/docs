@@ -61,7 +61,7 @@ Defines your HttpMiddleware subclass.
    :linenos:
 
    
-**Download all the files:** :download:`main_server.cpp </_static/code/cpp/examples/httpserver/main_server.cpp>` :download:`my_http_middle_ware.h </_static/code/cpp/examples/httpserver/my_http_middle_ware.h>` :download:`my_http_middle_ware.cpp </_static/code/cpp/examples/httpserver/my_http_middle_ware.cpp>`
+**Download:** :download:`httpserver.zip </_static/code/cpp/examples/httpserver/httpserver.zip>`
  
 
 Supported Operating Systems

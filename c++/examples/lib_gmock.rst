@@ -29,9 +29,6 @@ You will see next console output after executing the command:
 	$ bii cpp:build
 	$ cd bin
 	$ #run test executable
-	
-	...
-	
 	[==========] Running 3 tests from 1 test case.
 	[----------] Global test environment set-up.
 	[----------] 3 tests from LeakTest

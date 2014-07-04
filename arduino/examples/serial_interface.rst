@@ -21,80 +21,22 @@ C++ code
 
 At this moment, the following code is only compatible with Windows OS.
 
-**main.cpp**
+**main_cpp.cpp**
 
-.. code-block:: cpp
-	:linenos:
+.. literalinclude:: ../../_static/code/arduino/examples/serial_interface/main_cpp.cpp
+   :language: cpp
 
-	#include "david/serial_cpp/serial.h"
-	#include <string>
-	#include <iostream>
-
-	using namespace std;
-
-	int main()
-	{
-		string incomingData = "";
-		string input = "";
-		serial serialport('#', ';', "COM8", 9600); //Change the serial port ID!!
-
-		while(1){
-			input = serialport.read(); //read a message
-			if (input != "") cout << input << "\n";
-			else{
-				cout << "Enter: ";
-				cin >> incomingData;
-				incomingData = "#" + incomingData;
-				incomingData += ";";
-				serialport.writeString(incomingData); //send a message
-			}
-		}
-		return 0;
-	}
-
+**Download**: :download:`main_cpp.cpp <../../_static/code/arduino/examples/serial_interface/main_cpp.cpp>`
 
 Arduino code
 ------------
 
-**main.cpp**
+**main_arduino.cpp**
 
-.. code-block:: cpp
-	:linenos:
+.. literalinclude:: ../../_static/code/arduino/examples/serial_interface/main_arduino.cpp
+   :language: cpp
 
-	#include "Arduino.h"
-
-	#include "arduino/libraries/servo/servo.h"
-	#include "david/serial_arduino/serial.h"
-
-
-	serial serialport('#', ';', 9600);
-	String msg = "";
-	String premsg = "";
-	Servo myservo;
-
-	void setup() {
-		myservo.attach(9);
-		serialport.init();
-	}
-
-	// bii:#entry_point()
-	void loop() {
-
-		msg = serialport.read(); //read a message
-		if(msg != "")
-		{
-			serialport.writeOpen();
-			serialport.writeString(msg); //send a message
-			serialport.writeEnd();
-
-			if(premsg=="servo"){
-				int n;
-				n = atoi(msg.c_str());
-				myservo.write(n);
-			}
-			premsg = msg;
-		}
-	}
+**Download**: :download:`main_arduino.cpp <../../_static/code/arduino/examples/serial_interface/main_arduino.cpp>`
 
 Just run your code!
 -------------------
@@ -113,10 +55,8 @@ Execute following commands in each project:
 .. code-block:: bash
 
     $ bii find
-    $ bii cpp:run
-
-    ...
-
+	$ cd bin
+	$ #run solver executable
     Enter: servo
     servo
     Enter: 180

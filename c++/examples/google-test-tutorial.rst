@@ -3,17 +3,14 @@ Google Test Tutorial
 
 This example uses the famous library `googletest, a Google C++ Testing Framework <http://code.google.com/p/googletest/>`_. If you are familiar with coding in C++, you probably know about this library and use it for testing your projects. Otherwise, you can learn more visiting the `googletest project Wiki page <http://code.google.com/p/googletest/w/list>`_.
 
-In this example **we are going to create a factorial function and a test for it**. This video shows the whole process described below:
-
-.. raw:: html
-
-    <script type="text/javascript" src="https://asciinema.org/a/7763.js" id="asciicast-7763" async></script>
+In this example **we are going to create a factorial function and a test for it**.
 
 
 1. Create a new project
 -------------------------
 
 Create a new project as described in the :ref:`hello world example <cpp_getting_started>`.
+
 
 2. Create a function and a test for it
 ---------------------------------------
@@ -24,7 +21,7 @@ We will start with a math example: a **simple function to calculate the factoria
 * 1 if the number is zero, or
 * the factorial if the number is positive, *(num)\*(num-1)\*(num-2)\*…\*1*.
 
-Put these files inside ``YOUR_WORKSPACE/gtest_project/blocks/YOUR_USERNAME/factorial``
+Put these files inside ``gtest_project/blocks/YOUR_USERNAME/factorial``
 
 **math_ext.h**
 
@@ -72,7 +69,7 @@ Now **we have to ask biicode to find our dependencies**. This will download Goog
 4. Run your tests
 -----------------
 
-The final step is to actually compile and run the test. You can accomplish this task with the ``bii cpp:build`` command and run the executable inside the bin folder:
+The final step is to actually compile and execute the test. You can accomplish this task with the ``bii cpp:build`` command and run the executable inside the bin folder:
 
 .. code-block:: bash
 
@@ -82,16 +79,6 @@ The final step is to actually compile and run the test. You can accomplish this 
 
 	$ cd bin
 	$ #run test executable
-
-Finally, we are ready to unit-test our factorial function:
-
-.. code-block:: bash
-
-	$ bii cpp:run test
-	Building[ 77%] Built target google_gtest
-	[100%] Built target username_factorial_main_test
-	Running "username_factorial_main_test"
-	Running main() from sample1
 	[==========] Running 3 tests from 1 test case.
 	[----------] Global test environment set-up.
 	[----------] 3 tests from FactorialTest
@@ -138,8 +125,7 @@ Now when we execute your tests we obtain exactly the same output:
 
 .. code-block:: bash
 
-	Running "username_my_gtest_main_test2"
-	Running main() from sample1
+	$ #run test executable
 	[==========] Running 3 tests from 1 test case.
 	[----------] Global test environment set-up.
 	[----------] 3 tests from FactorialTest

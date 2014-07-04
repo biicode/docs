@@ -7,7 +7,7 @@ Info commands
 .. _bii_deps_command:
 
 ``bii deps``: show block dependencies
-----------------------------------
+--------------------------------------
 
 This command allows you to check the dependencies of any project. It's basic form, with no parameters, provides two pieces of information, giving you a general idea of which are your code dependencies:
 

@@ -8,7 +8,7 @@ This is the biicode library site and this is the biicode library examples.
 Usage example (difficulty: medium)
 ----------------------------------
 
-To check this library, we're making an example to compress and decompress a single file. Then you could create a \*.h and a \*.cpp file named infdef (inflate and deflate) and a zpipe.cpp which would be, for example, in ``~/project_directory/src/user_name/project_name/``.
+To check this library, we're making an example to compress and decompress a single file. Then you could create a \*.h and a \*.cpp file named infdef (inflate and deflate) and a zpipe.cpp which would be, for example, in ``~/project_directory/blocks/user_name/project_name/``.
 
 The following code would be in each one.
 
@@ -36,7 +36,7 @@ The following code would be in each one.
    :linenos:
 
    
-**Download all the files:** :download:`zpipe.cpp </_static/code/cpp/examples/zlib/zpipe.cpp>` :download:`infdef.h </_static/code/cpp/examples/zlib/infdef.h>` :download:`infdef.cpp </_static/code/cpp/examples/zlib/infdef.cpp>`
+**Download:** :download:`zpipe.zip </_static/code/cpp/examples/zlib/zpipe.zip>`
     
 
 

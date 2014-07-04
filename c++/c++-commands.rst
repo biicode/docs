@@ -22,7 +22,7 @@ This section summarizes the **C/C++ commands available to be used with the biico
 
 
 ``bii cpp:configure``: configure your project
--------------------------------------------
+------------------------------------------------
 
 This command configure your project as a C/C++ project automatically and adding the characteristics of your CMake files if you have it.
 

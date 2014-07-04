@@ -18,40 +18,9 @@ Scheme
 The code: Display the servo angle into a LCD 
 --------------------------------------------
 
-**main.cpp**
+**lcd_and_servo.cpp**
 
-.. code-block:: cpp
-	:linenos:
-	
-	#include "Arduino.h"
-	#include <arduino/libraries/liquidcrystal/liquidcrystal.h>
-	#include <arduino/libraries/servo/servo.h>
-	
-	LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-	Servo myservo;
+.. literalinclude:: ../../_static/code/arduino/examples/lcd_and_servo/lcd_and_servo.cpp
+   :language: cpp
 
-	void write_angle_lcd(int pos){
-	    lcd.setCursor(0, 1);
-	    lcd.print(pos);
-	    lcd.print(" ");
-	}
-
-	void setup(){
-	  myservo.attach(10);
-	  lcd.begin(16, 2);
-	  lcd.print("SERVO ANGLE");
-	  lcd.setCursor(0, 1);
-	}
-	void loop(){
-	  int pos; 
-	  for(pos = 0; pos <= 180; pos += 1){
-	    myservo.write(pos);
-	    write_angle_lcd(pos);
-	    delay(50);
-	  } 
-	  for(pos = 180; pos >= 0; pos -= 1){                       
-	    myservo.write(pos);
-	    write_angle_lcd(pos);
-	    delay(50);
-	  } 
-	}
+**Download**: :download:`lcd_and_servo.cpp <../../_static/code/arduino/examples/lcd_and_servo/lcd_and_servo.cpp>`
