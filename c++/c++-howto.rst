@@ -9,4 +9,4 @@ How to
    howto/howto-c++-adapt-code
    howto/howto-c++-cmake
    howto/howto-c++-ide-configuration
-   howto/howto-c++-build_with_vs
+   howto/howto-c++-configure-cmake-generators

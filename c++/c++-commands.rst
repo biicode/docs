@@ -71,3 +71,7 @@ This command invokes the C++ compiler to build your project.
 	...
 
 	[100%] Built target your_user_name_block_cpp_block
+
+.. container:: infonote
+
+	Visit the section: :ref:`how to configure a project with different cmake generators <configure_cmake_generators>`
