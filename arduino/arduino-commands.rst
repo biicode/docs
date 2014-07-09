@@ -53,7 +53,7 @@ If you have configured your project as a C/C++ project and you want to develop i
 
 
 ``bii arduino:build``: build your project
----------------------------------------
+-------------------------------------------
 
 This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX compiler -> avr-g++) to build and compile the project.
 
