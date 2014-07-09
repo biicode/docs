@@ -27,7 +27,7 @@ You can :ref:`read more in this section about configuring an IDE with your C/C++
 
 .. _cpp_installation:
 
-install C/C++ tools manually 
+Install C/C++ tools manually 
 ----------------------------
 
 This section describes how to install, set up and verify some **tools needed for building C and C++ projects with biicode**. These tools are:
@@ -155,3 +155,36 @@ Once you have installed the tools, **you should check they are working properly*
 	$ mingw32-make --version
 	GNU Make [version]
 	...
+
+
+g++ doesn't compile simple code, using thread header
+------------------------------------------------------
+
+If you have a block that **links to pthread library** and you're using **Ubuntu 13.10 or 14.04**, you'll find this bug in g++ compiler:
+
+.. code-block:: bash
+
+	$ ./executable_file
+	terminate called after throwing an instance of 'std::system_error'
+
+**Create a CMakelists.txt inside your block that fails** and copy the following content:
+
+**CMakeLists.txt**
+
+.. code-block:: cmake
+
+	#############BIICODE MACROS###################
+	IF(BIICODE)
+	include(${CMAKE_HOME_DIRECTORY}/biicode.cmake)
+	INIT_BIICODE_BLOCK()
+	ENDIF()
+	#############################################
+
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--no-as-needed")
+
+	ADD_BIICODE_TARGETS()
+
+
+.. container:: infonote
+
+	Visit the section: :ref:`biicode project layout <project_layout>`
