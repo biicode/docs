@@ -30,17 +30,23 @@ $( document ).ready(function() {
     var pathname = window.location.pathname;
     if (is_section("arduino", pathname)) {
       $("body").addClass("arduino");
-    } else if (is_section("raspberrypi", pathname)) {
+    } 
+    else if (is_section("raspberrypi", pathname)) {
       $("body").addClass("raspberrypi");
-    } else if (is_section("c++", pathname)) {
+    } 
+    else if (is_section("c++", pathname)) {
       $("body").addClass("cpp");
-    } else if (is_section("nodejs", pathname)) {
+    } 
+    else if (is_section("nodejs", pathname)) {
       $("body").addClass("nodejs");
-    } else if (is_section("python", pathname)) {
+    } 
+    else if (is_section("python", pathname)) {
       $("body").addClass("python");
-    } else if (is_section("gettingstarted", pathname)) {
+    } 
+    else if (is_section("gettingstarted", pathname)) {
       $("body").addClass("gettingstarted");
-    } else {
+    } 
+    else {
       $("body").addClass("biicode");
     };
   })();
