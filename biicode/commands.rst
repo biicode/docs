@@ -3,15 +3,15 @@
 Global commands
 ================
 
-This section summarizes the general **commands available to be used with the biicode client program**. The biicode client is the main utility that allows you to:
+This section summarizes the general **commands available in biicode**. You can:
 
 * **manage** your project and blocks locally, on your computer,
 * determine their internal and external **dependencies**,
 * **retrieve** any missing code dependencies from the biicode servers,
 * **publish** your code, and
-* **reuse** other users' code.
+* **reuse** from other user's code.
 
-All these functionalities are achieved using appropriate commands that are explained and used in many examples along this documentation, and are compiled here in a list for your convenience and reference.
+Achieve these functionalities with the commands:
 
 .. toctree::
 	:maxdepth: 2

@@ -62,7 +62,7 @@ Configure your project to the cross compiling running ``bii rpi:settings``:
    ~$ cd rpi_hello_project
    ~/rpi_hello_project$ bii rpi:settings
    Define RPI settings for external C/C++ cross-building
-   If you are working onboard the RPI, you don't need these settings
+   If you are working on board the RPI, you don't need these settings:
    RPI username (pi): [ENTER]
    RPI IP Address: 192.168.1.44
    RPI directory to upload (bin): [ENTER] #This folder must exist into your Raspberry Pi.
@@ -81,7 +81,7 @@ Now, we will create a block. a block is the place where you must place your code
 
     Because you distinguish a block by its owner's user-name and the block name. ``anonymous/my_first_block`` is what you write when you are not registered yet, but to publish your own blocks, you need to use your biicode user name.
 
-    If you want to change the user-name of a block into your blocks folder, just change the folder name where the block is at.
+    To change the user-name of a block, just edit the folders name: from anonymous to your user name.
 
 This command will create the following layout:
 

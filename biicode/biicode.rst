@@ -3,7 +3,7 @@
 What is biicode?
 ================
 
-**Biicode is a file-oriented Dependencies Manager for C/C++ developers**, with many unique characteristics:
+**Biicode is a file-oriented Dependencies Manager for C/C++ developers**:
 
 * It's **simple**.
 |
@@ -27,9 +27,7 @@ What is biicode?
 
 .. container:: infonote
 
-	Biicode is now in an early Beta stage but we are already open, also we have many users that are giving us a lot of feedback that we have to process and further improve the usability of the system. We are doing our best to quickly attend our current users feedback.
-
-	We have many core innovations, and we are following the lean startup and MVP paradigms, i.e. we try to release very often and quickly and perform fast iterations on user feedback.
+	Biicode is still a beta but we are already open. We have many core innovations and we are following the lean startup and MVP paradigms, i.e. we try to release very often and perform fast iterations on user feedback.
 
 
 .. _basic_concepts:
@@ -37,9 +35,9 @@ What is biicode?
 Basic concepts
 --------------
 
-biicode defines a very simple methodology, that helps you organize your projects and folders, by *focusing on the software modularity** to simplify code reuse.
+biicode defines a very simple methodology, that helps you organize your projects and folders, by focusing on a *modular software development* to simplify code reuse.
 
-For a description of how these concepts reflect on your disk folders structure read our :ref:`project layouts<project_layout>`.
+For a description of how these concepts reflect on your disk's folders structure read our :ref:`project layouts<project_layout>`.
 
 The basic concepts are:
 
@@ -55,7 +53,7 @@ Biicode project
 
 It is very similar to a **conventional project**. In short, they are first level folders  and their contents. In these folders you edit, build and run your code. You can think of them as a sandbox where you can play around with your code before sharing it. 
 
-**You can have as many projects as you want**. They are local to your computer, and each project is self-contained. You can publish, zip, email ... 
+**You can have as many projects as you want**. They are local to your computer, and each project is self-contained. You can publish, zip or email them... 
 
 **Biicode is not a version control system, so you should use git, mercurial, svn** or whatever you prefer along with biicode if you want a real version control for your files. Biicode is completely compatible with those systems, and does not interfere with them.
 
@@ -105,7 +103,7 @@ Project layout
 Store in a biicode project **as many blocks as you want**. It contains both your code and your code dependencies, and some custom configuration files, specific for that project.
 Check these :ref:`basic biicode concepts <basic_concepts>` first, to become familiar with projects and blocks.
 
-A typical project has a layout is as follows: ::
+This is a typical project layout: ::
 
 |-- my_project
 |    +-- bii
@@ -122,7 +120,7 @@ A typical project has a layout is as follows: ::
 |    |    |     |     |    |-- dependencies.bii
 |    |    |     |     |    |-- mains.bii
 |    |    |     |     |    |-- virtual.bii
-|    |    |  	|     |-- CMakeLists.txt
+|    |    |  	|     |-- CmakeLists.txt
 |    |    |  	|     |-- hello.c
 |    |    |     |     |-- hello.h
 |    |    |     +-- my_other_block
@@ -160,7 +158,7 @@ As you can see, the **project** contains a collection of folders. Take a look at
 	* ``policies.bii``: contains custom policies of the current project.
 	* ``settings.bii``: stores information about the project programming language, operating system, and other tools required for a particular project.
 
-*``deps`` folder is filled with your project **depencencies source code** whenever you use the ´´bii find´´ command. These files, just the ones you need, are automatically retrieved, downloaded from our servers and stored locally on your computer.
+*``deps`` folder is filled with your project **dependencies source code** whenever you use the ´´bii find´´ command. These files, just the ones you need, are automatically retrieved, downloaded from our servers and stored locally on your computer.
 
 *``blocks`` folder contains the **code of the blocks you are working on**, your source code. :ref:`blocks explanation <block_definition>`.
 
@@ -169,3 +167,4 @@ As you can see, the **project** contains a collection of folders. Take a look at
 * ``bin`` folder contains the executables generated from projects containing programs in languages that must be compiled. You can safely delete its contents, as they will be generated with every new compilation.
 
 You can read in detail about the special :ref:`configuration files section <config_files>`.
+
