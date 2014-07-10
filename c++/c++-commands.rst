@@ -18,7 +18,6 @@ This section summarizes the **C/C++ commands available to be used with the biico
 	---------C/C++ commands--------
 	  cpp:build       Build the project (with Make, Mingw32-make or NMake)
 	  cpp:configure   Configure project with cmake
-	  cpp:settings    Configure project cpp settings
 
 
 ``bii cpp:configure``: configure your project
