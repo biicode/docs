@@ -45,6 +45,10 @@ This command configure your project as a C/C++ project automatically and adding 
 	-- Generating done
 	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_PROJECT]/build
 
+.. container:: infonote
+
+	Visit the section: :ref:`how to configure a project with different CMake generators <configure_cmake_generators>`
+
 ``bii cpp:build``: build your project
 -----------------------------------------
 
@@ -74,4 +78,4 @@ This command invokes the C++ compiler to build your project.
 
 .. container:: infonote
 
-	Visit the section: :ref:`how to configure a project with different cmake generators <configure_cmake_generators>`
+	Visit the section: :ref:`how to build a project with different CMake options <build_cmake_options>`
