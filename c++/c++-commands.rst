@@ -45,6 +45,10 @@ This command configure your project as a C/C++ project automatically and adding 
 	-- Generating done
 	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_PROJECT]/build
 
+.. container:: infonote
+
+	Visit the section: :ref:`how to configure a project with different CMake generators <configure_cmake_generators>`
+
 ``bii cpp:build``: build your project
 -----------------------------------------
 
@@ -72,44 +76,6 @@ This command invokes the C++ compiler to build your project.
 
 	[100%] Built target your_user_name_block_cpp_block
 
-.. _bii_cpp_settings:
-
-``bii cpp:settings``: configure the IDE
--------------------------------------------
-
-This command helps you to configure the IDE you'll use to build your project:
-
-	*	``visual``: **Microsoft Visual Studio** (avaliable **versions** between **6-12**, 32 and 64 bits)
-	*	``eclipse``: **Eclipse IDE**
-	*	``none``: you are going to work with your console
-
-.. code-block:: bash
-
-	$ bii cpp:settings
-
-	Introduce ide (default:None) (/o list options): /o
-	Available options:
-	--------------------------
-  	  eclipse
-  	  visual
-  	  none
-	--------------------------
-	Introduce ide (default:None) (/o list options): visual
-	Visual version (6-12)? : 10
-
-Just introduce your desired IDE, and your project ``settings.bii`` file will be updated in accordance.
-
 .. container:: infonote
 
-
-    **Working with Visual Studio 64 bits version**
-
-    By default, the ``bii cpp:settings`` command selects the 32 bits version of VIsual Studio compiler. If you want to use the 64 bits version, you need to manually edit your project ``settings.bii`` file as follows:
-
-    #. Go to ``your_project/bii/`` folder
-    #. Open the ``settings.bii`` file
-    #. Modify your IDE declaration line updating the ``arch`` parameter as follows, writing the ``Win64`` option:
-
-    .. code-block:: text
-
-    	ide: {family: visual, version: '10', arch: Win64}
+	Visit the section: :ref:`how to build a project with different CMake options <build_cmake_options>`

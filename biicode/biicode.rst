@@ -122,6 +122,7 @@ A typical project has a layout is as follows: ::
 |    |    |     |     |    |-- dependencies.bii
 |    |    |     |     |    |-- mains.bii
 |    |    |     |     |    |-- virtual.bii
+|    |    |  	|     |-- CMakeLists.txt
 |    |    |  	|     |-- hello.c
 |    |    |     |     |-- hello.h
 |    |    |     +-- my_other_block
@@ -132,6 +133,7 @@ A typical project has a layout is as follows: ::
 |    |          +-- block_im_editing
 |    |                +-- bii
 |    |                |    |-- mains.bii
+|    |        	      |-- CMakeLists.txt
 |    |        	      |-- message.c
 |    |                |-- message.h
 |    |                |-- ignore.bii
