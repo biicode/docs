@@ -1,18 +1,44 @@
+
+function is_section(section, pathname){
+   var path = get_route_with_params(pathname);
+   if(path.indexOf(section + "/") == 0){
+      return true;
+   } 
+   if(path == section + ".html"){
+      return true;
+   } 
+   return false;
+}
+
+function get_route_with_params(pathname){
+  //Giving a path with http:// or local path, returns the rest
+  var tmp;
+  if(pathname.indexOf("_build/") != -1){
+    tmp = pathname.split("_build/")[1];
+  }
+  else{
+    tmp = pathname.split("://")[1];
+  }
+  
+  var index = tmp.indexOf("/");
+  return tmp.substring(index + 1);
+}
+
 $( document ).ready(function() {
   // Section class selector
   (function setSectionClass() {
     var pathname = window.location.pathname;
-    if (pathname.match(/\/arduino\/|\/arduino.html/)) {
+    if (is_section("arduino", pathname)) {
       $("body").addClass("arduino");
-    } else if (pathname.match(/\/raspberrypi\/|\/raspberrypi.html/)) {
+    } else if (is_section("raspberrypi", pathname)) {
       $("body").addClass("raspberrypi");
-    } else if (pathname.match(/\/c\+\+\/|\/c\+\+\.html/)) {
+    } else if (is_section("c++", pathname)) {
       $("body").addClass("cpp");
-    } else if (pathname.match(/\/nodejs\/|nodejs.html/)) {
+    } else if (is_section("nodejs", pathname)) {
       $("body").addClass("nodejs");
-    } else if (pathname.match(/\/python\/|python.html/)) {
+    } else if (is_section("python", pathname)) {
       $("body").addClass("python");
-    } else if (pathname.match(/\/gettingstarted\/|gettingstarted.html/)) {
+    } else if (is_section("gettingstarted", pathname)) {
       $("body").addClass("gettingstarted");
     } else {
       $("body").addClass("biicode");
