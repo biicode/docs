@@ -115,6 +115,7 @@ Now, execute ``bii cpp:build``, this configures your project and compiles your c
 And that's all. Your program is working, you can open your bin folder and execute!
 
 **Quick Tip** to execute your code in the terminal:
+
 .. code-block:: bash
 
    ~/cpp_hello_project$ cd bin
