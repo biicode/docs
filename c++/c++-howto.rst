@@ -8,6 +8,5 @@ How to
 
    howto/howto-c++-adapt-code
    howto/howto-c++-cmake
-   howto/howto-c++-ide-configuration
    howto/howto-c++-configure-cmake-generators
    howto/howto-c++-build-cmake-options
