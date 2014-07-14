@@ -4,12 +4,12 @@ Node.js
 =======
 This example shows **how to install biicode and code a node.js redis client**. You don't need to have installed redis, biicode will download for you.
 
-You will learn how to use the ``redis`` file of the ``noderedis`` block owner of ``mrnney`` with the code line ``require("mranney/noderedis/redis")`` .
+Use the ``redis`` file of the ``noderedis`` block from ``mrnney`` user with the code line ``require("mranney/noderedis/redis")`` .
 
 1. Installing biicode and node.js
 ---------------------------------
 
-First, install biicode and node.js.
+First of all, install biicode and node.js.
 
    - Download the biicode installer.
 
@@ -25,7 +25,7 @@ First, install biicode and node.js.
 2. Create your project
 ----------------------
 
-To create a new project running ``bii init`` with the project name as a parameter.
+To create a new project run``bii init`` with the project name as a parameter.
 
 .. code-block:: bash
 
@@ -40,7 +40,7 @@ This command will create the following layout:
    |    +-- blocks
    |    +-- deps
    
-Now, we will create a block. a block is the place where you must place your code. Execute ``bii new anonymous/my_fist_block`` into the project folder to create a block.
+Create a new block to place your code in it. Execute ``bii new anonymous/my_fist_block`` into the project folder to create a block.
 
 .. code-block:: bash
 
@@ -53,7 +53,7 @@ Now, we will create a block. a block is the place where you must place your code
 
     Because you distinguish a block by its owner's user-name and the block name. ``anonymous/my_first_block`` is what you write when you are not registered yet, but to publish your own blocks, you need to use your biicode user name.
 
-    If you want to change the user-name of a block into your blocks folder, just change the folder name where the block is at.
+    To change the user-name of a block, just edit the folders name: from anonymous to your user name.
 
 This command will create the following layout:
 
@@ -103,8 +103,8 @@ Now, execute your script main.js.
    ~/node_hello_project$ cd blocks/my_first_block
    ~/node_hello_project/blocks/my_first_block$ #execute your script
 
-And that's all. Your program is working!
+And that's it. Your program is working!
 
 .. container:: todo
 
-    If you want to learn more about node.js & biicode, check the :ref:`node.js section <nodejs-index>`.
+    To learn more about node.js & biicode, check the :ref:`node.js section <nodejs-index>`.

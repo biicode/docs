@@ -3,7 +3,7 @@
 Merge branches
 =================
 
-If you have published a branch and you wish to merge this branch with your current branch, you only have to execute:
+How to merge your current branch with a published one, just execute:
 
 .. code-block:: bash
 
@@ -13,27 +13,27 @@ If you have published a branch and you wish to merge this branch with your curre
 Examples
 --------
 
-Merging the version ``2`` from block ``user22/math_libs`` and branch ``master``
+Merge version ``2`` from block ``user22/math_libs`` and ``master`` branch 
 
 .. code-block:: bash
 
 	$ bii merge user22/math_libs:2
 
 
-Merging the version ``7`` from block ``user22/math_libs`` and branch ``develop``
+Merge version ``7`` from block ``user22/math_libs`` and ``develop`` branch 
 
 .. code-block:: bash
 
 	$ bii merge user22/math_libs(develop):7
 
 
-Merging the last version from block ``user22/math_libs`` and branch ``master``
+Merge the last version from block ``user22/math_libs`` and ``master`` branch
 
 .. code-block:: bash
 
 	$ bii merge user22/math_libs
 
-Merging the last version from block ``user22/math_libs`` and branch ``develop``
+Merge the last version from block ``user22/math_libs`` and ``develop`` branch 
 
 .. code-block:: bash
 
@@ -42,3 +42,4 @@ Merging the last version from block ``user22/math_libs`` and branch ``develop``
 .. container:: infonote
 
 	Visit the section: :ref:`how to publish branches <publish_branches>`
+	And don't doubt on `asking in our forum<http://forum.biicode.com>`_

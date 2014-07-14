@@ -3,7 +3,7 @@
 General Information
 ====================
 
-This is the biicode general documentation.
+This is biicode's general documentation.
 
 .. toctree::
    :maxdepth: 2

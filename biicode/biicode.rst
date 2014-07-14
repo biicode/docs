@@ -3,7 +3,7 @@
 What is biicode?
 ================
 
-**Biicode is a file-oriented Dependencies Manager for C/C++ developers**, with many unique characteristics:
+**Biicode is a file-oriented Dependencies Manager for C/C++ developers**:
 
 * It's **simple**.
 |
@@ -17,7 +17,7 @@ What is biicode?
 |
 * It's **fully deterministic**, it takes into account the compatible configuration of libraries.
 |
-* **Multilanguage (currently C/C++ and Node.js)**, **Multi-OS**. The work flow, the tool and the way you reuse code are exactly the same independently of the programming language or the OS you are using.
+* **Multi language (currently C/C++ and Node.js)**, **Multi-OS**. The work flow, the tool and the way you reuse code are exactly the same independently of the programming language or the OS you are using.
 |
 * Contribute to our collaborative community! Publishing your code is also very simple, so you can easily **share and reuse your code with others in all your projects**.
 |
@@ -27,9 +27,7 @@ What is biicode?
 
 .. container:: infonote
 
-	Biicode is now in an early Beta stage but we are already open, also we have many users that are giving us a lot of feedback that we have to process and further improve the usability of the system. We are doing our best to quickly attend our current users feedback.
-
-	We have many core innovations, and we are following the lean startup and MVP paradigms, i.e. we try to release very often and quickly and perform fast iterations on user feedback.
+	Biicode is still a beta but we are already open. We have many core innovations and we are following the lean startup and MVP paradigms, i.e. we try to release very often and perform fast iterations on user feedback.
 
 
 .. _basic_concepts:
@@ -37,9 +35,9 @@ What is biicode?
 Basic concepts
 --------------
 
-biicode defines a very simple methodology, that helps you organize your projects and folders, by *focusing on the software modularity** to simplify code reuse.
+biicode defines a very simple methodology, that helps you organize your projects and folders, by focusing on a *modular software development* to simplify code reuse.
 
-For a description of how these concepts reflect on your disk folders structure read our :ref:`project layouts<project_layout>`.
+For a description of how these concepts reflect on your disk's folders structure read our :ref:`project layouts<project_layout>`.
 
 The basic concepts are:
 
@@ -55,7 +53,7 @@ Biicode project
 
 It is very similar to a **conventional project**. In short, they are first level folders  and their contents. In these folders you edit, build and run your code. You can think of them as a sandbox where you can play around with your code before sharing it. 
 
-**You can have as many projects as you want**. They are local to your computer, and each project is self-contained. You can zip and send any project by email to lately unzip it on other other computer, or even share it using a Dropbox folder.
+**You can have as many projects as you want**. They are local to your computer, and each project is self-contained. You can publish, zip or email them... 
 
 **Biicode is not a version control system, so you should use git, mercurial, svn** or whatever you prefer along with biicode if you want a real version control for your files. Biicode is completely compatible with those systems, and does not interfere with them.
 
@@ -72,11 +70,11 @@ A block is a folder that contains a **group of files, that are logically related
 
 Your code is inside ``user_name/block_name``. A **block** name, has two parts, the **user name**, and the **name of the block**. You can see this structure under the ``blocks`` and ``deps`` folders, both for your own blocks and for the dependencies.
 
-Usually,``username`` will be your biicode user name. But when you are editing code that was originally created by other_user (see :ref:`how you can edit other users' blocks <bii_open_command>` with the ``bii open`` command).
+Usually,``username`` is your biicode user name. But when you are editing code that was originally created by other_user (see :ref:`how you can edit other users' blocks <bii_open_command>` with the ``bii open`` command).
 
-You can **publish and share blocks for later reuse**. It’s similar to C libraries, java jars, or python packages and modules, but not exactly the same, as they **always contains source code**, and without any real packaging or grouping other than the block name.  
+You can **publish and share blocks to reuse later**. It’s similar to C libraries, java jars, or python packages and modules, but not exactly the same, as they **always contain source code**, and without any real packaging or grouping other than the block name.  
 
-There's always a ``bii`` folder in a block, and has at least two files:
+There's always a ``bii`` folder in a block, and it has at least two files:
 
 		* ``requirements.bii``: A list of the blocks you depend on. You can change it to push the system into using a specific version.
 		* ``parents.bii``: lets us identify what version you are working on and which version is the last one published.
@@ -102,11 +100,10 @@ Remember that if you just need a certain file from a block and such file does no
 Project layout
 --------------
 
-This is the **folders structure of a typical biicode project**. We recommend reading these :ref:`basic biicode concepts <basic_concepts>` first, to understand the conceps of project and block.
+Store in a biicode project **as many blocks as you want**. It contains both your code and your code dependencies, and some custom configuration files, specific for that project.
+Check these :ref:`basic biicode concepts <basic_concepts>` first, to become familiar with projects and blocks.
 
-A biicode project can hold **as many blocks as you want**. It contains both your code and your code dependencies, and some custom configuration files, specific for that project.
-
-A typical project layout is as follows: ::
+This is a typical project layout: ::
 
 |-- my_project
 |    +-- bii
@@ -123,7 +120,7 @@ A typical project layout is as follows: ::
 |    |    |     |     |    |-- dependencies.bii
 |    |    |     |     |    |-- mains.bii
 |    |    |     |     |    |-- virtual.bii
-|    |    |  	|     |-- CMakeLists.txt
+|    |    |  	|     |-- CmakeLists.txt
 |    |    |  	|     |-- hello.c
 |    |    |     |     |-- hello.h
 |    |    |     +-- my_other_block
@@ -153,21 +150,21 @@ A typical project layout is as follows: ::
 |    |    |     |     |-- algorithm.h
 
 
-As you can see, the **project** contains a collection of folders. We will go through each one of them:
+As you can see, the **project** contains a collection of folders. Take a look at them:
 
-* The ``bii`` folder contains these files:
+*``bii`` folder contains these files:
 
 	* ``.hive.db``: contains all your project meta information. This file must not be manually modified or removed.
 	* ``policies.bii``: contains custom policies of the current project.
 	* ``settings.bii``: stores information about the project programming language, operating system, and other tools required for a particular project.
 
-* The ``deps`` folder contains your project **dependencies source code**. All files contained in this folder are downloaded using the ``bii find`` command after analyzing your source files contained under the ``blocks`` folder. These are all the strictly necessary cells for your project to compile (when needed, if your are using a compiled language as *c* or *c++*) and run correctly.
-* The ``deps`` folder is filled with files whenever you use the ´´bii find´´ command. These files, just the ones you need, are automatically retrieved, downloaded from our servers and stored locally on your computer.
+*``deps`` folder is filled with your project **dependencies source code** whenever you use the ´´bii find´´ command. These files, just the ones you need, are automatically retrieved, downloaded from our servers and stored locally on your computer.
 
-* The ``blocks`` folder is very important, as it contains the **code of the blocks you are working on**; your source code. :ref:`blocks explanation <block_definition>`.
+*``blocks`` folder contains the **code of the blocks you are working on**, your source code. :ref:`blocks explanation <block_definition>`.
 
-* ``build``: Contains build files such as make scripts and compiled objects. You can safely delete it's contents
-* ``cmake``: Contains autogenerated ``CMakeLists.txt`` as well as other files that allow you to define your own cmake.
-* The ``bin`` folder contains any executables generated from projects containing programs in languages that must be compiled. You can safely delete its contents, as they will be generated with every new compilation.
+* ``build``: Contains build files such as make scripts and compiled objects. You can safely delete its content.
+* ``cmake``: Contains auto-generated ``CMakeLists.txt`` and other files that let you define your own cmake.
+* ``bin`` folder contains the executables generated from projects containing programs in languages that must be compiled. You can safely delete its contents, as they will be generated with every new compilation.
 
 You can read in detail about the special :ref:`configuration files section <config_files>`.
+
