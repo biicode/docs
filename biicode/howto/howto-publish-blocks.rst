@@ -1,15 +1,15 @@
 .. _publish_blocks:
 
-Publishing blocks
-==================
+Publish blocks
+===============
 
 Use ``bii publish`` command into a **project** folder. Take a look at the different options to publish:
 
-If your **project** contains multiple blocks under your ``blocks`` folder, you'll select which one of them (``user_name/block_name``) you will publish.
+If your **project** contains multiple blocks under your ``blocks`` folder, you'll  which one of them (``user_name/block_name``) 
 |
 |
 Available publishing options:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 * Tag's default value is DEV, but you can define different **tags** for the code you're publishing: 	
 
@@ -64,13 +64,6 @@ If you only have one block, you don't need to specify it, but if you have severa
 
 	$ bii publish --block BLOCK_NAME
 
-
-.. container:: infonote
-
-	All the publishing options can be used together, they're compatible:
-	.. code-block:: bash
-
-		$ bii publish --block fenix/vector --tag STABLE --msg "Vector C++ library v1.0"
 
 
 .. _publish_branches:
