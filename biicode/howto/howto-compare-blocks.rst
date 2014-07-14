@@ -38,4 +38,4 @@ Let's see the different possibilities:
 		$ bii diff fenix/armadillo fenix/armadillo(develop):5
 
 
-Got any doubts? `Ask in our forum<http://forum.biicode.com>`_
+**Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_
