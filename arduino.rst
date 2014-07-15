@@ -19,6 +19,6 @@ Here you will learn how to set up your system, and create your first Arduino pro
 	:maxdepth: 2
 
 	arduino/arduino-commands
-	arduino/arduino-examples
 	arduino/arduino-howto
+	arduino/arduino-examples
 	arduino/arduino-troubleshooting

@@ -62,7 +62,7 @@ If you only have one block, you don't need to specify it, but if you have severa
 
 .. code-block:: bash
 
-	$ bii publish --block BLOCK_NAME
+	$ bii publish BLOCK_NAME
 
 
 
@@ -97,23 +97,23 @@ Imagine you're ``fenix`` user and you're editing two blocks, ``fenix/vector`` an
 
 .. code-block:: bash
 
-	$ bii publish --block fenix/vector --msg "Developing a vector C++ library"
+	$ bii publish fenix/vector --msg "Developing a vector C++ library"
 
 .. code-block:: bash
 
-	$ bii publish --block fenix/matrix --msg "Developing a matrix C++ library"
+	$ bii publish fenix/matrix --msg "Developing a matrix C++ library"
 
 After a while, you are sure about publishing ``fenix/vector`` as STABLE version:
 
 .. code-block:: bash
 
-	$ bii publish --block fenix/vector --tag STABLE --msg "Vector C++ library v1.0"
+	$ bii publish fenix/vector --tag STABLE --msg "Vector C++ library v1.0"
 
 You decide to follow improving ``fenix/vector`` block in another branch and publish it using DEV tag:
 
 .. code-block:: bash
 
-	$ bii publish --block fenix/vector --branch develop --msg "Branch develop from vector C++ library v1.0"
+	$ bii publish fenix/vector --branch develop --msg "Branch develop from vector C++ library v1.0"
 
 
 .. container:: infonote

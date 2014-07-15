@@ -3,24 +3,13 @@
 ``requirements.bii``: configure the version of your blocks
 =============================================================
 
-You can find the ``requirements.bii`` file inside the ``bii`` block folder ::
+You can find the ``requirements.bii`` file inside the ``bii`` block folder (see the :ref:`layouts section <project_layout>`) and **shows your block dependencies**.
 
-|-- my_project
-|    +-- bii
-|    +-- bin
-|    +-- blocks
-|    |	  +-- user25
-|    |    |     +-- my_hello_block
-|    |    |     |     +-- bii
-|    |    |     |     |    |-- requirements.bii
-|    |    |  	|     |-- hello.c
-|    |    |     |     |-- hello.h
-|    +-- deps
-
-It can be created on several ocassions and shows your block dependencies.
+Examples
+---------
 
 Block depends on other edition blocks
-------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you have a layout like this: ::
 
@@ -49,7 +38,7 @@ What say us?
 
 
 Block depends on other published blocks
--------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You could have external dependencies too and reuse a C++ library uploaded to biicode ::
 
@@ -83,7 +72,7 @@ It tell us that:
 .. _edit_requirements_bii:
 
 Editing your requirements.bii
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 biicode offers you the possibility to choose any branch and version block to depend on, making your own ``requirements.bii`` or editing it.
 
