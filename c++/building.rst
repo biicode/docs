@@ -33,12 +33,61 @@ The layout will be::
 
 In general, it is a good idea to fully ignore (exclude) this folder from control version systems, or just fully delete it before zipping a project (to send it by email, backup, or whatever).
 
-Configure
-------------------------------------
+
+``bii cpp:configure``: configure your project
+---------------------------------------------
+
+This command configure your project as a C/C++ project automatically and adding the characteristics of your CMake files if you have it.
+
+.. code-block:: bash
+
+	$ bii cpp:configure
+
+	invoking cmake -D CMAKE_BUILD_TYPE=Debug  -G "MinGW Makefiles" -Wno-dev ../cmake
+	-- The C compiler identification is GNU 4.8.1
+	-- The CXX compiler identification is GNU 4.8.1
+	-- Check for working C compiler: C:/MinGW/bin/gcc.exe
+	-- Check for working C compiler: C:/MinGW/bin/gcc.exe -- works
+	-- Detecting C compiler ABI info
+	-- Detecting C compiler ABI info - done
+	-- Check for working CXX compiler: C:/MinGW/bin/g++.exe
+	-- Check for working CXX compiler: C:/MinGW/bin/g++.exe -- works
+	-- Detecting CXX compiler ABI info
+	-- Detecting CXX compiler ABI info - done
+	-- Configuring done
+	-- Generating done
+	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_PROJECT]/build
+
+Visit the section: :ref:`how to configure a project with different CMake generators <configure_cmake_generators>`
 
 
-Build
-------------------------------------
+``bii cpp:build``: build your project
+-------------------------------------
+
+This command invokes the C++ compiler to build your project.
+
+.. code-block:: bash
+
+	$ bii cpp:build
+	
+	invoking cmake -D CMAKE_BUILD_TYPE=Debug  -G "MinGW Makefiles" -Wno-dev ../cmake
+	-- The C compiler identification is GNU 4.8.1
+	-- The CXX compiler identification is GNU 4.8.1
+	-- Check for working C compiler: C:/MinGW/bin/gcc.exe
+	-- Check for working C compiler: C:/MinGW/bin/gcc.exe -- works
+	-- Detecting C compiler ABI info
+	-- Detecting C compiler ABI info - done
+	-- Check for working CXX compiler: C:/MinGW/bin/g++.exe
+	-- Check for working CXX compiler: C:/MinGW/bin/g++.exe -- works
+	-- Detecting CXX compiler ABI info
+	-- Detecting CXX compiler ABI info - done
+
+
+	[100%] Built target your_user_name_block_cpp_block
+
+Visit the section: :ref:`how to build a project with different CMake options <build_cmake_options>`
+
+	
 You can build your projects with the parameters, depending on your OS, that CMake offers us.
 
 .. code-block:: bash
@@ -60,10 +109,19 @@ Generated CMakeLists.txt
 
 
 
+Some examples
+------------------------------------
+- Activate C++11
+- Add boost dependency
+- Etc.
 
 
 
-The CMakeLists.txt is created just once, so the user can modify its contents if necessary.
+
+OBSOLETE, OBSOLETE
+
+
+The CMakeLists.txt is created just once, so the user can modify its content if necessary.
 
 .. code-block:: cmake
 

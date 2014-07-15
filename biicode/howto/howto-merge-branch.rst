@@ -39,7 +39,9 @@ Merge the last version from block ``user22/math_libs`` and ``develop`` branch
 
 	$ bii merge user22/math_libs(develop)
 
+
+**Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_
+
 .. container:: infonote
 
 	Visit the section: :ref:`how to publish branches <publish_branches>`
-	And don't doubt on `asking in our forum<http://forum.biicode.com>`_

@@ -10,8 +10,6 @@ Using an IDE
 
 2. Visual Studio
 ----------------------
-Configure projects with MSVC or Eclipse generator
-======================================================
 
 You can configure your projects with Visual Studio or Eclipse CMake generator. By default, biicode configures your projects with MinGW Makefiles (Windows) or UNIX Makefiles (MacOS and Linux), to change it execute ``bii cpp:configure`` and the cmake command to change generators, for example:
 

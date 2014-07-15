@@ -82,18 +82,6 @@ For example:
 	Successfully main.cpp file created in PROJECT_DIR/blocks/fenix/first_block
 
 
-.. _bii_work_command:
-
-``bii work``: process the changes
-----------------------------------
-
-The ``bii work`` command is a very basic command that performs the main processing of biicode for your current project. It checks what files you have modified, analyzes and search dependencies among your project files (i.e. locally), and fills the ``deps`` folder. Most times it is not necessary to invoke this command explicitly, because it is automatically called by development commands as ``cpp:build`` or ``cpp:configure``.
-
-.. code-block:: bash
-
-	$ bii work
-
-
 .. _bii_publish_command:
 
 ``bii publish``: publish your blocks
@@ -188,3 +176,24 @@ This command allows you to **merge two different versions of the same block**. O
 .. container:: todo
 
 	Visit the section: :ref:`how to merge branches <merge_branches>`
+
+
+.. _bii_user_command:
+
+``bii user``: shows or change your current biicode user
+---------------------------------------------------------
+
+If you use it without parameter, it will show the current user, that can be None (anonymous).
+
+.. code-block:: bash
+
+	$ bii user
+	INFO: Current user: None (anonymous)
+
+
+If you pass a parameter, that will be the new biicode user. Such user should be already registered in `our website <https://www.biicode.com/>`_
+
+.. code-block:: bash
+
+	$ bii user phil
+	INFO: Change user from None to phil

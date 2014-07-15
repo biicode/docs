@@ -38,6 +38,7 @@ There are some special cases in which biicode can't detect some dependencies. In
 
 For this purpose you can use :ref:`dependencies.bii <dependencies_bii>`
 
-Got any doubts? `Ask in our forum<http://forum.biicode.com>`_
+
+**Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_
 
 

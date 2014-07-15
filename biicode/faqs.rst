@@ -27,8 +27,8 @@ Can I use biicode with my favourite VCS?
 Yes, but this feature is still experimental. You can manage any of your biicode projects (projects) as a separate project under version control. You can zip and send by email, sync with dropbox, or put it into a VCS repository. But we store meta-information in a DB in binary format, as it doesn't allow straightforward merging by VCS. We are working on the merging process of such meta-information in case of conflicts that will likely arise, but this is an ongoing work.
 
 
-What languages are supported?
------------------------------
+Which languages are supported?
+------------------------------
 
 We have released our beta with a strong focus on C++, which lacks a multiOS dependency manager. We are experimenting with other languages as Python, Node, Java or Fortran. The support for these languages will mature during the next months, and new languages will enter the pipeline too.
 

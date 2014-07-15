@@ -3,7 +3,7 @@
 Arduino
 =======
 
-This example shows **how to install biicode and code a Arduino not blocking blink ith the blick library**. You don't need to install blinck library, biicode will download and configure it automatically for you.
+This example shows **how to install biicode and code an Arduino non blocking blink ith the blick library**. You don't need to install blinck library, biicode will download and configure it automatically for you.
 
 You will learn how to use the ``blink.h`` file of the ``blink`` block owner of ``fenix`` with the code line ``#include "fenix/blink/blink.h"`` .
 

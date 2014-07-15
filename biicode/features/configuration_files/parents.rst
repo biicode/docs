@@ -2,7 +2,13 @@
 
 ``parents.bii``: see your tracking information
 ==================================================
-``parents.bii`` is **created whenever you publish a block**, inside the ``bii`` block folder ::
+
+``parents.bii`` is **created whenever you publish a block**, inside the ``bii`` block folder (see the :ref:`layouts section <project_layout>`) and **provides insight about the origins of each of the blocks currently contained in the blocks folder of your project**. 
+
+Example
+--------
+
+You have the bellow layout and you've already done your first publication ::
 
 |-- my_project
 |    +-- bii
@@ -15,9 +21,7 @@
 |    |    |  	|     |-- hello.c
 |    |    |     |     |-- hello.h
 
-It  provides insight about the origins of each of the blocks currently contained in the blocks folder of your project. 
-
-For example, you have the above layout and you've already done your first publication, then your ``parents.bii`` would have the next content:
+Then your ``parents.bii`` would have the next content:
 
 .. code-block:: text
 
