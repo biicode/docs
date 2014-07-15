@@ -20,6 +20,6 @@ In this part of the documentation you will find resources and tutorials for inst
    :maxdepth: 2
 
    raspberrypi/rpi-commands
-   raspberrypi/rpi-examples
    raspberrypi/rpi-howto
+   raspberrypi/rpi-examples
    raspberrypi/rpi-troubleshooting

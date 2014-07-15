@@ -1,9 +1,9 @@
 .. _configure_cmake_generators:
 
-Configure projects with MSVC or Eclipse generator
-======================================================
+Configure your IDE
+===================
 
-You can configure your projects with Visual Studio or Eclipse CMake generator. By default, biicode configures your projects with MinGW Makefiles (Windows) or UNIX Makefiles (MacOS and Linux), to change it execute ``bii cpp:configure`` and the cmake command to change generators, for example:
+Biicode offers integration with some of **the most commonly used IDEs** for C++ programmers (**Microsoft Visual Studio**, **Eclipse** and **CodeBlocks**). By default, biicode configures your projects with MinGW Makefiles (Windows) or UNIX Makefiles (MacOS and Linux), to change it execute ``bii cpp:configure`` and the cmake command to change generators, for example:
 
 .. code-block:: bash
 
