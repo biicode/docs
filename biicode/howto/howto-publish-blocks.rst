@@ -1,41 +1,44 @@
 .. _publish_blocks:
 
 Publish blocks
-==================
+===============
 
-The ``bii publish command`` must be invoked inside a **project** folder. It has some options to complement your publication:
+Use ``bii publish`` command into a **project** folder. Take a look at the different options to publish:
 
-* In case your **project** contains multiple blocks under your ``blocks`` folder, you'll select which of them (``user_name/block_name``) you wish to publish.
+If your **project** contains multiple blocks under your ``blocks`` folder, you'll  which one of them (``user_name/block_name``) 
 |
-* If you want, you can define a **tag** for the published code. Available options are: 	
+|
+Available publishing options:
+-----------------------------
 
-	* ``DEV``: The code you are publishing is ready to be reused by yourself (or maybe your dev team)
+* Tag's default value is DEV, but you can define different **tags** for the code you're publishing: 	
+
+	* ``DEV``: The code you are publishing is ready to be reused by yourself (or maybe your dev team).
 	|
-	* ``ALPHA``: The code is ready to be reused by some friends or colleagues you explicitly invite to test your code
+	* ``ALPHA``: The code is ready to be reused by some friends or colleagues you explicitly invite to test your code.
 	|
-	* ``BETA``: The code could be used by anyone in the world willing to test others code
+	* ``BETA``: The code can be used by anyone in the world willing to test others code.
 	|
 	* ``STABLE``: Ready to be reused by anyone in the world.
 
- They define the state of the development for your code. This information is used in by the :ref:`policies<policies>` of the users that will use this blocks.
+ They define the development state of your code. The :ref:`policies<policies>` file holds the tags and info about the blocks you're reusing from.
 |
-* Finally, you could provide a short message describing the code your are publishing, and the new functionalities it provides (bugs fixed, or any other valuable information).
-
+* Also, it's nice to **write a short message describing the code your are publishing**, and the new functionalities it provides (bugs fixed, or any other valuable information).
 
 
 Publish using  DEV tag
 -----------------------
 
-Now, if you're not sure to share the code with all developers, biicode offers you a DEV zone to publish the code. The blocks published with DEV tag will be always the same version (version: 0), and you won't be able to publish branches while you will be working with this tag. By default, when you execute the command, the tag is DEV:
+There's a DEV zone to publish the code you're developing. The blocks published with DEV tag will always be the same version (version: 0), and you won't be able to publish branches while you are working with DEV tag. By default, whenever you ``bii publish`` your code is tagged as DEV.
 
 .. code-block:: bash
 
 	$ bii publish
 
-Publish using any tag
-----------------------
+Publish with other tags
+------------------------
 
-To publish your blocks with different tags:
+Publish your blocks with different tags:
 
 .. code-block:: bash
 
@@ -45,7 +48,7 @@ To publish your blocks with different tags:
 Publish with a descriptive message
 -----------------------------------
 
-To publish your blocks with different tags:
+Publish your blocks with a brief message:
 
 .. code-block:: bash
 
@@ -62,12 +65,13 @@ If you only have one block, you don't need to specify it, but if you have severa
 	$ bii publish BLOCK_NAME
 
 
+
 .. _publish_branches:
 
 Publish a branch
 ---------------------
 
-To publish a branch is so simple. When you don't want to publish a version to ``master`` (default branch), only execute:
+Publishing a branch is so simple. When you don't want to publish a version to ``master`` (default branch), only execute:
 
 .. code-block:: bash
 

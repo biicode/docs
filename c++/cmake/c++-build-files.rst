@@ -24,7 +24,7 @@ The layout will be::
 CMakeLists.txt file
 -------------------
 
-The CMakeLists.txt is created just once, so the user can modify its contents if necessary.
+The CMakeLists.txt is created just once, so the user can modify its content if necessary.
 
 .. code-block:: cmake
 
