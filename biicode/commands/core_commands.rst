@@ -82,18 +82,6 @@ For example:
 	Successfully main.cpp file created in PROJECT_DIR/blocks/fenix/first_block
 
 
-.. _bii_work_command:
-
-``bii work``: process the changes
-----------------------------------
-
-The ``bii work`` command is a very basic command that performs the main processing of biicode for your current project. It checks what files you have modified, analyzes and search dependencies among your project files (i.e. locally), and fills the ``deps`` folder. Most times it is not necessary to invoke this command explicitly, because it is automatically called by development commands as ``cpp:build`` or ``cpp:configure``.
-
-.. code-block:: bash
-
-	$ bii work
-
-
 .. _bii_publish_command:
 
 ``bii publish``: publish your blocks
