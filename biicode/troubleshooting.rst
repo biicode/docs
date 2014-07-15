@@ -28,40 +28,6 @@ If biicode client isn't working, this can be due to some update in the logic of 
 
 #. First, try updating your biicode client `downloading the latest available release <https://www.biicode.com/downloads>`__.
 #. Didn't that fix your problem? Then, from your **workspace folder**, execute the command ``bii clean``. That should remove all local information and force the client to update the local database.
-#. If the two previous steps didn't solve the issue, try executing the command ``bii clean --ws-cache``.
+#. If the two previous steps didn't solve the issue, try executing the command ``bii clean --cache``.
 
 After these simple actions, everything should get back to normal. However, if your problem isn't solved yet, please `contact us at our forum <http://forum.biicode.com/category/client/>`__, and we'll try to provide a solution as soon as possible.
-
-
-Old biicode projects don't work properly with Biicode 0.11.1
----------------------------------------------------------------
-
-When we improved user experience in version 0.11.1, we realized that there was a worthy inconvenience: your local projects may need some editing.
-
-So if you get this error:
-
-.. code-block:: bash
-
-   ERROR: Error parsing settings.bii
-   MINGW is not a valid BuilderFamily. Possible values are set (['ant','maven','make','msbuild','nmake'])
-   
-To fix it, you have to update the file settings.bii, for C/C++ you have to do it manually:
-Either by creating a new project and copying it's settings.bii file or changing yours so it has this information:
-
-.. code-block:: text
-
-    cpp: {builder: {family: make, subfamily: mingw}}
-
-
-If it's an Arduino project just type this in your console:
-
-.. code-block:: bash
-
-    bii arduino:settings
-    
-and for Raspberry Pi projects:
-    
-.. code-block:: bash
-
-    bii rpi:settings   
- 

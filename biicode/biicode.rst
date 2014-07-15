@@ -25,11 +25,6 @@ What is biicode?
 |
 * **Highly automated**. We can create projects and build scripts. But you'll never loose your building control.
 
-.. container:: infonote
-
-	Biicode is still a beta but we are already open. We have many core innovations and we are following the lean startup and MVP paradigms, i.e. we try to release very often and perform fast iterations on user feedback.
-
-
 .. _basic_concepts:
 
 Basic concepts
@@ -70,7 +65,7 @@ A block is a folder that contains a **group of files, that are logically related
 
 Your code is inside ``user_name/block_name``. A **block** name, has two parts, the **user name**, and the **name of the block**. You can see this structure under the ``blocks`` and ``deps`` folders, both for your own blocks and for the dependencies.
 
-Usually,``username`` is your biicode user name. But when you are editing code that was originally created by other_user (see :ref:`how you can edit other users' blocks <bii_open_command>` with the ``bii open`` command).
+Usually, ``username`` is your biicode user name. But when you are editing code that was originally created by other_user (see :ref:`how you can edit other users' blocks <bii_open_command>` with the ``bii open`` command).
 
 You can **publish and share blocks to reuse later**. It’s similar to C libraries, java jars, or python packages and modules, but not exactly the same, as they **always contain source code**, and without any real packaging or grouping other than the block name.  
 
@@ -79,7 +74,7 @@ There's always a ``bii`` folder in a block, and it has at least two files:
 		* ``requirements.bii``: A list of the blocks you depend on. You can change it to push the system into using a specific version.
 		* ``parents.bii``: lets us identify what version you are working on and which version is the last one published.
 
-	But to get even more control over a block configuration, create and edit these:
+	You can create and edit these:
 
 		* ``dependencies.bii``: This optional file allows you to set extra dependencies for your project such as license files. You can read about :ref:`dependencies configuration here <dependencies_bii>`.
 		* ``mains.bii``: Is another optional configuration file for defining entry points to your code. You can :ref:`read more about this file following this link <mains_bii>`.
@@ -152,19 +147,21 @@ This is a typical project layout: ::
 
 As you can see, the **project** contains a collection of folders. Take a look at them:
 
-*``bii`` folder contains these files:
+``bii`` folder contains these files.
 
-	* ``.hive.db``: contains all your project meta information. This file must not be manually modified or removed.
-	* ``policies.bii``: contains custom policies of the current project.
-	* ``settings.bii``: stores information about the project programming language, operating system, and other tools required for a particular project.
+		* ``.hive.db``: contains all your project meta information. This file must not be manually modified or removed.
+		* ``policies.bii``: contains custom policies of the current project.
+		* ``settings.bii``: stores information about the project programming language, operating system, and other tools required for a particular project.
 
-*``deps`` folder is filled with your project **dependencies source code** whenever you use the ´´bii find´´ command. These files, just the ones you need, are automatically retrieved, downloaded from our servers and stored locally on your computer.
+``deps`` folder is filled with your project **dependencies source code** whenever you use the ``bii find`` command. These files, just the ones you need, are automatically retrieved, downloaded from our servers and stored locally on your computer.
 
-*``blocks`` folder contains the **code of the blocks you are working on**, your source code. :ref:`blocks explanation <block_definition>`.
+``blocks`` folder contains the **code of the blocks you are working on**, your source code. :ref:`blocks explanation <block_definition>`.
 
-* ``build``: Contains build files such as make scripts and compiled objects. You can safely delete its content.
-* ``cmake``: Contains auto-generated ``CMakeLists.txt`` and other files that let you define your own cmake.
-* ``bin`` folder contains the executables generated from projects containing programs in languages that must be compiled. You can safely delete its contents, as they will be generated with every new compilation.
+``build``: Contains build files such as make scripts and compiled objects. You can safely delete its content.
+
+``cmake``: Contains auto-generated ``CMakeLists.txt`` and other files that let you define your own cmake.
+
+``bin`` folder contains the executables generated from projects containing programs in languages that must be compiled. You can safely delete its contents, as they will be generated with every new compilation.
 
 You can read in detail about the special :ref:`configuration files section <config_files>`.
 

@@ -1,7 +1,7 @@
 .. _requirements_bii:
 
-``requirements.bii``: configure the version of your blocks
-=============================================================
+``requirements.bii``: configure the version of your dependencies
+================================================================
 
 You can find the ``requirements.bii`` file inside the ``bii`` block folder (see the :ref:`layouts section <project_layout>`) and **shows your block dependencies**.
 
