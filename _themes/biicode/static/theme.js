@@ -43,9 +43,6 @@ $( document ).ready(function() {
     else if (is_section("python", pathname)) {
       $("body").addClass("python");
     } 
-    else if (is_section("gettingstarted", pathname)) {
-      $("body").addClass("gettingstarted");
-    } 
     else {
       $("body").addClass("biicode");
     };
