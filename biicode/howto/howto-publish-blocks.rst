@@ -86,7 +86,7 @@ For example:
 
 .. container:: infonote
 
-	*	**You can only publish a branch if you've made a previous publication with different tag to DEV**
+	*	**You can only publish a branch if you've made a previous publication with a tag different from DEV**
 	*	Visit the section: :ref:`how to merge branches <merge_branches>`
 
 
