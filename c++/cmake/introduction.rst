@@ -3,51 +3,89 @@
 Generated CMake files
 ======================
 
-
-:ref:`Project Layout <project_layout>`
-
-You can build your projects with the parameters, depending on your OS, that CMake offers us.
+To understand this section, then execute this commands in your console:
 
 .. code-block:: bash
 
-	$ cmake --build
-	Usage: cmake --build <dir> [options] [-- [native-options]]
-	Options:
-	  <dir>          = Project binary directory to be built.
-	  --target <tgt> = Build <tgt> instead of default targets.
-	  --config <cfg> = For multi-configuration tools, choose <cfg>.
-	  --clean-first  = Build target 'clean' first, then build.
-	                   (To clean only, use --target 'clean'.)
-	  --use-stderr   = Don't merge stdout/stderr output and pass the
-	                   original stdout/stderr handles to the native
-	                   tool so it can use the capabilities of the
-	                   calling terminal (e.g. colored output).
-	  --             = Pass remaining options to the native tool.
-
-Now, using biicode, you could execute, for example:
-
-.. code-block:: bash
-
-	$ bii cpp:build --use-stderr
+	$ bii init myproject
+	$ cd myproject
+	myproject$ bii new maya/hello --hello cpp
+	myproject$ bii cpp:build
 
 
+So let's assume for these example that your user name is **maya**, the project is called **myproject**, and the block name in this case is **hello**. Then your layout will be ::
 
-CMakeLists.txt 
----------------
+	|-- myproject
+	|    +-- bin
+	|    +-- blocks
+	|    |	  +-- maya
+	|    |         +-- hello (block maya/hello)
+	|    |       	    |-- CMakeLists.txt
+	|    |              +-- main.cpp
+	|    +-- build
+	|    +-- cmake
+	|    |    |-- CMakeLists.txt
+	|    |    |-- biicode.cmake
+	|    |    +-- bii_maya_hello_vars.cmake
 
+
+If you have any doubt about this, take a look to :ref:`biicode project layout <project_layout>`
+
+
+General CMakeLists.txt 
+-----------------------
+
+This CMakeLists.txt is that you can find in your ``cmake folder``. It has all the necessary to create your project (depending on the selected configuration). With above layout, the generated CMakeLists.txt would be so:
+
+.. code-block:: cmake
+
+	PROJECT( maya )
+	cmake_minimum_required(VERSION 2.8)
+
+	# inclusion of general biicode macros, biicode.cmake 
+	set(CMAKE_MODULE_PATH "${CMAKE_HOME_DIRECTORY}/cmake")
+	INCLUDE(biicode.cmake) 
+
+	#artifact to allow upstream configurations
+	BII_PREBUILD_STEP(blocks/maya/hello)
+
+	# Inclusion of the blocks affected by the build
+	BII_INCLUDE_BLOCK(blocks/maya/hello)
 
 biicode.cmake
 --------------
 
+This file has CMake macros and functions to make possible the use of your own CMakelists created in your blocks. 
 
-
-bii_blockname_vars.cmake
+bii_block_name_vars.cmake
 -------------------------
 
+This CMake file has the information (target name, source, header, resource and data files, block dependencies, etc.)
+
+In this case, the ``bii_maya_hello_vars.cmake`` could be like this:
+
+.. code-block:: cmake
+
+	#target enumeration
+	#create this var to create the lib target with BII_jpeg_jpeg_SRC and BII_jpeg_jpeg_DEPS
+	SET(BII_maya_hello_LIB False )
+	#target list without the block lib
+	SET(BII_maya_hello_TARGETS main)
+	#FILES RETRIEVED FROM BIICODE #####################################
+	#BLOCK maya_hello_main ##################################################
+
+	SET(BII_maya_hello_main_SRC main.cpp)
+	SET(BII_maya_hello_main_DATA_FILES  )
+	SET(BII_maya_hello_main_RESOURCES )
+	SET(BII_maya_hello_main_BLOCK_DEPS )
+	SET(BII_maya_hello_main_SYSTEM_DEPS )
+	SET(BII_maya_hello_main_INTERFACE_LIB False)
 
 
-Generated CMakeLists.txt
---------------------------
+Block CMakeLists.txt 
+----------------------
+
+When you execute the ``bii cpp:build`` command in your project, if you haven't any CMakeLists.txt created inside your existing blocks, biicode creates automatically one. Here an example:
 
 .. code-block:: cmake
 
@@ -68,3 +106,5 @@ Generated CMakeLists.txt
 	#set(CMAKE_CXX_FLAGS -std=c++11) # Win, or linux if not gcc problems
 	#set(CMAKE_CXX_FLAGS -std=c++11-stdlib=libc++) # MacOS
 	#set(CMAKE_CXX_FLAGS -std=c++11-Wl,--no-as-needed) # Ubuntu if gcc problems
+
+This CMakeLists.txt can be edited and replaced with the code you want. Into the following sections, we explain you some examples about how to edit this file and an advanced use of this.

@@ -6,7 +6,7 @@ How to
 .. toctree::
    :maxdepth: 2
 
-   howto/howto-c++-adapt-code
-   howto/howto-c++-cmake
-   howto/howto-c++-configure-cmake-generators
-   howto/howto-c++-build-cmake-options
+   howto/adapt-code
+   howto/cmake
+   howto/configure-cmake-generators
+   howto/build-cmake-options
