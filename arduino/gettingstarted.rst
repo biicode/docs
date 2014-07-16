@@ -3,7 +3,7 @@
 Getting started
 ===============
 
-This example shows how to install biicode, code an Arduino non blocking blink ith the blick library and upload it yo your Arduino. You don't need to install any blinck library, biicode will download and configure it automatically for you, , |fenix_blink_biicode_link|
+This example shows how to install biicode, code an Arduino non blocking blink ith the blick library and upload it to your Arduino. You don't need to install any blinck library, biicode will download and configure it automatically for you, |fenix_blink_biicode_link|
 
 
 .. |fenix_blink_biicode_link| raw:: html
@@ -59,7 +59,18 @@ This should be the resulting layout:
   |    |    |    |    +-- main.cpp
   |    +-- deps
 
-3. Build and upload your program
+3. Define your board
+--------------------
+
+Just, define your Arduino board using the arduino:settings command. In this example we use an Arduino Uno, but you can use another like Mega2560.
+
+.. code-block:: bash
+
+  ~/myproject$ bii arduino:settings
+  Introduce board (/o list options): uno
+  Using arduino port: COM4
+
+4. Build and upload your program
 --------------------------------
 Lets check that everything is fine by building and uploading the blink aplication to your Arduino.
 
@@ -69,7 +80,16 @@ Lets check that everything is fine by building and uploading the blink aplicatio
   ...
   Writing | ################################################## | 100% 0.00s
 
-4. Depending on Fenix Blink
+  avrdude.exe: 0 bytes of eeprom written
+
+  avrdude.exe: safemode: Fuses OK
+
+  avrdude.exe done.  Thank you.
+
+  [100%] Built target myuser_myblock_main-upload
+  Upload finished
+
+5. Depending on Fenix Blink
 ---------------------------
 
 Copy the following code containing the new blink into the main.cpp file
@@ -97,16 +117,25 @@ Execute the following command to find unresolved dependencies and retrieve neces
 
    ~/myproject$ bii find
 
-4. Build and upload
+6. Build and upload
 -------------------
 
 Now can now build your firmware and upload it to your Arduino
 
 .. code-block:: bash
 
-	~/arduino_hello_project$ bii arduino:upload
+  ~/arduino_hello_project$ bii arduino:upload
 	...
-	Writing | ################################################## | 100% 0.00s
+  Writing | ################################################## | 100% 0.00s
+
+  avrdude.exe: 0 bytes of eeprom written
+
+  avrdude.exe: safemode: Fuses OK
+
+  avrdude.exe done.  Thank you.
+
+  [100%] Built target myuser_myblock_main-upload
+  Upload finished
 
 That’s it, if you see that output fenix's blink.h was downloaded and uploaded in your project! You can check the deps folder, the blink.h code is there.
 
