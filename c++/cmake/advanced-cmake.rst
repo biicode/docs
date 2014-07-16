@@ -1,7 +1,12 @@
+.. _cmake_advance:
+
+Advanced use of CMake
+=========================
+
 .. _cpp_cmake_tutorials:
 
 ``cmake`` operating mode
-=========================
+-------------------------
 
 This is a conceptual example to learn how to use the CMake variables available in your computer. 
 
@@ -34,8 +39,8 @@ The basic structure will be like this:
 
 	#ADDITIONAL LINKER FLAGS, LIBS, ETC
 
-Steps:
-------
+Steps
+^^^^^^^^
 
 At first, you need to load a variety of macros automatically included in the CMake project folder. Once loaded, you can run ``INIT_BIICODE_BLOCK``, which fills a number of variables used to communicate CMake and biicode:
 
@@ -56,12 +61,12 @@ After **ZONE 2**, or below ``ADD_BIICODE_TARGETS`` the following block variables
 Indeed, a few more variables are defined for certain operations, but they are not included here because they are out of the scope of this introductory manual, but if you got any further questions don't hesitate on asking at our `forum <http://forum.biicode.com/>`_.
 
 Useful operations
-==================
+---------------------
 
 These are some basic operations that can help you write a ``CMakeLists.txt`` for a block:
 
 Remove one or more source code files used in the generation of a target:
-------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. image:: ../../_static/img/c++/cmake/blocks3.png 
 
 For example, if **user2/block** is configured for Linux or Windows, a different file is added.  Initially Biicode includes both files into the target, so it is necessary to remove the implementation files that should not to be compiled. To do this, before generating the targets **ZONE 1** we add a code like this:
@@ -75,7 +80,7 @@ For example, if **user2/block** is configured for Linux or Windows, a different 
 	ENDIF (WIN32)
 
 Add a build definition to the entire block:
--------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: cmake
 
@@ -85,7 +90,7 @@ Add a build definition to the entire block:
 	endif(MSVC)
 
 Add linker-flags to a target (in ZONE 2): 
------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 It is very common to accumulate these flags along **ZONE 1** in a temporary variable (in MYLIBS for example), and finally add them to a target or multiple targets in **ZONE 2**. As it is an interesting structure, we are doing so in this example although it can be done directly on the targets:
 
@@ -98,7 +103,7 @@ It is very common to accumulate these flags along **ZONE 1** in a temporary vari
 	target_link_libraries(${BII_LIB_TARGET} ${ MY_LIBS })
 
 Add libraries and packages that are detectable by CMake: 
---------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The only thing to keep in mind when performing this operation is to use the generic target defined by Biicode. Otherwise it is exactly the same. In this case we will add OpenGL associating the target variables instead of the block. Thus in Zone 2 we write:
 
@@ -111,13 +116,13 @@ The only thing to keep in mind when performing this operation is to use the gene
 	endif()
 
 What can you do with biicode and CMake?
-----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Given that the set of files that are to be used to generate the different targets are into ``BII_TARGET_SRC`` and  ``BII_LIB_SRC variables``, and the targets are identified  by ``BII_LIB_TARGET`` and ``<Target> BII_ _target``,  almost any operation acceptable by CMake  could be done. This gives the system all the versatility of CMake, combined with the powerful and stable dependencies management of Biicode. 
 
 
 How will user2 write CMakeLists.txt of block2
----------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Let's see how would the CMakeLists.txt of Block 2 be, even considering the possibility of using it without Biicode:
 
 .. code-block:: cmake
