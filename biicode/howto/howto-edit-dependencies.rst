@@ -4,7 +4,7 @@
 Edit something you depend on
 =============================
 
-To edit a block you depend on, use ``bii open``command and move it to your project:
+To edit a block you depend on, use ``bii open`` command and move it to your project:
 
 .. code-block:: bash
 
