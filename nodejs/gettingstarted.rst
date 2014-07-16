@@ -78,12 +78,25 @@ Copy the following code containing a simple redis client into the **main.js** fi
 
    ~/myproject$ bii find
 
+Run a redis server. If you need to install redis, |redis_link|
+
+.. |redis_link| raw:: html
+
+   <a href="http://redis.io/download" target="_blank">you can download it from redis.io.</a>
+
+.. code-block:: bash
+
+   ~/myproject$ redis server
+
 Now, execute your script main.js.
 
 .. code-block:: bash
 
   ~/myproject/$ cd blocks
   ~/myproject/blocks$ noderunner myuser/myblock/main.js
+
+  Reply: OK
+  Exiting from quit command.
 
 That's it, if you see that output redis was downloaded and configured in your project!
 You can check the ``deps`` folder, the redis code is there.
