@@ -8,9 +8,15 @@ The only requisite for this it that you have to |biicode_signup|. It is complete
 
 
 .. |biicode_signup| raw:: html
-
+   
+   <span id="biicode_signup">
    <a href="https://www.biicode.com/accounts/signup" target="_blank">register an account</a>
-
+   </span>
+   <script type="text/javascript">
+    mixpanel.track_links("#nav a", "ClickRegisterLink", {
+        "referrer": document.referrer
+    });
+   </script>
 
 1. Write reuseable code
 -------------------------------------
