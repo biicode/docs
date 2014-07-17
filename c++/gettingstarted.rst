@@ -1,5 +1,14 @@
 .. _cpp_getting_started:
 
+.. raw:: html
+
+    <script>
+     $(window).bind("load", function() {
+         mixpanel.track("DocGettingStarted", { "Language": "C++" });
+      });
+    </script>
+
+
 Getting started
 =========================
 
@@ -22,7 +31,13 @@ First |downloads_link| and install biicode
 
 .. |downloads_link| raw:: html
 
+   <span id="biicode_download_link">
    <a href="https://www.biicode.com/downloads" target="_blank">download</a>
+   </span>
+   <script type="text/javascript">
+    mixpanel.track_links("#biicode_download_link a", "ClickDownloadsLink");
+   </script>
+   
 
 Then, open the console and type
 

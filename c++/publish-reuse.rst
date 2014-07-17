@@ -1,5 +1,13 @@
 .. _cpp_publish_reuse:
 
+.. raw:: html
+
+    <script>
+     $(window).bind("load", function() {
+         mixpanel.track("DocPublishReuse", { "Language": "C++" });
+      });
+    </script>
+
 Upload and reuse code
 =========================
 
@@ -9,14 +17,13 @@ The only requisite for this it that you have to |biicode_signup|. It is complete
 
 .. |biicode_signup| raw:: html
    
-   <span id="biicode_signup">
+   <span id="biicode_signup_link">
    <a href="https://www.biicode.com/accounts/signup" target="_blank">register an account</a>
    </span>
    <script type="text/javascript">
-    mixpanel.track_links("#nav a", "ClickRegisterLink", {
-        "referrer": document.referrer
-    });
+    mixpanel.track_links("#biicode_signup_link a", "ClickRegisterLink");
    </script>
+
 
 1. Write reuseable code
 -------------------------------------
