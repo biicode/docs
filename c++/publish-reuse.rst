@@ -4,7 +4,7 @@
 
     <script>
      $(window).bind("load", function() {
-         mixpanel.track("DocPublishReuse", { "Language": "C++" });
+         mixpanel.track("PagePublishReuse", { "Language": "C++" });
       });
     </script>
 
@@ -12,16 +12,16 @@ Upload and reuse code
 =========================
 
 So we have integrated in the previous step Google Test in our project, testing a simple **sum** function. Can I do the same with my source code? Of course, that is exactly what biicode does! 
-The only requisite for this it that you have to |biicode_signup|. It is completely free, and it will just take two minutes.
+The only requisite for this it that you have to |biicode_signup|. It is completely **free**, and it will just take two minutes.
 
 
 .. |biicode_signup| raw:: html
    
    <span id="biicode_signup_link">
-   <a href="https://www.biicode.com/accounts/signup" target="_blank">register an account</a>
+   <b><a href="https://www.biicode.com/accounts/signup" target="_blank">register an account</a></b>
    </span>
    <script type="text/javascript">
-    mixpanel.track_links("#biicode_signup_link a", "ClickRegisterLink");
+    mixpanel.track_links("#biicode_signup_link a", "GoRegister");
    </script>
 
 
@@ -49,7 +49,7 @@ Software good practices tell us that a good design for reusing our code later, w
   }
 
 
-**adition.h**
+**addition.h**
 
 .. code-block:: cpp
 
@@ -57,7 +57,7 @@ Software good practices tell us that a good design for reusing our code later, w
   int sum(int a, int b);
 
 
-**adition.cpp**
+**addition.cpp**
 
 .. code-block:: cpp
 
@@ -89,9 +89,9 @@ Publishing your source code to biicode is simple:
 
    ~$ bii publish
 
-This should upload your code to the servers, you can see it in your profile: **https://www.biicode.com/maya** (block math, version number 0)
+This should upload your code to the servers, you can see it in your profile: **https://www.biicode.com/maya** (block math, version number 0). Remember to replace **maya** with your actual user.
 
-You have published your code as DEV (one of the possible tags: DEV, ALPHA, BETA, STABLE) which means that such code is for your own development and testing. DEV publications are not freezed, they overwrite the last one, so you can delete, add, modify anything you want.
+You have published your code as DEV (one of the possible tags of DEV, ALPHA, BETA, STABLE) which means that such code is for your own development and testing. DEV publications are not freezed, they overwrite the last one, so you can delete, add, modify anything you want.
 
 
 3. Reuse your code
@@ -136,9 +136,16 @@ After that, all you have to do is to build and your project:
   Take one minute to look to your **deps** folder. You can see there your source code. And what about Google Test? Shouldn't be there? Not really. The **sum** function does not require Google Test at all, so Google Test is not required as dependency in your new calculator project (unless you also add it to define your own unit tests of this calculator, of course)
 
 
-Congrats! You have just reused your **sum** function in a new project. You know that we are available at |biicode_forum_link| for any problems or feedback.
+Congrats! You have just reused your **sum** function in a new project. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feeback, they are always welcomed.
 
-.. |biicode_forum_link| raw:: html
+Any suggestion or feedback? |biicode_write_us|
 
-   <a href="http://forum.biicode.com" target="_blank">the biicode forum</a>
+.. |biicode_write_us| raw:: html
+
+   <span id="biicode_write_us">
+   <a href="mailto:info@biicode.com" target="_blank">write us</a>
+   </span>
+   <script type="text/javascript">
+    mixpanel.track_links("#biicode_write_us a", "GoWriteUs");
+   </script>
 

@@ -4,7 +4,7 @@
 
     <script>
      $(window).bind("load", function() {
-         mixpanel.track("DocGettingStarted", { "Language": "C++" });
+         mixpanel.track("PageGettingStarted", { "Language": "C++" });
       });
     </script>
 
@@ -31,11 +31,11 @@ First |downloads_link| and install biicode
 
 .. |downloads_link| raw:: html
 
-   <span id="biicode_download_link">
+   <span id="biicode_download_link"><b>
    <a href="https://www.biicode.com/downloads" target="_blank">download</a>
-   </span>
+   </b></span>
    <script type="text/javascript">
-    mixpanel.track_links("#biicode_download_link a", "ClickDownloadsLink");
+    mixpanel.track_links("#biicode_download_link a", "GoDownloads");
    </script>
    
 
@@ -145,8 +145,25 @@ Now you can build and run it:
 That's it, if you see that output Google Test was downloaded, configured and built in your project!
 You can check the ``deps`` folder, the googletest code is there.
 
-Didn't work? Any suggestion or feedback? No problem, read or contact us in |biicode_forum_link|
+Didn't work? No problem, read or contact us in |biicode_forum_link|
 
 .. |biicode_forum_link| raw:: html
 
+   <span id="biicode_forum_link">
    <a href="http://forum.biicode.com" target="_blank">the biicode forum</a>
+   </span>
+   <script type="text/javascript">
+    mixpanel.track_links("#biicode_forum_link a", "GoForum");
+   </script>
+
+
+Any suggestion or feedback? |biicode_write_us|
+
+.. |biicode_write_us| raw:: html
+
+   <span id="biicode_write_us">
+   <a href="mailto:info@biicode.com" target="_blank">Write us!</a>
+   </span>
+   <script type="text/javascript">
+    mixpanel.track_links("#biicode_write_us a", "GoWriteUs");
+   </script>
