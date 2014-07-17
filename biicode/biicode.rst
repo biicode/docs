@@ -128,7 +128,7 @@ This is a complete example project layout: ::
 |    |          +-- suma (block name diego/suma)
 |    |                +-- bii
 |    |		     	  |    |-- requirements.bii
-|    |                |    |-- parents.bii
+|    |		     	  |    |-- parents.bii
 |    |        	      |-- test.cpp
 |    |        	      |-- suma.h
 |    |                |-- suma.cpp.h

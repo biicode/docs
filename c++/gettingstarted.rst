@@ -88,8 +88,16 @@ Lets check that everything is fine by building and running the hello world aplic
 
   ~/myproject$ bii cpp:build
   ...
-  ~/myproject$ bin/myuser_myblock_main
+  ~/myproject$ ./bin/myuser_myblock_main
   Hello World!
+
+.. container:: infonote
+
+    If you're a Windows user, execute it with backslashes:
+
+    .. code-block:: bash
+
+      ~/myproject$ .\bin\myuser_myblock_main
 
 
 4. Depending on Google Test
