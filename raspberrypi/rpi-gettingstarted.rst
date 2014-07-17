@@ -4,7 +4,7 @@
 
     <script>
      $(window).bind("load", function() {
-         mixpanel.track("DocGettingStarted", { "Language": "RPi" });
+         mixpanel.track("PageGettingStarted", { "Language": "RPi" });
       });
     </script>
 
@@ -41,7 +41,7 @@ First |downloads_link| and install biicode
    <a href="https://www.biicode.com/downloads" target="_blank">download</a>
    </span>
    <script type="text/javascript">
-    mixpanel.track_links("#biicode_download_link a", "ClickDownloadsLink");
+    mixpanel.track_links("#biicode_download_link a", "GoDownloads");
    </script>
    
 

@@ -4,7 +4,7 @@
 
     <script>
      $(window).bind("load", function() {
-         mixpanel.track("DocGettingStarted", { "Language": "Arduino" });
+         mixpanel.track("PageGettingStarted", { "Language": "Arduino" });
       });
     </script>
 
