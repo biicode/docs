@@ -17,7 +17,7 @@ This example shows how to install biicode, build your first C/C++ program, and a
 
 .. |google_test_link| raw:: html
 
-   <a href="https://www.biicode.com/downloads" target="_blank">Google Test Framework</a>
+   <a href="https://code.google.com/p/googletest" target="_blank">Google Test Framework</a>
 
 .. |google_test_biicode_link| raw:: html
 
