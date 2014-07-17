@@ -4293,7 +4293,7 @@ div[class^=highlight] pre
 {
   display:block;
   font-family:'Droid Sans Mono', monospace;
-  font-size:12px;
+  font-size:14px;
   line-height:1.5;
   margin:0;
   overflow:auto;
@@ -5439,8 +5439,8 @@ footer
 }
 .highlight-bash,.highlight-bat
 {
-  background-color:#000!important;
-  border-radius:5px;
+  background-color:#444!important;
+  border-radius:2px;
   color:#fff;
   line-height:1.4em!important;
 }
