@@ -31,12 +31,7 @@ First |downloads_link| and install biicode
 
 .. |downloads_link| raw:: html
 
-   <span id="biicode_download_link"><b>
-   <a href="https://www.biicode.com/downloads" target="_blank">download</a>
-   </b></span>
-   <script type="text/javascript">
-    mixpanel.track_links("#biicode_download_link a", "GoDownloads");
-   </script>
+   <b><a href="https://www.biicode.com/downloads" target="_blank">download</a></b>
    
 
 Then, open the console and type
@@ -149,21 +144,13 @@ Didn't work? No problem, read or contact us in |biicode_forum_link|
 
 .. |biicode_forum_link| raw:: html
 
-   <span id="biicode_forum_link">
    <a href="http://forum.biicode.com" target="_blank">the biicode forum</a>
-   </span>
-   <script type="text/javascript">
-    mixpanel.track_links("#biicode_forum_link a", "GoForum");
-   </script>
 
 
-Any suggestion or feedback? |biicode_write_us|
+
+Any suggestion or feedback? |biicode_write_us| It is very welcomed :)
 
 .. |biicode_write_us| raw:: html
 
-   <span id="biicode_write_us">
    <a href="mailto:info@biicode.com" target="_blank">Write us!</a>
-   </span>
-   <script type="text/javascript">
-    mixpanel.track_links("#biicode_write_us a", "GoWriteUs");
-   </script>
+

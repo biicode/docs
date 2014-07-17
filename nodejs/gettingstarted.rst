@@ -101,8 +101,16 @@ Now, execute your script main.js.
 That's it, if you see that output redis was downloaded and configured in your project!
 You can check the ``deps`` folder, the redis code is there.
 
-Didn't work? Any suggestion or feedback? No problem, read or contact us in |biicode_forum_link|
+Didn't work? No problem, read or contact us in |biicode_forum_link|
 
 .. |biicode_forum_link| raw:: html
 
    <a href="http://forum.biicode.com" target="_blank">the biicode forum</a>
+
+
+
+Any suggestion or feedback? |biicode_write_us| It is very welcomed :)
+
+.. |biicode_write_us| raw:: html
+
+   <a href="mailto:info@biicode.com" target="_blank">Write us!</a>

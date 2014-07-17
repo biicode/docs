@@ -17,12 +17,7 @@ The only requisite for this it that you have to |biicode_signup|. It is complete
 
 .. |biicode_signup| raw:: html
    
-   <span id="biicode_signup_link">
    <b><a href="https://www.biicode.com/accounts/signup" target="_blank">register an account</a></b>
-   </span>
-   <script type="text/javascript">
-    mixpanel.track_links("#biicode_signup_link a", "GoRegister");
-   </script>
 
 
 1. Write reuseable code
@@ -138,14 +133,13 @@ After that, all you have to do is to build and your project:
 
 Congrats! You have just reused your **sum** function in a new project. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feeback, they are always welcomed.
 
-Any suggestion or feedback? |biicode_write_us|
+.. |biicode_forum_link| raw:: html
+
+   <a href="http://forum.biicode.com" target="_blank">the biicode forum</a>
+ 
 
 .. |biicode_write_us| raw:: html
 
-   <span id="biicode_write_us">
    <a href="mailto:info@biicode.com" target="_blank">write us</a>
-   </span>
-   <script type="text/javascript">
-    mixpanel.track_links("#biicode_write_us a", "GoWriteUs");
-   </script>
+
 

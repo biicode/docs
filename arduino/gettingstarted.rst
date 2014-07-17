@@ -18,6 +18,7 @@ This example shows how to install biicode, code an Arduino non blocking blink it
 
    <a href="https://www.biicode.com/fenix/fenix/blink/master" target="_blank">it is already in biicode!.</a>
 
+
 1. Installing biicode and Arduino tools
 ---------------------------------------
 
@@ -147,8 +148,16 @@ Now can now build your firmware and upload it to your Arduino
 
 That’s it, if you see that output fenix's blink.h was downloaded and uploaded in your project! You can check the deps folder, the blink.h code is there.
 
-Didn't work? Any suggestion or feedback? No problem, read or contact us in |biicode_forum_link|
+Didn't work? No problem, read or contact us in |biicode_forum_link|
 
 .. |biicode_forum_link| raw:: html
 
    <a href="http://forum.biicode.com" target="_blank">the biicode forum</a>
+
+
+
+Any suggestion or feedback? |biicode_write_us| It is very welcomed :)
+
+.. |biicode_write_us| raw:: html
+
+   <a href="mailto:info@biicode.com" target="_blank">Write us!</a>
