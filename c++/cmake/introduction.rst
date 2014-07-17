@@ -9,8 +9,8 @@ To understand this section, then execute this commands in your console:
 
 	$ bii init myproject
 	$ cd myproject
-	myproject$ bii new maya/hello --hello cpp
-	myproject$ bii cpp:build
+	~/myproject$ bii new maya/hello --hello cpp
+	~/myproject$ bii cpp:build
 
 
 So let's assume for these example that your user name is **maya**, the project is called **myproject**, and the block name in this case is **hello**. Then your layout will be ::
