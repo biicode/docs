@@ -13,11 +13,15 @@ function is_section(section, pathname){
 function get_route_with_params(pathname){
   //Giving a path with http:// or local path, returns the rest
   var tmp;
+  console.log(pathname);
   if(pathname.indexOf("_build/") != -1){
     tmp = pathname.split("_build/")[1];
   }
-  else{
+  else if(pathname.indexOf("://") != -1){
     tmp = pathname.split("://")[1];
+  }
+  else{
+    tmp = pathname;
   }
   
   var index = tmp.indexOf("/");
