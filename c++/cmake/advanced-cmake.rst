@@ -112,7 +112,7 @@ The only thing to keep in mind when performing this operation is to use the gene
 	find_package(OpenGL QUIET)
 	if(OPENGL_FOUND)
 	  target_link_libraries(${BII_LIB_TARGET}${OPENGL_LIBRARIES})
-	  target_include_directories(${BII_LIB_TARGET} ${OPENGL_INCLUDE_DIRS})
+	  include_directories(${BII_LIB_TARGET} ${OPENGL_INCLUDE_DIRS})
 	endif()
 
 What can you do with biicode and CMake?
