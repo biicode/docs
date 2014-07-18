@@ -111,7 +111,7 @@ The only thing to keep in mind when performing this operation is to use the gene
 
 	find_package(OpenGL QUIET)
 	if(OPENGL_FOUND)
-		include_directories(${OPENGL_INCLUDE_DIRS})
+	  include_directories(${OPENGL_INCLUDE_DIRS})
 	  target_link_libraries(${BII_LIB_TARGET}${OPENGL_LIBRARIES})
 	endif()
 
