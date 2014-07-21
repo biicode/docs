@@ -1,4 +1,5 @@
 .. _about_biicode:
+.. aliases: 301:/intro/
 
 What is biicode?
 ================

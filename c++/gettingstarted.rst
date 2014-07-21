@@ -77,7 +77,7 @@ This should be the resulting layout:
 
 3. Build and run your program
 ---------------------------------
-Lets check that everything is fine by building and running the hello world aplication.
+Lets check that everything is fine by building and running the hello world application.
 
 .. code-block:: bash
 
