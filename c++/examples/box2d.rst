@@ -30,27 +30,10 @@ by executing these:
 .. code-block:: bash
 
    ~$ cd box2d
-   ~/box2d$ bii new myuser/box2d_example
+   ~/box2d$ bii new myuser/box2d_example --hello cpp
 
-Now **create a main.cpp** file in this location:
-``box2d/blocks/myuser/box2d_example/main.cpp`` and 
-copy the :ref:`example Box2D code into it.<cpp_box2d_code>`
-
-You should have a folder tree like this one:
-
-.. code-block:: text
-
-  +-- box2d
-  |    +-- bii
-  |    +-- blocks
-  |    |    +-- myuser
-  |    |    |    +-- box2d_example
-  |    |    |    |    +-- main.cpp
-  |    +-- deps
-
-.. _cpp_box2d_code:
-
-This is the code you should copy into your ``main.cpp`` file:
+Now **replace the main.cpp** file in ``blocks/myuser/box2d_example`` with 
+the following code:
 
 .. code-block:: cpp
 
