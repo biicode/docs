@@ -11,6 +11,7 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
 
    examples/lib_httpserver
    examples/google-test-tutorial
+   examples/box2d
    examples/eigen
    examples/lib_gmock
    examples/lib_crypto++
