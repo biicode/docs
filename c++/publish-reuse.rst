@@ -4,7 +4,7 @@
 
     <script>
      $(window).bind("load", function() {
-         mixpanel.track("PagePublishReuse", { "Language": "C++" });
+         mixpanel.track("PageDoc", { "Language": "C++", "Section": "PublishReuse" });
       });
     </script>
 

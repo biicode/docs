@@ -4,7 +4,7 @@
 
     <script>
      $(window).bind("load", function() {
-         mixpanel.track("PageGettingStarted", { "Language": "C++" });
+         mixpanel.track("PageDoc", { "Language": "C++", "Section": "GettingStarted" });
       });
     </script>
 

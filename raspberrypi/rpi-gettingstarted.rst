@@ -4,7 +4,7 @@
 
     <script>
      $(window).bind("load", function() {
-         mixpanel.track("PageGettingStarted", { "Language": "RPi" });
+         mixpanel.track("PageDoc", { "Language": "RPi", "Section": "GettingStarted" });
       });
     </script>
 

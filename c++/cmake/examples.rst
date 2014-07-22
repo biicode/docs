@@ -4,7 +4,7 @@
 
     <script>
      $(window).bind("load", function() {
-         mixpanel.track("PageCMakeExamples", { "Language": "C++" });
+         mixpanel.track("PageDoc", { "Language": "C++", "Section": "CMakeExamples" });
       });
     </script>
 
