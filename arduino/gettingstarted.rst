@@ -1,12 +1,5 @@
 .. _arduino_getting_started:
 
-.. raw:: html
-
-    <script>
-     $(window).bind("load", function() {
-         mixpanel.track("PageDoc", { "Language": "Arduino", "Section": "GettingStarted" });
-      });
-    </script>
 
 Getting started
 ===============

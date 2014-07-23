@@ -1,12 +1,5 @@
 .. _rpi_getting_started:
 
-.. raw:: html
-
-    <script>
-     $(window).bind("load", function() {
-         mixpanel.track("PageDoc", { "Language": "RPi", "Section": "GettingStarted" });
-      });
-    </script>
 
 
 Getting started

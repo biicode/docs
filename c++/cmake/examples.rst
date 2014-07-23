@@ -1,12 +1,5 @@
 .. _cmake_examples:
 
-.. raw:: html
-
-    <script>
-     $(window).bind("load", function() {
-         mixpanel.track("PageDoc", { "Language": "C++", "Section": "CMakeExamples" });
-      });
-    </script>
 
 Examples
 ===============
