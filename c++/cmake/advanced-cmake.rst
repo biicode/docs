@@ -8,9 +8,9 @@ Advanced use of CMake
 ``cmake`` operating mode
 -------------------------
 
-This is a conceptual example to learn how to use the CMake variables available in your computer. 
+This is an example to learn how to use the CMake variables available in your computer. 
 
-Imagine someone **user2** , develops a project in a block that implements some functionality and you upload it to Biicode. Another user (from now on, you, or **user1**) wants to reuse from user2's software like this:
+Imagine someone **user2** , develops a project in a block that implements some functionality and you upload it to biicode. Another user (from now on, you, or **user1**) wants to reuse from user2's software like this:
 
 .. image:: ../../_static/img/c++/cmake/blocks1.png 
 
