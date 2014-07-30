@@ -112,11 +112,19 @@ Copy the following code containing a simple sum function and a test into the **m
 
 This code requires the googletest framework. If you try to ``cpp:build`` you will get a build error.
 
+.. container:: infonote
+
+    Windows users, remember to get out of the `bin` folder:
+
+    .. code-block:: bash
+
+      ~/bin$ cd ..
+
 
 Execute the following command to find unresolved dependencies and retrieve necessary files from servers:
 
 .. code-block:: bash
-
+  
   ~/myproject$ bii find
 
 
