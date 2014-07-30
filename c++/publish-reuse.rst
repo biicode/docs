@@ -1,12 +1,5 @@
 .. _cpp_publish_reuse:
 
-.. raw:: html
-
-    <script>
-     $(window).bind("load", function() {
-         mixpanel.track("PagePublishReuse", { "Language": "C++" });
-      });
-    </script>
 
 Upload and reuse code
 =========================

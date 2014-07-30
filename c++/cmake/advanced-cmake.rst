@@ -5,42 +5,101 @@ Advanced use of CMake
 
 .. _cpp_cmake_tutorials:
 
-``cmake`` operating mode
--------------------------
+Operating mode
+-----------------
 
-This is an example to learn how to use the CMake variables available in your computer. 
+This is a conceptual example to learn how to use the CMake variables available in your computer.
 
-Imagine someone **user2** , develops a project in a block that implements some functionality and you upload it to biicode. Another user (from now on, you, or **user1**) wants to reuse from user2's software like this:
+Imagine someone **user2** , develops a project in a block that implements some functionality and uploads it to biicode.
+
+**user2 layout**
+
+.. code-block:: text
+
+   |-- user2_project
+   |    +-- bii
+   |    +-- blocks
+   |    |    +-- user2
+   |    |    |    +-- block
+   |    |    |    |    +-- bii
+   |    |    |    |    |    |-- requirements.bii
+   |    |    |    |    |    |-- parents.bii
+   |    |    |    |    +-- CMakeLists.txt
+   |    |    |    |    +-- c.h
+   |    |    |    |    +-- a.c
+   |    |    |    |    +-- b.c
+   |    |    |    |    +-- e.c
+   |    |    |    |    +-- win32.c
+   |    |    |    |    +-- linux.c
+   |    |    |    |    +-- main.c
+   |    +-- deps
+
+Another user, for example **user1**, **wants to reuse from user2's software** like this:
+
+**user1 layout**
+
+.. code-block:: text
+
+   |-- user1_project
+   |    +-- bii
+   |    +-- blocks
+   |    |    +-- user1
+   |    |    |    +-- block
+   |    |    |    |    +-- main.c
+   |    |    |    |    +-- utils.c
+   |    +-- deps
+
+**Dependencies image**
 
 .. image:: ../../_static/img/c++/cmake/blocks1.png 
 
-When the dependency is solved, biicode will automatically retrieve the files your code, **user1/block/utils.c** needs from the **user2/block** and store them locally on the local disk as follows:
+
+Then, **user1** executes to retrieve the necessary files:
+
+.. code-block:: bash
+
+	~/user1_project$ bii find
+
+So, the dependencies are solved and stored them locally on the local disk as follows:
 
 .. image:: ../../_static/img/c++/cmake/blocks2.png 
 
-This implies that biicode doesn't download all the block files, just the ones needed. However, ``CMakeLists.txt`` is common to the whole block, so it will operate in a way that enables it to work with only a subset of the block files.
 
-With this on your mind, let's see the ``CMakeLists.txt`` structure that works with biicode. Although t it's possible to write a ``CMakeList`` that works both, with and without biicode, to simplify we are considering that the ``CMakeLists`` are run by biicode through ``bii cpp:configure`` and ``bii cpp:build`` commands. 
+This implies that biicode doesn't download all the block files, just the ones needed. However, **CMakeLists.txt is common to the whole block**, so it will operate in a way that enables it to work with only a subset of the block files.
 
-The basic structure will be like this:
+
+Basic block CMakeLists.txt structure
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+With the previous example on your mind, let's see the CMakeLists.txt structure that works with biicode. **Things to keep in mind**:
+
+	* It's possible to write a block CMakeList.txt that works both, with and without biicode.
+	|
+	* To simplify, biicode, through ``bii cpp:configure`` and ``bii cpp:build`` commands, runs your CMakeLists.txt. 
+
+The **basic block CMakeLists.txt structure** will be like this:
 
 .. code-block:: cmake
 
-	#HEADER THAT MUST BE INCLUDED AT THE BEGINNING
+	################### HEADER #########################
+	# IT MUST BE INCLUDED AT THE BEGINNING
 
 	INCLUDE(${CMAKE_HOME_DIRECTORY}/biicode.cmake)
 	INIT_BIICODE_BLOCK()
-	#ZONE 1: AFTER THIS POINT SOURCE VARIABLES COULD BE USED 
 
-	#FILE FILTER, CONFIGURATION, COMPILE DEFINITIONS, ETC
+	##################### ZONE 1 ########################
+	# AFTER THIS POINT SOURCE VARIABLES COULD BE USED
+	# FILE FILTER, CONFIGURATION, COMPILE DEFINITIONS, ETC
 
 	ADD_BIICODE_TARGETS()
-	#ZONE 2: AFTER THIS POINT TARGET VARIABLES COULD BE USED
 
-	#ADDITIONAL LINKER FLAGS, LIBS, ETC
+	##################### ZONE 2 ########################
+	# AFTER THIS POINT TARGET VARIABLES COULD BE USED
+	# ADDITIONAL LINKER FLAGS, LIBS, ETC
 
-Steps
-^^^^^^^^
+
+Variables
+^^^^^^^^^^
 
 At first, you need to load a variety of macros automatically included in the CMake project folder. Once loaded, you can run ``INIT_BIICODE_BLOCK``, which fills a number of variables used to communicate CMake and biicode:
 
@@ -59,6 +118,7 @@ After **ZONE 2**, or below ``ADD_BIICODE_TARGETS`` the following block variables
    * ``BII_LIB_TARGET``, Cmake targets the name of the **library target of the block**. At **user2/block** the content of ``BII_LIB_TARGET`` is ``user2_block``.
 
 Indeed, a few more variables are defined for certain operations, but they are not included here because they are out of the scope of this introductory manual, but if you got any further questions don't hesitate on asking at our `forum <http://forum.biicode.com/>`_.
+
 
 Useful operations
 ---------------------
@@ -105,7 +165,7 @@ It is very common to accumulate these flags along **ZONE 1** in a temporary vari
 Add libraries and packages that are detectable by CMake: 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The only thing to keep in mind when performing this operation is to use the generic target defined by Biicode. Otherwise it is exactly the same. In this case we will add OpenGL associating the target variables instead of the block. Thus in Zone 2 we write:
+The only thing to keep in mind when performing this operation is to use the generic target defined by biicode. Otherwise it is exactly the same. In this case we will add OpenGL associating the target variables instead of the block. Thus in **Zone 2** we write:
 
 .. code-block:: cmake
 
@@ -118,12 +178,12 @@ The only thing to keep in mind when performing this operation is to use the gene
 What can you do with biicode and CMake?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Given that the set of files that are to be used to generate the different targets are into ``BII_TARGET_SRC`` and  ``BII_LIB_SRC variables``, and the targets are identified  by ``BII_LIB_TARGET`` and ``<Target> BII_ _target``,  almost any operation acceptable by CMake  could be done. This gives the system all the versatility of CMake, combined with the powerful and stable dependencies management of Biicode. 
+Given that the set of files that are to be used to generate the different targets are into ``BII_TARGET_SRC`` and  ``BII_LIB_SRC variables``, and the targets are identified  by ``BII_LIB_TARGET`` and ``<Target> BII_ _target``,  almost any operation acceptable by CMake  could be done. This gives the system all the versatility of CMake, combined with the powerful and stable dependencies management of biicode. 
 
 
-How will user2 write CMakeLists.txt of block2
+How will user1 write the block CMakeLists.txt
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Let's see how would the CMakeLists.txt of Block 2 be, even considering the possibility of using it without Biicode:
+Let's see how the user1/block CMakeLists.txt would be, even considering the possibility of using it without biicode:
 
 .. code-block:: cmake
 

@@ -113,6 +113,11 @@ mixpanel.init("d19929ba97d4aecccc6fe98c93da1b7c");</script><!-- end Mixpanel -->
 
 <body class="body-for-nav">
 
+	<script>
+	 $(window).bind("load", function() {
+	     mixpanel.track("PageDoc", { "page": window.location.pathname});
+	  });
+	</script>
   {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
 
   <header id="menu" class="nav-top">
