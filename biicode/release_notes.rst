@@ -18,7 +18,7 @@ Release Notes
 |
 **1.0.1 (15-07-2014)**
 
-* No sing up required
+* No sign up required
 * No more workspaces, any folder can hold a project
 * Plain configuration files
 * Simplified project settings
