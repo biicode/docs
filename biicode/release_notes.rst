@@ -5,12 +5,17 @@ Release Notes
 |
 **1.2 (06-08-2014)**
 
+* Open command computed deps incorrectly
+* Incorrect find policies for DEV versions
+* Solved transitivity problems in cmake for complex deps
+* Rpi cmake pre-built custom package
 * Bugfixes
 * UX Improvements
 * Web fixes:
 * Files tree alphabetically ordered
 * Show pictures in blocks
 * Fixed log in and password recovery
+
 |
 **1.1.1 (25-07-2014)**
 
