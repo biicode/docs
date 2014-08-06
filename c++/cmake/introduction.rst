@@ -39,7 +39,7 @@ Keep reading to take a look into a ``cmake folder``'s content.
 General CMakeLists.txt 
 -----------------------
 
-**CMakeLists.txt** is a flat file into your ``cmake folder``. It has all the things needed to create your project (depending on which configuration you select). With the layout above, the generated CMakeLists.txt is like this:
+**CMakeLists.txt** is a text file into your ``cmake folder``. It has all the things needed to create your project (depending on which configuration you select). With the layout above, the generated CMakeLists.txt is like this:
 
 .. code-block:: cmake
 
