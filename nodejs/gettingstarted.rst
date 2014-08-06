@@ -34,7 +34,11 @@ Then we can use the convenience ``new`` command to create some folders and a "He
 .. code-block:: bash
 
   ~$ cd myproject
-  ~/myproject$ bii new myuser/myblock --hello=node
+  ~/myproject$ bii new user/myblock --hello=node
+
+.. container:: infonote
+
+    You can directly type ``user``, there's no need to register. 
 
 This should be the resulting layout:
 
@@ -43,7 +47,7 @@ This should be the resulting layout:
   +-- myproject
   |    +-- bii
   |    +-- blocks
-  |    |    +-- myuser
+  |    |    +-- user
   |    |    |    +-- myblock
   |    |    |    |    +-- main.js
   |    +-- deps
@@ -55,7 +59,8 @@ Lets check that everything is fine by running the hello world aplication.
 .. code-block:: bash
 
   ~/myproject/$ cd blocks
-  ~/myproject/blocks$ noderunner myuser/myblock/main.js
+  ~/myproject/blocks$ noderunner 
+  user/myblock/main.js
 
 4. Depending on redis
 ---------------------
@@ -93,7 +98,7 @@ Now, execute your script main.js.
 .. code-block:: bash
 
   ~/myproject/$ cd blocks
-  ~/myproject/blocks$ noderunner myuser/myblock/main.js
+  ~/myproject/blocks$ noderunner user/myblock/main.js
 
   Reply: OK
   Exiting from quit command.

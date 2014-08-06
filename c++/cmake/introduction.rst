@@ -3,7 +3,8 @@
 Generated CMake files
 ======================
 
-To understand this section, then execute this commands in your console:
+To understand the generated CMake files, assume that your user name is **maya**, the project is called **myproject**, and the block's name is **hello**. 
+To create and generate this project, just execute this commands in your console:
 
 .. code-block:: bash
 
@@ -13,7 +14,7 @@ To understand this section, then execute this commands in your console:
 	~/myproject$ bii cpp:build
 
 
-So let's assume for these example that your user name is **maya**, the project is called **myproject**, and the block name in this case is **hello**. Then your layout will be ::
+Then your layout is: ::
 
 	|-- myproject
 	|    +-- bin
@@ -29,13 +30,16 @@ So let's assume for these example that your user name is **maya**, the project i
 	|    |    +-- bii_maya_hello_vars.cmake
 
 
-If you have any doubt about this, take a look to :ref:`biicode project layout <project_layout>`
+The ``cmake folder`` is created whenever you execute ``bii cpp:build``.
 
+If you have any doubts about this, take a look at a :ref:`biicode project layout <project_layout>`
+
+Keep reading to take a look into a ``cmake folder``'s content.
 
 General CMakeLists.txt 
 -----------------------
 
-This CMakeLists.txt is that you can find in your ``cmake folder``. It has all the necessary to create your project (depending on the selected configuration). With above layout, the generated CMakeLists.txt would be so:
+**CMakeLists.txt** is a text file into your ``cmake folder``. It has all the things needed to create your project (depending on which configuration you select). With the layout above, the generated CMakeLists.txt is like this:
 
 .. code-block:: cmake
 
@@ -55,14 +59,14 @@ This CMakeLists.txt is that you can find in your ``cmake folder``. It has all th
 biicode.cmake
 --------------
 
-This file has CMake macros and functions to make possible the use of your own CMakelists created in your blocks. 
+This file has CMake macros and functions so you can use your own **CMakelists** in your blocks. 
 
 bii_block_name_vars.cmake
 -------------------------
 
-This CMake file has the information (target name, source, header, resource and data files, block dependencies, etc.)
+This CMake file has the following information: target name, source, header, resource and data files, block dependencies, etc.
 
-In this case, the ``bii_maya_hello_vars.cmake`` could be like this:
+In our example, this is the ``bii_maya_hello_vars.cmake``:
 
 .. code-block:: cmake
 
@@ -85,7 +89,7 @@ In this case, the ``bii_maya_hello_vars.cmake`` could be like this:
 Block CMakeLists.txt 
 ----------------------
 
-When you execute the ``bii cpp:build`` command in your project, if you haven't any CMakeLists.txt created inside your existing blocks, biicode creates automatically one. Here an example:
+Whenever you execute the ``bii cpp:build`` command in your project, if there is no **CMakeLists.txt** in your existing blocks, biicode creates one automatically:
 
 .. code-block:: cmake
 
@@ -107,4 +111,4 @@ When you execute the ``bii cpp:build`` command in your project, if you haven't a
 	#set(CMAKE_CXX_FLAGS -std=c++11-stdlib=libc++) # MacOS
 	#set(CMAKE_CXX_FLAGS -std=c++11-Wl,--no-as-needed) # Ubuntu if gcc problems
 
-This CMakeLists.txt can be edited and replaced with the code you want. Into the following sections, we explain you some examples about how to edit this file and an advanced use of this.
+You can edit **CMakeLists.txt** as you want. In the following sections, we explain some examples about how to edit this file and an advanced use of it.

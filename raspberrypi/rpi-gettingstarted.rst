@@ -58,7 +58,11 @@ Then we can use the convenience ``new`` command to create some folders and a "He
 .. code-block:: bash
 
   ~$ cd myproject
-  ~/myproject$ bii new myuser/myblock --hello=cpp
+  ~/myproject$ bii new user/myblock --hello=cpp
+
+.. container:: infonote
+
+    You can directly type ``user``, there's no need to register. 
 
 This should be the resulting layout:
 
@@ -67,7 +71,7 @@ This should be the resulting layout:
   +-- myproject
   |    +-- bii
   |    +-- blocks
-  |    |    +-- myuser
+  |    |    +-- user
   |    |    |    +-- myblock
   |    |    |    |    +-- main.cpp
   |    +-- deps
@@ -96,7 +100,7 @@ Lets check that everything is fine by building and running the hello world aplic
   ~/myproject$ bii cpp:build
   Configuring cross compiler for ARM architecture:
   ...
-  ~/myproject$ ./bin/myuser_myblock_main
+  ~/myproject$ ./bin/user_myblock_main
   Hello World!
 
 
@@ -131,7 +135,7 @@ Now you are ready to compile and deploy your new application. First, **cross-com
 	...
 	Configuring cross compiler for ARM architecture:
 	...
-	[100%] Built target myuser_myblock_main
+	[100%] Built target user_myblock_main
 
 The binaries are created in ``bin`` folder, but remember that **you cannot run this program locally, as it has been compiled for a different architecture** using the cross-compiling tools. You need to send the binary to your Raspberry Pi before executing it.
 
@@ -161,8 +165,8 @@ Finally, to **execute your program on your Raspberry Pi**, you need to establish
 
 	pi@raspberrypi ~ $ cd hello_rpi
 	pi@raspberrypi ~/hello_rpi $ ls
-	myuser_myblock_main
-	pi@raspberrypi ~/hello_rpi $ ./myuser_myblock_main
+	user_myblock_main
+	pi@raspberrypi ~/hello_rpi $ ./user_myblock_main
 	Hello world!
 
 

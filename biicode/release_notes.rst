@@ -2,9 +2,39 @@
 
 Release Notes
 =============
+|
+**1.2 (06-08-2014)**
 
-**1.0 (7-07-2014)**
+* Bugfixes
+* UX Improvements
+* Web fixes:
+* Files tree alphabetically ordered
+* Show pictures in blocks
+* Fixed log in and password recovery
+|
+**1.1.1 (25-07-2014)**
 
+* Bugfixes
+* UX Improvements
+* Web Bugfixes, dependencies and deph graph
+
+|
+**1.0.4 (25-07-2014)**
+
+* Bugfixes
+* UX Improvements
+
+|
+**1.0.1 (15-07-2014)**
+
+* No sign up required
+* No more workspaces, any folder can hold a project
+* Plain configuration files
+* Simplified project settings
+* Relative includes allowed
+* Configuration options with CMake (extensible)
+* Bugfixes
+* Improved web-page
 
 |
 **0.17.3 (28-06-2014)**

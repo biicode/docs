@@ -15,12 +15,9 @@ The only requisite for this it that you have to |biicode_signup|. It is complete
 
 1. Write reuseable code
 -------------------------------------
-In the previous example, we created folders **myuser/myblock**. Now we can replace **myuser** for the username we have used in the signup. In the examples we will use **maya** as the user name.
+In the previous example, we created folders **user/myblock**. 
 
-It is also a good idea to rename **myblock** for something more meaningful, lets imagine that we are building some mathematical functions, so we rename it with ""
-
-
-Software good practices tell us that a good design for reusing our code later, would be having such a **sum** function separated in its own files:
+Software good practices tell us that a good design for reusing our code later is having, in this case, a **sum** function separated in its own reusable files. Add the following files to the folder ``myproject/blocks/username/myblock``:
 
 **main.cpp**
 
@@ -58,8 +55,8 @@ The final layout should be:
 
   +-- myproject
     |    +-- blocks
-    |    |    +-- maya
-    |    |    |    +-- math
+    |    |    +-- username
+    |    |    |    +-- myblock
     |    |    |    |    +-- main.cpp
     |    |    |    |    +-- addition.cpp
     |    |    |    |    +-- addition.h
@@ -77,45 +74,50 @@ Publishing your source code to biicode is simple:
 
    ~$ bii publish
 
-This should upload your code to the servers, you can see it in your profile: **https://www.biicode.com/maya** (block math, version number 0). Remember to replace **maya** with your actual user.
+This should upload your code to the servers, you can browse it in your profile: **https://www.biicode.com/username** (block myblock, version number 0). 
 
-You have published your code as DEV (one of the possible tags of DEV, ALPHA, BETA, STABLE) which means that such code is for your own development and testing. DEV publications are not freezed, they overwrite the last one, so you can delete, add, modify anything you want.
+:underline:`Remember` to replace ``username`` with your actual biicode user name.
+It is also a good idea to rename ``myblock`` for something more meaningful.
+
+You just published your code as DEV (one of the possible publishing tags: DEV, ALPHA, BETA, STABLE) which means that such code is for your own development and testing. Take into account that each time you publish as DEV it overwrites the last version published.
 
 
 3. Reuse your code
 -------------------------------------
-Once your code is in biicode, you can reuse it in any project, even in a different computer. Let's create a new project to try it, lets imagine that we are building a calculator and we will reuse the already programmed **sum** function:
-
+Once your code is in biicode, you can reuse it in any project, even in a different computer. **Let's create a new project** to try it, imagine that we are building a calculator and we will reuse from the already programmed **sum** function:
 
 .. code-block:: bash
 
-  ~$ bii init mycalc
-  ~$ bii new maya/calc --hello cpp
+  ~myproject$ cd ..
+  ~$ bii init math
+  ~$ cd math
+  ~math$ bii new username/calc --hello=cpp
 
-And change the **main.cpp** file, with the following contents:
+And change the **main.cpp** file, with the following content, remember to substitute ``username`` with your biicode user name and ``myblock`` with your **published block's name**.
 
 .. code-block:: cpp
 
   #include <iostream>
-  #include "maya/math/addition.h"
+  #include "username/myblock/addition.h"
 
   using namespace std;
   int main() {
     cout<<"2 + 3 = "<< sum(2, 3)<<endl;
   }
 
-In the "getting started" we used ``bii find`` to let biicode try to find a suitable (compatible) version of our dependencies. We can also directly specify which are our dependencies. In this example we depend on **maya/math**, and we only have one version (number 0). We can write in the **bii/requirements.bii** file:
+In the "getting started" we used ``bii find`` to let biicode find a suitable (compatible) version of our dependencies. You can also directly specify which are our dependencies. In this example you depend on your published block **username/myblock**, and it only has one version (number 0). You can write in the **bii/requirements.bii** file:
 
 .. code-block:: text
 
-  maya/math: 0
+  username/myblock: 0
 
-After that, all you have to do is to build and your project:
+After that, all you have to do is to build and execute your project:
 
 .. code-block:: bash
 
-  ~$ bii cpp:build
-  ~$ bin/maya_calc_main
+  ~math$ bii cpp:build
+  ~math$ cd bin
+  ~bin$ user_calc_main
   2 + 3 = 5
 
 
