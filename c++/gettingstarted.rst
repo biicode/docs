@@ -52,11 +52,11 @@ Then we can use the convenience ``new`` command to create some folders and a "He
 .. code-block:: bash
 
   ~$ cd myproject
-  ~/myproject$ bii new user/myblock --hello=cpp
+  ~/myproject$ bii new username/myblock --hello=cpp
 
 .. container:: infonote
 
-    You can directly type ``user``, there's no need to register. 
+    You can directly type ``username``, there's no need to have your own user to reuse. 
 
 This should be the resulting layout:
 
@@ -65,7 +65,7 @@ This should be the resulting layout:
   +-- myproject
   |    +-- bii
   |    +-- blocks
-  |    |    +-- user
+  |    |    +-- username
   |    |    |    +-- myblock
   |    |    |    |    +-- main.cpp
   |    +-- deps
@@ -80,7 +80,7 @@ Lets check that everything is fine by building and running the hello world appli
   ~/myproject$ bii cpp:build
   ...
   ~/myproject$ cd bin
-  ~/bin$ user_myblock_main
+  ~/bin$ username_myblock_main
   Hello World!
 
 .. container:: infonote
@@ -89,7 +89,7 @@ Lets check that everything is fine by building and running the hello world appli
 
     .. code-block:: bash
 
-      ~/myproject$ ./bin/user_myblock_main
+      ~/myproject$ ./bin/username_myblock_main
 
 
 4. Depending on Google Test
@@ -134,7 +134,7 @@ Now you can build and run it:
 
   ~/myproject$ bii cpp:build
   ...
-  ~/myproject$ bin/user_myblock_main
+  ~/myproject$ bin/username_myblock_main
   [==========] Running 1 test from 1 test case.
   ...
   [----------] Global test environment tear-down

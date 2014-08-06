@@ -47,11 +47,11 @@ Then we can use the convenience ``new`` command to create some folders and a "Si
 .. code-block:: bash
 
   ~$ cd myproject
-  ~/myproject$ bii new user/myblock --hello=arduino
+  ~/myproject$ bii new username/myblock --hello=arduino
 
 .. container:: infonote
 
-    You can directly type ``user``, there's no need to register. 
+    You can directly type ``username``, there's no need to have your own user to reuse. 
 
 This should be the resulting layout:
 
@@ -60,7 +60,7 @@ This should be the resulting layout:
   +-- myproject
   |    +-- bii
   |    +-- blocks
-  |    |    +-- user
+  |    |    +-- username
   |    |    |    +-- myblock
   |    |    |    |    +-- main.cpp
   |    +-- deps
@@ -92,7 +92,7 @@ Lets check that everything is fine by building and uploading the blink aplicatio
 
   avrdude.exe done.  Thank you.
 
-  [100%] Built target user_myblock_main-upload
+  [100%] Built target username_myblock_main-upload
   Upload finished
 
 5. Depending on Fenix Blink
@@ -140,7 +140,7 @@ Now can now build your firmware and upload it to your Arduino
 
   avrdude.exe done.  Thank you.
 
-  [100%] Built target user_myblock_main-upload
+  [100%] Built target username_myblock_main-upload
   Upload finished
 
 That’s it, if you see that output fenix's blink.h was downloaded and uploaded in your project! You can check the deps folder, the blink.h code is there.

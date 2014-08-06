@@ -58,12 +58,12 @@ Then we can use the convenience ``new`` command to create some folders and a "He
 .. code-block:: bash
 
   ~$ cd myproject
-  ~/myproject$ bii new user/myblock --hello=cpp
+  ~/myproject$ bii new username/myblock --hello=cpp
 
 .. container:: infonote
 
-    You can directly type ``user``, there's no need to register. 
-
+    You can directly type ``username``, there's no need to have your own user to reuse.
+ 
 This should be the resulting layout:
 
 .. code-block:: text
@@ -71,7 +71,7 @@ This should be the resulting layout:
   +-- myproject
   |    +-- bii
   |    +-- blocks
-  |    |    +-- user
+  |    |    +-- username
   |    |    |    +-- myblock
   |    |    |    |    +-- main.cpp
   |    +-- deps
@@ -135,7 +135,7 @@ Now you are ready to compile and deploy your new application. First, **cross-com
 	...
 	Configuring cross compiler for ARM architecture:
 	...
-	[100%] Built target user_myblock_main
+	[100%] Built target username_myblock_main
 
 The binaries are created in ``bin`` folder, but remember that **you cannot run this program locally, as it has been compiled for a different architecture** using the cross-compiling tools. You need to send the binary to your Raspberry Pi before executing it.
 
@@ -165,7 +165,7 @@ Finally, to **execute your program on your Raspberry Pi**, you need to establish
 
 	pi@raspberrypi ~ $ cd hello_rpi
 	pi@raspberrypi ~/hello_rpi $ ls
-	user_myblock_main
+	username_myblock_main
 	pi@raspberrypi ~/hello_rpi $ ./user_myblock_main
 	Hello world!
 
