@@ -1,5 +1,6 @@
 import sys, os, shutil, getopt
 
+print "argvs: %s" % str(sys.argv)
 opts, args = getopt.getopt( sys.argv[1:], 'ab:d:c:CD:A:NEqQP:w')
 print 'opts: ', opts
 print 'args: ', args
