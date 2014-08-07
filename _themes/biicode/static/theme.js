@@ -4,7 +4,7 @@ function is_section(section, pathname){
    if(path.indexOf(section + "/") == 0){
       return true;
    } 
-   if(path == section + ".html"){
+   if(path == section + ".html" || path == "en/latest/" + section + ".html"){
       return true;
    } 
    return false;
