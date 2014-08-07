@@ -5,7 +5,7 @@ Release Notes
 |
 **1.2.1 (07-08-2014)**
 
-* Bugfix for recursive system dependencies compilation
+* Bugfix for recursive system dependencies compilation.
 
 |
 **1.2 (06-08-2014)**
