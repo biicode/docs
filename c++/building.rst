@@ -9,3 +9,4 @@ Building and CMake
    cmake/introduction
    cmake/advanced-cmake
    cmake/examples
+   cmake/cmake_generators
