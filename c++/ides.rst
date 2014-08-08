@@ -18,7 +18,7 @@ Biicode offers **integration with some of the most commonly used IDEs** for C++ 
 Now, your are ready to import your project into the Eclipse IDE.
 
 #. From the main Eclipse menu choose: *File > import...*
-#. Now, select *general > Existing Projects into Workspace*, and clic next.
+#. Now, select *general > Existing Projects into Workspace*, and click next.
 #. Select the root directory as the **root folder of your project**.
 #. You should see a project already selected in the *projects* box. Click *finish*.
 
@@ -28,7 +28,13 @@ If you want to add new files to your block, just right-click on the folder of yo
 
 You can build your application in *Project > Build project* if you don't have automated builds set.
 
-If you are using  Eclipse with **OS X** as development platform, you will need some aditional setup to execute your binaries within this IDE. :ref:`Read this troubleshooting section for more information <eclipse_osx_binaries>`.
+
+.. container:: infonote
+
+     ``bii clean`` command deletes Eclipse project's configuration, so execute ``bii cpp:configure`` after that to regenerate the configuration.
+
+
+If you are using  Eclipse with **OS X** as development platform, you will need some additional setup to execute your binaries within this IDE. :ref:`Read this troubleshooting section for more information <eclipse_osx_binaries>`.
 
 
 .. _ide_visual:
