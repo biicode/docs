@@ -3,6 +3,13 @@
 Release Notes
 =============
 |
+**1.3.2 (13-08-2014)**
+
+* Bufix: login not required anymore when not really needed
+* Web performance improvements  
+
+
+|
 **1.2.1 (07-08-2014)**
 
 * Bugfix for recursive system dependencies compilation
