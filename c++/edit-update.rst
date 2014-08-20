@@ -38,6 +38,7 @@ This command retrieves the complete block uploaded in biicode and delete it from
 
 .. container:: infonote
 
+  Learn more about :ref:`editing your published blocks <edit_dependecies>`
 
 Then your layout'll change to this:
 
@@ -130,7 +131,7 @@ But what happens with **maya/calc** block? As its dependencies has been updated,
 
   maya/math: 1
 
-Then if you modify the content of your **maya/calc main.cpp**:
+Then if you modify the content of your **maya/calc block main.cpp**:
 
 **main.cpp**
 
@@ -157,7 +158,7 @@ Then if you modify the content of your **maya/calc main.cpp**:
   2 + 3 = 5
   2 - 3 = -1
 
-Congrats! You just edited your dependencies and updated the changes. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feedback, they are always welcomed.
+**Congrats! You just edited your dependencies and updated the changes**. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feedback, they are always welcomed.
 
 .. |biicode_forum_link| raw:: html
 

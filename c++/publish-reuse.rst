@@ -143,7 +143,7 @@ After that, all you have to do is to build and run your project:
   Take one minute to look to your **deps** folder. You can see there your source code. And what about Google Test? Shouldn't be there? Not really. The **sum function** does not require Google Test at all, so Google Test is not required as dependency in your new calculator project (unless you also add it to define your own unit tests of this calculator, of course)
 
 
-Congrats! You have just reused your **sum** function in a new project. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feedback, they are always welcomed.
+**Congrats! You have just reused your "sum" function in a new project**. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feedback, they are always welcomed.
 
 .. |biicode_forum_link| raw:: html
 
