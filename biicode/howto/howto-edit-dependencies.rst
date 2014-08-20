@@ -17,11 +17,11 @@ Use ``bii open`` command and move any published block to your project:
 
 **Examples**
 
-So if you want to open the |diego_ardunet_block| and edit it:
+So if you want to open the |diego_ardunet_block| (branch=master and version=lastest by default) and edit it:
 
 .. |diego_ardunet_block| raw:: html
 
-   <a href="http://www.biicode.com/diego/diego/ardunet/master" target="_blank">diego/ardunet block (branch=master and version=lastest by default)</a>
+   <a href="http://www.biicode.com/diego/diego/ardunet/master" target="_blank">diego/ardunet block</a>
 
 .. code-block:: bash
 
