@@ -4,7 +4,7 @@
 Edit any published block
 ===========================
 
-To edit a block you like it or you depend on, you've to follow the below steps.
+To **edit a block you are interested in or you depend on**, you've to follow the below steps.
 
 1. Open a block
 ^^^^^^^^^^^^^^^^^^^^
@@ -29,20 +29,20 @@ So if you want to open the |diego_ardunet_block| and edit it:
 
 Then you can code on it as if it was yours and changes will be reflected in your code, at build time.
 
-Suppose the last version of ``diego/ardunet`` and ``master`` branch is the "7" and you want to open the ``2`` version, execute:
+Suppose the last version of ``diego/ardunet`` and ``master`` branch is the "7" but you want to open the ``2`` version, execute:
 
 .. code-block:: bash
 
 	$ bii open "diego/ardunet: 2"
 
-Imagine that "diego/ardunet" has published a branch named ``improvements`` and the last version of this one is the ``5``. So if you want to edit it:
+Imagine that "diego/ardunet" has published a branch named ``improvements`` and you're interested in ``5`` version. So if you want to edit it:
 
 .. code-block:: bash
 
 	$ bii open "diego/ardunet(improvements): 5"
 
 
-Finally, if you could open the ``last version`` of a branch, e.g. ``release``, but the owner is other user, e.g. ``phil``:
+Finally, you could open the ``last version`` of a branch, e.g. ``release``, whose owner is other user, e.g. ``phil``:
 
 .. code-block:: bash
 

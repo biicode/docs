@@ -41,7 +41,7 @@ Publish your blocks with different tags:
 
 .. code-block:: bash
 
-	$ bii publish --tag stable
+	$ bii publish --tag STABLE
 
 
 Publish with a descriptive message
