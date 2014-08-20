@@ -4,7 +4,7 @@
 Upload and reuse code
 =========================
 
-So we have integrated in the previous step Google Test in our project, testing a simple **sum** function. Can I do the same with my source code? Of course, that is exactly what biicode does! 
+So we have integrated in the :ref:`previous step <cpp_getting_started>` Google Test in our project, testing a simple **sum** function. Can I do the same with my source code? Of course, that is exactly what biicode does! 
 The only requisite for this it that you have to |biicode_signup|. It is completely **free**, and it will just take two minutes.
 
 
@@ -15,7 +15,7 @@ The only requisite for this it that you have to |biicode_signup|. It is complete
 
 1. Write reusable code
 --------------------------
-In the previous example, we created folders **myuser/myblock**. Now we can **replace "myuser" for the user name we have used in the signup**. In the examples we will use **maya** as the user name.
+In the previous example, we created folders **myuser/myblock**. Now we can **replace "myuser" for the user name we have used in the sign-up**. In the examples we will use **maya** as the user name.
 
 It is also a good idea to **rename "myblock"** for something more meaningful, lets imagine that we are building some mathematical functions, so we rename it with **math**
 
@@ -143,7 +143,7 @@ After that, all you have to do is to build and run your project:
   Take one minute to look to your **deps** folder. You can see there your source code. And what about Google Test? Shouldn't be there? Not really. The **sum function** does not require Google Test at all, so Google Test is not required as dependency in your new calculator project (unless you also add it to define your own unit tests of this calculator, of course)
 
 
-Congrats! You have just reused your **sum** function in a new project. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feeback, they are always welcomed.
+Congrats! You have just reused your **sum** function in a new project. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feedback, they are always welcomed.
 
 .. |biicode_forum_link| raw:: html
 
