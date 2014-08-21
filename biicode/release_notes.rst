@@ -3,6 +3,10 @@
 Release Notes
 =============
 |
+**1.3.3 (21-08-2014)**
+
+* Bufix: colored output
+|
 **1.3.2 (13-08-2014)**
 
 * Bufix: login not required anymore when not really needed
