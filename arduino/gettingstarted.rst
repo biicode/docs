@@ -49,6 +49,13 @@ Then we can use the convenience ``new`` command to create some folders and a "Si
   ~$ cd myproject
   ~/myproject$ bii new myuser/myblock --hello=arduino
 
+.. container:: infonote
+
+    You can directly type ``myuser``, there's no need to register an account to use biicode, only
+    to upload and share contents. You can use other name too. 
+    If you have already registered you might want to replace ``myuser``
+    with your real biicode username.
+
 This should be the resulting layout:
 
 .. code-block:: text
@@ -68,9 +75,9 @@ Just, define your Arduino board using the arduino:settings command. In this exam
 
 .. code-block:: bash
 
-  ~/myproject$ bii arduino:settings
-  Introduce board (/o list options): uno
-  Using arduino port: COM4
+   ~/myproject$ bii arduino:settings
+   Introduce board (/o list options): uno
+   Using arduino port: COM4
 
 4. Build and upload your program
 --------------------------------
@@ -78,18 +85,18 @@ Lets check that everything is fine by building and uploading the blink aplicatio
 
 .. code-block:: bash
 
-  ~/myproject$ bii arduino:upload
-  ...
-  Writing | ################################################## | 100% 0.00s
-
-  avrdude.exe: 0 bytes of eeprom written
-
-  avrdude.exe: safemode: Fuses OK
-
-  avrdude.exe done.  Thank you.
-
-  [100%] Built target myuser_myblock_main-upload
-  Upload finished
+   ~/myproject$ bii arduino:upload
+   ...
+   Writing | ################################################## | 100% 0.00s
+   
+   avrdude.exe: 0 bytes of eeprom written
+   
+   avrdude.exe: safemode: Fuses OK
+   
+   avrdude.exe done.  Thank you.
+   
+   [100%] Built target myuser_myblock_main-upload
+   Upload finished
 
 5. Depending on Fenix Blink
 ---------------------------

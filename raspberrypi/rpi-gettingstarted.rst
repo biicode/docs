@@ -3,7 +3,7 @@
 
 
 Getting started
-=========================
+===============
 
 This example shows **how to install biicode, code a C++ led blink with |wiringpi_link|, make the cross compilation and send the executable to your Raspberry Pi**. You don't need to have WiringPi installed in your computer or the rpi. Biicode will download and configure it automatically for you, |wiringpi_biicode_link|.
 
@@ -18,7 +18,7 @@ This example shows **how to install biicode, code a C++ led blink with |wiringpi
 
 
 1. Installing biicode and C/C++ cross-building tools
--------------------------------------------------------
+----------------------------------------------------
 
 .. container:: infonote
 
@@ -60,6 +60,14 @@ Then we can use the convenience ``new`` command to create some folders and a "He
   ~$ cd myproject
   ~/myproject$ bii new myuser/myblock --hello=cpp
 
+.. container:: infonote
+
+    You can directly type ``myuser``, there's no need to register an account to use biicode, only
+    to upload and share contents. You can use other name too. 
+    If you have already registered you might want to replace ``myuser``
+    with your real biicode username.
+    
+ 
 This should be the resulting layout:
 
 .. code-block:: text
@@ -74,7 +82,7 @@ This should be the resulting layout:
 
 
 3. Build and run your program (cross-compiling)
--------------------------------------------------
+-----------------------------------------------
 
 Configure your project to the cross compiling running ``bii rpi:settings``:
 
@@ -96,12 +104,12 @@ Lets check that everything is fine by building and running the hello world aplic
   ~/myproject$ bii cpp:build
   Configuring cross compiler for ARM architecture:
   ...
-  ~/myproject$ ./bin/myuser_myblock_main
+  ~/myproject$ ./bin/user_myblock_main
   Hello World!
 
 
 4. Depending on WiringPi
-------------------------------
+------------------------
 
 Copy the following code containing a simple sum function and a test into the **main.cpp** file
 
@@ -137,7 +145,7 @@ The binaries are created in ``bin`` folder, but remember that **you cannot run t
 
 
 5. Send your executable to your Raspberry Pi
-----------------------------------------------
+--------------------------------------------
 
 To **send the binary to your Raspberry Pi**, you just need to execute the ``bii rpi:send`` command and the file will be sent using `rsync <http://en.wikipedia.org/wiki/Rsync>`_ to the address provided in your settings.
 
@@ -162,7 +170,7 @@ Finally, to **execute your program on your Raspberry Pi**, you need to establish
 	pi@raspberrypi ~ $ cd hello_rpi
 	pi@raspberrypi ~/hello_rpi $ ls
 	myuser_myblock_main
-	pi@raspberrypi ~/hello_rpi $ ./myuser_myblock_main
+	pi@raspberrypi ~/hello_rpi $ ./user_myblock_main
 	Hello world!
 
 
