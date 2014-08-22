@@ -140,19 +140,17 @@ In the "getting started" we used ``bii find`` to let biicode find a suitable (co
 You can also directly and explicitly specify them in the **bii/requirements.bii** file. 
 In this example you depend on your published block **myuser/math**, and it only has one version (number 0). 
 
-Create a folder named **bii** inside your ``~/mycalc/blocks/myuser/math/`` and a **requirements.bii** file located in it.
+Create a folder named **bii** inside your ``~/mycalc/blocks/myuser/calc/`` and a **requirements.bii** file located in it.
 
 .. code-block:: text
 
-  +-- myproject
+  +-- mycalc
     |    +-- blocks
     |    |    +-- myuser
-    |    |    |    +-- math
+    |    |    |    +-- calc
     |    |    |    |    +-- bii
     |    |    |    |    |    +-- requirements.bii
     |    |    |    |    +-- main.cpp
-    |    |    |    |    +-- operations.cpp
-    |    |    |    |    +-- operations.h
 
 Open the **requirements.bii** with any text editor and write in it:
 
