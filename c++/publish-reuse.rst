@@ -18,10 +18,10 @@ The only requisite for this it that you have to |biicode_signup|. It is complete
 ----------------------
 In the previous step, we had the folder **myuser/myblock**. 
 Now we can **rename "myuser" folder with the user name we have used in the signup**. 
-In the examples we will keep **"myuser"** as the username, but please don't forget to replace its occurences for your real myuser.
+In the examples we will keep **"myuser"** as the username, but please don't forget to replace its occurences for your real username.
 
-It is also a good idea to **rename "myblock" folder** for something more meaningful,
-lets imagine that we are building some mathematical functions, so we rename it with **math**
+It is also a good idea to **rename "myblock" folder** to something more meaningful,
+lets imagine that we are building some mathematical library, so we rename it with **math**
 
 Finally, good practices tell us that a good design for reusing our code later,
 would be having the **sum** function in its own files:
