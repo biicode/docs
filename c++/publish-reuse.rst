@@ -5,8 +5,8 @@ Upload and reuse code
 =====================
 
 So in the previous step, we have integrated Google Test in our project, testing a simple **sum** function.
-Can I do the same with my source code? Of course, that is exactly what biicode does! 
-The only requisite for this it that you have to |biicode_signup|. It is completely **free**, and it will just take two minutes.
+
+Can I do the same with my source code? Of course, that is exactly what biicode does! The only requisite for this it that you have to |biicode_signup|. It is completely **free**, and it will just take two minutes.
 
 
 .. |biicode_signup| raw:: html
@@ -77,7 +77,9 @@ Build with ``bii cpp:build`` and run your project again to check everything is o
 
    ~/myproject$ bii cpp:build
    ~/myproject$ bin\myuser_math_main  (your username here instead of myuser)
-   Hello World!
+   ...
+   [==========] 1 test from 1 test case ran. (2 ms total)
+   [  PASSED  ] 1 test.
 
 
 2. Upload your code
@@ -135,10 +137,24 @@ Now change the **main.cpp** file created with the following content
 
 
 In the "getting started" we used ``bii find`` to let biicode find a suitable (compatible) version of our dependencies. 
-You can also directly and explicitely specify them in the **bii/requirements.bii** file. 
+You can also directly and explicitly specify them in the **bii/requirements.bii** file. 
 In this example you depend on your published block **myuser/math**, and it only has one version (number 0). 
 
-Open the **bii/requirements.bii** file and write in it:
+Create a folder named **bii** inside your ``~/mycalc/blocks/myuser/math/`` and a **requirements.bii** file located in it.
+
+.. code-block:: text
+
+  +-- myproject
+    |    +-- blocks
+    |    |    +-- myuser
+    |    |    |    +-- math
+    |    |    |    |    +-- bii
+    |    |    |    |    |    +-- requirements.bii
+    |    |    |    |    +-- main.cpp
+    |    |    |    |    +-- operations.cpp
+    |    |    |    |    +-- operations.h
+
+Open the **requirements.bii** with any text editor and write in it:
 
 .. code-block:: bash
 
