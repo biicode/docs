@@ -75,18 +75,11 @@ Build with ``bii cpp:build`` and run your project again to check everything is o
 
 .. code-block:: bash
 
-  ~/myproject$ bii cpp:build
-  ~/myproject$ bin\myuser_math_main  (your username here instead of myuser)
-  [==========] Running 1 test from 1 test case.
-  [----------] Global test environment set-up.
-  [----------] 1 test from Sum
-  [ RUN      ] Sum.Normal
-  [       OK ] Sum.Normal (0 ms)
-  [----------] 1 test from Sum (1 ms total)
-
-  [----------] Global test environment tear-down
-  [==========] 1 test from 1 test case ran. (2 ms total)
-  [  PASSED  ] 1 test.
+   ~/myproject$ bii cpp:build
+   ~/myproject$ bin\myuser_math_main  (your username here instead of myuser)
+   ...
+   [==========] 1 test from 1 test case ran. (2 ms total)
+   [  PASSED  ] 1 test.
 
 
 2. Upload your code
@@ -147,7 +140,21 @@ In the "getting started" we used ``bii find`` to let biicode find a suitable (co
 You can also directly and explicitly specify them in the **bii/requirements.bii** file. 
 In this example you depend on your published block **myuser/math**, and it only has one version (number 0). 
 
-Create a folder named **bii** inside your ``~/mycalc/blocks/myuser/math/`` and a **requirements.bii** file located in that **bii** one. Open the **requirements.bii** with any text editor and write in it:
+Create a folder named **bii** inside your ``~/mycalc/blocks/myuser/math/`` and a **requirements.bii** file located in it.
+
+.. code-block:: text
+
+  +-- myproject
+    |    +-- blocks
+    |    |    +-- myuser
+    |    |    |    +-- math
+    |    |    |    |    +-- bii
+    |    |    |    |    |    +-- requirements.bii
+    |    |    |    |    +-- main.cpp
+    |    |    |    |    +-- operations.cpp
+    |    |    |    |    +-- operations.h
+
+Open the **requirements.bii** with any text editor and write in it:
 
 .. code-block:: bash
 
