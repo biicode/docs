@@ -3,11 +3,14 @@
 Release Notes
 =============
 |
+**1.3.3 (21-08-2014)**
+
+* Bugfix: colored output
+|
 **1.3.2 (13-08-2014)**
 
-* Bufix: login not required anymore when not really needed
+* Bugfix: login not required anymore when not really needed
 * Web performance improvements  
-
 
 |
 **1.2.1 (07-08-2014)**
@@ -17,11 +20,10 @@ Release Notes
 |
 **1.2 (06-08-2014)**
 
-* Open command computed deps incorrectly
-* Incorrect find policies for DEV versions
-* Solved transitivity problems in cmake for complex deps
+* Bugfix Open command computed deps incorrectly
+* Bugfix Incorrect find policies for DEV versions
+* Bugfix Solved transitivity problems in cmake for complex deps
 * Rpi cmake pre-built custom package
-* Bugfixes
 * UX Improvements
 * Web fixes:
 * Files tree alphabetically ordered
@@ -33,7 +35,7 @@ Release Notes
 
 * Bugfixes
 * UX Improvements
-* Web Bugfixes, dependencies and deph graph
+* Web Bugfixes, dependencies and deps graph
 
 |
 **1.0.4 (25-07-2014)**

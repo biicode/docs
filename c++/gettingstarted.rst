@@ -2,7 +2,7 @@
 
 
 Getting started
-=========================
+===============
 
 This example shows how to install biicode, build your first C/C++ program, and also run a unit test using the |google_test_link|. You don't need to install GTest, biicode will download and configure it automatically for you, |google_test_biicode_link|
 
@@ -54,6 +54,13 @@ Then we can use the convenience ``new`` command to create some folders and a "He
   ~$ cd myproject
   ~/myproject$ bii new myuser/myblock --hello=cpp
 
+.. container:: infonote
+
+    You can directly type ``myuser``, there's no need to register an account to use biicode, only
+    to upload and share contents. You can use other name too. 
+    If you have already registered you might want to replace ``myuser``
+    with your real biicode username.
+
 This should be the resulting layout:
 
 .. code-block:: text
@@ -68,7 +75,7 @@ This should be the resulting layout:
 
 
 3. Build and run your program
----------------------------------
+-----------------------------
 Lets check that everything is fine by building and running the hello world application.
 
 .. code-block:: bash
@@ -80,15 +87,16 @@ Lets check that everything is fine by building and running the hello world appli
 
 .. container:: infonote
 
-    Linux/MacOS users:
+    Please take into account that Linux/Mac users might run as:
 
     .. code-block:: bash
 
       ~/myproject$ ./bin/myuser_myblock_main
 
 
+
 4. Depending on Google Test
-----------------------------
+---------------------------
 
 Copy the following code containing a simple sum function and a test into the **main.cpp** file
 
@@ -96,10 +104,13 @@ Copy the following code containing a simple sum function and a test into the **m
   :emphasize-lines: 1
 
   #include "google/gtest/gtest.h"
+  
   int sum(int a, int b) {return a+b;}
+  
   TEST(Sum, Normal) {
     EXPECT_EQ(5, sum(2, 3));
   }
+  
   int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
@@ -107,11 +118,10 @@ Copy the following code containing a simple sum function and a test into the **m
 
 This code requires the googletest framework. If you try to ``cpp:build`` you will get a build error.
 
-
 Execute the following command to find unresolved dependencies and retrieve necessary files from servers:
 
 .. code-block:: bash
-
+  
   ~/myproject$ bii find
 
 
@@ -121,7 +131,7 @@ Now you can build and run it:
 
   ~/myproject$ bii cpp:build
   ...
-  ~/myproject$ bin/myuser_myblock_main
+  ~/myproject$ bin\myuser_myblock_main
   [==========] Running 1 test from 1 test case.
   ...
   [----------] Global test environment tear-down
@@ -132,7 +142,7 @@ Now you can build and run it:
 That's it, if you see that output Google Test was downloaded, configured and built in your project!
 You can check the ``deps`` folder, the googletest code is there.
 
-Didn't work? No problem, read or contact us in |biicode_forum_link|
+Didn't work? Read or contact us in |biicode_forum_link|
 
 .. |biicode_forum_link| raw:: html
 

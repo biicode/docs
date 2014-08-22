@@ -2,9 +2,11 @@
 
 
 Upload and reuse code
-=========================
+=====================
 
-So we have integrated in the :ref:`previous step <cpp_getting_started>` Google Test in our project, testing a simple **sum** function. Can I do the same with my source code? Of course, that is exactly what biicode does! 
+So in the previous step, we have integrated Google Test in our project, testing a simple **sum** function.
+Can I do the same with my source code? Of course, that is exactly what biicode does! 
+
 The only requisite for this it that you have to |biicode_signup|. It is completely **free**, and it will just take two minutes.
 
 
@@ -14,19 +16,25 @@ The only requisite for this it that you have to |biicode_signup|. It is complete
 
 
 1. Write reusable code
---------------------------
-In the previous example, we created folders **myuser/myblock**. Now we can **replace "myuser" for the user name we have used in the sign-up**. In the examples we will use **maya** as the user name.
+----------------------
+In the previous step, we had the folder **myuser/myblock**. 
+Now we can **rename "myuser" folder with the user name we have used in the signup**. 
+In the examples we will keep **"myuser"** as the username, but please don't forget to replace its occurences for your real username.
 
-It is also a good idea to **rename "myblock"** for something more meaningful, lets imagine that we are building some mathematical functions, so we rename it with **math**
+It is also a good idea to **rename "myblock" folder** to something more meaningful,
+lets imagine that we are building some mathematical library, so we rename it with **math**
 
-Software good practices tell us that a good design for reusing our code later, would be having such a **sum** function separated in its own files:
+Finally, good practices tell us that a good design for reusing our code later,
+would be having the **sum** function in its own files:
+
 
 **main.cpp**
 
 .. code-block:: cpp
 
   #include "google/gtest/gtest.h"
-  #include "addition.h"
+  #include "operations.h"
+  
   TEST(Sum, Normal) {
     EXPECT_EQ(5, sum(2, 3));
   }
@@ -36,7 +44,7 @@ Software good practices tell us that a good design for reusing our code later, w
   }
 
 
-**addition.h**
+**operations.h**
 
 .. code-block:: cpp
 
@@ -44,11 +52,11 @@ Software good practices tell us that a good design for reusing our code later, w
   int sum(int a, int b);
 
 
-**addition.cpp**
+**operations.cpp**
 
 .. code-block:: cpp
 
-  #include "addition.h"
+  #include "operations.h"
   int sum(int a, int b) {return a+b;}
 
 The final layout should be:
@@ -56,91 +64,101 @@ The final layout should be:
 .. code-block:: text
 
   +-- myproject
-  |    +-- blocks
-  |    |    +-- maya
-  |    |    |    +-- math
-  |    |    |    |    +-- main.cpp
-  |    |    |    |    +-- addition.cpp
-  |    |    |    |    +-- addition.h
+    |    +-- blocks
+    |    |    +-- myuser (remember: your actual username here)
+    |    |    |    +-- math
+    |    |    |    |    +-- main.cpp
+    |    |    |    |    +-- operations.cpp
+    |    |    |    |    +-- operations.h
 
 
 Build with ``bii cpp:build`` and run your project again to check everything is ok.
 
+.. code-block:: bash
+
+   ~/myproject$ bii cpp:build
+   ~/myproject$ bin\myuser_math_main  (your username here instead of myuser)
+   Hello World!
+
 
 2. Upload your code
------------------------
+-------------------
 
-**Publishing** your source code to biicode **using DEV tag** is simple:
+**Publishing** your source code to biicode is simple:
 
 .. code-block:: bash
 
    ~/myproject$ bii publish
 
-This should upload your code to the servers, you can see it in your profile, in this case, the `user maya profile <https://www.biicode.com/maya>`_. Remember to replace **maya** with your actual user.
+This should upload your code to the servers, you can see it in your profile **www.biicode.com/myuser**
 
-You have published your code as DEV (**possible tags** are **DEV, ALPHA, BETA, STABLE**) which means that such code is for your own development and testing. **DEV publications are not freezed, they overwrite the last one**, so you can delete, add, modify anything you want.
+You have published your code as **DEV**  which means that such code is for your own development and testing. 
+Possible tags are **DEV, ALPHA, BETA, STABLE**.
+
+**DEV** publications are not freezed, every time you publish **you overwrite the last version**.
 
 
-When you publish any block, you can find, inside of your **block bii folder** (~/myproject/blocks/maya/math/bii) created, the :ref:`parents.bii file <parents_bii>`.
-
-It tells you "who" is your branch parent (indicated with ``*`` symbol) and with the branches that you've merged. In this example, the file would contain:
+Check inside of your **block bii folder** (~/myproject/blocks/myuser/math/bii), the file **parents.bii**.
+It tells you "who" is your parent (indicated with ``*`` symbol), i.e. the last published version of your block.
+The file should contain:
 
 .. code-block:: bash
 
-  # This file contains your block ancestors versions
-  * maya/math: 0
-
-.. container:: infonote
-
-  Take a look to all the possibilities to :ref:`publish a block <publish_blocks>`
+   # This file contains your block ancestors versions
+   * myuser/math: 0
 
 
 
 3. Reuse your code
----------------------
-Once your code is in biicode, you can **reuse it in any project**, even in a different computer. Let's **create a new project to try it** with a new block:
+------------------
+Once your code is in biicode, you can **reuse it in any project**, even in a different computer. Let's **create a new project to try it**.
+
+Let's imagine that we are building a calculator and we want to reuse the published **sum** function
 
 .. code-block:: bash
 
-  ~$ bii init mycalc
-  ~$ cd mycalc
-  ~/mycalc$ bii new maya/calc
+   ~/myproject$ cd ..  (get out of current project)
+   ~$ bii init mycalc   (create new project mycalc)
+   ~$ cd mycalc
+   ~/mycalc$ bii new myuser/calc --hello=cpp
 
-Let's imagine that we are building a calculator and we will **reuse** the already programmed **sum function**. So, create a **main.cpp** inside of the new block with the following content:
+Now change the **main.cpp** file created with the following content
 
 .. code-block:: cpp
 
-  #include <iostream>
-  #include "maya/math/addition.h"
+   #include <iostream>
+   #include "myuser/math/operations.h" //NOTE: Replace myuser!
 
-  using namespace std;
-  int main() {
-    cout<<"2 + 3 = "<< sum(2, 3)<<endl;
-  }
+   using namespace std;
+   int main() {
+      cout<<"2 + 3 = "<< sum(2, 3)<<endl;
+   }
 
-And let biicode try to find a suitable (compatible) version of our dependencies:
 
-.. code-block:: bash
+In the "getting started" we used ``bii find`` to let biicode find a suitable (compatible) version of our dependencies. 
+You can also directly and explicitely specify them in the **bii/requirements.bii** file. 
+In this example you depend on your published block **myuser/math**, and it only has one version (number 0). 
 
-  ~/mycalc$ bii find
-
-We can also directly specify which are our dependencies. In this example we depend on **maya/math**, and we only have one version (number 0). We can write in the :ref:`bii/requirements.bii <requirements_bii>` file:
-
-.. code-block:: text
-
-  maya/math: 0
-
-After that, all you have to do is to build and run your project:
+Open the **bii/requirements.bii** file and write in it:
 
 .. code-block:: bash
 
-  ~/mycalc$ bii cpp:build
-  ~/mycalc$ bin\maya_calc_main
-  2 + 3 = 5
+   myuser/math: 0
+
+
+After that, all you have to do is to build and run your application:
+
+.. code-block:: bash
+
+   ~/mycalc$ bii cpp:build
+   ~/mycalc$ bin\myuser_calc_main
+    2 + 3 = 5
+
 
 .. container:: infonote
 
-  Take one minute to look to your **deps** folder. You can see there your source code. And what about Google Test? Shouldn't be there? Not really. The **sum function** does not require Google Test at all, so Google Test is not required as dependency in your new calculator project (unless you also add it to define your own unit tests of this calculator, of course)
+   Take one minute to look into your **deps** folder. You can see there your source code. And what about Google Test? Shouldn't it be there? Not really. The **sum** function does not require Google Test at all, so Google Test is not required as dependency in your new calculator project (unless you also add it to define your own unit tests of this calculator, of course)
+
 
 
 **Congrats! You have just reused your "sum" function in a new project**. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feedback, they are always welcomed.

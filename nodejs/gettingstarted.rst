@@ -36,6 +36,13 @@ Then we can use the convenience ``new`` command to create some folders and a "He
   ~$ cd myproject
   ~/myproject$ bii new myuser/myblock --hello=node
 
+.. container:: infonote
+
+    You can directly type ``myuser``, there's no need to register an account to use biicode, only
+    to upload and share contents. You can use other name too. 
+    If you have already registered you might want to replace ``myuser``
+    with your real biicode username.
+
 This should be the resulting layout:
 
 .. code-block:: text
@@ -54,8 +61,9 @@ Lets check that everything is fine by running the hello world aplication.
 
 .. code-block:: bash
 
-  ~/myproject/$ cd blocks
-  ~/myproject/blocks$ noderunner myuser/myblock/main.js
+   ~/myproject/$ cd blocks
+   ~/myproject/blocks$ noderunner 
+   myuser/myblock/main.js
 
 4. Depending on redis
 ---------------------
