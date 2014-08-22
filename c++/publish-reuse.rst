@@ -5,9 +5,8 @@ Upload and reuse code
 =====================
 
 So in the previous step, we have integrated Google Test in our project, testing a simple **sum** function.
-Can I do the same with my source code? Of course, that is exactly what biicode does! 
 
-The only requisite for this it that you have to |biicode_signup|. It is completely **free**, and it will just take two minutes.
+Can I do the same with my source code? Of course, that is exactly what biicode does! The only requisite for this it that you have to |biicode_signup|. It is completely **free**, and it will just take two minutes.
 
 
 .. |biicode_signup| raw:: html
@@ -170,7 +169,7 @@ After that, all you have to do is to build and run your application:
 
 
 
-**Congrats! You have just reused your "sum" function in a new project**. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feedback, they are always welcomed.
+Congrats! You have just reused your **sum** function in a new project. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feeback, they are always welcomed.
 
 .. |biicode_forum_link| raw:: html
 

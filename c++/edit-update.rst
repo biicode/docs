@@ -1,164 +1,162 @@
 .. _cpp_edit_update:
 
 
-Edit and update blocks
-=========================
+Editing published code
+======================
 
-After reusing your **sum function** explained at :ref:`previous section <cpp_publish_reuse>`, you could want to add some new functions to your published "math" block, e.g. a **subtract function**, and use it in your block **maya/calc** app. The next steps explain you how to do it.
+After reusing your **sum function** explained at :ref:`previous section <cpp_publish_reuse>`, 
+you could want to add some new functions to your published "math" block, e.g. a **substract function**, and use it in your block **myuser/calc** app.
+
+You could do it in your **myproject** project, and publish from it. But imagine that you develop such project
+in a different computer, and you do not have a copy.
+
+Biicode let you open, modify and publish a new version of an already published block in your current project.
+Next steps explain how to do it.
 
 
-1. Edit your dependencies
---------------------------
+1. Open and edit your dependencies
+----------------------------------
 
-Now, your layout is something like this:
+Following with the previous example, your layout is something like this:
 
 .. code-block:: text
 
   +-- mycalc
   |    +-- blocks
-  |    |    +-- maya
+  |    |    +-- myuser
   |    |    |    +-- calc
-  |    |    |    |    +-- bii
-  |    |    |    |        +-- requirements.bii 
   |    |    |    |    +-- main.cpp
   |    +-- deps
-  |    |    +-- maya
+  |    |    +-- myuser
   |    |    |    +-- math
-  |    |    |    |    +-- addition.cpp
-  |    |    |    |    +-- addition.h
+  |    |    |    |    +-- operations.cpp
+  |    |    |    |    +-- operations.h
 
 
-We are going to add a new function, **subtract**, to our  published **maya/math** block. To edit the ``last version`` published and the ``master`` branch, execute:
+We are going to add a new function, **substract**, to our published **myuser/math** block.
+To open the block **myuser/math** for edition, execute:
 
 .. code-block:: bash
 
-  ~/mycalc$ bii open maya/math
+  ~/mycalc$ bii open myuser/math
 
-This command retrieves the complete block uploaded in biicode and delete it from your ``deps`` folder.
+This command retrieves the complete block to your ``blocks`` folder, and deletes it from your ``deps`` folder.
+In this case, it will open the specific version you depend on. 
 
-.. container:: infonote
-
-  Learn more about :ref:`editing your published blocks <edit_dependecies>`
-
-Then your layout'll change to this:
+Then your layout will change to this:
 
 .. code-block:: text
 
   +-- mycalc
   |    +-- blocks
-  |    |    +-- maya
+  |    |    +-- myuser
   |    |    |    +-- calc
-  |    |    |    |    +-- bii
-  |    |    |    |        +-- requirements.bii 
   |    |    |    |    +-- main.cpp
   |    |    |    +-- math
-  |    |    |    |    +-- bii
-  |    |    |    |        +-- parents.bii 
   |    |    |    |    +-- main.cpp
-  |    |    |    |    +-- addition.cpp
-  |    |    |    |    +-- addition.h
+  |    |    |    |    +-- operations.cpp
+  |    |    |    |    +-- operations.h
   |    +-- deps
 
-So, we can already add the new functionality and unit test for **maya/math** block. Create the next files and change the main.cpp to test the **subtract function**.
+Now, we can add the new functionality and change the main.cpp to test the **substract** function.
 
-**decrease.h**
-
-.. code-block:: cpp
-
-  #pragma once
-  int subtract(int a, int b);
-
-
-**decrease.cpp**
+**operations.h**
 
 .. code-block:: cpp
 
-  #include "decrease.h"
-  int subtract(int a, int b){return a-b;}
+   #pragma once
+   int sum(int a, int b);
+   int substract(int a, int b);
+
+**operations.cpp**
+
+.. code-block:: cpp
+
+   #include "operations.h"
+   int sum(int a, int b) {return a+b;}
+   int substract(int a, int b){return a-b;}
+
 
 **main.cpp**
 
 .. code-block:: cpp
-  :emphasize-lines: 3,7,8,9
 
-  #include "google/gtest/gtest.h"
-  #include "addition.h"
-  #include "decrease.h"
-  TEST(Sum, Normal) {
+   #include "google/gtest/gtest.h"
+   #include "operations.h"
+   
+   TEST(Sum, Normal) {
     EXPECT_EQ(5, sum(2, 3));
-  }
-  TEST(Subtract, Normal) {
-    EXPECT_EQ(-1, subtract(2, 3));
-  }
-  int main(int argc, char **argv) {
+   }
+   TEST(Subtract, Normal) {
+    EXPECT_EQ(-1, substract(2, 3));
+   }
+   int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
-  }
+   }
 
 
-Build with ``bii cpp:build`` and run your project again to check everything is ok.
+You can build with ``bii cpp:build`` and run your tests ``myuser_math_main`` again to check everything is fine.
 
 
-2. Publish your updated code
-------------------------------
+2. Publish updated code
+-----------------------
 
-Then, if you are sure of your code, you could **upload it using the STABLE tag** and explain the block with a brief message:
-
-.. code-block:: bash
-
-  ~/mycalc$ bii publish maya/math --tag STABLE --msg "Simple C++ math functions library tested with GTest one"
-
-Your block version would be ``1`` and its tag, ``STABLE``, and if you take a look to your :ref:`parents.bii file <parents_bii>`, this'll have updated automatically:
+Now we can publish the math block again. As now we have 2 opened blocks (calc, math), we have
+to specify the name of the block that we want to publish:
 
 .. code-block:: bash
 
-  # This file contains your block ancestors versions
-  * maya/math: 1
+   ~/mycalc$ bii publish myuser/math
 
-
-3. Close the editing block 
-----------------------------
-
-When you've finished editing and publishing the **maya/math** block, you can "close" it and it'll return, with the code already updated, to your ``deps`` folder:
+Remember that publish by default is done with the DEV tag, so it overwrites your last published version.
+You can check that it has been updated in your biicode web profile.
+A new version is not created and thus **parents.bii** file remains unmodified:
 
 .. code-block:: bash
 
-  ~/mycalc$ bii close maya/math
+   # This file contains your block ancestors versions
+   * myuser/math: 0
 
-But what happens with **maya/calc** block? As its dependencies has been updated, your :ref:`requirements.bii <requirements_bii>` file's done too:
 
-.. code-block:: text
+3. Close edited block
+---------------------
 
-  maya/math: 1
+You can now close the **myuser/math** block, it and it will return, with the code already updated, to your ``deps`` folder:
 
-Then if you modify the content of your **maya/calc block main.cpp**:
+.. code-block:: bash
+
+   ~/mycalc$ bii close myuser/math
+
+
+Then you can modify the content of your **myuser/calc**:
 
 **main.cpp**
 
 .. code-block:: cpp
-  :emphasize-lines: 3,8
-
-  #include <iostream>
-  #include "maya/math/addition.h"
-  #include "maya/math/decrease.h"
-
-  using namespace std;
-  int main() {
-    cout<<"2 + 3 = "<< sum(2, 3)<<endl;
-    cout<<"2 - 3 = "<< subtract(2,3)<<endl;
-  }
+   
+   #include <iostream>
+   #include "myuser/math/operations.h"
+   
+   using namespace std;
+   int main() {
+      cout<<"2 + 3 = "<< sum(2, 3)<<endl;
+      cout<<"2 - 3 = "<< substract(2,3)<<endl;
+   }
 
 
- and build it, biicode'll update your dependencies (look at your ``~/deps/maya/math`` folder and you'll see the new files decrease.h and decrease.cpp):
+and build it, reusing also the new function:
 
 .. code-block:: bash
 
-  ~/mycalc$ bii cpp:build
-  ~/mycalc$ bin\maya_calc_main
-  2 + 3 = 5
-  2 - 3 = -1
+   ~/mycalc$ bii cpp:build
+   ~/mycalc$ bin\myuser_calc_main
+   2 + 3 = 5
+   2 - 3 = -1
 
-**Congrats! You just edited your dependencies and updated the changes**. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feedback, they are always welcomed.
+Congrats! You just edited your dependencies and updated the changes. 
+You know that we are available at |biicode_forum_link| for any problems.
+You can also |biicode_write_us| for suggestions and feedback, they are always welcomed.
 
 .. |biicode_forum_link| raw:: html
 
