@@ -24,7 +24,7 @@ This section summarizes the **C/C++ commands available to be used with the biico
 ``bii cpp:configure``: configure your project
 ---------------------------------------------
 
-This command configure your project as a C/C++ project automatically and adding the characteristics of your CMake files if you have it.
+This command configures your project as a C/C++ project automatically and adding the characteristics of your CMake files if you have it.
 
 .. code-block:: bash
 
@@ -45,7 +45,37 @@ This command configure your project as a C/C++ project automatically and adding 
 	-- Generating done
 	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_PROJECT]/build
 
-Visit the section: :ref:`how to configure a project with different CMake generators <configure_cmake_generators>`
+
+.. _cmake_generator:
+
+Configure your CMake Generator
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This section explains how to configure your CMake generator, just execute:
+
+.. code-block:: bash
+
+	$ bii cpp:configure -G "CMake generator"
+
+
+Useful operations
+=================
+
+To see the full list of CMake generators available in your system, execute this:
+
+.. code-block:: bash
+
+	$ cmake --help
+
+
+For example, to use Visual Studio 2010 for projects in Windows you should write:
+
+.. code-block:: bash
+
+	$ bii cpp: configure -G "Visual Studio 10"
+
+
+If you got any questions left, you can ask them at our `forum <http://forum.biicode.com/>`_.
 
 
 ``bii cpp:build``: build your project
