@@ -31,18 +31,16 @@ When you have your shining new project, you should execute the following command
 
 .. code-block:: bash
 
-    you@yourmachine ~/bii_ws/triangle $ bii rpi:initopengles pi 192.168.1.69
+    you@yourmachine ~/bii_ws/triangle $ bii rpi:initopengles
     pi@192.168.1.69's password:
     receiving incremental file list
     ..
     INFO: OpenGLES necessary files downloaded.
     you@yourmachine ~/bii_ws/triangle $
 
-If you don't provide arguments, biicode takes values provided in settings.bii
-configuration file for user and IP address of RaspberryPi.
+Biicode takes the values provided in ``settings.bii`` configuration file for user and IP address of RaspberryPi.
 
-Once executed this command you are ready to develop your awesome OpenGLES
-applications as usual with biicode. 
+Once executed this command you are ready to develop your awesome OpenGLES applications as usual with biicode. 
 
 Example
 -------

@@ -16,6 +16,7 @@ C/C++ Documentation
 
 	c++/gettingstarted
 	c++/publish-reuse
+	c++/edit-update
 	c++/building
 	c++/ides
 	c++/examples

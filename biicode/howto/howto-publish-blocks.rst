@@ -6,8 +6,7 @@ Publish blocks
 Use ``bii publish`` command into a **project** folder. Take a look at the different options to publish:
 
 If your **project** contains multiple blocks under your ``blocks`` folder, you'll  which one of them (``user_name/block_name``) 
-|
-|
+
 Available publishing options:
 -----------------------------
 
@@ -42,7 +41,7 @@ Publish your blocks with different tags:
 
 .. code-block:: bash
 
-	$ bii publish --tag TAG_NAME
+	$ bii publish --tag STABLE
 
 
 Publish with a descriptive message
@@ -86,7 +85,7 @@ For example:
 
 .. container:: infonote
 
-	*	**You can only publish a branch if you've made a previous publication with a tag different from DEV**
+	*	**You can only publish a branch if you’ve made a previous publication with a tag different from DEV**
 	*	Visit the section: :ref:`how to merge branches <merge_branches>`
 
 
