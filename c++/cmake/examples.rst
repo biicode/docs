@@ -126,6 +126,19 @@ For example, if you want to compile the block mrpotato/parts with the C++ 11 fla
 	target_compile_options(interface_mrpotato_parts_lib PUBLIC -std=c++11)
 
 
+
+Configure your CMake Generator
+-------------------------------
+
+To configure your cmake generator, you should execute:
+
+.. code-block:: bash
+
+	$ bii cpp:configure -G "CMake generator"
+
+
+To see more information about this command check :ref:`the reference <cmake_generator>`.
+
 Add Boost dependency
 ------------------------
 

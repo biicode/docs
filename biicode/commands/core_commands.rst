@@ -145,6 +145,12 @@ When you invoke this command the block is placed into the ``blocks`` folder with
 
 	$ bii open USER_NAME/BLOCK_NAME
 
+To open someone's branch, you will place the branch's user and block in brackets after its creator's user name and block name, like this:
+
+.. code-block:: bash
+
+	$ bii open USER_NAME/BLOCK_NAME(BRANCH_USER_NAME/BRANCH_BLOCK_NAME)
+
 .. container:: todo
 
 	Visit the section: :ref:`how to edit something you depend on <edit_dependecies>`
