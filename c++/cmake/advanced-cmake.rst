@@ -235,7 +235,7 @@ If you got any questions left, you can ask them at our `forum <http://forum.biic
 Use a custom variable on the CMakeLists.txt
 -------------------------------------------
 
-You can define a variable in your CMakeLists.txt and pass the value from command line. To do this, just pass the value as a parameter of cpp:build. See it ith an example:
+You can define a variable in your CMakeLists.txt and pass the value from command line. To do this, just pass the value as a parameter of cpp:configure.
 
 Imagine you have defined a variable name SUPER_TROOPER in your CMakeList.txt and you want to define it with TRUE or FALSE.
 
@@ -247,7 +247,7 @@ Imagine you have defined a variable name SUPER_TROOPER in your CMakeList.txt and
       message(STATUS "\n\nNo super trooper!!\n\n")
 	ENDIF()
 
-You can define the value of SUPER_TROOPER like this examples:
+You can define the value of SUPER_TROOPER wwith the flag -DSUPER_TROOPER=TRUE or -DSUPER_TROOPER=FALSE:
 
 .. code-block:: bash
 
