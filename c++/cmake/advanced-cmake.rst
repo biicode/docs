@@ -231,3 +231,50 @@ Let's see how the user1/block CMakeLists.txt would be, even considering the poss
 	endif()
 
 If you got any questions left, you can ask them at our `forum <http://forum.biicode.com/>`_.
+
+Use a custom variable on the CMakeLists.txt
+-------------------------------------------
+
+You can define a variable in your CMakeLists.txt and pass the value from command line. To do this, just pass the value as a parameter of cpp:build. See it ith an example:
+
+Imagine you have defined a variable name SUPER_TROOPER in your CMakeList.txt and you want to define it with TRUE or FALSE.
+
+.. code-block:: cmake
+
+	IF(SUPER_TROOPER)
+	  message(STATUS "\n\nSuper trooper!!\n\n")
+	ELSE()
+      message(STATUS "\n\nNo super trooper!!\n\n")
+	ENDIF()
+
+You can define the value of SUPER_TROOPER like this examples:
+
+.. code-block:: bash
+
+	$ bii cpp:configure -DSUPER_TROOPER=TRUE
+
+	(...)
+	Running: cmake  -G "MinGW Makefiles" -Wno-dev -DSUPER_TROOPER=TRUE ../cmake
+	--
+
+	Super trooper!!
+
+
+	-- Configuring done
+	-- Generating done
+	(...)
+
+.. code-block:: bash
+
+	$ bii cpp:configure -DSUPER_TROOPER=FALSE
+
+	(...)
+	Running: cmake  -G "MinGW Makefiles" -Wno-dev -DSUPER_TROOPER=FALSE ../cmake
+	--
+
+	No super trooper!!
+
+
+	-- Configuring done
+	-- Generating done
+	(...)
