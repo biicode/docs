@@ -49,7 +49,7 @@ This command configures your project as a C/C++ project automatically and adding
 .. _cmake_generator:
 
 Configure your CMake Generator
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This section explains how to configure your CMake generator, just execute:
 
@@ -59,7 +59,7 @@ This section explains how to configure your CMake generator, just execute:
 
 
 Useful operations
-=================
+~~~~~~~~~~~~~~~~~
 
 To see the full list of CMake generators available in your system, execute this:
 
@@ -72,7 +72,7 @@ For example, to use Visual Studio 2010 for projects in Windows you should write:
 
 .. code-block:: bash
 
-	$ bii cpp: configure -G "Visual Studio 10"
+	$ bii cpp:configure -G "Visual Studio 10"
 
 
 If you got any questions left, you can ask them at our `forum <http://forum.biicode.com/>`_.
