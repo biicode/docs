@@ -3,7 +3,20 @@
 Release Notes
 =============
 |
-**1.3.3 (21-08-2014)**
+**1.4.1** (04-Sept-2014)
+
+* Minimum CMake version updated to 2.8.12 (it was 2.8, but 2.8.12 was indeed required)
+* Added -p (--password) option to "bii user" so biicode can be scripted (e.g. travis-ci) without interactivity
+* Largely improved "bii deps" command
+* New structure and data of "xxx_vars.cmake" files, allowing choosing to build or not in block library (both static and shared), with better embedded comment string docs
+* CMake printing of built targets
+* CMake path inserted for upgrades to cmake 3.0 in bii setup:cpp
+* Files in web user profile ordered alphabetically
+* Bug of web navigation back-forth solved
+|
+
+
+**1.3.3** (21-08-2014)
 
 * Bugfix: colored output
 |
