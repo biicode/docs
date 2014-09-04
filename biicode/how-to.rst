@@ -11,4 +11,3 @@ How to
    howto/howto-edit-dependencies
    howto/howto-update-dependencies
    howto/howto-compare-blocks
-   howto/howto-view-all-deps
