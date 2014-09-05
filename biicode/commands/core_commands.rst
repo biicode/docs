@@ -2,13 +2,13 @@
 
 
 Core commands
-===============
+=============
 
 
 .. _bii_init_command:
 
 ``bii init``: creates a new project
-------------------------------------
+-----------------------------------
 
 This is the command that **creates new project**. It can **receives as a parameter the name of the project to be created** or **create the project in the current folder where you execute the command**. If you pass the name of the project, this command create a folder with the name passed as parameter and initialize the project inside.
 
@@ -27,7 +27,7 @@ Init a project in your current folder:
 .. _bii_setup_command:
 
 ``bii setup``: install necessary tools
----------------------------------------
+--------------------------------------
 
 This command helps you to set up all the necessary tools to start to use biicode.
 
@@ -54,7 +54,7 @@ Setup cross compiler tools for Raspberry Pi (must be linux)
 .. _bii_new_command:
 
 ``bii new``: creates new blocks
----------------------------------
+-------------------------------
 
 This is the command that **creates new block inside your project**. It must be invoked inside a biicode project folder, and **receives as the only parameter the name of the block to be created**. You can see :ref:`this basic 'hello world' example <cpp_getting_started>` to see how a typical block is created.
 
@@ -85,7 +85,7 @@ For example:
 .. _bii_publish_command:
 
 ``bii publish``: publish your blocks
--------------------------------------
+------------------------------------
 
 The ``bii publish`` command is used to publish your code into biicode. 
 
@@ -103,7 +103,7 @@ After your block has been published and uploaded to the biicode servers, the pro
 .. _bii_find_command:
 
 ``bii find``: find your external dependencies
------------------------------------------------
+---------------------------------------------
 
 This commands allows you to retrieve any code dependencies from the biicode servers. The client analyzes your code, and find missing dependencies that cannot be resolved searching in your project contents. The client then communicates with the biicode server and tries to find code that is missing in your project, and retrieves the best matching version according with your :ref:`policies<policies>`.
 
@@ -123,7 +123,7 @@ The retrieved files are copied on your file system, under the ``deps`` folder of
 .. _biiclean:
 
 ``bii clean``: delete meta-information
-------------------------------------------
+--------------------------------------
 
 The ``bii clean`` command cleans most of biicode internal project meta-information, keeping the strictly minimum required to reconstruct everything in a subsequent command. In theory, this command should not exist, but it is sometimes necessary, especially when new versions of biicode client are released that might have backwards incompatibilities.
 
@@ -135,7 +135,7 @@ The ``bii clean`` command cleans most of biicode internal project meta-informati
 .. _bii_open_command:
 
 ``bii open``: edit published blocks
--------------------------------------
+-----------------------------------
 
 This command allows you to edit a published block.
 You can use this command to edit **one of your dependency blocks** or any block you have seen on the web and you want to edit.
@@ -159,7 +159,7 @@ To open someone's branch, you will place the branch's user and block in brackets
 .. _bii_close_command:
 
 ``bii close``: finish editing published blocks
------------------------------------------------
+----------------------------------------------
 
 You can use ``bii close <block_name>`` command to close a block under edition in ``blocks``, i.e., a block that you have done a ``bii open`` and have be editing it. If it's a dependency of any block yours, moves it to ``deps`` folder.
 
@@ -170,7 +170,7 @@ You can use ``bii close <block_name>`` command to close a block under edition in
 .. _bii_merge_command:
 
 ``bii merge``: merge branches
--------------------------------
+-----------------------------
 
 This command allows you to **merge two different versions of the same block**. One of them must be available in a local project. The other must be a published branch of the same block. In any case, both versions must have a common ancestor, being different implementations of the same block. **This feature is still experimental**.
 
@@ -187,7 +187,7 @@ This command allows you to **merge two different versions of the same block**. O
 .. _bii_user_command:
 
 ``bii user``: shows or change your current biicode user
----------------------------------------------------------
+-------------------------------------------------------
 
 If you use it without parameter, it will show the current user, that can be None (anonymous).
 
@@ -203,3 +203,11 @@ If you pass a parameter, that will be the new biicode user. Such user should be 
 
 	$ bii user phil
 	INFO: Change user from None to phil
+   
+
+You can also specify your password, in order to avoid interactive request of it. 
+This can be useful for scripting or automating biicode tasks.
+
+.. code-block:: bash
+
+   $ bii user phil -p phil_password

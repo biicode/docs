@@ -12,14 +12,13 @@ C/C++ Documentation
    #. Biicode uses **cmake**, if you know cmake you can `customize your builds <http://docs.biicode.com/c++/reference/cpp-build-files.html>`_, if you don't, biicode will automatically handle the builds for you.
 
 .. toctree::
-	:maxdepth: 2
+	:maxdepth: 3
 
-	c++/gettingstarted
-	c++/publish-reuse
-	c++/edit-update
-	c++/building
-	c++/ides
-	c++/examples
-	c++/reference
-	c++/howto
-	c++/troubleshooting
+   c++/gettingstarted
+   c++/publish-reuse
+   c++/edit-update
+   c++/building
+   c++/cpp-commands
+   c++/ides
+   c++/examples
+   c++/troubleshooting

@@ -1,15 +1,22 @@
-.. _cpp_ides:
+Generators and IDEs
+===================
 
-Using an IDE
-=============
+CMake can generate projects for many IDEs and platforms. By default, biicode configures your
+projects with MinGW Makefiles (Windows) or UNIX Makefiles (MacOS and Linux) and no IDE.
 
-Biicode offers **integration with some of the most commonly used IDEs** for C++ programmers. By default, biicode configures your projects with MinGW Makefiles (Windows) or UNIX Makefiles (MacOS and Linux), to change it execute ``bii cpp:configure`` and the cmake command to change generators.
+To see the full list of CMake generators available in your system, you can execute:
+
+.. code-block:: bash
+
+	$ cmake --help
 
 
 .. _ide_eclipse:
 
-1. Eclipse CDT
-----------------
+Eclipse CDT
+-----------
+
+To create an Eclipse CDT project (you should install it manually), you can run:
 
 .. code-block:: bash
 
@@ -39,27 +46,27 @@ If you are using  Eclipse with **OS X** as development platform, you will need s
 
 .. _ide_visual:
 
-2. Visual Studio
-----------------------
+Visual Studio
+-------------
+
+You can also generate a Microsoft Visual Studio project, for example a Visual Studio 10 project:
 
 .. code-block:: bash
 
-  $ bii cpp:configure -G "Visual Studio 10"
+   $ bii cpp:configure -G "Visual Studio 10"
 
-If you changes the default generator, it'll be saved in your ``settings.bii`` file each time, and it'll convert in your new default generator.
+When you specify a generator, it'll be saved in your project ``settings.bii`` file each time, and it'll convert in your new default generator for this project.
+For example:
 
 .. code-block:: bash
 
-  $ bii cpp:configure -G "Visual Studio 9 2008"
-  ...
-  $ bii cpp:configure
-  #Calling to Visual Studio 9 2008 generator
+   $ bii cpp:configure -G "Visual Studio 9 2008"
+   ...
+   $ bii cpp:configure
+   #Calling to Visual Studio 9 2008 generator
 
 
-Finally, you are now ready to **open your project with Visual Studio**. Just **double-click on the .sln file inside the build folder** of your project and a VS project will open with the folder structure that appears below. Your source code is located in the third folder:
-
-.. image:: /_static/img/visual_studio_tree.jpg
-
+Finally, you are now ready to **open your project with Visual Studio**.
+Just **double-click on the .sln file inside the build folder** of your project and a VS project will open
 
 
-  

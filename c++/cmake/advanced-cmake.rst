@@ -1,12 +1,12 @@
 .. _cmake_advance:
 
 Advanced use of CMake
-=========================
+=====================
 
 .. _cpp_cmake_tutorials:
 
 Operating mode
------------------
+--------------
 
 This is a conceptual example to learn how to use the CMake variables available in your computer.
 
@@ -69,7 +69,7 @@ This implies that biicode doesn't download all the block files, just the ones ne
 
 
 Basic block CMakeLists.txt structure
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 With the previous example on your mind, let's see the CMakeLists.txt structure that works with biicode. **Things to keep in mind**:
 
@@ -99,7 +99,7 @@ The **basic block CMakeLists.txt structure** will be like this:
 
 
 Variables
-^^^^^^^^^^
+^^^^^^^^^
 
 At first, you need to load a variety of macros automatically included in the CMake project folder. Once loaded, you can run ``INIT_BIICODE_BLOCK``, which fills a number of variables used to communicate CMake and biicode:
 
@@ -121,7 +121,7 @@ Indeed, a few more variables are defined for certain operations, but they are no
 
 
 Useful operations
----------------------
+-----------------
 
 These are some basic operations that can help you write a ``CMakeLists.txt`` for a block:
 
@@ -140,7 +140,7 @@ For example, if **user2/block** is configured for Linux or Windows, a different 
 	ENDIF (WIN32)
 
 Add a build definition to the entire block:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: cmake
 
@@ -149,8 +149,8 @@ Add a build definition to the entire block:
 	  add_definitions(-D_CRT_SECURE_NO_DEPRECATE)
 	endif(MSVC)
 
-Add linker-flags to a target (in ZONE 2): 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Add linker-flags to a target (in ZONE 2):
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 It is very common to accumulate these flags along **ZONE 1** in a temporary variable (in MYLIBS for example), and finally add them to a target or multiple targets in **ZONE 2**. As it is an interesting structure, we are doing so in this example although it can be done directly on the targets:
 
@@ -162,7 +162,7 @@ It is very common to accumulate these flags along **ZONE 1** in a temporary vari
 	#AT ZONE 2:
 	target_link_libraries(${BII_LIB_TARGET} ${ MY_LIBS })
 
-Add libraries and packages that are detectable by CMake: 
+Add libraries and packages that are detectable by CMake:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The only thing to keep in mind when performing this operation is to use the generic target defined by biicode. Otherwise it is exactly the same. In this case we will add OpenGL associating the target variables instead of the block. Thus in **Zone 2** we write:
@@ -176,13 +176,13 @@ The only thing to keep in mind when performing this operation is to use the gene
 	endif()
 
 What can you do with biicode and CMake?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Given that the set of files that are to be used to generate the different targets are into ``BII_TARGET_SRC`` and  ``BII_LIB_SRC variables``, and the targets are identified  by ``BII_LIB_TARGET`` and ``<Target> BII_ _target``,  almost any operation acceptable by CMake  could be done. This gives the system all the versatility of CMake, combined with the powerful and stable dependencies management of biicode. 
 
 
 How will user1 write the block CMakeLists.txt
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Let's see how the user1/block CMakeLists.txt would be, even considering the possibility of using it without biicode:
 
 .. code-block:: cmake
@@ -232,49 +232,3 @@ Let's see how the user1/block CMakeLists.txt would be, even considering the poss
 
 If you got any questions left, you can ask them at our `forum <http://forum.biicode.com/>`_.
 
-Use a custom variable on the CMakeLists.txt
--------------------------------------------
-
-You can define a variable in your CMakeLists.txt and pass the value from command line. To do this, just pass the value as a parameter of cpp:configure.
-
-Imagine you have defined a variable name SUPER_TROOPER in your CMakeList.txt and you want to define it with TRUE or FALSE.
-
-.. code-block:: cmake
-
-	IF(SUPER_TROOPER)
-	  message(STATUS "\n\nSuper trooper!!\n\n")
-	ELSE()
-      message(STATUS "\n\nNo super trooper!!\n\n")
-	ENDIF()
-
-You can define the value of SUPER_TROOPER wwith the flag -DSUPER_TROOPER=TRUE or -DSUPER_TROOPER=FALSE:
-
-.. code-block:: bash
-
-	$ bii cpp:configure -DSUPER_TROOPER=TRUE
-
-	(...)
-	Running: cmake  -G "MinGW Makefiles" -Wno-dev -DSUPER_TROOPER=TRUE ../cmake
-	--
-
-	Super trooper!!
-
-
-	-- Configuring done
-	-- Generating done
-	(...)
-
-.. code-block:: bash
-
-	$ bii cpp:configure -DSUPER_TROOPER=FALSE
-
-	(...)
-	Running: cmake  -G "MinGW Makefiles" -Wno-dev -DSUPER_TROOPER=FALSE ../cmake
-	--
-
-	No super trooper!!
-
-
-	-- Configuring done
-	-- Generating done
-	(...)

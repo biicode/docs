@@ -2,16 +2,16 @@
 
 
 Examples
-===============
+========
 
 Activate C++11
----------------------
+--------------
 
 This example shows you how to compile a simple C++11 code with the C++11 compilation flag.
 
 
 Create a new project
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 First, create a new project to follow the example
 
@@ -22,7 +22,7 @@ First, create a new project to follow the example
    ~/cpp11_project$ 
 
 Download the example block
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now, :download:`download the complete example block </_static/code/cpp/cmake/cpp_11_example.zip>` and unzip it into your ``~/cpp11_project/blocks/`` folder. You can take a look at |cpp11_block_link| too.
 
@@ -83,11 +83,10 @@ The block contains:
 		SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 	ENDIF(APPLE)
 
-	# MACRO TO ADD TARGETS
 	ADD_BIICODE_TARGETS()
 
 Build and run
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 Make sure the program works well:
 
@@ -97,17 +96,11 @@ Make sure the program works well:
    ~/cpp11_project$ bin\phil_cpp_11_example_main
    2 uppercase letters in: Hello World!
 
-.. container:: infonote
 
-    Linux/MacOS users:
-
-    .. code-block:: bash
-
-      ~/cpp11_project$ ./bin/phil_cpp_11_example_main
 
 
 Configure the CMake file of dependencies
------------------------------------------
+----------------------------------------
 
 In this section, it explain the way to write cmake files for your dependencies.
 
@@ -127,20 +120,9 @@ For example, if you want to compile the block mrpotato/parts with the C++ 11 fla
 
 
 
-Configure your CMake Generator
--------------------------------
-
-To configure your cmake generator, you should execute:
-
-.. code-block:: bash
-
-	$ bii cpp:configure -G "CMake generator"
-
-
-To see more information about this command check :ref:`the reference <cmake_generator>`.
 
 Add Boost dependency
-------------------------
+--------------------
 
 If you have installed Boost C++ library and you want to build some C++11 Boost example as |boost_cpp_link|, we teach you bellow as make it.
 
@@ -149,7 +131,7 @@ If you have installed Boost C++ library and you want to build some C++11 Boost e
    <a href="http://www.boost.org/doc/libs/1_55_0/doc/html/boost_asio/example/cpp11/allocation/server.cpp" target="_blank">server.cpp</a>
 
 Create a new project
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 First, create a new project to follow the example
 
@@ -161,7 +143,7 @@ First, create a new project to follow the example
 
 
 Download the example block
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now, :download:`download the complete example block </_static/code/cpp/cmake/boost_example.zip>` and unzip it into your ``~/boost_project/blocks/`` folder. You can take a look at |boost_block_link| too.
 
@@ -219,7 +201,7 @@ The CMakeLists.txt contains (main.cpp content is too large to be showed):
 
 
 Build and run
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 Make sure the program works well:
 
@@ -229,11 +211,5 @@ Make sure the program works well:
    ~/boost_project$ bin\phil_boost_example_main
    Usage: server <port>
 
-.. container:: infonote
 
-    Linux/MacOS users:
-
-    .. code-block:: bash
-
-      ~/boost_project$ ./bin/phil_boost_example_main
 
