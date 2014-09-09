@@ -1,11 +1,10 @@
 .. _cpp_building:
 
-Building and CMake
-==================
+Build configuration
+===================
 
 .. toctree::
    :maxdepth: 2
 
-   cmake/introduction
-   cmake/advanced-cmake
+   cmake/targets
    cmake/examples
