@@ -1,19 +1,18 @@
 .. _cpp_building:
 
-===================
 Build configuration
 ===================
 
-Biicode uses CMake to configure and build your projects. A CMakeLists.txt file has been automatically
-created for you in the previous examples.
+Biicode uses CMake to configure and build your projects. In this section, we explain you how we work with it.
+
 
 .. _cmake_introduction:
 
 Define build targets
 ----------------------
 
-Lets return back to the original ``myproject`` to check
-it and learn how to adapt it to your needs. The layout is: ::
+A CMakeLists.txt file has been automatically created for you in the previous examples. Lets return back to the original ``myproject`` to check it and learn how to adapt it to your needs. The layout is: ::
+
 
   +-- myproject
     |    +-- blocks
