@@ -363,14 +363,7 @@ Let's see the different possibilities:
 		$ bii diff fenix/armadillo 2 3
 
 
-* Compare your current block with a branch version:
-
-	.. code-block:: bash
-
-		$ bii diff fenix/armadillo fenix/armadillo(develop):5
-
-
-* You have the possibility to see a short diff output  in any previous cases:
+* You have the possibility to see a short diff output in any previous cases:
 
 	.. code-block:: bash
 
