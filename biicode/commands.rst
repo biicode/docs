@@ -325,31 +325,6 @@ It's used to know all the block files (and their types) and their dependencies.
 		* U: unresolved file
 
 
-.. _bii_status_command:
-
-``bii status``: show block changes
------------------------------------
-
-``bii status`` command indicates you if there are changes in your code.
-
-For example, if you have not changes:
-
-.. code-block:: bash
-
-	$ bii status
-	INFO: Everything up to date
-
-If you have changes in a ``main.cpp`` file:
-
-.. code-block:: bash
-
-	$ bii status
-	[USER]/[BLOCK_NAME]
-
-	  Modified:
-	    [USER]/[BLOCK_NAME]/main.cpp
-
-
 .. _bii_diff_command:
 
 ``bii diff``: compare between block versions
@@ -359,8 +334,47 @@ Compare files and show differences with ``bii diff`` command. You can compare yo
 
 .. code-block:: bash
 
-	$ bii diff BLOCK_VERSION_1 BLOCK_VERSION_2
+	$  bii diff [--short] [block_name] [v1] [v2]
 
-.. container:: todo
+Cases
+^^^^^^
 
-	Visit the section: :ref:`how to compare two blocks <compare_blocks>`
+Imagine you are ``fenix`` user with an ``armadillo`` block in your current project and you published ``4`` different versions to ``master`` branch.
+
+Let's see the different possibilities:
+
+* Compare your current block with your last published current block version:
+
+	.. code-block:: bash
+
+		$ bii diff
+
+* Compare your current block with a specific version:
+
+	.. code-block:: bash
+
+		$ bii diff fenix/armadillo 2
+
+
+* Compare two specific versions (``2`` and ``3``) of your current block:
+
+	.. code-block:: bash
+
+		$ bii diff fenix/armadillo 2 3
+
+
+* Compare your current block with a branch version:
+
+	.. code-block:: bash
+
+		$ bii diff fenix/armadillo fenix/armadillo(develop):5
+
+
+* You have the possibility to see a short diff output  in any previous cases:
+
+	.. code-block:: bash
+
+		$ bii diff --short
+
+
+**Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_
