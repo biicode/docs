@@ -7,7 +7,7 @@ C++ commands
 ``bii cpp:configure``: configure your project
 ---------------------------------------------
 
-This command calls to ``bii work`` to analyze your project and process depedencies, then creates
+This command calls to ``bii work`` to analyze your project and process dependencies, then creates
 or update the required project CMake files. You can pass parameters to it in order to define for
 example which CMake generator you want to use. Once the CMake files are created, this command is
 basically a ``cmake .`` invocation within the project ``build`` folder.

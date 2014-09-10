@@ -1,6 +1,6 @@
 .. _bii_rpi_tools:
 
-Command list
+RPi commands
 ============
 
 This section summarizes the **Raspberry Pi commands available to be used with the biicode client program**. You can see these tools if you execute:
