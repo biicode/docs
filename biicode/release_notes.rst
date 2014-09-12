@@ -2,6 +2,13 @@
 
 Release Notes
 =============
+
+**1.5.4** (09-Sept-2014)
+
+* Deleted "bii status" command
+* Largely improved "bii diff" command
+* Solved some bugs with CMake
+* biicode is now case sensitive
 |
 **1.4.1** (04-Sept-2014)
 
