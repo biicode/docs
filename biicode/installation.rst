@@ -35,17 +35,29 @@ Now, `download the appropriate installer for your development platform <https://
 
     .. code-block:: bash
 
-        # 1. Add this line to your /etc/apt/sources.list file
-        deb http://apt.biicode.com/debian/ stable non-free
+        # 1. Create a file named '/etc/apt/sources.list.d/biicode.list' and put the line corresponding to your linux distribution:
         
-        # 2. Add our public key executing:
-        wget -qO- http://apt.biicode.com/packages.biicode.key | sudo apt-key add -
-        
+	Ubuntu 12:
+        	deb http://apt.biicode.com precise main
+
+	Ubuntu 13:
+		deb http://apt.biicode.com saucy main
+
+	Ubuntu 14:
+		deb http://apt.biicode.com trusty main
+		
+	Debian Wheezy:
+		deb http://apt.biicode.com wheezy main
+		
+
+	# 2. Add our public key executing:
+	sudo wget -O /etc/apt/trusted.gpg.d/biicode.gpg http://apt.biicode.com/keyring.gpg       
+ 
         # 3. Execute apt-get update:
         sudo apt-get update 
         
         # 4. Execute apt-get install: 
-        sudo apt-get install biicode
+        sudo apt-get -y install biicode
 
 
 2. Choose the development tools
