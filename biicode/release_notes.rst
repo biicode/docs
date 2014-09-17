@@ -3,6 +3,12 @@
 Release Notes
 =============
 
+**1.6** (16-Sept-2014)
+
+* Solved bug in cpp parser
+* Added a new filter with patterns in mains.bii file
+|
+
 **1.5.4** (09-Sept-2014)
 
 * Deleted "bii status" command
