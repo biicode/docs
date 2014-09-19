@@ -11,6 +11,8 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
 
    examples/zmq
    examples/zmq_protobuf
+   examples/tinythread
+   examples/jsonxx
    examples/lib_httpserver
    examples/google-test-tutorial
    examples/box2d
