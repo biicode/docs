@@ -3,32 +3,18 @@
 Box2D
 ========
 
-Learn how to use Box2D  library with biicode. Box2D is an open source C++ engine to simulate rigid bodies in 2D, it is also, AngryBirds motor engine. You can check 
-`wikipedia Box2D explanation <http://es.wikipedia.org/wiki/Box2D>`_. 
+|box2d_homepage| is an open source C++ engine to simulate rigid bodies in 2D, it is also, AngryBirds motor engine. You can check |wiki_box2d|. 
 
-In this example you will calculate whenever a circle falls from a certain height and bounces at a defined lower limit in the created world. 
+The main block is |bii_box2d|, which is generated from this |fork_box2d|.
 
-First of all, make sure all the required tools are installed:
-
-.. code-block:: bash
-
-   ~/$ bii setup:cpp
-
-1. Create a biicode project
+Bounces of a circle falling
 ----------------------------
 
-Create a new project as described in the :ref:`getting started example <cpp_getting_started>`:
+In this example you will calculate whenever a circle falls from a certain height and bounces at a defined lower limit in the created world. Then, create a project, one block and copy the bellow main.cpp file:
 
 .. code-block:: bash
 
    ~$ bii init box2d
-
-2. Create a new block
-----------------------
-by executing these:
-
-.. code-block:: bash
-
    ~$ cd box2d
    ~/box2d$ bii new myuser/box2d_example --hello cpp
 
@@ -129,50 +115,27 @@ the following code:
    }
 
 
-
-3. Depending on Box2D
-----------------------
-
-Find your dependency to ``#include "erincatto/box2d/box2d/box2d.h"`` in biicode:
+Find your dependency to ``#include "erincatto/box2d/box2d/box2d.h"`` and build the project:
 
 .. code-block:: bash
 
-   ~/box2d$ bii find
-
-**This downloads ``box2d.h`` along with its dependencies into the ``deps`` folder at your project.
-
-4. Build and run your project
------------------------------
-Let's build and run the box2d application.
-
-.. code-block:: bash
-
+  ~/box2d$ bii find
   ~/box2d$ bii cpp:build
-  ...
-  ~/box2d$ bin\myuser_box2d_example_main
- 
 
-.. container:: infonote
 
-    Linux/MacOS users:
+Execute the binary and this is how the output looks like:
 
-    .. code-block:: bash
+.. code-block:: bash
 
-      ~/myproject$ .bin/myuser_box2d_example_main
-
-This is how the output looks like:
-
-   .. code-block:: bash
-
-      X = 0 Y = 3.99722
-      X = 0 Y = 3.99167
-      X = 0 Y = 3.98333
-      X = 0 Y = 3.97222
-      X = 0 Y = 3.95833
-      X = 0 Y = 3.94167
-      X = 0 Y = 3.92222
-      Ball hits the ground!!
-
+  ~/box2d$ bin/myuser_box2d_example_main
+  X = 0 Y = 3.99722
+  X = 0 Y = 3.99167
+  X = 0 Y = 3.98333
+  X = 0 Y = 3.97222
+  X = 0 Y = 3.95833
+  X = 0 Y = 3.94167
+  X = 0 Y = 3.92222
+  Ball hits the ground!!
 
 That's it!
 
@@ -192,3 +155,18 @@ Any suggestion or feedback? |biicode_write_us| It is very welcomed :)
 
 
 
+.. |box2d_homepage| raw:: html
+
+   <a href="http://box2d.org/" target="_blank">Box2D</a>
+
+.. |wiki_box2d| raw:: html
+
+   <a href="http://es.wikipedia.org/wiki/Box2D" target="_blank">wikipedia Box2D explanation</a>
+
+.. |bii_box2d| raw:: html
+
+   <a href="https://www.biicode.com/erincatto/erincatto/box2d/master" target="_blank">here</a>
+
+.. |fork_box2d| raw:: html
+
+   <a href="https://github.com/davidsanfal/box2d" target="_blank">github repo</a>
