@@ -16,7 +16,7 @@ This example is a small modification of the code originaly programmed by `Ali Ba
 
 *"To avoid having to write the same code every time you want to create an OpenGL graphical application with GUI components, this program code can be used as a template to get you directly started".*
 
-You can `explore the source code block for this example following this link <https://www.biicode.com/luispedraza/blocks/luispedraza/glui_example/branches/master>`__. In order to try this example, you only need to follow these steps:
+You can `explore the source code block for this example following this link <https://www.biicode.com/examples/blocks/examples/glui_example/branches/master>`__. In order to try this example, you only need to follow these steps:
 
 .. container:: infonote
 
@@ -36,11 +36,11 @@ You can `explore the source code block for this example following this link <htt
    $ bii init <project_name>
    $ cd <project_name>
 
-2. **Open "luispedraza/glui_example" block**. Download the ``luispedraza/glui_example`` block to your project's `blocks` folder. Inside your project folder, execute the command:
+2. **Open "examples/glui_example" block**. Download the ``examples/glui_example`` block to your project's `blocks` folder. Inside your project folder, execute the command:
 
 .. code-block:: bash
 
-		<project_name>$ bii open luispedraza/glui_example
+		<project_name>$ bii open examples/glui_example
 
 
 3. **Retrieve all missing dependencies** using the ``bii find`` command. This way all missing dependencies will be downloaded into the ``deps`` folder of your project.
