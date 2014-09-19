@@ -13,7 +13,7 @@ Open and build the examples
 ---------------------------
 
 This example is `already in biicode <http://www.biicode.com/examples/tinytread>`_,
-it is very simple to build it, by just opening the block
+it is very simple to build it, by just opening the block and building it.
 
 .. code-block:: bash
 
@@ -25,7 +25,7 @@ it is very simple to build it, by just opening the block
 Simple Hello World with a thread
 --------------------------------
 
-Now, build and run the hello example.
+Now, run the hello example.
 
 .. code-block:: bash
 
@@ -88,4 +88,3 @@ You can see all the code `here <https://www.biicode.com/examples/examples/tinyth
    $ bin/examples_tinythread_fractal
 
 .. image:: ../../_static/img/c++/examples/fractal.jpg
-

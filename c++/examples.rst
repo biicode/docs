@@ -10,6 +10,8 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    :glob:
 
    examples/zmq
+   examples/tinythread
+   examples/jsonxx
    examples/lib_httpserver
    examples/google-test-tutorial
    examples/box2d
