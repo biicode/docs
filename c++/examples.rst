@@ -24,3 +24,4 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/freeglut
    examples/cimg
    examples/lib_sqlite
+   examples/lib_muparser

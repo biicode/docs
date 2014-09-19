@@ -5,7 +5,7 @@ SQLite is a software library that implements a self-contained, serverless, zero-
 
 You can find here the `SQLite library site <http://www.biicode.com/sqlite/sqlite/sqlite/master/5>`_ .
 
-The following example how-to use the SQLite++ wrapper. You can find this example in `the biicode SQLite samples block <http://www.biicode.com/examples/examples>`_ .
+The following example how-to use the SQLite++ wrapper. You can find this example in `the biicode SQLite samples block <http://www.biicode.com/examples/sqlite>`_ .
 
 **main_mili.cpp**
 
@@ -14,7 +14,7 @@ The following example how-to use the SQLite++ wrapper. You can find this example
    :linenos:
 
 **Download:**
-:download:`main.cpp </_static/code/cpp/examples/sqlite/sqlite_example.zip>`
+:download:`sqlite_example.zip </_static/code/cpp/examples/sqlite/sqlite_example.zip>`
 
 Create a block:
 
