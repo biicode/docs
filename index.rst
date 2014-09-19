@@ -1,45 +1,23 @@
-.. biicode docs documentation master file, created by
-   sphinx-quickstart on Tue Oct 29 14:40:24 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-
 Welcome to the biicode documentation!
 =====================================
 
-Here you will find all the information to get started using biicode with your projects. Soon you will discover that coding has never been easier!
+Here you will find all the information you need to get started using biicode with your projects.
 
-Contents:
+The documentation is structured as follows:
+
+* **Biicode General Information**: Contains general information about how biicode works. Here you will learn how register and download the biicode installer for your platform, and some basic concepts about biicode projects layout and important folders and configuration files. You'll also get access to the general reference for the client commands and tools.
+* **C/C++ Documentation**: contains information about the biicode support for C and C++ projects. Specific tools and configuraton options are explained in detail. You will also find a basic "Hello World" example project, and many more examples using different libraries.
+* **Arduino Documentation** contains specific documentation for Arduino projects. Here you'll learn how biicode simplifies working with Arduino boards and reusing Arduino libraries.
+* **Raspberry Pi Documentation** explains how to develop for your Raspberry Pi boards using biicode. Biicode technology simplifies these projects making easier both native compiling and cross compiling. You'll find a simple getting-started project along with many others.
+* **Node.js Documentation** contains specific tools, commands and examples for developing Node.js projects with the help of biicode.
+
+Feel free to select the documentation section of your interest from the following **table of contents**. You can also browse the different sections selecting one option form the menu above.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
-   index-docs/intro-to-biicode
-   index-docs/install
-   index-docs/getting-started
-   index-docs/basic-usage
-   index-docs/advanced-features
-   index-docs/hardware
-   index-docs/articles
-   index-docs/examples   
-   index-docs/reference
-   index-docs/troubleshooting
-   index-docs/upgrading
-   index-docs/faqs
-
-
-
-
-
-.. Comment
-   Biicode presentation video
-   ------------
-   .. raw:: html
-
-      <iframe width="640" height="480" src="//www.youtube.com/embed/IJcBxT_fhaw" frameborder="0" allowfullscreen></iframe>
-	Indices and tables
-	==================
-
-	* :ref:`genindex`
-	* :ref:`modindex`
-	* :ref:`search`
+   biicode
+   c++
+   raspberrypi
+   arduino
+   nodejs

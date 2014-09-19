@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <site base_url="http://docs.biicode.com/" store_into="/home/laso/workspace/docs/./sitemap.xml.gz" verbose="1">
+            <directory path="/home/laso/workspace/docs/." url="http://docs.biicode.com/" default_file="index.html" />
+            <filter  action="drop"  type="regexp"    pattern="/\.[^/]*" />
+            <filter  action="drop"  type="regexp"    pattern="/_[^/]*" />
+        </site>
+        

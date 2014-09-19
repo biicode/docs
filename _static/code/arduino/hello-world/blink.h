@@ -10,8 +10,8 @@
 class Blink
 {
 public:
-	void blink_setup(int led, int interval_ms);
-	void blink_loop();
+	void setup(int led, int interval_ms);
+	void loop();
 
 private:
 	int ledState;			// ledState used to set the LED
