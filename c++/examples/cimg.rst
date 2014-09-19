@@ -8,12 +8,14 @@ process and display images. Very portable (Unix/X11,Windows, MacOS X, FreeBSD, .
 efficient, easy to use, it's a pleasant library for developping image processing
 algorithms in C++.
 
-There are several examples in Cimg biicode block. https://www.biicode.com/tschumperle/tschumperle/cimg/master
+The main block is `here <https://www.biicode.com/tschumperle/cimg>`_ and contains several examples. Its generated
+from this `github repo <https://github.com/lasote/cimg>`_
+
 
 General usage
 ----------------------------------
 
-Just **#include 'tschumperle/cimg/CImg.h'**, execute **bii find** for download the requirements and use Cimg in your biicode project!
+Just **#include 'tschumperle/cimg/CImg.h'** in your cpp file, execute **bii find** for download the requirements and **bii cpp:build** for build your project.
 
 Usage example: Tron game
 ----------------------------------
