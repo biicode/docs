@@ -24,4 +24,5 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/freeglut
    examples/lib_flatbuffers
    examples/lib_log4z
-   
+   examples/cimg
+
