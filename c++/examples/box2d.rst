@@ -1,12 +1,15 @@
 .. _box2d:
 
-Box2D
-========
 
-Learn how to use Box2D  library with biicode. Box2D is an open source C++ engine to simulate rigid bodies in 2D, it is also, AngryBirds motor engine. You can check 
+Box2D
+-----
+
+Learn how to use Box2D  library with biicode. Box2D is an open source C++ engine to simulate 
+rigid bodies in 2D, it is also, AngryBirds engine. You can check
 `wikipedia Box2D explanation <http://es.wikipedia.org/wiki/Box2D>`_. 
 
-In this example you will calculate whenever a circle falls from a certain height and bounces at a defined lower limit in the created world. 
+In this example you will calculate whenever a circle falls from a certain height and bounces
+at a defined lower limit in the created world. 
 
 First of all, make sure all the required tools are installed:
 
@@ -15,7 +18,7 @@ First of all, make sure all the required tools are installed:
    ~/$ bii setup:cpp
 
 1. Create a biicode project
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create a new project as described in the :ref:`getting started example <cpp_getting_started>`:
 
@@ -24,7 +27,7 @@ Create a new project as described in the :ref:`getting started example <cpp_gett
    ~$ bii init box2d
 
 2. Create a new block
-----------------------
+^^^^^^^^^^^^^^^^^^^^^
 by executing these:
 
 .. code-block:: bash
@@ -131,7 +134,7 @@ the following code:
 
 
 3. Depending on Box2D
-----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 Find your dependency to ``#include "erincatto/box2d/box2d/box2d.h"`` in biicode:
 
@@ -142,15 +145,15 @@ Find your dependency to ``#include "erincatto/box2d/box2d/box2d.h"`` in biicode:
 **This downloads ``box2d.h`` along with its dependencies into the ``deps`` folder at your project.
 
 4. Build and run your project
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Let's build and run the box2d application.
 
 .. code-block:: bash
 
-  ~/box2d$ bii cpp:build
-  ...
-  ~/box2d$ bin\myuser_box2d_example_main
- 
+   ~/box2d$ bii cpp:build
+   ...
+   ~/box2d$ bin\myuser_box2d_example_main
+
 
 .. container:: infonote
 
@@ -159,6 +162,7 @@ Let's build and run the box2d application.
     .. code-block:: bash
 
       ~/myproject$ .bin/myuser_box2d_example_main
+
 
 This is how the output looks like:
 

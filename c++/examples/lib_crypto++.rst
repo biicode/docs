@@ -1,5 +1,5 @@
-Crypto++, a free C++ class library of cryptographic schemes
-===========================================================
+Crypto++
+========
 
 Crypto++ is a C++ class library of cryptographic algorithms and schemes written by Wei Dai. For more information about this library, visit their `official website <http://www.cryptopp.com/>`_ or wiki.
 
