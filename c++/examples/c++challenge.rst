@@ -3,7 +3,7 @@
 C++ challenge
 =============
 
-We have proposed a `C++ challenge <http://web.biicode.com/challenge>`_ for showing the benefits of our technology. The goal is to build a wrapper around two linear systems solver; one dense, and the other one sparse.
+We have proposed a `C++ challenge <https://github.com/biicode/challenge>`_ for showing the benefits of our technology. The goal is to build a wrapper around two linear systems solver; one dense, and the other one sparse.
 
 The `source files <https://github.com/biicode/challenge>`_ have dependencies to 3 well known open source libraries:
 
