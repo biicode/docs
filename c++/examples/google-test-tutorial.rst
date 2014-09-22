@@ -1,5 +1,5 @@
-Google Test Tutorial
-====================
+Google Test
+===========
 
 This example uses the famous library `googletest, a Google C++ Testing Framework <http://code.google.com/p/googletest/>`_. If you are familiar with coding in C++, you probably know about this library and use it for testing your projects. Otherwise, you can learn more visiting the `googletest project Wiki page <http://code.google.com/p/googletest/w/list>`_.
 
@@ -7,13 +7,13 @@ In this example **we are going to create a factorial function and a test for it*
 
 
 1. Create a new project
--------------------------
+-----------------------
 
 Create a new project as described in the :ref:`hello world example <cpp_getting_started>`.
 
 
 2. Create a function and a test for it
----------------------------------------
+--------------------------------------
 
 We will start with a math example: a **simple function to calculate the factorial of an integer number**, which returns
 
@@ -96,7 +96,7 @@ The final step is to actually compile and execute the test. You can accomplish t
 	
 
 5. Creating test suites
-------------------------
+-----------------------
 
 If you want to have multiple test classes and run them all toghether you don't need to create multiple main methods, you just have to indicate which tests you want to include in your suite. For example, we can split the ``main_test.cpp`` in the following three files:
 

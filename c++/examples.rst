@@ -13,10 +13,10 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/zmq_protobuf
    examples/tinythread
    examples/jsonxx
-   examples/lib_httpserver
-   examples/google-test-tutorial
-   examples/box2d
    examples/eigen
+   examples/lib_flatbuffers
+   examples/lib_log4z
+   examples/box2d
    examples/lib_gmock
    examples/lib_crypto++
    examples/lib_glui
@@ -24,8 +24,7 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/lib_zlib
    examples/c++challenge
    examples/freeglut
-   examples/lib_flatbuffers
-   examples/lib_log4z
    examples/cimg
    examples/lib_sqlite
    examples/lib_muparser
+   examples/lib_httpserver

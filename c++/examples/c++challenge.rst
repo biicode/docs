@@ -1,9 +1,9 @@
 .. _c-challenge:
 
-Solving the C++ challenge
-=========================
+C++ challenge
+=============
 
-We have proposed a `C++ challenge <http://web.biicode.com/challenge>`_ for showing the benefits of our technology. The goal is to build a wrapper around two linear systems solver; one dense, and the other one sparse.
+We have proposed a `C++ challenge <https://github.com/biicode/challenge>`_ for showing the benefits of our technology. The goal is to build a wrapper around two linear systems solver; one dense, and the other one sparse.
 
 The `source files <https://github.com/biicode/challenge>`_ have dependencies to 3 well known open source libraries:
 
@@ -16,7 +16,7 @@ The challenge consists in building and runing the code, in three different platf
 In this section we explain, step by step, how to solve this challenge with the help of biicode.
 
 Create a new project
----------------------
+--------------------
 
 Open your console and create a new project named "challenge":
 

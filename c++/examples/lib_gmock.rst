@@ -1,5 +1,5 @@
-Gmock (Google C++ Mocking Framework)
-=====================================
+Google Mock (GMock)
+===================
 
 Google C++ Mocking Framework (or Google Mock, or simply gmock for short) is a library for writing and using C++ mock classes. For more information about this library, visit their `official website <https://code.google.com/p/googlemock/>`_ or `wiki <https://code.google.com/p/googlemock/w/list>`_ 
 
