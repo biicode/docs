@@ -3,6 +3,14 @@
 Release Notes
 =============
 
+**1.7.2** (24-Sept-2014)
+
+* Solved bug in merge.
+* dependencies.bii now accepts file patterns.
+* New apt server for debian based distributions including wheezy.
+* Better and cleaner deb packaging for debian based distributions.
+|
+
 **1.6** (16-Sept-2014)
 
 * Solved bug in cpp parser
