@@ -3,7 +3,7 @@
 Release Notes
 =============
 
-**1.7.4** (24-Sept-2014)
+**1.7.2** (24-Sept-2014)
 
 * Solved bug in merge.
 * dependencies.bii now accepts file patterns.
