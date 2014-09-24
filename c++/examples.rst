@@ -29,3 +29,4 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/lib_muparser
    examples/lib_httpserver
    examples/lib_splines
+   examples/ptypes
