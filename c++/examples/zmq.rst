@@ -8,7 +8,7 @@ paradigms as multicast, broadcast, client-server, etc. in a new and brilliant wa
 It is very actively developed, with a great community and used in many real projects.
 Are you thinking in building your own distributed application? Don't think more, use ZMQ.
 
-The main block is `here <http://www.biicode.com/diego/libzmqr>`_, which is generated
+The main block is `here <http://www.biicode.com/diego/libzmq>`_, which is generated
 from this `github repo <https://github.com/drodri/libzmq>`_
 
 You can read a post about this example and the ZMQ project in
