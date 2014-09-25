@@ -8,7 +8,7 @@ This block is a C++ library to parse a character sequence as an expression using
 The main block is `here <http://www.biicode.com/amalulla/amalulla/cpp-expression-parser>`_, which is generated from this `github repo <https://github.com/bamos/cpp-expression-parser>`_.
 
 Simple form of mathematical expression parsing
---------------------------------------------
+-----------------------------------------------
 
 This example is `already in biicode <http://www.biicode.com/examples/expression-parser>`_, it's simple to run, just open the block and build it like this:
 
