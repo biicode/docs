@@ -7,7 +7,7 @@ json11 is a tiny JSON library for C++11, providing JSON parsing and serializatio
 
 The main block is `here <https://www.biicode.com/lasote/json11>`_, which is generated from this `github repo <https://github.com/lasote/json11>`_
 
-Simple parser and converter from JSON to XML 
+Simple convert data to json and vice versa 
 --------------------------------------------
 
 This example is `already in biicode <http://www.biicode.com/examples/json11>`_, it is very simple to build it, by just opening the block and building it.
