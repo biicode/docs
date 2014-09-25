@@ -13,6 +13,7 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/zmq_protobuf
    examples/tinythread
    examples/jsonxx
+   examples/json11
    examples/eigen
    examples/lib_flatbuffers
    examples/lib_log4z
