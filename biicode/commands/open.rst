@@ -1,8 +1,28 @@
+.. _bii_open_command:
+
+``bii open``: edit published blocks
+=========================================
+
+This command allows you to edit a published block.
+You can use this command to edit **one of your dependency blocks** or any block you have seen on the web and you want to edit.
+When you invoke this command the block is placed into the ``blocks`` folder within your project, and their cells become editable source files that can be modified by you and eventually published in a new version of the same branch (if you have writting permissions for that branch) or in a new branch (using the :ref:`publish command<bii_publish_command>`).
+
+.. code-block:: bash
+
+	$ bii open USER_NAME/BLOCK_NAME
+
+To open someone's branch, you will place the branch's user and block in brackets after its creator's user name and block name, like this:
+
+.. code-block:: bash
+
+	$ bii open USER_NAME/BLOCK_NAME(BRANCH_USER_NAME/BRANCH_BLOCK_NAME)
+
+
 .. _edit_dependecies:
 
 
 Edit any published block
-===========================
+---------------------------
 
 To **edit a block you are interested in or you depend on**, you've to follow the below steps.
 
@@ -60,6 +80,7 @@ Once you are happy with the changes, publish your own version of the block:
 
 **Unless the code is yours you will not be able to publish it to an existing branch**, so you need to specify a BRANCH_NAME.
 
+
 3. Close the block
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -71,5 +92,12 @@ Then you can close the block to remove it from your blocks folder:
 
 Your code will now depend on the version you have just published.
 
-
 **Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_
+
+
+.. container:: infonote
+
+	If you don't know anything about publish or close command
+
+	*	:ref:`Publish command <bii_publish_command>`
+	*	:ref:`Close command <bii_close_command>`

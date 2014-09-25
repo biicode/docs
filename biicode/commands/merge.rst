@@ -1,14 +1,13 @@
-.. _merge_branches:
+.. _bii_merge_command:
 
-Merge branches
-=================
+``bii merge``: merge branches
+===============================
 
-How to merge your current branch with a published one, just execute:
+This command allows you to **merge two different versions of the same block**. One of them must be available in a local project. The other must be a published branch of the same block. In any case, both versions must have a common ancestor, being different implementations of the same block. **This feature is still experimental**.
 
 .. code-block:: bash
 
 	$ bii merge "user_name/block_name(user/branch): VERSION"
-
 
 
 Examples
@@ -42,7 +41,3 @@ Merge the last version from block ``user22/math_libs`` and ``develop`` branch
 
 
 **Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_
-
-.. container:: infonote
-
-	Visit the section: :ref:`how to publish branches <publish_branches>`

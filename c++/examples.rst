@@ -11,23 +11,24 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
 
    examples/zmq
    examples/zmq_protobuf
-   examples/tinythread
-   examples/jsonxx
-   examples/eigen
-   examples/lib_flatbuffers
-   examples/lib_log4z
+   examples/google-test-tutorial
    examples/box2d
-   examples/bcl
-   examples/lib_gmock
-   examples/lib_crypto++
-   examples/lib_glui
-   examples/lib_mili
-   examples/lib_zlib
-   examples/c++challenge
    examples/freeglut
+   examples/glui
+   examples/c++challenge
    examples/cimg
-   examples/lib_sqlite
-   examples/lib_muparser
+   examples/crypto++
+   examples/csparse
+   examples/eigen
    examples/expression-parser
-   examples/lib_httpserver
-   examples/lib_csparse
+   examples/flatbuffers
+   examples/gmock
+   examples/httpserver
+   examples/jsonxx
+   examples/log4z
+   examples/mili
+   examples/muparser
+   examples/sqlite
+   examples/tinythread
+   examples/zlib
+   examples/bcl
