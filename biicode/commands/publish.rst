@@ -1,11 +1,16 @@
-.. _publish_blocks:
+.. _bii_publish_command:
 
-Publish blocks
-===============
+``bii publish``: publish your blocks
+=========================================
 
-Use ``bii publish`` command into a **project** folder. Take a look at the different options to publish:
+The ``bii publish`` command is used to publish your code into biicode. 
 
-If your **project** contains multiple blocks under your ``blocks`` folder, you'll  which one of them (``user_name/block_name``) 
+After your block has been published and uploaded to the biicode servers, the program shows a message with information about the name of the block (``user_name/simple_name``), the name of the branch (``user_name/branch_name``), and the numeric ID of the version that has been published in that particular branch.
+
+.. code-block:: bash
+
+	$ bii publish
+
 
 Available publishing options:
 -----------------------------
@@ -115,6 +120,8 @@ You decide to follow improving ``fenix/vector`` block in another branch and publ
 	$ bii publish fenix/vector --branch develop --msg "Branch develop from vector C++ library v1.0"
 
 
+**Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_
+
 .. container:: infonote
 
-	Visit the section: :ref:`how to merge branches <merge_branches>`
+	Visit the section: :ref:`Merge command <bii_merge_command>`

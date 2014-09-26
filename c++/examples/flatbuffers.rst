@@ -32,7 +32,7 @@ Now, you'll see one single file "monster_generated.h" in your current folder tha
 
 .. |flatbuffers_homepage| raw:: html
 
-   <a href="http://eigen.tuxfamily.org" target="_blank">Flatbuffers</a>
+   <a href="http://google.github.io/flatbuffers/" target="_blank">Flatbuffers</a>
 
 .. |bii_flatbuffers| raw:: html
 

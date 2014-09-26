@@ -11,8 +11,8 @@ This is biicode's general documentation.
    biicode/biicode
    biicode/installation
    biicode/commands
-   biicode/how-to
-   biicode/features
+   biicode/configuration_files
+   biicode/integration
    biicode/release_notes
    biicode/faqs
    biicode/troubleshooting
