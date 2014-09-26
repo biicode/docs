@@ -16,8 +16,6 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/jsonxx
    examples/json11
    examples/eigen
-   examples/lib_flatbuffers
-   examples/lib_log4z
    examples/box2d
    examples/freeglut
    examples/glui
@@ -25,16 +23,16 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/cimg
    examples/crypto++
    examples/csparse
-   examples/eigen
    examples/expression-parser
    examples/flatbuffers
    examples/gmock
    examples/httpserver
-   examples/jsonxx
    examples/log4z
    examples/mili
    examples/muparser
    examples/sqlite
-   examples/tinythread
    examples/zlib
    examples/bcl
+   examples/lib_splines
+   examples/ptypes
+

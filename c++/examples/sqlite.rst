@@ -20,6 +20,8 @@ Create a block:
 
 .. code-block:: bash
 
+	$ bii init my_project
+	$ cd my_project
 	$ bii new examples/sqlite
 
 
