@@ -58,6 +58,23 @@ Now, `download the appropriate installer for your development platform <https://
         
         # 4. Execute apt-get install: 
         sudo apt-get -y install biicode
+        
+
+.. _alternative_install_archlinux:
+
+.. container:: infonote
+
+
+    **Alternative install for Archlinux based distributions (Manjaro, Arch Linux ARM, etc)**
+
+    Biicode maintains a package at the Arch User Repository (AUR). You can install it using your preferred package manager:
+
+    .. code-block:: bash
+
+        sudo yaourt -S biicode
+
+
+    Since the package is maintained in the AUR, your package manager will notify you automatically when we update the package.
 
 
 2. Choose the development tools
