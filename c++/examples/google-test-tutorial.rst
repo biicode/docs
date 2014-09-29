@@ -85,7 +85,7 @@ Now, we compile and execute the test:
 .. code-block:: bash
 
 	~/gtest_sample$ bii cpp:build
-    ~/gtest_sample$ bin/examples_gtest_simple_test_simple_test
+	~/gtest_sample$ bin/examples_gtest_simple_test_simple_test
 	[==========] Running 3 tests from 1 test case.
 	[----------] Global test environment set-up.
 	[----------] 3 tests from FactorialTest
@@ -165,7 +165,7 @@ Now when we execute your tests we obtain exactly the same output:
 
 .. code-block:: bash
 
-    ~/gtest_sample$ bin/examples_gtest_test_suites_test_suites
+	~/gtest_sample$ bin/examples_gtest_test_suites_test_suites
 	[==========] Running 3 tests from 1 test case.
 	[----------] Global test environment set-up.
 	[----------] 3 tests from FactorialTest
