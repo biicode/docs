@@ -5,7 +5,7 @@ Expression Parser
 
 This block is a C++ library to parse a character sequence as an expression using Dijkstra's `Shunting-yard algorithm <http://en.wikipedia.org/wiki/Shunting-yard_algorithm>`_  which modifies `Jesse Brown's code <http://www.daniweb.com/software-development/cpp/code/427500/calculator-using-shunting-yard-algorithm>`_.
 
-The main block is `here <http://www.biicode.com/amalulla/amalulla/cpp-expression-parser>`_, which is generated from this `github repo <https://github.com/bamos/cpp-expression-parser>`_.
+The main block is `here <http://www.biicode.com/amalulla/cpp-expression-parser>`_, which is generated from this `github repo <https://github.com/MariadeAnton/cpp-expression-parser/>`_.
 
 Simple form of mathematical expression parsing
 -----------------------------------------------
