@@ -9,7 +9,7 @@ Little CMS is an Open Source Color Management Engine. This example demonstrates 
 Check the Sources:
 
    1. `Original Little CMS Library <http://www.littlecms.com//>`_
-   2. `Biicode BCL block <http://www.biicode.com/martimaria/littlecms>`_
+   2. `Biicode Little CMS block <http://www.biicode.com/martimaria/littlecms>`_
    3. `Github repository <https://github.com/MariadeAnton/little-cms>`_
    4. `LittleCMS Documentatio <http://sourceforge.net/projects/lcms/files/lcms/2.6/>`_
 
@@ -79,17 +79,12 @@ There are three different examples in the project, note that all of them use Lit
       if (Table == NULL) return NULL;
 
       for (i=0; i < 4096; i++) {
-
         a = (double) i * 255. / 4095.;
-
         a = DecodeAbTIFF(a);
-
         Table[i] = (cmsUInt16Number) floor(a * 257. + 0.5);
       }
-
       Gamma = cmsBuildTabulatedToneCurve16(0, 4096, Table);
       free(Table);
-
       return Gamma;
     }
 
@@ -98,7 +93,6 @@ There are three different examples in the project, note that all of them use Lit
     cmsToneCurve* CreateLinear(void)
     {
       cmsUInt16Number Linear[2] = { 0, 0xffff };
-
       return cmsBuildTabulatedToneCurve16(0, 2, Linear);          
     }
 
@@ -110,22 +104,16 @@ There are three different examples in the project, note that all of them use Lit
     {
         cmsMLU *DescriptionMLU, *CopyrightMLU;
         cmsBool  rc = FALSE;
-      
         DescriptionMLU  = cmsMLUalloc(0, 1);
         CopyrightMLU    = cmsMLUalloc(0, 1);
-
         if (DescriptionMLU == NULL || CopyrightMLU == NULL) goto Error;
-
         if (!cmsMLUsetASCII(DescriptionMLU,  "en", "US", "Little cms Tiff8 CIELab")) goto Error;
         if (!cmsMLUsetASCII(CopyrightMLU,    "en", "US", "Copyright (c) Marti Maria, 2010. All rights reserved.")) goto Error;
-
         if (!cmsWriteTag(hProfile, cmsSigProfileDescriptionTag,  DescriptionMLU)) goto Error;
         if (!cmsWriteTag(hProfile, cmsSigCopyrightTag,           CopyrightMLU)) goto Error;     
-
         rc = TRUE;
 
     Error:
-
         if (DescriptionMLU)
             cmsMLUfree(DescriptionMLU);
         if (CopyrightMLU)
@@ -154,35 +142,25 @@ There are three different examples in the project, note that all of them use Lit
       PreLinear[1] = Step;
       PreLinear[2] = Step;
 
-        AToB0 = cmsPipelineAlloc(0, 3, 3);
-
+      AToB0 = cmsPipelineAlloc(0, 3, 3);
       cmsPipelineInsertStage(AToB0, 
-        cmsAT_BEGIN, cmsStageAllocToneCurves(0, 3, PreLinear));
-
+      cmsAT_BEGIN, cmsStageAllocToneCurves(0, 3, PreLinear));
       cmsSetColorSpace(hProfile, cmsSigLabData);
       cmsSetPCS(hProfile, cmsSigLabData);
       cmsSetDeviceClass(hProfile, cmsSigLinkClass);
       cmsSetProfileVersion(hProfile, 4.2);
-
-        cmsWriteTag(hProfile, cmsSigAToB0Tag, AToB0);
-      
-        SetTextTags(hProfile);
-
+      cmsWriteTag(hProfile, cmsSigAToB0Tag, AToB0);
+      SetTextTags(hProfile);
       cmsCloseProfile(hProfile);
-
       cmsFreeToneCurve(Lin);
       cmsFreeToneCurve(Step);
       cmsPipelineFree(AToB0);
         
       fprintf(stderr, "Done.\n");
-
       return 0;
     }
 
-
-
-
-Now, run the huffman compression-uncompression example.
+Now, run the Mktiff example.
 
 .. code-block:: bash
 
