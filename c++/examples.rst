@@ -33,6 +33,7 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/sqlite
    examples/zlib
    examples/bcl
+   examples/littlecms
    examples/lib_splines
    examples/ptypes
 
