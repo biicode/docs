@@ -9,7 +9,7 @@ Biicode is easy to integrate with other technologies and tools. We're already wo
 VCS Git (GitHub, Bitbucket, etc.)
 -----------------------------------
 
-|github_homepage| and |bitbucket_homepage| are a famous Git (Bitbucket works with Mercurial too) repository web-based hosting service which offer all of the distributed revision control and source code management (SCM) functionality of Git as well as adding their own features.
+|github_homepage| and |bitbucket_homepage| are notorious Git (Bitbucket works with Mercurial too) repository web-based hosting service which offer all of the distributed revision control and source code management (SCM) functionality of Git as well as adding their own features.
 
 Biicode has some commands similar to VCS management but we recommend greatly you work with Git and host in any web you want. GitHub and Bitbucket work brilliantly and you can work painless with your repositories and building your project with biicode for reusing or sharing later. You only had to init only your repository into your block folder. For example:
 
@@ -72,24 +72,8 @@ If you're signed here and you wish to use biicode in your VMs, then execute:
 
 .. code-block:: bash
 
-	~$ wget http://www.biicode.com/downloads/latest/ubuntu64
-	~$ mv ubuntu64 bii-ubuntu64.deb
-	~$ sudo dpkg --install bii-ubuntu64.deb
-	~$ rm bii-ubuntu64.deb
-	~$ bii -v
-	1.7.2
-
-
-If you're interested on **Modern C++ Template Meta-programming**, you could clone the bellow repository and execute the install.sh to install all you need:
-
-.. code-block:: bash
-
-	~$ git clone git@github.com:Manu343726/TemplateMetaprogramming101.git
-	~$ cd TemplateMetaprogramming101
-	~/TemplateMetaprogramming101$ bash ./install.sh
-	~/TemplateMetaprogramming101$ bii -v
-	1.7.2
-
+	~$ wget http://apt.biicode.com/install.sh && chmod +x install.sh && ./install.sh
+	~$ bii -h
 
 Then, you'd ready to start using biicode and building all the projects you wish.
 
