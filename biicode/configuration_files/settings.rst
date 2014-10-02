@@ -12,6 +12,6 @@ You don't need to manually edit this file. **Each language or platform provides 
 
 .. container:: todo
 
-	* See the section :ref:`How to configure your IDE (C/C++) <configure_cmake_generators>`
+	* See the section :ref:`How to configure your IDE (C/C++)<configure_cmake_generators>`
 	* :ref:`bii arduino:settings for Arduino projects<bii_arduino_settings>`
 	* :ref:`bii rpi:settings for Raspberry Pi projects<bii_rpi_settings>`

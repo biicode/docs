@@ -1,3 +1,5 @@
+.. _configure_cmake_generators:
+
 Generators and IDEs
 ===================
 
