@@ -12,7 +12,7 @@ The following example how-to use miniutf to do some format conversions. You can 
    :linenos:
 
 **Download:**
-:download:`sqlite_example.zip </_static/code/cpp/examples/miniutf/miniutf.cpp>`
+:download:`miniutf.cpp </_static/code/cpp/examples/miniutf/miniutf.cpp>`
 
 Create a block:
 
