@@ -20,4 +20,18 @@ where ``<pattern>`` is a wildcard for the file types you desire to apply the rul
 
 **Note:** The ``<desired_extension>`` expression contains only the desired extension string, *without the dot symbol*.
 
-These rules **are always applied hierarchically**. So you can override your type settings using additional ``types.bii`` place in descendat folders (this is, however, a more exceptional scenario, but illustrates the powefull capabilities biicode offers to the programmer).
+These rules **are always applied hierarchically**. So you can override your type settings using additional ``types.bii`` place in descendant folders (this is, however, a more exceptional scenario, but illustrates the powerful capabilities biicode offers to the programmer).
+
+The default file extensions understood by biicode are:
+
+	* CPP : ``.h``, ``.hh``, ``.hpp``, ``.c``, ``.cc``, ``.cpp``, ``.cxx``, ``.inl``, ``.ino``, ``.ipp``
+	* TEXT: ``.txt``, ``.bii`` , ``.md`` 
+	* XML: ``.xml``
+	* HTML: ``.html``, ``.htm``
+	* SOUND: ``.wav``
+	* IMAGE: ``.jpeg``, ``.jpg``, ``.gif``, ``.png``, ``.bmp``
+	* JSON: ``.json``
+	* PYTHON: ``.py``
+	* JS : ``.js``,``.node``
+	* JAVA: ``.java``
+	* FORTRAN: ``.f90``,``.for``,``.f``
