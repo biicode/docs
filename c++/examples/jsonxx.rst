@@ -14,10 +14,10 @@ This example is `already in biicode <http://www.biicode.com/examples/jsonxx>`_, 
 
 .. code-block:: bash
 
-   $ bii init jsonxx
-   $ cd jsonxx
-   $ bii open examples/jsonxx
-   $ bii cpp:build
+   ~$ bii init jsonxx
+   ~$ cd jsonxx
+   ~/jsonxx$ bii open examples/jsonxx
+   ~/jsonxx$ bii cpp:build
 
 The code of the example is like this:
 
@@ -56,7 +56,7 @@ Now, run the hello example.
 
 .. code-block:: bash
 
-   $ bin/examples_tinythread_hello
+   ~/jsonxx$ bin/examples_jsonxx_json_to_xml
 
 You can see four diferent XML in the output:
 
