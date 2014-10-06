@@ -1,7 +1,7 @@
 Miniutf
-======
+=======
 
-miniutf is a C++ implementation of several basic Unicode manipulation functions.
+miniutf is a C++ implementation of several basic Unicode manipulation functions developed by `Dropbox <https://opensource.dropbox.com/>`_ .
 
 The following example how-to use miniutf to do some format conversions. You can find this example in `the biicode miniutf samples block <http://www.biicode.com/examples/miniutf>`_ .
 
