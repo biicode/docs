@@ -16,7 +16,7 @@ As you can see, this file contains rules of the form: ::
 
 	<pattern> 	<desired_extension>
 
-where ``<pattern>`` is a wildcard for the file types you desire to apply the rule, and ``<desired_extension>`` is the corresponding standard file extension for that particular type. In the previous example, we are informing biicode that all files contained in our block (and that includes the current folder, and all its descendants) must be interpreted as ``cpp`` files.
+Where ``<pattern>`` is a wild-card for the file types you desire to apply the rule, and ``<desired_extension>`` is the corresponding standard file extension for that particular type. In the previous example, we are informing biicode that all files contained in our block (and that includes the current folder, and all its descendants) must be interpreted as ``cpp`` files.
 
 **Note:** The ``<desired_extension>`` expression contains only the desired extension string, *without the dot symbol*.
 
