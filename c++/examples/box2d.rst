@@ -24,7 +24,7 @@ the following code:
 
 .. code-block:: cpp
 
-   #include <erincatto/box2d/box2d/box2d.h>
+   #include <erincatto/box2d/Box2d/Box2d.h>
    #include <iostream>
 
    using namespace std;

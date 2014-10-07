@@ -16,8 +16,22 @@ As you can see, this file contains rules of the form: ::
 
 	<pattern> 	<desired_extension>
 
-where ``<pattern>`` is a wildcard for the file types you desire to apply the rule, and ``<desired_extension>`` is the corresponding standard file extension for that particular type. In the previous example, we are informing biicode that all files contained in our block (and that includes the current folder, and all its descendants) must be interpreted as ``cpp`` files.
+Where ``<pattern>`` is a wild-card for the file types you desire to apply the rule, and ``<desired_extension>`` is the corresponding standard file extension for that particular type. In the previous example, we are informing biicode that all files contained in our block (and that includes the current folder, and all its descendants) must be interpreted as ``cpp`` files.
 
 **Note:** The ``<desired_extension>`` expression contains only the desired extension string, *without the dot symbol*.
 
-These rules **are always applied hierarchically**. So you can override your type settings using additional ``types.bii`` place in descendat folders (this is, however, a more exceptional scenario, but illustrates the powefull capabilities biicode offers to the programmer).
+These rules **are always applied hierarchically**. So you can override your type settings using additional ``types.bii`` place in descendant folders (this is, however, a more exceptional scenario, but illustrates the powerful capabilities biicode offers to the programmer).
+
+The default file extensions understood by biicode are:
+
+	* CPP : ``.h``, ``.hh``, ``.hpp``, ``.c``, ``.cc``, ``.cpp``, ``.cxx``, ``.inl``, ``.ino``, ``.ipp``
+	* TEXT: ``.txt``, ``.bii`` , ``.md`` 
+	* XML: ``.xml``
+	* HTML: ``.html``, ``.htm``
+	* SOUND: ``.wav``
+	* IMAGE: ``.jpeg``, ``.jpg``, ``.gif``, ``.png``, ``.bmp``
+	* JSON: ``.json``
+	* PYTHON: ``.py``
+	* JS : ``.js``,``.node``
+	* JAVA: ``.java``
+	* FORTRAN: ``.f90``,``.for``,``.f``
