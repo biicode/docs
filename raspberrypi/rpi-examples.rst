@@ -12,6 +12,5 @@ You can compile these projects directly on your Raspberry Pi. However, for perfo
 
    examples/wiringpi
    examples/httpserver
-   examples/opengles
    examples/raspberry-pi-moving-doll
 
