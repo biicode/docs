@@ -23,8 +23,7 @@ Execute any you want, for example, read a matrix saved in a file and solve a lin
 
 .. code-block:: bash
 
-  ~/csparse_sample$ cd bin
-  ~/csparse_sample/bin$ bin/examples_csparse_cs_demo2 < blocks/examples/csparse/Matrix/t1
+  ~/csparse_sample$ bin/examples_csparse_cs_demo2 < blocks/examples/csparse/Matrix/t1
  
   --- Matrix: 4-by-4, nnz: 10 (sym: 0: nnz 0), norm: 1.11e+001
   blocks: 1 singletons: 0 structural rank: 4
