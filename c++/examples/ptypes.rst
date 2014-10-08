@@ -20,7 +20,7 @@ Create a block:
 
 	$ bii init my_project
 	$ cd my_project
-	$ bii new examples/ptypes
+	$ bii open examples/ptypes
 
 
 Copy stream.cpp in your block, then you need to resolve all the dependencies of this ``stream.cpp``. Then you can compile it
