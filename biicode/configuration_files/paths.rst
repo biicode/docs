@@ -1,7 +1,7 @@
 .. _paths_bii:
 
-``paths.bii``: 
-===============
+``paths.bii``: specifying non-file-relative #include(s)
+=======================================================
 
 Use ``paths.bii`` to tell biicode in which folders it has to look for the local files specified in your #includes. You only need to specify this when your project has non-file-relative #include (s). Let's understand this with a couple examples:
 
