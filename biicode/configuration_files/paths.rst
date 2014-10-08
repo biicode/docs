@@ -87,7 +87,7 @@ TARGET_INCLUDE_DIRECTORIES(${BII_LIB_TARGET} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 That's nice, but why doesn't biicode speak CMakeLists.txt language for this?
 ----------------------------------------------------------------------------
 
-Well, Biicode needs to know your code connections so if somebody reuses your code and includes ``mylib.h`` file in his/her program, biicode will autmatically retrieve all the files ``mylib.h`` depends on.
+Well, Biicode needs to know your code connections so if somebody reuses your code and includes ``mylib.h`` file in his/her program, biicode will automatically retrieve all the files ``mylib.h`` depends on.
 
 That's why it's so important that ``bii deps`` command doesn't get any **unresolved dependencies**, this way biicode will be able to get all the files needed when somebody #includes your library. And as we've explained before, it will only get the files needed and no more.
 
