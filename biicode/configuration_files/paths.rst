@@ -30,16 +30,16 @@ To make the previous example operative, you'll only need to create a **paths.bii
 |    |    |     +-- library
 |    |    |     |     +-- bii
 |    |    |     |     |    |-- paths.bii
-|	 |    |     |     +-- include
-|	 |    |     |     |     |-- tool.h
-|	 |    |     |	  |+-- test
-|	 |    |     |	  |	  	|-- main1.cpp (#include "tool.h")
+|	   |    |     |     +-- include
+|	   |    |     |     |     |-- tool.h
+|	   |    |     |	    |+-- test
+|	   |    |     |	    |	  	|-- main1.cpp (#include "tool.h")
 
 NOTE: You can always update the #includes instead of using **paths.bii**, ``#include "tool.h"`` -> ``#include "../include/tool.h"`` 
 
 Root directory example
 ----------------------
-Let's imagine now, we have the following folder structure ::
+Let's imagine now that we have a folder with the following structure into it ::
 
 |-- mylib.h
 |-- mylib.cpp
@@ -66,8 +66,8 @@ Well, the compiler also needs to understand your folder structure in the compile
 |    |    |     |     |	    |-- paths.bii
 |    |    |     |	  +-- include
 |    |    |     |     |		|-- tool.h
-|    |    |		|	  +-- test
-|    |    |		|	  |		|-- main1.cpp (#include "tool.h") 
+|    |    |		  |	  +-- test
+|    |    |		  |	  |		|-- main1.cpp (#include "tool.h") 
 
 So, to achieve this, you should include, after the line ``ADD_BIICODE_TARGETS`` as many lines as directories you've included in your ``paths.bii`` file, so CMake understands it has to include those files while compiling.
 
