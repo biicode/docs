@@ -35,6 +35,12 @@ If you want to add new files to your block, just right-click on the folder of yo
 
 You can build your application in *Project > Build project* if you don't have automated builds set.
 
+If you want to ``debug`` your project using gdb inside Eclipse CDT make sure you set -D CMAKE_BUILD_TYPE=DEBUG in ``bii cpp:configure`` command: 
+
+.. code-block:: bash
+
+  $ bii cpp:configure -G "Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=DEBUG
+
 
 .. container:: infonote
 
