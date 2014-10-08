@@ -12,8 +12,9 @@ Biicode offers you a set of configuration files across your projects and blocks.
    configuration_files/parents
    configuration_files/settings
    configuration_files/dependencies
-   configuration_files/mains
    configuration_files/policies
    configuration_files/ignore
+   configuration_files/paths
    configuration_files/types
    configuration_files/virtual
+   configuration_files/mains

@@ -32,6 +32,6 @@ The default file extensions understood by biicode are:
 	* IMAGE: ``.jpeg``, ``.jpg``, ``.gif``, ``.png``, ``.bmp``
 	* JSON: ``.json``
 	* PYTHON: ``.py``
-	* JS : ``.js``,``.node``
+	* JS : ``.js``, ``.node``
 	* JAVA: ``.java``
-	* FORTRAN: ``.f90``,``.for``,``.f``
+	* FORTRAN: ``.f90``, ``.for``, ``.f``
