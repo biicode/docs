@@ -5,7 +5,7 @@ json++
 
 JSON++ is a light-weight JSON parser, writer and reader written in C++. JSON++ can also convert JSON documents into lossless XML documents.
 
-The main block is `here <https://www.biicode.com/david/david/jsonxx/master>`_, which is generated from this `github repo <https://github.com/davidsanfal/jsonxx>`_
+The main block is `here <https://www.biicode.com/hjiang/jsonxx>`_, which is generated from this `github repo <https://github.com/davidsanfal/jsonxx>`_
 
 Simple parser and converter from JSON to XML 
 --------------------------------------------
@@ -23,7 +23,7 @@ The code of the example is like this:
 
 .. code-block:: cpp
 
-  #include "david/jsonxx/jsonxx.h"
+  #include "hjiang/jsonxx/jsonxx.h"
   using namespace jsonxx;
   using namespace std;
 

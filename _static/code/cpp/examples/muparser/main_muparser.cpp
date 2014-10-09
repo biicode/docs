@@ -12,7 +12,7 @@
 //
 //---------------------------------------------------------------------------
 
-#include "david/muparser/include/muParserTest.h"
+#include "ingoberg/muparser/include/muParserTest.h"
 
 #if defined(_WIN32) && defined(_DEBUG)
   #define _CRTDBG_MAP_ALLOC
@@ -39,7 +39,7 @@
 #include <iomanip>
 #include <numeric>
 
-#include "david/muparser/include/muParser.h"
+#include "ingoberg/muparser/include/muParser.h"
 
 using namespace std;
 using namespace mu;
