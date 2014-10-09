@@ -5,7 +5,7 @@ miniutf is a C++ implementation of several basic Unicode manipulation functions 
 
 The following example how-to use miniutf to do some format conversions. You can find this example in `the biicode miniutf samples block <http://www.biicode.com/examples/miniutf>`_ .
 
-**main_mili.cpp**
+**miniutf.cpp**
 
 .. literalinclude:: /_static/code/cpp/examples/miniutf/miniutf.cpp
    :language: cpp
