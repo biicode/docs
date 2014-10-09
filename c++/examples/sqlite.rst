@@ -156,7 +156,7 @@ SQLite++ Wrapper
 ^^^^^^^^^^^^^^^^
 The following example how-to use the SQLite++ wrapper. You can find this example in `the biicode SQLite samples block <http://www.biicode.com/examples/sqlite>`_ .
 
-**main_mili.cpp**
+**main.cpp**
 
 .. literalinclude:: /_static/code/cpp/examples/sqlite/main.cpp
    :language: cpp
