@@ -36,4 +36,4 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/littlecms
    examples/lib_splines
    examples/ptypes
-
+   examples/lib_miniutf
