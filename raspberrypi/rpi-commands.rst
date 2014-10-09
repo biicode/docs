@@ -16,17 +16,9 @@ This section summarizes the **Raspberry Pi commands available to be used with th
 	To change verbosity, use options --quiet --verbose
 
 	---------EXPERIMENTAL Raspberry Pi general tools commands--------
-	  rpi:initopengles Init OpenGLES project.
 	  rpi:send        Send by scp the bin folder into the specified directory
 	  rpi:settings    Configure Raspberry Pi project settings
 	  rpi:ssh         Connect by ssh with the Raspberry Pi
-
-.. _bii_rpi_initopengles:
-
-``bii rpi:initopengles``: Init OpenGLES project
------------------------------------------------
-
-This command lets you develop OpenGLES applications in the Raspberry Pi. See the command usage :ref:`here<opengles>`.
 
 .. _bii_rpi_send:
 
