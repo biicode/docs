@@ -1,3 +1,5 @@
+.. _configure_cmake_generators:
+
 Generators and IDEs
 ===================
 
@@ -74,5 +76,3 @@ For example:
 
 Finally, you are now ready to **open your project with Visual Studio**.
 Just **double-click on the .sln file inside the build folder** of your project and a VS project will open
-
-
