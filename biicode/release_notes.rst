@@ -3,6 +3,16 @@
 Release Notes
 =============
 
+**1.8.4** (10-Oct-2014)
+
+* Fedora and Arch package
+* CMake updated to 3.0.2 and improved setup:cpp command
+* Fixed errors with ignore.bii behaviour
+* Custom toolchain for CMake
+* Web: Download blocks as ZIP
+* Web: Delete blocks
+|
+
 **1.7.3** (24-Sept-2014)
 
 * Solved bug in merge.
