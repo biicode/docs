@@ -12,6 +12,5 @@ C/C++ Documentation
    c++/building
    c++/cpp-commands
    c++/ides
-   c++/custom_toolchain
    c++/examples
    c++/troubleshooting
