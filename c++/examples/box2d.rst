@@ -2,14 +2,14 @@
 
 
 Box2D
-=====
+-----
 
 |box2d_homepage| is an open source C++ engine to simulate rigid bodies in 2D, it is also, AngryBirds motor engine. You can check |wiki_box2d|. 
 
 The main block is |bii_box2d|, which is generated from this |fork_box2d|.
 
 Bounces of a circle falling
----------------------------
+----------------------------
 
 In this example you will calculate whenever a circle falls from a certain height and bounces at a defined lower limit in the created world. Then, create a project, one block and copy the bellow main.cpp file:
 
