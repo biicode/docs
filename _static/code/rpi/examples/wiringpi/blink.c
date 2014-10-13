@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <drogon/wiringpi/wiringpi/wiringpi.h>
+#include <drogon/wiringpi/wiringPi/wiringPi.h>
 
 // LED Pin - wiringPi pin 0 is BCM_GPIO 17.
 

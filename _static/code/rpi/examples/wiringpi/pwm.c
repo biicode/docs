@@ -1,4 +1,4 @@
-#include <drogon/wiringpi/wiringpi/wiringpi.h>
+#include <drogon/wiringpi/wiringPi/wiringPi.h>
 
 #include <stdio.h>
 #include <stdlib.h>
