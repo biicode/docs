@@ -60,4 +60,3 @@ How to fix "Unresolved inclusion: Arduino.h"
    + Linux: ``~/.biicode_env/arduino-1.0.5/hardware/arduino/cores/arduino``
    + Windows: ``C:\biicode_env\arduino-1.0.5\hardware\arduino\cores\arduino``
   - If you installed the IDE manually add the equivalent route
-
