@@ -5,19 +5,15 @@ Biicode offers integration with `Eclipse <https://www.eclipse.org/downloads/>`_ 
 
 This section details the steps you should follow to achieve this integration.
 
-First of all, you need to configure your project for **Eclipse IDE for C/C++**. If you already did so when creating the project with the help of the ``bii init`` command, you can skip this section. Otherwise, you can define your preferences in your Arduino settings with ``arduino:settings``:
+First of all, you need to configure your project for **Eclipse IDE for C/C++**. If you already did so when creating the project with the help of the ``bii init`` command, you can skip this section. Otherwise, you can define your preferences in your Arduino configure with ``arduino:configure``:
 
 .. code-block:: bash
 
-	$ bii arduino:settings
-	Introduce board: uno
-	Arduino detected on port COM14
-	Select IDE: (eclipse/none)
-	Introduce ide (default:None) (/o list options): eclipse
+	$ bii arduino:configure -G "Eclipse CDT4 - MinGW Makefiles"
 
-After modifying your settings, you must execute the ``bii arduino:configure`` command to apply all changes and **generate the project files**.
 
-If you have cofigured your project settings as in the previous example, your are ready to import your project into the Eclipse IDE. It is important that you use a version of Eclipse that contains the C/C++ Toolkit. So we recommend using `Eclipse IDE for C/C++ Developers <https://www.eclipse.org/downloads/>`_.
+
+If you have successfully configured your project as in the previous example, your are ready to import your project into the Eclipse IDE. It is important that you use a version of Eclipse that contains the C/C++ Toolkit. So we recommend using `Eclipse IDE for C/C++ Developers <https://www.eclipse.org/downloads/>`_.
 
 How to import your project
 --------------------------

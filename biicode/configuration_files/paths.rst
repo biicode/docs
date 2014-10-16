@@ -76,13 +76,13 @@ For the first example you should write right bellow ``ADD_BIICODE_TARGETS``:
 
 .. code-block:: cmake
 
-TARGET_INCLUDE_DIRECTORIES(${BII_LIB_TARGET} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes)
+   TARGET_INCLUDE_DIRECTORIES(${BII_LIB_TARGET} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes)
 
 And for the second example:
 
 .. code-block:: cmake
 
-TARGET_INCLUDE_DIRECTORIES(${BII_LIB_TARGET} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+   TARGET_INCLUDE_DIRECTORIES(${BII_LIB_TARGET} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 
 That's nice, but why doesn't biicode speak CMakeLists.txt language for this?

@@ -4,7 +4,7 @@
 Getting started
 ===============
 
-This example shows how to install biicode, code an Arduino non blocking blink ith the blick library and upload it to your Arduino. You don't need to install any blinck library, biicode will download and configure it automatically for you, |fenix_blink_biicode_link|
+This example shows how to install biicode, code your first "blink", and also a non blocking blink reusing from the blink library and upload it to your Arduino. You don't need to install the blink library, biicode will download and configure it automatically for you, |fenix_blink_biicode_link|
 
 
 .. |fenix_blink_biicode_link| raw:: html
@@ -31,7 +31,7 @@ This will help you to install a group of external tools (Arduino SDK, CMake and 
 
 .. container:: infonote
 
-    If you encounter any problem installing the Arduino tools, you can see :ref:`how to install Arduino tools manually <arduino_installation>`
+    If any problem installing the Arduino tools, check :ref:`how to install Arduino tools manually <arduino_installation>`
 
 2. Create your project
 ----------------------
@@ -71,7 +71,7 @@ This should be the resulting layout:
 3. Define your board
 --------------------
 
-Just, define your Arduino board using the arduino:settings command. In this example we use an Arduino Uno, but you can use another like Mega2560.
+Just, define your Arduino board using the ``arduino:settings`` command. In this example we use an Arduino Uno, but you can use another like Mega2560.
 
 .. code-block:: bash
 
@@ -81,10 +81,11 @@ Just, define your Arduino board using the arduino:settings command. In this exam
 
 4. Build and upload your program
 --------------------------------
-Lets check that everything is fine by building and uploading the blink aplication to your Arduino.
+Lets check that everything is fine by building and uploading the blink application to your Arduino.
 
 .. code-block:: bash
 
+   ~/myproject$ bii arduino:build
    ~/myproject$ bii arduino:upload
    ...
    Writing | ################################################## | 100% 0.00s
@@ -118,7 +119,7 @@ Copy the following code containing the new blink into the main.cpp file
     my_blink.loop();
   }
 
-This code requires the fenix's blink.h file. If you try to arduino:upload you will get a build error.
+This code requires the fenix's blink.h file. If you try to ``arduino:upload`` you will get a build error.
 
 Execute the following command to find unresolved dependencies and retrieve necessary files from servers:
 
