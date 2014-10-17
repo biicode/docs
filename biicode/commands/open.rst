@@ -5,17 +5,11 @@
 
 This command allows you to edit a published block.
 You can use this command to edit **one of your dependency blocks** or any block you have seen on the web and you want to edit.
-When you invoke this command the block is placed into the ``blocks`` folder within your project, and their cells become editable source files that can be modified by you and eventually published in a new version of the same branch (if you have writting permissions for that branch) or in a new branch (using the :ref:`publish command<bii_publish_command>`).
+When you invoke this command the block is placed into the ``blocks`` folder within your project, and their cells become editable source files that can be modified by you and eventually published in a new version of the same block or into a new block. Check the :ref:`publish command<bii_publish_command>`to know how.
 
 .. code-block:: bash
 
 	$ bii open USER_NAME/BLOCK_NAME
-
-To open someone's branch, you will place the branch's user and block in brackets after its creator's user name and block name, like this:
-
-.. code-block:: bash
-
-	$ bii open USER_NAME/BLOCK_NAME(BRANCH_USER_NAME/BRANCH_BLOCK_NAME)
 
 
 .. _edit_dependecies:
@@ -33,11 +27,11 @@ Use ``bii open`` command and move any published block to your project:
 
 .. code-block:: bash
 
-	$ bii open "user_name/block_name(user/branch): VERSION"
+	$ bii open "user_name/block_name: VERSION"
 
 **Examples**
 
-So if you want to open the |diego_ardunet_block| (branch=master and version=lastest by default) and edit it:
+So if you want to open the |diego_ardunet_block| (version=lastest by default) and edit it:
 
 .. |diego_ardunet_block| raw:: html
 
@@ -49,24 +43,12 @@ So if you want to open the |diego_ardunet_block| (branch=master and version=last
 
 Then you can code on it as if it was yours and changes will be reflected in your code, at build time.
 
-Suppose the last version of ``diego/ardunet`` and ``master`` branch is the "7" but you want to open the ``2`` version, execute:
+Suppose that the latest version of ``diego/ardunet`` is the "7" but you want to open version ``2`` , execute:
 
 .. code-block:: bash
 
 	$ bii open "diego/ardunet: 2"
 
-Imagine that "diego/ardunet" has published a branch named ``improvements`` and you're interested in ``5`` version. So if you want to edit it:
-
-.. code-block:: bash
-
-	$ bii open "diego/ardunet(improvements): 5"
-
-
-Finally, you could open the ``last version`` of a branch, e.g. ``release``, whose owner is other user, e.g. ``phil``:
-
-.. code-block:: bash
-
-	$ bii open "diego/ardunet(phil/release)"
 
 
 2. Publish the changes
@@ -76,9 +58,9 @@ Once you are happy with the changes, publish your own version of the block:
 
 .. code-block:: bash
 
-	$ bii publish user_name/block_name --branch BRANCH_NAME
+	$ bii publish user_name/block_name 
 
-**Unless the code is yours you will not be able to publish it to an existing branch**, so you need to specify a BRANCH_NAME.
+Check the :ref:`publish command<bii_publish_command>`to know more.
 
 
 3. Close the block
