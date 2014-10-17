@@ -5,7 +5,7 @@
 
 The ``bii publish`` command is used to publish your code into biicode. 
 
-After your block has been published and uploaded to the biicode servers, the program shows a message with information about the name of the block (``user_name/simple_name``), the name of the branch (``user_name/branch_name``), and the numeric ID of the version that has been published in that particular branch.
+After your block has been published and uploaded to biicode servers, the program shows a message with information about the name of the block (``user_name/simple_name``), and the numeric ID of the published version.
 
 .. code-block:: bash
 
@@ -33,7 +33,7 @@ Available publishing options:
 Publish using  DEV tag
 -----------------------
 
-There's a DEV zone to publish the code you're developing. The blocks published with DEV tag will always be the same version (version: 0), and you won't be able to publish branches while you are working with DEV tag. By default, whenever you ``bii publish`` your code is tagged as DEV.
+There's a DEV zone to publish the code you're developing. The blocks published with DEV tag will always be the same version (version: 0). And by default, whenever you ``bii publish`` your code is tagged as DEV.
 
 .. code-block:: bash
 
@@ -69,31 +69,6 @@ If you only have one block, you don't need to specify it, but if you have severa
 	$ bii publish BLOCK_NAME
 
 
-
-.. _publish_branches:
-
-Publish a branch
----------------------
-
-Publishing a branch is so simple. When you don't want to publish a version to ``master`` (default branch), only execute:
-
-.. code-block:: bash
-
-	$ bii publish --branch BRANCH_NAME
-
-For example:
-
-.. code-block:: bash
-
-	$ bii publish --branch develop
-
-
-.. container:: infonote
-
-	*	**You can only publish a branch if you’ve made a previous publication with a tag different from DEV**
-	*	Visit the section: :ref:`how to merge branches <merge_branches>`
-
-
 Complete example
 -----------------
 
@@ -112,13 +87,6 @@ After a while, you are sure about publishing ``fenix/vector`` as STABLE version:
 .. code-block:: bash
 
 	$ bii publish fenix/vector --tag STABLE --msg "Vector C++ library v1.0"
-
-You decide to follow improving ``fenix/vector`` block in another branch and publish it using DEV tag:
-
-.. code-block:: bash
-
-	$ bii publish fenix/vector --branch develop --msg "Branch develop from vector C++ library v1.0"
-
 
 **Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_
 
