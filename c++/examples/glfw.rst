@@ -21,8 +21,8 @@ It is very simple. Create a **new project**, open the examples, build and run th
    $ bii open examples/glfw
    $ bii cpp:build
    $ ./bin/examples_glfw_particles
-
-
+   
+   
 .. container:: infonote
 
     **Ubuntu users may need to install some additional software**
@@ -31,10 +31,10 @@ It is very simple. Create a **new project**, open the examples, build and run th
 
    .. code-block:: bash
 
-      sudo apt-get install mesa-common-dev libglu1-mesa-dev libxi-dev
-
+      sudo apt-get install mesa-common-dev libglu1-mesa-dev libxi-dev 
+        
 You should see in your screen:
-
+   
 .. image:: /_static/img/c++/examples/glfw_particles.png
 
 There are also other examples that have been built! Enjoy them and GLFW!
@@ -47,8 +47,8 @@ Of course, you can also do your own GLFW programs from your own block:
    $ bii init myproject
    $ cd myproject
    $ bii new yourusername/yourblock
-
-Then copy your source files to yourusername/yourblock folder, change your includes to:
+ 
+Then copy your source files to yourusername/yourblock folder, change your includes to: 
 
 .. code-block:: cpp
 
@@ -61,3 +61,6 @@ And then, find and retrieve dependencies, build and run your program:
 
    $ bii find
    $ bii cpp:build
+ 
+
+
