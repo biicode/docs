@@ -93,3 +93,5 @@ After a while, you are sure about publishing ``fenix/vector`` as STABLE version:
 .. container:: infonote
 
 	Visit the section: :ref:`Merge command <bii_merge_command>`
+
+

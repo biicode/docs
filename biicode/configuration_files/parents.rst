@@ -39,3 +39,4 @@ What does it mean?
 	* Don't edit this file.
 
 
+Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.

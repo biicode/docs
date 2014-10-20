@@ -53,3 +53,6 @@ Additionaly, we must remember to define the appropriate configuration in our ``s
 		mode: test
 
 The ``virtual.bii`` file is always written in python language. **It is not possible to make any imports, but you will have direct access to the project settings**, received as a parameter.
+
+
+**Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_

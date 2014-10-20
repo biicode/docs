@@ -35,3 +35,5 @@ The default file extensions understood by biicode are:
 	* JS : ``.js``, ``.node``
 	* JAVA: ``.java``
 	* FORTRAN: ``.f90``, ``.for``, ``.f``
+
+**Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_

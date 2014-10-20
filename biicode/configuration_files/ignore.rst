@@ -45,4 +45,4 @@ These rules are propagated hierarchically across all your projects and blocks. H
 
 **Note:** There is no sense in placing ``ignore.bii`` configuration files insed a block ``bii`` folder, as it never contains source code files.
 
-
+Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.

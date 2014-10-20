@@ -112,3 +112,5 @@ And you'll see the new dependencies retrieved in your ``deps folder``.
 .. container:: infonote
 
 	* Editing your dependencies could lead you to incompatibles versions between blocks.
+
+**Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_

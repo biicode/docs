@@ -293,3 +293,6 @@ You could get an older version after using an updated one just like this:
 	Saving files on disk
 	Computing dependencies
 	Saving dependences on disk
+
+
+**Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_

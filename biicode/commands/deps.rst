@@ -110,4 +110,6 @@ It's used to know all the block files (and their types) and their dependencies.
 		* D: data file
 		* S: system file
 		* U: unresolved file
+		
 
+**Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_
