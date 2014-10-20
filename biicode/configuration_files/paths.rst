@@ -72,17 +72,17 @@ Well, the compiler also needs to understand your folder structure in the compile
 
 So, to achieve this, you should include, after the line ``ADD_BIICODE_TARGETS`` as many lines as directories you've included in your ``paths.bii`` file, so CMake understands it has to include those files while compiling.
 
-For the first example you should write right bellow ``ADD_BIICODE_TARGETS``:
+On the **Common use case example** you should write right bellow ``ADD_BIICODE_TARGETS``:
 
 .. code-block:: cmake
 
-TARGET_INCLUDE_DIRECTORIES(${BII_LIB_TARGET} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes)
+   TARGET_INCLUDE_DIRECTORIES(${BII_LIB_TARGET} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes)
 
-And for the second example:
+And on the **Root directory example**:
 
 .. code-block:: cmake
 
-TARGET_INCLUDE_DIRECTORIES(${BII_LIB_TARGET} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+   TARGET_INCLUDE_DIRECTORIES(${BII_LIB_TARGET} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 
 That's nice, but why doesn't biicode speak CMakeLists.txt language for this?

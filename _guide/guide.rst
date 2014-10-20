@@ -1,7 +1,7 @@
 Main Title: a Simple reStructuredText (reST) Tutorial
 =====================================================
 
-This is a simple reST and sphinx tutorial for writing the biicode documentation, maintaining and homogeneus style throughout the documents.
+This is a simple reST and sphinx tutorial for writing the biicode documentation, maintaining and homogeneous style throughout the documents.
 
 .. _first-section:
 
@@ -10,7 +10,7 @@ This is a Section Title: basic usage
 
 Please, first of all, clone locally the documentation sources, `available here <https://github.com/biicode/docs>`_.
 
-A better way of writting the previous paragraph would be:
+A better way of writing the previous paragraph would be:
 
 Please, first of all, clone locally `the biicode docs sources available in GitHub <https://github.com/biicode/docs>`_. Try to convey **as much information as possible** with any included link.
 

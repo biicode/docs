@@ -2,8 +2,8 @@
 #include <errno.h>
 #include <string.h>
 
-#include <drogon/wiringpi/wiringpi/wiringpi.h>
-#include <drogon/wiringpi/wiringpi/softservo.h>
+#include <drogon/wiringpi/wiringPi/wiringPi.h>
+#include <drogon/wiringpi/wiringPi/softServo.h>
 
 int main ()
 {

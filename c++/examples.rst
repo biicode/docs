@@ -38,3 +38,5 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/ptypes
    examples/lib_miniutf
    examples/freeglut
+   examples/lwan
+
