@@ -25,6 +25,7 @@ Depending on your OS and desired compiler you can use different Eclipse generato
 
 Now your are ready to import your project into the Eclipse IDE. It is important that you use a version of Eclipse that contains the C/C++ Toolkit. So we recommend using `Eclipse IDE for C/C++ Developers <https://www.eclipse.org/downloads/>`_.
 
+
 How to import your project
 --------------------------
 
@@ -51,7 +52,7 @@ And this is all you need to work as usual with the Eclipse IDE.
 
 
 How to fix "Unresolved inclusion: Arduino.h"
--------------------------------------------
+--------------------------------------------
 
 * Open the project settings and go to C/C++ General -> Paths and Symbols
 * Click "Add external include path" and add:

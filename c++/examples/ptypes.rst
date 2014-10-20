@@ -3,7 +3,7 @@ PTypes
 
 PTypes is a simple alternative to the STL that includes multithreading and networking. It defines dynamic strings, character sets, lists and other basic data types along with threads, synchronization primitives, named pipes and IP sockets.
 
-The following example demostrates how to use `PTypes streams to write to a file <http://www.biicode.com/examples/ptypes>`_ .
+The following example demonstrates how to use `PTypes streams to write to a file <http://www.biicode.com/examples/ptypes>`_ .
 
 **stream.cpp**
 
@@ -20,10 +20,10 @@ Create a block:
 
 	$ bii init my_project
 	$ cd my_project
-	$ bii open examples/ptypes
+	$ bii new user/ptypes
 
 
-Copy stream.cpp in your block, then you need to resolve all the dependencies of this ``stream.cpp``. Then you can compile it
+Copy stream.cpp in your block (ptypes folder), and resolve ``stream.cpp`` dependencies. Then you can compile it:
 
 .. code-block:: bash
 
