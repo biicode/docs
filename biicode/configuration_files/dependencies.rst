@@ -3,7 +3,7 @@
 ``dependencies.bii``: configuring custom file dependencies
 ===========================================================
 
-The ``dependencies.bii`` file is used to **define those dependencies that cannot be automatically inferred from your code in a direct way**. This is an optional configuration file, and should be placed inside the ``bii`` folder contained in every block, as you can see in the :ref:`project layout <project_layout>` section. Optionally, you may specify custom dependencies making use of :ref:`tags inserted in the file comments, as explained in this section<bii_dependencies_tag>`.
+The ``dependencies.bii`` file is used to **define those internal dependencies that cannot be automatically inferred from your code in a direct way**. This is an optional configuration file, and should be placed inside the ``bii`` folder contained in every block, as you can see in the :ref:`project layout <project_layout>` section. Optionally, you may specify custom dependencies making use of :ref:`tags inserted in the file comments, as explained in this section<bii_dependencies_tag>`.
 
 The rules defined in each ``dependencies.bii`` file should affect only to cells contained in the block where the file is included. This means that a ``dependencies.bii`` configuration file **can only be locate inside a** ``block_name/bii`` **folder**, and makes no sense having a ``default_dependencies.bii`` file in the workspace ``bii`` folder.
 

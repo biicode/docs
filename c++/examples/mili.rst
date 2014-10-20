@@ -3,9 +3,9 @@ MiLi
 
 MiLi is a collection of useful C++ libraries, composed only by headers. For more information about this library, visit their `official website <https://code.google.com/p/mili/>`_ or `wiki <https://code.google.com/p/mili/w/list>`_ 
 
-You can find here the `MiLi biicode library site <https://www.biicode.com/danielgutson/blocks/danielgutson/mili/branches/master>`_ .
+You can find here the `MiLi biicode library site <https://www.biicode.com/danielgutson/mili>`_ .
 
-The following example shows a simple use for doing type-safe bitwise operations. You can find this and other examples in `the biicode MiLi samples block <https://www.biicode.com/danielgutson/blocks/danielgutson/milisamples/branches/master>`_ .
+The following example shows a simple use for doing type-safe bitwise operations. You can find this and other examples in `the biicode MiLi samples block <https://www.biicode.com/danielgutson/milisamples>`_ .
 
 **main_mili.cpp**
 

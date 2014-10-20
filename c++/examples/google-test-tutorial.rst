@@ -184,7 +184,7 @@ Now when we execute your tests we obtain exactly the same output:
 
 You can aggregate as many tests as you want to a suite so you can organize your tests to fit your needs.
 
-**Note:** You can find more google test samples in the `biicode gtestsamples block <https://www.biicode.com/google/blocks/google/gtestsamples/branches/master>`_.
+**Note:** You can find more google test samples in the `biicode gtestsamples block <https://www.biicode.com/google/gtestsamples>`_.
 
 
 .. |gtest_homepage| raw:: html

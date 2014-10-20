@@ -8,7 +8,7 @@ WiringPi: C GPIO library
 +--------------------------------------------------------------------------------------------------+
 | Author: `Gordon Henderson <https://projects.drogon.net/>`__                                      |
 +--------------------------------------------------------------------------------------------------+
-| `biicode library site <https://www.biicode.com/drogon/blocks/drogon/wiringpi/branches/master>`__ |
+| `biicode library site <https://www.biicode.com/drogon/wiringpi>`__ |
 +--------------------------------------------------------------------------------------------------+
 | `WiringPi library reference page <http://wiringpi.com/reference/>`__                             |
 +--------------------------------------------------------------------------------------------------+
@@ -33,7 +33,7 @@ You must create a new ``project`` and a new empty ``block``, as explained in the
 
 **Download:** :download:`blink.c </_static/code/rpi/examples/wiringpi/blink.c>`
 
-Note that the previous file includes the `main header file of drogon's WiringPi library, available from biicode <https://www.biicode.com/drogon/blocks/drogon/wiringpi/branches/master/versions/1/cells/wiringpi/wiringpi.h>`__. Now you are ready to build your program using the ``bii cpp:build`` command, and send it to your board using the ``bii rpi:send`` command, as described in the :ref:`biicode RPi getting started guide<rpi_getting_started>`. 
+Note that the previous file includes the `main header file of drogon's WiringPi library, available from biicode <https://www.biicode.com/drogon/drogon/wiringpi/master/1/wiringpi/wiringpi.h>`__. Now you are ready to build your program using the ``bii cpp:build`` command, and send it to your board using the ``bii rpi:send`` command, as described in the :ref:`biicode RPi getting started guide<rpi_getting_started>`. 
 
 You must **execute this program on your Raspberry Pi with the sudo command**, because it needs to gain access to the board hardware. All needed hardware and wiring setup is explained in this `example available at the WiringPi creator's projects page <https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/>`__.
 
@@ -52,12 +52,12 @@ With this example we will have a PWM sawtooth function on WiringPi pin 0 (:ref:`
 **Download:** :download:`pwm.c </_static/code/rpi/examples/wiringpi/pwm.c>`
 
 
-Note that in this example we only need to include the `WiringPi main header file <https://www.biicode.com/drogon/blocks/drogon/wiringpi/branches/master/versions/1/cells/wiringpi/wiringpi.h>`__. You must execute the binary on your Raspberry Pi using the ``sudo`` command.
+Note that in this example we only need to include the `WiringPi main header file <https://www.biicode.com/drogon/drogon/wiringpi/master/2/wiringPi/wiringPi.h>`__. You must execute the binary on your Raspberry Pi using the ``sudo`` command.
 
 How to use softServo to control a Servo
 ---------------------------------------
 
-In this example we make use of the `WiringPi softservo.h header <https://www.biicode.com/drogon/blocks/drogon/wiringpi/branches/master/versions/1/cells/wiringpi/softservo.h>`__ to control a servo. **WiringPi** provides two basic functions to control servos:
+In this example we make use of the `WiringPi softservo.h header <https://www.biicode.com/drogon/drogon/wiringpi/master/2/wiringPi/softServo.h>`__ to control a servo. **WiringPi** provides two basic functions to control servos:
 
 * ``softServoSetup (int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)``. With this function we provide the number of pins to be used as controllers. For more information about the GPIO go to: :ref:`Raspberry Pi GPIO Pin Layout <rpigpio>`.
 * ``softServoWrite (int servoPin, int value)``. With this function we assign to a pin configured previously the value that we want to move. The values that support has a range of **-250 to 1250**. In order to understand this range, we must analyze how this function works: the function adds 1000 to the value that is passed as a parameter, so the final range is from 750 to 2.250 and the average stay in 1500, which is the default value that the library gives servo 90 degrees.

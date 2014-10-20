@@ -3,9 +3,9 @@ Google Mock (GMock)
 
 Google C++ Mocking Framework (or Google Mock, or simply gmock for short) is a library for writing and using C++ mock classes. For more information about this library, visit their `official website <https://code.google.com/p/googlemock/>`_ or `wiki <https://code.google.com/p/googlemock/w/list>`_ 
 
-You can find here the `Gmock biicode library site <https://www.biicode.com/google/blocks/google/gmock/branches/master>`_ .
+You can find here the `Gmock biicode library site <https://www.biicode.com/google/gmock>`_ .
 
-The following example shows a simple use of gmock test. You can find this and other examples in `the biicode gmock samples block <https://www.biicode.com/google/blocks/google/gmocksamples/branches/master>`_ .
+The following example shows a simple use of gmock test. You can find this and other examples in `the biicode gmock samples block <https://www.biicode.com/google/gmocksamples>`_ .
 
 **main_gmock**
 
@@ -22,7 +22,7 @@ First, you need to resolve all the dependencies of this *main_gmock.cpp*
 	
 	$ bii find
 
-You will see next console output after executing the command:
+You will see the following console output after executing the command:
 	
 .. code-block:: bash
 

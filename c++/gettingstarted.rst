@@ -13,7 +13,7 @@ This example shows how to install biicode, build your first C/C++ program, and a
 
 .. |google_test_biicode_link| raw:: html
 
-   <a href="https://www.biicode.com/google/blocks/google/gtest/branches/master" target="_blank">it is already in biicode!</a>
+   <a href="https://www.biicode.com/google/gtest target="_blank">it is already in biicode!</a>
 
 
 1. Installing biicode and C/C++ tools

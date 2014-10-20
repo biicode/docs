@@ -3,7 +3,7 @@
 ``policies.bii``: defining the policies of the code you want to reuse
 ======================================================================
 
-Policies are just rules the smart finder applies when finding or updating dependencies. They can be configured in your_project/bii/policies.bii as you can see in the :ref:`layouts section <project_layout>`.
+Policies are just **rules the smart finder applies when finding or updating external dependencies.** They can be configured in your_project/bii/policies.bii as you can see in the :ref:`layouts section <project_layout>`.
 
 ``policies.bii`` have this format as self-documented:::
 
@@ -51,7 +51,7 @@ Policies are just rules the smart finder applies when finding or updating depend
 **Notes**:
 
 * **Priorities are ascending**. A policy rule with priority 2 will be applied before a policy rule with priority 0
-* branch.name, branch.user, block.user, block.name and tag are **internal variables** that will be evaluated by biicode
+* block.user, block.name and tag are **internal variables** that will be evaluated by biicode
 * tag can be compared against **STABLE**, **BETA**, **DEV** and **ALPHA** constants. The have a sorted relation so you can say tag >= DEV
 
 
