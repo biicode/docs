@@ -1,23 +1,29 @@
 IDE configuration
 =================
 
-Biicode offers integration with `Eclipse <https://www.eclipse.org/downloads/>`_ for Arduino programmers. It is able to do the appropriate project setup on your behalf. This way you can work on your biicode project, using the underlying infrastructure and services provided by Eclipse. In fact, this configuration can be established from the very first momment, when you create a new project with the ``bii init`` command (see the :ref:`commands reference <bii_init_command>` for more information).
+Biicode offers integration with `Eclipse <https://www.eclipse.org/downloads/>`_ for Arduino programmers. It is able to do the appropriate project setup on your behalf. This way you can work on your biicode project, using the underlying infrastructure and services provided by Eclipse.
 
 This section details the steps you should follow to achieve this integration.
 
-First of all, you need to configure your project for **Eclipse IDE for C/C++**. If you already did so when creating the project with the help of the ``bii init`` command, you can skip this section. Otherwise, you can define your preferences in your Arduino settings with ``arduino:settings``:
+First of all, you need to configure your project for arduino and **Eclipse IDE for C/C++**:
 
 .. code-block:: bash
 
 	$ bii arduino:settings
 	Introduce board: uno
 	Arduino detected on port COM14
-	Select IDE: (eclipse/none)
-	Introduce ide (default:None) (/o list options): eclipse
+	$ bii arduino:configure -G "Eclipse CDT4 - Unix Makefiles"
+	...
+	A new Eclipse project has been generated for you.
+	Open eclipse, select "File > Import > General > Existing project into Workspace"and select folder "YOUR_PROJECT_FOLDER"
 
-After modifying your settings, you must execute the ``bii arduino:configure`` command to apply all changes and **generate the project files**.
 
-If you have cofigured your project settings as in the previous example, your are ready to import your project into the Eclipse IDE. It is important that you use a version of Eclipse that contains the C/C++ Toolkit. So we recommend using `Eclipse IDE for C/C++ Developers <https://www.eclipse.org/downloads/>`_.
+Depending on your OS and desired compiler you can use different Eclipse generators:
+
+* **"Eclipse CDT4 - MinGW Makefiles"** Generate with MinGW Makefiles.
+* **"Eclipse CDT4 - Unix Makefiles"** Generate with Unix Makefiles.
+
+Now your are ready to import your project into the Eclipse IDE. It is important that you use a version of Eclipse that contains the C/C++ Toolkit. So we recommend using `Eclipse IDE for C/C++ Developers <https://www.eclipse.org/downloads/>`_.
 
 How to import your project
 --------------------------
@@ -42,3 +48,15 @@ If you are using **Mac** as developing platform, you will need some aditional se
 #. Click *OK*.
 
 And this is all you need to work as usual with the Eclipse IDE.
+
+
+How to fix "Unresolved inclusion: Arduino.h"
+-------------------------------------------
+
+* Open the project settings and go to C/C++ General -> Paths and Symbols
+* Click "Add external include path" and add:
+  - If you installed arduino IDE with biicode:
+   + MAC:  ``~/.biicode_env/arduino-1.0.5/Arduino.app/Contents/Resources/Java/hardware/arduino/cores/arduino``
+   + Linux: ``~/.biicode_env/arduino-1.0.5/hardware/arduino/cores/arduino``
+   + Windows: ``C:\biicode_env\arduino-1.0.5\hardware\arduino\cores\arduino``
+  - If you installed the IDE manually add the equivalent route
