@@ -26,9 +26,9 @@ Biicode has some commands similar to VCS management but we recommend greatly to 
 Travis CI
 ---------
 
-|travis_homepage| takes care of running your tests and deploying your apps. Like we work with VCS, many of the blocks published in our web have their ``.travis`` files, that it lets us to make a push to our GitHub repository, and automatically build, execute and publish this project with your biicode user account thanks to this excellent service.
+|travis_homepage| takes care of running your tests and deploying your apps. Like we work with VCS, many of the blocks published in our web have their ``.travis.yml`` files, that it lets us to make a push to our GitHub repository, and automatically build, execute and publish this project with your biicode user account thanks to this excellent service.
 
-If you're working with it, the``.travis.yml`` file format will help you to get automatic publications in your biicode account, in this case, with DEV tag: ::
+If you're working with it, the ``.travis.yml`` file format will help you to get automatic publications in your biicode account, in this case, with DEV tag: ::
 
    language: cpp
    compiler:
