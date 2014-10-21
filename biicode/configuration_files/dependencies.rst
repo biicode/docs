@@ -11,13 +11,13 @@ The ``dependencies.bii`` file contains rules matching the following pattern: ::
 
 	dependent_file_name [-+=] NULL|[[!]dependency_file ]+
 
-The specific meaning of each rule dependes on the operator located right after the ``dependent_file_name``:
+The specific meaning of each rule depends on the operator located right after the ``dependent_file_name``:
 
 * With the ``-`` operator all specified dependencies will be **deleted** from their dependent file.
 * With the ``+`` operator all specified dependencies will be **added** to their dependent file.
 * With the ``=`` operator all specified dependencies will **overwrite** existing dependencies.
 
-If you mark a dependency with a ``!`` symbol you are declaring this file as a dependency, but **it should be excluded from the building process**. This is usefull, for example, to define **license files** that must be downloaded along with your code, but must not be included in the compilation process.
+If you mark a dependency with a ``!`` symbol you are declaring this file as a dependency, but **it should be excluded from the building process**. This is useful, for example, to define **license files** that must be downloaded along with your code, but must not be included in the compilation process.
 
 Also, you can declare that a file has no dependencies using the ``NULL`` keyword.
 
@@ -48,4 +48,4 @@ The meaning of this configuration is as follows:
 * The line ``example.h = NULL`` informs biicode that all ``example.h`` dependencies are deleted.
 * In the fourth line we add ``matrix32.h`` as dependency of the ``main.cpp`` file.
 * In the next line we are deleting ``matrix16.h`` as a ``main.cpp`` dependency.
-* In the last line we are declaring that both ``solver.h`` and ``type.h`` are ``calculator.cpp`` are the only dependencies of ``calculator.cpp``, ovewriting any existing implicit dependencies.
+* In the last line we are declaring that both ``solver.h`` and ``type.h`` are ``calculator.cpp`` are the only dependencies of ``calculator.cpp``, overwriting any existing implicit dependencies.

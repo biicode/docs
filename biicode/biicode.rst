@@ -160,7 +160,7 @@ As you can see, the **project** contains a collection of folders. Take a look at
 
 ``deps``: This folder is filled with your project **dependencies source code** whenever you use the ``bii find`` command. These files, just the ones you need, are automatically retrieved, downloaded from our servers and stored locally on your computer.
 
-``blocks``: Contains the **code of the blocks you are working on**, your source code. :ref:`blocks explanation <block_definition>`.
+``blocks``: Contains the **code of the blocks you are working on**, your source code. For more information check the :ref:`blocks definition <block_definition>` .
 
 ``build``: Contains these **temporary build and project files**. Usually, this folder can be safely deleted, as it is fully automatically generated. In this folder you can find for example the Visual Studio solution files (.sln), Eclipse .project and .cproject files, etc. 
 

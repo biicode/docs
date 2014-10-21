@@ -34,14 +34,14 @@ Policies are just **rules the smart finder applies when finding or updating exte
 	- block: block.user == "YOUR_USER_NAME" 
 	  version: tag>=DEV
 	  priority: 1
-	# Then, accept all STABLE VERSIONS of another user's published 
+	# Then, accept all ALPHA VERSIONS of another user's published 
 	# blocks with priority 1.
 	- block: block.user == "ANOTHER_USER"
-	  version: tag==STABLE
+	  version: tag==ALPHA
 	  priority: 1
 
 	# Examples:
-	# Lets say that you (maya) introduce a dependency to some cell in willy/block
+	# Lets say that you (maya) introduce a dependency to some file in willy/block
 	# and you want to become a Beta tester of such block, you should write a new rule:
 	#- block: block == "willy/block"
 	#  version: tag>=BETA

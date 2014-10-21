@@ -4,8 +4,8 @@
 =========================================
 
 This command allows you to edit a published block.
-You can use this command to edit one of your dependency blocks or **any block** you have seen on the web and you want to edit.
-When you invoke this command the block is placed into the ``blocks`` folder within your project, and the source files that can be modified by you and eventually published in a new version of the same block or into a new block. Check the :ref:`publish command<bii_publish_command>` to know how.
+You can use this command to edit one of your dependency blocks or **any block** you've seen on the web and you want to edit.
+When you invoke this command the block is placed into the ``blocks`` folder within your project, and the source files that can be modified by you and eventually published in a new version of the same block or into a new block. If you are updating or creating a code block from another service, check the :ref:`integration guide<integration>` to know how to proceed.
 
 .. code-block:: bash
 
@@ -18,7 +18,7 @@ When you invoke this command the block is placed into the ``blocks`` folder with
 Edit any published block
 ---------------------------
 
-To **edit a block you are interested in or you depend on**, you've to follow the steps below:
+To **edit a published block** you are interested in or you depend on, follow the steps below:
 
 1. Open a block
 ^^^^^^^^^^^^^^^^^^^
@@ -92,12 +92,19 @@ If you're following the **Example**, execute:
 
 	$ bii close user_name/ardunet
 
-Your code could depend now on the version you have just published.
+
+4. Depend on the block you've just published
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Now, if you want to depend on the block you've just published:
+
+	* Update your #include (s) to the ones referring to your new published version
+	* If you didn't publish it as STABLE, do it or update your :ref:`policies.bii <policies>` file to accept DEV versions.
+	* Execute ``bii find`` and you're ready to build as usual. Here's :ref:`bii find command documentation<bii_find_command>` in case it's useful. 
 
 
 .. container:: infonote
 
-	If you don't know anything about publish or close command
+	If you need more information about publish or close command:
 
 	*	:ref:`Publish command <bii_publish_command>`
 	*	:ref:`Close command <bii_close_command>`
