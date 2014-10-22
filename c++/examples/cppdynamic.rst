@@ -72,7 +72,7 @@ Find your dependency to ``#include "jafroch/cppdynamic/include/cppdynamic/dynami
 
   ~/box2d$ bii find
 
-Before building we have to change the CmakeFile.txt, open it and write this instead of what is written:
+Before building we have to change the CmakeLists.txt, open it and write this instead of what is written:
 
 .. code-block
 
