@@ -28,41 +28,41 @@ the following code:
 
 .. code-block:: cpp
 
-#include "jafroch/cppdynamic/include/cppdynamic/dynamic.h"
-#include <assert.h>
-#include <iostream>
-#include <string>
+	#include "jafroch/cppdynamic/include/cppdynamic/dynamic.h"
+	#include <assert.h>
+	#include <iostream>
+	#include <string>
 
-using namespace std;
+	using namespace std;
 
-  int main(){
-
-	 dynamic::DynamicObject uut;
-	 dynamic::DynamicObject uut2;
-	 //fundamental types.	
-	 uut=5;
-	 //use it like a normal variable
-	 for(int i=0;i++;i<(int)uut){
-	 	// expando object
-	 	switch (i){
-	 		case 0 : uut2["test0"]="WELL";
-	 		break;
-	 		case 1 : uut2["test1"]=" ";
-	 		break;
-	 		case 2 : uut2["test2"]="DONE,";
-	 		break;
-	 		case 3 : uut2["test3"]=" ";
-	 		break;
-	 		case 4 : uut2["test4"]="WORKS!!";
-	 		break;
-	 	}
-	 }
-	 //reasignate value and type.
-	 uut=((int)uut==5);
-	 if((bool)uut){
-		 std::cout << "We can see in the code the dynamic vars works almost in all cases.";
+	  int main(){
+	
+		 dynamic::DynamicObject uut;
+		 dynamic::DynamicObject uut2;
+		 //fundamental types.	
+		 uut=5;
+		 //use it like a normal variable
+		 for(int i=0;i++;i<(int)uut){
+		 	// expando object
+		 	switch (i){
+		 		case 0 : uut2["test0"]="WELL";
+	 			break;
+	 			case 1 : uut2["test1"]=" ";
+	 			break;
+	 			case 2 : uut2["test2"]="DONE,";
+	 			break;
+	 			case 3 : uut2["test3"]=" ";
+	 			break;
+	 			case 4 : uut2["test4"]="WORKS!!";
+	 			break;
+	 		}
+		 }
+		 //reasignate value and type.
+		 uut=((int)uut==5);
+		 if((bool)uut){
+			 std::cout << "We can see in the code the dynamic vars works almost in all cases.";
+		}
 	}
-}
 
 
 
@@ -70,7 +70,7 @@ Find your dependency to ``#include "jafroch/cppdynamic/include/cppdynamic/dynami
 
 .. code-block:: bash
 
-  ~/box2d$ bii find
+  ~/cppdynamic$ bii find
 
 Before building we have to change the CmakeLists.txt, open it and write this instead of what is written:
 
@@ -106,13 +106,13 @@ Now we can build the projct:
 
 .. code-block:: bash
 
-  ~/box2d$ bii cpp:build
+  ~/cppdynamic$ bii cpp:build
 
 Execute the binary and this is how the output looks like:
 
 .. code-block:: bash
 
-  ~/box2d$ bin/myuser_dynvar_example_main
+  ~/cppdynamic$ bin/myuser_dynvar_example_main
 
 
 Didn't work? No problem, read or contact us in |biicode_forum_link|
@@ -133,7 +133,7 @@ Any suggestion or feedback? |biicode_write_us| It is very welcomed :)
 
 .. |cppdynamic_homepage| raw:: html
 
-   <a href="http://thetoeb.de/2014/10/08/an-implementation-of-the-dynamic-object-in-c/" target="_blank">Box2D</a>
+   <a href="http://thetoeb.de/2014/10/08/an-implementation-of-the-dynamic-object-in-c/" target="_blank">cppdynamic</a>
 
 .. |bii_cppdynamic| raw:: html
 
