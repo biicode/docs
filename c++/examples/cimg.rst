@@ -1,4 +1,4 @@
-Cimg
+CImg
 ====
 
 The CImg Library is an open-source C++ toolkit for image processing.
@@ -15,7 +15,24 @@ from this `github repo <https://github.com/lasote/cimg>`_
 General usage
 ----------------------------------
 
-Just **#include 'tschumperle/cimg/CImg.h'** in your cpp file, execute **bii find** for download the requirements and **bii cpp:build** for build your project.
+Just **#include "tschumperle/cimg/CImg.h"** in your cpp file, execute **bii find** for download the requirements and **bii cpp:build** for build your project.
+
+.. container:: infonote
+  
+  If you're not using Windows OS, you might need the external X11 library dependency, check it!
+
+  **Linux OS**:
+
+  .. code-block:: bash
+
+    $ sudo apt-get install libx11-dev
+
+  **Mac OS**:
+
+  Go to `XQuartz home page <http://xquartz.macosforge.org/landing/>`_, download the package and install it.
+
+
+
 
 Usage example: Tron game
 ----------------------------------
