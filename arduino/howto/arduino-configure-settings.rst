@@ -54,7 +54,9 @@ Type your Board model, just make sure it's compatible with the Arduino SDK v. 1.
 usb port
 ^^^^^^^^
 
-Connect your Arduino board to an USB port. This configuration varies from one operating system to another:
+Biicode automatically detects the USB port your Arduino board is connected. Manual USB Port configuration varies from one operating system to another, so look for your USB port and then type it on the command line after executing ``bii arduino:settings``:
+
+
 
 	.. container:: tabs-section
 		
@@ -62,9 +64,9 @@ Connect your Arduino board to an USB port. This configuration varies from one op
 
 			.. rst-class:: tabs-title
 				
-				Linux
+				Linux/Unix
 
-			On Linux, the Arduino serial device is named as follows (where X is the device number):
+			For Linux/Unix type ``ls /dev/ttyUSB*`` or ``ls /dev/ttyACM*`` into a terminal window, you should see a device called something like this (X is the device number):
 
 			* ``/dev/ttyUSBX``
 			* ``/dev/ttyACMX``
@@ -77,12 +79,10 @@ Connect your Arduino board to an USB port. This configuration varies from one op
 				
 				MacOS
 
-			When specifying the serial port name on Mac OS X, use the following names (where XXX is a unique ID):
+			Under Mac, in the Terminal window, type ``ls /dev/cu.*/`` which should give you a name like this ones (XXX is an unique ID):
 
-			* ``/dev/tty.usbmodemXXX``
-			* ``/dev/tty.usbserialXXX``
+			* ``/dev/cu.usbserialXXX ``
 			
-			Where ``tty.usbmodemXXX`` is for new Uno and Mega Arduino's, while ``tty.usbserialXXX`` are the older ones.
 
 		.. container:: tabs-item
 
@@ -90,6 +90,6 @@ Connect your Arduino board to an USB port. This configuration varies from one op
 
 				Windows
 
-			When specifying the serial port name on Windows, use the following names:
+			If using Windows, go to the **Device Manager** and look for an entry under **Ports (COM & LPT)** that says **USB Serial Port (COMX)** specifying the serial port name on Windows, (X is the device number):
 
 			* ``COM1``, ``COM2``, etc.
