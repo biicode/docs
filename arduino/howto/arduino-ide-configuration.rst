@@ -1,3 +1,5 @@
+.. _bii_arduino_ide:
+
 IDE configuration
 =================
 

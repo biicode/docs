@@ -3,9 +3,9 @@ Congure your port and board
 
 I changed my Arduino's port, what happens now?
 ----------------------------------------------
-Port detection is automatic, so whenever you execute ``bii arduino:upload`` the port is redetected.
+Port detection is automatic, execute ``bii arduino:upload`` to 're-detect' the board.
 
-Anyway, if you experience problems changing your port or your arduino board, just execute ``bii arduino:settings``
+If you experience problems changing your port or your arduino board, just execute ``bii arduino:settings``
 
 
 How can I change my Arduino project properties?
@@ -21,7 +21,7 @@ Settings options
 boards
 ^^^^^^
 
-This is your Arduino Board model. It must be compatible with the Arduino SDK v. 1.0.5, and must have one of the following values:
+Type your Board model, just make sure it's compatible with the Arduino SDK v. 1.0.5 and your IDE supports it. This is a list of the boards supported by default, even though any board is welcomed!
 
 	* ``uno``: Arduino Uno
 	* ``atmega328``: Arduino Duemilanove w/ ATmega328
@@ -54,7 +54,7 @@ This is your Arduino Board model. It must be compatible with the Arduino SDK v. 
 usb port
 ^^^^^^^^
 
-The USB interface where your Arduino board is connected. As mentioned before, this configuration varies from one operating system to another:
+Connect your Arduino board to an USB port. This configuration varies from one operating system to another:
 
 	.. container:: tabs-section
 		
@@ -64,7 +64,7 @@ The USB interface where your Arduino board is connected. As mentioned before, th
 				
 				Linux
 
-			On Linux the Arduino serial device is named as follows (where X is the device number):
+			On Linux, the Arduino serial device is named as follows (where X is the device number):
 
 			* ``/dev/ttyUSBX``
 			* ``/dev/ttyACMX``
