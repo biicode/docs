@@ -125,7 +125,9 @@ This command updates your settings with the info about your board and the IDE, i
 
 .. container:: infonote
 
-    When using non official arduino boards, add the board support to your IDE (if using one), and type the board on ``bii arduino:settings``.
+    :ref:`Set your own settings manually<bii_arduino_settings>`.
+    When using non official arduino boards, add the board support to your IDE (if using one), and type the board on ``bii arduino:settings``. 
+
 
 ``bii arduino:monitor``: start a serial monitor
 --------------------------------------------------
