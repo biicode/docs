@@ -12,6 +12,7 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/zmq
    examples/zmq_protobuf
    examples/google-test-tutorial
+   examples/gmock
    examples/tinythread
    examples/jsonxx
    examples/json11
@@ -25,7 +26,6 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/csparse
    examples/expression-parser
    examples/flatbuffers
-   examples/gmock
    examples/httpserver
    examples/log4z
    examples/mili
