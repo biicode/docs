@@ -51,6 +51,10 @@ If you have configured your project as a C/C++ project and you want to develop i
 	-- Generating done
 	-- Build files have been written to: [YOUR_BII_WORKSPACE/YOUR_PROJECT]/build
 
+.. container:: infonote
+
+	Check how to configure :ref:`Eclipse for Arduino<bii_arduino_ide>`
+
 
 ``bii arduino:build``: build your project
 -------------------------------------------
@@ -110,17 +114,19 @@ When you want to deploy your code into the arduino, this command sends your prev
 ``bii arduino:settings``: configure your Arduino settings
 -----------------------------------------------------------
 
-This command update your settings with the info about your board and the IDE, if you want to use one.
+This command updates your settings with the info about your board and the IDE, if you want to use one.
 
 .. code-block:: bash
 
 	$ bii arduino:settings
-	Introduce board: uno
-	Arduino detected on port COM13
-	Select IDE: (eclipse/none) 
-	Introduce ide (default:None) (/o list options): none
+	Introduce board: mega2560
+	Using arduino port: COM13
 
 
+.. container:: infonote
+
+    :ref:`Set your own settings manually<bii_arduino_settings>`.
+    When using non official arduino boards, add the board support to your IDE (if using one), and type the board on ``bii arduino:settings``. 
 
 
 ``bii arduino:monitor``: start a serial monitor

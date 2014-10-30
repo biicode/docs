@@ -34,13 +34,13 @@ First, try the automatic installation provided by biicode. Only if something goe
 
 Type the previous command and follow the instructions. You might need to close your console and open a new one to reload the updated environment variables. In the new console window, re-run the ``bii setup:arduino`` command to verify everything is properly installed.
 
-**If something fails with the automatic installation**, please `contact us at our forum <http://forum.biicode.com/category/arduino>`__, and feel free to ask any questions. Then, **proceed with the alternative manual installation** described bellow.
+**Any issues with the automatic installation**, please `contact us at our forum <http://forum.biicode.com/category/arduino>`__, and feel free to ask any questions. Then, **proceed with the alternative manual installation** described bellow.
 
 
 2. Manual installation
 ^^^^^^^^^^^^^^^^^^^^^^
 
-This section describes the manual installation of Arduino tools. You only need to go through this section if something failed during the automatic installation explained before. If you experience any issues during this manual installation, please `contact us at our forum <http://forum.biicode.com/category/arduino>`__, and we'll try to solve your problem as soon as possible.
+This section describes the manual installation of Arduino tools. You only need to go through this section if something failed during the automatic installation explained before. If you experience any issues during this manual installation, please `contact us at our forum <http://forum.biicode.com/category/arduino>`__, and we'll solve your problem as soon as possible.
 
 2.1. Install the development tools
 ..................................
@@ -80,7 +80,7 @@ In order to configure and compile your Arduino projects with biicode, you need t
 		   	$ xcode-select --install
 
 
-		#. Download and install the appropriate `version of CMake <http://www.cmake.org/cmake/resources/software.html>`_ for your Mac OSX.
+		#. Download and install `CMake 3.0.2 version <http://www.cmake.org/cmake/resources/software.html>`_ for your Mac OSX.
 
 	.. _arduino_cmake_win:
 	.. container:: tabs-item

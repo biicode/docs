@@ -1,17 +1,26 @@
-Congure your port and board
-===========================
+.. _bii_arduino_settings:
+
+Configure your port and board
+==============================
 
 I changed my Arduino's port, what happens now?
 ----------------------------------------------
-Port detection is automatic, so whenever you execute ``bii arduino:upload`` the port is redetected.
+Port detection is automatic, execute ``bii arduino:upload`` to 're-detect' the board.
 
-Anyway, if you experience problems changing your port or your arduino board, just execute ``bii arduino:settings``
+If you experience problems changing your port or your arduino board, just execute ``bii arduino:settings``
 
 
 How can I change my Arduino project properties?
 -----------------------------------------------
 
-Execute ``bii arduino:settings`` and fill the requested info with the new data.
+Execute ``bii arduino:settings`` and fill the requested info with the new data:
+
+.. code-block:: bash
+
+	$ bii arduino:settings
+	Introduce board: mega2560
+	Using arduino port: COM13
+
 
 Settings options
 ----------------
@@ -21,7 +30,7 @@ Settings options
 boards
 ^^^^^^
 
-This is your Arduino Board model. It must be compatible with the Arduino SDK v. 1.0.5, and must have one of the following values:
+Type your Board model, just make sure it's compatible with the Arduino SDK v. 1.0.5 and your IDE supports it. This is a list of the boards supported by default, even though any board is welcomed!
 
 	* ``uno``: Arduino Uno
 	* ``atmega328``: Arduino Duemilanove w/ ATmega328
@@ -37,7 +46,7 @@ This is your Arduino Board model. It must be compatible with the Arduino SDK v. 
 	* ``mini``: Arduino Mini w/ ATmega168
 	* ``ethernet``: Arduino Ethernet
 	* ``fio``: Arduino Fio
-	* ``bt328``: Arduino BT w/ ATmega328
+	* ``bt328``: Arduino BT w/ ATmega328ad
 	* ``bt``: Arduino BT w/ ATmega168
 	* ``LilyPadUSB``: LilyPad Arduino USB
 	* ``lilypad328``: LilyPad Arduino w/ ATmega328
@@ -51,10 +60,12 @@ This is your Arduino Board model. It must be compatible with the Arduino SDK v. 
 	* ``robotControl``: Arduino Robot Control
 	* ``robotMotor``: Arduino Robot Motor
 
-usb port
+USB port
 ^^^^^^^^
 
-The USB interface where your Arduino board is connected. As mentioned before, this configuration varies from one operating system to another:
+Biicode automatically detects the USB port your Arduino board is connected. Manual USB Port configuration varies from one operating system to another, so look for your USB port and then type it on the command line after executing ``bii arduino:settings``:
+
+
 
 	.. container:: tabs-section
 		
@@ -62,14 +73,15 @@ The USB interface where your Arduino board is connected. As mentioned before, th
 
 			.. rst-class:: tabs-title
 				
-				Linux
+				Linux/Unix
 
-			On Linux the Arduino serial device is named as follows (where X is the device number):
+			For Linux/Unix type ``ls /dev/ttyUSB*`` or ``ls /dev/ttyACM*`` into a terminal window.
+			You should see a device called like these:
 
 			* ``/dev/ttyUSBX``
 			* ``/dev/ttyACMX``
 
-			Where ``/dev/ttyACMX`` is for the new Uno and Mega Arduino's, while ``/dev/ttyUSBX`` is for the old ones.
+			Where ``/dev/ttyACMX`` is for the new Uno and Mega Arduino's and ``/dev/ttyUSBX`` is for the old ones. **X** is the device number.
 
 		.. container:: tabs-item
 
@@ -77,12 +89,12 @@ The USB interface where your Arduino board is connected. As mentioned before, th
 				
 				MacOS
 
-			When specifying the serial port name on Mac OS X, use the following names (where XXX is a unique ID):
+			Under Mac, in the Terminal window, type ``ls /dev/cu.*/`` which should give you a name like this one:
 
-			* ``/dev/tty.usbmodemXXX``
-			* ``/dev/tty.usbserialXXX``
+			* ``/dev/cu.usbserialXXX``
+
+			In which **XXX** is an unique ID.
 			
-			Where ``tty.usbmodemXXX`` is for new Uno and Mega Arduino's, while ``tty.usbserialXXX`` are the older ones.
 
 		.. container:: tabs-item
 
@@ -90,6 +102,7 @@ The USB interface where your Arduino board is connected. As mentioned before, th
 
 				Windows
 
-			When specifying the serial port name on Windows, use the following names:
+			If using Windows, go to the **Device Manager** and look for an entry under **Ports (COM & LPT)** that says **USB Serial Port (COMX)** specifying the serial port name on Windows, in which X is the device number:
 
 			* ``COM1``, ``COM2``, etc.
+
