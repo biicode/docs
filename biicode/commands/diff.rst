@@ -12,7 +12,7 @@ Compare files and show differences with ``bii diff`` command. You can compare yo
 Cases
 ^^^^^^
 
-Imagine you are ``fenix`` user with an ``armadillo`` block in your current project and you published ``4`` different versions to ``master`` branch.
+Imagine you are ``fenix`` user with an ``armadillo`` block in your current project and you published ``4`` different versions.
 
 Let's see the different possibilities:
 

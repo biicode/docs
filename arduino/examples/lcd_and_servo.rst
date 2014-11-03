@@ -1,7 +1,7 @@
 Servo and lcd 2x16
 ==================
 
-With this example we display the angle of a servo into a LCD. We use the servo.h library to control the servo and the liquidcrystal.h library to display the angle of the servo into a LCD 2x16.
+With this example you will display the angle of a servo into a LCD 2x16. It uses the Servo, ``servo.h``, library to control the servo and the Liquidcrystal, ``liquidcrystal.h``, library to display the angle on the LCD.
 
 What do we need?
 ----------------

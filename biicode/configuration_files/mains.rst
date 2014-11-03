@@ -20,3 +20,5 @@ This is an example of a ``mains.bii`` file: ::
 	!no_main.cpp
 
 In this case we are declaring that ``funct.cpp`` is an entry point to the application, but ``no_main.h`` is not, even in the case it contained a ``main`` function implementation in its contents.
+
+Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.

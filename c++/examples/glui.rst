@@ -5,7 +5,7 @@ GLUI User Interface Library
 
 For more information about this library, visit their `official website <http://glui.sourceforge.net/>`__.
 
-This is the `biicode library site <https://www.biicode.com/glui/blocks/glui/glui/branches/master>`__.
+This is the `biicode library site <https://www.biicode.com/glui/glui>`__.
 
 Following, there is an example using this library with biicode technology.
 
@@ -16,7 +16,7 @@ This example is a small modification of the code originaly programmed by `Ali Ba
 
 *"To avoid having to write the same code every time you want to create an OpenGL graphical application with GUI components, this program code can be used as a template to get you directly started".*
 
-You can `explore the source code block for this example following this link <https://www.biicode.com/examples/blocks/examples/glui_example/branches/master>`__. In order to try this example, you only need to follow these steps:
+You can `explore the source code block for this example following this link <https://www.biicode.com/examples/glui_example>`__. In order to try this example, you only need to follow these steps:
 
 .. container:: infonote
 

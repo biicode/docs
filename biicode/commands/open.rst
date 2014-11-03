@@ -4,18 +4,12 @@
 =========================================
 
 This command allows you to edit a published block.
-You can use this command to edit **one of your dependency blocks** or any block you have seen on the web and you want to edit.
-When you invoke this command the block is placed into the ``blocks`` folder within your project, and their cells become editable source files that can be modified by you and eventually published in a new version of the same branch (if you have writting permissions for that branch) or in a new branch (using the :ref:`publish command<bii_publish_command>`).
+You can use this command to edit one of your dependency blocks or **any block** you've seen on the web and you want to edit.
+When you invoke this command the block is placed into the ``blocks`` folder within your project, and the source files that can be modified by you and eventually published in a new version of the same block or into a new block. If you are updating or creating a code block from another service, check the :ref:`integration guide<integration>` to know how to proceed.
 
 .. code-block:: bash
 
 	$ bii open USER_NAME/BLOCK_NAME
-
-To open someone's branch, you will place the branch's user and block in brackets after its creator's user name and block name, like this:
-
-.. code-block:: bash
-
-	$ bii open USER_NAME/BLOCK_NAME(BRANCH_USER_NAME/BRANCH_BLOCK_NAME)
 
 
 .. _edit_dependecies:
@@ -24,20 +18,27 @@ To open someone's branch, you will place the branch's user and block in brackets
 Edit any published block
 ---------------------------
 
-To **edit a block you are interested in or you depend on**, you've to follow the below steps.
+To **edit a published block** you are interested in or you depend on, follow the steps below:
 
 1. Open a block
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+
+Create a new biicode project and get into it:
+
+.. code-block:: bash
+
+	~$ bii init myproject
+	~$ cd myproject
 
 Use ``bii open`` command and move any published block to your project:
 
 .. code-block:: bash
 
-	$ bii open "user_name/block_name(user/branch): VERSION"
+	~$ bii open user_name/block_name:VERSION
 
-**Examples**
+**Example**
 
-So if you want to open the |diego_ardunet_block| (branch=master and version=lastest by default) and edit it:
+Let's open the |diego_ardunet_block| (version=lastest by default) to edit it:
 
 .. |diego_ardunet_block| raw:: html
 
@@ -49,36 +50,31 @@ So if you want to open the |diego_ardunet_block| (branch=master and version=last
 
 Then you can code on it as if it was yours and changes will be reflected in your code, at build time.
 
-Suppose the last version of ``diego/ardunet`` and ``master`` branch is the "7" but you want to open the ``2`` version, execute:
+Suppose that you want to open version ``2`` instead of the latest ``diego/ardunet`` version, you should execute: 
 
 .. code-block:: bash
 
-	$ bii open "diego/ardunet: 2"
+	$ bii open diego/ardunet:2
 
-Imagine that "diego/ardunet" has published a branch named ``improvements`` and you're interested in ``5`` version. So if you want to edit it:
-
-.. code-block:: bash
-
-	$ bii open "diego/ardunet(improvements): 5"
-
-
-Finally, you could open the ``last version`` of a branch, e.g. ``release``, whose owner is other user, e.g. ``phil``:
-
-.. code-block:: bash
-
-	$ bii open "diego/ardunet(phil/release)"
 
 
 2. Publish the changes
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once you are happy with the changes, publish your own version of the block:
+Once you are happy with the changes, publish your own version of the block. 
+
+If (as in the Example) **the block in edition isn't yours**:
+
+	* Rename **diego** folder with your **username**. 
+	* Delete the ``parents.bii`` file.
+
+And publish :
 
 .. code-block:: bash
 
-	$ bii publish user_name/block_name --branch BRANCH_NAME
+	$ bii publish  
 
-**Unless the code is yours you will not be able to publish it to an existing branch**, so you need to specify a BRANCH_NAME.
+Check the :ref:`publish command<bii_publish_command>` to know more.
 
 
 3. Close the block
@@ -90,14 +86,28 @@ Then you can close the block to remove it from your blocks folder:
 
 	$ bii close user_name/block_name
 
-Your code will now depend on the version you have just published.
+If you're following the **Example**, execute:
 
-**Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_
+.. code-block:: bash
+
+	$ bii close user_name/ardunet
+
+
+4. Depend on the block you've just published
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Now, if you want to depend on the block you've just published:
+
+	* Update your #include (s) to the ones referring to your new published version
+	* If you didn't publish it as STABLE, do it or update your :ref:`policies.bii <policies>` file to accept DEV versions.
+	* Execute ``bii find`` and you're ready to build as usual. Here's :ref:`bii find command documentation<bii_find_command>` in case it's useful. 
 
 
 .. container:: infonote
 
-	If you don't know anything about publish or close command
+	If you need more information about publish or close command:
 
 	*	:ref:`Publish command <bii_publish_command>`
 	*	:ref:`Close command <bii_close_command>`
+
+
+**Got any doubts?** Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.

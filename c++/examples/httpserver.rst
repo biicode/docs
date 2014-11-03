@@ -3,12 +3,12 @@
 HTTP Server
 ===========
 
-You can write and extend your own multi-platform http server with the `lasote/httpserver <https://www.biicode.com/lasote/blocks/lasote/httpserver/branches/master>`_ block.
+You can write and extend your own multi-platform http server with the `lasote/httpserver <https://www.biicode.com/lasote/httpserver>`_ block.
 
 How does it work?
 -----------------
 
-It allows you to just implement a subclass of httpserver::HttpMiddleware to attend browsers or other http client requests.
+It allows you to implement just a subclass of httpserver::HttpMiddleware to attend browsers or other http client requests.
 
 A method ``call`` from your subclass object will be called with a Request* object and a Response* object.
 
@@ -78,12 +78,12 @@ The previous code has been tested on:
 More information
 ----------------
 
-You can find more information in the **readme.txt** file of `lasote/httpserver <https://www.biicode.com/lasote/blocks/lasote/httpserver/branches/master>`_
+You can find more information in the **readme.txt** file of `lasote/httpserver <https://www.biicode.com/lasote/httpserver>`_
 
 
 List of dependencies
 --------------------
 
-* `melikyan/ptypes <https://www.biicode.com/melikyan/blocks/melikyan/ptypes/branches/master>`_: PTypes (C++ Portable Types Library) is a simple alternative to the STL that includes multithreading and networking. It defines dynamic strings, variants, character sets, lists and other basic data types along with portable thread and synchronization objects, IP sockets and named pipes. Its main 'target audience' is developers of complex network daemons, robots or non-visual client/server applications of any kind.
-* `lasote/genericipserver <https://www.biicode.com/lasote/blocks/lasote/genericipserver/branches/master>`_: Generic and extensible IP server.
-* `lasote/thread_jobs <https://www.biicode.com/lasote/blocks/lasote/thread_jobs/branches/master>`_: Execute your tasks in threads managed by a pool.
+* `melikyan/ptypes <https://www.biicode.com/melikyan/ptypes>`_: PTypes (C++ Portable Types Library) is a simple alternative to the STL that includes multithreading and networking. It defines dynamic strings, variants, character sets, lists and other basic data types along with portable thread and synchronization objects, IP sockets and named pipes. Its main 'target audience' is developers of complex network daemons, robots or non-visual client/server applications of any kind.
+* `lasote/genericipserver <https://www.biicode.com/lasote/genericipserver>`_: Generic and extensible IP server.
+* `lasote/thread_jobs <https://www.biicode.com/lasote/thread_jobs>`_: Execute your tasks in threads managed by a pool.

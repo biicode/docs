@@ -3,18 +3,17 @@
 ``policies.bii``: defining the policies of the code you want to reuse
 ======================================================================
 
-Policies are the rules applied when finding or updating dependencies. They can be configured in your_project/bii/policies.bii as you can see in the :ref:`layouts section <project_layout>`.
+Policies are just **rules the smart finder applies when finding or updating external dependencies.** They can be configured in your_project/bii/policies.bii as you can see in the :ref:`layouts section <project_layout>`.
 
 ``policies.bii`` have this format as self-documented:::
 
-	# This is the file for configuring your finds of dependencies. You can have
+	# This is the file to configure your finds of dependencies. You can have
 	# several policies defined, each one with its own name. The 'default' policy
-	# will be use if you dont specify a policy name in your finds.
+	# will be use if you don't specify a policy name in your finds.
 	#
 	# Each policy is an ordered list of rules, which will be evaluated in order.
 	# Each rule has three fields:
-	#    block: an expression that can be evaluated using "block" and "branch"
-	#            objects.
+	#    block: an expression that can be evaluated using "block" objects.
 	#    version: an expression that can be evaluated using "tag" and "v" objects
 	#    priority: a integer number, with the resulting priority if the two
 	#            above conditions are true. Maximum priority is 0, negative
@@ -30,35 +29,36 @@ Policies are the rules applied when finding or updating dependencies. They can b
 	# ones are checked first
 
 	default:
-	# First rule is accept with priority 1 all your published blocks (master branches)
-	# for all tags.
-	- block: block.user == "YOUR_USER_NAME" and branch == "YOUR_USER_NAME/master"
+	# First rule: accept all your published blocks for all tags
+	# with priority 1.
+	- block: block.user == "YOUR_USER_NAME"
 	  version: tag>=DEV
 	  priority: 1
-	# Then, accept with priority 1 all 'master' branches of the original
-	# creator of the block, with category STABLE
-	- block: branch.name == "master" and branch.user == block.user
+
+	# For all other users only accept STABLE blocks
+	- block: ALL 
 	  version: tag==STABLE
 	  priority: 1
 
 	# Examples:
-	# Lets say that you (maya) introduce a dependency to some cell in willy/block(willy/master)
-	# and you want to become a Beta tester of such block, you should write a new rule:
-	#- block: block == "willy/block" and branch == "willy/master"
+	# Let's say that you (maya) introduce a dependency to some cell in willy/block and
+	# you want to reuse as a Beta tester of such block, you should write a new rule:
+	#- block: block == "willy/block"
 	#  version: tag>=BETA
 	#  priority: 1
-	# If you (maya) make a contribution to willy/block and publish it as a branch, you might
-	# want to depend on it, for any tag, and prioritizing your branch:
-	#- block: block == "willy/block" and branch == "maya/mybranch"
-	#  version: tag>=DEV
-	#  priority: 0  # This will give higher priority in the find process wrt to
-	#               # willy/block(willy/master) STABLE versions
+	#
+	# If you want to accept all ALPHA VERSIONS of another user's published
+	# blocks with priority 1.
+	#- block: block.user == "ANOTHER_USER"
+	#  version: tag==ALPHA
+	#  priority: 1
+	
 
 **Notes**:
 
 * **Priorities are ascending**. A policy rule with priority 2 will be applied before a policy rule with priority 0
-* branch.name, branch.user, block.user, block.name and tag are **internal variables** that will be evaluated by biicode
-* tag can be compared against **STABLE**, **DEV** and **ALPHA** constants. The have a sorted relation so you can say tag >= DEV
+* block.user, block.name and tag are **internal variables** that will be evaluated by biicode
+* tag can be compared against **STABLE**, **BETA**, **DEV** and **ALPHA** constants. The have a sorted relation so you can say tag >= DEV
 
 
 Policies tutorial
@@ -84,7 +84,7 @@ Create a ``main.cpp`` file which includes the block ``policyadvanced`` to use th
 	   return 1;
 	}
 
-If you check the output after runnig the code:
+If you check the output after running the code:
 
 .. code-block:: bash
 
@@ -92,7 +92,7 @@ If you check the output after runnig the code:
 	...
 	Hello STABLE
 
-Examining the ``tutorial/policyadvanced`` block in biicode (`available in this location <https://www.biicode.com/tutorial/blocks/tutorial/policyadvanced/branches/master>`_), we find four published versions with different tags:
+Examining the ``tutorial/policyadvanced`` block in biicode (`available in this location <https://www.biicode.com/tutorial/policyadvanced>`_), we find four published versions with different tags:
 
 .. raw:: html
 
@@ -134,23 +134,23 @@ Examining the ``tutorial/policyadvanced`` block in biicode (`available in this l
 	</table>
 	</div>
 
-Being **index=0** the first uploaded version, each one has a different ``hello()`` method implementation depending on its version.
+Being **index=0** the first uploaded version, each one has a different ``hello()`` method implementation depending on the block's version.
 
-The reason why your program has executed ``hello()`` of ``STABLE`` version is as follows. Check the contents of the ``policies.bii`` file located inside your ``~/your_bii_workspace/policies/bii/`` folder. This is a simple YAML file with the following appearance: ::
+The reason why your program has executed ``hello()`` of the ``STABLE`` version is as follows. Check the contents of the ``policies.bii`` file located inside your ``~/your_bii_workspace/policies/bii/`` folder. This is a simple YAML file with the following appearance: ::
 
 	default:
-	# First rule is accept with priority 1 all your published blocks (master branches)
-	# for all tags.
-	- block: block.user == "[USER]" and branch == "[USER]/master"
+	# First rule is accept with priority 1 
+	# a specific published block for all tags.
+	- block: block == "[ANY_USER/BLOCK]"
 	  version: tag>=DEV
 	  priority: 1
-	# Then, accept with priority 1 all 'master' branches of the original
-	# creator of the block, with category STABLE
-	- block: branch.name == "master" and branch.user == block.user
+	# Then, accept with priority 1 all STABLE VERSIONS of another 
+	# user, with category STABLE
+	- block: block.user == "[ANY_USER]"
 	  version: tag==STABLE
 	  priority: 1
 
-Then, your policy for this project makes your searches are in master branchs of anyone user block and all the blocks as ``STABLE`` versions.
+So, your policy for this project will make your searches in all matching versions (higher than ``DEV`` tag) of an specific block and in all ``STABLE`` versions of a specific user.
 
 **Note**: Make sure you have defined any policy name as ``default:`` or any you want, else you'll get an error.
 
@@ -161,20 +161,20 @@ Changing your policy name
 If you have defined another policy name as "my_policy", like this example: ::
 	
 	my_policy:
-	# First rule is accept with priority 1 all your published blocks (master branches)
-	# for all tags.
-	- block: block.user == "[USER]" and branch == "[USER]/master"
+	# Rule to accept with ``STABLE`` tag your published blocks
+	# with priority 1.
+	- block: block.user == "[YOUR_USER]"
 	  version: tag==STABLE
 	  priority: 1
 	  
 	default:
-	# First rule is accept with priority 1 all your published blocks (master branches)
-	# for all tags.
-	- block: block.user == "[USER]" and branch == "[USER]/master"
+	# Rule to accept with ``DEV`` tag another user's published 
+	# blocks with priority 1
+	- block: block.user == "[ANY_USER]" 
 	  version: tag==DEV
 	  priority: 1
 
-Then, you have two names to call different policies. In this case, if you want to select "my_policy" to get the dependencies according it, you only have to write this command:
+In this case, you have two names to call different policies. In this case, if you want to select "my_policy" to get the dependencies according it, you only have to write this command:
 
 .. code-block:: bash
 	
@@ -186,7 +186,7 @@ Or
 	
 	$ bii find -p my_policy
 
-If you don't specify any policy name, you call to ``default`` policies.
+If you don't specify any policy name, you are calling to ``default`` policies.
 	
 
 Changing your policy tag
@@ -197,7 +197,7 @@ Search BETA versions
 
 Modify the ``policies.bii`` file as shown here: ::
 
-	- block: branch.name == "master" and branch.user == block.user
+	- block: block.user == block.
 	  version: tag==BETA
 	  priority: 1
 
@@ -234,7 +234,7 @@ Advanced tag selection
 
 Finally, you could look for by published order with your tags. For example, if you write: ::
 
-	- block: branch.name == "master" and branch.user == block.user
+	- block: block.user == "ANY_USER"
 	  version: tag>DEV
 	  priority: 1
 
@@ -257,7 +257,7 @@ Special attention
 
 Modify your ``policies.bii`` file again to get the last version (in this example ``DEV`` version) ::
 
-	- block: branch.name == "master" and branch.user == block.user
+	- block: block.user == "ANY_USER"
 	  version: tag==DEV
 	  priority: 1
 
@@ -299,3 +299,6 @@ You could get an older version after using an updated one just like this:
 	Saving files on disk
 	Computing dependencies
 	Saving dependences on disk
+
+
+**Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_

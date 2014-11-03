@@ -25,7 +25,7 @@ This is the simplest case. Adaptation is almost inmediate:
 
 		#include "arduino/libraries/servo/servo.h"
 
-	Please, note that all letters are **lowercase**. You can browse `all available Arduino core libraries available in biicode <https://www.biicode.com/arduino/blocks/arduino/libraries/branches/master>`_.
+	Please, note that all letters are **lowercase**. You can browse `all available Arduino core libraries available in biicode <https://www.biicode.com/arduino/libraries>`_.
 		
 #. Declare all function prototypes at the beginning of your code. For example: ``void servo_loop();``.
 
@@ -130,7 +130,7 @@ Following there is an example of a full ``.ino`` file adaptation:
 
 		#include "arduino/libraries/servo/servo.h"
 
-	Please, note that all letters are **lowercase**. You can browse `all available Arduino core libraries available in biicode <https://www.biicode.com/arduino/blocks/arduino/libraries/branches/master>`_.
+	Please, note that all letters are **lowercase**. You can browse `all available Arduino core libraries available in biicode <https://www.biicode.com/arduino/libraries>`_.
 
 #. Declare the function prototypes, if you need, at the beginning of your code. For example ``void servo_loop();``.
 
