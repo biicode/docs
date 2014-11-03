@@ -7,9 +7,9 @@ Policies are just **rules the smart finder applies when finding or updating exte
 
 ``policies.bii`` have this format as self-documented:::
 
-	# This is a file to configure your finds of dependencies. You can have
+	# This is the file to configure your finds of dependencies. You can have
 	# several policies defined, each one with its own name. The 'default' policy
-	# will be used if you don't specify a policy name in your finds.
+	# will be use if you don't specify a policy name in your finds.
 	#
 	# Each policy is an ordered list of rules, which will be evaluated in order.
 	# Each rule has three fields:
@@ -31,20 +31,26 @@ Policies are just **rules the smart finder applies when finding or updating exte
 	default:
 	# First rule: accept all your published blocks for all tags
 	# with priority 1.
-	- block: block.user == "YOUR_USER_NAME" 
+	- block: block.user == "YOUR_USER_NAME"
 	  version: tag>=DEV
 	  priority: 1
-	# Then, accept all ALPHA VERSIONS of another user's published 
-	# blocks with priority 1.
-	- block: block.user == "ANOTHER_USER"
-	  version: tag==ALPHA
+
+	# For all other users only accept STABLE blocks
+	- block: ALL 
+	  version: tag==STABLE
 	  priority: 1
 
 	# Examples:
-	# Lets say that you (maya) introduce a dependency to some file in willy/block
-	# and you want to become a Beta tester of such block, you should write a new rule:
+	# Let's say that you (maya) introduce a dependency to some cell in willy/block and
+	# you want to reuse as a Beta tester of such block, you should write a new rule:
 	#- block: block == "willy/block"
 	#  version: tag>=BETA
+	#  priority: 1
+	#
+	# If you want to accept all ALPHA VERSIONS of another user's published
+	# blocks with priority 1.
+	#- block: block.user == "ANOTHER_USER"
+	#  version: tag==ALPHA
 	#  priority: 1
 	
 

@@ -4,7 +4,7 @@ Release Notes
 =============
 
 
-**1.10** (3-Nov-2014)
+**1.10.1** (3-Nov-2014)
 
 * Create blocks on web interface
 * Lowercase on usernames and blocknames restriction removed
@@ -19,7 +19,7 @@ Release Notes
 * Support any Arduino compatible board
 * Improved information messages
 * CMake now defines BIICODE to support biicode and non biicode includes
-* Web: Show achivements in user profile
+* Web: Show achievements in user profile
 * Web: Raw file visualization
 |
 
@@ -28,7 +28,7 @@ Release Notes
 * Fedora and Arch package
 * CMake updated to 3.0.2 and improved setup:cpp command
 * Fixed errors with ignore.bii behaviour
-* Custom toolchain for CMake
+* Custom tool-chain for CMake
 * Web: Download blocks as ZIP
 * Web: Delete blocks
 |

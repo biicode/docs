@@ -32,8 +32,6 @@ Just **#include "tschumperle/cimg/CImg.h"** in your cpp file, execute **bii find
   Go to `XQuartz home page <http://xquartz.macosforge.org/landing/>`_, download the package and install it.
 
 
-
-
 Usage example: Tron game
 ----------------------------------
 

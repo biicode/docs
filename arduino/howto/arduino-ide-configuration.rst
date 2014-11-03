@@ -20,17 +20,12 @@ First of all, you need to configure your project for arduino and **Eclipse IDE f
 	Open eclipse, select "File > Import > General > Existing project into Workspace"and select folder "YOUR_PROJECT_FOLDER"
 
 
-<<<<<<< HEAD
-If you have configured your project settings as in the previous example, your are ready to import your project into the Eclipse IDE. It is important that you use a version of Eclipse that contains the C/C++ Toolkit. So we recommend using `Eclipse IDE for C/C++ Developers <https://www.eclipse.org/downloads/>`_.
-=======
 Depending on your OS and desired compiler you can use different Eclipse generators:
 
-* **"Eclipse CDT4 - MinGW Makefiles"** Generate with MinGW Makefiles.
-* **"Eclipse CDT4 - Unix Makefiles"** Generate with Unix Makefiles.
+* ``"Eclipse CDT4 - MinGW Makefiles"`` Generate with MinGW Makefiles.
+* ``"Eclipse CDT4 - Unix Makefiles"`` Generate with Unix Makefiles.
 
-Now your are ready to import your project into the Eclipse IDE. It is important that you use a version of Eclipse that contains the C/C++ Toolkit. So we recommend using `Eclipse IDE for C/C++ Developers <https://www.eclipse.org/downloads/>`_.
-
->>>>>>> origin
+Now you are ready to import your project into the Eclipse IDE. It is important that you use a version of Eclipse that contains the C/C++ Toolkit. So we recommend using `Eclipse IDE for C/C++ Developers <https://www.eclipse.org/downloads/>`_.
 
 How to import your project
 --------------------------
@@ -54,4 +49,18 @@ If you are using **Mac** as developing platform, you will need some aditional se
 #. Select Mach-O 64 Parser.
 #. Click *OK*.
 
-And this is all you need to work as usual with the Eclipse IDE.
+How to fix "Unresolved inclusion: Arduino.h"
+--------------------------------------------
+
+1. Open the project settings and go to C/C++ General -> Paths and Symbols
+2. Click "Add external include path" and add:
+
+* For Arduino IDE installed with biicode:
+
+	- MAC: ``~/.biicode_env/arduino-1.0.5/Arduino.app/Contents/Resources/Java/hardware/arduino/cores/arduino``
+	- Linux: ``~/.biicode_env/arduino-1.0.5/hardware/arduino/cores/arduino``
+	- Windows: ``C:\biicode_env\arduino-1.0.5\hardware\arduino\cores\arduino``
+
+* For manually installed Arduino IDE, just add the equivalent route.
+
+And this is all you need to work as usual with the Eclipse IDE. **Any doubts?** Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.

@@ -8,7 +8,7 @@
 Example
 --------
 
-If you have published once a project with the layout below ::
+If you have published just once a project with the layout below ::
 
 |-- my_project
 |    +-- bii

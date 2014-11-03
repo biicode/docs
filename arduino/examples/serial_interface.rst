@@ -7,8 +7,8 @@ In this example we use a desktop console app to move a servo attached to the Ard
 How does it work?
 -----------------
 
-Just need to use the methods ``read`` and ``write`` to communicate with the device through serial port. Those functions are defined in `david/serial_arduino <https://www.biicode.com/david/serial_arduino>`_ and `david/serial_cpp <https://www.biicode.com/david/serial_cpp>`_ libraries.
-You can find the whole api definition in the blocks web!
+Just need to use the methods ``read`` and ``write`` to communicate with the device through serial port. Those functions and the whole API definition are defined in `david/serial_arduino <https://www.biicode.com/david/serial_arduino>`_ and `david/serial_cpp <https://www.biicode.com/david/serial_cpp>`_ libraries.
+
 
 How do I use it?
 -----------------
@@ -19,7 +19,7 @@ How do I use it?
 C++ code
 --------
 
-At this moment, the following code is only compatible with Windows OS.
+At this moment, the code below is only compatible with Windows OS.
 
 **main_cpp.cpp**
 

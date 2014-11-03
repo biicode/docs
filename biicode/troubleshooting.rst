@@ -17,7 +17,7 @@ This problem affects to **Windows user that compile their C or C++ projects with
 
 #. Right-click on *My Computer* icon, choose properties from the context menu. (Alternatively, you can double-click on the *System* icon in the *Control Panel*)
 
-#. Now go to *Advaced System Settings* tab, click the *Enviroment Variables...* button and modify your ``PATH`` variable, removing the ``sh.exe`` route. 
+#. Now go to *Advaced System Settings* tab, click the *Environment Variables...* button and modify your ``PATH`` variable, removing the ``sh.exe`` route. 
 
 If the problem persists, check other solutions proposed in this section, or `contact us at our forum <http://forum.biicode.com/category/client/windows>`__, and we'll try to solve your problem as soon as possible.
 

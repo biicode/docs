@@ -19,7 +19,7 @@ Biicode has some commands similar to VCS management but we recommend greatly to 
 	~$ bii init mygitproject
 	~$ cd mygitproject/blocks
 	~/mygitproject/blocks$ mkdir myusername
-	~/mygitproject/blocks/myusername$ git clone your_repository .
+	~/mygitproject/blocks/myusername$ git clone your_repository
 	~/mygitproject/blocks/myusername$ bii cpp:build
 
 
