@@ -3,6 +3,26 @@
 Release Notes
 =============
 
+
+**1.10** (3-Nov-2014)
+
+* Create blocks on web interface
+* Lowercase on usernames and blocknames restriction removed
+* Removed branches functionality
+* Fixed RAW code for images
+* Fixed ZIP download for images
+|
+
+
+**1.9** (20-Oct-2014)
+
+* Support any Arduino compatible board
+* Improved information messages
+* CMake now defines BIICODE to support biicode and non biicode includes
+* Web: Show achivements in user profile
+* Web: Raw file visualization
+|
+
 **1.8.5** (10-Oct-2014)
 
 * Fedora and Arch package

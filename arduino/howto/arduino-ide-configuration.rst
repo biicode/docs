@@ -1,3 +1,5 @@
+.. _bii_arduino_ide:
+
 IDE configuration
 =================
 
@@ -53,15 +55,3 @@ If you are using **Mac** as developing platform, you will need some aditional se
 #. Click *OK*.
 
 And this is all you need to work as usual with the Eclipse IDE.
-
-
-How to fix "Unresolved inclusion: Arduino.h"
---------------------------------------------
-
-* Open the project settings and go to C/C++ General -> Paths and Symbols
-* Click "Add external include path" and add:
-  - If you installed arduino IDE with biicode:
-   + MAC:  ``~/.biicode_env/arduino-1.0.5/Arduino.app/Contents/Resources/Java/hardware/arduino/cores/arduino``
-   + Linux: ``~/.biicode_env/arduino-1.0.5/hardware/arduino/cores/arduino``
-   + Windows: ``C:\biicode_env\arduino-1.0.5\hardware\arduino\cores\arduino``
-  - If you installed the IDE manually add the equivalent route
