@@ -31,6 +31,28 @@ Just **#include "tschumperle/cimg/CImg.h"** in your cpp file, execute **bii find
 
   Go to `XQuartz home page <http://xquartz.macosforge.org/landing/>`_, download the package and install it.
 
+If you are directly depending to CImg (using the **#include "tschumperle/cimg/CImg.h"**) you might need to modify the CMakeLists.txt of your block in order to include the external X11 dependency in the linking process:
+
+.. code-block:: cmake
+
+    include(${CMAKE_HOME_DIRECTORY}/biicode.cmake)
+
+    INIT_BIICODE_BLOCK()
+
+    ADD_BIICODE_TARGETS()
+
+    IF(APPLE)
+       FIND_PACKAGE(X11)
+       TARGET_LINK_LIBRARIES(${BII_BLOCK_TARGETS} PUBLIC ${X11_LIBRARIES})
+       INCLUDE_DIRECTORIES(/opt/X11/include)
+    ENDIF()
+
+    IF(UNIX)
+        IF(NOT APPLE)
+            TARGET_LINK_LIBRARIES(${BII_BLOCK_TARGETS} PUBLIC X11)
+        ENDIF()
+    ENDIF()
+
 
 Usage example: Tron game
 ----------------------------------
@@ -51,6 +73,9 @@ Simply open the examples/cimg block:
     $ ./examples_cimg_tron # on linux
     $ examples_cimg_tron.exe # on windows
 
+.. container:: infonote
+
+    Note that by opening the block, the CMakeLists.txt already includes the required modification. If you manually create the block the CMakeLists.txt has to be modified or a linking error will appear.
 
 **tron.cpp**
 
