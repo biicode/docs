@@ -15,7 +15,7 @@ from this `github repo <https://github.com/lasote/cimg>`_.
 General usage
 ----------------------------------
 
-Just **#include "tschumperle/cimg/CImg.h"** in your cpp file, execute **bii find** for download the requirements and **bii cpp:build** for build your project.
+Just **#include "tschumperle/cimg/CImg.h"** in your cpp file, execute **bii find** to download the requirements and **bii cpp:build** for build your project.
 
 .. container:: infonote
   
