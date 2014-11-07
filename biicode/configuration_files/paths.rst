@@ -3,7 +3,24 @@
 ``paths.bii``: specifying non-file-relative #include(s)
 =======================================================
 
-Use ``paths.bii`` to tell biicode in which folders it has to look for the local files specified in your #includes. You only need to specify this when your project has non-file-relative #include (s). Let's understand this with a couple examples:
+Use ``paths.bii`` to tell biicode in which folders it has to look for the local files specified in your `#includes`. You only need to specify this when your project has `non-file-relative #include (s)`. Here's how to do it:
+
+* Create a ``paths.bii`` file in the `project/blocks/username/bii` folder::
+
+	|-- my_project
+	|    +-- bii
+	|    +-- bin
+	|    +-- blocks
+	|    |	  +-- user25
+	|    |    |     +-- library
+	|    |    |     |     +-- bii
+	|    |    |     |     |    |-- paths.bii
+
+* Write into your :ref:`paths.bii <paths-common>` the folders where biicode has to look for the local files. 
+* Make sure it compiles, by updating your :ref:`CMakeLists.txt  <paths-compile>`.
+Let's understand this with a couple examples:
+
+.. _paths-common:
 
 Common use case example
 -----------------------
@@ -18,22 +35,25 @@ Libraries usually have a folder structure like this one ::
 
 In which main1.cpp includes: ``#include "tool.h"`` that it is truly located into **/include** folder. The proper #include would be ``#include "../include/tool.h"``
 
-The compiler, as well as biicode, can't find the ``tool.h`` file unless we tell them where they can find it. If we execute ``bii deps`` on this example, we'll see ``#include "tool.h"`` as unresolved. That's why we need **paths.bii** .
+If we execute ``bii deps`` on this example, we'll see ``#include "tool.h"`` as unresolved. Why is this happening? 
+Biicode, as well as the compiler, can't find the ``tool.h`` file unless we tell them where they can find it. 
 
-To make the previous example operative, you'll only need to create a **paths.bii** file into the **bii/**  subdirectory located into our block, like this ::
+Let's fix this: Create a **paths.bii** file into the **bii/**  subdirectory located into our block::
 
-|-- my_project
+|-- library
 |    +-- bii
-|    +-- bin
-|    +-- blocks
-|    |	  +-- user25
-|    |    |     +-- library
-|    |    |     |     +-- bii
-|    |    |     |     |    |-- paths.bii
-|    |    |     |     +-- include
-|    |    |     |     |    |-- tool.h
-|    |    |     |     +-- test
-|    |    |     |     |    |-- main1.cpp (#include "tool.h")
+|    |    |-- paths.bii
+|    +-- include
+|    |    |-- tool.h
+|    +-- test
+|    |    |-- main1.cpp (#include "tool.h")
+
+And write into the paths.bii file:
+
+.. code-block:: text
+
+	/include
+
 
 NOTE: You can always update the #includes instead of using **paths.bii**, ``#include "tool.h"`` -> ``#include "../include/tool.h"`` 
 
@@ -46,10 +66,19 @@ Let's imagine now that we have a folder with the following structure into it ::
 |    +-- examples
 |    |	  |-- main.cpp (#include "mylib.h")
 
-If we execute ``bii deps`` on this example, we'll see ``mylib.h"`` as unresolved. Why is this happening? 
+If we execute ``bii deps`` on this example, we'll see ``mylib.h`` as unresolved. Why is this happening? 
 Biicode, as well as the compiler, considers the ``#include(s)`` relative to their location. So if there isn't a root folder they can refer to, when looking for ``mylib.h`` they will search it in the ``examples`` folder and they won't be able to find it.
 
-What should we write on the ``paths.bii`` file? Easy, just write ``/`` and biicode will know that it has to include the root directory on their search.
+What should we write on the ``paths.bii`` file?
+
+.. code-block:: text
+
+	/
+
+
+Write ``/`` and biicode will know that it has to include the root directory on their search.
+
+.. _paths-compile:
 
 But, wait a minute, this isn't compiling
 ----------------------------------------
