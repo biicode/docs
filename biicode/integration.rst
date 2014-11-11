@@ -64,6 +64,11 @@ If you're working with it, the ``.travis.yml`` file format will help you to get 
 
 To learn more about Travis using C++ language, visit its `documentation <http://docs.travis-ci.com/user/languages/cpp/>`_.
 
+.. container:: infonote
+
+   Here's how to `automatically build and publish via Travis CI and Github  <http://blog.biicode.com/automatically-build-publish-via-travis-ci-github/>`_.
+
+
 Koding
 ------
 

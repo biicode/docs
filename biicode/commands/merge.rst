@@ -14,6 +14,7 @@ Examples
 --------
 
 Merge with the last version from block ``user22/math_libs`` 
+
 .. code-block:: bash
 
 	$ bii merge user22/math_libs
