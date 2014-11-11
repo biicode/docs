@@ -13,13 +13,15 @@ This command allows you to **merge two different versions of the same block**. O
 Examples
 --------
 
-Merge with the last version from block ``user22/math_libs`` 
+Merge with the last version from block ``user22/math_libs``
+
 
 .. code-block:: bash
 
 	$ bii merge user22/math_libs
 
 Merge with version ``2`` from block ``user22/math_libs``
+
 
 .. code-block:: bash
 
