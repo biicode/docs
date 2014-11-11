@@ -16,6 +16,15 @@ Execute ``bii arduino:settings`` and fill the requested info with the new data.
 Settings options
 ----------------
 
+.. _arduino_SDK_path:
+
+There you select the path where arduino SDK which you want to use is located, BIICODE will take by default the latest version inside biicode env.
+If you dont have any SDK you can use:
+
+.. code-block:: bash
+
+	$ bii arduino:setup
+
 .. _arduino_boards:
 
 boards
