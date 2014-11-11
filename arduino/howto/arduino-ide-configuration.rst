@@ -10,6 +10,7 @@ First of all, you need to configure your project for arduino and **Eclipse IDE f
 .. code-block:: bash
 
 	$ bii arduino:settings
+	introduce SDK path (default path): C:\biicode_env\arduino-1.0.6
 	Introduce board: uno
 	Arduino detected on port COM14
 	$ bii arduino:configure -G "Eclipse CDT4 - Unix Makefiles"

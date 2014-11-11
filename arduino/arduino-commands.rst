@@ -115,6 +115,7 @@ This command update your settings with the info about your board and the IDE, if
 .. code-block:: bash
 
 	$ bii arduino:settings
+	introduce SDK path (default path): C:\biicode_env\arduino-1.0.6
 	Introduce board: uno
 	Arduino detected on port COM13
 	Select IDE: (eclipse/none) 
