@@ -119,6 +119,7 @@ This command updates your settings with the info about your board and the IDE, i
 .. code-block:: bash
 
 	$ bii arduino:settings
+	Introduce SDK path (C:/biicode_env/arduino-1.0.6): C:/biicode_env/arduino-1.0.6
 	Introduce board: mega2560
 	Using arduino port: COM13
 
