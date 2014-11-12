@@ -15,7 +15,10 @@ First of all, you need to configure your project for arduino and **Eclipse IDE f
 	Introduce SDK path (C:/biicode_env/arduino-1.0.6): C:/biicode_env/arduino-1.0.6
 	Introduce board: uno
 	Arduino detected on port COM14
-	
+	$ bii arduino:configure -G "Eclipse CDT4 - Unix Makefiles"	
+	...	
+	A new Eclipse project has been generated for you.
+	Open eclipse, select "File > Import > General > Existing project into Workspace"and select folder "YOUR_PROJECT_FOLDER"
 
 Depending on your OS and desired compiler you can use different Eclipse generators:
 
