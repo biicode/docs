@@ -25,6 +25,11 @@ Execute ``bii arduino:settings`` and fill the requested info with the new data:
 Settings options
 ----------------
 
+SDK path
+^^^^^^^^
+
+Write the path where is located the arduino SDK which you want to use, it will apear a default path where is located the latest arduino SDK that it was used, normally Introduce SDK path C:/biicode_env/arduino-1.0.6 .
+
 .. _arduino_boards:
 
 boards
