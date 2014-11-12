@@ -38,8 +38,8 @@ SDK path
 ^^^^^^^^
 
 Press enter to choose the Arduino SDK path in brackets. To use a different Arduino SDK, write the path where it is located.
-
-**Note**: Want to install Arduino SDK? execute  :ref:`bii setup:arduino <bii_setup_arduino_command>`.
+.. container:: infonote
+	**Want to install Arduino SDK? execute  :ref:`bii setup:arduino <bii_setup_arduino_command>`**
 
 .. _arduino_boards:
 
