@@ -1,3 +1,5 @@
+.. _generators_ide:
+
 Generators and IDEs
 ===================
 

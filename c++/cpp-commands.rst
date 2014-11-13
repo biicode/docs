@@ -32,7 +32,7 @@ Imagine you have defined a variable name FOO in your CMakeList.txt and you want 
       message(STATUS "FOO Disabled!!")
    ENDIF()
 
-You can define the value of FOO wwith the flag -DFOO=TRUE or -DFOO=FALSE:
+You can define the value of ``FOO`` with the flag ``-DFOO=TRUE`` or ``-DFOO=FALSE``:
 
 .. code-block:: bash
 
@@ -40,15 +40,6 @@ You can define the value of FOO wwith the flag -DFOO=TRUE or -DFOO=FALSE:
    Running: cmake  -G "MinGW Makefiles" -Wno-dev -DFOO=TRUE ../cmake
 
    FOO Enabled!!
-
-
-
-.. code-block:: bash
-
-   $ bii cpp:configure -DFOO=FALSE
-   Running: cmake  -G "MinGW Makefiles" -Wno-dev -DFOO=FALSE ../cmake
-
-   FOO Disabled!!
 
 
 
