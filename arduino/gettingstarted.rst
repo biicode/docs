@@ -110,7 +110,7 @@ Copy the following code containing the new blink into the main.cpp file
 **main.cpp**
 
 .. code-block:: cpp
-  :emphasize-lines: 1
+  :emphasize-lines: 2
 
   #include "Arduino.h"
   #include "fenix/blink/blink.h"
