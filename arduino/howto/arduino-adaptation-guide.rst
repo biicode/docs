@@ -1,35 +1,36 @@
 How to adapt your code
 ======================
 
-This section describes **how to adapt your current Arduino projects to bicode**. The adaptation steps depend on the complexity of your project: whether it contains one single ``.ino`` file, or multiple ``.ino`` files. Simply follow the instructions contained in the section that best suits to your current project configuration.
+**Adapt your current Arduino projects and sketches to biicode**. Next steps depend on whether your project contains one single ``.ino`` file, or multiple ``.ino`` files. Just follow the guide that suits best your current project:
 
 1. Projects with one single .ino file
 -------------------------------------
 
-This is the simplest case. Adaptation is almost inmediate:
+This is the simplest case. Adaptation is almost immediate:
 
 **General rules**
 
-#. **Change** your ``.ino`` file **extension** to ``.cpp``. For example, the file ``sweep.ino`` would become ``sweep.cpp``.
-#. **Include** the ``Arduino.h`` **library** in your code with the following line at the beginning of your file:
+#. `Put your code into a biicode block <http://docs.biicode.com/arduino/gettingstarted.html#create-your-project>`_ .
+
+#. **Change** ``.ino`` file **extensions** to ``.cpp``. For example, ``sweep.ino`` file would be ``sweep.cpp``.
+
+#. #. **Include** the ``Arduino.h`` **library** in the very beginning of your code:
 
 	.. code-block:: cpp
 
 		#include "Arduino.h"
-
-#. **Rewrite** the Arduino core library includes to **comply with the biicode includes format**. For the arduino core libraries this format is ``arduino/libraries/<path_to_file>`` (in general, all included files in biicode projects must follow the pattern ``<username>/<blockname>/<path_to_file>``, so here we are including files from the ``libraries`` block of the biicode ``arduino`` user). 
-
-	For instance, if you are using the ``Servo.h`` library, you should write the following include directive:
-
-	.. code-block:: cpp
-
-		#include "arduino/libraries/servo/servo.h"
-
-	Please, note that all letters are **lowercase**. You can browse `all available Arduino core libraries available in biicode <https://www.biicode.com/arduino/libraries>`_.
 		
 #. Declare all function prototypes at the beginning of your code. For example: ``void servo_loop();``.
 
-Following there is an example of a full ``.ino`` file adaptation:
+#. If you're using 3rd party (external) libraries, search for them in biicode and **rewrite** the library includes to the ones available on biicode. Usually, all included files in biicode projects follow this pattern: ``<username>/<blockname>/<path_to_file>``.
+
+	For example, if you are using  `Tiny GPS Library <http://www.biicode.com/mikalhart/tinygps>`_ , ``tinygps.h`` , you should update the include directive like this:
+
+	.. code-block:: cpp
+
+		#include "mikalhart/tinygps/tinygps.h" 
+
+Full ``.ino`` file adaptation Sample:
 
 .. container:: tabs-section
 	
@@ -71,7 +72,7 @@ Following there is an example of a full ``.ino`` file adaptation:
 
 
 			#include "Arduino.h"
-			#include <arduino/libraries/servo/servo.h>
+			#include <Servo.h>
 
 			void servo_loop();
 			 
@@ -98,7 +99,9 @@ Following there is an example of a full ``.ino`` file adaptation:
 
 **General rules**
 
-#. Change the extension to the main file to ``.cpp``. Also, change the extension of other ``.ino`` files to ``.h``. For example, if your project has the following layout, being ``sweep.ino`` the main file:
+#. `Put your code into a biicode block <http://docs.biicode.com/arduino/gettingstarted.html#create-your-project>`_ .
+
+#. Change ``.ino`` main file extension to ``.cpp``. Also, change the extension of the other ``.ino`` files to ``.h``. For example, if your project has the following layout, being ``sweep.ino`` your main file, rename ``sweep.ino`` to ``sweep.cpp``, and ``servo_functions.ino`` to ``servo_functions.h``.
 
 	.. code-block:: text
 
@@ -106,7 +109,7 @@ Following there is an example of a full ``.ino`` file adaptation:
 	   |    +-- sweep.ino
 	   |    +-- servo_functions.ino
 
-	You should modify the extensions to the following biicode-compliant layout and file names:
+	Put them into your ``project/blocks/username/biicode_block_name`` directory like this:
 
 	.. code-block:: text
 
@@ -114,27 +117,24 @@ Following there is an example of a full ``.ino`` file adaptation:
 	   |    +-- sweep.cpp
 	   |    +-- servo_functions.h
 
-   Note that ``sweep.ino`` has been renamed to ``sweep.cpp``, and ``servo_functions.ino`` has been renamed to ``servo_functions.h``.
 
-#. **Include** the ``Arduino.h`` **library** in your code with the following line at the beginning of your file:
+#. **Include** the ``Arduino.h`` **library** in the very beginning of your code:
 
 	.. code-block:: cpp
 
 		#include "Arduino.h"
 
-#. **Rewrite** the Arduino core library includes to **comply with the biicode includes format**. For the arduino core libraries this format is ``arduino/libraries/<path_to_file>`` (in general, all included files in biicode projects must follow the pattern ``<username>/<blockname>/<path_to_file>``, so here we are including files from the ``libraries`` block of the biicode ``arduino`` user). 
+#. If you're using 3rd party (external) libraries, search for them in biicode and **rewrite** the library includes to the ones available on biicode. Usually, all included files in biicode projects follow this pattern: ``<username>/<blockname>/<path_to_file>``.
 
-	For instance, if you are using the ``Servo.h`` library, you should write the following include directive:
+	For example, if you are using  `Tiny GPS Library <http://www.biicode.com/mikalhart/tinygps>`_ , ``tinygps.h`` , you should update the include directive like this:
 
 	.. code-block:: cpp
 
-		#include "arduino/libraries/servo/servo.h"
+		#include "mikalhart/tinygps/tinygps.h" 
 
-	Please, note that all letters are **lowercase**. You can browse `all available Arduino core libraries available in biicode <https://www.biicode.com/arduino/libraries>`_.
+#. Declare all function prototypes at the beginning of your code. For example ``void servo_loop();``.
 
-#. Declare the function prototypes, if you need, at the beginning of your code. For example ``void servo_loop();``.
-
-Following you will find an example of a full adaptation of an Arduino project containing multiple files. First tab shows the original project, while the second one displays the easy adaptation described befor. The third tab shows an alternative, more advanced adaptation, recommended for complex projects, and as a best practice for the general structure of your projects:
+Find below a full multiple ``.ino`` files adaptation sample. Easy adaptation is the one described before and advanced adaptation is the one biicode recommends for complex projects o nice practice:
 
 .. container:: tabs-section
 	
@@ -197,7 +197,7 @@ Following you will find an example of a full adaptation of an Arduino project co
 			:emphasize-lines: 1,2
 
 			#include "Arduino.h"
-			#include <arduino/libraries/servo/servo.h>
+			#include <Servo.h>
 
 			void servo_loop(int pin){
 			  Servo myservo;
@@ -248,7 +248,7 @@ Following you will find an example of a full adaptation of an Arduino project co
 			:emphasize-lines: 1,2
 
 			#include "servo_functions.h"
-			#include <arduino/libraries/servo/servo.h>
+			#include <Servo.h>
 
 			void servo_loop(int pin){
 			  Servo myservo;
