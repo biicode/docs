@@ -112,6 +112,7 @@ Copy the following code containing the new blink into the main.cpp file
 .. code-block:: cpp
   :emphasize-lines: 1
 
+  #include "Arduino.h"
   #include "fenix/blink/blink.h"
   Blink my_blink;
   void setup() {
