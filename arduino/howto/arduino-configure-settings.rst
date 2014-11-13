@@ -30,7 +30,7 @@ Execute:
 	
 .. code-block:: bash
 
-	$bii arduino:settings 
+	$ bii arduino:settings 
 
 to define your Arduino SDK, board and port
 	
