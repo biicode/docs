@@ -14,7 +14,7 @@ This is the simplest case. Adaptation is almost immediate:
 
 #. **Change** ``.ino`` file **extensions** to ``.cpp``. For example, ``sweep.ino`` file would be ``sweep.cpp``.
 
-#. #. **Include** the ``Arduino.h`` **library** in the very beginning of your code:
+#. **Include** the ``Arduino.h`` **library** in the very beginning of your code:
 
 	.. code-block:: cpp
 
