@@ -18,12 +18,30 @@ Execute ``bii arduino:settings`` and fill the requested info with the new data:
 .. code-block:: bash
 
 	$ bii arduino:settings
+	Introduce SDK path (C:/biicode_env/arduino-1.0.6): [ENTER]
 	Introduce board: mega2560
 	Using arduino port: COM13
 
 
 Settings options
 ----------------
+
+Execute:
+	
+.. code-block:: bash
+
+	$ bii arduino:settings 
+
+to define your Arduino SDK, board and port
+	
+SDK path
+^^^^^^^^
+
+Press enter to choose the Arduino SDK path in brackets. To use a different Arduino SDK, write the path where it is located.
+
+.. container:: infonote
+	
+	Want to install Arduino SDK? execute  :ref:`bii setup:arduino <bii_setup_arduino_command>`
 
 .. _arduino_boards:
 

@@ -14,6 +14,8 @@ Setup for installing cpp third party tools
 
 	$ bii setup:cpp
 
+.. _bii_setup_arduino_command:
+
 Arduino tools
 ----------
 
