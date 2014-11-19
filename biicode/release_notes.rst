@@ -3,6 +3,20 @@
 Release Notes
 =============
 
+**1.11** (19-Nov-2012)
+
+* Block tracks.
+* Client hooks.
+* Improved client output messages.
+* Faster processing of large projects.
+* Improved setups (arduino).
+* Bug of with Publish STABLE after DEV cache invalidating solved.
+* Bug of target_compile_options quotes solved.
+* Web: Block permissions and admin management for premium accounts (for friends).
+* Web: `Improved Search Engine: by tag, user name, block name... <http://blog.biicode.com/improved-search-engine-elastic-search/>`_
+* Web: Block tagging.
+* Web: Fixed bug with some passwords patterns.
+|
 
 **1.10.1** (3-Nov-2014)
 
