@@ -3,7 +3,7 @@
 Release Notes
 =============
 
-**1.11** (19-Nov-2012)
+**1.11** (19-Nov-2014)
 
 * Block tracks.
 * Client hooks.
