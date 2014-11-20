@@ -26,7 +26,7 @@ This section summarizes the **Arduino commands available to be used with the bii
 
 **Note**: You need to have arduino :ref:`correctly set up <arduino_installation>`.
 
-``bii cpp:configure``: configure your project
+``bii arduino:configure``: configure your project
 -----------------------------------------------
 
 If you have configured your project as a C/C++ project and you want to develop in arduino language, this command helps you! Enter it and configure your project like an arduino project. It invokes arduino cross compiler and you are ready to start with your arduino.
@@ -53,7 +53,8 @@ If you have configured your project as a C/C++ project and you want to develop i
 
 .. container:: infonote
 
-	Check how to configure :ref:`Eclipse for Arduino<bii_arduino_ide>`
+	Execute ``cmake --help`` to check all generators available.
+	Here's how to configure :ref:`Eclipse for Arduino<bii_arduino_ide>`
 
 
 ``bii arduino:build``: build your project
@@ -120,7 +121,7 @@ This command updates your settings with the info about your board and the IDE, i
 
 	$ bii arduino:settings
 	Enter SDK path (/../biicode_env/arduino-1.0.6): [ENTER]
-	Enter board (/o list supported options):mega2560
+	Enter board (/o list supported options): mega2560
 	Using arduino port: COM13
 
 

@@ -23,7 +23,7 @@ This section describes **how to configure your system for Arduino programs with 
 
 First, try the automatic installation provided by biicode. Only if something goes wrong, proceed with the manual installation described at the end of this section.
 
-1 Automatic installation
+1. Automatic installation
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Just execute** ``bii setup:arduino`` in your console and all needed tools will be installed automatically.

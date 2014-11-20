@@ -1,7 +1,7 @@
 .. _bii_arduino_settings:
 
-Configure your port and board
-==============================
+Configure your SDK, port and board
+===================================
 
 I changed my Arduino's port, what happens now?
 ----------------------------------------------
@@ -13,7 +13,7 @@ If you experience problems changing your port or your arduino board, just execut
 How can I change my Arduino project properties?
 -----------------------------------------------
 
-Execute ``bii arduino:settings`` and fill the requested info with the new data:
+Execute ``bii arduino:settings`` to define your Arduino SDK, board and port:
 
 .. code-block:: bash
 
@@ -23,8 +23,18 @@ Execute ``bii arduino:settings`` and fill the requested info with the new data:
 	Using arduino port: COM13
 
 
-Settings options
-----------------
+``bii arduino:settings`` options
+--------------------------------
+
+
+SDK path
+^^^^^^^^
+
+Press enter to choose the Arduino SDK path in brackets. To use a different Arduino SDK, write the path where it is located.
+
+.. container:: infonote
+	
+	Want to install Arduino SDK? execute  ``bii setup:arduino``.
 
 .. _arduino_boards:
 
