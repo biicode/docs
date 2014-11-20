@@ -32,7 +32,7 @@ Imagine you have defined a variable name FOO in your CMakeList.txt and you want 
       message(STATUS "FOO Disabled!!")
    ENDIF()
 
-You can define the value of ``FOO`` with the flag ``-DFOO=TRUE`` or ``-DFOO=FALSE``:
+Define the value of ``FOO`` with the flag ``-DFOO=TRUE`` or ``-DFOO=FALSE``:
 
 .. code-block:: bash
 
@@ -41,6 +41,7 @@ You can define the value of ``FOO`` with the flag ``-DFOO=TRUE`` or ``-DFOO=FALS
 
    FOO Enabled!!
 
+bii cpp:configure -G "VERSIONDE VISUAL1 AQUÍ" -DCMAKE_BUILD_TYPE=Debug
 
 
 ``bii cpp:build``: build your project

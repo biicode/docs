@@ -18,7 +18,8 @@ Execute ``bii arduino:settings`` and fill the requested info with the new data:
 .. code-block:: bash
 
 	$ bii arduino:settings
-	Introduce board: mega2560
+	Enter SDK path (/../biicode_env/arduino-1.0.6): [ENTER]
+	Enter board (/o list supported options): mega2560
 	Using arduino port: COM13
 
 

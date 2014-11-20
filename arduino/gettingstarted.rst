@@ -76,7 +76,8 @@ Just, define your Arduino board using the ``arduino:settings`` command. In this 
 .. code-block:: bash
 
    ~/myproject$ bii arduino:settings
-   Introduce board (/o list options): uno
+   Enter SDK path (/../biicode_env/arduino-1.0.6): [ENTER]
+   Enter board (/o list supported options):uno
    Using arduino port: COM4
 
 4. Build and upload your program
