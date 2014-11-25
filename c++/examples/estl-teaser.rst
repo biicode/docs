@@ -21,9 +21,9 @@ In this example you will calculate ,giving the coordenates, the angles and sides
 
    ~$ bii init estl-teaser
    ~$ cd estl-teaser
-   ~/estl-teaser$ bii open jafroch/stl-teaser
+   ~/estl-teaser$ bii open examples/estl-teaser
 
-Now **open the examples/polygon.cpp** :
+Now **open the file examples/polygon.cpp** :
 
 .. code-block:: cpp
 
