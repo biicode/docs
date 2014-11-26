@@ -23,7 +23,7 @@ In this example you will calculate ,giving the coordenates, the angles and sides
    ~$ cd estl-teaser
    ~/estl-teaser$ bii open examples/estl-teaser
 
-Now **open the file examples/polygon.cpp** :
+Now lets check the code, **open the file examples/polygon.cpp** :
 
 .. code-block:: cpp
 
