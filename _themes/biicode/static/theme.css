@@ -3795,7 +3795,7 @@ h1,h2,h3,h4,h5,h6,legend
 {
   color: #666;
   font-weight: lighter;
-  margin-top:0;
+  margin-top:-60px;
 }
 
 p
@@ -3838,15 +3838,15 @@ h6
 
 code,.rst-content dl dt,.rst-content dl dl dt,.rst-content tt.literal
 {
-  background: #eee;
-  border-radius: 2px;
+  background: #F5F5F5;
+  border-radius: 3px;
   border: solid 1px #bbb;
   color: #000;
   font-family:'Droid Sans Mono', monospace;
   font-size:75%;
   max-width:100%;
   overflow-x:auto;
-  padding: 1px 4px;
+  padding: 2px 9px;
   white-space:nowrap;
 }
 
@@ -4791,7 +4791,7 @@ pre.literal-block:after
 
 .menu-vertical
 {
-  margin-bottom:100px;
+  margin-bottom:161px;
 }
 .menu.menu-vertical > ul {
     border: 1px solid #ccc;
@@ -5495,13 +5495,13 @@ nav.nav-side
   max-height:100%;
   min-height:100%;
   overflow-y:auto;
-  position:relative;
+  position:fixed;
   /* top: 60px; */
   transition:all .25s ease;
   width:300px;
   z-index: 500;
-  top:73px;
-  left: 0;
+  top:160px;
+  /* left: 0;*/
   float:left;
   padding-right:2px;
 }
@@ -5565,7 +5565,7 @@ body.gettingstarted .nav-rel a:hover {
  background-color:#d4d4d4; 
 }
 body.cpp .nav-rel a:hover {
- background-color:#d4d4d4; 
+ background-color:#d4d4d4;
 }
 body.arduino .nav-rel a:hover {
  background-color:#d4d4d4; 
@@ -5670,7 +5670,7 @@ body.nodejs .nav-rel a:hover {
 .section h1,.section h2,.section h3
 {
   padding-bottom: 2px;
-  padding-top:55px;
+  padding-top:100px;
 }
 .section h1
 {
@@ -5827,11 +5827,11 @@ body.nodejs .tabs .tab.current
 
 .biicode-sections {
   position: fixed;
-  top: 84px;
+  top: 98px;
   background: #ffaa00;
   height: 50px;
   width: 1100px;
-  padding-left: 350px;
+  padding-left: 0px;
   overflow-x: auto;
   white-space: nowrap;
   text-align: left;
@@ -5882,34 +5882,52 @@ body.nodejs .todo {
 }
 
 body.biicode .biicode-sections {
-  background-color:#fff;
-  border-bottom: 9px solid #fff;
-  height: auto;
+	background-color: #fff;
+	border-bottom: 9px solid #fff;
+	top: 84px;
+	padding-top: 14px;
+	height: 85px;
+	width:297px;
 }
 body.gettingstarted .biicode-sections {
-  background-color:#fff;
-  border-bottom: 9px solid #fff;
-  height: auto;
+	background-color: #fff;
+	border-bottom: 9px solid #fff;
+	top: 84px;
+	padding-top: 14px;
+	height: 85px;
+	width:297px;
 }
 body.cpp .biicode-sections {
-  background-color:#fff;
-  border-bottom: 9px solid #fff;
-  height: auto;
+	background-color: #fff;
+	border-bottom: 9px solid #fff;
+	top: 84px;
+	padding-top: 14px;
+	height: auto;
+	width:297px;
 }
 body.arduino .biicode-sections {
-  background-color:#fff;
-  border-bottom: 9px solid #fff;
-  height: auto;
+	background-color: #fff;
+	border-bottom: 9px solid #fff;
+	top: 84px;
+	padding-top: 14px;
+	height: 85px;
+	width:297px;
 }
 body.raspberrypi .biicode-sections {
-  background-color:#fff;
-  border-bottom: 9px solid #fff;
-  height: auto;
+	background-color: #fff;
+	border-bottom: 9px solid #fff;
+	top: 84px;
+	padding-top: 14px;
+	height: 85px;
+	width:297px;
 }
 body.nodejs .biicode-sections {
-  background-color:#fff;
-  border-bottom: 9px solid #fff;
-  height: auto;
+	background-color: #fff;
+	border-bottom: 9px solid #fff;
+	top: 84px;
+	padding-top: 14px;
+	height: 85px;
+	width:297px;
 }
 
 .biisection {
@@ -5930,7 +5948,115 @@ body.nodejs .biisection.nodejs
   font-weight: bold;
   background-color: #d4d4d4;
 }
-
+.biisection.biicode{
+	background-image: url(img/general-icon-off.png) !important;
+	background-repeat: no-repeat !important;
+	width:50px;
+	height:50px;
+	text-indent: 500%;
+    white-space: nowrap;
+    overflow: hidden;
+	background-color: #fff !important;
+	margin-right:7px;
+	display:none;
+}
+.biisection.biicode:hover{
+	background-image: url(img/general-icon-on.png) !important;
+	background-repeat: no-repeat !important;
+	width:50px;
+	height:50px;
+	text-indent: 500%;
+    white-space: nowrap;
+    overflow: hidden;
+	background-color: #fff !important;
+	margin-right:7px;
+}
+.biisection.cpp{
+	background-image: url(img/cplus-icon-off.png) !important;
+	background-repeat: no-repeat !important;
+	width:50px;
+	height:50px;
+	text-indent: 500%;
+    white-space: nowrap;
+    overflow: hidden;
+	background-color: #fff !important;
+	margin-right:28px;
+}
+.biisection.cpp:hover{
+	background-image: url(img/cplus-icon-on.png) !important;
+	background-repeat: no-repeat !important;
+	width:50px;
+	height:50px;
+	text-indent: 500%;
+    white-space: nowrap;
+    overflow: hidden;
+	background-color: #fff !important;
+	margin-right:28px;
+}
+.biisection.arduino{
+	background-image: url(img/arduino-icon-off.png) !important;
+	background-repeat: no-repeat !important;
+	width:50px;
+	height:50px;
+	text-indent: 500%;
+    white-space: nowrap;
+    overflow: hidden;
+	background-color: #fff !important;
+	margin-right:28px;
+}
+.biisection.arduino:hover{
+	background-image: url(img/arduino-icon-on.png) !important;
+	background-repeat: no-repeat !important;
+	width:50px;
+	height:50px;
+	text-indent: 500%;
+    white-space: nowrap;
+    overflow: hidden;
+	background-color: #fff !important;
+	margin-right:28px;
+}
+.biisection.raspberrypi{
+	background-image: url(img/raspberry-icon-off.png) !important;
+	background-repeat: no-repeat !important;
+	width:50px;
+	height:50px;
+	text-indent: 500%;
+    white-space: nowrap;
+    overflow: hidden;
+	background-color: #fff !important;
+	margin-right:28px;
+}
+.biisection.raspberrypi:hover{
+	background-image: url(img/raspberry-icon-on.png) !important;
+	background-repeat: no-repeat !important;
+	width:50px;
+	height:50px;
+	text-indent: 500%;
+    white-space: nowrap;
+    overflow: hidden;
+	background-color: #fff !important;
+	margin-right:28px;
+}
+.biisection.nodejs{
+	background-image: url(img/node-icon-off.png) !important;
+	background-repeat: no-repeat !important;
+	width:50px;
+	height:50px;
+	text-indent: 500%;
+    white-space: nowrap;
+    overflow: hidden;
+	background-color: #fff !important;
+}
+.biisection.nodejs:hover{
+	background-image: url(img/node-icon-on.png) !important;
+	background-repeat: no-repeat !important;
+	width:50px;
+	height:50px;
+	text-indent: 500%;
+    white-space: nowrap;
+    overflow: hidden;
+	background-color: #fff !important;
+}
 .underline {
   text-decoration: underline;
 }
@@ -6233,8 +6359,9 @@ body.nodejs .biisection.nodejs
     margin:auto;
     width: 800px;
     float: right;
-    padding: 75px 50px;
+    padding: 28px 50px;
     position: relative;
+	margin-top: 60px;
 }
   
   .nav-top-mobile
@@ -6494,3 +6621,165 @@ nav.right {
 #signup-bt img.top:hover {
 	opacity:0;
 }
+/* Custom Scroll nav side || Jorge */
+.jspContainer
+{
+	overflow: hidden;
+	position: relative;
+}
+.jspPane
+{
+	position: absolute;
+}
+.jspVerticalBar
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 16px;
+	height: 100%;
+	background: red;
+}
+.jspHorizontalBar
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 16px;
+	background: red;
+}
+.jspCap
+{
+	display: none;
+}
+.jspHorizontalBar .jspCap
+{
+	float: left;
+}
+.jspTrack
+{
+	background: #dde;
+	position: relative;
+}
+.jspDrag
+{
+	background: #bbd;
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+{
+	float: left;
+	height: 100%;
+}
+.jspArrow
+{
+	background: #50506d;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+}
+.jspArrow.jspDisabled
+{
+	cursor: default;
+	background: #80808d;
+}
+.jspVerticalBar .jspArrow
+{
+	height: 16px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+	width: 16px;
+	float: left;
+	height: 100%;
+}
+.jspVerticalBar .jspArrow:focus
+{
+	outline: none;
+}
+.jspCorner
+{
+	background: #eeeef4;
+	float: left;
+	height: 100%;
+}
+* html .jspCorner
+{
+	margin: 0 -3px 0 0;
+}
+.jspHorizontalBar,
+.jspVerticalBar,
+.jspTrack
+{
+	background: #eeeef4;
+	border-radius: 10px;
+}
+.jspDrag
+{
+	background:  #cfcfcf;
+
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+.jspTrack .jspActive,
+.jspTrack .jspHover,
+.jspDrag:hover
+{
+	background: #adadad;
+}
+.jspArrow
+{
+	background: url(../image/ui-icons_222222_256x240.png) no-repeat;
+	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+.jspVerticalBar>.jspActive,
+.jspArrow:hover
+{
+	background-image: url('../image/ui-icons_cd0a0a_256x240.png');
+}
+.jspVerticalBar>.jspDisabled,
+.jspVerticalBar>.jspDisabled:hover,
+.jspHorizontalBar>.jspDisabled,
+.jspHorizontalBar>.jspDisabled:hover
+{
+	background-color: transparent;
+	background-image: url('../image/ui-icons_888888_256x240.png');
+}
+.jspVerticalBar .jspArrow
+{
+	height: 15px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+	width: 15px;
+}
+.jspArrowUp
+{
+	background-position: 0 0;
+}
+.jspArrowDown
+{
+	background-position: -64px 0 !important; 
+}
+.jspArrowLeft
+{
+	background-position: -96px 0 !important;
+}
+.jspArrowRight
+{
+	background-position: -32px 0 !important;
+}
+/* Custom Scroll nav side || Jorge */

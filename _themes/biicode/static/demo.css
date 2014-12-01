@@ -1,0 +1,197 @@
+/*
+ * CSS Styles that are used on the jScrollPane demo site - these are custom to the site and
+ * you shouldn't need to use them in your own implementations of jScrollPane.
+ */
+
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body
+{
+	background: #fff;
+}
+body
+{
+	font: 13px/1.231 arial,helvetica,clean,sans-serif
+}
+nav.nav-side{
+
+  max-height:200px;
+  min-height:100%;
+  overflow-y:auto;
+  position:fixed;
+  /* top: 60px; */
+  transition:all .25s ease;
+  width:300px;
+  z-index: 500;
+  top:160px;
+  /* left: 0;*/
+  float:left;
+  padding-right:2px;
+}
+/* Custom Scroll nav side || Jorge */
+.jspContainer
+{
+	overflow: hidden;
+	position: relative;
+}
+.jspPane
+{
+	position: absolute;
+}
+.jspVerticalBar
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 16px;
+	height: 100%;
+	background: red;
+}
+.jspHorizontalBar
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 16px;
+	background: red;
+}
+.jspCap
+{
+	display: none;
+}
+.jspHorizontalBar .jspCap
+{
+	float: left;
+}
+.jspTrack
+{
+	background: #dde;
+	position: relative;
+}
+.jspDrag
+{
+	background: #bbd;
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+{
+	float: left;
+	height: 100%;
+}
+.jspArrow
+{
+	background: #50506d;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+}
+.jspArrow.jspDisabled
+{
+	cursor: default;
+	background: #80808d;
+}
+.jspVerticalBar .jspArrow
+{
+	height: 16px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+	width: 16px;
+	float: left;
+	height: 100%;
+}
+.jspVerticalBar .jspArrow:focus
+{
+	outline: none;
+}
+.jspCorner
+{
+	background: #eeeef4;
+	float: left;
+	height: 100%;
+}
+* html .jspCorner
+{
+	margin: 0 -3px 0 0;
+}
+.jspHorizontalBar,
+.jspVerticalBar,
+.jspTrack
+{
+	background: #eeeef4;
+	border-radius: 10px;
+}
+.jspDrag
+{
+	background:  #cfcfcf;
+
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+.jspTrack .jspActive,
+.jspTrack .jspHover,
+.jspDrag:hover
+{
+	background: #adadad;
+}
+.jspArrow
+{
+	background: url(../image/ui-icons_222222_256x240.png) no-repeat;
+	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+.jspVerticalBar>.jspActive,
+.jspArrow:hover
+{
+	background-image: url('../image/ui-icons_cd0a0a_256x240.png');
+}
+.jspVerticalBar>.jspDisabled,
+.jspVerticalBar>.jspDisabled:hover,
+.jspHorizontalBar>.jspDisabled,
+.jspHorizontalBar>.jspDisabled:hover
+{
+	background-color: transparent;
+	background-image: url('../image/ui-icons_888888_256x240.png');
+}
+.jspVerticalBar .jspArrow
+{
+	height: 15px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+	width: 15px;
+}
+.jspArrowUp
+{
+	background-position: 0 0;
+}
+.jspArrowDown
+{
+	background-position: -64px 0 !important; 
+}
+.jspArrowLeft
+{
+	background-position: -96px 0 !important;
+}
+.jspArrowRight
+{
+	background-position: -32px 0 !important;
+}
+/* Custom Scroll nav side || Jorge */
