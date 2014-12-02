@@ -1,8 +1,5 @@
 .. _bii_cpp_tools:
 
-C++ commands
-============
-
 
 ``bii cpp:configure``: configure your project
 ---------------------------------------------

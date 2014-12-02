@@ -1,7 +1,7 @@
 .. _integration:
 
-Integration
-===========
+Integrations
+============
 
 Biicode is easy to integrate with other technologies and tools. We're already working with the services below:
 

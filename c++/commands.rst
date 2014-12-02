@@ -3,7 +3,8 @@
 Commands
 ==========
 
-This section summarizes the general **commands available in biicode**. You can:
+These are the **commands available in biicode**.
+You can:
 
 * **manage** your project and blocks locally, on your computer,
 * determine their internal and external **dependencies**,
@@ -16,14 +17,17 @@ This section summarizes the general **commands available in biicode**. You can:
    :maxdepth: 2
 
    commands/clean
-   commands/close
    commands/deps
-   commands/diff
    commands/find
    commands/init
-   commands/merge
    commands/new
    commands/open
    commands/publish
    commands/setup
+   commands/close
    commands/user
+   cpp-commands
+   commands/diff
+   commands/merge
+
+   

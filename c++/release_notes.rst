@@ -1,6 +1,6 @@
-.. _changelog:
+.. _release_notes:
 
-Release Notes
+Release notes
 =============
 
 **1.11** (19-Nov-2014)

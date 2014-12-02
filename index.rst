@@ -1,23 +1,23 @@
-Welcome to the biicode documentation!
-=====================================
+Welcome to biicode 
+===================
 
-Here you will find all the information you need to get started using biicode with your projects.
+Here's all the information to get started using biicode with your projects:
 
-The documentation is structured as follows:
+* **User Guide**: For C and C++ programmers. Guides to get started, learn how to use the libraries available in biicode, manage your projects with your usual IDE's, integrate with other tools, publish blocks, control your dependencies. There's also a full reference guide.  
 
-* **Biicode General Information**: Contains general information about how biicode works. Here you will learn how register and download the biicode installer for your platform, and some basic concepts about biicode projects layout and important folders and configuration files. You'll also get access to the general reference for the client commands and tools.
-* **C/C++ Documentation**: contains information about the biicode support for C and C++ projects. Specific tools and configuraton options are explained in detail. You will also find a basic "Hello World" example project, and many more examples using different libraries.
-* **Arduino Documentation** contains specific documentation for Arduino projects. Here you'll learn how biicode simplifies working with Arduino boards and reusing Arduino libraries.
-* **Raspberry Pi Documentation** explains how to develop for your Raspberry Pi boards using biicode. Biicode technology simplifies these projects making easier both native compiling and cross compiling. You'll find a simple getting-started project along with many others.
-* **Node.js Documentation** contains specific tools, commands and examples for developing Node.js projects with the help of biicode.
+* **Arduino Docs**: specifics to develop C and C++ projects with Arduino and biicode. Includes a getting started guide.
 
-Feel free to select the documentation section of your interest from the following **table of contents**. You can also browse the different sections selecting one option form the menu above.
+* **Raspberry Pi Docs**: specifics to C and C++ cross-compiling and native development for Raspberry Pi boards using biicode.
+
+* **Node.js Docs**: specific tools, commands and examples to develop Node.js projects with biicode.
 
 .. toctree::
    :maxdepth: 3
 
-   biicode
    c++
-   raspberrypi
    arduino
+   raspberrypi
    nodejs
+
+
+

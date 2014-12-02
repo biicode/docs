@@ -1,16 +1,24 @@
-.. _cpp-index:
+.. _user_guide_index:
 
-C/C++ Documentation
-===================
+Biicode
+==============
+
+A multi-platform C and C++ dependency manager. 
 
 .. toctree::
    :maxdepth: 2
 
+   c++/installation
    c++/gettingstarted
-   c++/publish-reuse
-   c++/edit-update
-   c++/building
-   c++/cpp-commands
    c++/ides
+   c++/building
+   c++/dependencies
+   c++/publishing
+   c++/workflows
+   c++/integration
    c++/examples
+   c++/configuration_files
+   c++/commands
+   c++/release_notes
+   c++/faqs
    c++/troubleshooting
