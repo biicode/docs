@@ -5911,7 +5911,7 @@ body.arduino .biicode-sections {
 	border-bottom: 9px solid #fff;
 	top: 84px;
 	padding-top: 14px;
-	height: 85px;
+	height: 93px;
 	width:297px;
 }
 body.raspberrypi .biicode-sections {
@@ -5919,7 +5919,7 @@ body.raspberrypi .biicode-sections {
 	border-bottom: 9px solid #fff;
 	top: 84px;
 	padding-top: 14px;
-	height: 85px;
+	height: 93px;
 	width:297px;
 }
 body.nodejs .biicode-sections {
@@ -5927,7 +5927,7 @@ body.nodejs .biicode-sections {
 	border-bottom: 9px solid #fff;
 	top: 84px;
 	padding-top: 14px;
-	height: 85px;
+	height: 93px;
 	width:297px;
 }
 
