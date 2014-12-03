@@ -6,9 +6,9 @@ fit
 
 |fit_homepage| is a C++11 header-only library that provides utilities for functions and function objects. Fit is divided into three components: 
 
- Function Adaptors: These take functions and return a new function that provides an additional capability to the previous function.
+ Function Adapters: These take functions and return a new function that provides an additional capability to the previous function.
 
- Functions: These return functions that acheive a specific purpose.
+ Functions: These return functions that achieve a specific purpose.
 
  Utilities: These are general utilities that are useful when defining or using functions.
 
@@ -17,8 +17,8 @@ The main block is |bii_fit|, which is generated from this |fork_fit|.
 Tests
 ^^^^^
 
-In this example you will calculate ,giving the coordinates, the angles and sides length of a polygon between 3 and 10 vertex. Then, create a project, open the example and execute:
-(if you are using CLANG you will need --version: )
+Calculate giving the coordinates, the angles and sides length of a polygon between 3 and 10 vertex. To start, create a project, open the example and execute:
+(if you are using CLANG you may need to use  ``clang --version`` to check it's higher than 3.5: )
 
 .. code-block:: bash
 
@@ -29,7 +29,7 @@ In this example you will calculate ,giving the coordinates, the angles and sides
    ~/fit$ #execute the tests on bin folder
 
 
-Now let's check the code, **open one of the test file(test/always.cpp)** :
+Now let's check the code, **open one of the test files (test/always.cpp)** :
 
 .. code-block:: cpp
 
@@ -46,7 +46,6 @@ Now let's check the code, **open one of the test file(test/always.cpp)** :
 
 
 
-
 Execute the binary and this is how the output looks like:
 
 .. code-block:: bash
@@ -55,7 +54,7 @@ Execute the binary and this is how the output looks like:
   **CORRECT** fit::always(ten)(1,2,3,4,5) == 10
 
 
-As we see, the output is what we tested in the .cpp file, if test success it writes **CORRECT**, if it doesn't it writes **FAILED** 
+The output is what always.cpp file is testing, if successes it writes **CORRECT**, if it doesn't it writes **FAILED** 
 
 
 Didn't work? No problem, read or contact us in |biicode_forum_link|
@@ -78,7 +77,7 @@ Any suggestion or feedback? |biicode_write_us| It is very welcomed :)
 
 .. |bii_fit| raw:: html
 
-   <a href="https://www.biicode.com/examples/fit" target="_blank">here</a>
+   <a href="https://www.biicode.com/examples/fit" target="_blank">FIT block</a>
 
 .. |fork_fit| raw:: html
 
