@@ -51,7 +51,22 @@
 
   <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
-  
+
+		<!-- scroll scripts links -->
+        <link type="text/css" href="static/demo.css" rel="stylesheet" media="all" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="script/jquery.mousewheel.js"></script>
+		<script type="text/javascript" src="script/jquery.jscrollpane.min.js"></script>
+		<script type="text/javascript" src="script/demo.js"></script>
+        <script type="text/javascript" src="script/class.js"></script>
+		<script type="text/javascript" id="sourcecode">
+			$(function()
+			{
+				$('.nav-side').jScrollPane();
+			});
+		</script>
+        <!-- End scroll scripts links -->
+
   {# JS #}    
   {% if not embedded %}
   <script type="text/javascript">
@@ -128,27 +143,71 @@ mixpanel.init("d19929ba97d4aecccc6fe98c93da1b7c");</script><!-- end Mixpanel -->
 	  });
 	</script>
   {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
+  <!-- header -->
+     <div id="ContainerHeader"> 
+     <div id="ContainerwidthHeader">
+     <div id="header">
+      
+       <header id="menu" >
 
-  <header id="menu" class="nav-top">
+      <div id="logo">
+         <a href="#"><img src="https://www.biicode.com/images/navbar/biicode-logo.cf1a28a1.jpg" alt="Biicode-logo" /></a>
+        </div>
+         
+        <div id="search-form">
+        
+         <form class="form-container" action="{{ pathto('search') }}" method="get">
+         <input id="id_words" name="q" type="search" class="search-field" placeholder="Search the Docs" />
+           <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+         <div class="submit-container">
+         <input name="search" value="" type="submit" class="submit" />
+         </div>
+         </form>
+         
+  
 
-      <div class="nav-top-mobile">
-        <i data-toggle="nav-top" class="icon icon-bars"></i>
-        <a href="{{ pathto(master_doc) }}"> {{ project }}</a>
-      </div>
-
-      <div class="nav-top-standard center">
-        <div id="biicode-logo"><a href="http://www.biicode.com"></a></div>
-        <nav class="right">
-          <ul class="main-menu">
-            <li><a href="http://blog.biicode.com">Blog</a></li>
-            <li><a href="http://forum.biicode.com">Forum</a></li>
-            <li><a href="{{ pathto(master_doc) }}">Docs</a></li>
-            <li><a href="http://www.biicode.com/accounts/login">Login</a></li>
-            <li><a href="http://www.biicode.com/accounts/signup">Sign up</a></li>
-          </ul>
-        </nav>
-      </div>
+     
+       </div>
+       
+ <!-- menu  -->
+ <nav class="right">
+   <ul>
+     <!--<li>Features</li>-->
+      <li><a href="https://www.biicode.com/explore">Explore</a></li>
+        <li>
+      Features <img src="../../_static/img/arrow-drop-down-menu.jpg" style="margin:0px 0px 3px 4px" width="8" height="4" />
+      <ul>
+         <li><a href="http://web.biicode.com/features/arduino/">Arduino</a></li>
+        <li><a href="http://web.biicode.com/features/raspberry-pi/">Raspberry Pi</a></li>
+        <li><a href="http://web.biicode.com/features/cpp/">C/C++</a></li>
+        <li><a href="http://web.biicode.com/features/nodejs/">Node.js</a></li>
+      </ul>
+          </li>
+    <li>
+     Learn <img src="../../_static/img/arrow-drop-down-menu.jpg" style="margin:0px 0px 3px 4px" width="8" height="4" />
+        <ul>
+           <li><a href="http://web.biicode.com/learn/getting-started/">Get Started</a></li>
+           <li><a href="https://www.biicode.com/downloads">Downloads</a></li>
+           <!--<li><a href="/learn/academy">Academy</a></li>-->
+           <li><a href="http://docs.biicode.com">Docs</a></li>
+           <li><a href="http://blog.biicode.com/">Blog</a></li>
+           <li><a href="http://forum.biicode.com/">Forum</a></li>
+        </ul>
+    </li>   
+    <li><a href="https://www.biicode.com/accounts/login">Log in</a></li>
+  </ul>
+</nav>
+<!-- end menu  -->
+<div id="signup-bt">
+  <img src="../../_static/img/bt-signup-on.jpg" />
+  <a href="https://www.biicode.com/accounts/signup/"><img class="top" src="../../_static/img/bt-signup-off.jpg" /></a>
+</div>
   </header>
+  </div>
+  </div>
+  </div>
+  <!-- End header -->
 
   <div class="nav-sections-standard center">
     <nav class="biicode-sections">
@@ -167,9 +226,7 @@ mixpanel.init("d19929ba97d4aecccc6fe98c93da1b7c");</script><!-- end Mixpanel -->
      
 
       <nav data-toggle="nav-shift" class="nav-side">
-        <div class="side-nav-search">
-          {% include "searchbox.html" %}
-        </div>
+ 
 
         <div class="goback"><div class="link"></div></div>
 
