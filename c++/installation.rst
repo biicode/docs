@@ -3,7 +3,8 @@
 Installation
 ============
 
-**Biicode** is a file-oriented Dependencies Manager for C and C++ developers. There's a two steps process to install biicode
+**Biicode** is a file-oriented Dependencies Manager for C and C++ developers. Install both 
+biicode and the C/C++ tools to get started.
 
 .. _download_client_binaries:
 

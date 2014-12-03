@@ -257,9 +257,5 @@ Now, if you want to depend on the block you've just published:
   * :ref:`Close command <bii_close_command>`
 
 
-Automatically build and publish
----------------------------------
-
-
 
 **Got any doubts?** Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.

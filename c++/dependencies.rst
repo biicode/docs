@@ -3,8 +3,8 @@
 Manage your dependencies
 =========================
 
-Depending 
-----------
+Dependencies
+------------
 Search the library you want on biicode and depend on it:
 
 .. code-block:: cpp
@@ -43,7 +43,7 @@ and your ``requirements.bii`` will look like this:
 	erincatto/box2d: 10
 
 
-That's because :underline:`myuser/box2d_example` depends on ``ericatto/box2d`` block ``version number 4``.
+That's because :underline:`myuser/box2d_example` depends on ``ericatto/box2d`` block ``version number 10``.
 
 .. container:: infonote
 
@@ -72,10 +72,6 @@ Execute ``bii work`` command, once modified your ``requirements.bii`` to update 
 	$ bii work
 
 And you'll see the new dependencies retrieved in your ``deps folder``.
-
-.. container:: infonote
-
-	Careful, editing your dependencies can lead you to incompatibilities.
 
 
 .. _override_deps:
