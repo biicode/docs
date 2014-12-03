@@ -4,7 +4,7 @@
 fit
 ===
 
-|fit_homepage| FIT is a C++11 header-only library that provides utilities for functions and function objects. Fit is divided into three components: 
+|fit_homepage| is a C++11 header-only library that provides utilities for functions and function objects. Fit is divided into three components: 
 
  Function Adaptors: These take functions and return a new function that provides an additional capability to the previous function.
 
