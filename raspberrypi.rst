@@ -3,9 +3,7 @@
 Raspberry Pi Cross Compilation
 ==============================
 
-The `Raspberry Pi <http://www.raspberrypi.org/>`_ (RPi) is a credit-card sized computer that plugs into your TV and a keyboard. It is a capable little computer which can be used in electronics projects, and for many of the things that your desktop PC or laptop does, like games, spreadsheets, or word-processing. It also plays high-definition video.
-
-Biicode allows you to exploit all these capacities with your own C++ programs.
+`Raspberry Pi <http://www.raspberrypi.org/>`_ (RPi) is a credit-card sized computer that plugs into your TV and keyboard. It is a capable little computer which can be used in electronics projects, and for many of the things that your desktop PC or laptop does, like games, spreadsheets, or word-processing. It also plays high-definition video.
 
 Using biicode, you'll benefit from several advantages for your Raspberry Pi experience:
 
@@ -19,6 +17,7 @@ In this part of the documentation you will find resources and tutorials for inst
 .. toctree::
    :maxdepth: 2
 
+   raspberrypi/rpi-installation
    raspberrypi/rpi-gettingstarted
    raspberrypi/rpi-commands
    raspberrypi/rpi-howto

@@ -14,3 +14,7 @@ You can do it this way:
 
 Then you shouldn't have problems executing the IDE.
 
+
+.. container:: todo
+
+    Check our `forum <http://forum.biicode.com>`__ and `Stackoverflow tag <http://stackoverflow.com/questions/tagged/biicode?sort=newest>`__ for questions and answers.

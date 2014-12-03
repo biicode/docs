@@ -52,6 +52,6 @@ If you have a block that **links to pthread library** and you're using **Ubuntu 
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--no-as-needed")
 
 
-.. container:: infonote
+.. container:: todo
 
-	Visit the section: :ref:`biicode project layout <project_layout>`
+    Check our `forum <http://forum.biicode.com>`__ and `Stackoverflow tag <http://stackoverflow.com/questions/tagged/biicode?sort=newest>`__ for questions and answers.
