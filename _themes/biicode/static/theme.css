@@ -4791,7 +4791,7 @@ pre.literal-block:after
 
 .menu-vertical
 {
-  margin-bottom:161px;
+  margin-bottom:206px;
 }
 .menu.menu-vertical > ul {
     border: 1px solid #ccc;
@@ -5887,7 +5887,7 @@ body.biicode .biicode-sections {
 	border-bottom: 9px solid #fff;
 	top: 84px;
 	padding-top: 14px;
-	height: 93px;
+	height: auto;
 	width:297px;
 }
 body.gettingstarted .biicode-sections {
@@ -5895,7 +5895,7 @@ body.gettingstarted .biicode-sections {
 	border-bottom: 9px solid #fff;
 	top: 84px;
 	padding-top: 14px;
-	height: 85px;
+	height: auto;
 	width:297px;
 }
 body.cpp .biicode-sections {
@@ -5911,7 +5911,7 @@ body.arduino .biicode-sections {
 	border-bottom: 9px solid #fff;
 	top: 84px;
 	padding-top: 14px;
-	height: 93px;
+	height: auto;
 	width:297px;
 }
 body.raspberrypi .biicode-sections {
@@ -5919,7 +5919,7 @@ body.raspberrypi .biicode-sections {
 	border-bottom: 9px solid #fff;
 	top: 84px;
 	padding-top: 14px;
-	height: 93px;
+	height: auto;
 	width:297px;
 }
 body.nodejs .biicode-sections {
@@ -5927,7 +5927,7 @@ body.nodejs .biicode-sections {
 	border-bottom: 9px solid #fff;
 	top: 84px;
 	padding-top: 14px;
-	height: 93px;
+	height: auto;
 	width:297px;
 }
 
