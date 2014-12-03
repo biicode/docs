@@ -3,8 +3,8 @@
 Manage your dependencies
 =========================
 
-Depending on a lib on biicode
----------------------------------
+Depending 
+----------
 Search the library you want on biicode and depend on it:
 
 .. code-block:: cpp
