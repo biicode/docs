@@ -5323,11 +5323,13 @@ footer
   /* background:#1f1d1d; */
   /* border-top:solid 10px #343131; */
   bottom:0;
-  color:#fcfcfc;
+  color:#999 !important;
   /* left:0; */
   position:fixed;
-  width:300px;
-  display:none;
+  width:299px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
 .rst-versions a
@@ -5343,7 +5345,6 @@ footer
 
 .rst-versions .rst-current-version
 {
-  background-color: #888;
   color: #ffaa00;
   cursor:pointer;
   display:block;
@@ -5367,7 +5368,7 @@ footer
 
 .rst-versions .rst-current-version .icon,.rst-versions .rst-current-version .inline-validate.inline-validate-success .input-context,.inline-validate.inline-validate-success .rst-versions .rst-current-version .input-context,.rst-versions .rst-current-version .inline-validate.inline-validate-danger .input-context,.inline-validate.inline-validate-danger .rst-versions .rst-current-version .input-context,.rst-versions .rst-current-version .inline-validate.inline-validate-warning .input-context,.inline-validate.inline-validate-warning .rst-versions .rst-current-version .input-context,.rst-versions .rst-current-version .inline-validate.inline-validate-info .input-context,.inline-validate.inline-validate-info .rst-versions .rst-current-version .input-context,.rst-versions .rst-current-version .tag-input-group .tag .tag-remove,.tag-input-group .tag .rst-versions .rst-current-version .tag-remove,.rst-versions .rst-current-version .rst-content .admonition-title,.rst-content .rst-versions .rst-current-version .admonition-title,.rst-versions .rst-current-version .rst-content h1 .headerlink,.rst-content h1 .rst-versions .rst-current-version .headerlink,.rst-versions .rst-current-version .rst-content h2 .headerlink,.rst-content h2 .rst-versions .rst-current-version .headerlink,.rst-versions .rst-current-version .rst-content h3 .headerlink,.rst-content h3 .rst-versions .rst-current-version .headerlink,.rst-versions .rst-current-version .rst-content h4 .headerlink,.rst-content h4 .rst-versions .rst-current-version .headerlink,.rst-versions .rst-current-version .rst-content h5 .headerlink,.rst-content h5 .rst-versions .rst-current-version .headerlink,.rst-versions .rst-current-version .rst-content h6 .headerlink,.rst-content h6 .rst-versions .rst-current-version .headerlink,.rst-versions .rst-current-version .rst-content dl dt .headerlink,.rst-content dl dt .rst-versions .rst-current-version .headerlink
 {
-  color:#fcfcfc;
+  color:#999;
 }
 
 .rst-versions .rst-current-version .icon-book
@@ -5378,7 +5379,7 @@ footer
 .rst-versions .rst-current-version.rst-out-of-date
 {
   /* background-color:#e74c3c; */
-  color:#FFF;
+  color:#999;
 }
 
 .rst-versions.shift-up .rst-other-versions
@@ -6406,7 +6407,7 @@ body.nodejs .biisection.nodejs
 	background-image: url(img/line-right-logo-header.jpg);
 	background-repeat: no-repeat;
 	background-position: right;
-	height: 69px;
+	height: 82px;
 	padding-top: 15px;
 	width: 217px;
 }
