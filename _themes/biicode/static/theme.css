@@ -5861,19 +5861,19 @@ body.biicode .todo {
   border-color:#f48124;
 }
 body.gettingstarted .todo {
-  border-color:#3C3C3C;
+  border-color:#f48124;
 }
 body.cpp .todo {
-  border-color:#3480ff; 
+  border-color:#f48124; 
 }
 body.arduino .todo {
-  border-color:#00979c;
+  border-color:#f48124;
 }
 body.raspberrypi .todo {
-  border-color: #d6264f;
+  border-color: #f48124;
 }
 body.nodejs .todo {
-  border-color:#80bd01;
+  border-color:#f48124;
 }
 
 .biicode-sections a {
@@ -5888,7 +5888,7 @@ body.biicode .biicode-sections {
 	top: 84px;
 	padding-top: 14px;
 	height: auto;
-	width:297px;
+	width:auto;
 }
 body.gettingstarted .biicode-sections {
 	background-color: #fff;
@@ -5896,7 +5896,7 @@ body.gettingstarted .biicode-sections {
 	top: 84px;
 	padding-top: 14px;
 	height: auto;
-	width:297px;
+	width:auto;
 }
 body.cpp .biicode-sections {
 	background-color: #fff;
@@ -5904,7 +5904,7 @@ body.cpp .biicode-sections {
 	top: 84px;
 	padding-top: 14px;
 	height: auto;
-	width:297px;
+	width:auto;
 }
 body.arduino .biicode-sections {
 	background-color: #fff;
@@ -5912,7 +5912,7 @@ body.arduino .biicode-sections {
 	top: 84px;
 	padding-top: 14px;
 	height: auto;
-	width:297px;
+	width:auto;
 }
 body.raspberrypi .biicode-sections {
 	background-color: #fff;
@@ -5920,7 +5920,7 @@ body.raspberrypi .biicode-sections {
 	top: 84px;
 	padding-top: 14px;
 	height: auto;
-	width:297px;
+	width:auto;
 }
 body.nodejs .biicode-sections {
 	background-color: #fff;
@@ -5928,7 +5928,7 @@ body.nodejs .biicode-sections {
 	top: 84px;
 	padding-top: 14px;
 	height: auto;
-	width:297px;
+	width:auto;
 }
 
 .biisection {
