@@ -16,7 +16,6 @@ You can:
 .. toctree::
    :maxdepth: 2
 
-   commands/update
    commands/clean
    commands/deps
    commands/find
@@ -24,11 +23,11 @@ You can:
    commands/new
    commands/open
    commands/publish
-   commands/setup
+   commands/update
    commands/close
    commands/user
    cpp-commands
    commands/diff
-   commands/update
+   commands/setup
 
    
