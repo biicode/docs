@@ -54,14 +54,31 @@
 
 		
     <!-- scroll scripts links -->
-    <link type="text/css" href="static/demo.css" rel="stylesheet" media="all" />
+   <!-- <link type="text/css" href="static/demo.css" rel="stylesheet" media="all" />-->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="_static/jquery.mousewheel.js"></script>
 		<script type="text/javascript" src="_static/jquery.jscrollpane.min.js"></script>
 		<script type="text/javascript">
 			$(function(){
-					$('.nav-side').jScrollPane();
+				$('.nav-side').jScrollPane({
+						horizontalGutter:0,
+						verticalGutter:0,
+						'showArrows': false
+				});
+				
+				$('.jspDrag').hide();
+				$('.jspScrollable').mouseenter(function(){
+					$(this).find('.jspDrag').stop(true, true).fadeIn('slow');
+				});
+				$('.jspScrollable').mouseleave(function(){
+					$(this).find('.jspDrag').stop(true, true).fadeOut('slow');
+				});
+				
+				
 			});
+			
+	
+
 		</script>
         <!-- End scroll scripts links -->
 

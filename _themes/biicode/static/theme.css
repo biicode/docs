@@ -5326,10 +5326,9 @@ footer
   color:#999 !important;
   /* left:0; */
   position:fixed;
-  width:299px;
+  width:297px;
   background-color: #fff;
   border: 1px solid #ccc;
-  border-radius: 8px;
 }
 
 .rst-versions a
@@ -5349,7 +5348,7 @@ footer
   cursor:pointer;
   display:block;
   font-size:90%;
-  padding:12px;
+  padding:14px 12px 14px 12px;
   text-align:right;
   z-index:400;
   zoom:1;
@@ -5983,7 +5982,7 @@ body.nodejs .biisection.nodejs
 	background-color: #fff !important;
 	margin-right:28px;
 }
-.biisection.cpp:hover{
+.biisection.cpp:hover, .biisection.cpp:focus{
 	background-image: url(img/cplus-icon-on.png) !important;
 	background-repeat: no-repeat !important;
 	width:50px;
@@ -6005,7 +6004,7 @@ body.nodejs .biisection.nodejs
 	background-color: #fff !important;
 	margin-right:28px;
 }
-.biisection.arduino:hover{
+.biisection.arduino:hover, .biisection.arduino:focus{
 	background-image: url(img/arduino-icon-on.png) !important;
 	background-repeat: no-repeat !important;
 	width:50px;
@@ -6027,7 +6026,7 @@ body.nodejs .biisection.nodejs
 	background-color: #fff !important;
 	margin-right:28px;
 }
-.biisection.raspberrypi:hover{
+.biisection.raspberrypi:hover, .biisection.raspberrypi:focus{
 	background-image: url(img/raspberry-icon-on.png) !important;
 	background-repeat: no-repeat !important;
 	width:50px;
@@ -6047,8 +6046,9 @@ body.nodejs .biisection.nodejs
     white-space: nowrap;
     overflow: hidden;
 	background-color: #fff !important;
+	margin-right:0px;
 }
-.biisection.nodejs:hover{
+.biisection.nodejs:hover, .biisection.nodejs:focus{
 	background-image: url(img/node-icon-on.png) !important;
 	background-repeat: no-repeat !important;
 	width:50px;
@@ -6057,6 +6057,7 @@ body.nodejs .biisection.nodejs
     white-space: nowrap;
     overflow: hidden;
 	background-color: #fff !important;
+	margin-right:0px;
 }
 .underline {
   text-decoration: underline;
@@ -6627,56 +6628,76 @@ nav.right {
 {
 	overflow: hidden;
 	position: relative;
+	width:297px !important;
 }
+
 .jspPane
 {
 	position: absolute;
+	width:297px !important;
+	padding-bottom:55px;
+	
 }
+
 .jspVerticalBar
 {
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 16px;
+	width: 8px;
 	height: 100%;
-	background: red;
+	margin-top:8px;
+	margin-right:8px;
+	
 }
+
 .jspHorizontalBar
 {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 16px;
+	height: 8px;
 	background: red;
 }
+
 .jspCap
 {
 	display: none;
 }
+
 .jspHorizontalBar .jspCap
 {
 	float: left;
 }
+
 .jspTrack
 {
-	background: #dde;
+    background: transparent;
 	position: relative;
 }
+
 .jspDrag
 {
-	background: #bbd;
+	
 	position: relative;
 	top: 0;
 	left: 0;
 	cursor: pointer;
+	
+	 background: url(img/transparent-black.png) repeat;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
 }
+
 .jspHorizontalBar .jspTrack,
 .jspHorizontalBar .jspDrag
 {
 	float: left;
 	height: 100%;
 }
+
 .jspArrow
 {
 	background: #50506d;
@@ -6686,101 +6707,40 @@ nav.right {
 	padding: 0;
 	margin: 0;
 }
+
 .jspArrow.jspDisabled
 {
 	cursor: default;
 	background: #80808d;
 }
+
 .jspVerticalBar .jspArrow
 {
-	height: 16px;
+	height: 8px;
 }
 
 .jspHorizontalBar .jspArrow
 {
-	width: 16px;
+	width: 8px;
 	float: left;
 	height: 100%;
 }
+
 .jspVerticalBar .jspArrow:focus
 {
 	outline: none;
 }
+
 .jspCorner
 {
 	background: #eeeef4;
 	float: left;
 	height: 100%;
 }
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
 * html .jspCorner
 {
 	margin: 0 -3px 0 0;
-}
-.jspHorizontalBar,
-.jspVerticalBar,
-.jspTrack
-{
-	background: #eeeef4;
-	border-radius: 10px;
-}
-.jspDrag
-{
-	background:  #cfcfcf;
-
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-}
-.jspTrack .jspActive,
-.jspTrack .jspHover,
-.jspDrag:hover
-{
-	background: #adadad;
-}
-.jspArrow
-{
-	background: url(../image/ui-icons_222222_256x240.png) no-repeat;
-	
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-}
-.jspVerticalBar>.jspActive,
-.jspArrow:hover
-{
-	background-image: url('../image/ui-icons_cd0a0a_256x240.png');
-}
-.jspVerticalBar>.jspDisabled,
-.jspVerticalBar>.jspDisabled:hover,
-.jspHorizontalBar>.jspDisabled,
-.jspHorizontalBar>.jspDisabled:hover
-{
-	background-color: transparent;
-	background-image: url('../image/ui-icons_888888_256x240.png');
-}
-.jspVerticalBar .jspArrow
-{
-	height: 15px;
-}
-
-.jspHorizontalBar .jspArrow
-{
-	width: 15px;
-}
-.jspArrowUp
-{
-	background-position: 0 0;
-}
-.jspArrowDown
-{
-	background-position: -64px 0 !important; 
-}
-.jspArrowLeft
-{
-	background-position: -96px 0 !important;
-}
-.jspArrowRight
-{
-	background-position: -32px 0 !important;
 }
 /* Custom Scroll nav side || Jorge */
