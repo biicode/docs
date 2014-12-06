@@ -7,8 +7,8 @@ Run ```bii user your_username`` before getting started, this way biicode knows y
     **You're now ready to** :ref:`get started.<cpp_getting_started>`.
 
 
-``bii user`` 
--------------
+bii user command 
+-----------------
 
 Shows or change your current biicode user.
 
