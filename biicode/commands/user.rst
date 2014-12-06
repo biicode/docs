@@ -1,10 +1,16 @@
-
 .. _bii_user_command:
 
-``bii user``: shows or change your current biicode user
+Run ```bii user your_username`` before getting started, this way biicode knows you’re the one winning the badge.
+
+.. container:: todo
+
+    **You're now ready to** :ref:`get started.<cpp_getting_started>`.
+
+
+``bii user``: shows or changes your current biicode user
 ---------------------------------------------------------
 
-If you use it without parameter, it will show the current user, that can be None (anonymous).
+Execute ```bii user``` to show the current user. **Note**: It can be None (anonymous).
 
 .. code-block:: bash
 
@@ -12,14 +18,14 @@ If you use it without parameter, it will show the current user, that can be None
 	INFO: Current user: None (anonymous)
 
 
-If you pass a parameter, that will be the new biicode user. Such user should be already registered in `our website <https://www.biicode.com/>`_
+Once registered on `our website <https://www.biicode.com/>` you can use your user name:
 
 .. code-block:: bash
 
 	$ bii user phil
 	INFO: Change user from None to phil
 
-You could enter your account password to avoid entering into future occasions
+To enter it together with your password:
 
 .. code-block:: bash
 
