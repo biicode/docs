@@ -3,6 +3,8 @@
 Publish - Reuse
 ================
 
+.. _upload-your-code:
+
 Publishing
 -----------
 
@@ -40,6 +42,7 @@ Make sure you've |biicode_signup| to publish. It's **free**.
    
    <b><a href="https://www.biicode.com/accounts/signup" target="_blank">got an account</a></b>
 
+.. _reuse-your-code:
 
 Reusing
 --------
