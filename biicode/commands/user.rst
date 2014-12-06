@@ -1,6 +1,6 @@
 .. _bii_user_command:
 
-Run ```bii user your_username`` before getting started, this way biicode knows you’re the one winning the badge.
+A tip: run ``bii user your_username`` before getting started, this way biicode knows you’re the one winning the badge.
 
 .. container:: todo
 
@@ -12,7 +12,7 @@ bii user command
 
 Shows or change your current biicode user.
 
-Execute ```bii user``` to show the current user. **Note**: It can be None (anonymous).
+Execute ``bii user`` to show the current user. **Note**: It can be None (anonymous).
 
 .. code-block:: bash
 
