@@ -1,6 +1,6 @@
 .. _bii_user_command:
 
-A tip: run ``bii user your_username`` before getting started, this way biicode knows you’re the one winning the badge.
+**A quick tip:** Run ``bii user your_username`` before getting started, this way biicode knows you’re the one winning a badge.
 
 .. container:: todo
 
