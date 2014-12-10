@@ -155,7 +155,7 @@ For example:
 .. code-block:: none
 
   cpp: {cross_build: ARM, generator: Unix Makefiles,
-        toolchain: {path:fenix/armadillo/rpi_toolchain.cmake}}
+        toolchain: {"path":fenix/armadillo/rpi_toolchain.cmake}}
   os: {arch: 64bit, family: Linux, subfamily: Ubuntu, version: '13.10'}
   rpi: {directory: armadillo, ip: 192.168.1.101, user: pi}
 
@@ -178,8 +178,8 @@ and then in your :ref:`settings.bii<settings_bii>`:
 .. code-block:: none
 
   cpp: {cross_build: ARM, generator: Unix Makefiles,
-        toolchain: {path: fenix/armadillo/rpi_toolchain.cmake,
-                    replacements: {COMPILER_PATH: /home/julia/raspberry_cross_compilers/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian,
+        toolchain: {"path": fenix/armadillo/rpi_toolchain.cmake,
+                    "replacements": {COMPILER_PATH: /home/julia/raspberry_cross_compilers/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian,
                                    COMPILER_NAME: gcc-linaro-arm-linux}
                    }}
   os: {arch: 64bit, family: Linux, subfamily: Ubuntu, version: '13.10'}
