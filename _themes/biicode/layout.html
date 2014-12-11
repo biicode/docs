@@ -54,19 +54,11 @@
 
 		
     <!-- scroll scripts links -->
-        <!-- <link type="text/css" href="static/demo.css" rel="stylesheet" media="all" />
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script type="text/javascript" src="script/jquery.mousewheel.js"></script>
-		<script type="text/javascript" src="script/jquery.jscrollpane.min.js"></script>
-		<script type="text/javascript" src="script/demo.js"></script>
-        <script type="text/javascript" src="script/class.js"></script>
-		<script type="text/javascript" id="sourcecode">
-			$(function()
-			{
-				$('.nav-side').jScrollPane();
-			});
-		</script>-->
-        <!-- End scroll scripts links -->
+   <!-- <link type="text/css" href="static/demo.css" rel="stylesheet" media="all" />-->
+		<script type="text/javascript" src="_static/jquery.min.js"></script>
+		<script type="text/javascript" src="_static/jquery.mousewheel.js"></script>
+		<script type="text/javascript" src="_static/jquery.jscrollpane.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
 
   {# JS #}    
   {% if not embedded %}
@@ -231,7 +223,7 @@ mixpanel.init("d19929ba97d4aecccc6fe98c93da1b7c");</script><!-- end Mixpanel -->
 
         <div class="goback"><div class="link"></div></div>
 
-        <div class="menu menu-vertical" data-spy="affix">
+        <div class="menu menu-vertical" data-spy="affix" id="lateral_menu_biicode">
           {% set toctree = toctree(maxdepth=4, collapse=False) %}
           {% if toctree %}
           {{ toctree }}

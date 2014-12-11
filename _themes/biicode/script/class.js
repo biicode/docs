@@ -1,4 +1,0 @@
- $(function()
-	{
-	$('.nav-side').jScrollPane();
-			});

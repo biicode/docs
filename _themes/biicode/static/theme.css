@@ -5983,7 +5983,7 @@ body.nodejs .biisection.nodejs
 	background-color: #fff !important;
 	margin-right:28px;
 }
-.biisection.cpp:hover{
+.biisection.cpp:hover, .biisection.cpp.current_section{
 	background-image: url(img/cplus-icon-on.png) !important;
 	background-repeat: no-repeat !important;
 	width:50px;
@@ -6005,7 +6005,7 @@ body.nodejs .biisection.nodejs
 	background-color: #fff !important;
 	margin-right:28px;
 }
-.biisection.arduino:hover{
+.biisection.arduino:hover, .biisection.arduino.current_section{
 	background-image: url(img/arduino-icon-on.png) !important;
 	background-repeat: no-repeat !important;
 	width:50px;
@@ -6027,7 +6027,7 @@ body.nodejs .biisection.nodejs
 	background-color: #fff !important;
 	margin-right:28px;
 }
-.biisection.raspberrypi:hover{
+.biisection.raspberrypi:hover, .biisection.raspberrypi.current_section{
 	background-image: url(img/raspberry-icon-on.png) !important;
 	background-repeat: no-repeat !important;
 	width:50px;
@@ -6048,7 +6048,7 @@ body.nodejs .biisection.nodejs
     overflow: hidden;
 	background-color: #fff !important;
 }
-.biisection.nodejs:hover{
+.biisection.nodejs:hover,  .biisection.nodejs.current_section{
 	background-image: url(img/node-icon-on.png) !important;
 	background-repeat: no-repeat !important;
 	width:50px;

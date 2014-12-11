@@ -29,23 +29,61 @@ function get_route_with_params(pathname){
 }
 
 $( document ).ready(function() {
+
+
+  //Saves the left panel scroll in cookie to restore vertical position on load
+  var last_scroll = $.cookie('saved_scroll');
+  console.log("LAST SCROLL: " + last_scroll);
+  if(last_scroll){
+     $(".nav-side").scrollTop(last_scroll);
+  }
+
+  $(".biisection").click(function(){
+    $.removeCookie('saved_scroll'); 
+  });
+  $(".menu-vertical a").click(
+    function(){
+      var saved_scroll = $(".nav-side").scrollTop();
+      $.cookie('saved_scroll', saved_scroll);
+    }
+  );
+
+  // Cheat to show first toctable if not toctable visible
+  var visible_menu = false;
+  
+  $("#lateral_menu_biicode > ul > li").each(function(i) { 
+      if($(this).hasClass("current")){
+        visible_menu = true;
+      }          
+  });
+
+  if(!visible_menu){
+    $("#lateral_menu_biicode > ul > li:first").addClass("current");
+  }
+
+
   // Section class selector
   (function setSectionClass() {
     var pathname = window.location.pathname;
     if (is_section("arduino", pathname)) {
       $("body").addClass("arduino");
+      $(".arduino.biisection").addClass("current_section");
     } 
     else if (is_section("raspberrypi", pathname)) {
       $("body").addClass("raspberrypi");
+      $(".raspberrypi.biisection").addClass("current_section");
     } 
     else if (is_section("c++", pathname)) {
       $("body").addClass("cpp");
+      $(".cpp.biisection").addClass("current_section");
     } 
     else if (is_section("nodejs", pathname)) {
       $("body").addClass("nodejs");
+      $(".nodejs.biisection").addClass("current_section");
     } 
     else if (is_section("python", pathname)) {
       $("body").addClass("python");
+      $(".python.biisection").addClass("current_section");
     } 
     else {
       $("body").addClass("biicode");
