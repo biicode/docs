@@ -1,7 +1,7 @@
 .. _bii_user_command:
 
-``bii user`` command 
---------------------
+``bii user``: specify your username
+------------------------------------
 
 Shows or changes your current biicode user.
 
