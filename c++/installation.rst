@@ -11,8 +11,7 @@ biicode and the C/C++ tools to get started.
 Install Biicode
 -----------------
 
-**Download** `Biicode Installer <https://www.biicode.com/downloads>`_ and double-click the downloaded package to install it.
-
+**Download** `Biicode Installer <https://www.biicode.com/downloads>`_ and double-click the downloaded package.
 Open the terminal and **make sure biicode is installed**:
 
 
