@@ -49,15 +49,6 @@ Publish your blocks with different tags:
 	$ bii publish --tag STABLE
 
 
-Publish with a descriptive message
------------------------------------
-
-Publish your blocks with a brief message:
-
-.. code-block:: bash
-
-	$ bii publish --msg "A brief block description"
-
 
 Publish one of your project blocks
 -----------------------------------
@@ -66,7 +57,7 @@ If you only have one block, you don't need to specify it, but if you have severa
 
 .. code-block:: bash
 
-	$ bii publish BLOCK_NAME
+	$ bii publish USER_NAME/BLOCK_NAME
 
 
 Complete example
@@ -76,11 +67,7 @@ Imagine you're ``fenix`` user and you're editing two blocks, ``fenix/vector`` an
 
 .. code-block:: bash
 
-	$ bii publish fenix/vector --msg "Developing a vector C++ library"
-
-.. code-block:: bash
-
-	$ bii publish fenix/matrix --msg "Developing a matrix C++ library"
+	$ bii publish fenix/vector
 
 After a while, you are sure about publishing ``fenix/vector`` as STABLE version:
 

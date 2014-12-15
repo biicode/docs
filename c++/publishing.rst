@@ -43,15 +43,6 @@ Just execute:
     ``DEV`` versions can not be tagged.
 
 
-Add a descriptive message
------------------------------------
-
-Publish your blocks with a short message:
-
-.. code-block:: bash
-
-	$ bii publish --msg "A short block description"
-
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
 
