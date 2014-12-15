@@ -143,6 +143,7 @@ Publishing
 -----------
 
 **Publish** to make your libs available on biicode.
+
   * Rename **myuser** folder with your **username**. 
 
 .. code-block:: bash
@@ -153,7 +154,10 @@ Publishing
    INFO: ***** Publishing public ****
    INFO: *****************************
    INFO: Successfully published myuser/myblock: 0
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 
 Enter your profile **www.biicode.com/myuser** to check what you've just uploaded.
 
@@ -168,7 +172,7 @@ Take a look into your **block's biicode.conf file** (~/myproject/blocks/myuser/m
 .. code-block:: bash
 
    # This file contains your block ancestors versions
-   * myuser/math: 0
+   * myuser/myblock: 0
 
 
 Make sure you've |biicode_signup| to publish. It's **free**.
