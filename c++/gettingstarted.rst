@@ -124,7 +124,14 @@ Now you're ready to build and run it:
 
 **That's it**, that output means Google Test was downloaded, configured and built in your project!
 
-Check your ``deps`` folder, the GoogleTest code is there.
+Check your ``deps`` folder, the GoogleTest code is there. And your `biicode.conf` file has a fullfilled ``[requirements]`` section:
+
+.. code-block:: bash
+
+  [requirements]
+      # required blocks (with version)
+      google/gtest: 8
+
 
 Congrats! You have just used GoogleTest within  your project. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feedback.
 
@@ -144,7 +151,11 @@ Publishing
 
 **Publish** to make your libs available on biicode.
 
-  * Rename **myuser** folder with your **username**. 
+  * Rename **myuser** folder with your biicode **username**. 
+
+.. container:: infonote
+
+  Explanations will use **myuser**, just replace its occurrences with your username.
 
 .. code-block:: bash
 
@@ -154,10 +165,7 @@ Publishing
    INFO: ***** Publishing public ****
    INFO: *****************************
    INFO: Successfully published myuser/myblock: 0
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 
 Enter your profile **www.biicode.com/myuser** to check what you've just uploaded.
 
@@ -165,15 +173,13 @@ Enter your profile **www.biicode.com/myuser** to check what you've just uploaded
 Every time you publish over ``DEV``, you overwrite the latest ``DEV`` version.
 Tags available are: **DEV, ALPHA, BETA, STABLE**. Use them with ``bii publish --tag=STABLE``.
 
-Take a look into your **block's biicode.conf file** (~/myproject/blocks/myuser/math/biicode.conf). [parent] section tells you "who" is your parent (indicated with ``*`` symbol), it stands for the latest published version of your block.
+Take a look into your **block's biicode.conf file** (~/myproject/blocks/myuser/math/biicode.conf). ``[parent]`` section tells you "who" is your parent (indicated with ``*`` symbol), it stands for the latest published version of your block.
 
-``parents.bii`` looks like this:
+``[parent]`` section looks like this:
 
 .. code-block:: bash
 
-   # This file contains your block ancestors versions
-   * myuser/myblock: 0
-
+   myuser/myblock: 0
 
 Make sure you've |biicode_signup| to publish. It's **free**.
 
@@ -189,12 +195,10 @@ Reusing
 Write reusable code
 ^^^^^^^^^^^^^^^^^^^
 On the same project :ref:`created before<cpp_create_project>` containing ``myuser/myblock`` folders, **rename myuser folder** to your username. 
-Explanations will use **"myuser"**, just replace its occurrences with your real biicode username.
 
 It's best to also **rename "myblock" folder** to something more meaningful, like **math**, because we are building some mathematical library.
 
 Good code-reuse practices tell us to put **sum** function in its own files:
-
 
 **main.cpp**
 
@@ -233,11 +237,12 @@ And the expected layout is:
 
   +-- myproject
     |    +-- blocks
-    |    |    +-- myuser (remember: your actual username here)
+
     |    |    |    +-- math
     |    |    |    |    +-- main.cpp
     |    |    |    |    +-- operations.cpp
     |    |    |    |    +-- operations.h
+    |    |    +-- biicode.conf  
 
 
 Build and run your project again to check everything is ok:
@@ -258,7 +263,7 @@ Publish your code
 
 .. code-block:: bash
 
-   ~/myproject$ bii publish
+   ~/myproject$ bii publish --tag=STABLE
 
 
 Check in your profile **www.biicode.com/myuser** what you've just uploaded.
@@ -294,9 +299,9 @@ Use ``bii find`` to let biicode find a suitable (compatible) version of our depe
 
 .. container:: infonote
 
-      You can also directly write them in the **bii/requirements.bii** file. 
+      You can also directly write them in the **biicode.conf** file. 
       This example depends on your published block **myuser/math**, and it only has one version (number 0). 
-      Create a folder named **bii** inside your ``~/mycalc/blocks/myuser/calc/`` and a **requirements.bii** file into it.
+      Create a **biicode.conf** file inside your block:
 
       .. code-block:: text
 
@@ -304,15 +309,15 @@ Use ``bii find`` to let biicode find a suitable (compatible) version of our depe
           |    +-- blocks
           |    |    +-- myuser
           |    |    |    +-- calc
-          |    |    |    |    +-- bii
-          |    |    |    |    |    +-- requirements.bii
+          |    |    |    |    +-- biicode.conf
           |    |    |    |    +-- main.cpp
 
-      Open the **requirements.bii** with any text editor and write in it:
+      Open **biicode.conf** file with any text editor and write in it:
 
       .. code-block:: bash
 
-         myuser/math: 0
+         [requirements]
+            myuser/math:0
 
 
 Build and run your application:
