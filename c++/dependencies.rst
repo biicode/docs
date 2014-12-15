@@ -35,37 +35,40 @@ Execute :ref:`bii find command <bii_find_command>` to retrieve dependencies:
 
 	$ bii find
 
-and your ``requirements.bii`` will look like this:
+``biicode.conf`` file is updated: 
 
 .. code-block:: text
 
-	# This file contains your block external dependencies references
-	erincatto/box2d: 10
+	[requirements] 
+	    # required blocks (with version)
+		erincatto/box2d: 10
 
 
 That's because :underline:`myuser/box2d_example` depends on ``ericatto/box2d`` block ``version number 10``.
 
 .. container:: infonote
 
- 	* Here's more information about :ref:`requirements.bii <requirements_bii>`.
+ 	* Here's more information about :ref:`requirements<requirements_bii>`.
 
 
 Modifying the version you depend on
 ------------------------------------
 
-Manually edit your requirements.bii to depend on any version you want. For example, on Erin Catto's Box2D:
+Manually edit your ``biicode.conf`` file to depend on any version you want. For example, on Erin Catto's Box2D:
  
 * ``Box2D v 2.3.1`` is available on ``erincatto/box2d version 10``
 * ``Box2D v 2.3.0`` is available on ``erincatto/box2d version 8``
 
-Biicode takes by default the latest version available.  To change it, just write the one you want on your ``requirements.bii``:
+Biicode takes by default the latest version available.  To change it, just write the one you want in your ``biicode.conf``:
 
 .. code-block:: text
 
-	erincatto/box2d: 8
+	[requirements] 
+		# required blocks (with version)
+		erincatto/box2d: 8
 
 |
-Execute ``bii work`` command, once modified your ``requirements.bii`` to update a specific block version: 
+Execute ``bii work`` command, once modified, to update a specific block version: 
 
 .. code-block:: bash
 
@@ -87,13 +90,14 @@ And you'd rather depend on:
 
 *  ``erincatto/box2d:10`` and ``diego/glfw:1``. 
 |
-Write your preferred versions on your ``requirements.bii`` and biicode will use those versions on your project: 
+Write your preferred versions on your ``biicode.conf`` and biicode will use those versions on your project: 
 
 .. code-block:: text
 
-	# This file contains your block external dependencies references
-	erincatto/box2d: 10
-	diego/glfw:1
+	[requirements] 
+		# required blocks (with version)
+		erincatto/box2d: 10
+		diego/glfw:1
 
 Checking dependencies
 ----------------------
