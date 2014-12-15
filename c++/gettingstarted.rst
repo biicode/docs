@@ -137,14 +137,13 @@ Congrats! You have just used GoogleTest within  your project. You know that we a
 
    <a href="mailto:info@biicode.com" target="_blank">write us</a>
 
-
-
 .. _upload-your-code:
 
 Publishing
 -----------
 
 **Publish** to make your libs available on biicode.
+  * Rename **myuser** folder with your **username**. 
 
 .. code-block:: bash
 
@@ -153,7 +152,7 @@ Publishing
    INFO: *****************************
    INFO: ***** Publishing public ****
    INFO: *****************************
-   INFO: Successfully published myuser/math: 0
+   INFO: Successfully published myuser/myblock: 0
 
 
 Enter your profile **www.biicode.com/myuser** to check what you've just uploaded.
@@ -162,7 +161,7 @@ Enter your profile **www.biicode.com/myuser** to check what you've just uploaded
 Every time you publish over ``DEV``, you overwrite the latest ``DEV`` version.
 Tags available are: **DEV, ALPHA, BETA, STABLE**. Use them with ``bii publish --tag=STABLE``.
 
-Take a look into your **block's bii folder** (~/myproject/blocks/myuser/math/bii/parents.bii). ``parents.bii`` file tells you "who" is your parent (indicated with ``*`` symbol), it stands for the latest published version of your block.
+Take a look into your **block's biicode.conf file** (~/myproject/blocks/myuser/math/biicode.conf). [parent] section tells you "who" is your parent (indicated with ``*`` symbol), it stands for the latest published version of your block.
 
 ``parents.bii`` looks like this:
 
