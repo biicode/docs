@@ -37,6 +37,15 @@ To create an Eclipse CDT project, run:
 
   $ bii cpp:configure -G "Eclipse CDT4 - Unix Makefiles"
 
+
+.. container:: infonote
+
+    Windows users might configure it like this:
+
+    .. code-block:: bash
+
+      $ bii cpp:configure -G "Eclipse CDT4 - MinGW Makefiles"
+
 Now, import your project into the Eclipse IDE.
 
 #. From the main Eclipse menu choose: *File > import...*
