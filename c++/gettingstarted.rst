@@ -145,6 +145,7 @@ Publishing
 -----------
 
 **Publish** to make your libs available on biicode.
+
   * Rename **myuser** folder with your **username**. 
 
 .. code-block:: bash
