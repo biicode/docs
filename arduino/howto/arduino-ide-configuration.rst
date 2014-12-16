@@ -1,11 +1,9 @@
 .. _bii_arduino_ide:
 
-IDE configuration
-=================
+Eclipse IDE configuration
+=========================
 
-Biicode offers integration with `Eclipse <https://www.eclipse.org/downloads/>`_ for Arduino programmers. It is able to do the appropriate project setup on your behalf. This way you can work on your biicode project, using the underlying infrastructure and services provided by Eclipse.
-
-This section details the steps you should follow to achieve this integration.
+Biicode offers integration with `Eclipse <https://www.eclipse.org/downloads/>`_ for Arduino.
 
 First of all, you need to configure your project for arduino and **Eclipse IDE for C/C++**:
 

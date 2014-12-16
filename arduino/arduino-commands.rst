@@ -108,7 +108,15 @@ When you want to deploy your code into the arduino, this command sends your prev
 
 	[100%] Built target [USER]_my_block_main-upload
 
+.. container:: infonote
 
+    If you are using an Arduino Yun, you can Upload your firmware by ssh with the parameter --ssh. You can specify the IP of your Arduino.
+
+     ``bii arduino:upload --ssh 192.168.0.1``
+
+    Or don't especify anyone and use the default IP (192.168.240.1).
+
+     ``bii arduino:upload --ssh``
 
 .. _bii_arduino_settings:
 
