@@ -6,7 +6,7 @@ Build configuration
 Biicode uses CMake to configure and build your projects.
 
 As you could see, biicode knows how the source code files are connected each other.
-So it allows biicode to build a base CMake layout to build your project automatically.
+So it allows biicode to construct a base CMake layout to build your project automatically.
 
 But this automatic process does not prevent you having full control about your building process.
 Here, you'll learn how to define your **CMakeLists.txt** to delve into full functionality.
