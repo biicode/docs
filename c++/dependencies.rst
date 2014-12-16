@@ -91,7 +91,7 @@ And you'd rather depend on:
 
 *  ``erincatto/box2d:10`` and ``diego/glfw:1``. 
 |
-Write your preferred versions on your ``biicode.conf`` and biicode will use those versions on your project: 
+Write your preferred versions in your ``biicode.conf`` and biicode will use those versions in your project: 
 
 .. code-block:: text
 
@@ -99,6 +99,7 @@ Write your preferred versions on your ``biicode.conf`` and biicode will use thos
 		# required blocks (with version)
 		erincatto/box2d: 10
 		diego/glfw:1
+
 
 Checking dependencies
 ----------------------
@@ -171,6 +172,26 @@ Execute ``bii deps`` to get all information related to biicode’s dependency sc
 .. container:: infonote
 
  	* Here's more information about :ref:`bii deps command<bii_deps_command>`.
+
+
+Depending on a tagged version
+-----------------------------
+Use a specific block version using just its version tag. Write in your `biicode.conf` file `[requirements]` :
+
+.. code-block:: text
+
+	[requirements] 
+		# required blocks (with version)
+		Maria/oscpack @v1.1.0
+
+Execute `bii cpp:build` and biicode will retrieve the latest version with that tag and update the`[requirements] section:
+
+
+.. code-block:: text
+
+	[requirements] 
+		# required blocks (with version)
+		Maria/oscpack: 0 @v1.1.0
 
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.

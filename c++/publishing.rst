@@ -30,12 +30,11 @@ Tag's default value is ``DEV``, but  ``ALPHA``, ``BETA`` and ``STABLE`` are also
 Tag a version
 --------------
 
-Just execute:
+Put a semantic name to your block versions. Just execute:
 
 .. code-block:: bash
 
   $ bii publish  --tag STABLE --versiontag=1.2rc3
-
 
 
 .. container:: infonote
@@ -43,6 +42,8 @@ Just execute:
     ``DEV`` versions can not be tagged.
 
 
+Block Tracks
+--------------
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
 
