@@ -9,7 +9,7 @@ In this section you will find information and helpful resources, in case you enc
 Is it possible to change the version of gcc used for cross-compiling to the Raspberry Pi?
 ---------------------------------------------------------------------------------------------
 
-Sure! Check the docs about how to use a `custom toolchain < http://docs.biicode.com/c++/building.html#using-a-custom-toolchain>`__ . 
+Sure! Check the docs about how to use a `custom toolchain <http://docs.biicode.com/c++/building.html#using-a-custom-toolchain>`__ 
 
 
 .. container:: todo
