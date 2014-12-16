@@ -3,7 +3,7 @@
 Generators and IDEs
 ===================
 
-Basics to **generate biicode projects for many IDEs and platforms** with CMake. By default, biicode configures your projects with Visual Studio (Windows) and UNIX Makefiles with no IDE (MacOS and Linux).
+Use CMake generators to **create biicode projects for many IDEs and platforms**. By default, biicode configures your projects with Visual Studio (Windows) and UNIX Makefiles with no IDE (MacOS and Linux).
 
 Execute ``cmake --help`` to see the full list of CMake generators available in your system:
 
@@ -18,7 +18,7 @@ Choose yours, and tell biicode to configure your project for that IDE:
 	$ bii cpp:configure -G "CMake Generator Name"
 
 
-``bii cpp:configure`` admits any CMake directives. ``bii cpp:configure`` directives are stored in your project's ``settings.bii`` file as the default settings for that project. 
+``bii cpp:configure`` admits any CMake directives. Your latest configuration is stored in your project's ``settings.bii`` file as the default settings for that project. 
 
 .. container:: infonote
 

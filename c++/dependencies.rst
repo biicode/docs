@@ -22,6 +22,7 @@ In a project like this one: ::
 	|    |	  +-- myuser
 	|    |    |     +-- box2d_example
 	|    |    |  	|     |-- main.cpp   --->  #include "erincatto/box2d/Box2D/Box2D.h"
+	|    |    |  	|     |-- biicode.conf
 
 
 .. container:: infonote
