@@ -23,8 +23,8 @@ Open the terminal and **make sure biicode is installed**:
 
     Check alternative installations for:
 
-    *  :ref:`Debian based distrobutions <alternative_install_debian>`
-    *  :ref:`Arch based distrobutions <alternative_install_archlinux>`
+    *  :ref:`Debian based distributions <alternative_install_debian>`
+    *  :ref:`Arch based distributions <alternative_install_archlinux>`
 
 
 Install C/C++ tools
@@ -41,7 +41,7 @@ Then install required tools like CMake and MinGW or GCC:
 
     If any problem installing C/C++ tools, check :ref:`how to install C/C++ tools manually <cpp_installation>`
 
-Execute again to check the tools are installed:
+Execute again to make sure the tools are installed:
 
 .. code-block:: bash
 
