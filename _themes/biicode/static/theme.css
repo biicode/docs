@@ -5671,7 +5671,7 @@ body.nodejs .nav-rel a:hover {
 .section h1,.section h2,.section h3
 {
   padding-bottom: 2px;
-  padding-top:0px;
+  padding-top:10px;
 }
 .section h1
 {
