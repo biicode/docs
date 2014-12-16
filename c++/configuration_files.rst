@@ -8,7 +8,7 @@ Biicode offers you a set of configuration files across your projects and blocks.
 .. toctree::
    :maxdepth: 2
 
-   configuration_files/biicode_conf
+   configuration_files/biicode-conf
    configuration_files/settings
    configuration_files/policies
    configuration_files/ignore

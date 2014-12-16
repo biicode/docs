@@ -74,7 +74,7 @@ You can manually specify the block to depend on with its corresponding version o
 	    # required blocks (with version)
 		erincatto/box2d: 10
 
-Take a look at the :ref:`docs about depencencies <cpp_dependencies>` to know more.
+Take a look at the :ref:`docs about dependencies <cpp_dependencies>` to know more.
 
 ``[parent]``
 ------------
@@ -139,7 +139,6 @@ What should we write on the ``paths.bii`` file?
 	[paths]
 		# Local directories to look for headers (within block)
 		/
-
 
 
 Write ``/`` in ``paths`` section and biicode will know that it has to include the root directory on its search.
