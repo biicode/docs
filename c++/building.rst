@@ -131,14 +131,19 @@ This function creates the following variables:
      SET_TARGET_PROPERTIES(${BII_BLOCK_TARGET} PROPERTIES COMPILE_DEFINITIONS "IOV_MAX=255")
 
 
-Binary dependencies: Boost
+Binary dependencies
 -----------------
+
+You can link your block with any library that you have installed in your hard drive, although library are not in bicode.
 
 
 .. container:: infonote
      
     Biicode now allows handle binary dependencies through hooks. Developers are currently uploading blocks that installs in your system the required binaries so you can ``#include`` as usual your header files and biicode will install all the libraries you need.
 
+
+Example: Boost
+______________
 
 
 Make sure you've installed Boost C++ library.
@@ -198,12 +203,11 @@ The project's layout is:
 
   if(Boost_FOUND)
       target_include_directories(${BII_BLOCK_TARGET} INTERFACE ${Boost_INCLUDE_DIRS})
+      target_compile_options(${BII_BLOCK_TARGET} INTERFACE ${CPP_11_FLAGS})
       IF(APPLE)
           set(CPP_11_FLAGS "-std=c++11 -stdlib=libc++")
-          target_compile_options(${BII_BLOCK_TARGET} INTERFACE ${CPP_11_FLAGS})
       ELSEIF (WIN32 OR UNIX)
           set(CPP_11_FLAGS "-std=c++11")
-          target_compile_options(${BII_BLOCK_TARGET} INTERFACE ${CPP_11_FLAGS})
       ENDIF(APPLE)
 
       IF (WIN32)
@@ -223,8 +227,8 @@ To ensure the program is working, build and execute:
    Usage: server <port>
 
 
-CMake dependency manager
-------------------------
+Publish, share and reuse CMake scripts
+--------------------------------------
 
 Now, biicode works as a CMake dependency manager.
 You can reuse other user's CMake macros/functions and apply any content in your CMakeLists.txt.
@@ -277,7 +281,7 @@ CMakeLists.txt
     ADD_BIICODE_TARGETS()
 
     # Calling specific macro to activate c++11 flags
-    ACTIVATE_CPP11()
+    ACTIVATE_CPP11(INTERFACE ${BII_BLOCK_TARGET})
 
 
 Remember to make ``bii find`` to download the dependency.
@@ -287,84 +291,65 @@ Remember to make ``bii find`` to download the dependency.
     $ bii find
  
 
+Overriding dependencies build options and configuration
+-------------------------------------------------------
 
-.. _custom_toolchains:
-
-Using a custom toolchain
-------------------------
-
-When you bii cpp:build your projects, biicode automatically generates a default toolchain to build projets.
-To use a custom toolchain you need to place it in your block folder (and add it as a dependency in :ref:`dependencies.bii<dependencies_bii>`)
-and then specify you want to use that toolchain in your :ref:`settings.bii<settings_bii>`.
-
-For example:
-
-.. code-block:: none
-
-  cpp: {cross_build: ARM, generator: Unix Makefiles,
-        toolchain: {"path":fenix/armadillo/rpi_toolchain.cmake}}
-  os: {arch: 64bit, family: Linux, subfamily: Ubuntu, version: '13.10'}
-  rpi: {directory: armadillo, ip: 192.168.1.101, user: pi}
-
-
-As you can see you define the path to the toolchain, that path includes a block which can be in blocks or deps folders.
-
-You can also make your toolchain customizable by defining replacements tokens, for example:
-
-.. code-block:: none
-
-  INCLUDE(CMakeForceCompiler)
-  SET(CMAKE_SYSTEM_NAME Linux)
-  SET(CMAKE_SYSTEM_VERSION 1)
-  SET(CMAKE_C_COMPILER COMPILER_PATH/bin/COMPILER_NAME-gcc)
-  SET(CMAKE_CXX_COMPILER COMPILER_PATH/bin/COMPILER_NAME-g++)
-
-
-and then in your :ref:`settings.bii<settings_bii>`:
-
-.. code-block:: none
-
-  cpp: {cross_build: ARM, generator: Unix Makefiles,
-        toolchain: {"path": fenix/armadillo/rpi_toolchain.cmake,
-                    "replacements": {COMPILER_PATH: /home/julia/raspberry_cross_compilers/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian,
-                                   COMPILER_NAME: gcc-linaro-arm-linux}
-                   }}
-  os: {arch: 64bit, family: Linux, subfamily: Ubuntu, version: '13.10'}
-  rpi: {directory: armadillo, ip: 192.168.1.101, user: pi}
-
-
-So people reusing your block can redefine the tokens as they need.
-
-
-.. container:: infonote
-
-    `Customizing CMake toolchain <http://blog.biicode.com/custom-cmake-toolchain/>`_  explanation in our blog.
-
-
-
-Override dependency build configuration
-----------------------------------------
+Why we need it?
+_______________
 
 
 Sometimes you need to override some configuration of how your dependency libraries are built. 
 
-Create a file named ``bii_deps_config.cmake`` and write inside the cmake code you need.
+This is the project layout when you have dependencies:
+
+.. code-block:: text
+
+   |-- my_project
+   |    +-- blocks
+   |    |    +-- my_user
+   |    |    |    +-- my_block
+   |    |    |    |    +-- biicode.conf
+   |    |    |    |    +-- CMakeLists.txt
+   |    |    |    |    +-- main.cpp
+   |    +-- deps
+   |    |    +-- lasote
+   |    |    |    +-- superlibrary
+   |    |    |    |    +-- biicode.conf
+   |    |    |    |    +-- CMakeLists.txt
+   |    |    |    |    +-- library.h
+   |    |    |    |    +-- library.cpp
+   |    |    +-- sara
+   |    |    |    +-- coollibrary
+   |    |    |    |    +-- biicode.conf
+   |    |    |    |    +-- CMakeLists.txt
+   |    |    |    |    +-- tool.h
+   |    |    |    |    +-- tool.cpp
+
+
+You should not edit source code in deps directory, because it will be overwritten by biicode.
+So we can't change CMakeLists.txt files of our dependencies directly.
+
+
+How does it work?
+________________
+
+
+Create a file named ``bii_deps_config.cmake`` in your block (my_user/my_block) and write inside the cmake code you need.
 You can act upon dependency target following this naming rule:
 
   ``[USER]_[BLOCK]_interface``
 
 
-For example, if we have ``mrpotato/parts`` block, we can refer it using this interface name:  
+For example, if we have ``lasote/superlibrary`` block as a dependency, we can refer it using this interface name:  
 
-  ``mrpotato_parts_interface``
+  ``lasote_superlibrary_interface``
 
 
-
-- **EXAMPLE**: Activate C++ 11 in the dependency mrpotato/parts block.
+- **EXAMPLE**: Activate C++ 11 in the dependency ``lasote/superlibrary`` block.
 
 .. code-block:: cmake
 
-  target_compile_options(mrpotato_parts_interface PUBLIC -std=c++11)
+  target_compile_options(lasote_superlibrary_interface PUBLIC -std=c++11)
 
 
 - **EXAMPLE**: Change a compilation option:
@@ -375,7 +360,7 @@ For example, if we have ``mrpotato/parts`` block, we can refer it using this int
 
 
 
-Project Integration
+Maintaining independent builds
 -------------------
 
 Independent build
@@ -429,6 +414,60 @@ You can zip ``myproject`` folder and compile in other computer without biicode, 
 .. container:: infonote
 
     `Open Sound Control Library <http://blog.biicode.com/upload-to-biicode-oscpack/>`_  adaptation is an example to understand how is CMake useful.
+
+
+
+.. _custom_toolchains:
+
+Using a custom toolchain
+------------------------
+
+When you bii cpp:build your projects, biicode automatically generates a default toolchain to build projets.
+To use a custom toolchain you need to place it in your block folder (and add it as a dependency in :ref:`dependencies.bii<dependencies_bii>`)
+and then specify you want to use that toolchain in your :ref:`settings.bii<settings_bii>`.
+
+For example:
+
+.. code-block:: none
+
+  cpp: {cross_build: ARM, generator: Unix Makefiles,
+        toolchain: {"path":fenix/armadillo/rpi_toolchain.cmake}}
+  os: {arch: 64bit, family: Linux, subfamily: Ubuntu, version: '13.10'}
+  rpi: {directory: armadillo, ip: 192.168.1.101, user: pi}
+
+
+As you can see you define the path to the toolchain, that path includes a block which can be in blocks or deps folders.
+
+You can also make your toolchain customizable by defining replacements tokens, for example:
+
+.. code-block:: none
+
+  INCLUDE(CMakeForceCompiler)
+  SET(CMAKE_SYSTEM_NAME Linux)
+  SET(CMAKE_SYSTEM_VERSION 1)
+  SET(CMAKE_C_COMPILER COMPILER_PATH/bin/COMPILER_NAME-gcc)
+  SET(CMAKE_CXX_COMPILER COMPILER_PATH/bin/COMPILER_NAME-g++)
+
+
+and then in your :ref:`settings.bii<settings_bii>`:
+
+.. code-block:: none
+
+  cpp: {cross_build: ARM, generator: Unix Makefiles,
+        toolchain: {"path": fenix/armadillo/rpi_toolchain.cmake,
+                    "replacements": {COMPILER_PATH: /home/julia/raspberry_cross_compilers/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian,
+                                   COMPILER_NAME: gcc-linaro-arm-linux}
+                   }}
+  os: {arch: 64bit, family: Linux, subfamily: Ubuntu, version: '13.10'}
+  rpi: {directory: armadillo, ip: 192.168.1.101, user: pi}
+
+
+So people reusing your block can redefine the tokens as they need.
+
+
+.. container:: infonote
+
+    `Customizing CMake toolchain <http://blog.biicode.com/custom-cmake-toolchain/>`_  explanation in our blog.
 
 
 
