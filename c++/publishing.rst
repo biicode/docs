@@ -41,9 +41,36 @@ Put a semantic name to your block versions. Just execute:
 
     ``DEV`` versions can not be tagged.
 
-
 Block Tracks
---------------
+-------------
+
+Use **Block Tracks** to publish different development *versions* of a block using the same block name-space. This way, dependent blocks can keep the same *#includes* in their source code.
+
+
+Publish a new block Track
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Write the track name between brackets in the ``[parent]`` section of the **biicode.conf** file. Specify ``version -1`` to create a new block. 
+
+*biicode.conf*
+
+.. code-block:: text
+
+	[parent]
+  		myuser/myblock(track1): -1
+
+with a real example:
+
+*biicode.conf*
+
+.. code-block:: text
+
+	[parent]
+  		lasote/libuv(v1.0): -1
+
+Execute ``bii publish`` and enter your profile *www.biicode.com/myuser* to check the new track. 
+
+
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
 
