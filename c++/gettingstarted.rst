@@ -152,34 +152,34 @@ Publishing
 **Publish** to make your libs available on biicode.
 
   * Rename **myuser** folder with your biicode **username**. 
-
+  * It's best to also **rename "myblock" folder** to something more meaningful, like **math** because we will build some mathematical library.
+  
 .. container:: infonote
 
   Explanations will use **myuser**, just replace its occurrences with your username.
 
 .. code-block:: bash
 
-   ~/myproject$ bii publish
+   ~/math$ bii publish
 
    INFO: *****************************
    INFO: ***** Publishing public ****
    INFO: *****************************
-   INFO: Successfully published myuser/myblock: 0
+   INFO: Successfully published myuser/math: 0
 
 
 Enter your profile **www.biicode.com/myuser** to check what you've just uploaded.
 
 ``bii publish`` publishes your code as ``DEV``, for development and testing. 
 Every time you publish over ``DEV``, you overwrite the latest ``DEV`` version.
-Tags available are: **DEV, ALPHA, BETA, STABLE**. Use them with ``bii publish --tag=STABLE``.
+Release life-cycle tags are availabe: **DEV, ALPHA, BETA, STABLE**. Use them with ``bii publish --tag=STABLE``. 
 
-Take a look into your **block's biicode.conf file** (~/myproject/blocks/myuser/math/biicode.conf). ``[parent]`` section tells you "who" is your parent (indicated with ``*`` symbol), it stands for the latest published version of your block.
-
-``[parent]`` section looks like this:
+Take a look into your **block's biicode.conf file** *(~/myproject/blocks/myuser/math/biicode.conf)*. ``[parent]`` section tells you  *"who is your parent version"*, the latest published version of your block and looks like this:
 
 .. code-block:: bash
 
-   myuser/myblock: 0
+   [parent]
+      myuser/math: 0
 
 Make sure you've |biicode_signup| to publish. It's **free**.
 
@@ -191,12 +191,11 @@ Make sure you've |biicode_signup| to publish. It's **free**.
 
 Reusing
 --------
+Make a reusable *mathematical library* block with a *sum* function. Then, publish the block and use it in another project. Let's get started.
 
 Write reusable code
 ^^^^^^^^^^^^^^^^^^^
-On the same project :ref:`created before<cpp_create_project>` containing ``myuser/myblock`` folders, **rename myuser folder** to your username. 
-
-It's best to also **rename "myblock" folder** to something more meaningful, like **math**, because we are building some mathematical library.
+On the same project :ref:`created before<cpp_create_project>` containing ``myuser/math`` folders, with myuser folder renamed to your username. 
 
 Good code-reuse practices tell us to put **sum** function in its own files:
 
@@ -236,13 +235,13 @@ And the expected layout is:
 .. code-block:: text
 
   +-- myproject
-    |    +-- blocks
-
+    |    +-- blocks       
+    |    |    +-- my_user
     |    |    |    +-- math
     |    |    |    |    +-- main.cpp
     |    |    |    |    +-- operations.cpp
     |    |    |    |    +-- operations.h
-    |    |    +-- biicode.conf  
+    |    |    |    |    +-- biicode.conf  
 
 
 Build and run your project again to check everything is ok:
@@ -331,9 +330,7 @@ Build and run your application:
 
 .. container:: infonote
 
-   Look into your **deps** folder, your source code is in it. And what about Google Test? Shouldn't it be there? Not really. The **sum** function does not require Google Test at all, so Google Test is not required as dependency in your new calculator project (unless you also add it to define your own unit tests of this calculator, of course)
-
-
+     Look into your **deps** folder, your source code is in it. And what about Google Test? Shouldn't it be there? Not really. The **sum** function does not require Google Test at all, so Google Test is not required as dependency in your new calculator project (unless you also add it to define your own unit tests of this calculator, of course)
 
 Congrats! You have just reused your **sum** function in a new project. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feedback.
 
