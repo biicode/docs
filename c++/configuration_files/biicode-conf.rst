@@ -66,7 +66,7 @@ Place it into your block, next to your source code: ::
 
 You can manually specify the block to depend on with its corresponding version or override a dependency just writing the version you want and executing ``bii cpp:build`` after that.
 
-``biicode.conf``
+*biicode.conf*
 
 .. code-block:: text
 
@@ -80,6 +80,8 @@ Take a look at the :ref:`docs about dependencies <cpp_dependencies>` to know mor
 ------------
 
 ``[parent]`` section tells you  *"who is your parent version"*, the latest published version from your local block and looks like this:
+
+*biicode.conf*
 
 .. code-block:: text
 
@@ -112,6 +114,8 @@ Biicode can't find the ``tool.h`` file unless we specify where they can find it.
 
 Let's fix this write into the ``[paths]`` section:
 
+*biicode.conf*
+
 .. code-block:: text
 
 	[paths]
@@ -134,6 +138,8 @@ Biicode, considers the ``#include(s)`` relative to their location. So if there i
 
 What should we write on the ``paths.bii`` file?
 
+*biicode.conf*
+
 .. code-block:: text
 
 	[paths]
@@ -142,3 +148,93 @@ What should we write on the ``paths.bii`` file?
 
 
 Write ``/`` in ``paths`` section and biicode will know that it has to include the root directory on its search.
+
+``[dependencies]``
+-------------------
+Use ``[dependencies]``section to manually define rules to adjust file implicit dependencies. 
+
+``[dependencies]`` rules match the following pattern:
+
+*biicode.conf*
+
+.. code-block:: text
+
+	[dependencies]
+		# Local directories to look for headers (within block)
+		#dependent_file_name [operator] NULL|[[!]dependency_file ]
+		hello.h + hello_imp.cpp
+
+The Operator establishes the meaning of each rule:
+
+* ``-`` operator to **delete** all specified dependencies from their dependent file.
+* ``+`` operator to **add** all specified dependencies to their dependent file.
+* ``=`` operator to **overwrite** all specified dependencies with existing dependencies.
+
+You can declare that a file has no dependencies using the ``NULL`` keyword.
+
+Mark a dependency with a ``!`` symbol to declare a dependency, but **excude it from the building process**. This is sometimes used to define **license files** that must be downloaded along with your code, but shouldn't be included in the compilation process.
+
+
+The ``dependent_file_name`` may be defined using **Unix filename pattern matching**.
+
+==========	========================================
+Pattern 	Meaning
+==========	========================================
+``*``			Matches everything
+``?``			Matches a single character
+``[seq]``		Matches any character in seq
+``[!seq]``		Matches any character not in seq
+==========	========================================
+
+Example of ``[dependencies]`` section:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Let's see a few examples:
+
+
+.. code-block:: text
+
+	[dependencies]
+		test.cpp + example.h !LICENSE
+
+
+* ``test.cpp`` depends on both ``example.h`` and ``LICENSE``. And ``LICENSE`` will be excluded from the compilation process.
+
+.. code-block:: text
+
+	[dependencies]
+
+		*.cpp + !README
+
+
+* All files with ``.cpp`` extension depend on the ``README`` file, but this dependency won't be compiled.
+
+.. code-block:: text
+
+	[dependencies]
+		example.h = NULL
+
+* ``example.h = NULL`` tells biicode that ``example.h`` has no dependencies (even if it truly has).
+
+.. code-block:: text
+
+	[dependencies]
+		main.cpp + matrix32.h
+
+
+* ``matrix32.h`` is dependency of the ``main.cpp`` file.
+
+.. code-block:: text
+
+	[dependencies]
+		main.cpp - matrix16.h
+
+
+* Delete ``matrix16.h`` dependency to ``main.cpp``.
+
+.. code-block:: text
+
+	[dependencies]
+		calculator.cpp = solver.h type.h
+
+* Both ``solver.h`` and ``type.h`` are ``calculator.cpp`` are the only dependencies of ``calculator.cpp``, overwriting any existing implicit dependencies.
