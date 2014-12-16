@@ -10,8 +10,7 @@ Publishing
   $ bii publish
 
 
-Tag's default value is ``DEV``, but all Release life-cycle TAG values are available: ``DEV``, ``ALPHA``, ``BETA`` and ``STABLE``:  ``ALPHA``, ``BETA`` and ``STABLE``:
-
+Tag's default value is ``DEV``, but all Release life-cycle TAG values are available: ``DEV``, ``ALPHA``, ``BETA`` and ``STABLE``:
 .. code-block:: bash
 
   $ bii publish  --tag STABLE
