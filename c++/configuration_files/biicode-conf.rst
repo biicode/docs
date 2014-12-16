@@ -81,8 +81,9 @@ Take a look at the :ref:`docs about dependencies <cpp_dependencies>` to know mor
 [parent]
 ------------
 
-``[parent]`` section tells you  *"who is your parent version"*, the latest published version from your local block and looks like this:
+``[parent]`` section tells you  *"who is your parent version"*, the remote version corresponding to your local block and looks like this:
 
+Indicates the version of the remote block being edited .
 *biicode.conf*
 
 .. code-block:: text
@@ -296,7 +297,7 @@ These are defined like :ref:`[dependencies] <dependencies_conf>`. Files whose na
 
 ``[includes]``
 
-    # Mapping of include patterns to external blocks
+Mapping of include patterns to external blocks
     # hello*.h: user3/depblock  # includes will be processed as user3/depblock/hello*.h
 
 el mappings vale para decirle: Cuando te encuentres "uv.h" quiere decir "lasote/libuv/include/uv.h"
@@ -306,6 +307,8 @@ es algo que queremos evitar, pero que para el codigo de la gente que ya existe v
 [data]
 --------
 ``[data]``
+
+.. code-block:: text
 
     # Manually define data files dependencies, that will be copied to bin for execution
     # By default they are copied to bin/user/block/... which should be taken into account
