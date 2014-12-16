@@ -49,7 +49,7 @@ Use **Block Tracks** to publish different development *versions* of a block usin
 Publish a new block Track
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Write the track name between brackets in the ``[parent]`` section of the **biicode.conf** file. Specify ``version -1`` to create a new block. 
+Write the track name between brackets in the ``[parent]`` section of the **biicode.conf** file. Specify ``version -1`` because we want create a new block. 
 
 *biicode.conf*
 
