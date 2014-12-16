@@ -236,6 +236,7 @@ And last, switch to |libuv_0_10|:
 
 Execute ``bii cpp:build`` and it's switched.
 
+.. _tag_dependencies:
 
 Depending on a tagged version
 -----------------------------

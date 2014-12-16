@@ -29,7 +29,7 @@ Tag's default value is ``DEV``, but all Release life-cycle TAG values are availa
 Tag a version
 --------------
 
-Put a semantic name to your block versions. Just execute:
+Put a semantic name to your block versions. Once tagged, you can :ref:`depend on a version just knowing its tagd<tag_dependencies>`. Just execute:
 
 .. code-block:: bash
 
