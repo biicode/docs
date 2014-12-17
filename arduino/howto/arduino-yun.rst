@@ -9,7 +9,7 @@ Download the Arduino 1.5 zip file `from Arduino download page <http://arduino.cc
 2. Configure your settings
 --------------------------
 
-Insert the new SDK path and the board as yun. In this example we have unziped our SDK into `c:/biicode_env/arduino-1.5.8`.
+Insert the new SDK path and the board as ``yun``. **In this example** we have unziped our SDK into ``c:/biicode_env/arduino-1.5.8``.
 
 .. code-block:: bash
 
@@ -18,4 +18,4 @@ Insert the new SDK path and the board as yun. In this example we have unziped ou
 	Enter board (/o list supported options): yun
 	Using arduino port: COM13
 
-And that's all. Now you can use your yun with biicode.
+And that's all. Now you can use your Yun with biicode.
