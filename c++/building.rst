@@ -5,17 +5,16 @@ Build configuration
 
 Biicode uses CMake to configure and build your projects.
 
-As you could see, biicode knows how the source code files are connected each other.
+Biicode knows how the source code files connect to each other, with this information, biicode constructs a base CMake layout to build your project automatically.
 
-So it allows biicode to construct a base CMake layout to build your project automatically.
+But this automatic process is just a feature, **you can have full control over the building process**.
 
-But this automatic process does not prevent you having full control about your building process.
 Here, you'll learn how to define your **CMakeLists.txt** to delve into full functionality.
 
 
 .. container:: infonote
      
-     If you want to use your IDE with biicode check the section :ref:`Generators and IDEs<generators_ide>`.
+     Use your IDE with biicode, check the section :ref:`Generators and IDEs<generators_ide>`.
 
 
 .. _cmake_introduction:
@@ -24,11 +23,11 @@ Here, you'll learn how to define your **CMakeLists.txt** to delve into full func
 CMakeLists.txt
 ----------------------
 
-The command ``bii cpp:configure`` or ``bii cpp:build`` (which calls configure first), will generate all the build layout including your ``CMakeLists.txt`` file/s (one per block).
+``bii cpp:configure`` command or ``bii cpp:build`` (which calls configure first), will generate all the build layout including your ``CMakeLists.txt`` file/s (one per block).
 
 ``CMakeLists.txt`` is generated in the root directory of your block (or blocks) that you have in your biicode project.
 
-Has 2 useful lines by default (stripping out comment lines):
+``CMakeLists.txt`` has 2 useful lines by default (stripping out comments):
 
 .. code-block:: cmake
 
@@ -41,7 +40,7 @@ Has 2 useful lines by default (stripping out comment lines):
 INIT_BIICODE_BLOCK
 __________________
 
-This function exposes several variables, so you can adapt the default behavior:
+This function initializes several variables that you can use to adapt the default behavior:
 
   + **${BII_BLOCK_NAME}** The name of the block, for block *myuser/myblock* its value is **myblock**
   + **${BII_BLOCK_USER}** The user name, for block *myuser/myblock* its value is **myuser**
@@ -52,7 +51,7 @@ This function exposes several variables, so you can adapt the default behavior:
 
 After ``INIT_BIICODE_BLOCK()`` call, we can use, modify, or override the values of these variables. 
 
-- **Example**: We want to exclude ``my_file.cpp`` to be compiled in the block library.
+- **EXAMPLE**: Exclude ``my_file.cpp`` to be compiled in the block library.
 
 .. code-block:: cmake
 
@@ -66,7 +65,7 @@ After ``INIT_BIICODE_BLOCK()`` call, we can use, modify, or override the values 
     # Actually create targets: EXEcutables and libraries.
     ADD_BIICODE_TARGETS()
 
-- **Example**: make a *shared* library.
+- **EXAMPLE**: Make a *shared* library.
 
 By default biicode builds a *static* library (.a, .lib). Let's see how to get a *shared* library (.dll, .so):
 
@@ -86,10 +85,10 @@ __________________
 
 This function creates the following variables:
 
-    + **${BII_BLOCK_TARGET}**: CMake **Interface** that represents the whole block. Always exists and is applied both library and executables (each target). You can use it for configure block building configuration: Link libraries, compile flags...etc 
+    + **${BII_BLOCK_TARGET}**: CMake **Interface** that represents the whole block. Always exists and is applied both library and executables (each target). You can use it to configure block building configuration: Link libraries, compile flags...etc 
     + **${BII_LIB_TARGET}**: Target library name, usually in the form "user_block". May not exist if BII_LIB_SRC is empty, so use *${BII_BLOCK_TARGET}* as a general rule. 
     + **${BII_BLOCK_TARGETS}**: List of all targets defined in this block
-    + **${BII_BLOCK_EXES}**: List of executables targets defined in this block
+    + **${BII_BLOCK_EXES}**: List of targets that represent the executables (mains) defined in this block.
     + **${BII_exe_name_TARGET}**: Executable target (listed in ${BII_BLOCK_EXES}) (e.g. ${BII_main_TARGET}. You can also use directly the name of the executable target (e.g. user_block_main)
 
 - **EXAMPLE**: Add include directories to all targets of this block.
@@ -104,7 +103,7 @@ This function creates the following variables:
 
   .. code-block:: cmake
      
-     # Link agains the always existing BII_BLOCK_TARGET
+     # Link against the always existing BII_BLOCK_TARGET
      TARGET_LINK_LIBRARIES(${BII_BLOCK_TARGET} INTERFACE pthread)
      # or link against library:
      TARGET_LINK_LIBRARIES(${BII_LIB_TARGET} PUBLIC pthread)
@@ -116,7 +115,7 @@ This function creates the following variables:
    This can be also done adding pthread to ${BII_LIB_DEPS} BEFORE calling ADD_BIICODE_TARGETS()
 
 
-- **EXAMPLE**: how to activate C++11.
+- **EXAMPLE**: How to activate C++11.
 
   .. code-block:: cmake
      
@@ -232,13 +231,12 @@ To ensure the program is working, build and execute:
 Publish, share and reuse CMake scripts
 --------------------------------------
 
-Now, biicode works as a CMake dependency manager.
+Now, biicode let's you publish, share and reuse CMake scripts.
 You can reuse other user's CMake macros/functions and apply any content in your CMakeLists.txt.
 
-Reusing CMake code is as simple as “#including” libraries in C++. 
+Reusing CMake code is as simple as “#including” libraries in C++ with biicode. 
 
-Edit your ``CMakeLists.txt`` file and include the cmake file from the block that you want:
-
+Edit your ``CMakeLists.txt`` file and include the CMake file from the block that you want:
 
 .. code-block:: cmake
 
@@ -263,10 +261,10 @@ All the CMake dependencies will be downloaded into your project/deps/user/block 
 
 
 EXAMPLE: How to activate C++11 with already programmed macro?
-__________________
+______________________________________________________________
 
 
-Featured user **“biicode”** has a block named |biicode_cmake_block| where you can try useful macros from the  **tools.cmake** file, like to activate C++11 flags for any OS, link a OSX framework to a target, etc. 
+**“biicode”** featured user has a block named |biicode_cmake_block| where you can find useful macros from the  **tools.cmake** file, like one to activate C++11 flags for any OS, or to link a OSX framework to a target, etc. 
 
 Just edit your ``CMakeLists.txt`` file, include ``INCLUDE(biicode/cmake/tools)`` and use the Macros.
 
@@ -329,25 +327,25 @@ This is the project layout when you have dependencies:
 
 
 You should not edit source code in deps directory, because it will be overwritten by biicode.
-So we can't change CMakeLists.txt files of our dependencies directly.
+So we can't change the CMakeLists.txt files of our dependencies directly.
 
 
 How does it work?
 ________________
 
 
-Create a file named ``bii_deps_config.cmake`` in your block (my_user/my_block) and write inside the cmake code you need.
+Create a file named ``bii_deps_config.cmake`` in your block (my_user/my_block) and write inside the CMake code you need.
 You can act upon dependency target following this naming rule:
 
   ``[USER]_[BLOCK]_interface``
 
 
-For example, if we have ``lasote/superlibrary`` block as a dependency, we can refer it using this interface name:  
+For example, if we have ``lasote/superlibrary`` block as a dependency, we can refer to it using this interface name:  
 
   ``lasote_superlibrary_interface``
 
 
-- **EXAMPLE**: Activate C++ 11 in the dependency ``lasote/superlibrary`` block.
+- **EXAMPLE**: Activate C++ 11 in the dependency ``lasote/superlibrary`` block:
 
 .. code-block:: cmake
 
@@ -363,14 +361,14 @@ For example, if we have ``lasote/superlibrary`` block as a dependency, we can re
 
 
 Maintaining independent builds
--------------------
+-------------------------------
 
 Independent build
 _________________
 
 
-It is usual that we want to maintain a totally independent build, so our code can be also compiled without biicode.
-This is fairly simple, we have defined a variable that can be used to check it:
+It is usual that you want to maintain a totally independent build, so your code can be also compiled without biicode.
+This is fairly simple, there's a variable you can use to check it:
 
 .. code-block:: cmake
 
@@ -384,7 +382,7 @@ This is fairly simple, we have defined a variable that can be used to check it:
 
 
 Independent project
-_________________
+____________________
 
 Biicode builds a stand alone project that can be perfectly compiled without biicode client.
 This is the complete layout of a biicode project: ::
@@ -392,7 +390,7 @@ This is the complete layout of a biicode project: ::
 
   +-- myproject
     |    +-- blocks
-    |    |    +-- myuser (remember: your actual username here)
+    |    |    +-- myuser (remember: your real username here)
     |    |    |    +-- math
     |    |    |    |    +-- CMakeLists.txt
     |    |    |    |    +-- main.cpp
@@ -404,7 +402,7 @@ This is the complete layout of a biicode project: ::
     |    |    +-- bii_myuser_math_vars.cmake
 
 
-You can zip ``myproject`` folder and compile in other computer without biicode, just execute:
+Zip ``myproject`` folder and compile in other computer without biicode, just execute:
 
 .. code-block:: bash
 
@@ -418,15 +416,14 @@ You can zip ``myproject`` folder and compile in other computer without biicode, 
     `Open Sound Control Library <http://blog.biicode.com/upload-to-biicode-oscpack/>`_  adaptation is an example to understand how is CMake useful.
 
 
-
 .. _custom_toolchains:
 
-Using a custom toolchain
+Using a custom tool-chain
 ------------------------
 
-When you bii cpp:build your projects, biicode automatically generates a default toolchain to build projets.
-To use a custom toolchain you need to place it in your block folder (and add it as a dependency in :ref:`dependencies.bii<dependencies_bii>`)
-and then specify you want to use that toolchain in your :ref:`settings.bii<settings_bii>`.
+When you bii cpp:build your projects, biicode automatically generates a default tool-chain to build projects.
+To use a custom tool-chain you need to place it in your block folder (and add it as a dependency in your **biicode.conf** :ref:`[dependencies] section<dependencies_conf>`)
+and then specify you want to use that tool-chain in your project's :ref:`settings.bii<settings_bii>`.
 
 For example:
 
@@ -438,9 +435,9 @@ For example:
   rpi: {directory: armadillo, ip: 192.168.1.101, user: pi}
 
 
-As you can see you define the path to the toolchain, that path includes a block which can be in blocks or deps folders.
+As you can see you define the path to the tool-chain, that path includes a block which can be in blocks or deps folders.
 
-You can also make your toolchain customizable by defining replacements tokens, for example:
+You can also make your tool-chain customizable by defining replacements tokens, for example:
 
 .. code-block:: none
 
@@ -469,10 +466,7 @@ So people reusing your block can redefine the tokens as they need.
 
 .. container:: infonote
 
-    `Customizing CMake toolchain <http://blog.biicode.com/custom-cmake-toolchain/>`_  explanation in our blog.
-
-
-
+    `Customizing CMake tool-chain <http://blog.biicode.com/custom-cmake-toolchain/>`_  explanation in our blog.
 
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
