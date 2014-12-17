@@ -3,7 +3,7 @@
 ``biicode.conf``
 ================
 
-**biicode.conf** is configuration file to --wait for it-- configurate your biicode projects.
+**biicode.conf** is a configuration file to --wait for it-- configurate your biicode projects.
 
 Place it into your block, next to your source code: ::
 
@@ -40,7 +40,7 @@ Place it into your block, next to your source code: ::
 		[dependencies]
 			# Manual adjust file implicit dependencies, add (+), remove (-), or overwrite (=)
 			# hello.h + hello_imp.cpp hello_imp2.cpp
-			# *.h + *.cpp
+			*.h + *.cpp
 		[mains]
 			# Manual adjust of files that define an executable
 			# !main.cpp # Do not build executable from this file
@@ -68,13 +68,13 @@ Place it into your block, next to your source code: ::
 
 You can manually specify the block to depend on with its corresponding version or override a dependency just writing the version you want and executing ``bii cpp:build`` after that.
 
-*biicode.conf*
+**biicode.conf**
 
 .. code-block:: text
 
 	[requirements] 
 	    # required blocks (with version)
-		erincatto/box2d: 10
+	    erincatto/box2d: 10
 
 Take a look at the :ref:`docs about dependencies <cpp_dependencies>` to know more.
 
@@ -83,8 +83,9 @@ Take a look at the :ref:`docs about dependencies <cpp_dependencies>` to know mor
 
 ``[parent]`` section tells you  *"who is your parent version"*, the remote version corresponding to your local block and looks like this:
 
-Indicates the version of the remote block being edited .
-*biicode.conf*
+Indicates the version of the remote block being edited.
+
+**biicode.conf**
 
 .. code-block:: text
 
@@ -99,65 +100,13 @@ It comes in handy while :ref:`publishing <cpp_publishing>` take a look at it.
 ------------
 Use ``[paths]`` sections to tell biicode in which folders it has to look for the local files specified in your `#includes`. You only need to specify this when your project has `non-file-relative #include (s)`. 
 
-.. _paths-common:
-
-Common use case example
-^^^^^^^^^^^^^^^^^^^^^^^
-
-Libraries usually have a folder structure like this one ::
-
-|-- library
-|    +-- include
-|    |    |-- tool.h
-|    +-- test
-|    |    |-- main1.cpp (#include "tool.h")
-
-In which main1.cpp includes: ``#include "tool.h"`` that it is truly located into **/include** folder. The proper #include would be ``#include "../include/tool.h"``
-
-If we execute ``bii deps`` on this example, we'll see ``#include "tool.h"`` as unresolved. Why is this happening? 
-Biicode can't find the ``tool.h`` file unless we specify where they can find it. 
-
-Let's fix this write into the ``[paths]`` section:
-
-*biicode.conf*
-
-.. code-block:: text
-
-	[paths]
-		# Local directories to look for headers (within block)
-		/include
-
-
-Root directory example
-^^^^^^^^^^^^^^^^^^^^^^
-
-Let's imagine now that we have a folder with the following structure into it ::
-
-|-- mylib.h
-|-- mylib.cpp
-|    +-- examples
-|    |	  |-- main.cpp (#include "mylib.h")
-
-If we execute ``bii deps`` on this example, we'll see ``mylib.h`` as unresolved. Why is this happening? 
-Biicode, considers the ``#include(s)`` relative to their location. So if there isn't a root folder they can refer to, when looking for ``mylib.h`` they will search it in the ``examples`` folder and they won't be able to find it.
-
-What should we write on the ``paths.bii`` file?
-
-*biicode.conf*
-
-.. code-block:: text
-
-	[paths]
-		# Local directories to look for headers (within block)
-		/
-
-
-Write ``/`` in ``paths`` section and biicode will know that it has to include the root directory on its search.
+See the :ref:`complete example <complete_example_conf>`.
 
 .. _dependencies_conf:
 
 [dependencies]
 -------------------
+
 Use ``[dependencies]`` section to manually define rules to adjust file implicit dependencies. 
 
 ``[dependencies]`` rules match the following pattern:
@@ -188,14 +137,12 @@ Pattern 	Meaning
 ``[!seq]``		Matches any character not in seq
 ==========	========================================
 
-[dependencies] examples
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Let's see a few examples:
 
 * ``matrix32.h`` is dependency of the ``main.cpp`` file.
 
-*biicode.conf*
+**biicode.conf**
 
 .. code-block:: text
 
@@ -204,7 +151,7 @@ Let's see a few examples:
 
 * Delete ``matrix16.h`` dependency to ``main.cpp``.
 
-*biicode.conf*
+**biicode.conf**
 
 .. code-block:: text
 
@@ -214,7 +161,7 @@ Let's see a few examples:
 
 * ``test.cpp`` depends on both ``example.h`` and ``LICENSE``. And ``LICENSE`` will be excluded from the compilation process.
 
-*biicode.conf*
+**biicode.conf**
 
 .. code-block:: text
 
@@ -224,7 +171,7 @@ Let's see a few examples:
 
 * All files with ``.cpp`` extension depend on the ``README`` file, but this dependency won't be compiled.
 
-*biicode.conf*
+**biicode.conf**
 
 .. code-block:: text
 
@@ -235,7 +182,7 @@ Let's see a few examples:
 
 * ``example.h = NULL`` tells biicode that ``example.h`` has no dependencies (even if it truly has).
 
-*biicode.conf*
+**biicode.conf**
 
 .. code-block:: text
 
@@ -245,7 +192,7 @@ Let's see a few examples:
 
 * Both ``solver.h`` and ``type.h`` are ``calculator.cpp`` are the only dependencies of ``calculator.cpp``, overwriting any existing implicit dependencies.
 
-*biicode.conf*
+**biicode.conf**
 
 .. code-block:: text
 
@@ -271,7 +218,7 @@ An example:
 * Write the **name of the file** you want to be the entry point.
 * Exclude an entry point writing an **exclamation mark, !** before the name of the file.
 
-*biicode.conf*
+**biicode.conf**
 
 .. code-block:: text
 
@@ -286,33 +233,131 @@ An example:
 
 Use ``[hooks]`` section to link to certain python scripts that will be executed, for example, before building your project. They can be used to download and install a package needed. 
 
-These are defined like :ref:`[dependencies] <dependencies_conf>`. Files whose names match ``bii*stage*hook.py`` will be launched as python scripts at **stage = {post_process, clean}**: ::
+These are defined like :ref:`[dependencies] <dependencies_conf>`. Files whose names match ``bii*stage*hook.py`` will be launched as python scripts at **stage = {post_process, clean}**:
+
+**biicode.conf**
+
+.. code-block:: text
 
 	[hooks]
 	    CMakeLists.txt + bii/my_post_process1_hook.py bii_clean_hook.py
 
+.. _includes_conf:
 
 [includes]
 ----------
 
-``[includes]``
+Use ``[includes]`` to tell biicode a pattern whereby it should be understood by other include name to avoid change your original code include names.
 
-Mapping of include patterns to external blocks
-    # hello*.h: user3/depblock  # includes will be processed as user3/depblock/hello*.h
+An example:
 
-el mappings vale para decirle: Cuando te encuentres "uv.h" quiere decir "lasote/libuv/include/uv.h"
-y asi no tocar los includes de la gente
-es algo que queremos evitar, pero que para el codigo de la gente que ya existe viene muy bien, porque no hay por que tocar los includes
+You've downloaded a library which has a lot of dependencies to OpenCV C++ library (it's uploaded in 
+`diego/opencv <https://www.biicode.com/diego/opencv>`_), then, how do you change all the "#include" names to the form **diego/opencv/any_header.h** or **diego/opencv/any_header.hpp** without rewriting all of them in your original code?
 
-[data]
---------
-``[data]``
+
+**biicode.conf**
 
 .. code-block:: text
 
-    # Manually define data files dependencies, that will be copied to bin for execution
-    # By default they are copied to bin/user/block/... which should be taken into account
-    # when loading from disk such data
-    # image.cpp + image.jpg  # code should write open("user/block/image.jpg")
+	[includes]
+		opencv*.h: diego/opencv
+		opencv*.hpp: diego/opencv
+
+.. _data_conf:
+
+[data]
+--------
+
+Use ``[data]`` to specify a link with any file (.h, .cpp, etc.) with any data one (.txt, .jpg, etc.) in your block. When it's specified and the code is built, the image'll be saved, by default, in your *project/bin/user/block* folder.
+
+Example:
+
+You have in your main code this line:
+
+**main.cpp**
+
+.. code-block:: cpp
+
+	CImg<unsigned char> image("phil/cimg_example/lena.jpg")
+
+Then, if you want that all'll be OK when you run your code, you should add to your configuration file:
+
+**biicode.conf**
+
+.. code-block:: text
+
+    [data]
+    	main.cpp + lena.jpg
+
+
+.. _complete_example_conf:
+
+Complete use case example
+^^^^^^^^^^^^^^^^^^^^^^^
+
+This is the structure of a possible block ::
+
+	+-- myuser
+	|    +-- myblock
+	|    |    +-- bii
+	|    |    |    |-- post_process_hook.py
+	|    |    +-- library
+	|    |    |    +-- include
+	|    |    |    |    |-- tool.h (#include "myblock_lib.hpp")
+	|    |    |    |    |-- tool.cpp
+	|    |    |    +-- test
+	|    |    |    |    |-- test_1.cpp (#include "tool.h")
+	|    |    |    |    |-- test_2.cpp (save data in "data_values.txt" file)
+	|    |    |    |    |-- data_values.txt
+	|    |    |    |    |-- test_3.cpp (#include <wx/xml/xml.h>)
+	|    |    |-- myblock_lib.hpp (#include <wx/wx.h>)
+	|    |    |-- sample.cpp
+	|    |    |-- biicode.conf
+	|    |    |-- CMakeLists.txt
+	|    |    |-- README.md
+	|    |    |-- LICENSE
+
+
+Then, you want the following configuration:
+
+* Biicode marks as resolved the includes: ``#include "myblock_lib.hpp"`` (root directory), ``#include "myblock_lib.hpp"`` (include folder directory).
+|
+* Execute my ``post_process_hook.py`` when I build the project.
+|
+* ``test_2.cpp`` uses the data file, ``data_values.txt``.
+|
+* Exclude ``sample.cpp`` like entry point.
+|
+* Create a dependency between ``CMakeLists.txt``, ``README.md`` and ``LICENSE`` files, but the last ones'll be exclude from compilation.
+|
+* Specify that your block depends on ``fenix/wxwidgets`` block, version ``0`` and version tag ``v3.0.2``.
+|
+* Treat all the ``#include <wx/any_wxwidgets_header.h>`` as ``#include <fenix/wxwidgets/wx/any_wxwidgets_header.h>``
+|
+So, your configuration file would be:
+
+**biicode.conf**
+
+.. code-block:: text
+
+		# Biicode configuration file
+		[requirements]
+			fenix/wxwidgets(v3.0.2): 0
+		[parent]
+			myuser/myblock: 0
+		[paths]
+			/
+			include
+		[dependencies]
+			CMakeLists.txt + !README.md !LICENSE
+		[mains]
+			!sample.cpp
+		[hooks]
+			CMakeLists.txt + bii/post_process_hook.py
+		[includes]
+			wx*.h: fenix/wxwidgets
+		[data]
+			test_2.cpp + data_values.txt
+
 
 Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
