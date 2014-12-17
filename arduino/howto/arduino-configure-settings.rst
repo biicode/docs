@@ -44,6 +44,8 @@ boards
 Type your Board model, just make sure it's compatible with the Arduino SDK v. 1.0.5 and your IDE supports it. This is a list of the boards supported by default, even though any board is welcomed!
 
 	* ``uno``: Arduino Uno
+	* ``zum``: `bq ZUM BT-328 <http://www.bq.com/gb/products/zum.html>`__ 
+	* ``yun``: Arduino Yun
 	* ``atmega328``: Arduino Duemilanove w/ ATmega328
 	* ``diecimila``: Arduino Diecimila or Duemilanove w/ ATmega168
 	* ``nano328``: Arduino Nano w/ ATmega328
