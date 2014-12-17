@@ -7,7 +7,7 @@ Workflows
 Working with your own blocks
 ------------------------------
 
-You've built a program and reused your **sum function** in the :ref:`Getting Started <cpp_publish_reuse>`. Now it's time to add new functionality to your published **myuser/math** block, like a **substract function**, and use it in your block **myuser/calc**.
+You've built a program and reused your **sum function** in the :ref:`Getting Started <cpp_getting_started>`. Now it's time to add new functionality to your published **myuser/math** block, like a **substract function**, and use it in your block **myuser/calc**.
 
 The layout is:
 

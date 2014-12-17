@@ -3,7 +3,7 @@
 Publishing 
 ==========
 
-:ref:`bii publish<bii_publish_command>` command, publishes your code to biicode. 
+:ref:`bii publish<bii_publish_command>` command publishes your code to biicode. 
 
 .. code-block:: bash
 
@@ -11,6 +11,7 @@ Publishing
 
 
 Tag's default value is ``DEV``, but all Release life-cycle TAG values are available: ``DEV``, ``ALPHA``, ``BETA`` and ``STABLE``:
+
 .. code-block:: bash
 
   $ bii publish  --tag STABLE

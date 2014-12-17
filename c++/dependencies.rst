@@ -3,53 +3,60 @@
 Manage your dependencies
 =========================
 
+Learn how to get the dependencies your project needs and how to handle their versions.
+
+
 Dependencies
 ------------
-Search the library you want on biicode and depend on it:
+The :ref:`getting started guide<cpp_getting_started>` explained basics on depending. To recall, these are the steps to depend on a library available in biicode:
 
-.. code-block:: cpp
-    :emphasize-lines: 1
+* Search the library you want on biicode.
 
-   	#include "erincatto/box2d/Box2D/Box2D.h"
+* Write the include line in your source code:
+
+	.. code-block:: cpp
+	    :emphasize-lines: 1
+
+	   	    #include "erincatto/box2d/Box2D/Box2D.h"
 
 
-In a project like this one: ::
+	In a project like this one: ::
 
-	|-- my_project
-	|    +-- bii
-	|    +-- bin
-	|    +-- blocks
-	|    |	  +-- myuser
-	|    |    |     +-- box2d_example
-	|    |    |  	|     |-- main.cpp   --->  #include "erincatto/box2d/Box2D/Box2D.h"
-	|    |    |  	|     |-- biicode.conf
+		|-- my_project
+		|    +-- bii
+		|    +-- bin
+		|    +-- blocks
+		|    |	  +-- myuser
+		|    |    |     +-- box2d_example
+		|    |    |  	|     |-- main.cpp   --->  #include "erincatto/box2d/Box2D/Box2D.h"
+		|    |    |  	|     |-- biicode.conf
 
+
+	.. container:: infonote
+
+	    Here's more on this :ref:`Box2D example project <box2d>`.
+
+
+* Execute :ref:`bii find command <bii_find_command>` to retrieve dependencies:
+
+	.. code-block:: bash
+
+		$ bii find
+
+	And ``biicode.conf`` file is updated: 
+
+	.. code-block:: text
+
+		[requirements] 
+		    # required blocks (with version)
+			erincatto/box2d: 10
+
+
+	That's because :underline:`myuser/box2d_example` depends on ``ericatto/box2d`` block ``version number 10``.
 
 .. container:: infonote
 
-    Here's more on this :ref:`Box2D example project <box2d>`.
-
-
-Execute :ref:`bii find command <bii_find_command>` to retrieve dependencies:
-
-.. code-block:: bash
-
-	$ bii find
-
-``biicode.conf`` file is updated: 
-
-.. code-block:: text
-
-	[requirements] 
-	    # required blocks (with version)
-		erincatto/box2d: 10
-
-
-That's because :underline:`myuser/box2d_example` depends on ``ericatto/box2d`` block ``version number 10``.
-
-.. container:: infonote
-
- 	* Here's more information about :ref:`requirements<requirements_bii>`.
+ 	* Here's more information about :ref:`requirements<requirements_conf>`.
 
 
 Modifying the version you depend on
@@ -153,7 +160,8 @@ Execute ``bii deps`` to get all information related to biicode’s dependency sc
 
 Depending on a block track
 ---------------------------
-Switch between different development versions or **block tracks**, keeping the same *#includes* in your source code. Let's see an example with **libuv library**. 
+
+**Block Tracks** are different development *versions* of a block using the same block name-space. This way, you can switch between different development versions or **block tracks**, keeping the same *#includes* in your source code. Let's see an example with **libuv library**. 
 
 Currently, **libuv** keeps 3 mantained versions or **block tracks**:
 
@@ -304,17 +312,16 @@ Let's create a block track from **diego/glfw** block:
 .. container:: infonote
 
     What if you want to get back again to the original library? 
-    	* Write in your **biicode.conf** file ``[requirements]`` :
+    	
+    * Write in your **biicode.conf** file ``[requirements]`` :
 
-		*biicode.conf*
+	    .. code-block:: text
 
-		.. code-block:: text
-
-			[requirements] 
-				# required blocks (with version)
-				diego/glfw: 0
-
-			* Execute ``bii cpp:build`` and it's updated.
+		    [requirements] 
+		        # required blocks (with version)
+			    diego/glfw: 0
+		
+    * Execute ``bii cpp:build`` and it's updated.
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
 
