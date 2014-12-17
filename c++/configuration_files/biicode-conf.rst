@@ -3,7 +3,7 @@
 ``biicode.conf``
 ================
 
-**biicode.conf** is configuration file to --wait for it-- configurate your biicode projects.
+**biicode.conf** is a configuration file to --wait for it-- configurate your biicode projects.
 
 Place it into your block, next to your source code: ::
 
@@ -295,10 +295,11 @@ These are defined like :ref:`[dependencies] <dependencies_conf>`. Files whose na
 [includes]
 ----------
 
-``[includes]``
+``[includes]`` section enables mapping include patterns to external blocks. For example:
 
-Mapping of include patterns to external blocks
-    # hello*.h: user3/depblock  # includes will be processed as user3/depblock/hello*.h
+    hello*.h: user3/depblock  
+
+    includes will be processed as user3/depblock/hello*.h
 
 el mappings vale para decirle: Cuando te encuentres "uv.h" quiere decir "lasote/libuv/include/uv.h"
 y asi no tocar los includes de la gente
