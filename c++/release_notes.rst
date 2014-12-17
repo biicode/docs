@@ -3,6 +3,22 @@
 Release notes
 =============
 
+**2.0.1** (17-Dic-201)
+
+* Premium accounts in which code can be stored privately, shared alike. Just like Github’s private repos.
+* New and simpler configuration in a single “biicode.conf” file, instead of several tiny files, and with more flexibility.
+* System for reusing CMake scripts. Now, CMakeLists.txt can automatically depend on existing CMake scripts, they will be automatically retrieved, versioned, shared, exactly as other source code files
+* Improved and simpler, CMake and build system, with Interface targets. Possibility of setting options to and configuring blocks you depend on. 
+* Possible to specify #include mappings to blocks, so no modification at all is necessary in code.
+* Support for Arduino 1.5 for Yun board 
+* Python hooks for custom tasks. Examples of hooks that automatically retrieve and configure system-wide some popular and large frameworks as OpenCV or Boost.
+* Blocks can use different variants, called “tracks” to choose and switch between lib versions or flavours. For example, can be used to maintain several development branches simultaneously as lasote/libuv(v1.0) and lasote/libuv(v0.10), and changing from one to the other does not require any change to code.
+* Web: See block that depends on your block in requirements tab 
+* Binary support to WXwidgets
+* New doc style and contents
+|
+
+
 **1.11** (19-Nov-2014)
 
 * Block tracks.
