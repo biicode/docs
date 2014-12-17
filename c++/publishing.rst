@@ -69,6 +69,12 @@ with a real example:
 
 Execute ``bii publish`` and enter your profile *www.biicode.com/myuser* to check the new track. 
 
+Private blocks
+--------------
+
+Upgrade your account to Premium, |biicode_write_us|, to use Private blocks. Store your code in private, choose who can see or edit your blocks.
+
+Create private blocks in our web page. Just press **Add block button** and choose private.
 
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
