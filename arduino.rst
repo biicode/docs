@@ -1,7 +1,7 @@
 .. _arduino-index:
 
-Arduino Documentation
-=====================
+Arduino
+=======
 
 `Arduino <http://www.arduino.cc/>`_ is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software. It's intended for artists, designers, hobbyists and anyone interested in creating interactive objects or environments.
 

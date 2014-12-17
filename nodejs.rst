@@ -1,7 +1,7 @@
 .. _nodejs-index:
 
-Node.js Documentation
-=====================
+Node.js
+=======
 
 
 `Node.js <http://nodejs.org/>`_ support is **experimental**. We’re playing and trying to fit our dependency management model
