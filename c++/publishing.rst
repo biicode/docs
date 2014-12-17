@@ -3,14 +3,14 @@
 Publishing 
 ==========
 
-:ref:`bii publish<bii_publish_command>` command, publishes your code to biicode. 
+:ref:`bii publish<bii_publish_command>` command publishes your code to biicode. 
 
 .. code-block:: bash
 
   $ bii publish
 
 
-Tag's default value is ``DEV``, but  ``ALPHA``, ``BETA`` and ``STABLE`` are also available:
+Tag's default value is ``DEV``, but all Release life-cycle TAG values are available: ``DEV``, ``ALPHA``, ``BETA`` and ``STABLE``:
 
 .. code-block:: bash
 
@@ -30,18 +30,52 @@ Tag's default value is ``DEV``, but  ``ALPHA``, ``BETA`` and ``STABLE`` are also
 Tag a version
 --------------
 
-Just execute:
+Put a semantic name to your block versions. Once tagged, you can :ref:`depend on a version just knowing its tagd<tag_dependencies>`. Just execute:
 
 .. code-block:: bash
 
   $ bii publish  --tag STABLE --versiontag=1.2rc3
 
 
-
 .. container:: infonote
 
     ``DEV`` versions can not be tagged.
 
+Block Tracks
+-------------
+
+Use **Block Tracks** to publish different development *versions* of a block using the same block name-space. This way, dependent blocks can keep the same *#includes* in their source code.
+
+
+Publish a new block Track
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Write the track name between brackets in the ``[parent]`` section of the **biicode.conf** file. Specify ``version -1`` because we want create a new block. 
+
+*biicode.conf*
+
+.. code-block:: text
+
+	[parent]
+  		myuser/myblock(track1): -1
+
+with a real example:
+
+*biicode.conf*
+
+.. code-block:: text
+
+	[parent]
+  		lasote/libuv(v1.0): -1
+
+Execute ``bii publish`` and enter your profile *www.biicode.com/myuser* to check the new track. 
+
+Private blocks
+--------------
+
+Upgrade your account to Premium, |biicode_write_us|, to use Private blocks. Store your code in private, choose who can see or edit your blocks.
+
+Create private blocks in our web page. Just press **Add block button** and choose private.
 
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.

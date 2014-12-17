@@ -8,7 +8,7 @@ WiringPi: C GPIO library
 +--------------------------------------------------------------------------------------------------+
 | Author: `Gordon Henderson <https://projects.drogon.net/>`__                                      |
 +--------------------------------------------------------------------------------------------------+
-| `biicode library site <https://www.biicode.com/drogon/wiringpi>`__ |
+| `biicode library site <https://www.biicode.com/drogon/wiringpi>`__                               |
 +--------------------------------------------------------------------------------------------------+
 | `WiringPi library reference page <http://wiringpi.com/reference/>`__                             |
 +--------------------------------------------------------------------------------------------------+

@@ -28,12 +28,31 @@ function get_route_with_params(pathname){
   return tmp.substring(index + 1);
 }
 
+
+function anchor_clicked(){
+    var content_scroll = $(window).scrollTop();
+    setTimeout(function(){
+      $(window).scrollTop(content_scroll - 90);
+    }, 100);
+}
+
+var storedHash = window.location.hash;
+function monitor_anchor_link_event(callback){
+  window.setInterval(function () {
+      if (window.location.hash != storedHash) {
+          storedHash = window.location.hash;
+          callback(storedHash);
+      }
+  }, 100); // Google uses 100ms intervals I think, might be lower
+}
+
 $( document ).ready(function() {
 
+  //Monitor anchor click
+  monitor_anchor_link_event(anchor_clicked);
 
   //Saves the left panel scroll in cookie to restore vertical position on load
   var last_scroll = $.cookie('saved_scroll');
-  console.log("LAST SCROLL: " + last_scroll);
   if(last_scroll){
      $(".nav-side").scrollTop(last_scroll);
   }

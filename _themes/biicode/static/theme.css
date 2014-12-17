@@ -3795,7 +3795,7 @@ h1,h2,h3,h4,h5,h6,legend
 {
   color: #666;
   font-weight: lighter;
-  margin-top:-60px;
+  margin-top:0px;
 }
 
 p
@@ -4719,6 +4719,21 @@ pre.literal-block:after
   display:block;
   float:left;
   padding:3px;
+}
+
+.breadcrumbs li span.pre {
+  display: inline;
+  float: none;
+  padding: 0px;
+}
+
+.breadcrumbs li tt{
+  margin-left: 10px;
+  padding-top: 0px;
+}
+
+.breadcrumbs li tt span.pre {
+  
 }
 
 .breadcrumbs li a:first-child
@@ -5671,12 +5686,13 @@ body.nodejs .nav-rel a:hover {
 .section h1,.section h2,.section h3
 {
   padding-bottom: 2px;
-  padding-top:100px;
+  padding-top:10px;
 }
 .section h1
 {
   border-bottom-width: 5px;
   border-bottom-style: solid;
+  margin-top: 10px;
 }
 .section h2
 {
@@ -5810,7 +5826,7 @@ body.nodejs .tabs .tab.current
   border: 1px solid #ddd;
   border-radius: 3px;
   color: #777;
-  padding: 20px 20px 10px 20px;
+  padding: 10px 20px 10px 20px;
   border-left-width: 30px;
 }
 
