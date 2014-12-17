@@ -3,9 +3,9 @@
 **policies.bii**: defining the policies of the code you want to reuse
 ======================================================================
 
-Policies are just **rules the smart finder applies when finding or updating external dependencies.** They can be configured in your_project/bii/policies.bii as you can see in the :ref:`layouts section <project_layout>`.
+Policies are just **rules the smart finder applies when finding or updating external dependencies.** They can be configured in *your_project/bii/policies.bii*
 
-``policies.bii`` have this format as self-documented:::
+``policies.bii`` has this format as self-documented:::
 
 	# This is the file to configure your finds of dependencies. You can have
 	# several policies defined, each one with its own name. The 'default' policy

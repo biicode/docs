@@ -48,6 +48,5 @@ If you want to find any possible matching compatible version (not just updates o
 
 .. container:: todo
 
-	* Visit the section: :ref:`requirements.bii <requirements_bii>`
-	* Visit the section: :ref:`your project layout<project_layout>`
+	* Visit the section: :ref:`[requirements] <requirements_conf>`
 

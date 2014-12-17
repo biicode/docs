@@ -102,12 +102,12 @@ Publish the math block again. As you now have 2 blocks opened (calc, math), spec
 
 By default, ``bii publish`` uses the DEV tag. Check on your online biicode profile it's been published.
 
-Using ``DEV`` tag, the latest ``DEV`` version is overrided, so **parents.bii** file remains unmodified:
+Using ``DEV`` tag, the latest ``DEV`` version is overrided, so ``[parents]`` section of your **biicode.conf**  remains unmodified:
 
-.. code-block:: bash
+.. code-block:: text
 
-   # This file contains your block ancestors versions
-   * myuser/math: 0
+  [parent]
+     myuser/math: 0
 
 
 Closing edited block
@@ -207,7 +207,7 @@ Once your changes build, publish your own version of the block.
 If **the block in edition isn't yours**:
 
   * Rename **lasote** folder with your **username**. 
-  * Delete the ``parents.bii`` file.
+  * Delete the ``[parents]`` section content in your **biicode.conf** file.
 
 .. container:: infonote
 

@@ -159,7 +159,7 @@ If you want to have multiple test classes and run them all together you don't ne
 	  return RUN_ALL_TESTS();
 	}
 
-Notice the ``dependencies.bii`` file in your bii block folder. This is telling biicode that the main file **test_suites.cpp depends on those test files**. You can read more about ``dependencies.bii`` file :ref:`here <dependencies_bii>`.
+Notice the ``[dependencies]`` section in your **biicode.conf** file. This is telling biicode that the main file **test_suites.cpp depends on those test files**. You can read more about ``[dependencies]`` section :ref:`here <dependencies_conf>`.
 
 Now when we execute your tests we obtain exactly the same output:
 

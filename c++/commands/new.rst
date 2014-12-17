@@ -10,7 +10,7 @@ This is the command that **creates new block inside your project**. It must be i
 
 	$ bii new USER_NAME/BLOCK_NAME
 
-The ``bii new <user_name/block_name>`` command creates a new folder within :ref:`your project<project_layout>` with the name of the block.
+The ``bii new <user_name/block_name>`` command creates new folders within with your username and the name of the block in blocks folder.
 
 You can create a block with a default "Hello World" main file inside it:
 

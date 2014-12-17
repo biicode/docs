@@ -191,4 +191,4 @@ Any suggestion or feedback? |biicode_write_us| It is very welcomed :)
 
 .. container:: todo
 
-    Visit the section: :ref:`Upload and reuse code (C/C++) <cpp_publish_reuse>`
+    Visit the section: :ref:`Upload and reuse code (C/C++) <upload-your-code>`

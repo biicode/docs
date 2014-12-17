@@ -138,7 +138,7 @@ Let's imagine now that we have a folder with the following structure into it ::
 If we execute ``bii deps`` on this example, we'll see ``mylib.h`` as unresolved. Why is this happening? 
 Biicode, considers the ``#include(s)`` relative to their location. So if there isn't a root folder they can refer to, when looking for ``mylib.h`` they will search it in the ``examples`` folder and they won't be able to find it.
 
-What should we write on the ``paths.bii`` file?
+What should we write on the ``[paths]`` section?
 
 
 .. code-block:: text

@@ -91,7 +91,7 @@ It's used to know all the block files (and their types) and their dependencies.
 	$ bii deps --files
 	phil/math_example
 	    CMakeLists.txt [TEXT]
-	    bii/requirements.bii [TEXT]
+	    biicode.conf [TEXT]
 	    phil/math/main.cpp [CPP][M]
 	        phil/math_lib/algorithm.h (E)
 	        phil/math_lib/adafruit_sensor.h (E)
