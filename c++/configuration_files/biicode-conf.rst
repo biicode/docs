@@ -1,9 +1,9 @@
 .. _biicode_conf:
 
-**biicode.conf**
-================
+**biicode.conf**: configure your biicode projects
+=================================================
 
-**biicode.conf** is a configuration file to --wait for it-- configurate your biicode projects.
+**biicode.conf** is a configuration file to --wait for it-- configure your biicode projects.
 
 Place it into your block, next to your source code: ::
 
@@ -74,16 +74,16 @@ You can manually specify the block to depend on with its corresponding version o
 
 	[requirements] 
 	    # required blocks (with version)
-		erincatto/box2d: 10
+	    erincatto/box2d: 10
 
 Take a look at the :ref:`docs about dependencies <cpp_dependencies>` to know more.
 
 [parent]
 ------------
 
-``[parent]`` section tells you  *"who is your parent version"*, the remote version corresponding to your local block and looks like this:
+``[parent]`` section tells you  *"who is your parent version"*. Indicates the version of the remote block being edited and looks like this:
 
-Indicates the version of the remote block being edited .
+
 *biicode.conf*
 
 .. code-block:: text
@@ -158,6 +158,9 @@ Write ``/`` in ``paths`` section and biicode will know that it has to include th
 
 [dependencies]
 -------------------
+Biicode knows how the source code files connect to each other. It parses the source code files and deduces some things.
+But sometimes, this mechanism can detect non existent dependencies or can fail detecting existent dependencies.
+
 Use ``[dependencies]`` section to manually define rules to adjust file implicit dependencies. 
 
 ``[dependencies]`` rules match the following pattern:
@@ -188,69 +191,63 @@ Pattern 	Meaning
 ``[!seq]``		Matches any character not in seq
 ==========	========================================
 
-[dependencies] examples
+Examples
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Let's see a few examples:
 
 * ``matrix32.h`` is dependency of the ``main.cpp`` file.
 
-*biicode.conf*
 
 .. code-block:: text
 
 	[dependencies]
-		main.cpp + matrix32.h
+	    main.cpp + matrix32.h
+
 
 * Delete ``matrix16.h`` dependency to ``main.cpp``.
 
-*biicode.conf*
 
 .. code-block:: text
 
 	[dependencies]
-		main.cpp - matrix16.h
+	    main.cpp - matrix16.h
 
 
 * ``test.cpp`` depends on both ``example.h`` and ``LICENSE``. And ``LICENSE`` will be excluded from the compilation process.
 
-*biicode.conf*
 
 .. code-block:: text
 
 	[dependencies]
-		test.cpp + example.h !LICENSE
+	    test.cpp + example.h !LICENSE
 
 
 * All files with ``.cpp`` extension depend on the ``README`` file, but this dependency won't be compiled.
 
-*biicode.conf*
 
 .. code-block:: text
 
 	[dependencies]
-
-		*.cpp + !README
+	     *.cpp + !README
 
 
 * ``example.h = NULL`` tells biicode that ``example.h`` has no dependencies (even if it truly has).
 
-*biicode.conf*
 
 .. code-block:: text
 
 	[dependencies]
-		example.h = NULL
+         example.h = NULL
 
 
 * Both ``solver.h`` and ``type.h`` are ``calculator.cpp`` are the only dependencies of ``calculator.cpp``, overwriting any existing implicit dependencies.
 
-*biicode.conf*
 
 .. code-block:: text
 
 	[dependencies]
-		calculator.cpp = solver.h type.h
+	    calculator.cpp = solver.h type.h
 
 
 .. _mains_conf:
@@ -286,39 +283,87 @@ An example:
 
 Use ``[hooks]`` section to link to certain python scripts that will be executed, for example, before building your project. They can be used to download and install a package needed. 
 
-These are defined like :ref:`[dependencies] <dependencies_conf>`. Files whose names match ``bii*stage*hook.py`` will be launched as python scripts at **stage = {post_process, clean}**: ::
+This scripts must have ".py" extension and name must match:
+
++ ``bii*post_process*hook.py``: For scripts that will be launched before project building (*bii cpp:build* or *bii cpp:configure*)
++ ``bii*clean*hook.py``: For scripts that will be launched before a *bii clean* command.
+
+These are defined like :ref:`[dependencies] <dependencies_conf>`. 
+
+In the following example we define that CMakeLists.txt depends on two hooks:
+
+.. code-block:: text
 
 	[hooks]
 	    CMakeLists.txt + bii/my_post_process1_hook.py bii_clean_hook.py
 
 
+Inside hook scripts you can use the ``bii`` variable that is automatically injected.
+``bii`` variable allows you to:
+
+
++ Output text:
+
+.. code-block:: text
+
+	bii.out.debug("error_msg")
+	bii.out.info("error_msg")
+	bii.out.warn("error_msg")
+	bii.out.error("error_msg")
+
+
++ Download files:
+
+.. code-block:: text
+
+	bii.download(url, tmp_path)
+
+
++ Read your project settings (creates nested objects with .bii file properties):
+
+.. code-block:: text
+	
+	bii.settings.cpp.cross_build
+
+
+You can check an example in this block: |maria_bitscope|
+
+
 [includes]
 ----------
 
-``[includes]`` section enables mapping include patterns to external blocks. 
-To process ``hello*.h`` includes as ``user3/depblock/hello*.h``, **write original include on the left:where to find it**. Like this:
 
-*biicode.conf*
+Enables mapping include patterns to external blocks.
+
++ For example you can tell biicode: Whenever you read ``uv.h`` in my code, it means ``lasote/libuv/include/uv.h``:
+
+
+.. code-block:: text
+
+	[requirements]
+	    lasote/libuv(v1.0): 0
+
+	[includes]
+	    uv.h: lasote/libuv/include 
+
+In the previous example, the [requirements] section have a line specifying a dependency to "lasote/libuv(v1.0): 0" version, so, lasote/libuv #includes will be matched against these block.
+
+
++ You can also specify complex patterns. To process ``hello*.h`` #includes as ``user3/depblock/hello*.h``
+
 
 .. code-block:: text
 
 	[includes]
-		hello*.h: user3/depblock  
+	    hello*.h: user3/depblock  
 
-For example you can tell biicode: Whenever you read ``uv.h`` it means ``lasote/libuv/include/uv.h``:
+This is pretty useful when using already existing libraries and you don't want to change all the includes.
 
-*biicode.conf*
-
-.. code-block:: text
-
-	[includes]
-		uv.h: lasote/libuv/include 
-
-This is pretty useful when using already existing libraries: code
 
 [data]
 --------
 Use ``[data]`` to specify a link with any file (.h, .cpp, ...) with any data (.txt, .jpg, ...) in your block.
+When it's specified and the code is built, the image will be saved, by default, in your project/bin/user/block folder.
 
 **Example:**
 
@@ -331,17 +376,23 @@ You have in your main code this line:
 	CImg<unsigned char> image("phil/cimg_example/lena.jpg")
 
 
-Then,add to your configuration file:
+Then, add to your configuration file:
 
-**biicode.conf**
+*biicode.conf*
 
 .. code-block:: text
 
 	[data]
-	 	main.cpp + lena.jpg
+	    main.cpp + lena.jpg
 
-This is the way data is linked.
+
+This will copy lena.jpg to "project/**bin**/user/block/" when main.cpp is builded.
+
 
 Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
 
+
+.. |maria_bitscope| raw:: html
+
+   <a href="https://www.biicode.com/Maria/bitscope" target="_blank">Maria/bitscope</a>
 
