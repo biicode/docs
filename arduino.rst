@@ -3,7 +3,7 @@
 Arduino
 =======
 
-Your Arduino with **batteries included**:
+Develop C and C++ projects with Arduino and biicode. Your Arduino with **batteries included**:
 
 	1. **Save your project in different folders** for a better organization.
 	2. **Reuse yours and other user´s code**, just ``#include`` the file you need.
