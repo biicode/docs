@@ -78,29 +78,6 @@ Execute ``bii work`` command, once modified, to update a specific block version:
 And you'll see the new dependencies retrieved in your ``deps folder``.
 
 
-.. _override_deps:
-
-Override a dependency
-----------------------
-
-Let's say you depend on: 
-
-* ``erincatto/box2d:10`` that depends on ``diego/glfw:0``. 
-|
-And you'd rather depend on:
-
-*  ``erincatto/box2d:10`` and ``diego/glfw:1``. 
-|
-Write your preferred versions in your **biicode.conf** and biicode will use those versions in your project: 
-
-.. code-block:: text
-
-	[requirements] 
-		# required blocks (with version)
-		erincatto/box2d: 10
-		diego/glfw:1
-
-
 Checking dependencies
 ----------------------
 Execute ``bii deps`` to get all information related to biicode’s dependency scanning. It shows all dependencies, system, local and biicode's. 
@@ -175,66 +152,64 @@ Execute ``bii deps`` to get all information related to biicode’s dependency sc
 
 
 Depending on a block track
---------------------------
-Write in your **biicode.conf** file ``[requirements]`` :
+---------------------------
+Switch between different development versions or **block tracks**, keeping the same *#includes* in your source code. Let's see an example with **libuv library**. 
 
-*biicode.conf*
+Currently, **libuv** keeps 3 mantained versions or **block tracks**:
 
-.. code-block:: text
+		* |libuv_0_10| (Stable, used by Nodejs)
+		* |libuv_0_11| (Non stable, but commonly used)
+		* |libuv_1_0| (Made stable few days ago)
 
-	[requirements] 
-		# required blocks (with version)
-		user/block(track1) : 2
+Depend on one or another to fit your needs:
 
-Execute `bii cpp:build` and biicode will retrieve the latest block track. 
+* Write this *#include line* in your source code:
 
-Switching between block tracks
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	.. code-block:: cpp
+	    :emphasize-lines: 1
 
-Let's depend on |libuv_0_11|, *a libuv block track*: 
+	   	#include "lasote/libuv/include/uv.h"
 
-Write in your **biicode.conf** file ``[requirements]`` :
 
-*biicode.conf*
+* And depend on |libuv_0_11|, write in your **biicode.conf** file ``[requirements]`` :
 
-.. code-block:: text
+	*biicode.conf*
 
-	[requirements] 
-		# required blocks (with version)
-		lasote/libuv(v0.11): 1
+	.. code-block:: text
 
-Execute ``bii cpp:build`` and you're ready to go. 
+		[requirements] 
+			# required blocks (with version)
+			lasote/libuv(v0.11): 1
 
-As libuv actually keeps 3 mantained versions or "tracks":
-
-		* 0.10 (Stable, used by Nodejs)
-		* 0.11 (Non stable, but commonly used)
-		* 1.0 (Made stable few days ago)
-|
+* Execute ``bii cpp:build`` and you're ready to go. 
 
 Let's switch to |libuv_1_0|:
 
-*biicode.conf*
+* Modify ``[requirements]`` section :
 
-.. code-block:: text
+	*biicode.conf*
 
-	[requirements]
-		# required blocks (with version)
-		lasote/libuv(v1.0): 0
+	.. code-block:: text
 
-Execute ``bii cpp:build`` and it's switched.
+		[requirements]
+			# required blocks (with version)
+			lasote/libuv(v1.0): 0
 
-And last, switch to |libuv_0_10|:
+* Execute ``bii cpp:build`` and it's switched.
 
-*biicode.conf*
+And now, switch to |libuv_0_10|:
 
-.. code-block:: text
+* Modify ``[requirements]`` section :
 
-	[requirements] 
-		# required blocks (with version)
-		lasote/libuv(v0.10): 1
+	*biicode.conf*
 
-Execute ``bii cpp:build`` and it's switched.
+	.. code-block:: text
+
+		[requirements] 
+			# required blocks (with version)
+			lasote/libuv(v0.10): 1
+
+* Execute ``bii cpp:build`` and it's switched.
 
 .. _tag_dependencies:
 
@@ -261,6 +236,29 @@ Execute ``bii cpp:build`` and biicode will retrieve the latest version with that
 		Maria/oscpack: 0 @v1.1.0
 
 
+.. _override_deps:
+
+Override a dependency
+----------------------
+
+Let's say you depend on: 
+
+* ``erincatto/box2d:10`` that depends on ``diego/glfw:0``. 
+|
+And you'd rather depend on:
+
+*  ``erincatto/box2d:10`` and ``diego/glfw:1``. 
+|
+Write your preferred versions in your **biicode.conf** and biicode will use those versions in your project: 
+
+.. code-block:: text
+
+	[requirements] 
+		# required blocks (with version)
+		erincatto/box2d: 10
+		diego/glfw:1
+
+
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
 
 
@@ -275,12 +273,12 @@ Execute ``bii cpp:build`` and biicode will retrieve the latest version with that
 
 .. |libuv_0_11| raw:: html
 
-   <a href="http://www.biicode.com/lasote/lasote/libuv/v0.11" target="_blank">Libuv library v0.11</a>
+   <a href="http://www.biicode.com/lasote/lasote/libuv/v0.11" target="_blank"><strong>Libuv library v0.11</strong></a>
 
 .. |libuv_0_10| raw:: html
 
-   <a href="http://www.biicode.com/lasote/lasote/libuv/v0.10" target="_blank">Libuv libary v0.10</a>
+   <a href="http://www.biicode.com/lasote/lasote/libuv/v0.10" target="_blank"><strong>Libuv libary v0.10</strong></a>
 
 .. |libuv_1_0| raw:: html
 
-   <a href="http://www.biicode.com/lasote/lasote/libuv/v0.10" target="_blank">Libuv library v1.0</a>
+   <a href="http://www.biicode.com/lasote/lasote/libuv/v1.0" target="_blank"><strong>Libuv library v1.0</strong></a>
