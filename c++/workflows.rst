@@ -260,15 +260,15 @@ Now, if you want to depend on the block you've just published:
 Working with Git (or other VCS)
 -----------------------------------
 
-Biicode not intended to be version control. Its recommended that you use a control version system so you can keep your code safe and versioned.
+Biicode does not intend to be version control system. We recommend you using a control version system so you can keep your code safe and versioned.
 You can use also SVN or CVS.   
 
 
 Versioning your code
 ^^^^^^^^^^^^^^^^^^^^
 
-The natural way to work is maintain a correspondence between a *biicode block* and a *Git repository*.
-So, simply go to your block folder (**calc** and **math** in the previous example) and initialize a new git repository.
+The natural way to work is maintaining a correspondence between a *biicode block* and a *Git repository*.
+Simply go to your block folder (**calc** and **math** in the previous example) and initialize a new git repository.
 
 .. code-block:: text
 
@@ -283,9 +283,7 @@ So, simply go to your block folder (**calc** and **math** in the previous exampl
   |    |    |    |    +-- operations.h
   |    +-- deps
 
-
-
-Go to block folder and initialize git repository. Then add the changes to index and commit them:
+Go to the block's folder and initialize the git repository. Then add the changes to index and commit them:
 
 .. code-block:: bash
 
@@ -317,46 +315,48 @@ And push your commits:
   You can push to git the whole biicode project folder if you want to keep the building folder and project configuration. But, generally it's not necessary or recommended. Each computer may need their specific project settings, ant the you can regenerate all build layout with ``bii cpp:configure`` or ``bii cpp:build`` command. 
 
 
-
-As usual, you can publish your code to biicode when you want to, usually when you have a version to share.
+As usual, you can publish your code to biicode when you want to, generally when you have a version to share.
 
 .. code-block:: bash
 
   $ bii publish
 
-Thats all! Now you have your code under version control.
+That's all! Now you have your code under version control.
 
 
-Ignoring some files
-___________________
+Ignoring files
+_______________
 
-Maybe you want to keep on git some files but there are some other files don't want to publish to biicode.
-You can ignore it from biicode publish just using :ref:`ignore.bii file<ignore_bii>`.
-
+Maybe you want to have all files on git, but there are some files you don't want to publish to biicode.
+Use :ref:`ignore.bii file<ignore_bii>` to specify which files should be ignored and not published to biicode.
 
 
 Work with published blocks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
-In previous sections, when you want to work with any published block you ran ``bii open`` command.
-Well, you still can do it, but it's not your best choice. Its better to ``clone`` the github repository.
+In previous sections, it's explained how to work with any published block just using biicode (you would run ``bii open`` command). 
+
+Well, that's still available, but when working with Git, it's best to ``clone`` the github repository.
+
 Let's see an example:
 
 User ``mike`` has pushed to github and published a block named ``mike/math`` to biicode. 
 He was working at home, with Linux.
 
-Next day Mike wants to continue developing his block at work, with Windows.
+Next day Mike wants to develop further his block at work, with Windows.
 If Mike executes ``bii open`` the source code is not a github repository, is only a copy of his block in biicode. 
-So Mike should better run:
+So Mike should better init a new biicode project and run:
 
 .. code-block:: bash
 
+  $ bii init work_project
+  $ cd work_project
+  $ bii new mike/math
+  $ cd blocks/mike/math
   $ git clone https://github.com/mike_on_github/math.git .
 
-
-Now Mike have the github repository to keep developing under a control version system.
+Now Mike has the github repository to continue developing his biicode block under a control version system.
 From now, Mike just needs to make ``git pull`` command to fetch and merge the remote changes.
-
 
 
 Travis integration
@@ -364,10 +364,6 @@ Travis integration
 
 You can automate the publication to biicode when you push your code to github.
 Check this awesome |blog_post| to know how. 
-
-
-
-
 
 
 **Got any doubts?** Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
