@@ -295,25 +295,51 @@ These are defined like :ref:`[dependencies] <dependencies_conf>`. Files whose na
 [includes]
 ----------
 
-``[includes]`` section enables mapping include patterns to external blocks. For example:
+``[includes]`` section enables mapping include patterns to external blocks. 
+To process ``hello*.h`` includes as ``user3/depblock/hello*.h``, **write original include on the left:where to find it**. Like this:
 
-    hello*.h: user3/depblock  
-
-    includes will be processed as user3/depblock/hello*.h
-
-el mappings vale para decirle: Cuando te encuentres "uv.h" quiere decir "lasote/libuv/include/uv.h"
-y asi no tocar los includes de la gente
-es algo que queremos evitar, pero que para el codigo de la gente que ya existe viene muy bien, porque no hay por que tocar los includes
-
-[data]
---------
-``[data]``
+*biicode.conf*
 
 .. code-block:: text
 
-    # Manually define data files dependencies, that will be copied to bin for execution
-    # By default they are copied to bin/user/block/... which should be taken into account
-    # when loading from disk such data
-    # image.cpp + image.jpg  # code should write open("user/block/image.jpg")
+	[includes]
+		hello*.h: user3/depblock  
+
+For example you can tell biicode: Whenever you read ``uv.h`` it means ``lasote/libuv/include/uv.h``:
+
+*biicode.conf*
+
+.. code-block:: text
+
+	[includes]
+		uv.h: lasote/libuv/include 
+
+This is pretty useful when using already existing libraries: code
+
+[data]
+--------
+Use ``[data]`` to specify a link with any file (.h, .cpp, ...) with any data (.txt, .jpg, ...) in your block.
+
+**Example:**
+
+You have in your main code this line:
+
+*main.cpp*
+
+.. code-block:: cpp
+
+	CImg<unsigned char> image("phil/cimg_example/lena.jpg")
+
+
+Then,add to your configuration file:
+
+**biicode.conf**
+
+.. code-block:: text
+
+	[data]
+	 	main.cpp + lena.jpg
+
+This is the way data is linked.
 
 Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
