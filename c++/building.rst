@@ -24,7 +24,7 @@ Here, you'll learn how to define your **CMakeLists.txt** to delve into full func
 CMakeLists.txt
 ----------------------
 
-The command ``bii cpp:configure`` or ``bii cpp:build`` (which calls configure first), will generate all the build layout including your ``CMakeLists.txt`` file/s. 
+The command ``bii cpp:configure`` or ``bii cpp:build`` (which calls configure first), will generate all the build layout including your ``CMakeLists.txt`` file/s (one per block).
 
 ``CMakeLists.txt`` is generated in the root directory of your block (or blocks) that you have in your biicode project.
 
@@ -41,7 +41,7 @@ Has 2 useful lines by default (stripping out comment lines):
 INIT_BIICODE_BLOCK
 __________________
 
-This function exposes several variables so you can adapt the default behavior:
+This function exposes several variables, so you can adapt the default behavior:
 
   + **${BII_BLOCK_NAME}** The name of the block, for block *myuser/myblock* its value is **myblock**
   + **${BII_BLOCK_USER}** The user name, for block *myuser/myblock* its value is **myuser**
@@ -66,7 +66,9 @@ After ``INIT_BIICODE_BLOCK()`` call, we can use, modify, or override the values 
     # Actually create targets: EXEcutables and libraries.
     ADD_BIICODE_TARGETS()
 
-- **Example**: make a shared library.
+- **Example**: make a *shared* library.
+
+By default biicode builds a *static* library (.a, .lib). Let's see how to get a *shared* library (.dll, .so):
 
 .. code-block:: cmake
 
@@ -84,8 +86,8 @@ __________________
 
 This function creates the following variables:
 
-    + **${BII_BLOCK_TARGET}**: CMake **Interface** that represents the whole block. Always exists and is applied both library and executables (each target). You can use it for configure block compilation globally: Link libraries, compile flags...etc 
-    + **${BII_LIB_TARGET}**: Target library name, usually in the form "user_block". May not exist if BII_LIB_SRC is empty
+    + **${BII_BLOCK_TARGET}**: CMake **Interface** that represents the whole block. Always exists and is applied both library and executables (each target). You can use it for configure block building configuration: Link libraries, compile flags...etc 
+    + **${BII_LIB_TARGET}**: Target library name, usually in the form "user_block". May not exist if BII_LIB_SRC is empty, so use *${BII_BLOCK_TARGET}* as a general rule. 
     + **${BII_BLOCK_TARGETS}**: List of all targets defined in this block
     + **${BII_BLOCK_EXES}**: List of executables targets defined in this block
     + **${BII_exe_name_TARGET}**: Executable target (listed in ${BII_BLOCK_EXES}) (e.g. ${BII_main_TARGET}. You can also use directly the name of the executable target (e.g. user_block_main)
@@ -257,7 +259,7 @@ And execute the command:
   $ bii find
 
 
-All the CMake dependencies will download into your  project/deps/user/block folder
+All the CMake dependencies will be downloaded into your project/deps/user/block folder
 
 
 EXAMPLE: How to activate C++11 with already programmed macro?
