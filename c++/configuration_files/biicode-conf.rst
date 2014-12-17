@@ -68,7 +68,6 @@ Place it into your block, next to your source code: ::
 
 You can manually specify the block to depend on with its corresponding version or override a dependency just writing the version you want and executing ``bii cpp:build`` after that.
 
-*biicode.conf*
 
 .. code-block:: text
 
@@ -84,7 +83,6 @@ Take a look at the :ref:`docs about dependencies <cpp_dependencies>` to know mor
 ``[parent]`` section tells you  *"who is your parent version"*. Indicates the version of the remote block being edited and looks like this:
 
 
-*biicode.conf*
 
 .. code-block:: text
 
@@ -97,7 +95,7 @@ It comes in handy while :ref:`publishing <cpp_publishing>` take a look at it.
 
 [paths]
 ------------
-Use ``[paths]`` sections to tell biicode in which folders it has to look for the local files specified in your `#includes`. You only need to specify this when your project has `non-file-relative #include (s)`. 
+Use ``[paths]`` section to tell biicode in which folders it has to look for the local files specified in your `#includes`. You only need to specify this when your project has `non-file-relative #include (s)`. 
 
 .. _paths-common:
 
@@ -119,7 +117,6 @@ Biicode can't find the ``tool.h`` file unless we specify where they can find it.
 
 Let's fix this write into the ``[paths]`` section:
 
-*biicode.conf*
 
 .. code-block:: text
 
@@ -143,7 +140,6 @@ Biicode, considers the ``#include(s)`` relative to their location. So if there i
 
 What should we write on the ``paths.bii`` file?
 
-*biicode.conf*
 
 .. code-block:: text
 
@@ -268,7 +264,6 @@ An example:
 * Write the **name of the file** you want to be the entry point.
 * Exclude an entry point writing an **exclamation mark, !** before the name of the file.
 
-*biicode.conf*
 
 .. code-block:: text
 
@@ -283,7 +278,7 @@ An example:
 
 Use ``[hooks]`` section to link to certain python scripts that will be executed, for example, before building your project. They can be used to download and install a package needed. 
 
-This scripts must have ".py" extension and name must match:
+This scripts have ".py" extension and name matches:
 
 + ``bii*post_process*hook.py``: For scripts that will be launched before project building (*bii cpp:build* or *bii cpp:configure*)
 + ``bii*clean*hook.py``: For scripts that will be launched before a *bii clean* command.
@@ -298,11 +293,9 @@ In the following example we define that CMakeLists.txt depends on two hooks:
 	    CMakeLists.txt + bii/my_post_process1_hook.py bii_clean_hook.py
 
 
-Inside hook scripts you can use the ``bii`` variable that is automatically injected.
-``bii`` variable allows you to:
+Use ``bii`` variable inside hook scripts to:
 
-
-+ Output text:
++ Print text:
 
 .. code-block:: text
 
@@ -319,14 +312,14 @@ Inside hook scripts you can use the ``bii`` variable that is automatically injec
 	bii.download(url, tmp_path)
 
 
-+ Read your project settings (creates nested objects with .bii file properties):
++ Read your project settings:
 
 .. code-block:: text
 	
 	bii.settings.cpp.cross_build
 
 
-You can check an example in this block: |maria_bitscope|
+Check an example in this block: |maria_bitscope|
 
 
 [includes]
@@ -346,7 +339,7 @@ Enables mapping include patterns to external blocks.
 	[includes]
 	    uv.h: lasote/libuv/include 
 
-In the previous example, the [requirements] section have a line specifying a dependency to "lasote/libuv(v1.0): 0" version, so, lasote/libuv #includes will be matched against these block.
+In the previous example, the [requirements] section has a line specifying a dependency to ``lasote/libuv(v1.0): 0`` version, so, lasote/libuv #includes will be matched against these block.
 
 
 + You can also specify complex patterns. To process ``hello*.h`` #includes as ``user3/depblock/hello*.h``
@@ -363,7 +356,7 @@ This is pretty useful when using already existing libraries and you don't want t
 [data]
 --------
 Use ``[data]`` to specify a link with any file (.h, .cpp, ...) with any data (.txt, .jpg, ...) in your block.
-When it's specified and the code is built, the image will be saved, by default, in your project/bin/user/block folder.
+Once ``[data]`` section is specified and the code is built (``bii cpp:build``), the data files will be saved, by default, in your *project/bin/user/block* folder.
 
 **Example:**
 
@@ -378,7 +371,6 @@ You have in your main code this line:
 
 Then, add to your configuration file:
 
-*biicode.conf*
 
 .. code-block:: text
 
@@ -386,7 +378,7 @@ Then, add to your configuration file:
 	    main.cpp + lena.jpg
 
 
-This will copy lena.jpg to "project/**bin**/user/block/" when main.cpp is builded.
+This will copy lena.jpg to *project/bin/user/block/* when main.cpp is builded.
 
 
 Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
