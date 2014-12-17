@@ -22,6 +22,7 @@ In a project like this one: ::
 	|    |	  +-- myuser
 	|    |    |     +-- box2d_example
 	|    |    |  	|     |-- main.cpp   --->  #include "erincatto/box2d/Box2D/Box2D.h"
+	|    |    |  	|     |-- biicode.conf
 
 
 .. container:: infonote
@@ -54,12 +55,12 @@ That's because :underline:`myuser/box2d_example` depends on ``ericatto/box2d`` b
 Modifying the version you depend on
 ------------------------------------
 
-Manually edit your ``biicode.conf`` file to depend on any version you want. For example, on Erin Catto's Box2D:
+Manually edit your **biicode.conf** file to depend on any version you want. For example, on Erin Catto's Box2D:
  
 * ``Box2D v 2.3.1`` is available on ``erincatto/box2d version 10``
 * ``Box2D v 2.3.0`` is available on ``erincatto/box2d version 8``
 
-Biicode takes by default the latest version available.  To change it, just write the one you want in your ``biicode.conf``:
+Biicode takes by default the latest version available.  To change it, just write the one you want in your ***biicode.conf**:
 
 .. code-block:: text
 
@@ -90,7 +91,7 @@ And you'd rather depend on:
 
 *  ``erincatto/box2d:10`` and ``diego/glfw:1``. 
 |
-Write your preferred versions on your ``biicode.conf`` and biicode will use those versions on your project: 
+Write your preferred versions in your **biicode.conf** and biicode will use those versions in your project: 
 
 .. code-block:: text
 
@@ -98,6 +99,7 @@ Write your preferred versions on your ``biicode.conf`` and biicode will use thos
 		# required blocks (with version)
 		erincatto/box2d: 10
 		diego/glfw:1
+
 
 Checking dependencies
 ----------------------
@@ -172,6 +174,93 @@ Execute ``bii deps`` to get all information related to biicode’s dependency sc
  	* Here's more information about :ref:`bii deps command<bii_deps_command>`.
 
 
+Depending on a block track
+--------------------------
+Write in your **biicode.conf** file ``[requirements]`` :
+
+*biicode.conf*
+
+.. code-block:: text
+
+	[requirements] 
+		# required blocks (with version)
+		user/block(track1) : 2
+
+Execute `bii cpp:build` and biicode will retrieve the latest block track. 
+
+Switching between block tracks
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Let's depend on |libuv_0_11|, *a libuv block track*: 
+
+Write in your **biicode.conf** file ``[requirements]`` :
+
+*biicode.conf*
+
+.. code-block:: text
+
+	[requirements] 
+		# required blocks (with version)
+		lasote/libuv(v0.11): 1
+
+Execute ``bii cpp:build`` and you're ready to go. 
+
+As libuv actually keeps 3 mantained versions or "tracks":
+
+		* 0.10 (Stable, used by Nodejs)
+		* 0.11 (Non stable, but commonly used)
+		* 1.0 (Made stable few days ago)
+|
+
+Let's switch to |libuv_1_0|:
+
+*biicode.conf*
+
+.. code-block:: text
+
+	[requirements]
+		# required blocks (with version)
+		lasote/libuv(v1.0): 0
+
+Execute ``bii cpp:build`` and it's switched.
+
+And last, switch to |libuv_0_10|:
+
+*biicode.conf*
+
+.. code-block:: text
+
+	[requirements] 
+		# required blocks (with version)
+		lasote/libuv(v0.10): 1
+
+Execute ``bii cpp:build`` and it's switched.
+
+.. _tag_dependencies:
+
+Depending on a tagged version
+-----------------------------
+Use a specific block version using just its version tag. Write in your **biicode.conf** file ``[requirements]``:
+*biicode.conf*
+
+.. code-block:: text
+
+	[requirements] 
+		# required blocks (with version)
+		Maria/oscpack @v1.1.0
+
+Execute ``bii cpp:build`` and biicode will retrieve the latest version with that tag and update the ``[requirements]`` section:
+
+*biicode.conf*
+
+
+.. code-block:: text
+
+	[requirements] 
+		# required blocks (with version)
+		Maria/oscpack: 0 @v1.1.0
+
+
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
 
 
@@ -184,3 +273,14 @@ Execute ``bii deps`` to get all information related to biicode’s dependency sc
 
    <a href="mailto:info@biicode.com" target="_blank">write us</a>
 
+.. |libuv_0_11| raw:: html
+
+   <a href="http://www.biicode.com/lasote/lasote/libuv/v0.11" target="_blank">Libuv library v0.11</a>
+
+.. |libuv_0_10| raw:: html
+
+   <a href="http://www.biicode.com/lasote/lasote/libuv/v0.10" target="_blank">Libuv libary v0.10</a>
+
+.. |libuv_1_0| raw:: html
+
+   <a href="http://www.biicode.com/lasote/lasote/libuv/v0.10" target="_blank">Libuv library v1.0</a>
