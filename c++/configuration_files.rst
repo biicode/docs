@@ -13,5 +13,3 @@ Biicode offers you a set of configuration files across your projects and blocks.
    configuration_files/policies
    configuration_files/ignore
    configuration_files/types
-   configuration_files/virtual
-

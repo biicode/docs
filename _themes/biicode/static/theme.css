@@ -4721,6 +4721,21 @@ pre.literal-block:after
   padding:3px;
 }
 
+.breadcrumbs li span.pre {
+  display: inline;
+  float: none;
+  padding: 0px;
+}
+
+.breadcrumbs li tt{
+  margin-left: 10px;
+  padding-top: 0px;
+}
+
+.breadcrumbs li tt span.pre {
+  
+}
+
 .breadcrumbs li a:first-child
 {
   padding-left:0;

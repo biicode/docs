@@ -1,6 +1,6 @@
 .. _settings_bii:
 
-``settings.bii``: defining your tools and preferences
+**settings.bii**: defining your tools and preferences
 ======================================================
 
 The ``settings.bii`` file defines your preferred tools and specific configurations for one given project. This file is created when you create a new project, inside the ``bii`` folder, as you can see in the examples in the :ref:`layouts section <project_layout>`.

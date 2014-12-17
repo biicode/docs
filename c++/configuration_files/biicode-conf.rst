@@ -1,6 +1,6 @@
 .. _biicode_conf:
 
-``biicode.conf``
+**biicode.conf**
 ================
 
 **biicode.conf** is configuration file to --wait for it-- configurate your biicode projects.
@@ -316,3 +316,5 @@ es algo que queremos evitar, pero que para el codigo de la gente que ya existe v
     # image.cpp + image.jpg  # code should write open("user/block/image.jpg")
 
 Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
+
+
