@@ -25,6 +25,11 @@ CMakeLists.txt
 
 ``bii cpp:configure`` command or ``bii cpp:build`` (which calls configure first), will generate all the build layout including your ``CMakeLists.txt`` file/s (one per block).
 
+.. container:: infonote
+     
+     Use ``bii clean`` command to restore most of your project's meta-information. Here's more about :ref:`bii clean command<biiclean>`.
+
+
 ``CMakeLists.txt`` is generated in the root directory of your block (or blocks) that you have in your biicode project.
 
 ``CMakeLists.txt`` has 2 useful lines by default (stripping out comments):

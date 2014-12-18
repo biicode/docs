@@ -21,10 +21,8 @@ Choose yours, and tell biicode to configure your project for that IDE:
 ``bii cpp:configure`` admits any CMake directives. Your latest configuration is stored in your project's ``settings.bii`` file as the default settings for that project. 
 
 .. container:: infonote
-
      
-     ``bii clean`` command restores your project's settings to MinGW Makefiles (Windows) or UNIX Makefiles (MacOS and Linux) and no IDE. 
-
+     ``bii clean`` command restores your project's settings to Visual Studio (Windows) or UNIX Makefiles with no IDE (MacOS and Linux). Here's more about :ref:`bii clean command<biiclean>`.
 
 .. _ide_eclipse:
 
