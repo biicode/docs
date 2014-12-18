@@ -9,7 +9,7 @@ Biicode offers you a set of configuration files across your projects and blocks.
    :maxdepth: 2
 
    configuration_files/biicode-conf
-   configuration_files/settings
    configuration_files/policies
    configuration_files/ignore
+   configuration_files/settings
    configuration_files/types

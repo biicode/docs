@@ -1,6 +1,6 @@
 .. _policies:
 
-**policies.bii**: defining the policies of the code you want to reuse
+**policies.bii**: defining the policies for the code you want to reuse
 ======================================================================
 
 Policies are just **rules the smart finder applies when finding or updating external dependencies.** They can be configured in *your_project/bii/policies.bii*
@@ -92,7 +92,7 @@ If you check the output after running the code:
 	...
 	Hello STABLE
 
-Examining the ``tutorial/policyadvanced`` block in biicode (`available in this location <https://www.biicode.com/tutorial/policyadvanced>`_), we find four published versions with different tags:
+``tutorial/policyadvanced`` block in biicode (`available in this location <https://www.biicode.com/tutorial/policyadvanced>`_), has four published versions with different tags:
 
 .. raw:: html
 
