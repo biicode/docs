@@ -36,22 +36,10 @@ Find compatible downgrades:
 
 	$ bii find --downgrade
 
-These options can be combined:
-
-.. code-block:: bash
-
-	$ bii find --update --downgrade
-
-If you want to find any possible matching compatible version (not just updates or downgrades from your current one), type:
-
-.. code-block:: bash
-
-	$ bii find --modify
-	
 
 **Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_
 
 .. container:: todo
 
-	* Visit the section: :ref:`[requirements] <requirements_conf>`
+	* Visit :ref:`[requirements] <requirements_conf>` section.
 
