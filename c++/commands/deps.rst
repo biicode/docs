@@ -70,7 +70,7 @@ Use *bii deps -- files* but to show the origin files where dependencies are used
 bii deps --detail [FILTER]
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can enter a filter to see something specific. For example, you can see just a file or a dependency with its origins:
+Enter a filter to see something specific. For example, you can see just a file or a dependency with its origins:
 
 .. code-block:: bash
 
