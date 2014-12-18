@@ -20,14 +20,14 @@ Execute ``bii user`` to show the current user. **Note**: It can be None (anonymo
 	INFO: Current user: None (anonymous)
 
 
-Once registered on `our website <https://www.biicode.com/>` you can use your user name:
+Make sure you've got an `user name <https://www.biicode.com/>` and use it:
 
 .. code-block:: bash
 
 	$ bii user phil
 	INFO: Change user from None to phil
 
-To enter it together with your password:
+You can enter it together with your password:
 
 .. code-block:: bash
 

@@ -1,4 +1,4 @@
-.. _bii_merge_command:
+.. _bii_update_command:
 
 ``bii update``: update a block
 ===============================

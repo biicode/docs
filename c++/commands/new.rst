@@ -4,11 +4,15 @@
 ``bii new``: creates new blocks
 ---------------------------------
 
-This is the command that **creates new block inside your project**. It must be invoked inside a biicode project folder, and **receives as the only parameter the name of the block to be created**. You can see :ref:`this basic 'hello world' example <cpp_getting_started>` to see how a typical block is created.
+``bii new`` command **creates new biicode block inside your project**. Use it inside a biicode project folder like this:
 
 .. code-block:: bash
 
 	$ bii new USER_NAME/BLOCK_NAME
+
+
+You can see :ref:`this basic 'hello world' example <cpp_getting_started>` to see how a typical block is created.
+
 
 The ``bii new <user_name/block_name>`` command creates new folders within with your username and the name of the block in blocks folder.
 
