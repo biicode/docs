@@ -1,6 +1,6 @@
 .. _bii_init_command:
 
-``bii init``: creates a new project
+**bii init**: creates a new project
 ------------------------------------
 
 Use ``bii init`` command to **create new project**. 
