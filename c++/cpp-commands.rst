@@ -1,25 +1,27 @@
 .. _bii_cpp_tools:
 
 
-``bii cpp:configure``: configure your project
+**bii cpp:configure**: configure your project
 ---------------------------------------------
 
-This command calls to ``bii work`` to analyze your project and process dependencies, then creates
-or update the required project CMake files. You can pass parameters to it in order to define for
-example which CMake generator you want to use. Once the CMake files are created, this command is
-basically a ``cmake .`` invocation within the project ``build`` folder.
+This command calls ``bii work`` command to analyze your project and process dependencies, then creates or updates the required project CMake files. You can use it to specify which CMake generator you want to use. 
 
-One of the things you can specify to ``bii cpp:configure`` is the generator to be used by cmake, 
-including also which IDE to use. That will be explained in next section.
+This command accepts all CMake directives, you could say this command is basically a ``cmake .`` invocation within the project ``build`` folder.
 
+Use ``bii cpp:configure`` to :ref:`configure a project for your IDE<generators_ide>`.
+
+
+.. container:: infonote
+     
+     ``bii clean`` command restores your project's minimum settings, here's more about :ref:`bii clean command<biiclean>`.
 
 Passing variables to cmake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can define a variable in your CMakeLists.txt and pass the value from command line.
-To do this, just pass the value as a parameter of cpp:configure.
+To do this, just pass the value as a parameter of ``bii cpp:configure``.
 
-Imagine you have defined a variable name FOO in your CMakeList.txt and you want to define it with TRUE or FALSE.
+Imagine you have defined a variable name FOO in your ``CMakeList.txt`` and you want to define it with TRUE or FALSE.
 
 .. code-block:: cmake
 
@@ -41,7 +43,7 @@ Define the value of ``FOO`` with the flag ``-DFOO=TRUE`` or ``-DFOO=FALSE``:
 bii cpp:configure -G "VERSIONDE VISUAL1 AQUÍ" -DCMAKE_BUILD_TYPE=Debug
 
 
-``bii cpp:build``: build your project
+**bii cpp:build**: build your project
 -------------------------------------
 
 This command invokes the C++ compiler to build your project.

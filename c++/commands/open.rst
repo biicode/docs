@@ -3,7 +3,7 @@
 **bii open**: edit published blocks
 =========================================
 
-Use ``bii open``command to use and edit any published block locally.
+Use ``bii open`` command to use and edit any published block locally.
 
 You can use this command to edit **any block** you've seen on the web and you want to edit.
 Just create a new project and once in it, open the block:
