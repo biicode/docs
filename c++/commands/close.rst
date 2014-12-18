@@ -1,9 +1,10 @@
 .. _bii_close_command:
 
-``bii close``: finish editing published blocks
+**bii close**: finish editing published blocks
 -----------------------------------------------
 
-You can use ``bii close <block_name>`` command to close a block under edition in ``blocks``, i.e., a block that you have done a ``bii open`` and have be editing it. If it's a dependency of any block yours, moves it to ``deps`` folder.
+You can use ``bii close <username/block_name>`` command to close a block under edition in ``blocks``.
+Usually, to close a block you've ``bii open`` to edit. 
 
 .. code-block:: bash
 

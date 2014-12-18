@@ -1,6 +1,6 @@
 .. _biiclean:
 
-bii clean``: delete meta-information
+**bii clean**: delete meta-information
 ------------------------------------------
 
 ``bii clean`` command cleans most of biicode internal project meta-information, keeping the  minimum required to reconstruct everything in a subsequent command.

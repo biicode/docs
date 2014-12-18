@@ -1,15 +1,19 @@
 
 .. _bii_deps_command:
 
-``bii deps``: show block dependencies
+**bii deps**: show block dependencies
 --------------------------------------
 
-This command allows you to check the dependencies of any project. It's basic form, with no parameters, provides two pieces of information, giving you a general idea of which are your code dependencies. You can use several arguments and filters.
+``bii deps`` checks your project's dependencies. It gives a general idea of which are your code's depenencies. You can use several arguments and filters.
 
-bii deps
-^^^^^^^^^^
+.. code-block:: bash
 
-It shows the files that your blocks depend on (with block versions where they are located), and, system and unresolved dependencies respectively.
+	$ bii deps
+
+
+bii deps 
+^^^^^^^^^
+Show the files your blocks depend on (with their corresponding blocks and versions), also shows system and unresolved dependencies:
 
 .. code-block:: bash
 
@@ -26,7 +30,7 @@ It shows the files that your blocks depend on (with block versions where they ar
 	    system:
 	        stdio
 
-If you'd wish to see only one block, simply choose it:
+Include the name of an specific block to see only that block's dependencies:
 
 .. code-block:: bash
 	
@@ -40,7 +44,7 @@ If you'd wish to see only one block, simply choose it:
 bii deps --detail
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-It's so similar to *bii deps* but it shows the origin files where the dependencies are used.
+Use *bii deps -- files* but to show the origin files where dependencies are used.
 
 .. code-block:: bash
 
@@ -66,7 +70,7 @@ It's so similar to *bii deps* but it shows the origin files where the dependenci
 bii deps --detail [FILTER]
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can enter a filter, i.e., you could see only a file or a dependency with its origins
+You can enter a filter to see something specific. For example, you can see just a file or a dependency with its origins:
 
 .. code-block:: bash
 
@@ -84,7 +88,7 @@ You can enter a filter, i.e., you could see only a file or a dependency with its
 bii deps --files
 ^^^^^^^^^^^^^^^^^^
 
-It's used to know all the block files (and their types) and their dependencies.
+Use ``bii deps --files`` to know all block files (together with their types) and their dependencies.
 
 .. code-block:: bash
 
