@@ -1,17 +1,26 @@
 .. _bii_open_command:
 
-``bii open``: edit published blocks
+**bii open**: edit published blocks
 =========================================
 
-This command allows you to edit a published block.
-You can use this command to edit one of your dependency blocks or **any block** you've seen on the web and you want to edit.
-When you invoke this command the block is placed into the ``blocks`` folder within your project, and the source files that can be modified by you and eventually published in a new version of the same block or into a new block. If you are updating or creating a code block from another service, check the :ref:`integration guide<integration>` to know how to proceed.
+Use ``bii open``command to use and edit any published block locally.
 
+You can use this command to edit **any block** you've seen on the web and you want to edit.
+Just create a new project and once in it, open the block:
 
 .. code-block:: bash
 
 	  $ bii init myproject
 	  $ cd myproject
 	  ~/myproject$ bii open USER_NAME/BLOCK_NAME
+
+
+You can find the block you just opened in the ``blocks`` folder within your project.
+
+Take a look at :ref:`Workflows<cpp_workflows>` section to learn how to modifify its source files and publish a new version.
+
+If you are updating or creating a block from another service, check the :ref:`integration guide<integration>` to know how to proceed.
+
+
 
 
