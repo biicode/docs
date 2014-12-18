@@ -8,7 +8,9 @@ This command calls ``bii work`` command to analyze your project and process depe
 
 This command accepts all CMake directives, you could say this command is basically a ``cmake .`` invocation within the project ``build`` folder.
 
-Use ``bii cpp:configure`` to :ref:`configure a project for your IDE<generators_ide>`.
+* Use ``bii cpp:configure`` to :ref:`configure a project for your IDE<generators_ide>`.
+
+* You can also :ref:`delve into specifics about building with biicode.<cpp_building>`
 
 
 .. container:: infonote
@@ -39,8 +41,6 @@ Define the value of ``FOO`` with the flag ``-DFOO=TRUE`` or ``-DFOO=FALSE``:
    Running: cmake  -G "MinGW Makefiles" -Wno-dev -DFOO=TRUE ../cmake
 
    FOO Enabled!!
-
-bii cpp:configure -G "VERSIONDE VISUAL1 AQUÍ" -DCMAKE_BUILD_TYPE=Debug
 
 
 **bii cpp:build**: build your project
