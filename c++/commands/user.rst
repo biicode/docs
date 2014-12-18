@@ -1,9 +1,9 @@
 .. _bii_user_command:
 
-``bii user``: specify your username
+**bii user**: specify your username
 ------------------------------------
 
-Shows or changes your current biicode user.
+Show or change your current biicode user.
 
 **A quick tip:** Run ``bii user your_username`` before getting started, this way biicode knows you’re the one winning a badge.
 
