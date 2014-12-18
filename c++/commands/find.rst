@@ -2,10 +2,12 @@
 
 .. _bii_find_command:
 
-``bii find``: find your external dependencies
+**bii find**: find your external dependencies
 =============================================
 
-This commands allows you to retrieve any code dependencies from the biicode servers. The client analyzes your code, and find missing dependencies that cannot be resolved searching in your project contents. The client then communicates with the biicode server and tries to find code that is missing in your project, and retrieves the best matching version according with your :ref:`policies<policies>`.
+Retrieve any code dependencies from biicode's servers. 
+
+Biicode analyzes your code, and finds missing dependencies that cannot be resolved searching in your project contents. After that, biicode tries to find the code you need in our serves, and retrieves the best matching version according with your :ref:`policies.bii<policies>`.
 
 .. code-block:: bash
 
@@ -17,15 +19,18 @@ This commands allows you to retrieve any code dependencies from the biicode serv
 Update your dependencies
 ---------------------------
 
-If you want to update already defined dependencies (as well as finding unresolved ones in the same step):
+Update your dependencies and find new unresolved ones in one step:
 
 .. code-block:: bash
 
 	$ bii find --update
 
-Biicode uses user defined policies to resolve dependencies. The configuration file for configuring your policies for this is named "policies.bii" in your project "bii" folder. Note that all find commands depend on the values configured in such file. You can for example try to update your dependencies, but if there are no compatible versions that match your policies, you will not get such updates. E.g. a new ALPHA version for one of your dependencies will not be updated if you do not change your policy.
+Biicode uses :ref:`policies.bii<policies>` to resolve your dependencies. You can find ``policies.bii`` in your project's ``bii`` folder. 
 
-If you want to find compatible downgrades:
+**Note:** ``policies.bii`` defines the way ``bii find`` command retrieves dependencies. For example, if you only want STABLE versions and there's a newer DEV version, this version will only retrieved if you say so in your ``policies.bii``.
+
+
+Find compatible downgrades:
 
 .. code-block:: bash
 
