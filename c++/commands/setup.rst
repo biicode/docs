@@ -1,14 +1,14 @@
 .. _bii_setup_command:
 
-``bii setup``: install necessary tools
+**bii setup**: install necessary tools
 ========================================
 
-This command helps you to set up all the necessary tools to start to use biicode.
+This command helps you setting up all the tools necessary to start using biicode.
 
-CPP tools
+C++ tools
 ----------
 
-Setup for installing cpp third party tools
+Install C++ third party tools:
 
 .. code-block:: bash
 
@@ -16,19 +16,19 @@ Setup for installing cpp third party tools
 
 
 Arduino tools
-----------
+-------------
 
-Setup for installing cpp third party tools and Arduino SW
+Install C++ third party tools and Arduino SW:
 
 .. code-block:: bash
 
 	$ bii setup:arduino
 
 
-RPi tools
-----------
+Rasperry PI tools
+------------------
 
-Setup cross compiler tools for Raspberry Pi (must be linux)
+Install cross compiler tools for Raspberry Pi (Linux only):
 
 .. code-block:: bash
 
