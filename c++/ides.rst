@@ -3,7 +3,7 @@
 Generators and IDEs
 ===================
 
-Use CMake generators to **create biicode projects for many IDEs and platforms**. By default, biicode configures your projects with Visual Studio (Windows) and UNIX Makefiles with no IDE (MacOS and Linux).
+Use CMake generators to **create biicode projects for many IDEs and platforms**. By default, biicode configures your projects with no IDE and MinGW (Windows) and UNIX Makefiles (MacOS and Linux).
 
 Execute ``cmake --help`` to see the full list of CMake generators available in your system:
 
@@ -22,7 +22,7 @@ Choose yours, and tell biicode to configure your project for that IDE:
 
 .. container:: infonote
      
-     ``bii clean`` command restores your project's settings to Visual Studio (Windows) or UNIX Makefiles with no IDE (MacOS and Linux). Here's more about :ref:`bii clean command<biiclean>`.
+     ``bii clean`` command restores your project's settings to no IDE and MinGW (Windows) or UNIX Makefiles with no IDE (MacOS and Linux). Here's more about :ref:`bii clean command<biiclean>`.
 
 .. _ide_eclipse:
 
