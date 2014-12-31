@@ -53,6 +53,7 @@ This function initializes several variables that you can use to adapt the defaul
   + **${BII_LIB_TYPE}** Empty (default, STATIC most cases) STATIC or SHARED
   + **${BII_LIB_DEPS}** Dependencies to other libraries (user2_block2, user3_blockX)
   + **${BII_LIB_SYSTEM_HEADERS}** System linking requirements as windows.h, pthread.h, etc
+  + **${BII_exe_name_SRC}**  List of files belonging to an exe. "exe_name" has this pattern: **user_block_path_to_mainfile**. EX: For the block *lasote/game* if there is a main.cpp in a folder named "src" the variable will be: "BII_lasote_game_src_main_SRC"  
 
 After ``INIT_BIICODE_BLOCK()`` call, we can use, modify, or override the values of these variables. 
 
