@@ -221,6 +221,40 @@ To check your automatic installation open the Terminal and type ``bii setup:cpp`
     ...
 
 
+.. _proxy_configuration:
+
+Connect throught a proxy server
+--------------------------------
+
+Set an environment variable "HTTPS_PROXY" with your proxy server address.
+
+**Linux/OSx**: 
+
+.. code-block:: bash
+
+	export HTTPS_PROXY="http://user:pass@proxy_ip:port"
+
+
+.. container:: infonote
+
+    You need to export this variable whenever you open a new shell. Append previous line on ~/.bashrc file and it will be executed when a shell is opened.
+
+**Windows**:
+
+	1. From the Desktop, right-click the very bottom left corner of the screen to get the Power User Task Menu.
+	2. From the Power User Task Menu, click System.
+	3. Click the Advanced System Settings link in the left column.
+	4. In the System Properties window, click on the Advanced tab, then click the Environment Variables button near the bottom of that tab.
+	5. In the Environment Variables window, click "New" and add variable name HTTPS_PROXY and value "http://user:pass@proxy_ip:port"
+
+
+**Example**: If my proxy is on localhost (port 7775) and my user is "lasote" with password "mypp":
+
+.. code-block:: bash
+
+	export HTTPS_PROXY="http://lasote:mypp@localhost:7775"
+
+
 
 If you have any questions, we are available at |biicode_forum_link|. You can also |biicode_write_us| for suggestions and feedback.
 
