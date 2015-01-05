@@ -3,7 +3,7 @@
 Release notes
 =============
 
-**2.0.1** (17-Dic-201)
+**2.0.1** (17-Dic-2014)
 
 * Premium accounts to store code privately and share alike. 
 * New and simpler configuration in a single “biicode.conf” file, instead of several tiny files, and with more flexibility.
