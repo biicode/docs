@@ -3,6 +3,18 @@
 Release notes
 =============
 
+
+**2.1** (08-Jan-2015)
+
+* Fixed problem with biicode.conf [includes] of the form  block/file.h: username
+* Arduino automatic reset for certain boards, those using the "catarina" uploader (leonardo, yun)
+* bii open better handling of versions and tracks
+* upgraded cmake minimum required version to 3.0
+* fixed security issue of token not discarded after changing password
+* improved error messages when biicode.conf incorrect
+|
+
+
 **2.0.1** (17-Dic-2014)
 
 * Premium accounts to store code privately and share alike. 
