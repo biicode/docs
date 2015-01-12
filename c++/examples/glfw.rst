@@ -25,14 +25,21 @@ It is very simple. Create a **new project**, open the examples, build and run th
    
 .. container:: infonote
 
-    **Ubuntu users may need to install some additional software**
+   **Linux users may need to install some additional software**
 
    If you are using Ubuntu Linux, you may need to install some additional packages. To do so, execute:
 
    .. code-block:: bash
 
-      sudo apt-get install mesa-common-dev libglu1-mesa-dev libxi-dev 
-        
+      $ sudo apt-get install mesa-common-dev libglu1-mesa-dev libxi-dev 
+   
+   If you are in RH - Fedora, you may need to install:
+   
+   .. code-block:: bash
+
+      $ sudo yum install libGLU-devel libXrandr-devel libXinerama-devel libXcursor-devel libXi-devel
+   
+
 You should see in your screen:
    
 .. image:: /_static/img/c++/examples/glfw_particles.png
