@@ -12,6 +12,7 @@ Release notes
 * upgraded cmake minimum required version to 3.0
 * fixed security issue of token not discarded after changing password
 * improved error messages when biicode.conf incorrect
+* Website: Better block page header, reuses in Block requirements.
 |
 
 
