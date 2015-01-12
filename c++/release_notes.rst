@@ -4,7 +4,7 @@ Release notes
 =============
 
 
-**2.1** (08-Jan-2015)
+**2.1.1** (12-Jan-2015)
 
 * Fixed problem with biicode.conf [includes] of the form  block/file.h: username
 * Arduino automatic reset for certain boards, those using the "catarina" uploader (leonardo, yun)
