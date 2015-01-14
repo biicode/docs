@@ -424,6 +424,25 @@ Zip ``myproject`` folder and compile in other computer without biicode, just exe
 
 .. _custom_toolchains:
 
+
+
+Build type: Debug or Release
+----------------------------
+
+You can set the build type with -D option in ``bii cpp:configure`` command:
+
+
+.. code-block:: sh
+
+    $ bii cpp:configure -DCMAKE_BUILD_TYPE=DEBUG
+    $ bii cpp:build
+
+Possible values are: **DEBUG**, **RELEASE**, **RELWITHDEBINFO**, **MINSIZEREL**
+
+Check official docs from |cmake_build_type|.
+
+
+
 Using a custom tool-chain
 ------------------------
 
@@ -491,4 +510,9 @@ So people reusing your block can redefine the tokens as they need.
 .. |biicode_cmake_block| raw:: html
 
    <a href="https://www.biicode.com/biicode/cmake" target="_blank">cmake</a>
+
+.. |cmake_build_type| raw:: html
+
+   <a href="http://www.cmake.org/cmake/help/v3.0/variable/CMAKE_BUILD_TYPE.html" target="_blank"> CMake Build Type</a>
+
 
