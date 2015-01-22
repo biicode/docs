@@ -54,6 +54,8 @@ This function initializes several variables that you can use to adapt the defaul
   + **${BII_LIB_DEPS}** Dependencies to other libraries (user2_block2, user3_blockX)
   + **${BII_LIB_SYSTEM_HEADERS}** System linking requirements as windows.h, pthread.h, etc
   + **${BII_exe_name_SRC}**  List of files belonging to an exe. "exe_name" has this pattern: **path_to_mainfile**. EX: For the block *lasote/game* if there is a main.cpp in a folder named "src" the variable will be: "BII_src_main_SRC"  
+ + **${BII_BLOCK_EXES}**: List of targets that represent the executables (mains) defined in this block. If you want to prevent biicode to create an EXE target, remove first from this list.
+ If you want to prevent biicode to create an EXE target, remove first from this list.
 
 After ``INIT_BIICODE_BLOCK()`` call, we can use, modify, or override the values of these variables. 
 
@@ -94,7 +96,6 @@ This function creates the following variables:
     + **${BII_BLOCK_TARGET}**: CMake **Interface** that represents the whole block. Always exists and is applied both library and executables (each target). You can use it to configure block building configuration: Link libraries, compile flags...etc 
     + **${BII_LIB_TARGET}**: Target library name, usually in the form "user_block". May not exist if BII_LIB_SRC is empty, so use *${BII_BLOCK_TARGET}* as a general rule. 
     + **${BII_BLOCK_TARGETS}**: List of all targets defined in this block
-    + **${BII_BLOCK_EXES}**: List of targets that represent the executables (mains) defined in this block.
     + **${BII_exe_name_TARGET}**: Executable target (listed in ${BII_BLOCK_EXES}) (e.g. ${BII_main_TARGET}. You can also use directly the name of the executable target (e.g. user_block_main)
 
 - **EXAMPLE**: Add include directories to all targets of this block.
