@@ -55,7 +55,6 @@ This function initializes several variables that you can use to adapt the defaul
   + **${BII_LIB_SYSTEM_HEADERS}** System linking requirements as windows.h, pthread.h, etc
   + **${BII_exe_name_SRC}**  List of files belonging to an exe. "exe_name" has this pattern: **path_to_mainfile**. EX: For the block *lasote/game* if there is a main.cpp in a folder named "src" the variable will be: "BII_src_main_SRC"  
   + **${BII_BLOCK_EXES}**: List of targets that represent the executables (mains) defined in this block. If you want to prevent biicode to create an EXE target, remove first from this list.
- If you want to prevent biicode to create an EXE target, remove first from this list.
 
 After ``INIT_BIICODE_BLOCK()`` call, we can use, modify, or override the values of these variables. 
 
