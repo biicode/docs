@@ -27,7 +27,7 @@ AppVeyor
 
 |appveyor_homepage| provides Continuous Integration and Deploy for Windows and it's compatible with both GitHub and BitBucket. Place an ``appveyor.ymĺ`` file in your repo and each time you push to your Github repository it will kick-off a new build in Windows, executing your tests and publishing this project to your biicode user account. 
 
-Here's an ``appveyor.yml`` example file to automatically publish your block to biicode, including your version tags: ::
+Login AppVeyor and clic on "+ NEW PROJECT" and choose the repo you want to deploy with AppVeyor. Create an ``appveyor.yml`` file in your local project to automatically publish your block to biicode, including your version tags, here's an example file: ::
 
    version: 1.0.{build}
 
@@ -84,7 +84,17 @@ Here's an ``appveyor.yml`` example file to automatically publish your block to b
      no_version:
        ""
 
-Just use your own ``test_script`` and ``environment`` values to start using it. You can see this live example here:
+Use your own ``test_script`` and ``environment`` values to start deploying with it. To generate an encrypted password with Appveyor go to your profile and choose Encrypt data, once there encrypt your password and copy the value generated to put it in your  environment ``secured_password: secure:``.
+
+What's going on the ``appveyor.yml`` file?
+
+   * ``install:`` This part installs all tools required to deploy your biicode projects in AppVeyor.
+   * ``before_build:`` Moves your project's files into the biicode project and configures it to use Visual Studio 12 via ``bii cpp:configure``.  Check biicode docs and  your project's settings in Appveyor to use other build configurations. **Also note** that there's a commented line here you should also write if your project contains folders.
+   * ``test_script:`` cd bin and execute your project. Ensure about your project's executable, build and execute it locally with  ``bii cpp:build``.
+   * ``deploy_script:`` This script publishes your block to biicode, including your version tag only when it's tagged.
+   * ``environment:`` Replace all environment variables here with your values: project_name, tag, default version tag value... To generate an encrypted password with Appveyor go to your profile and choose Encrypt data:
+
+You can see this live example here:
 
 * |github_appveyor_parser| in GitHub
 * |appveyor_build_parser| in AppVeyor
