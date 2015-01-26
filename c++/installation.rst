@@ -70,6 +70,11 @@ Use the ``apt-get`` program to install biicode through the APT repository:
         wget http://apt.biicode.com/install.sh && chmod +x install.sh && ./install.sh
 
 
+    .. container:: infonote
+
+        Execute ``bii setup:cpp`` to make sure you've got all tools required.
+
+
     Step by step install:
 
     .. code-block:: bash
@@ -97,6 +102,10 @@ Use the ``apt-get`` program to install biicode through the APT repository:
             
         # 4. Execute apt-get install: 
         sudo apt-get -y install biicode
+
+        .. container:: infonote
+
+        Execute ``bii setup:cpp`` to make sure you've got all tools required.
         
 
 .. _alternative_install_archlinux:
