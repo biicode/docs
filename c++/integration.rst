@@ -22,11 +22,80 @@ Biicode has some commands similar to VCS management but we recommend greatly to 
 	~/mygitproject/blocks/myusername$ git clone your_repository
 	~/mygitproject/blocks/myusername$ bii cpp:build
 
+AppVeyor
+---------
+
+|appveyor_homepage| provides Continuous Integration and Deploy for Windows and it's compatible with both GitHub and BitBucket. Place an ``appveyor.ymĺ`` file in your repo and each time you push to your Github repository it will kick-off a new build in Windows, executing your tests and publishing this project to your biicode user account. 
+
+Here's an ``appveyor.yml`` example file to automatically publish your block to biicode, including your version tags: ::
+
+   version: 1.0.{build}
+
+   install:
+     - ps: wget https://s3.amazonaws.com/biibinaries/thirdparty/cmake-3.0.2-win32-x86.zip -OutFile cmake.zip
+     - cmd: echo "Unzipping cmake..."
+     - cmd: 7z x cmake.zip -o"C:\Program Files (x86)\" -y > nul
+     - cmd: set PATH=%PATH:CMake 2.8\bin=%;C:\Program Files (x86)\cmake-3.0.2-win32-x86\bin
+     - cmd: cmake --version
+     - cmd: echo "Downloading biicode..."
+     - ps: wget http://www.biicode.com/downloads/latest/win -OutFile bii-win.exe
+     - cmd: bii-win.exe /VERYSILENT
+     - cmd: set PATH=%PATH%;C:\Program Files (x86)\BiiCode\bii
+     - cmd: bii -v
+     - cmd: del bii-win.exe
+     - cmd: del cmake.zip
+
+   before_build:
+     - cmd: bii init %project_name%
+     - cmd: cd %project_name%
+     - cmd: bii new %block_user%/%block_name%
+       # move the files
+     - cmd: for %%i in (../*) do if %%i NEQ "%project_name%" move "..\%%i" blocks\%block_user%\%block_name%\
+     # move the directories -> there are none in this repo:
+     # cmd: for /d %%i in (../*) do if %%i NEQ "%project_name%" move "..\%%i" blocks\%block_user%\%block_name%\
+     - cmd: bii cpp:configure -G "Visual Studio 12"
+
+   build_script:
+     - cmd: bii cpp:build
+
+   test_script:
+     - cmd: cd bin
+     - cmd: amalulla_cpp-expression-parser_test-shunting-yard.exe
+
+   # to run your custom scripts instead of provider deployments
+   deploy_script:
+     - if defined APPVEYOR_REPO_TAG_NAME set VERSION=%APPVEYOR_REPO_TAG_NAME%
+     - echo "Building tagged release %VERSION%"
+     - if not defined APPVEYOR_REPO_TAG_NAME set VERSION=%no_version%
+     - cmd: bii user %block_user% -p %secured_passwd%
+     - cmd: bii publish --tag=%tag% --versiontag=%VERSION% #|| dir # Ignore output
+
+   environment:
+     project_name:
+       "myproject"
+     block_user:
+       "amalulla"
+     block_name:
+       "cpp-expression-parser"
+     secured_passwd:
+       secure: ZMvgETfLAUo7kISnvrinBA==
+     tag:
+       "STABLE"
+     no_version:
+       ""
+
+Just use your own ``test_script`` and ``environment`` values to start using it. You can see this live example here:
+
+* |github_appveyor_parser| in GitHub
+* |appveyor_build_parser| in AppVeyor
+* |biicode_block_parser| with its automatically published releases
+
+Learn more about AppVeyor visiting their `docs <http://www.appveyor.com/docs>`_.
 
 Travis CI
 ---------
 
-|travis_homepage| takes care of running your tests and deploying your apps. Like we work with VCS, many of the blocks published in our web have their ``.travis.yml`` files, that it lets us to make a push to our GitHub repository, and automatically build, execute and publish this project with your biicode user account thanks to this excellent service.
+|travis_homepage| takes care of running your tests and deploying your apps. Like we work with VCS, many of the blocks published in our web have their ``.travis.yml`` files, that lets us pushing to our GitHub repository, and automatically build in Linux, execute and publish this project with your biicode user account thanks to this excellent service.
 
 If you're working with it, the ``.travis.yml`` file format will help you to get automatic publications in your biicode account, in this case, with DEV tag: ::
 
@@ -66,7 +135,7 @@ To learn more about Travis using C++ language, visit its `documentation <http://
 
 .. container:: infonote
 
-   Here's how to `automatically build and publish via Travis CI and Github  <http://blog.biicode.com/automatically-build-publish-via-travis-ci-github/>`_.
+   Here's how to `automatically build and publish via Travis CI and Github  <http://blog.biicode.com/automatically-build-publish-via-travis-ci-github/>`_. You can also `deploy directly with biicode <http://docs.travis-ci.com/user/deployment/biicode/>`_. 
 
 
 Koding
@@ -83,6 +152,9 @@ If you're signed here and you wish to use biicode in your VMs, then execute:
 
 Then, you'd ready to start using biicode and building all the projects you wish.
 
+.. |appveyor_homepage| raw:: html
+
+   <a href="https://ci.appveyor.com/" target="_blank">AppVeyor</a>
 
 .. |github_homepage| raw:: html
 
@@ -100,6 +172,17 @@ Then, you'd ready to start using biicode and building all the projects you wish.
 
    <a href="https://koding.com/Home" target="_blank">Koding</a>
 
+.. |github_appveyor_parser| raw:: html
+   
+   <a href="https://github.com/MariadeAnton/cpp-expression-parser" target="_blank">Forked cpp-expresion-parser repo</a>
+
+.. |appveyor_build_parser| raw:: html
+
+   <a title="appveyor build cpp-expression-parser" href="https://ci.appveyor.com/project/MariadeAnton/cpp-expression-parser" target="_blank">cpp-expression-parser builds</a>
+
+.. |biicode_block_parser| raw:: html
+
+   <a href="http://www.biicode.com/amalulla/cpp-expression-parser" target="_blank">cpp-expression parser biicode block</a> 
 
 
 **Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_
