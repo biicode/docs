@@ -103,9 +103,8 @@ Use the ``apt-get`` program to install biicode through the APT repository:
         # 4. Execute apt-get install: 
         sudo apt-get -y install biicode
 
-        .. container:: infonote
-
-        Execute ``bii setup:cpp`` to make sure you've got all tools required.
+        # 5. Execute bii setup:cpp to make sure you've got all tools required.
+        bii setup:cpp
         
 
 .. _alternative_install_archlinux:

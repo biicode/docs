@@ -21,7 +21,7 @@ Build your first C/C++ program and run a unit test using the |google_test_link| 
 
 Building and running a program
 -------------------------------
-Make sure :ref:`biicode is installed<first_steps>`.
+Make sure :ref:`biicode is installed<first_steps>`. Execute ``bii setup:cpp`` to ensure you've got all tools required.
 
 Create a project
 ^^^^^^^^^^^^^^^^
