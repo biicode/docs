@@ -92,7 +92,7 @@ What's going on the ``appveyor.yml`` file?
    * ``before_build:`` Moves your project's files into the biicode project and configures it to use Visual Studio 12 via ``bii cpp:configure``.  Check biicode docs and  your project's settings in Appveyor to use other build configurations. **Also note** that there's a commented line here you should also write if your project contains folders.
    * ``test_script:`` cd bin and execute your project. Ensure about your project's executable, build and execute it locally with  ``bii cpp:build``.
    * ``deploy_script:`` This script publishes your block to biicode, including your version tag only when it's tagged.
-   * ``environment:`` Replace all environment variables here with your values: project_name, tag, default version tag value... To generate an encrypted password with Appveyor go to your profile and choose Encrypt data:
+   * ``environment:`` Replace all environment variables here with your values: project_name, tag, default version tag value... To generate an encrypted password with Appveyor go to your profile>Encrypt data.
 
 You can see this live example here:
 
