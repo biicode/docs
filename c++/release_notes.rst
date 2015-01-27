@@ -7,7 +7,7 @@ Release notes
 **2.2** (27-Jan-2015)
 
 * Fixed errors with local cache and DEV version updates.
-* Web: New biicode badges from block settings.
+* Web: New biicode badges.
 
 
 **2.1.1** (12-Jan-2015)
