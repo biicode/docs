@@ -13,7 +13,7 @@ Build your first C/C++ program and run a unit test using the |google_test_link| 
 
 .. |google_test_biicode_link| raw:: html
 
-   <a href="https://www.biicode.com/google/gtest target="_blank">GTest is already in biicode!</a>
+   <a href="https://www.biicode.com/google/gtest" target="_blank">GTest is already in biicode!</a>
 
 
 
