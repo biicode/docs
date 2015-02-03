@@ -195,7 +195,7 @@ Follow these steps if something failed during the automatic installation explain
 
            .. image:: /_static/img/cpp_windows_path.png
 
-        Add your tools binaries folders (i.e. ``C:\MinGW\bin`` gor MiGW, and ``C:\Program Files (x86)\CMake 2.8\bin`` for CMake).
+        Add your tools binaries folders (i.e. ``C:\MinGW\bin`` gor MiGW, and ``C:\Program Files (x86)\CMake\bin`` for CMake).
 
         You might need to close and open again any ``cmd`` windows in order to load the new value for the ``PATH`` variable.
 

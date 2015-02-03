@@ -21,10 +21,10 @@ Tag's default value is ``DEV``, but all Release life-cycle TAG values are availa
 
 * Publish a ``DEV`` version. That's number ``0``.
 * Publish a ``DEV`` version. That's still number ``0``.
-* Publish a ``BETA`` version. That's number ``1``.
-* Publish a ``DEV`` version. That's number ``2``.
-* Publish a ``ALPHA`` version. That's number ``2``.
-* Publish a ``STABLE`` version. That's number ``3``.
+* Publish a ``BETA`` version. That's number ``0``.
+* Publish a ``DEV`` version. That's number ``1``.
+* Publish a ``ALPHA`` version. That's number ``1``.
+* Publish a ``STABLE`` version. That's number ``2``.
 
 
 Tag a version
@@ -59,16 +59,22 @@ Write the track name between brackets in the ``[parent]`` section of the **biico
 	[parent]
   		myuser/myblock(track1): -1
 
-with a real example:
+Now you have configured a track of your block.
+
+In case you need a personalized fix over the original library from other user, just indicate it in the ``[parent]`` section like this:
 
 *biicode.conf*
 
 .. code-block:: text
 
 	[parent]
-  		lasote/libuv(v1.0): -1
+  		lasote/libuv(myuser/track1): -1
+
+This way, you have configured a track of other user whitout changing *includes*.
 
 Execute ``bii publish`` and enter your profile *www.biicode.com/myuser* to check the new track. 
+
+If you want to read a bit more about how tracks works, visit our post in the blog about |biicode_blog_blocktracks|.
 
 Private blocks
 --------------
@@ -89,4 +95,8 @@ Create private blocks in our web page. Just press **Add block button** and choos
 .. |biicode_write_us| raw:: html
 
    <a href="mailto:info@biicode.com" target="_blank">write us</a>
+
+.. |biicode_blog_blocktracks| raw:: html
+
+   <a href="http://blog.biicode.com/new-feature-block-tracks/" target="_blank">block traks</a>
 
