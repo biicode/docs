@@ -84,11 +84,11 @@ Create a ``main.cpp`` file which includes the block ``policyadvanced`` to use th
 	   return 1;
 	}
 
-If you check the output after running the code:
+If you build your project and run it (look for the executable on the /bin folder of your project), check the output:
 
 .. code-block:: bash
 
-	$ bii cpp:run
+	$ bii cpp:build
 	...
 	Hello STABLE
 
@@ -219,11 +219,11 @@ You have just modified your default policy file. Now, you only need to update yo
 	Computing dependencies
 	Saving dependences on disk
 
-Now, you can run your code:
+Now, you can build your block and run it (as before, look for the executable in the /bin folder of your project):
 
 .. code-block:: bash
 
-	$ bii cpp:run
+	$ bii cpp:build
 	...
 	Hello BETA
 
@@ -240,13 +240,13 @@ Finally, you could look for by published order with your tags. For example, if y
 
 This type will look for any blocks with any tag published before ``DEV`` version block uploaded to biicode.
 
-Update the dependencies again and run the code:
+Update the dependencies again, build your block and run the code:
 
 .. code-block:: bash
 
 	$ bii find --update
 	...
-	$ bii cpp:run
+	$ bii cpp:build
 	...
 	Hello ALPHA
 
@@ -261,13 +261,13 @@ Modify your ``policies.bii`` file again to get the last version (in this example
 	  version: tag==DEV
 	  priority: 1
 
-Once more find the dependencies and execute your code:
+Once more find the dependencies, build and execute your code:
 
 .. code-block:: bash
 
 	$ bii find --update
 	...
-	$ bii cpp:run
+	$ bii cpp:build
 	...
 	Hello DEVELOP
 
