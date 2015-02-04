@@ -74,7 +74,7 @@ This way, you have configured a track of other user whitout changing *includes*.
 
 Execute ``bii publish`` and enter your profile *www.biicode.com/myuser* to check the new track. 
 
-If you want to read a bit more about how *tracks* works, visit our post in the blog about |biicode_blog_blocktracks|.
+Read a bit more about how *tracks* work, visit our post in the blog about |biicode_blog_blocktracks|.
 
 Private blocks
 --------------
