@@ -97,7 +97,7 @@ Follow these steps if something failed during the automatic installation explain
 
            .. image:: /_static/img/cpp_windows_path.png
 
-        Add CMake binaries folders (i.e. ``C:\Program Files (x86)\CMake 2.8\bin``).
+        Add CMake binaries folders (i.e. ``C:\Program Files (x86)\CMake\bin``).
 
         You might need to close and open again any ``cmd`` windows in order to load the new value for the ``PATH`` variable.
 
