@@ -27,7 +27,7 @@ We will first create a project and open the protocol buffers block:
 This will build the Protocol Buffers compiler (protoc or protoc.exe). Note that this is an optional
 step, you can of course download manually this binary from the web.
 
-Lets open now the examples block.vAs usual you can also create an empty block and copy-paste your files there.
+Lets open now the examples block. As usual you can also create an empty block and copy-paste your files there.
 We can also close the google/protobuf block, we have already compiled the "protoc" application,
 and we no longer need it (it will be partly used as a dependency).
 
