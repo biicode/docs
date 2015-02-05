@@ -19,7 +19,28 @@ You can check all the flatbuffers examples which are uploaded in biicode and exe
    ~/flatb_sample$ bii open examples/flatbuffers
    ~/flatb_sample$ bii cpp:build
 
-Now, you could charge the file "monster.fbs" and generate a C++ header for tables/structs:
+.. container:: infonote
+
+   **MinGW compiler bug**
+
+   MinGW users may need to edit *io.h* to avoid building errors. Look for **MinGW/include/io.h** and replace lines 301 and 302:
+
+   .. code-block:: cpp
+
+      __CRT_INLINE off64_t lseek64 (int, off64_t, int);
+      __CRT_INLINE off64_t lseek64 (int fd, off64_t offset, int whence)
+
+   with
+
+   .. code-block:: cpp
+
+      __CRT_INLINE _off64_t lseek64 (int, _off64_t, int);
+      __CRT_INLINE _off64_t lseek64 (int fd, _off64_t offset, int whence)
+
+
+      
+
+Now, you can charge the file "monster.fbs" and generate a C++ header for tables/structs:
 
 .. code-block:: bash
 
