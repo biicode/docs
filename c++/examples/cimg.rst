@@ -57,7 +57,7 @@ If you are directly depending to CImg (using the **#include "tschumperle/cimg/CI
 Usage example: Tron game
 ----------------------------------
 
-This example is extracted from `examples/cimg/tron.cpp<http://www.biicode.com/examples/cimg>`_
+This example is extracted from `examples/cimg/tron.cpp <http://www.biicode.com/examples/cimg>`_.
 It's a classic Tron game and shows how to load and manipulate images with Cimg library in a simple way.
 
 Simply open the examples/cimg block:
