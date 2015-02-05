@@ -40,7 +40,7 @@ You can check all the flatbuffers examples which are uploaded in biicode and exe
 
       
 
-Now, you could charge the file "monster.fbs" and generate a C++ header for tables/structs:
+Now, you can charge the file "monster.fbs" and generate a C++ header for tables/structs:
 
 .. code-block:: bash
 
