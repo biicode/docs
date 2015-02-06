@@ -12,7 +12,7 @@ from this `github repo <https://github.com/davidsanfal/tinythread>`_
 Open and build the examples
 ---------------------------
 
-This example is `already in biicode <http://www.biicode.com/examples/tinytread>`_,
+This example is `already in biicode <http://www.biicode.com/examples/tinythread>`_,
 it is very simple to build it, by just opening the block and building it.
 
 .. code-block:: bash
