@@ -11,7 +11,7 @@ The `source files <https://github.com/biicode/challenge>`_ have dependencies to 
 * `CSparse  <http://www.cise.ufl.edu/research/sparse/CSparse/>`_ is very simple, just a \*.h and some \*.c files
 * `Google GTest <https://code.google.com/p/googletest/>`_ is also very portable, independent and prepared to be integrated in other projects.
 
-The challenge consists in building and runing the code, in three different platforms: Windows, Linux and Mac. Try solving it by your own means, and then solve the problem with biicode. You'll see how much easier and natural it is!
+The challenge consists in building and running the code, in three different platforms: Windows, Linux and Mac. Try solving it by your own means, and then solve the problem with biicode. You'll see how much easier and natural it is!
 
 In this section we explain, step by step, how to solve this challenge with the help of biicode.
 

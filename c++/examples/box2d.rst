@@ -4,7 +4,7 @@
 Box2D
 =====
 
-|box2d_homepage| is an open source C++ engine to simulate rigid bodies in 2D, it is also, AngryBirds motor engine. You can check |wiki_box2d|. 
+|box2d_homepage| is an open source C++ engine to simulate rigid bodies in 2D, it is also, AngryBirds' motor engine. You can check |wiki_box2d|. 
 
 The main block is |bii_box2d|, which is generated from this |fork_box2d|.
 
@@ -123,7 +123,7 @@ Find your dependency to ``#include "erincatto/box2d/box2d/box2d.h"`` and build t
   ~/box2d$ bii find
   ~/box2d$ bii cpp:build
 
-Execute the binary and this is how the output looks like:
+Execute the binary and this is how output looks like:
 
 .. code-block:: bash
 
@@ -139,7 +139,7 @@ Execute the binary and this is how the output looks like:
 
 That's it!
 
-Didn't work? No problem, read or contact us in |biicode_forum_link|
+Didn't work? No problem, read or contact us in |biicode_forum_link|.
 
 .. |biicode_forum_link| raw:: html
 

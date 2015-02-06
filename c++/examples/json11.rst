@@ -3,9 +3,9 @@
 json11
 ======
 
-json11 is a tiny JSON library for C++11, providing JSON parsing and serialization.
+**json11** is a tiny JSON library for C++11, providing JSON parsing and serialization.
 
-The main block is `here <https://www.biicode.com/lasote/json11>`_, which is generated from this `github repo <https://github.com/lasote/json11>`_
+The main block is `here <https://www.biicode.com/lasote/json11>`_, which is generated from this `github repo <https://github.com/lasote/json11>`_.
 
 Simple convert data to json and vice versa 
 --------------------------------------------
@@ -80,7 +80,7 @@ Now, run the example.
    $ bin/examples_json11_test
 
 
-As you can see with this library you can create json objects from string literals, standard collections and even custom classes in an easy way!
+As you can see, with this library you can create json objects from string literals, standard collections and even custom classes in an easy way!
 
 .. code-block:: bash
 

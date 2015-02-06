@@ -9,10 +9,10 @@ It is very actively developed, with a great community and used in many real proj
 Are you thinking in building your own distributed application? Don't think more, use ZMQ.
 
 The main block is `here <http://www.biicode.com/diego/libzmq>`_, which is generated
-from this `github repo <https://github.com/drodri/libzmq>`_
+from this `github repo <https://github.com/drodri/libzmq>`_.
 
 You can read a post about this example and the ZMQ project in
-`our blog <http://blog.biicode.com/zeromq-cpp-biicode/>`_
+`our blog <http://blog.biicode.com/zeromq-cpp-biicode/>`_.
 
 
 Simple client-server with C++ binding
@@ -26,7 +26,7 @@ Of course it is possible to just copy the source code files as explained in
 them is as simple as copying the code inside a biicode project.
 
 But as this example is `already in biicode <http://www.biicode.com/examples/zmq_cpp>`_,
-it is very simple to build it, by just opening the block
+it is very simple to build it, by just opening the block.
 
 .. code-block:: bash
 
@@ -34,7 +34,7 @@ it is very simple to build it, by just opening the block
    $ cd clientserver
    $ bii open examples/zmq_cpp
 
-If in windows, it is necessary to specify VS (it doesnt work with MinGW), otherwise, you can skip this step
+If in windows, it is necessary to specify VS (it doesnt work with MinGW), otherwise, you can skip this step.
 
 .. code-block:: bash
 
@@ -42,7 +42,7 @@ If in windows, it is necessary to specify VS (it doesnt work with MinGW), otherw
 
 
 Then build and run, first the server, then the client (you need to open another console,
-in the same folder)
+in the same folder).
 
 .. code-block:: bash
 
@@ -52,4 +52,4 @@ in the same folder)
    $ bin/examples_zmq_cpp_hwclient
 
 
-You should see how the client send "Hello"s to the server and the server respond back "World"
+You should see how the client send "Hello"s to the server and the server respond back "World".
