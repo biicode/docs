@@ -3,17 +3,17 @@
 TinyThread++
 ============
 
-`TinyThread++ <http://tinythreadpp.bitsnbites.eu/>`_  TinyThread++ is a minimalist, portable, threading library for C++, intended to make it easy to create multi threaded C++ applications. The library is closesly modeled after the C++11 standard, but only a subset is implemented at the moment.
-Need portable threads for your C++ app? Use TinyThread++
+`TinyThread++ <http://tinythreadpp.bitsnbites.eu/>`_ is a minimalist, portable, threading library for C++, intended to make it easy to create multi threaded C++ applications. The library is closesly modeled after the C++11 standard, but only a subset is implemented at the moment.
+Need portable threads for your C++ app? Use TinyThread++!
 
 The main block is `here <https://www.biicode.com/david/david/tinythread/master>`_, which is generated
-from this `github repo <https://github.com/davidsanfal/tinythread>`_
+from this `github repo <https://github.com/davidsanfal/tinythread>`_.
 
 Open and build the examples
 ---------------------------
 
-This example is `already in biicode <http://www.biicode.com/examples/tinytread>`_,
-it is very simple to build it, by just opening the block and building it.
+This example is `already in biicode <http://www.biicode.com/examples/tinythread>`_.
+It is very simple to build it, by just opening the block.
 
 .. code-block:: bash
 
@@ -33,7 +33,7 @@ Now, run the hello example.
 
 You should see how a thread say "Hello world!"
 
-This hello world just new to define the trhead method.
+This Hello World just defines the thread method
 
 .. code-block:: cpp
 
@@ -54,7 +54,7 @@ You can see all the code `here <https://www.biicode.com/examples/examples/tinyth
 Draw a fractal
 --------------
 
-If you run the fractal example, a set of threads will be launched to generate a fractal image. You can see how to launch diferent threads to do a distrituted task.
+If you run the fractal example, a set of threads will be launched to generate a fractal image. You can see how to launch diferent threads to do a distributed task.
 
 .. code-block:: cpp
 

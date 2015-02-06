@@ -1,7 +1,7 @@
 GLUI User Interface Library
 ===========================
 
-`GLUI <http://glui.sourceforge.net/>`__ s a **GLUT-based C++ user interface library** which provides controls such as buttons, checkboxes, radio buttons, and spinners to OpenGL applications. It is window-system independent, relying on `GLUT <http://www.opengl.org/resources/libraries/glut/>`__ to handle all system-dependent issues, such as window and mouse management.
+`GLUI <http://glui.sourceforge.net/>`__ is a **GLUT-based C++ user interface library** which provides controls such as buttons, checkboxes, radio buttons, and spinners to OpenGL applications. It is window-system independent, relying on `GLUT <http://www.opengl.org/resources/libraries/glut/>`__ to handle all system-dependent issues, such as window and mouse management.
 
 For more information about this library, visit their `official website <http://glui.sourceforge.net/>`__.
 
@@ -16,7 +16,7 @@ This example is a small modification of the code originaly programmed by `Ali Ba
 
 *"To avoid having to write the same code every time you want to create an OpenGL graphical application with GUI components, this program code can be used as a template to get you directly started".*
 
-You can `explore the source code block for this example following this link <https://www.biicode.com/examples/glui_example>`__. In order to try this example, you only need to follow these steps:
+You can explore the **source code block** for this example `following this link <https://www.biicode.com/examples/glui_example>`__. In order to try this example, you only need to follow these steps:
 
 .. container:: infonote
 

@@ -64,7 +64,7 @@ original tutorial:
      repeated PhoneNumber phone = 4;
    }
    
-Creating the code is simple, move to the folder when this file is located and run the generator:
+Creating the code is simple, move to the folder where this file is located and run the generator:
 
 .. code-block:: bash
 

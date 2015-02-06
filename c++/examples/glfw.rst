@@ -6,7 +6,7 @@ It provides a simple, platform-independent API for creating windows and contexts
 
 It is a great library, if you want to build OpenGL applications it is highly recommended.
 
-You can find it ready for simple use `in biicode <http://www.biicode.com/diego/glfw>`__
+You can find it ready for simple use `in biicode <http://www.biicode.com/diego/glfw>`__.
 
 
 Running the examples

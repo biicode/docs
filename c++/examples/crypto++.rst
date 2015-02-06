@@ -1,9 +1,9 @@
 Crypto++
 ========
 
-Crypto++ is a C++ class library of cryptographic algorithms and schemes written by Wei Dai. For more information about this library, visit their `official website <http://www.cryptopp.com/>`_ or wiki.
+Crypto++ is a C++ class library of cryptographic algorithms and schemes written by Wei Dai. For more information about this library, visit their `official website <http://www.cryptopp.com/>`_ or `wiki <http://en.wikipedia.org/wiki/Crypto%2B%2B>`_.
 
-The following example shows how to encrypt a message with SHA1 code. You can find this example in `the biicode crypto samples block <http://www.biicode.com/examples/cryptopp>`_ .
+The following example shows how to encrypt a message with SHA1 code. You can find this example in `the biicode crypto samples block <http://www.biicode.com/examples/cryptopp>`_.
 
 **main_crypto**
 
