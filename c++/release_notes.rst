@@ -3,11 +3,19 @@
 Release notes
 =============
 
+**2.3** (9-Feb-2015)
+
+* Better toolchain system for cross-compiling
+* Added --remote option to "bii publish" to publish github, bitbucket etc remotes info (remote, branch, tag and commit).
+* Web: Block view with visible VCS remote information.
+|
+
 
 **2.2** (27-Jan-2015)
 
 * Fixed errors with local cache and DEV version updates.
 * Web: New biicode badges.
+|
 
 
 **2.1.1** (12-Jan-2015)
