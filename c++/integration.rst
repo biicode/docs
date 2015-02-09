@@ -27,64 +27,96 @@ AppVeyor
 
 |appveyor_homepage| provides Continuous Integration and Deploy for Windows and it's compatible with both GitHub and BitBucket. Place an ``appveyor.ymĺ`` file in your repo and each time you push to your Github repository it will kick-off a new build in Windows, executing your tests and publishing this project to your biicode user account. 
 
-Login AppVeyor and clic on "+ NEW PROJECT" and choose the repo you want to deploy with AppVeyor. Create an ``appveyor.yml`` file in your local project to automatically publish your block to biicode, including your version tags, here's an example file: ::
+Login AppVeyor and clic on ``+ NEW PROJECT`` and choose the repo you want to deploy with AppVeyor. Create an ``appveyor.yml`` file in your local project to automatically publish your block to biicode, including your version tags, here's an example file: ::
 
-   version: 1.0.{build}
+    version: 1.0.{build}
 
-   install:
-     - ps: wget https://s3.amazonaws.com/biibinaries/thirdparty/cmake-3.0.2-win32-x86.zip -OutFile cmake.zip
-     - cmd: echo "Unzipping cmake..."
-     - cmd: 7z x cmake.zip -o"C:\Program Files (x86)\" -y > nul
-     - cmd: set PATH=%PATH:CMake 2.8\bin=%;C:\Program Files (x86)\cmake-3.0.2-win32-x86\bin
-     - cmd: cmake --version
-     - cmd: echo "Downloading biicode..."
-     - ps: wget http://www.biicode.com/downloads/latest/win -OutFile bii-win.exe
-     - cmd: bii-win.exe /VERYSILENT
-     - cmd: set PATH=%PATH%;C:\Program Files (x86)\BiiCode\bii
-     - cmd: bii -v
-     - cmd: del bii-win.exe
-     - cmd: del cmake.zip
+    install:
+      - ps: wget https://s3.amazonaws.com/biibinaries/thirdparty/cmake-3.0.2-win32-x86.zip -OutFile cmake.zip
+      - cmd: echo "Unzipping cmake..."
+      - cmd: 7z x cmake.zip -o"C:\Program Files (x86)\" -y > nul
+      - cmd: set PATH=%PATH:CMake 2.8\bin=%;C:\Program Files (x86)\cmake-3.0.2-win32-x86\bin
+      - cmd: cmake --version
+      - cmd: echo "Downloading biicode..."
+      - ps: wget http://www.biicode.com/downloads/latest/win -OutFile bii-win.exe
+      - cmd: bii-win.exe /VERYSILENT
+      - cmd: set PATH=%PATH%;C:\Program Files (x86)\BiiCode\bii
+      - cmd: bii -v
+      - cmd: del bii-win.exe
+      - cmd: del cmake.zip
 
-   before_build:
-     - cmd: bii init %project_name%
-     - cmd: cd %project_name%
-     - cmd: bii new %block_user%/%block_name%
-       # move the files
-     - cmd: for %%i in (../*) do if %%i NEQ "%project_name%" move "..\%%i" blocks\%block_user%\%block_name%\
-     # move the directories -> there are none in this repo:
-     # cmd: for /d %%i in (../*) do if %%i NEQ "%project_name%" move "..\%%i" blocks\%block_user%\%block_name%\
-     - cmd: bii cpp:configure -G "Visual Studio 12"
+    before_build:
+      - cmd: cd \
+      - cmd: bii init %project_name%
+      - cmd: cd %project_name%
+      - cmd: bii new %block_user%/%block_name%
+        # copy files and folders
+      - cmd: xcopy "%APPVEYOR_BUILD_FOLDER%" blocks\%block_user%\%block_name%\ /e
+      - cmd: bii cpp:configure -G "Visual Studio 12"
 
-   build_script:
-     - cmd: bii cpp:build
+    build_script:
+      - cmd: bii cpp:build
 
-   test_script:
-     - cmd: cd bin
-     - cmd: amalulla_cpp-expression-parser_test-shunting-yard.exe
+    test_script:
+      - cmd: cd bin
+      - cmd: amalulla_cpp-expression-parser_test-shunting-yard.exe
+    
+    deploy_script:
+      - cmd: bii user %block_user% -p %secured_passwd%
+      - if defined APPVEYOR_REPO_TAG_NAME set VERSION=%APPVEYOR_REPO_TAG_NAME%  
+      - if defined APPVEYOR_REPO_TAG_NAME bii publish --tag=%tag% --versiontag=%VERSION% 
+      - if not defined APPVEYOR_REPO_TAG_NAME bii publish --tag=%dev_tag% 
 
-   # to run your custom scripts instead of provider deployments
-   deploy_script:
-     - if defined APPVEYOR_REPO_TAG_NAME set VERSION=%APPVEYOR_REPO_TAG_NAME%
-     - echo "Building tagged release %VERSION%"
-     - if not defined APPVEYOR_REPO_TAG_NAME set VERSION=%no_version%
-     - cmd: bii user %block_user% -p %secured_passwd%
-     - cmd: bii publish --tag=%tag% --versiontag=%VERSION% #|| dir # Ignore output
+    on_success:
+      - cmd: cd /%project_name%/blocks/%block_user%/%block_name%
+      - ps: |    
+            $new_biiconf = get-content biicode.conf
+            $orig_biiconf = get-content "$env:APPVEYOR_BUILD_FOLDER\biicode.conf"     
+            if (diff $new_biiconf $orig_biiconf){
+               'different, updating biicode parents'
+               move-item biicode.conf "$env:APPVEYOR_BUILD_FOLDER\" -force
+               cd "$env:APPVEYOR_BUILD_FOLDER"
+               git checkout "$env:APPVEYOR_REPO_BRANCH"
+               git config --global core.autocrlf true
+               git config --global credential.helper store 
+               Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+               git remote add neworigin "$env:github_repo"
+               git config --global user.email "$env:github_email"
+               git config --global user.name "$env:github_user"
+               git add biicode.conf
+               git commit -m "Updated biicode parents [skip ci]"
+               git push neworigin "$env:APPVEYOR_REPO_BRANCH"
+               }Write-Host "Updated biicode parents" else {
+                'equal, no parents update needed'
+              }
 
-   environment:
-     project_name:
-       "myproject"
-     block_user:
-       "amalulla"
-     block_name:
-       "cpp-expression-parser"
-     secured_passwd:
-       secure: ZMvgETfLAUo7kISnvrinBA==
-     tag:
-       "STABLE"
-     no_version:
-       ""
+    environment:
+      project_name:
+        "myproject"
+      block_user:
+        "amalulla"
+      block_name:
+        "cpp-expression-parser"
+      secured_passwd:
+        secure: ZMvgETfLAUo7kISnvrinBA==
+      access_token:
+        secure: GdIDIRkmsM9blqS143lQErkxguMYgJBs74GzWw+lgzjvl/NoLs4ErcOZ2JBAEmkr
+      tag:
+        "STABLE"
+      dev_tag:
+        "DEV"
+      github_user:
+        "MariadeAnton"
+      github_email:
+        "maria.deanton@biicode.com"
+      github_repo:
+        "git@github.com:MariadeAnton/cpp-expression-parser.git"
 
-Use your own ``test_script`` and ``environment`` values to start deploying with it. To generate an encrypted password with Appveyor go to your profile and choose Encrypt data, once there encrypt your password and copy the value generated to put it in your  environment ``secured_password: secure:``.
+Use your own ``test_script`` and ``environment`` values to start deploying with it.
+
+Here's an appveyor guide about how to |appveyor_git_push|. Following this Appveyor Guide we're using it as credentials with Git commands. Use this GitHub guide to create your |github_access_token|.
+
+Encrypt your biicode password and your access token using |appveyor_encrypt_data|, copy the values generated and put them it in your  environment like ``secured_password: secure:``.
 
 What's going on the ``appveyor.yml`` file?
 
@@ -92,7 +124,8 @@ What's going on the ``appveyor.yml`` file?
    * ``before_build:`` Moves your project's files into the biicode project and configures it to use Visual Studio 12 via ``bii cpp:configure``.  Check biicode docs and  your project's settings in Appveyor to use other build configurations. **Also note** that there's a commented line here you should also write if your project contains folders.
    * ``test_script:`` cd bin and execute your project. Ensure about your project's executable, build and execute it locally with  ``bii cpp:build``.
    * ``deploy_script:`` This script publishes your block to biicode, including your version tag only when it's tagged.
-   * ``environment:`` Replace all environment variables here with your values: project_name, tag, default version tag value... To generate an encrypted password with Appveyor go to your profile>Encrypt data.
+   * ``on_success:`` If your biicode.conf file is updated commit its changes to github without launching a new build. Else do nothing.
+   * ``environment:`` Replace all environment variables here with your values: project_name, tag, default version tag value... Also your encrypted variables.
 
 You can see this live example here:
 
@@ -186,9 +219,23 @@ Then, you'd ready to start using biicode and building all the projects you wish.
    
    <a href="https://github.com/MariadeAnton/cpp-expression-parser" target="_blank">Forked cpp-expresion-parser repo</a>
 
+.. |github_access_token| raw:: html
+   
+   <a title="github personal access token" href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/" target="_blank">GitHub Personal Access Token</a>
+
 .. |appveyor_build_parser| raw:: html
 
    <a title="appveyor build cpp-expression-parser" href="https://ci.appveyor.com/project/MariadeAnton/cpp-expression-parser" target="_blank">cpp-expression-parser builds</a>
+
+.. |appveyor_encrypt_data| raw:: html
+
+   <a title="appveyor encrypt data tool" href="https://ci.appveyor.com/tools/encrypt" target="_blank">Encrypt Data tool</a>
+
+
+.. |appveyor_git_push| raw:: html
+
+   <a title="appveyor git push from build" href="http://http://www.appveyor.com/docs/how-to/git-push" target="_blank">Git push from Appveyor Build</a>
+   
 
 .. |biicode_block_parser| raw:: html
 
