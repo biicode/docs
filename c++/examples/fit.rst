@@ -6,11 +6,11 @@ fit
 
 |fit_homepage| is a C++11 header-only library that provides utilities for functions and function objects. Fit is divided into three components: 
 
- Function Adapters: These take functions and return a new function that provides an additional capability to the previous function.
+  1. Function Adapters: These take functions and return a new function that provides an additional capability to the previous function.
 
- Functions: These return functions that achieve a specific purpose.
+  2. Functions: These return functions that achieve a specific purpose.
 
- Utilities: These are general utilities that are useful when defining or using functions.
+  3. Utilities: These are general utilities that are useful when defining or using functions.
 
 The main block is |bii_fit|, which is generated from this |fork_fit|.
 
@@ -18,7 +18,8 @@ Tests
 ^^^^^
 
 Calculate giving the coordinates, the angles and sides length of a polygon between 3 and 10 vertex. To start, create a project, open the example and execute:
-(if you are using CLANG you may need to use  ``clang --version`` to check it's higher than 3.5: )
+
+**Note:** If you are using CLANG you may need to use  ``clang --version`` to check it's higher than 3.5.
 
 .. code-block:: bash
 
@@ -54,10 +55,10 @@ Execute the binary and this is how the output looks like:
   **CORRECT** fit::always(ten)(1,2,3,4,5) == 10
 
 
-The output is what always.cpp file is testing, if successes it writes **CORRECT**, if it doesn't it writes **FAILED** 
+The output is what always.cpp file is testing, if successes it writes **CORRECT**, if it doesn't it writes **FAILED**. 
 
 
-Didn't work? No problem, read or contact us in |biicode_forum_link|
+Didn't work? No problem, read or contact us in |biicode_forum_link|.
 
 .. |biicode_forum_link| raw:: html
 

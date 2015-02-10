@@ -24,7 +24,7 @@ First, create a new project as described in the :ref:`hello world example <cpp_g
 2. Creating reusable code
 --------------------------
 
-This is some example conde that makes use of GLUT functions. Note that **you must include a reference to a biicode GLUT wrapper** library. This is the only information biicode needs to fetch the required files when needed, taking into account your actual development platform. We'll see how this happens in the next step.
+This is some example code that makes use of GLUT functions. Note that **you must include a reference to a biicode GLUT wrapper** library. This is the only information biicode needs to fetch the required files when needed, taking into account your actual development platform. We'll see how this happens in the next step.
 
 Now, simply put the following code into your ``cpp_freeglut`` block folder (you can also download these files here: :download:`sphere-glut.zip </_static/code/cpp/examples/freeglut/sphere-glut.zip>`, unzip and copy them into your block folder):
 

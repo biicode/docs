@@ -174,7 +174,7 @@ Create a block:
 	$ bii new examples/sqlite
 
 
-Unzip those files in your block, then you need to resolve all the dependencies of this ``main.cpp``. Then you can compile it
+Unzip those files in your block, then you need to resolve all the dependencies of this ``main.cpp`` and you can compile it:
 
 .. code-block:: bash
 

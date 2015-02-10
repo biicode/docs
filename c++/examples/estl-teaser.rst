@@ -245,7 +245,7 @@ After that, it asks for the Axis variables for each vertex.
   Axis Y: 
   Axis X: 
 
-The output is a vector of polygon Angels and Polygon sides length:
+The output is a vector of polygon Angles and Polygon sides: length:
 
 .. code-block:: bash
 
@@ -254,7 +254,7 @@ The output is a vector of polygon Angels and Polygon sides length:
   grades of angles: Vector contains: 
 
 
-Didn't work? No problem, read or contact us in |biicode_forum_link|
+Didn't work? No problem, read or contact us in |biicode_forum_link|.
 
 .. |biicode_forum_link| raw:: html
 
