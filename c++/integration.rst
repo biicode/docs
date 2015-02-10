@@ -74,8 +74,6 @@ Login AppVeyor and clic on ``+ NEW PROJECT`` and choose the repo you want to dep
             $orig_biiconf = get-content "$env:APPVEYOR_BUILD_FOLDER\biicode.conf"     
             if (diff $new_biiconf $orig_biiconf){
                'different, updating biicode parents'
-               move-item biicode.conf "$env:APPVEYOR_BUILD_FOLDER\" -force
-               cd "$env:APPVEYOR_BUILD_FOLDER"
                git checkout "$env:APPVEYOR_REPO_BRANCH"
                git config --global core.autocrlf true
                git config --global credential.helper store 
