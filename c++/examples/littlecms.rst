@@ -3,7 +3,7 @@
 Little CMS
 ===========
 
-Little CMS is an Open Source Color Management Engine. This example demonstrates how to get started using **LittleCMS** by Marti Maria with biicode. The
+Little CMS is an Open Source Color Management Engine. This example demonstrates how to get started using **LittleCMS** by Marti Maria with biicode.
 
 **Little CMS** intends to be an OPEN SOURCE **small-footprint color management engine**, with special focus on accuracy and performance. It uses the International Color Consortium standard (ICC), which is the modern standard when regarding to color management. This examples have been tested in Windows, OS X and Linux-systems.
 Check the Sources:
@@ -11,7 +11,7 @@ Check the Sources:
    1. `Original Little CMS Library <http://www.littlecms.com//>`_
    2. `Biicode Little CMS block <http://www.biicode.com/martimaria/littlecms>`_
    3. `Github repository <https://github.com/MariadeAnton/little-cms>`_
-   4. `LittleCMS Documentatio <http://sourceforge.net/projects/lcms/files/lcms/2.6/>`_
+   4. `LittleCMS Documentation <http://sourceforge.net/projects/lcms/files/lcms/2.6/>`_
 
 ICC Profile Examples
 ----------------------
@@ -25,7 +25,7 @@ These examples are `already in biicode <http://www.biicode.com/examples/littlecm
    $ bii open examples/littlecms
    $ bii cpp:build
 
-There are three different examples in the project, note that all of them use Little CMS , simply by including the library. We're focusing on mktiff8 example but you can execute and try any of them. This example creates a devicelink that decodes TIFF8 Lab files. This is the code used for the example:
+There are three different examples in the project, note that all of them use Little CMS , simply by including the library. We're focusing on *mktiff8* example but you can execute and try any of them. This example creates a devicelink that decodes TIFF8 Lab files. This is the code used for the example:
 
 .. code-block:: cpp
 
@@ -160,7 +160,7 @@ There are three different examples in the project, note that all of them use Lit
       return 0;
     }
 
-Now, run the Mktiff example.
+Now, run the *Mktiff* example.
 
 .. code-block:: bash
 

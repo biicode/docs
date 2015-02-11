@@ -46,10 +46,11 @@ Then, you need find all the depencies of your project, in this case, zlib.h, so 
 
 	$ bii find
 
-Next, you can already run the code:
+Next, you can build and run the code:
 
 .. code-block:: bash
 
+	$ bii cpp:build
 	$ cd bin
 	$ #run executable
 

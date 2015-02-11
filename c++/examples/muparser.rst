@@ -94,4 +94,4 @@ You will see next console output after executing the command:
 	Enter an expression or a command:
 
 
-You can now start typing mathematical expresions in the console.
+You can now start typing mathematical expressions in the console.
