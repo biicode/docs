@@ -31,7 +31,9 @@ It is very simple. Create a **new project**, open the examples, build and run th
 
    .. code-block:: bash
 
-      $ sudo apt-get install mesa-common-dev libglu1-mesa-dev libxi-dev 
+      $ sudo apt-get install mesa-common-dev libglu1-mesa-dev libxi-dev
+   
+   Depending on your linux setup you might need to install also libxinerama-dev lib libxrandr-dev libxcursor-dev libxxf86vm-dev
    
    If you are in RH - Fedora, you may need to install:
    
