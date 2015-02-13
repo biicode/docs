@@ -50,8 +50,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'biicode'
-copyright = u'2014, biicode'
+project = 'biicode'
+copyright = '2014, biicode'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -82,13 +82,13 @@ exclude_patterns = ['_build', '_guide', '_articles']
 # biicode configuration for custom classes:
 rst_prolog = """
 .. role:: underline
-	:class: underline
+    :class: underline
 
 .. role:: underline_bold
-	:class: underline bold
+    :class: underline bold
 
 .. role:: moreinfo
-	:class: moreinfo
+    :class: moreinfo
 
 """
 
@@ -122,8 +122,8 @@ pygments_style = 'colorful'
 # based on: https://github.com/snide/sphinx_rtd_theme
 html_theme = "biicode"
 html_theme_options = {
-	'scripts' : ['_static/jquery.js', '_static/jquery.cookie.js', '_static/underscore.js', '_static/doctools.js', '_static/theme.js', '_static/searchtools.js'],
-	'styles' : ['_static/theme.css']
+    'scripts' : ['_static/jquery.js', '_static/jquery.cookie.js', '_static/underscore.js', '_static/doctools.js', '_static/theme.js', '_static/searchtools.js'],
+    'styles' : ['_static/theme.css']
 }
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -216,8 +216,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'biicodedocs.tex', u'biicode docs Documentation',
-   u'biicode', 'manual'),
+  ('index', 'biicodedocs.tex', 'biicode docs Documentation',
+   'biicode', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -246,8 +246,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'biicodedocs', u'biicode docs Documentation',
-     [u'biicode'], 1)
+    ('index', 'biicodedocs', 'biicode docs Documentation',
+     ['biicode'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -260,8 +260,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'biicodedocs', u'biicode docs Documentation',
-   u'biicode', 'biicodedocs', 'One line description of project.',
+  ('index', 'biicodedocs', 'biicode docs Documentation',
+   'biicode', 'biicodedocs', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -278,10 +278,10 @@ texinfo_documents = [
 # -- Options for Epub output ---------------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'biicode docs'
-epub_author = u'biicode'
-epub_publisher = u'biicode'
-epub_copyright = u'2014, biicode'
+epub_title = 'biicode docs'
+epub_author = 'biicode'
+epub_publisher = 'biicode'
+epub_copyright = '2014, biicode'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
