@@ -7,7 +7,7 @@ Workflows
 Working with your own blocks
 ------------------------------
 
-You've built a program and reused your **sum function** in the :ref:`Getting Started <cpp_getting_started>`. Now it's time to add new functionality to your published **myuser/math** block, like a **substract function**, and use it in your block **myuser/calc**.
+You've built a program and reused your **sum function** in the :ref:`Getting Started <cpp_getting_started>`. Now it's time to add new functionality to your published **myuser/math** block, like a **subtract function**, and use it in your block **myuser/calc**.
 
 The layout is:
 
@@ -50,7 +50,7 @@ The resulting layout is:
   |    |    |    |    +-- operations.h
   |    +-- deps
 
-Now, add the new function, **substract** and use it on your main.cpp
+Now, add the new function, **subtract** and use it on your main.cpp
 
 **operations.h**
 
@@ -58,7 +58,7 @@ Now, add the new function, **substract** and use it on your main.cpp
 
    #pragma once
    int sum(int a, int b);
-   int substract(int a, int b);
+   int subtract(int a, int b);
 
 **operations.cpp**
 
@@ -66,7 +66,7 @@ Now, add the new function, **substract** and use it on your main.cpp
 
    #include "operations.h"
    int sum(int a, int b) {return a+b;}
-   int substract(int a, int b){return a-b;}
+   int subtract(int a, int b){return a-b;}
 
 
 **main.cpp**
@@ -80,7 +80,7 @@ Now, add the new function, **substract** and use it on your main.cpp
     EXPECT_EQ(5, sum(2, 3));
    }
    TEST(Subtract, Normal) {
-    EXPECT_EQ(-1, substract(2, 3));
+    EXPECT_EQ(-1, subtract(2, 3));
    }
    int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
@@ -132,7 +132,7 @@ Then you can modify the content of your **myuser/calc**:
    using namespace std;
    int main() {
       cout<<"2 + 3 = "<< sum(2, 3)<<endl;
-      cout<<"2 - 3 = "<< substract(2,3)<<endl;
+      cout<<"2 - 3 = "<< subtract(2,3)<<endl;
    }
 
 
