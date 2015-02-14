@@ -6,3 +6,5 @@ _build
 .project
 Thumbs.db
 *.pyc
+sitemap_config.xml
+sitemap.xml.gz
