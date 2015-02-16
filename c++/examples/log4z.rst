@@ -4,6 +4,7 @@ Log4z
 |log4z_homepage| is an open source C++ lightweight & cross platform log library.
 
 It provides in a C++ application log and trace debug function for 7*24h service program.
+
 **Support**: 64/32 bits of debian, redhat, centos, suse, windows.
 
 The main block is |bii_log4z|, which is generated from this |fork_log4z|.

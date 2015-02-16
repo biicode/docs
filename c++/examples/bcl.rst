@@ -3,7 +3,7 @@
 Basic Compression Library
 ==========================
 
-This example demonstrates how to get started using **BCL** by Marcus Geelnard with biicode. The **Basic Compression Library** is is a set of open source implementations of several well known lossless compression algorithms, such as Huffman and RLE, written in portable ANSI C.
+This example demonstrates how to get started using **BCL** by Marcus Geelnard with biicode. The **Basic Compression Library** is a set of open source implementations of several well known lossless compression algorithms, such as Huffman and RLE, written in portable ANSI C.
 Currently, RLE (Run Length Encoding), Huffman, Rice, Lempel-Ziv (LZ77) and Shannon-Fano compression algorithms are implemented.
 The Basic Compression Library is completely independent of system functions, such as file I/O or memory allocation routines. As such it can be used in almost any system, ranging from Windows, Mac OS X and Linux-systems to embedded systems.
 Check the Sources:

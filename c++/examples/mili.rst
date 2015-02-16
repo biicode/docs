@@ -13,22 +13,27 @@ The following example shows a simple use for doing type-safe bitwise operations.
    :language: cpp
    :linenos:
 
-**Download:** :download:`main_mili.cpp </_static/code/cpp/examples/mili/main_mili.cpp>` 
+Create a new project and open the example block:
 
-
-First, you need to resolve all the dependencies of this ``main_mili.cpp``
-	
 .. code-block:: bash
 	
-	$ bii find
+	$ bii init mili_example
+	$ cd mili_example
+	$ bii open examples/mili
 
+Now build your project and run the executable:
 
-You will see next console output after executing the command:
-	
 .. code-block:: bash
-
+	
+	$ bii cpp:build
 	$ cd bin
-	$ #run executable
+	$ # run executable
+
+
+You will see next console output:
+	
+.. code-block:: bash
+
 	kOne   turned on
 	kTwo   turned on
 	kFour  turned on
@@ -42,3 +47,4 @@ You will see next console output after executing the command:
 	Normal Enum: 0x18
 	Normal Enum: 0x20
 
+Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
