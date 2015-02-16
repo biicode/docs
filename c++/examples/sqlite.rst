@@ -3,7 +3,7 @@ SQLite
 
 SQLite is a software library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine. SQLite is the most widely deployed SQL database engine in the world. For more information about this library, visit their `official website <http://www.sqlite.org/>`_.
 
-You can find here the `SQLite library site <http://www.biicode.com/sqlite/sqlite/sqlite/master/5>`_ .
+You can find here the `SQLite library site <http://www.biicode.com/sqlite/sqlite/sqlite/master/5>`_.
 
 Hello SQLite Example
 ^^^^^^^^^^^^^^^^^^^^
@@ -112,7 +112,7 @@ Now, run the hello example.
 
    $ bin/examples_sqlite_basic_main.exe
 
-You can see the results of the queries in the output:
+You can see the results of the queries at the output:
 
   
 .. code-block:: bash
@@ -147,14 +147,10 @@ You can see the results of the queries in the output:
 		NUMBER = 1
 
 		Closed database successfully
-
-
-
-Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
   
 SQLite++ Wrapper
 ^^^^^^^^^^^^^^^^
-The following example how-to use the SQLite++ wrapper. You can find this example in `the biicode SQLite samples block <http://www.biicode.com/examples/sqlite>`_ .
+The following example how-to use the SQLite++ wrapper. You can find this example in `the biicode SQLite samples block <http://www.biicode.com/examples/sqlite>`_.
 
 **main.cpp**
 
@@ -162,32 +158,27 @@ The following example how-to use the SQLite++ wrapper. You can find this example
    :language: cpp
    :linenos:
 
-**Download:**
-:download:`sqlite_example.zip </_static/code/cpp/examples/sqlite/sqlite_example.zip>`
-
 Create a block:
 
 .. code-block:: bash
 
 	$ bii init my_project
 	$ cd my_project
-	$ bii new examples/sqlite
+	$ bii open examples/sqlite
 
 
-Unzip those files in your block, then you need to resolve all the dependencies of this ``main.cpp`` and you can compile it:
+Compile it and run the executable by doing:
 
 .. code-block:: bash
 
-	$ bii find
 	$ bii cpp:build
+	$ cd bin
+	$ # run executable
 
-
-You will see next console output after executing the command:
+You will see next console output:
 
 .. code-block:: bash
 
-	$ cd bin
-	$ bin $ ./examples_sqlite_main
 	SQLite database file 'examples/sqlite/example.db3' opened successfully
 	SQLite table 'test' exists=1
 	execAndGet=second line
@@ -199,3 +190,5 @@ You will see next console output after executing the command:
 	row (3, "and a last one" 14 bytes, 9.5)
 	row (4, "" 0 bytes, 18)
 	...
+
+Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.

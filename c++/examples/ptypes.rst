@@ -11,23 +11,19 @@ The following example demonstrates how to use `PTypes streams to write to a file
    :language: cpp
    :linenos:
 
-**Download:**
-:download:`stream.cpp </_static/code/cpp/examples/ptypes/stream.cpp>`
-
 Create a block:
 
 .. code-block:: bash
 
 	$ bii init my_project
 	$ cd my_project
-	$ bii new user/ptypes
+	$ bii open examples/ptypes
 
 
-Copy stream.cpp in your block (ptypes folder), and resolve ``stream.cpp`` dependencies. Then you can compile it:
+Compile ``stream.cpp`` file:
 
 .. code-block:: bash
 
-	$ bii find
 	$ bii cpp:build
 
 
@@ -37,5 +33,12 @@ Now you can run it and check it generates a file:
 
 	$ cd bin
 	$ ./examples_ptypes_stream
-	$ cat stmtest.txt
+
+This creates a ``stmtest.txt`` file with something written inside. Just open it and you'll see its content:
+
+.. code-block:: bash
+
 	This is a test file
+
+
+Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.

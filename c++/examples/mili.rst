@@ -21,12 +21,19 @@ Create a new project and open the example block:
 	$ cd mili_example
 	$ bii open examples/mili
 
-You will see next console output after executing the command:
+Now build your project and run the executable:
+
+.. code-block:: bash
+	
+	$ bii cpp:build
+	$ cd bin
+	$ # run executable
+
+
+You will see next console output:
 	
 .. code-block:: bash
 
-	$ cd bin
-	$ #run executable
 	kOne   turned on
 	kTwo   turned on
 	kFour  turned on
@@ -40,3 +47,4 @@ You will see next console output after executing the command:
 	Normal Enum: 0x18
 	Normal Enum: 0x20
 
+Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.

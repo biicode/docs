@@ -51,7 +51,7 @@ Execute the binary and this is how the output looks like:
 
 .. code-block:: bash
 
-  ~/fit$ bin/myuser_fit_test_always
+  ~/fit$ bin/examples_fit_test_always
   **CORRECT** fit::always(ten)(1,2,3,4,5) == 10
 
 

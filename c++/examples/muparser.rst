@@ -13,32 +13,27 @@ The following example is a `math interactive interpreter <http://www.biicode.com
    :language: cpp
    :linenos:
 
-**Download:**
-:download:`main_muparser.cpp </_static/code/cpp/examples/muparser/main_muparser.cpp>`
-
 Create a block:
 
 .. code-block:: bash
 
 	$ bii init my_project
 	$ cd my_project
-	$ bii new examples/muparser
+	$ bii open examples/muparser
 
 
-Copy the cpp file in your block, then you need to resolve all the dependencies of this ``main.cpp`` and you can compile it:
+ The ``main.cpp`` file is now in your block. Now you just have to build it and run the executable:
 
 .. code-block:: bash
 
-	$ bii find
 	$ bii cpp:build
-
+	$ cd bin
+	$ # run executable
 
 You will see next console output after executing the command:
 
 .. code-block:: bash
 
-	$ cd bin
-	$ bin $ ./examples_muparser_main_muparser
 	                 __________
 	    _____   __ __\______   \_____  _______  ______  ____ _______
 	   /     \ |  |  \|     ___/\__  \ \_  __ \/  ___/_/ __ \\_  __ \
@@ -95,3 +90,5 @@ You will see next console output after executing the command:
 
 
 You can now start typing mathematical expressions in the console.
+
+Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
