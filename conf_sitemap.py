@@ -15,7 +15,7 @@ def generate_sitemap(app, exception):
         print 'SITEMAP generation was skipped - there were errors during the build process'
         return
     try:
-    	print os.path.curdir
+        print os.path.curdir
         import sitemap_gen
 
         working_dir = os.path.join( doc_project_root, outdir )
