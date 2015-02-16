@@ -1,0 +1,8 @@
+language: python
+    - "2.7"
+install:
+    - "pip install --user sphinx"
+    - "locate sphinx-build"
+
+script:
+    - "sphinx-build -b html . _build/html"
