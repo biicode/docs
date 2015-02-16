@@ -36,7 +36,7 @@ Create a block:
 	$ bii new examples/multivariate_splines
 
 
-Copy the cpp file in your block, then you need to resolve all the dependencies of this ``main.cpp``. Then you can compile it
+Copy the cpp file in your block, then you need to resolve all the dependencies of this ``main.cpp`` and you can compile it:
 
 .. code-block:: bash
 

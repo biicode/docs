@@ -1,11 +1,11 @@
 MuParser
 ========
 
-Many applications require the parsing of mathematical expressions. The main objective of this library is to provide a fast and easy way of doing this. muParser is an extensible high performance math expression parser library written in C++. It works by transforming a mathematical expression into bytecode and precalculating constant parts of the expression.. For more information about this library, visit their `official website <http://muparser.beltoforion.de//>`_.
+Many applications require the parsing of mathematical expressions. The main objective of this library is to provide a fast and easy way of doing this. muParser is an extensible high performance math expression parser library written in C++. It works by transforming a mathematical expression into bytecode and precalculating constant parts of the expression. For more information about this library, visit their `official website <http://muparser.beltoforion.de//>`_.
 
-You can find here the `Muparser library site <http://www.biicode.com/ingoberg/muparser>`_ .
+You can find here the `Muparser library site <http://www.biicode.com/ingoberg/muparser>`_.
 
-The following example is a `math interactive interpreter <http://www.biicode.com/examples/muparser>`_ .
+The following example is a `math interactive interpreter <http://www.biicode.com/examples/muparser>`_.
 
 **main_muparser.cpp**
 
@@ -25,7 +25,7 @@ Create a block:
 	$ bii new examples/muparser
 
 
-Copy the cpp file in your block, then you need to resolve all the dependencies of this ``main.cpp``. Then you can compile it
+Copy the cpp file in your block, then you need to resolve all the dependencies of this ``main.cpp`` and you can compile it:
 
 .. code-block:: bash
 
@@ -94,4 +94,4 @@ You will see next console output after executing the command:
 	Enter an expression or a command:
 
 
-You can now start typing mathematical expresions in the console.
+You can now start typing mathematical expressions in the console.
