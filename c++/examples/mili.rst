@@ -13,15 +13,13 @@ The following example shows a simple use for doing type-safe bitwise operations.
    :language: cpp
    :linenos:
 
-**Download:** :download:`main_mili.cpp </_static/code/cpp/examples/mili/main_mili.cpp>` 
+Create a new project and open the example block:
 
-
-First, you need to resolve all the dependencies of this ``main_mili.cpp``
-	
 .. code-block:: bash
 	
-	$ bii find
-
+	$ bii init mili_example
+	$ cd mili_example
+	$ bii open examples/mili
 
 You will see next console output after executing the command:
 	
