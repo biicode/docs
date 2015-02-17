@@ -88,7 +88,7 @@ By default biicode builds a *static* library (.a, .lib). Let's see how to get a 
 
 
 ADD_BIICODE_TARGETS
-__________________
+___________________
 
 This function creates the following variables:
 
@@ -139,7 +139,7 @@ This function creates the following variables:
 
 
 Binary dependencies
------------------
+-------------------
 
 You can link your block with any library that you have installed in your hard drive, although library are not in bicode.
 
@@ -337,7 +337,7 @@ So we can't change the CMakeLists.txt files of our dependencies directly.
 
 
 How does it work?
-________________
+_________________
 
 
 Create a file named ``bii_deps_config.cmake`` in your block (my_user/my_block) and write inside the CMake code you need.
