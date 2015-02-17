@@ -52,12 +52,10 @@ This command provides an easy way to configure your Raspberry Pi settings.
 	RPI username (pi): [RPI_USER]
 	RPI IP Address: [RPI_IP] #example 192.168.1.44
 	RPI directory to upload (bin): [RPI_FOLDER] #This folder must exist into your Raspberry Pi.
-	Cross building? (NO/yes): yes
 
 * **RPI username (pi)**: Raspberry Pi user name. Default value is ``pi``.
 * **RPI IP Address**: Raspberry Pi local IP address. Write here your Raspberry Pi network address, that you can find out executing the ``ifconfig`` in a console inside the RPi.
 * **RPI directory to upload (bin)**: Raspberry Pi directory where you want your programs to be saved. Default value is the ``bin`` user home folder.
-* **Cross building?**: Activate the croos building. Default value is ``NO``.
 
 .. _bii_rpi_ssh:
 
@@ -75,4 +73,25 @@ If you want a remotely access to your Raspberry Pi you can get it with this comm
 
 	pi@raspberrypi ~ $
 
+``bii cpp:configure --toolchain``: enable and disable the Raspberry Pi cross compilation.
+-----------------------------------------------------------------------------------------
 
+If you want to enable the Raspberry Pi cross compilation use this command.
+
+.. code-block:: bash
+
+	$ bii cpp:configure --toolchain=rpi
+
+If you need the default rpi-toolchain.cmake, execute ``bii rpi:settings`` first.
+
+.. code-block:: bash
+
+	$ bii rpi:settings
+	...
+	$ bii cpp:configure --toolchain=rpi
+
+If you want to disable it, use this command.
+
+.. code-block:: bash
+
+	$ bii cpp:configure --toolchain=None

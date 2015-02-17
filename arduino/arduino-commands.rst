@@ -148,3 +148,25 @@ This command open a serial monitor to read the serial port of your Arduino board
 
 	$ bii arduino:monitor
 
+``bii cpp:configure --toolchain``: enable and disable the Arduino cross compilation.
+------------------------------------------------------------------------------------
+
+If you want to enable the Raspberry Pi cross compilation use this command.
+
+.. code-block:: bash
+
+	$ bii cpp:configure --toolchain=arduino
+
+If you need the default arduino-toolchain.cmake, execute ``bii arduino:settings`` first.
+
+.. code-block:: bash
+
+	$ bii arduino:settings
+	...
+	$ bii cpp:configure --toolchain=arduino
+
+If you want to disable it, use this command.
+
+.. code-block:: bash
+
+	$ bii cpp:configure --toolchain=None

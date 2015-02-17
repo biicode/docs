@@ -12,3 +12,4 @@ Here are some useful Arduino use cases:
    howto/arduino-configure-settings
    howto/arduino-adaptation-guide
    howto/arduino-yun
+   howto/arduino-tool-chain

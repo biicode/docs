@@ -95,20 +95,55 @@ Configure your project to the cross compiling running ``bii rpi:settings``:
    RPI username (pi): [ENTER]
    RPI IP Address: 192.168.1.44
    RPI directory to upload (bin): [ENTER] #This folder must exist into your Raspberry Pi.
-   Cross building? (NO/yes): yes
+   Creating toolchain for Raspberry PI
+   Run "$bii cpp:configure --toolchain=rpi" to activate it
+   Run "$bii cpp:configure --toolchain=None" to disable it
 
-Lets check that everything is fine by building and running the hello world aplication.
+Activate the toolchain for Raspberry PI with ``bii cpp:configure --toolchain=rpi``:
+
+.. code-block:: bash
+
+   bii cpp:configure --toolchain=rpi
+
+Lets check that everything is fine by building and trying to run the hello world aplication. It could fail the execution because it is compiled to Raspberry PI. 
 
 .. code-block:: bash
 
   ~/myproject$ bii cpp:build
-  Configuring cross compiler for ARM architecture:
   ...
   ~/myproject$ ./bin/user_myblock_main
-  Hello World!
+  ./bin/user_myblock_main: cannot execute binary file
 
+4. Send your executable to your Raspberry Pi
+--------------------------------------------
 
-4. Depending on WiringPi
+To **send the binary to your Raspberry Pi**, you just need to execute the ``bii rpi:send`` command and the file will be sent using `rsync <http://en.wikipedia.org/wiki/Rsync>`_ to the address provided in your settings.
+
+.. code-block:: bash
+
+  $ bii rpi:send
+  Sending with rsync -Pravdtze ssh [PROJECT_DIRECTORY]/bin/* [RPI_USER]@[RPI_IP]:[DIRECTORY]/[PROJECT_NAME]
+
+  [RPI_USER]@[RPI_IP]'s password:
+
+The Raspberry Pi user's password will be asked. If you have not changed your password, for Raspbian the default one is **raspberry**.
+
+Finally, to **execute your program on your Raspberry Pi**, you need to establish a connection. You can use the ``rpi:ssh`` command if you want remote access. You'll find your program deployed in the path configured in your settings:
+
+.. code-block:: bash
+
+  $ bii rpi:ssh
+  ...
+  Connecting with ssh <rpi_user>@<rpi_ip>
+  <rpi_user>@<rpi_ip>'s password:
+
+  pi@raspberrypi ~ $ cd hello_rpi
+  pi@raspberrypi ~/hello_rpi $ ls
+  myuser_myblock_main
+  pi@raspberrypi ~/hello_rpi $ ./user_myblock_main
+  Hello world!
+
+5. Depending on WiringPi
 ------------------------
 
 Copy the following code containing a simple sum function and a test into the **main.cpp** file
@@ -142,37 +177,6 @@ Now you are ready to compile and deploy your new application. First, **cross-com
 	[100%] Built target myuser_myblock_main
 
 The binaries are created in ``bin`` folder, but remember that **you cannot run this program locally, as it has been compiled for a different architecture** using the cross-compiling tools. You need to send the binary to your Raspberry Pi before executing it.
-
-
-5. Send your executable to your Raspberry Pi
---------------------------------------------
-
-To **send the binary to your Raspberry Pi**, you just need to execute the ``bii rpi:send`` command and the file will be sent using `rsync <http://en.wikipedia.org/wiki/Rsync>`_ to the address provided in your settings.
-
-.. code-block:: bash
-
-	$ bii rpi:send
-	Sending with rsync -Pravdtze ssh [PROJECT_DIRECTORY]/bin/* [RPI_USER]@[RPI_IP]:[DIRECTORY]/[PROJECT_NAME]
-
-	[RPI_USER]@[RPI_IP]'s password:
-
-The Raspberry Pi user's password will be asked. If you have not changed your password, for Raspbian the default one is **raspberry**.
-
-Finally, to **execute your program on your Raspberry Pi**, you need to establish a connection. You can use the ``rpi:ssh`` command if you want remote access. You'll find your program deployed in the path configured in your settings:
-
-.. code-block:: bash
-
-	$ bii rpi:ssh
-	...
-	Connecting with ssh <rpi_user>@<rpi_ip>
-	<rpi_user>@<rpi_ip>'s password:
-
-	pi@raspberrypi ~ $ cd hello_rpi
-	pi@raspberrypi ~/hello_rpi $ ls
-	myuser_myblock_main
-	pi@raspberrypi ~/hello_rpi $ ./user_myblock_main
-	Hello world!
-
 
 Didn't work? No problem, read or contact us in |biicode_forum_link|
 

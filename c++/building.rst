@@ -442,56 +442,28 @@ Possible values are: **DEBUG**, **RELEASE**, **RELWITHDEBINFO**, **MINSIZEREL**
 Check official docs from |cmake_build_type|.
 
 
-
 Using a custom tool-chain
-------------------------
+-------------------------
 
-When you bii cpp:build your projects, biicode automatically generates a default tool-chain to build projects.
-To use a custom tool-chain you need to place it in your block folder (and add it as a dependency in your **biicode.conf** :ref:`[dependencies] section<dependencies_conf>`)
-and then specify you want to use that tool-chain in your project's :ref:`settings.bii<settings_bii>`.
+When you build your projects, biicode automatically generates a default tool-chain to build projects.
+To **use a custom tool-chain** you need to **place it in the bii folder** of your project **with the name <your_toolchain_name>-toolchain.cmake**.
 
-For example:
+To use it, just pass it as argument of ``bii cpp:configure -t your_toolchain_name``.
 
-.. code-block:: none
+For example, I want to write a program to my coffee machine and I have a toolchain. First, copy my toolchai with the name coffe-toolchain.cmake into the bii folder. Then, execute ``bii cpp:configure`` with ``-t`` or ``--toolchain`` flag whith the name ``coffe``:
 
-  cpp: {cross_build: ARM, generator: Unix Makefiles,
-        toolchain: {"path":fenix/armadillo/rpi_toolchain.cmake}}
-  os: {arch: 64bit, family: Linux, subfamily: Ubuntu, version: '13.10'}
-  rpi: {directory: armadillo, ip: 192.168.1.101, user: pi}
+.. code-block:: bash
 
+    $ bii init my_coffe_machine
+    $ cd my_coffe_machine
+    $ #copy coffe-toolchain.cmake into init my_coffe_machine/bii
+    $ bii cpp:configure -t coffe
 
-As you can see you define the path to the tool-chain, that path includes a block which can be in blocks or deps folders.
+If you want to change the toolchain that you are using, just execute ``bii cpp:configure -t my_new_toolchain_name``
 
-You can also make your tool-chain customizable by defining replacements tokens, for example:
+If you want to use the native environment, just execute ``bii cpp:configure -t`` without any toochain name.
 
-.. code-block:: none
-
-  INCLUDE(CMakeForceCompiler)
-  SET(CMAKE_SYSTEM_NAME Linux)
-  SET(CMAKE_SYSTEM_VERSION 1)
-  SET(CMAKE_C_COMPILER COMPILER_PATH/bin/COMPILER_NAME-gcc)
-  SET(CMAKE_CXX_COMPILER COMPILER_PATH/bin/COMPILER_NAME-g++)
-
-
-and then in your :ref:`settings.bii<settings_bii>`:
-
-.. code-block:: none
-
-  cpp: {cross_build: ARM, generator: Unix Makefiles,
-        toolchain: {"path": fenix/armadillo/rpi_toolchain.cmake,
-                    "replacements": {COMPILER_PATH: /home/julia/raspberry_cross_compilers/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian,
-                                   COMPILER_NAME: gcc-linaro-arm-linux}
-                   }}
-  os: {arch: 64bit, family: Linux, subfamily: Ubuntu, version: '13.10'}
-  rpi: {directory: armadillo, ip: 192.168.1.101, user: pi}
-
-
-So people reusing your block can redefine the tokens as they need.
-
-
-.. container:: infonote
-
-    `Customizing CMake tool-chain <http://blog.biicode.com/custom-cmake-toolchain/>`_  explanation in our blog.
+There are two default toolchains you can use, the ``arduino-toolchain.cmake`` and the ``rpi-toolchain.cmake``. If you want to use one of it, just use ``bii cpp:configure -t arduino`` or ``bii cpp:configure -t rpi``.
 
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
