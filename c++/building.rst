@@ -465,6 +465,9 @@ If you want to use the native environment, just execute ``bii cpp:configure -t``
 
 There are two default toolchains you can use, the ``arduino-toolchain.cmake`` and the ``rpi-toolchain.cmake``. If you want to use one of it, just use ``bii cpp:configure -t arduino`` or ``bii cpp:configure -t rpi``.
 
+.. container:: infonote
+
+    You can learn more about the toolchains in `the CMake's docu <http://www.cmake.org/cmake/help/v3.0/manual/cmake-toolchains.7.html>`_  .
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
 
