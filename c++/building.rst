@@ -445,7 +445,7 @@ Check official docs from |cmake_build_type|.
 Using a custom tool-chain
 -------------------------
 
-When you build your projects, biicode automatically generates a default tool-chain to build projects.
+When you build your projects, biicode automatically generates a default tool-chain to build it.
 To **use a custom tool-chain** you need to **place it in the bii folder** of your project **with the name <your_toolchain_name>-toolchain.cmake**.
 
 To use it, just pass it as argument of ``bii cpp:configure -t your_toolchain_name``.
@@ -463,7 +463,7 @@ If you want to change the toolchain that you are using, just execute ``bii cpp:c
 
 If you want to use the native environment, just execute ``bii cpp:configure -t`` without any toochain name.
 
-There are two default toolchains you can use, the ``arduino-toolchain.cmake`` and the ``rpi-toolchain.cmake``. If you want to use one of it, just use ``bii cpp:configure -t arduino`` or ``bii cpp:configure -t rpi``.
+There are two default toolchains you can use, the ``arduino-toolchain.cmake`` and the ``rpi-toolchain.cmake``. If you want to use one of it, just use ``bii arduino:settings`` and ``bii cpp:configure -t arduino`` or ``bii rpi:settings`` and ``bii cpp:configure -t rpi``.
 
 .. container:: infonote
 
@@ -489,5 +489,3 @@ There are two default toolchains you can use, the ``arduino-toolchain.cmake`` an
 .. |cmake_build_type| raw:: html
 
    <a href="http://www.cmake.org/cmake/help/v3.0/variable/CMAKE_BUILD_TYPE.html" target="_blank"> CMake Build Type</a>
-
-
