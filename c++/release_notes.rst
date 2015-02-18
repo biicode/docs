@@ -3,6 +3,16 @@
 Release notes
 =============
 
+**2.4.1** (18-Feb-2015)
+
+	* Improved windows installer, more user options for path, icons, uninstaller, and fixed readme.txt linefeeds
+	* Improved cmake installation, with option --interactive "$bii setup:cpp -i", now not adding it to path, so can coexist with 2.8 installs
+	* Recovered colored output of cmake builds
+	* Enabled blocks linked with symlinks in linux, so 2 different projects can link to the same block
+        * Fixed problem of cached badges
+        * Fixed biicode.cmake issues for CLion, now CLion can be used with biicode
+	
+
 **2.3** (9-Feb-2015)
 
 	* Better toolchain system for cross-compiling
