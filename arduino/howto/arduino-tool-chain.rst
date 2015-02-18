@@ -17,7 +17,7 @@ For example, I want to write a program to my coffee machine that has an Arduino 
 
 If you want to change the toolchain that you are using, just execute ``bii cpp:configure -t my_new_toolchain_name``
 
-If you want to use the default environment, just execute ``bii cpp:configure -t arduino``.
+If you want to use the default environment, just execute ``bii arduino:settings`` and ``bii cpp:configure -t arduino``.
 
 You can edit the ``arduino-toolchain.cmake`` if you want to use the default settings but with all your changes.
 

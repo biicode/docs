@@ -1,7 +1,7 @@
 .. _bii_arduino_tools:
 
 Arduino commands
-=================
+================
 
 This section summarizes the **Arduino commands available to be used with the biicode client program**. You can see these tools if you execute:
 
@@ -27,7 +27,7 @@ This section summarizes the **Arduino commands available to be used with the bii
 **Note**: You need to have arduino :ref:`correctly set up <arduino_installation>`.
 
 ``bii arduino:configure``: configure your project
------------------------------------------------
+-------------------------------------------------
 
 If you have configured your project as a C/C++ project and you want to develop in arduino language, this command helps you! Enter it and configure your project like an arduino project. It invokes arduino cross compiler and you are ready to start with your arduino.
 
@@ -58,7 +58,7 @@ If you have configured your project as a C/C++ project and you want to develop i
 
 
 ``bii arduino:build``: build your project
--------------------------------------------
+-----------------------------------------
 
 This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX compiler -> avr-g++) to build and compile the project.
 
@@ -84,7 +84,7 @@ This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX c
 	[100%] Built target your_user_name_block_firmware
 
 ``bii arduino:upload``: send your code into the Arduino
-----------------------------------------------------------
+-------------------------------------------------------
 
 When you want to deploy your code into the arduino, this command sends your previously built firmware to the arduino.
 
