@@ -45,11 +45,6 @@ And the Cmake lists that copies config file to bin folder:
    :language: cmake
    :linenos:
 
-
-**Download:**
-:download:`lwan.zip </_static/code/cpp/examples/lwan/lwan.zip>`
-
-
 Now, run the hello example.
 
 .. code-block:: bash
@@ -81,3 +76,5 @@ You can see the server running:
 
 
 Now you can go to any browser and navigate to http://localhost:8080?name=fred
+
+Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
