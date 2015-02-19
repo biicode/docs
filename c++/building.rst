@@ -448,18 +448,18 @@ To **use a custom tool-chain** you need to **place it in the bii folder** of you
 
 To use it, just pass it as argument of ``bii cpp:configure -t your_toolchain_name``.
 
-For example, I want to write a program to my coffee machine and I have a toolchain. First, copy my toolchai with the name coffe-toolchain.cmake into the bii folder. Then, execute ``bii cpp:configure`` with ``-t`` or ``--toolchain`` flag whith the name ``coffe``:
+For example, I want to write a program to my armv7 and I have a toolchain named armv7-toolchain.cmake. First, copy my toolchain with the name armv7-toolchain.cmake into the bii folder. Then, execute ``bii cpp:configure`` with ``-t`` or ``--toolchain`` flag whith the name ``armv7``:
 
 .. code-block:: bash
 
-    $ bii init my_coffe_machine
-    $ cd my_coffe_machine
-    $ #copy coffe-toolchain.cmake into init my_coffe_machine/bii
-    $ bii cpp:configure -t coffe
+    $ bii init my_armv7_machine
+    $ cd my_armv7_machine
+    $ #copy armv7-toolchain.cmake into init my_armv7_machine/bii
+    $ bii cpp:configure -t armv7
 
 If you want to change the toolchain that you are using, just execute ``bii cpp:configure -t my_new_toolchain_name``
 
-If you want to use the native environment, just execute ``bii cpp:configure -t`` without any toochain name.
+If you want to use the native environment, just execute ``bii cpp:configure -t`` without any toochain name or None as name.
 
 There are two default toolchains you can use, the ``arduino-toolchain.cmake`` and the ``rpi-toolchain.cmake``. If you want to use one of it, just use ``bii arduino:settings`` and ``bii cpp:configure -t arduino`` or ``bii rpi:settings`` and ``bii cpp:configure -t rpi``.
 
