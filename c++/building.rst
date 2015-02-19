@@ -88,7 +88,7 @@ By default biicode builds a *static* library (.a, .lib). Let's see how to get a 
 
 
 ADD_BIICODE_TARGETS
-__________________
+___________________
 
 This function creates the following variables:
 
@@ -139,7 +139,7 @@ This function creates the following variables:
 
 
 Binary dependencies
------------------
+-------------------
 
 You can link your block with any library that you have installed in your hard drive, although library are not in bicode.
 
@@ -337,7 +337,7 @@ So we can't change the CMakeLists.txt files of our dependencies directly.
 
 
 How does it work?
-________________
+_________________
 
 
 Create a file named ``bii_deps_config.cmake`` in your block (my_user/my_block) and write inside the CMake code you need.
@@ -422,9 +422,6 @@ Zip ``myproject`` folder and compile in other computer without biicode, just exe
     `Open Sound Control Library <http://blog.biicode.com/upload-to-biicode-oscpack/>`_  adaptation is an example to understand how is CMake useful.
 
 
-.. _custom_toolchains:
-
-
 
 Build type: Debug or Release
 ----------------------------
@@ -441,6 +438,7 @@ Possible values are: **DEBUG**, **RELEASE**, **RELWITHDEBINFO**, **MINSIZEREL**
 
 Check official docs from |cmake_build_type|.
 
+.. _custom_toolchains:
 
 Using a custom tool-chain
 -------------------------
@@ -468,6 +466,7 @@ There are two default toolchains you can use, the ``arduino-toolchain.cmake`` an
 .. container:: infonote
 
     You can learn more about the toolchains in `the CMake's docu <http://www.cmake.org/cmake/help/v3.0/manual/cmake-toolchains.7.html>`_  .
+
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
 
