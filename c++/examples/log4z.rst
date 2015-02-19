@@ -23,6 +23,17 @@ Now, you can check all the log4z examples which are uploaded in biicode and exec
 	~/log4z_sample$ bii open examples/log4z
 	~/log4z_sample$ bii cpp:build
 
+.. container:: infonote
+
+   **Windows Users**
+
+   It is necessary to specify *Visual Studio* generator before building (it doesn't work with MinGW), otherwise, you can skip this step.
+
+   .. code-block:: bash
+
+     bii cpp:configure -G "Visual Studio 12"
+
+
 When all the examples are built, execute for fast stream log strings testing:
 
 .. code-block:: bash
@@ -32,6 +43,8 @@ When all the examples are built, execute for fast stream log strings testing:
 	2014-09-19 12:15:08.223 LOG_ALARM logger id=0 path=./log/ name=examples_log4z_fast_test level=1 display=1
 	2014-09-19 12:15:08.223 LOG_INFO  begin test stream log utf-16 string input.... ( C:\Users\Francisco\Desktop\release_1_0\examples\blocks\examples\log4z\fast_test.cpp ) : 20
 	...
+
+Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
 
  
 .. |log4z_homepage| raw:: html
