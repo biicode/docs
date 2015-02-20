@@ -82,7 +82,7 @@ Follow these steps if something failed during the automatic installation explain
             $ xcode-select --install
 
 
-        #. Download and install `CMake 3.0.2 version <http://www.cmake.org/cmake/resources/software.html>`_ for your Mac OSX.
+        #. Download and install `CMake <http://www.cmake.org/cmake/resources/software.html>`_ for your Mac OSX.
 
     .. _arduino_cmake_win:
     .. container:: tabs-item
@@ -102,16 +102,21 @@ Follow these steps if something failed during the automatic installation explain
         You might need to close and open again any ``cmd`` windows in order to load the new value for the ``PATH`` variable.
 
 
-Now, you can check CMake is working properly. Open a terminal window and run the following command. If the output message looks similar to this, CMake is successfully installed.
+Now, you can check CMake is working properly. Open a terminal window and run the following command:
 
 .. code-block:: bash
 
-    $ cmake --version
+ $ cmake --version
+
+If the output message looks similar to this, CMake is successfully installed.
+
+.. code-block:: bash
+
     cmake version [version]
 
 Install Arduino SDK manually
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-`Download the Arduino software <http://arduino.cc/en/Main/Software>`_ first, it is important to choose a SDK compatible with your board. If you need more info visit the `official Arduino website <http://arduino.cc/en/Main/Software>`_.
+`Download the Arduino software <http://arduino.cc/en/Main/Software>`_ first, it is important to choose a SDK compatible with your board. If you need more info visit the `official Arduino website <http://arduino.cc>`_.
 
 If you have any questions, we are available at |biicode_forum_link|. You can also |biicode_write_us| for suggestions and feedback.
 

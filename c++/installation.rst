@@ -39,7 +39,7 @@ Then install required tools like CMake and MinGW or GCC:
 
 .. container:: infonote
 
-    If any problem installing C/C++ tools, check :ref:`how to install C/C++ tools manually <cpp_installation>`
+    If any problem installing C/C++ tools, check :ref:`how to install C/C++ tools manually <cpp_installation>`.
 
 Execute again to make sure the tools are installed:
 
@@ -53,7 +53,7 @@ Execute again to make sure the tools are installed:
 
 .. container:: todo
 
-    **You're now ready to** :ref:`get started.<cpp_getting_started>`.
+    **You're now ready to** :ref:`get started<cpp_getting_started>`.
 
 .. _alternative_install_debian:
 

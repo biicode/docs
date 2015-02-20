@@ -24,8 +24,11 @@ No. If you need real version control for your projects, you can still use any av
 Can I use biicode with my favourite VCS?
 ----------------------------------------
 
-Yes, but this feature is still experimental. You can manage any of your biicode projects (projects) as a separate project under version control. You can zip and send by email, sync with dropbox, or put it into a VCS repository. But we store meta-information in a DB in binary format, as it doesn't allow straightforward merging by VCS. We are working on the merging process of such meta-information in case of conflicts that will likely arise, but this is an ongoing work.
+Yes, it supports common Git web-based repositories such as GitHub or Bitbucket. You can use any git repository with biicode just doing ``git clone`` in your blocks folder and the :ref:`using your VCS as usual <git_integration>`.
 
+We recommend to work with Git and develop taking care of your project's version, then you can build your project with biicode, publish your useful code and just let biicode manage your dependencies.
+
+It also supports Continuous Integration with :ref:`Appveyor <appveyor_integration>` and :ref:`Travis CI <travis_integration>`. Moreover you can download zip blocks in the web view.
 
 Which languages are supported?
 ------------------------------

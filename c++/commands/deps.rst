@@ -2,7 +2,7 @@
 .. _bii_deps_command:
 
 **bii deps**: show block dependencies
---------------------------------------
+-------------------------------------
 
 ``bii deps`` checks your project's dependencies. It gives a general idea of which are your code's depenencies. You can use several arguments and filters.
 
@@ -12,7 +12,7 @@
 
 
 bii deps 
-^^^^^^^^^
+^^^^^^^^
 Show the files your blocks depend on (with their corresponding blocks and versions), also shows system and unresolved dependencies:
 
 .. code-block:: bash
@@ -42,7 +42,7 @@ Include the name of an specific block to see only that block's dependencies:
 
 
 bii deps --detail
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 Use *bii deps -- files* but to show the origin files where dependencies are used.
 
@@ -68,7 +68,7 @@ Use *bii deps -- files* but to show the origin files where dependencies are used
 
 
 bii deps --detail [FILTER]
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Enter a filter to see something specific. For example, you can see just a file or a dependency with its origins:
 
@@ -86,7 +86,7 @@ Enter a filter to see something specific. For example, you can see just a file o
 
 		 
 bii deps --files
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 Use ``bii deps --files`` to know all block files (together with their types) and their dependencies.
 
@@ -108,7 +108,8 @@ Use ``bii deps --files`` to know all block files (together with their types) and
 
 .. container:: infonote
 	
-	Type of dependency tags:
+	Type of dependency information showed in files:
+
 		* E: explicit file
 		* I: implicit file
 		* D: data file

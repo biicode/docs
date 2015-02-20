@@ -22,6 +22,8 @@ Biicode has some commands similar to VCS management but we recommend greatly to 
 	~/mygitproject/blocks/myusername$ git clone your_repository
 	~/mygitproject/blocks/myusername$ bii cpp:build
 
+.. _appveyor_integration:
+
 AppVeyor
 ---------
 
@@ -132,6 +134,8 @@ You can see this live example here:
 * |biicode_block_parser| with its automatically published releases
 
 Learn more about AppVeyor visiting their `docs <http://www.appveyor.com/docs>`_.
+
+.. _travis_integration:
 
 Travis CI
 ---------

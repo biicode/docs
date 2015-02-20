@@ -21,16 +21,16 @@ Tag's default value is ``DEV``, but all Release life-cycle TAG values are availa
 
 * Publish a ``DEV`` version. That's number ``0``.
 * Publish a ``DEV`` version. That's still number ``0``.
-* Publish a ``BETA`` version. That's number ``0``.
+* Publish a ``BETA`` version. That overwrites number ``0``.
 * Publish a ``DEV`` version. That's number ``1``.
-* Publish a ``ALPHA`` version. That's number ``1``.
+* Publish a ``ALPHA`` version. That overwrites number ``1``.
 * Publish a ``STABLE`` version. That's number ``2``.
 
 
 Tag a version
 --------------
 
-Put a semantic name to your block versions. Once tagged, you can :ref:`depend on a version just knowing its tagd<tag_dependencies>`. Just execute:
+Put a semantic name to your block versions. Once tagged, you can :ref:`depend on a version just knowing its semantic tag<tag_dependencies>`. Just execute:
 
 .. code-block:: bash
 
