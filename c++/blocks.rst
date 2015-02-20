@@ -1,6 +1,5 @@
 .. _cpp_blocks:
 
-
 What is a block?
 ================
 
@@ -37,7 +36,7 @@ These are the main components of a block (under the ``block_name/`` directory):
 * :ref:`Building Configuration your own Block <cpp_building>`
 
 Create a block
-==============
+--------------
 
 Blocks live in Biicode projects, each biicode projects can have in it as many blocks as you want. 
 
@@ -80,11 +79,32 @@ This structure empowers consistency between the blocks published in biicode, it 
         * ref:`Tag your STABLE versions <version_tags>`_
 
 
+Create a block from a git repository
+------------------------------------
 
+The code
+^^^^^^^^
 
+Put your code into a biicode block:
+
+.. code-block:: bash
+
+  $~ bii init project_name
+  $~ cd project_name/blocks
+  $~ mkdir username
+  $~ cd username
+  $~ git clone https://YourRepourl.git
 
 biicode.conf
 ^^^^^^^^^^^^
+
+Now execute ``bii deps`` or ``bii deps --files`` to get all information related to biicode's dependency scanning. This tells you all the unresolved ``#include``. 
+
+Create a ``biicode.conf`` file and fill the ``[requirements]``,  and ``[includes]`` section to retrieve the libs you need (Box2D, OpenSSl, OpenCV, Libuv, GTest ...)
+
+Also, write the ``[paths]`` section to tell biicode in which folders it has to look for the local files from your includes (You only need to specify this when your project has non-file-relative ``#include (s)``). 
+
+* :ref:`More information on the biicode.conf file<biicode_conf>` and on :ref:` [paths] section<biicode_conf>`
 
 This is an example of a biicode.conf file: ::
 
@@ -111,7 +131,7 @@ This is an example of a biicode.conf file: ::
       [mains]
           # Manual adjust of files that define an executable
           # !main.cpp  # Do not build
-          # main2.cpp # Build it 
+          # main2.cpp # Build it
 
       [hooks]
           #  add (+), remove (-), or overwrite (=) files names matching bii*stage*hook.py
@@ -128,93 +148,36 @@ This is an example of a biicode.conf file: ::
           # By default they are copied to bin/user/block/...
           # image.cpp + image.jpg  # code should write open("user/block/image.jpg")
 
+
+
 CMakeLists.txt
 ^^^^^^^^^^^^^^
 
+In projects with no ``CMakeLists.txt`` just execute ``bii cpp:build``. 
+Had a previous ``CMakeLists.txt``? Adapt it like this:
+
+.. code-block:: cmake
+
+   IF(BIICODE)
+      INIT_BIICODE_BLOCK()    
+      ADD_BIICODE_TARGETS()  
+   ELSE()
+      # Your regular CMakeLists configuration here
+   ENDIF() 
 
 
-Create a block from a git repository
-------------------------------------
 
+* Follow this :ref:`Build Config Guide <cpp_building>` for specifics.
 
+* There's also a post series explaining how to |upload_to_biicode|.
 
-
-
-**Publish** your source code to biicode:
-
-.. code-block:: bash
-
-   ~/myproject$ bii publish --tag=STABLE
-
-
-Check in your profile **www.biicode.com/myuser** what you've just uploaded.
-
-
-Reuse your code
-^^^^^^^^^^^^^^^^
-Once the code is in biicode, you can **reuse it in any project**, even in a different computer. Let's **create a new project to try it**.
-
-Let's build a sum calculator and reuse the published **sum** function to build it:
-
-.. code-block:: bash
-
-   ~/myproject$ cd ..  (get out of current project)
-   ~$ bii init mycalc   (create new project mycalc)
-   ~$ cd mycalc
-   ~/mycalc$ bii new myuser/calc --hello=cpp
-
-Change the **main.cpp** file created with the following content:
-
-.. code-block:: cpp
-
-   #include <iostream>
-   #include "myuser/math/operations.h" //NOTE: Replace myuser!
-
-   using namespace std;
-   int main() {
-      cout<<"2 + 3 = "<< sum(2, 3)<<endl;
-   }
-
-
-Use ``bii find`` to let biicode find a suitable (compatible) version of our dependencies. 
-
+   
 .. container:: infonote
 
-      You can also directly write them in the **biicode.conf** file. 
-      This example depends on your published block **myuser/math**, and it only has one version (number 0). 
-      Create a **biicode.conf** file inside your block:
-
-      .. code-block:: text
-
-        +-- mycalc
-          |    +-- blocks
-          |    |    +-- myuser
-          |    |    |    +-- calc
-          |    |    |    |    +-- biicode.conf
-          |    |    |    |    +-- main.cpp
-
-      Open **biicode.conf** file with any text editor and write in it:
-
-      .. code-block:: bash
-
-         [requirements]
-            myuser/math:0
+    **Are you using boost?** Check how to use boost features with biicode here.
 
 
-Build and run your application:
-
-.. code-block:: bash
-
-   ~/mycalc$ bii cpp:build
-   ~/mycalc$ bin\myuser_calc_main
-    2 + 3 = 5
-
-
-.. container:: infonote
-
-     Look into your **deps** folder, your source code is in it. And what about Google Test? Shouldn't it be there? Not really. The **sum** function does not require Google Test at all, so Google Test is not required as dependency in your new calculator project (unless you also add it to define your own unit tests of this calculator, of course)
-
-Congrats! You have just reused your **sum** function in a new project. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feedback.
+* You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feedback.
 
 .. |biicode_forum_link| raw:: html
 
@@ -225,5 +188,12 @@ Congrats! You have just reused your **sum** function in a new project. You know 
 
    <a href="mailto:info@biicode.com" target="_blank">write us</a>
 
+.. |biicode_stackoverflow| raw:: html
+
+   <a href="http://stackoverflow.com/questions/tagged/biicode" target="_blank">tag your question in StackOverflow</a>
+
+.. |upload_to_biicode| raw:: html
+
+   <a href="http://blog.biicode.com/tag/upload-libraries-to-biicode/" target="_blank">Upload libraries to Biicode</a>
 
 
