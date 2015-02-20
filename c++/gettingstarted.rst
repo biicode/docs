@@ -48,13 +48,13 @@ This is the resulting layout:
 
 .. code-block:: text
 
-  +-- myproject
-  |    +-- bii
-  |    +-- blocks
-  |    |    +-- myusers
-  |    |    |    +-- myblock
+  +-- myproject/
+  |    +-- bii/
+  |    +-- blocks/
+  |    |    +-- myusers/
+  |    |    |    +-- myblock/
   |    |    |    |    +-- main.cpp
-  |    +-- deps
+  |    +-- deps/
 
 
 Build and run it
@@ -134,15 +134,6 @@ Check your ``deps`` folder, the GoogleTest code is there. And your `biicode.conf
 
 
 Congrats! You have just used GoogleTest within  your project. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feedback.
-
-.. |biicode_forum_link| raw:: html
-
-   <a href="http://forum.biicode.com" target="_blank">the biicode forum</a>
- 
-
-.. |biicode_write_us| raw:: html
-
-   <a href="mailto:info@biicode.com" target="_blank">write us</a>
 
 .. _upload-your-code:
 
