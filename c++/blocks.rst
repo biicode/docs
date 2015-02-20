@@ -12,13 +12,7 @@ Each block has a name, version, tag and owner. For example,|openssl_link| block 
 
    <a href="http://www.biicode.com/lasote/openssl" target="_blank">OpenSSL</a>
 
-Inside a block are the following components:
-
-  - Code (including tests or whatever you want)
-  - CMakeLists.txt 
-  - biicode.conf
-
-A block example structure:
+Here's an example block structure:
 
 .. code-block:: text
 
@@ -31,24 +25,23 @@ A block example structure:
   |   +-- CMakeLists.txt
   |   +-- README
 
-Here you can see the main components of a block:
+These are the main components of a block (under the ``block_name/`` directory):
 
-  - the ``block_name/`` directory contains your repo's code, with its sources and folders.
+  - Your repo's code, with its sources and folders.
+  - ``CMakeLists.txt`` file, to specify your build config.
+  - ``biicode.conf`` file with information about your block and its dependencies.
   - a README 
-  - The ``CMakeLists.txt`` specifies your build config.
-  - ``biicode.conf`` contains information about your block and its dependencies.
 
+* :ref:`More information on the biicode.conf file<biicode_conf>`
 
-:ref:`More information on the biicode.conf file<biicode_conf>`
-
-:ref:`Building Configuration your own Block <cpp_building>`.
+* :ref:`Building Configuration your own Block <cpp_building>`
 
 Create a block
 ==============
 
 Blocks live in Biicode projects, each biicode projects can have in it as many blocks as you want. 
 
-A project is a combination of metadata and folders containing your blocks, dependencies and files like policies.bii to apply when finding or updating your dependencies.
+A project is a combination of meta-data and folders containing your blocks, dependencies and files like policies.bii to apply when finding or updating your dependencies.
 
 Each project follows the same standard structure:
 
@@ -71,13 +64,20 @@ Each project follows the same standard structure:
   |    |    |    |    +-- CMakeLists.txt
   |    |    +-- owner2/
   |    |    |    +-- blockC/
-  |    |    |    |    +-- http_client.h
-  |    |    |    |    +-- http_client.cpp
+  |    |    |    |    +-- tool.h
+  |    |    |    |    +-- tool.cpp
   |    |    |    |    +-- biicode.conf
   |    |    |    |    +-- CMakeLists.txt
   |    +-- deps/
   
+This structure empowers consistency between the blocks published in biicode, it also enables working with different owner/blocks at the same time.
 
+.. container:: infonote
+     
+     Tips naming your block:
+        * Use underscores for multiple words
+        * Use lowercase letters (Newbies will thank this as OS X and Windows have case-insensitive filesystems by default)
+        * ref:`Tag your STABLE versions <version_tags>`_
 
 
 
@@ -133,8 +133,12 @@ CMakeLists.txt
 
 
 
-Publish your code
-^^^^^^^^^^^^^^^^^
+Create a block from a git repository
+------------------------------------
+
+
+
+
 
 **Publish** your source code to biicode:
 

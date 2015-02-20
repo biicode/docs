@@ -27,6 +27,8 @@ Tag's default value is ``DEV``, but all Release life-cycle TAG values are availa
 * Publish a ``STABLE`` version. That's number ``2``.
 
 
+.. _version_tags:
+
 Tag a version
 --------------
 
