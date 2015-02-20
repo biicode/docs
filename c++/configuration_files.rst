@@ -1,7 +1,7 @@
 .. _config_files:
 
-Configuration files
-===================
+Configuration Reference
+=======================
 
 Biicode offers you a set of configuration files across your projects and blocks. These files empower you with full control of how biicode treats your code and dependencies.
 

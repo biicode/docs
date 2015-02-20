@@ -7,9 +7,9 @@
 
 Place it into your block, next to your source code: ::
 
-	|-- my_project
-	|    +-- bii
-	|    +-- bin
+	|-- my_project/
+	|    +-- bii/
+	|    +-- bin/
 	|    +-- blocks
 	|    |	  +-- myuser
 	|    |    |     +-- my_block

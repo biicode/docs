@@ -48,13 +48,13 @@ This is the resulting layout:
 
 .. code-block:: text
 
-  +-- myproject
-  |    +-- bii
-  |    +-- blocks
-  |    |    +-- myusers
-  |    |    |    +-- myblock
+  +-- myproject/
+  |    +-- bii/
+  |    +-- blocks/
+  |    |    +-- myusers/
+  |    |    |    +-- myblock/
   |    |    |    |    +-- main.cpp
-  |    +-- deps
+  |    +-- deps/
 
 
 Build and run it
