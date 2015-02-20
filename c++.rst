@@ -9,8 +9,8 @@ A multi-platform C and C++ dependency manager.
    :maxdepth: 2
 
    c++/installation
-   c++/blocks
    c++/gettingstarted
+   c++/blocks
    c++/ides
    c++/building
    c++/dependencies
