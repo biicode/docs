@@ -30,7 +30,6 @@ We recommend to work with Git and develop taking care of your project's version,
 
 It also supports Continuous Integration with :ref:`Appveyor <appveyor_integration>` and :ref:`Travis CI <travis_integration>`. Moreover you can download zip blocks in the web view.
 
-
 Which languages are supported?
 ------------------------------
 
