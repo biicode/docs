@@ -3,13 +3,9 @@
 What is a block?
 ================
 
-A block (also known as 'repo' or 'repository') is the place to put your code in biicode. 
+**A block** (also known as 'repo' or 'repository') is the place to put your code in biicode. 
 
-Each block has a name, version, tag and owner. For example,|openssl_link| block has an owner (lasote) and latest version is 3 DEV.
-
-.. |openssl_link| raw:: html
-
-   <a href="http://www.biicode.com/lasote/openssl" target="_blank">OpenSSL</a>
+Each block has an *owner, name, version* and *tag*. For example, the |openssl_link| block has an **owner** (lasote) and latest version is **3 DEV**.
 
 Here's an example block structure:
 
@@ -38,9 +34,9 @@ These are the main components of a block (under the ``block_name/`` directory):
 Create a block
 --------------
 
-Blocks live in Biicode projects, each biicode projects can have in it as many blocks as you want. 
+Blocks live in Biicode projects, each biicode project can have in it as many blocks as you want. 
 
-A project is a combination of meta-data and folders containing your blocks, dependencies and files like policies.bii to apply when finding or updating your dependencies.
+**A project** is a combination of meta-data and folders containing your blocks, dependencies and files like ``policies.bii`` to apply when finding or updating your dependencies.
 
 Each project follows the same standard structure:
 
@@ -75,8 +71,8 @@ This structure empowers consistency between the blocks published in biicode, it 
      
      Tips naming your block:
         * Use underscores for multiple words
-        * Use lowercase letters (Newbies will thank this as OS X and Windows have case-insensitive filesystems by default)
-        * ref:`Tag your STABLE versions <version_tags>`_
+        * Use lowercase letters (Newbies will thank this. OS X and Windows have case-insensitive filesystems by default)
+        * :ref:`Tag your STABLE versions <version_tags>`
 
 
 Create a block from a git repository
@@ -93,7 +89,7 @@ Put your code into a biicode block:
   $~ cd project_name/blocks
   $~ mkdir username
   $~ cd username
-  $~ git clone https://YourRepourl.git
+  $~ git clone https://Your_Repo_URL.git
 
 biicode.conf
 ^^^^^^^^^^^^
@@ -104,7 +100,7 @@ Create a ``biicode.conf`` file and fill the ``[requirements]``,  and ``[includes
 
 Also, write the ``[paths]`` section to tell biicode in which folders it has to look for the local files from your includes (You only need to specify this when your project has non-file-relative ``#include (s)``). 
 
-* :ref:`More information on the biicode.conf file<biicode_conf>` and on :ref:` [paths] section<biicode_conf>`
+* :ref:`More information on the biicode.conf file<biicode_conf>` and on :ref:`[paths] section<biicode_conf>`
 
 This is an example of a biicode.conf file: ::
 
@@ -113,6 +109,7 @@ This is an example of a biicode.conf file: ::
       [requirements]
         # Blocks and versions this block depends on
         diego/glfw: 1
+        lasote/openssl(v1.0.2): 0
         google/gtest: 9
 
       [parent]
@@ -121,7 +118,7 @@ This is an example of a biicode.conf file: ::
       [paths]
           # Local directories to look for headers (within block)
           include
-          src
+          /
 
       [dependencies]
           # Manual adjust file implicit dependencies, add (+), remove (-), or overwrite (=)
@@ -142,6 +139,7 @@ This is an example of a biicode.conf file: ::
           # Mapping of include patterns
           gtest/gtest.h: google/gtest/include/gtest
           GLFW/glfw3.h: diego/glfw/include
+          openssl/.h: lasote/openssl/include
 
       [data]
           # Manually define data files dependencies, that will be copied to bin for execution
@@ -153,8 +151,8 @@ This is an example of a biicode.conf file: ::
 CMakeLists.txt
 ^^^^^^^^^^^^^^
 
-In projects with no ``CMakeLists.txt`` just execute ``bii cpp:build``. 
-Had a previous ``CMakeLists.txt``? Adapt it like this:
+* For projects with no ``CMakeLists.txt`` just execute ``bii cpp:build``. 
+* Had a previous ``CMakeLists.txt``? Adapt it like this:
 
 .. code-block:: cmake
 
@@ -174,10 +172,10 @@ Had a previous ``CMakeLists.txt``? Adapt it like this:
    
 .. container:: infonote
 
-    **Are you using boost?** Check how to use boost features with biicode here.
+    **Are you using boost?** :ref:`Check how to use boost features with biicode <boost_examples>`.
 
 
-* You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feedback.
+You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_stackoverflow| and |biicode_write_us| for suggestions and feedback.
 
 .. |biicode_forum_link| raw:: html
 
@@ -195,5 +193,9 @@ Had a previous ``CMakeLists.txt``? Adapt it like this:
 .. |upload_to_biicode| raw:: html
 
    <a href="http://blog.biicode.com/tag/upload-libraries-to-biicode/" target="_blank">Upload libraries to Biicode</a>
+
+.. |openssl_link| raw:: html
+
+   <a href="http://www.biicode.com/lasote/openssl" target="_blank">OpenSSL</a>
 
 
