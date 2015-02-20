@@ -28,7 +28,7 @@ Yes, it supports common Git web-based repositories such as GitHub or Bitbucket. 
 
 We recommend to work with Git and develop taking care of your project's version, then you can build your project with biicode, publish your useful code and just let biicode manage your dependencies.
 
-Moreover you can zip blocks and send them by email, sync with dropbox... It also supports Continuous Integration with :ref:`Appveyor <appveyor_integration>` and :ref:`Travis CI <travis_integration>`.
+It also supports Continuous Integration with :ref:`Appveyor <appveyor_integration>` and :ref:`Travis CI <travis_integration>`. Moreover you can download zip blocks in the web view.
 
 
 Which languages are supported?

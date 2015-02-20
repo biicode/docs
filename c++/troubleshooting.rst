@@ -51,27 +51,34 @@ If you have a block that **links to pthread library** and you're using **Ubuntu 
 
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--no-as-needed")
 
-Building with bii cpp:build not working
----------------------------------------
+Default Build Configuration with bii cpp:build not working
+----------------------------------------------------------
 
 Sometimes the default configuration when installing biicode does not detect the compiler you are using, ``bii cpp:build`` does not work and it is necessary to configure your compiler with biicode.
+
+.. container:: infonote
+ 
+ **Windows Users**
+
+ This could be a problem due to your path configuration. Please, check it out and :ref:`ensure everything is right <cpp_desktop_win>` to use the build configuration by default.
 
 Type inside your project directory:
 
 .. code-block:: bash
- bii cpp:configure -G "CMake generator name"
+ 
+ $ bii cpp:configure -G "CMake generator name"
 
 If you want to check the generators available in your platform:
 
 .. code-block:: bash
 
- cmake --help
+ $ cmake --help
 
 To configure your project as default just type:
 
 .. code-block:: bash
 
- bii cpp:configure -G "MinGW Makefiles"
+ $ bii cpp:configure -G "MinGW Makefiles"
 
 Now doing ``bii cpp:build`` should work properly.
 
