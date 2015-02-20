@@ -4,24 +4,24 @@
 Getting started
 ===============
 
-This example shows how to install biicode, code your first "blink", and also a non blocking blink reusing from the blink library and upload it to your Arduino. You don't need to install the blink library, biicode will download and configure it automatically for you, |fenix_blink_biicode_link|
+This example shows how to install biicode, code your first "blink", and also a non blocking blink reusing from the blink library and upload it to your Arduino. You don't need to install the blink library, biicode will download and configure it automatically for you, |fenix_blink_biicode_link|.
 
 
 .. |fenix_blink_biicode_link| raw:: html
 
-   <a href="https://www.biicode.com/fenix/fenix/blink/master" target="_blank">it is already in biicode!.</a>
+   <a href="https://www.biicode.com/fenix/fenix/blink/master" target="_blank">it is already in biicode!</a>
 
 
 1. Installing biicode and Arduino tools
 ---------------------------------------
 
-First |downloads_link| and install biicode
+First |downloads_link| and :ref:`install biicode<arduino_installation>`.
 
 .. |downloads_link| raw:: html
 
    <a href="https://www.biicode.com/downloads" target="_blank">download</a>
 
-Then, open the console and type
+Then, open the console and type:
 
 .. code-block:: bash
 
@@ -71,7 +71,7 @@ This should be the resulting layout:
 3. Define your board
 --------------------
 
-Just, define your Arduino board using the ``arduino:settings`` command. In this example we use an Arduino Uno, but you can use another like Mega2560.
+Just, define your Arduino board using the ``arduino:settings`` command. In this example we use an Arduino Uno, but you can use another like *Mega2560*.
 
 .. code-block:: bash
 
@@ -124,7 +124,7 @@ Copy the following code containing the new blink into the main.cpp file
     my_blink.loop();
   }
 
-This code requires the fenix's blink.h file. If you try to ``arduino:upload`` you will get a build error.
+This code requires the *fenix's **blink.h** file*. If you try to ``arduino:build`` you will get a **build error**.
 
 Execute the following command to find unresolved dependencies and retrieve necessary files from servers:
 
@@ -139,6 +139,10 @@ Now can now build your firmware and upload it to your Arduino
 
 .. code-block:: bash
 
+  ~/arduino_hello_project$ bii arduino:build
+  ...
+  [100%] Built target myuser_myblock_main
+
   ~/arduino_hello_project$ bii arduino:upload
 	...
   Writing | ################################################## | 100% 0.00s
@@ -152,7 +156,7 @@ Now can now build your firmware and upload it to your Arduino
   [100%] Built target myuser_myblock_main-upload
   Upload finished
 
-That’s it, if you see that output fenix's blink.h was downloaded and uploaded in your project! You can check the deps folder, the blink.h code is there.
+**That’s it!** if you see that output it means that fenix's blink.h was downloaded and uploaded in your project! You can check the deps folder, the blink.h code is there.
 
 Didn't work? No problem, read or contact us in |biicode_forum_link|
 
