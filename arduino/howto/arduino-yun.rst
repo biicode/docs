@@ -1,15 +1,17 @@
 How to use the Arduino Yun
 ==========================
 
-1. Download Arduino 1.5
+Download Arduino 1.5
+--------------------
+
+Download the **Arduino zip file** `from Arduino download page <http://arduino.cc/en/Main/Software>`_ and unzip it.
+
+Configure your settings
 -----------------------
 
-Download the Arduino 1.5 zip file `from Arduino download page <http://arduino.cc/en/Main/Software>`_ and unzip it.
+Do **bii arduino:settings** to configure the new SDK path and the board as ``yun``.
 
-2. Configure your settings
---------------------------
-
-Insert the new SDK path and the board as ``yun``. **In this example** we have unziped our SDK into ``c:/biicode_env/arduino-1.5.8``.
+**In this example** we have unziped our SDK into ``c:/biicode_env/arduino-1.5.8``.
 
 .. code-block:: bash
 
