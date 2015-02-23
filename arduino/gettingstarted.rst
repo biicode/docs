@@ -8,11 +8,9 @@ This section shows the first steps to use biicode with your Arduino.
 
 Here we will learn:
 
-* How to install biicode.
-* Code your first "blink".
-* Code a "non blocking blink" reusing from the blink library.
-
-
+* :ref:`How to install biicode <installing_biicode_arduino>`.
+* :ref:`Code your first "blink" <create_your_project>`.
+* :ref:`Code a "non blocking blink" reusing from the blink library <depending_on_fenix_blink>`.
 
   You don't need to install the blink library, biicode will download and configure it automatically for you, |fenix_blink_biicode_link|
 
