@@ -3,9 +3,14 @@ Multivariate Splines
 
 Multivariate Splines is a function approximation library implementing various multivariate splines in C++.
 
-You can find here the `Multivariate splines original github page <https://github.com/bgrimstad/multivariate-splines>`_ .
+You can find here the `Multivariate splines original github page <https://github.com/bgrimstad/multivariate-splines>`_. 
 
-The following example demonstrates the use of Multivariate Splines. Note that there is no restrictions to the dimension of x (except that it has to be >= 1, of course).
+.. container:: infonote
+
+ This example does not compile in Windows. Please, use Linux or MacOS instead.
+
+
+The following example demonstrates the use of Multivariate Splines. Note that there are no restrictions to the dimension of x (except that it has to be >= 1, of course).
 
 **main_muparser.cpp**
 
@@ -16,32 +21,32 @@ The following example demonstrates the use of Multivariate Splines. Note that th
 
 Project should be compiled with C++11 so you also need the CMakeLists which specify it:
 
-**CMakeLists.txtp**
+**CMakeLists.txt**
 
 .. literalinclude:: /_static/code/cpp/examples/splines/CMakeLists.txt
    :language: cpp
    :linenos:
 
+* This example is `already in biicode <http://www.biicode.com/examples/multivariate_splines>`_, it's simple to run, just open the block and build it like this:
 
-**Download:**
-:download:`splines_main.cpp </_static/code/cpp/examples/splines/splines_main.cpp>`
-:download:`CMakeLists.txt </_static/code/cpp/examples/splines/CMakeLists.txt>`
+	.. code-block:: bash
 
-Create a block:
-
-.. code-block:: bash
-
-	$ bii init my_project
-	$ cd my_project
-	$ bii new examples/multivariate_splines
+		$ bii init my_project
+		$ cd my_project
+		$ bii open examples/multivariate_splines
+		$ bii cpp:build
 
 
-Copy the cpp file in your block, then you need to resolve all the dependencies of this ``main.cpp`` and you can compile it:
+* **Only if you want to do it manually**, create a *cpp file* in your block, copy the code above and resolve all the dependencies of the ``main.cpp``. Then you can compile it:
 
-.. code-block:: bash
-
-	$ bii find
-	$ bii cpp:build
+	.. code-block:: bash
+		
+		$ bii init my_proyect
+		$ cd my_project
+		$ bii new my_user/my_block
+		$ # Create a main.cpp file in my_user/my_block and copy the code
+		$ bii find
+		$ bii cpp:build
 
 
 You will see next console output after executing the command:
