@@ -55,8 +55,8 @@ Execute following commands in each project:
 .. code-block:: bash
 
     $ bii find
-	$ cd bin
-	$ #run solver executable
+    $ cd bin
+    $ #run solver executable
     Enter: servo
     servo
     Enter: 180

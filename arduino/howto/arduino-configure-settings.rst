@@ -23,7 +23,7 @@ Execute ``bii arduino:settings`` to define your Arduino SDK, board and port:
 	Using arduino port: COM13
 
 
-``bii arduino:settings`` options
+**bii arduino:settings** options
 --------------------------------
 
 
@@ -38,7 +38,7 @@ Press enter to choose the Arduino SDK path in brackets. To use a different Ardui
 
 .. _arduino_boards:
 
-boards
+Boards
 ^^^^^^
 
 Type your Board model, just make sure it's compatible with the Arduino SDK v. 1.0.5 and your IDE supports it. This is a list of the boards supported by default, even though any board is welcomed!

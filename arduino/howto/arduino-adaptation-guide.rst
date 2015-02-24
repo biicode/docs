@@ -99,9 +99,11 @@ Full ``.ino`` file adaptation Sample:
 
 **General rules**
 
-#. `Put your code into a biicode block <http://docs.biicode.com/arduino/gettingstarted.html#create-your-project>`_ .
+#. `Put your code into a biicode block <http://docs.biicode.com/arduino/gettingstarted.html#create-your-project>`_.
 
-#. Change ``.ino`` main file extension to ``.cpp``. Also, change the extension of the other ``.ino`` files to ``.h``. For example, if your project has the following layout, being ``sweep.ino`` your main file, rename ``sweep.ino`` to ``sweep.cpp``, and ``servo_functions.ino`` to ``servo_functions.h``.
+#. Change ``.ino`` main file extension to ``.cpp``. Also, change the extension of the other ``.ino`` files to ``.h``.
+
+	For example, if your project has the following layout, being ``sweep.ino`` your main file:
 
 	.. code-block:: text
 
@@ -109,7 +111,7 @@ Full ``.ino`` file adaptation Sample:
 	   |    +-- sweep.ino
 	   |    +-- servo_functions.ino
 
-	Put them into your ``project/blocks/username/biicode_block_name`` directory like this:
+	Rename ``sweep.ino`` to ``sweep.cpp``, and ``servo_functions.ino`` to ``servo_functions.h``. Put them into your ``project/blocks/username/biicode_block_name`` directory like this:
 
 	.. code-block:: text
 
