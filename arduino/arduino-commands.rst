@@ -144,7 +144,7 @@ This command **updates your settings with the info about your board and the IDE*
 **bii arduino:monitor**: start a serial monitor
 -----------------------------------------------
 
-This command **open a serial monitor** to read the serial port of your Arduino board.
+This command **opens a serial monitor** to read the serial port of your Arduino board.
 
 .. code-block:: bash
 
