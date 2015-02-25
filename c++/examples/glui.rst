@@ -60,3 +60,5 @@ If there were no errors during compilation, you'll find a new executable file in
 
 .. image:: /_static/img/c++/examples/glui_example.png
 
+Check more GLUI examples at `this block <http://www.biicode.com/examples/glui>`_ and enjoy using `GLUI library <https://www.biicode.com/glui/glui>`_!
+
