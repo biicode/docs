@@ -41,7 +41,7 @@ Tag's default value is ``DEV``, but all **release life-cycle tags** are availabl
 	* ``STABLE``: Tested and ready to reuse.
 
 
-This tags define the development state of your code.
+These tags define the development state of your code.
 
 
 :ref:`policies.bii<policies>` file holds your policies about what kind of code tags you allow for each the blocks you use.
