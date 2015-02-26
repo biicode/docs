@@ -252,6 +252,14 @@ Doxygen
 
    * You can configure doxygen to extract the code structure from undocumented source files. This is very useful to quickly find your way in large source distributions. Doxygen can also visualize the relations between the various elements by means of include dependency graphs, inheritance diagrams, and collaboration diagrams, which are all generated automatically.
 
+.. container:: infonote
+
+   **All the info of the following examples has been written taking as reference a docs folder inside your project**. However, you can create your Doxyfile where you want changing the OUTPUT_DIRECTORY and INPUT tags in your Doxyfile.
+
+   If you need to read more info about doxygen, you can `read de official documentation. <http://www.stack.nl/~dimitri/doxygen/manual/index.html>`_
+
+
+
 .. code-block:: bash
 
     ~$ mkdir docs
@@ -262,25 +270,13 @@ Doxygen
 
     ~/docs$ doxygen Doxyfile
 
-    #Open the /docs/html/index.html whit your web browser
+    #Open the /docs/html/index.html with your web browser.
 
-Doxyfile ::
+The minimal info that you need to change in your Doxyfile is the following tags: ::
 
     PROJECT_NAME           = "My Project"
 
     OUTPUT_DIRECTORY       = .
-
-    ABBREVIATE_BRIEF       = "The $name class" \
-                             "The $name widget" \
-                             "The $name file" \
-                             is \
-                             provides \
-                             specifies \
-                             contains \
-                             represents \
-                             a \
-                             an \
-                             the
 
     INPUT                  = ../
 
@@ -289,32 +285,11 @@ Doxyfile ::
                              *.cxx \
                              *.cpp \
                              *.c++ \
-                             *.d \
-                             *.java \
-                             *.ii \
-                             *.ixx \
-                             *.ipp \
-                             *.i++ \
-                             *.inl \
                              *.h \
                              *.hh \
                              *.hxx \
                              *.hpp \
                              *.h++ \
-                             *.idl \
-                             *.odl \
-                             *.cs \
-                             *.php \
-                             *.php3 \
-                             *.inc \
-                             *.m \
-                             *.mm \
-                             *.dox \
-                             *.py \
-                             *.f90 \
-                             *.f \
-                             *.vhd \
-                             *.vhdl
 
 
 If you want to make your own main page, you can create a ``DoxygenMainpage.h`` in the docs folder with the following sections: ::
@@ -331,8 +306,63 @@ If you want to make your own main page, you can create a ``DoxygenMainpage.h`` i
     Section info
     */
 
-A good example is |doxygen_doxygenmainpage|.
+A good example is |doxygen_doxygenmainpage|:
 
+.. image:: ../_static/img/c++/doxygen.png
+
+.. code-block:: cpp 
+    :emphasize-lines: 2,3,9,17,30
+
+    /**
+    @mainpage  libfreenect
+    @author The OpenKinect Community - http://www.github.com/openkinect
+
+    Cross-platform driver for the Microsoft Kinect Camera
+
+    Website: http://www.openkinect.org
+
+    @section libfreenectIntro Introduction
+
+    libfreenect is an open source, cross platform development library for
+    the Microsoft Kinect camera. It provides basic functionality to
+    connect to the camera, set configuration values, retrieve (and in some
+    cases decompress) images, and provides functionalty for the LED and
+    Motor.
+
+    @section libfreenectDesignOverview Design Overview
+
+    libfreenect provides access to devices via two structs:
+
+    - A context, which manages aspects of thread safety when using
+      multiple devices on multiple threads.
+    - A device, which talks to the hardware and manages transfers and configuration.
+
+    Either or both of these structs are passed to the functions in order
+    to interact with the hardware. The USB access is handled by
+    libusb-1.0, which should work in a mostly non-blocking fashion across
+    all platforms (see function documentation for specifics).
+
+    @section libfreenectShouldIUseIt Should You Use libfreenect?
+
+    The main design goal of libfreenect is to provide a simple, usable
+    reference implementation of the Kinect USB protocol for access via
+    non-Xbox hardware. With this in mind, the library does not contain any
+    algorithms relevant to computer vision usages of the camera.
+
+    If you are looking for machine vision algorithms, we recommend the
+    OpenCV library, available at
+
+    http://www.opencv.org
+
+    If you are looking to use the kinect in a larger framework that may
+    involve other depth sensors, we recommend the OpenNI framework,
+    available at
+
+    http://www.openni.org
+
+    Note that libfreenect can be used as a hardware node in OpenNI.
+
+    */
 
 .. |doxygen_homepage| raw:: html
 
@@ -344,7 +374,7 @@ A good example is |doxygen_doxygenmainpage|.
 
 .. |doxygen_doxygenmainpage| raw:: html
 
-   <a href="https://www.biicode.com/david/david/libfreenect/master/0/doc/DoxygenMainpage.h" target="_blank">david/libfreenect/doc/DoxygenMainpage.h</a>
+   <a href="https://www.biicode.com/david/david/libfreenect/master/0/doc/DoxygenMainpage.h" target="_blank">libfreenect/doc/DoxygenMainpage.h</a>
 
 .. |appveyor_homepage| raw:: html
 
