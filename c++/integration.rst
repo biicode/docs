@@ -254,7 +254,7 @@ Doxygen
 
 .. container:: infonote
 
-   **All the info of the following examples has been written taking as reference a docs folder inside your project**. However, you can create your Doxyfile where you want changing the OUTPUT_DIRECTORY and INPUT tags in your Doxyfile.
+   **All the info of the following examples have been written taking as reference a docs folder inside your project**. However, you can create your Doxyfile where you want changing the OUTPUT_DIRECTORY and INPUT tags in your Doxyfile.
 
    If you need to read more info about doxygen, you can `read de official documentation. <http://www.stack.nl/~dimitri/doxygen/manual/index.html>`_
 
