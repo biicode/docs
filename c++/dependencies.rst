@@ -65,6 +65,7 @@ Modifying the version you depend on
 Manually edit your **biicode.conf** file to depend on any version you want. For example, on Erin Catto's Box2D:
  
 * ``Box2D v 2.3.1`` is available on ``erincatto/box2d version 10``
+
 * ``Box2D v 2.3.0`` is available on ``erincatto/box2d version 8``
 
 Biicode takes by default the latest version available.  To change it, just write the one you want in your ***biicode.conf**:
@@ -76,6 +77,7 @@ Biicode takes by default the latest version available.  To change it, just write
 		erincatto/box2d: 8
 
 |
+
 Execute ``bii work`` command, once modified, to update a specific block version: 
 
 .. code-block:: bash
@@ -86,8 +88,9 @@ And you'll see the new dependencies retrieved in your ``deps folder``.
 
 
 Checking dependencies
-----------------------
-Execute ``bii deps`` to get all information related to biicode’s dependency scanning. It shows all dependencies, system, local and biicode's. 
+---------------------
+ 
+Execute ``bii deps`` to get all information related to biicode’s dependency scanning. It shows all dependencies, system, local and biicode's.
 
 .. code-block:: bash
 
@@ -166,7 +169,9 @@ Depending on a block track
 Currently, **libuv** keeps 3 mantained versions or **block tracks**:
 
 		* |libuv_0_10| (Stable, used by Nodejs)
+
 		* |libuv_0_11| (Non stable, but commonly used)
+
 		* |libuv_1_0| (Made stable few days ago)
 
 Depend on one or another to fit your needs:
@@ -252,11 +257,15 @@ Override a dependency
 Let's say you depend on: 
 
 * ``erincatto/box2d:10`` that depends on ``diego/glfw:0``. 
+
 |
+
 And you'd rather depend on:
 
 *  ``erincatto/box2d:10`` and ``diego/glfw:1``. 
+
 |
+
 Write your preferred versions in your **biicode.conf** and biicode will use those versions in your project: 
 
 .. code-block:: text
@@ -268,8 +277,10 @@ Write your preferred versions in your **biicode.conf** and biicode will use thos
 
 Execute ``bii cpp:build`` and it's updated.
 
+
 Override a dependency with block tracks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **Create a block track when you need a personalized fix over the original library**.
 
 Let's create a block track from **diego/glfw** block:

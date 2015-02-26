@@ -1,4 +1,4 @@
-.. _zmq_examples:
+.. _zmq_protobuf_examples:
 
 ZMQ with Google Protocol Buffers Serialization
 ==============================================

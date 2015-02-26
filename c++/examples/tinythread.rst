@@ -49,7 +49,7 @@ and then, launch the thread and wait for it.
   thread t(HelloThread, 0);
   t.join();
 
-You can see all the code `here <https://www.biicode.com/examples/examples/tinythread/master/1/hello.cpp>`_.
+You can see all the code `here. <https://www.biicode.com/examples/examples/tinythread/master/1/hello.cpp>`_
 
 Draw a fractal
 --------------
@@ -81,7 +81,7 @@ If you run the fractal example, a set of threads will be launched to generate a 
   img.WriteToTGAFile("fractal.tga");
   cout << "done!" << endl;
 
-You can see all the code `here <https://www.biicode.com/examples/examples/tinythread/master/1/fractal.cpp>`_.
+You can see `all the code here <https://www.biicode.com/examples/examples/tinythread/master/1/fractal.cpp>`_.
 
 .. code-block:: bash
 

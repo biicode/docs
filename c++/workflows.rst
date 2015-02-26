@@ -4,6 +4,8 @@
 Workflows
 ==========
 
+.. _workflows_own_blocks:
+
 Working with your own blocks
 ------------------------------
 
@@ -158,7 +160,7 @@ You can also |biicode_write_us| for suggestions and feedback, they are always we
 
    <a href="mailto:info@biicode.com" target="_blank">write us</a>
 
-.. _edit_dependecies:
+.. _workflows_any_block:
 
 
 Working with any published block

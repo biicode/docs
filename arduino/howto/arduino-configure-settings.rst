@@ -1,4 +1,4 @@
-.. _bii_arduino_settings:
+.. _bii_arduino_configure_settings:
 
 Configure your SDK, port and board
 ===================================
