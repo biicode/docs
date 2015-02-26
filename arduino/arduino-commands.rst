@@ -1,7 +1,7 @@
 .. _bii_arduino_tools:
 
 Arduino commands
-=================
+================
 
 This section summarizes the **Arduino commands available to be used with the biicode client program**. You can see these tools if you execute:
 
@@ -150,3 +150,39 @@ This command **opens a serial monitor** to read the serial port of your Arduino 
 
 	$ bii arduino:monitor
 
+**bii cpp:configure --toolchain=arduino**: enable, disable or change the Arduino cross compilation.
+-------------------------------------------------------------------------------------------------
+
+Use this command to enable Arduino Cross Compilation.
+
+.. code-block:: bash
+
+	$ bii cpp:configure --toolchain=arduino
+
+If you need the default arduino-toolchain.cmake, execute ``bii arduino:settings`` first.
+
+.. code-block:: bash
+
+	$ bii arduino:settings
+	...
+	$ bii cpp:configure --toolchain=arduino
+
+If you want to disable it, use this command.
+
+.. code-block:: bash
+
+	$ bii cpp:configure --toolchain=None
+
+To **use a custom tool-chain** you need to **place it in the bii folder** of your project **with the name <my_toolchain_name>-toolchain.cmake**.
+
+To use it, just pass it as argument of ``bii cpp:configure -t my_toolchain_name``.
+
+.. code-block:: bash
+
+	$ bii cpp:configure --toolchain=my_toolchain_name
+
+If you use a custom toolchain, remember that you need to use the ``bii cpp:build`` to compile your projects.
+
+.. container:: infonote
+
+	:ref:`You can read more info about toolchains in the C++ section <custom_toolchains>`

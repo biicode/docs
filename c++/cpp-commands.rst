@@ -42,6 +42,10 @@ Define the value of ``FOO`` with the flag ``-DFOO=TRUE`` or ``-DFOO=FALSE``:
 
    FOO Enabled!!
 
+Define a tool-chain
+^^^^^^^^^^^^^^^^^^^
+
+``bii configure --toolchain`` command define the tool-chain to use, here's more about the :ref:`custom tool-chains <custom_toolchains>`.
 
 **bii cpp:build**: build your project
 -------------------------------------
