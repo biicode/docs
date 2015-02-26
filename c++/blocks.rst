@@ -87,7 +87,7 @@ This structure empowers consistency between the blocks published in biicode, it 
 Block's web view
 ----------------
 
-As you know, a block is where you place your code in biicode. Blocks published in the web are reused when biicode searchs for dependencies.
+As you know, a block is where you place your code in biicode. Blocks available in the web are the ones you can depend on.
 
 Take a look at blocks in a `profile main page <https://www.biicode.com/examples>`_:
 
@@ -99,7 +99,7 @@ You can create a public or private block in the web by clicking on "Create block
 
 .. image:: /_static/img/c++/create_block.png
 
-To open the block you just created in the web, type in your project folder:
+Start working with the block you just created, type in your project folder:
 
 .. code-block:: bash
  
@@ -154,7 +154,7 @@ Below the header there are some tabs showing:
 
         .. image:: /_static/img/c++/block_dependencies.png
 
-    .. _block_web_tabs_dependencies:
+    .. _block_web_tabs_graph:
     .. container:: tabs-item
 
         .. rst-class:: tabs-title

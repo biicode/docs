@@ -24,18 +24,27 @@ Once you've succesfully published your code to our servers, command line prompt 
 Available publishing options:
 -----------------------------
 
-* Tag's default value is ``DEV``, but all **release life-cycle tags** are available: 	
+Tag's default value is ``DEV``, but all **release life-cycle tags** are available:
 
 	* ``DEV``: Code is under development.
+	
 	|
+	
 	* ``ALPHA``: It's usually code ready to shared with close friends or colleagues.
+	
 	|
+
 	* ``BETA``: Code ready for BETA testers!
+	
 	|
+
 	* ``STABLE``: Tested and ready to reuse.
 
- This tags define the development state of your code. 
-:ref:`policies.bii<policies>` file holds your policies about what kind of code tags you allow for each the blocks you use. 
+
+This tags define the development state of your code.
+
+
+:ref:`policies.bii<policies>` file holds your policies about what kind of code tags you allow for each the blocks you use.
 
 Publish your blocks with different tags:
 
@@ -76,8 +85,7 @@ After a while, he's sure about publishing ``fenix/vector`` as STABLE version:
 	$ bii publish fenix/vector --tag STABLE 
 
 
-
-**Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_
+**Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_.
 
 .. container:: infonote
 

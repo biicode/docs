@@ -150,8 +150,8 @@ This command **opens a serial monitor** to read the serial port of your Arduino 
 
 	$ bii arduino:monitor
 
-**bii cpp:configure --toolchain=arduino**: enable, disable or change the Arduino cross compilation.
--------------------------------------------------------------------------------------------------
+**bii cpp:configure --toolchain=arduino**: enable, disable or change the Arduino cross compilation
+--------------------------------------------------------------------------------------------------
 
 Use this command to enable Arduino Cross Compilation.
 

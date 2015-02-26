@@ -7,12 +7,18 @@ These are the **commands available in biicode**.
 You can:
 
 * **manage** your project and blocks locally, on your computer,
+
 * determine their internal and external **dependencies**,
+
 * **retrieve** any missing code dependencies from the biicode servers,
+
 * **publish** your code, and
+
 * **reuse** from other user's code.
+
 |
 |
+
 .. toctree::
    :maxdepth: 2
 
@@ -29,5 +35,3 @@ You can:
    cpp-commands
    commands/diff
    commands/setup
-
-   
