@@ -22,7 +22,7 @@ This section summarizes the **Raspberry Pi commands available to be used with th
 
 .. _bii_rpi_send:
 
-``bii rpi:send``: send a bin folder
+**bii rpi:send**: send a bin folder
 -----------------------------------
 
 Send your binaries automatically to your Raspberry Pi from your PC.
@@ -38,7 +38,7 @@ The Raspberry Pi user's password will be asked. If you have not changed your pas
 
 .. _bii_rpi_settings:
 
-``bii rpi:settings``: configure your Raspberry Pi settings
+**bii rpi:settings**: configure your Raspberry Pi settings
 -----------------------------------------------------------
 
 This command provides an easy way to configure your Raspberry Pi settings.
@@ -52,16 +52,14 @@ This command provides an easy way to configure your Raspberry Pi settings.
 	RPI username (pi): [RPI_USER]
 	RPI IP Address: [RPI_IP] #example 192.168.1.44
 	RPI directory to upload (bin): [RPI_FOLDER] #This folder must exist into your Raspberry Pi.
-	Cross building? (NO/yes): yes
 
 * **RPI username (pi)**: Raspberry Pi user name. Default value is ``pi``.
 * **RPI IP Address**: Raspberry Pi local IP address. Write here your Raspberry Pi network address, that you can find out executing the ``ifconfig`` in a console inside the RPi.
 * **RPI directory to upload (bin)**: Raspberry Pi directory where you want your programs to be saved. Default value is the ``bin`` user home folder.
-* **Cross building?**: Activate the croos building. Default value is ``NO``.
 
 .. _bii_rpi_ssh:
 
-``bii rpi:ssh``: connect by ssh with the Raspberry Pi
+**bii rpi:ssh**: connect by ssh with the Raspberry Pi
 -------------------------------------------------------
 
 If you want a remotely access to your Raspberry Pi you can get it with this command.
@@ -75,4 +73,37 @@ If you want a remotely access to your Raspberry Pi you can get it with this comm
 
 	pi@raspberrypi ~ $
 
+**bii cpp:configure --toolchain=rpi**: enable, disable or change the Raspberry Pi cross compilation.
+------------------------------------------------------------------------------------------------------
 
+Use this command to enable Raspberry Pi Cross Compilation.
+
+.. code-block:: bash
+
+	$ bii cpp:configure --toolchain=rpi
+
+If you need the default rpi-toolchain.cmake, execute ``bii rpi:settings`` first.
+
+.. code-block:: bash
+
+	$ bii rpi:settings
+	...
+	$ bii cpp:configure --toolchain=rpi
+
+If you want to disable it, use this command.
+
+.. code-block:: bash
+
+	$ bii cpp:configure --toolchain=None
+
+To **use a custom tool-chain** you need to **place it in the bii folder** of your project **with the name <my_toolchain_name>-toolchain.cmake**.
+
+To use it, just pass it as argument of ``bii cpp:configure -t my_toolchain_name``.
+
+.. code-block:: bash
+
+	$ bii cpp:configure --toolchain=my_toolchain_name
+
+.. container:: infonote
+
+	:ref:`You can read more info about toolchains in the C++ section <custom_toolchains>`
