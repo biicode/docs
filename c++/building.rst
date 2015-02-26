@@ -21,7 +21,7 @@ Here, you'll learn how to define your **CMakeLists.txt** to delve into full func
 .. _cmakelists_txt:
 
 CMakeLists.txt
-----------------------
+--------------
 
 ``bii cpp:configure`` command or ``bii cpp:build`` (which calls configure first), will generate all the build layout including your ``CMakeLists.txt`` file/s (one per block).
 
@@ -41,6 +41,19 @@ CMakeLists.txt
 
     # Actually create targets: EXEcutables and libraries.
     ADD_BIICODE_TARGETS()
+
+If you already have a ``CMakeLists.txt`` file there's no need to replace it, just adapt it like this:
+
+.. code-block:: cmake
+
+   IF(BIICODE)
+      INIT_BIICODE_BLOCK()    
+      ADD_BIICODE_TARGETS()  
+   ELSE()
+      # Your regular project configuration here
+   ENDIF() 
+
+
 
 INIT_BIICODE_BLOCK
 __________________
@@ -267,7 +280,7 @@ All the CMake dependencies will be downloaded into your project/deps/user/block 
 
 
 EXAMPLE: How to activate C++11 with already programmed macro?
-______________________________________________________________
+_____________________________________________________________
 
 
 **“biicode”** featured user has a block named |biicode_cmake_block| where you can find useful macros from the  **tools.cmake** file, like one to activate C++11 flags for any OS, or to link a OSX framework to a target, etc. 

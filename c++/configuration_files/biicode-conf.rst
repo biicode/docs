@@ -7,9 +7,9 @@
 
 Place it into your block, next to your source code: ::
 
-	|-- my_project
-	|    +-- bii
-	|    +-- bin
+	|-- my_project/
+	|    +-- bii/
+	|    +-- bin/
 	|    +-- blocks
 	|    |	  +-- myuser
 	|    |    |     +-- my_block
@@ -36,7 +36,6 @@ Place it into your block, next to your source code: ::
 			# Local directories to look for headers (within block)
 			# /
 			include
-			src
 		[dependencies]
 			# Manual adjust file implicit dependencies, add (+), remove (-), or overwrite (=)
 			# hello.h + hello_imp.cpp hello_imp2.cpp

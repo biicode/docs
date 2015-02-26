@@ -1,7 +1,5 @@
 .. _rpi_getting_started:
 
-
-
 Getting started
 ===============
 

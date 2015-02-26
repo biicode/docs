@@ -22,6 +22,8 @@ Biicode has some commands similar to VCS management but we recommend greatly to 
 	~/mygitproject/blocks/myusername$ git clone your_repository
 	~/mygitproject/blocks/myusername$ bii cpp:build
 
+.. _appveyor_integration:
+
 AppVeyor
 ---------
 
@@ -133,46 +135,94 @@ You can see this live example here:
 
 Learn more about AppVeyor visiting their `docs <http://www.appveyor.com/docs>`_.
 
+.. _travis_integration:
+
 Travis CI
 ---------
 
 |travis_homepage| takes care of running your tests and deploying your apps. Like we work with VCS, many of the blocks published in our web have their ``.travis.yml`` files, that lets us pushing to our GitHub repository, and automatically build in Linux, execute and publish this project with your biicode user account thanks to this excellent service.
 
-If you're working with it, the ``.travis.yml`` file format will help you to get automatic publications in your biicode account, in this case, with DEV tag: ::
+If you're working with it, the ``.travis.yml`` file format will help to automatically publish to your biicode account with DEV tag unless your github repo is tagged, in this case, imports the tag and publishes as STABLE to biicode. ::
 
-   language: cpp
-   compiler:
-   - gcc
-   before_install:
-   - sudo apt-get update -qq
-   install:
-   - wget http://www.biicode.com/downloads/latest/ubuntu64
-   - mv ubuntu64 bii-ubuntu64.deb
-   - (sudo dpkg -i bii-ubuntu64.deb) && sudo apt-get -f install
-   - rm bii-ubuntu64.deb
-   - wget https://s3.amazonaws.com/biibinaries/thirdparty/cmake-3.0.2-Linux-64.tar.gz
-   - tar -xzf cmake-3.0.2-Linux-64.tar.gz
-   - sudo cp -fR cmake-3.0.2-Linux-64/* /usr
-   - rm -rf cmake-3.0.2-Linux-64
-   - rm cmake-3.0.2-Linux-64.tar.gz
-   script:
-   - cmake --version
-   - bii init biicode_project
-   - mkdir -p ./biicode_project/blocks/myusername/myblockname
-   - mv !(biicode_project) ./biicode_project/blocks/myusername/myblockname
-   - cd biicode_project
-   - bii find -um
-   - bii cpp:build
-   - cd bin
-   - ./myusername_myblockname_main
-   after_success:
-   - bii user myuser -p $BII_MYUSER_PASSWORD
-   - bii publish
-   env:
-     global:
-       secure: MY_GENERATED_KEY_PASSWORD
+
+    language: cpp
+    compiler:
+    - gcc
+    before_install:
+    - export TRAVIS_COMMIT_MSG="$(git log --format=%B --no-merges -n 1)"
+    - if [[ "$TRAVIS_COMMIT_MSG" = "$COMMIT_IGNORE_BUILD" ]]; then exit 0 ; fi
+    - if [ "$CXX" == "g++" ]; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test;
+      fi
+    - sudo apt-get update -qq
+    - git config --global user.email "$USER_EMAIL"
+    - git config --global user.name "$USER_NAME"
+    - git config --global push.default simple
+    - git checkout $TRAVIS_BRANCH
+    install:
+    - if [ "$CXX" == "g++" ]; then sudo apt-get install -qq g++-4.8; fi
+    - if [ "$CXX" == "g++" ]; then sudo update-alternatives --install /usr/bin/g++ g++
+      /usr/bin/g++-4.8 50; fi
+    - wget http://www.biicode.com/downloads/latest/ubuntu64
+    - mv ubuntu64 bii-ubuntu64.deb
+    - sudo dpkg -i bii-ubuntu64.deb && sudo apt-get -f install
+    - rm bii-ubuntu64.deb
+    - wget https://s3.amazonaws.com/biibinaries/thirdparty/cmake-3.0.2-Linux-64.tar.gz
+    - tar -xzf cmake-3.0.2-Linux-64.tar.gz
+    - sudo cp -fR cmake-3.0.2-Linux-64/* /usr
+    - rm -rf cmake-3.0.2-Linux-64
+    - rm cmake-3.0.2-Linux-64.tar.gz
+    - export TRAVIS_CXX=$CXX
+    script:
+    - cd /tmp
+    - bii init biicode_project
+    - mkdir -p ./biicode_project/blocks/$USER/$BLOCK_NAME
+    - cd biicode_project/blocks/$USER/$BLOCK_NAME
+    - shopt -s dotglob && mv $TRAVIS_BUILD_DIR/* ./
+    - if [ "$CXX" == "clang++" ]; then export CXX="clang++" && bii cpp:build; fi
+    - if [ "$CXX" == "g++" ];     then export CXX="g++"     && bii cpp:build; fi
+    - cd /tmp/biicode_project
+    ##################### CHANGE WITH YOUR CUSTOM CHECKS OR TEST EXECUTION ##################
+    - ls ./bin/lasote_docker_client_example_main
+    #########################################################################################
+    after_success:
+    - bii user $USER -p $BII_PASSWORD
+    - if [[ -n $TRAVIS_TAG ]]; then bii publish -r --tag STABLE --versiontag $TRAVIS_TAG
+      || echo "Ignored publish output..."; fi
+    - if [[ -z $TRAVIS_TAG ]]; then bii publish -r || echo "Ignored publish output...";
+      fi
+    # If there are changes, commit them
+    - cd /tmp/biicode_project/blocks/$USER/$BLOCK_NAME
+    - git config credential.helper "store --file=.git/credentials" 
+    - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+    - git add -A .
+    - git commit -m "$COMMIT_IGNORE_BUILD" 
+    - git remote -v
+    - git remote set-url origin https://github.com/$TRAVIS_REPO_SLUG.git 
+    - git push
+    env:
+      global:
+      - USER_EMAIL=lasote@gmail.com
+      - USER_NAME="Luis Martinez de Bartolome"
+      - COMMIT_IGNORE_BUILD="Promoted version.***travis***"
+      - BLOCK_NAME=docker_client
+      - USER=lasote
+      # BII_PASSWORD: Biicode USER's password. > travis encrypt BII_PASSWORD=XXXXXX --add
+      - secure: ENCRYPTED_BIICODE_PASSWORD_HERE
+      # GH_TOKEN: Github token > travis encrypt GH_TOKEN=XXXXXX --add
+      - secure: NCRYPTED_GITHUB_PASSWORD_HERE
+
+What's going on the ``.travis.yml`` file?
+
+    * ``language and compiler`` are totally clear (this is where you choose the language and compiler that Travis CI will use).
+    * ``before_installing``, stablishes our automatic commit must be ignored and configures git to push later, on the after_success part.
+    * ``install`` provides the tools necessary to test our code with BIICODE.
+    * ``script``, creates, builds and runs the project and checks if the project successes.
+    * ``after_success`` part is to publish your project to biicode as STABLE with VERSION_TAG if tagged in github, otherwise it publishes as DEV. Also, if your biicode.conf file is updated, this commits its changes to github without launching a new build.
+    * ``env:`` replace all environment values with your own ones. Don’t delete the ***travis*** text, as it is the one needed to specify that commit should skip build, avoiding entering an endless build loop.
+
 
 To learn more about Travis using C++ language, visit its `documentation <http://docs.travis-ci.com/user/languages/cpp/>`_.
+
 
 .. container:: infonote
 

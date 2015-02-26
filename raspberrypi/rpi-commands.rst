@@ -22,7 +22,7 @@ This section summarizes the **Raspberry Pi commands available to be used with th
 
 .. _bii_rpi_send:
 
-``bii rpi:send``: send a bin folder
+**bii rpi:send**: send a bin folder
 -----------------------------------
 
 Send your binaries automatically to your Raspberry Pi from your PC.
@@ -38,7 +38,7 @@ The Raspberry Pi user's password will be asked. If you have not changed your pas
 
 .. _bii_rpi_settings:
 
-``bii rpi:settings``: configure your Raspberry Pi settings
+**bii rpi:settings**: configure your Raspberry Pi settings
 -----------------------------------------------------------
 
 This command provides an easy way to configure your Raspberry Pi settings.
@@ -59,7 +59,7 @@ This command provides an easy way to configure your Raspberry Pi settings.
 
 .. _bii_rpi_ssh:
 
-``bii rpi:ssh``: connect by ssh with the Raspberry Pi
+**bii rpi:ssh**: connect by ssh with the Raspberry Pi
 -------------------------------------------------------
 
 If you want a remotely access to your Raspberry Pi you can get it with this command.
@@ -73,10 +73,10 @@ If you want a remotely access to your Raspberry Pi you can get it with this comm
 
 	pi@raspberrypi ~ $
 
-``bii cpp:configure --toolchain or -t``: enable, disable or change the Raspberry Pi cross compilation.
+**bii cpp:configure --toolchain=rpi**: enable, disable or change the Raspberry Pi cross compilation.
 ------------------------------------------------------------------------------------------------------
 
-If you want to enable the Raspberry Pi cross compilation use this command.
+Use this command to enable Raspberry Pi Cross Compilation.
 
 .. code-block:: bash
 

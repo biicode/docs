@@ -4,24 +4,32 @@
 Getting started
 ===============
 
-This example shows how to install biicode, code your first "blink", and also a non blocking blink reusing from the blink library and upload it to your Arduino. You don't need to install the blink library, biicode will download and configure it automatically for you, |fenix_blink_biicode_link|
+This section shows the first steps to use biicode with your Arduino.
 
+Here we will learn:
+
+* :ref:`How to install biicode <installing_biicode_arduino>`.
+* :ref:`Code your first "blink" <create_your_project>`.
+* :ref:`Code a "non blocking blink" reusing from the blink library <depending_on_fenix_blink>`.
+
+  You don't need to install the blink library, biicode will download and configure it automatically for you, |fenix_blink_biicode_link|
 
 .. |fenix_blink_biicode_link| raw:: html
 
-   <a href="https://www.biicode.com/fenix/fenix/blink/master" target="_blank">it is already in biicode!.</a>
+   <a href="https://www.biicode.com/fenix/fenix/blink/master" target="_blank">it is already in biicode!</a>
 
+.. _installing_biicode_arduino:
 
-1. Installing biicode and Arduino tools
----------------------------------------
+Installing biicode and Arduino tools
+------------------------------------
 
-First |downloads_link| and install biicode
+First |downloads_link| and :ref:`install biicode<arduino_installation>`.
 
 .. |downloads_link| raw:: html
 
    <a href="https://www.biicode.com/downloads" target="_blank">download</a>
 
-Then, open the console and type
+Then, open the console and type:
 
 .. code-block:: bash
 
@@ -31,10 +39,12 @@ This will help you to install a group of external tools (Arduino SDK, CMake and 
 
 .. container:: infonote
 
-    If any problem installing the Arduino tools, check :ref:`how to install Arduino tools manually <arduino_installation>`
+    If any problem installing the Arduino tools, check :ref:`how to install Arduino tools manually <arduino_installation>`.
 
-2. Create your project
-----------------------
+.. _create_your_project:
+
+Create your project
+-------------------
 
 First, create a project:
 
@@ -68,10 +78,10 @@ This should be the resulting layout:
   |    |    |    |    +-- main.cpp
   |    +-- deps
 
-3. Define your board
---------------------
+Define your board
+-----------------
 
-Just, define your Arduino board using the ``arduino:settings`` command. In this example we use an Arduino Uno, but you can use another like Mega2560.
+Just, define your Arduino board using the ``arduino:settings`` command. In this example we use an Arduino Uno, but you can use another like *Mega2560*.
 
 .. code-block:: bash
 
@@ -80,8 +90,8 @@ Just, define your Arduino board using the ``arduino:settings`` command. In this 
    Enter board (/o list supported options):uno
    Using arduino port: COM4
 
-4. Build and upload your program
---------------------------------
+Build and upload your program
+-----------------------------
 Lets check that everything is fine by building and uploading the blink application to your Arduino.
 
 .. code-block:: bash
@@ -103,10 +113,12 @@ Lets check that everything is fine by building and uploading the blink applicati
    [100%] Built target myuser_myblock_main-upload
    Upload finished
 
-5. Depending on Fenix Blink
----------------------------
+.. _depending_on_fenix_blink:
 
-Copy the following code containing the new blink into the main.cpp file
+Depending on Fenix Blink
+------------------------
+
+Now we're going to implement a non blocking blink in arduino. Copy the following code containing the new blink into the *main.cpp* file:
 
 **main.cpp**
 
@@ -124,20 +136,26 @@ Copy the following code containing the new blink into the main.cpp file
     my_blink.loop();
   }
 
-This code requires the fenix's blink.h file. If you try to ``arduino:upload`` you will get a build error.
+This code requires the *fenix's* **blink.h** *file* (You can see it in the ``include`` section). 
 
-Execute the following command to find unresolved dependencies and retrieve necessary files from servers:
+If you try to ``arduino:build`` you will get a **build error**, that's because your project doesn't have the *fenix/blink/blink.h* dependency.
+
+Execute the following command to **find unresolved dependencies** and **retrieve necessary files** from servers:
 
 .. code-block:: bash
 
    ~/myproject$ bii find
 
-6. Build and upload
--------------------
+Build and upload
+----------------
 
-Now can now build your firmware and upload it to your Arduino
+Now can now build your firmware and upload it to your Arduino:
 
 .. code-block:: bash
+
+  ~/arduino_hello_project$ bii arduino:build
+  ...
+  [100%] Built target myuser_myblock_main
 
   ~/arduino_hello_project$ bii arduino:upload
 	...
@@ -152,17 +170,17 @@ Now can now build your firmware and upload it to your Arduino
   [100%] Built target myuser_myblock_main-upload
   Upload finished
 
-That’s it, if you see that output fenix's blink.h was downloaded and uploaded in your project! You can check the deps folder, the blink.h code is there.
+**That’s it!** If you see that output it means that fenix's blink.h was downloaded and uploaded in your project.
 
-Didn't work? No problem, read or contact us in |biicode_forum_link|
+Now your Arduino board should be blinking! You have just reused a `non blocking blink <https://www.biicode.com/fenix/blink>`_!
+
+You can also check the deps folder, the *blink.h* code is there.
+
+Didn't work? No problem, read or contact us in |biicode_forum_link|. Any suggestion or feedback? |biicode_write_us| It is very welcomed :)
 
 .. |biicode_forum_link| raw:: html
 
    <a href="http://forum.biicode.com" target="_blank">the biicode forum</a>
-
-
-
-Any suggestion or feedback? |biicode_write_us| It is very welcomed :)
 
 .. |biicode_write_us| raw:: html
 

@@ -13,7 +13,7 @@ The following example is a `math interactive interpreter <http://www.biicode.com
    :language: cpp
    :linenos:
 
-Create a block:
+Create a block and open the example block:
 
 .. code-block:: bash
 
@@ -21,8 +21,7 @@ Create a block:
 	$ cd my_project
 	$ bii open examples/muparser
 
-
- The ``main.cpp`` file is now in your block. Now you just have to build it and run the executable:
+The ``main.cpp`` file is now in your block. Now you just have to build it and run the executable:
 
 .. code-block:: bash
 

@@ -26,10 +26,10 @@ This section summarizes the **Arduino commands available to be used with the bii
 
 **Note**: You need to have arduino :ref:`correctly set up <arduino_installation>`.
 
-``bii arduino:configure``: configure your project
+**bii arduino:configure**: configure your project
 -------------------------------------------------
 
-If you have configured your project as a C/C++ project and you want to develop in arduino language, this command helps you! Enter it and configure your project like an arduino project. It invokes arduino cross compiler and you are ready to start with your arduino.
+If you have configured your project as a C/C++ project and you want to develop in arduino language, this command helps you! Enter it and **configure your project like an arduino project**. It invokes arduino cross compiler and you are ready to start with your arduino.
 
 .. code-block:: bash
 
@@ -54,13 +54,13 @@ If you have configured your project as a C/C++ project and you want to develop i
 .. container:: infonote
 
 	Execute ``cmake --help`` to check all generators available.
-	Here's how to configure :ref:`Eclipse for Arduino<bii_arduino_ide>`
+	Here's how to configure :ref:`Eclipse for Arduino<bii_arduino_ide>`.
 
 
-``bii arduino:build``: build your project
+**bii arduino:build**: build your project
 -----------------------------------------
 
-This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX compiler -> avr-g++) to build and compile the project.
+This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX compiler -> avr-g++) to **build and compile the project**.
 
 .. code-block:: bash
 
@@ -83,10 +83,12 @@ This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX c
 
 	[100%] Built target your_user_name_block_firmware
 
-``bii arduino:upload``: send your code into the Arduino
+**bii arduino:upload**: send your code into the Arduino
 -------------------------------------------------------
 
-When you want to deploy your code into the arduino, this command sends your previously built firmware to the arduino.
+When you want to deploy your code into the arduino, this command **sends your previously built firmware** to the arduino.
+
+This command **also builds your code** in case it was not previously built.
 
 .. code-block:: bash
 
@@ -120,10 +122,10 @@ When you want to deploy your code into the arduino, this command sends your prev
 
 .. _bii_arduino_settings:
 
-``bii arduino:settings``: configure your Arduino settings
------------------------------------------------------------
+**bii arduino:settings**: configure your Arduino settings
+---------------------------------------------------------
 
-This command updates your settings with the info about your board and the IDE, if you want to use one.
+This command **updates your settings with the info about your board and the IDE**, if you want to use one.
 
 .. code-block:: bash
 
@@ -139,19 +141,19 @@ This command updates your settings with the info about your board and the IDE, i
     When using non official arduino boards, add the board support to your IDE (if using one), and type the board on ``bii arduino:settings``. 
 
 
-``bii arduino:monitor``: start a serial monitor
---------------------------------------------------
+**bii arduino:monitor**: start a serial monitor
+-----------------------------------------------
 
-This command open a serial monitor to read the serial port of your Arduino board.
+This command **opens a serial monitor** to read the serial port of your Arduino board.
 
 .. code-block:: bash
 
 	$ bii arduino:monitor
 
-``bii cpp:configure --toolchain or -t``: enable, disable or change the Arduino cross compilation.
+**bii cpp:configure --toolchain=arduino**: enable, disable or change the Arduino cross compilation.
 -------------------------------------------------------------------------------------------------
 
-If you want to enable the Arduino cross compilation use this command.
+Use this command to enable Arduino Cross Compilation.
 
 .. code-block:: bash
 

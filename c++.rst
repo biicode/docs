@@ -10,6 +10,7 @@ A multi-platform C and C++ dependency manager.
 
    c++/installation
    c++/gettingstarted
+   c++/blocks
    c++/ides
    c++/building
    c++/dependencies
