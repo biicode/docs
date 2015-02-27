@@ -252,8 +252,8 @@ Doxygen
 
    * You can configure doxygen to extract the code structure from undocumented source files. This is very useful to quickly find your way in large source distributions. Doxygen can also visualize the relations between the various elements by means of include dependency graphs, inheritance diagrams, and collaboration diagrams, which are all generated automatically.
 
-1. Create a Doxyfile template
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Create a Doxyfile template
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
@@ -262,8 +262,8 @@ Doxygen
     ~/blocks/[USER]/[BLOCK]$ cd docs
     ~/blocks/[USER]/[BLOCK]/docs$ doxygen -g
 
-2. Edit your Doxyfile
-^^^^^^^^^^^^^^^^^^^^^
+Edit your Doxyfile
+^^^^^^^^^^^^^^^^^^
 
 The minimal info that you need to change in your Doxyfile is the following tags: ::
 
@@ -284,8 +284,8 @@ The minimal info that you need to change in your Doxyfile is the following tags:
                              *.hpp \
                              *.h++ \
 
-3. Genearte the Documentation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Generate the Documentation
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
@@ -299,9 +299,9 @@ The minimal info that you need to change in your Doxyfile is the following tags:
 
    However, you can create your Doxyfile where you want changing the INPUT tag in your Doxyfile.
 
-   For example, if you want to generate the docs folder in you ``project``, you need to specify ``INPUT = ../blocks/[USER]/[BLOCK_NAME]/``.
+   For example, to generate the docs folder in you ``project``, you need to specify: ``INPUT = ../blocks/[USER]/[BLOCK_NAME]/``.
 
-   If you need to read more info about doxygen, you can `read de official documentation. <http://www.stack.nl/~dimitri/doxygen/manual/index.html>`_
+   Read more info about doxygen in the `official documentation. <http://www.stack.nl/~dimitri/doxygen/manual/index.html>`_
 
 If you want to make your own main page, you can create a ``DoxygenMainpage.h`` in the docs folder with the following sections: ::
 
