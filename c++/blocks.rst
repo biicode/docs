@@ -165,6 +165,21 @@ Below the header there are some tabs showing:
 
         .. image:: /_static/img/c++/dependency_graph.png
 
+Biicode badge
+^^^^^^^^^^^^^
+
+Something useful for the spread of your blocks is the badge.
+
+.. image:: /_static/img/c++/biicode_badge.png
+
+This badge let other users know your code can be managed with biicode and its :ref:`version<cpp_publishing>`. Is something determinant in the use of a dependency manager and you can place it in the *readme files* of your :ref:`VCS repository <git_integration>` and in the biicode block.
+
+.. container:: infonote
+
+ You can find the *badge's link* in your block's **settings**.
+
+Let people know your code can be reused easily!
+
 Create a block from a git repository
 ------------------------------------
 
