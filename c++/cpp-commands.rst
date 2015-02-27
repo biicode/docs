@@ -87,5 +87,20 @@ Now, using biicode, for example:
 
    $ bii cpp:build --use-stderr
    
+If you are building in a Linux or Mac system or MinGW (with make), you can probably 
+speed up your builds **using multiple jobs** (threads, cores) with the **-jN make** option
+where N is the number of concurrent jobs desired (please note the -- before -jN):
+
+.. code-block:: bash
+
+   $ bii cpp:build -- - j4
+   
+If you are building with Visual Studio compiler (even in the command line), the
+equivalent option is /m:N, so you can:
+
+.. code-block:: bash
+
+   $ bii cpp:build -- /m:4
+   
    
 If you got any questions left, you can ask them at our `forum <http://forum.biicode.com/>`_.
