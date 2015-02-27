@@ -295,7 +295,7 @@ The minimal info that you need to change in your Doxyfile is the following tags:
 
 .. container:: infonote
 
-   All the info of the previous examples has been written taking as reference a ``docs`` folder inside your ``block``.
+   All the info of the previous examples have been written taking as reference a ``docs`` folder inside your ``block``.
 
    However, you can create your Doxyfile where you want changing the INPUT tag in your Doxyfile.
 
