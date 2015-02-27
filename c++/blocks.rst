@@ -165,6 +165,21 @@ Below the header there are some tabs showing:
 
         .. image:: /_static/img/c++/dependency_graph.png
 
+biicode status badge
+^^^^^^^^^^^^^^^^^^^^
+
+The biicode satus badge is a dynamically generated image displaying your block's latest published :ref:`version<cpp_publishing>` in biicode.
+
+.. image:: /_static/img/c++/biicode_badge.png
+
+This badge lets developers know your code is available to reuse at biicode. It is something determinant in the use of a dependency manager and you can place it in the *readme files* of your :ref:`VCS repository <git_integration>` and in the biicode block.
+
+.. container:: infonote
+
+ Get your badge in your block's **settings**.
+
+Let people know your code can be reused easily!
+
 Create a block from a git repository
 ------------------------------------
 
