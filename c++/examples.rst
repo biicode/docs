@@ -23,6 +23,7 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/boost
    examples/glui
    examples/littlecms
+   examples/openssl
    examples/zmq
    examples/zmq_protobuf
    examples/google-test-tutorial
