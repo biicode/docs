@@ -43,7 +43,7 @@ The first feature using openCV is showing an image:
    :language: cpp
    :linenos:
 
-Next, we'll use the the object detection example. It uses a CascadeClasifier class and a xml file with the algorithm to detect faces.
+Next, we'll use the object detection example. It uses a CascadeClasifier class and a xml file with the algorithm to detect faces.
 
 **mainface.cpp**
 
