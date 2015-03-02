@@ -9,37 +9,37 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    :maxdepth: 1
    :glob:
 
+   examples/tinythread
+   examples/box2d
+   examples/crypto++
+   examples/opencv
+   examples/muparser
+   examples/glfw
+   examples/eigen
+   examples/cimg
+   examples/freeglut
+   examples/jsonxx
+   examples/json11
+   examples/boost
+   examples/glui
+   examples/littlecms
    examples/zmq
    examples/zmq_protobuf
    examples/google-test-tutorial
-   examples/tinythread
-   examples/jsonxx
-   examples/json11
-   examples/eigen
-   examples/box2d
-   examples/boost
-   examples/glfw
-   examples/glui
    examples/c++challenge
-   examples/cimg
-   examples/crypto++
+   examples/ptypes
    examples/csparse
+   examples/sqlite
+   examples/bcl
    examples/expression-parser
    examples/flatbuffers
    examples/gmock
    examples/httpserver
    examples/log4z
    examples/mili
-   examples/muparser
-   examples/sqlite
    examples/zlib
-   examples/bcl
-   examples/littlecms
    examples/lib_splines
-   examples/ptypes
    examples/lib_miniutf
-   examples/freeglut
    examples/lwan
    examples/fit
-   
  
