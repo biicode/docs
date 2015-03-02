@@ -39,7 +39,7 @@ Next, we'll use a similar code to encrypt a "hello world!" string with SHA1:
 
 **sha1.cpp**
 
-.. literalinclude:: /_static/code/cpp/examples/opencv/mainface.cpp
+.. literalinclude:: /_static/code/cpp/examples/openssl/sha1.cpp
    :language: cpp
    :linenos:
 
