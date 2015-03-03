@@ -6,8 +6,6 @@ Installation
 **Biicode** is a file-oriented Dependencies Manager for C and C++ developers. Install both 
 Biicode and the cross compiling tools for Raspberry PI to get started.
 
-.. _download_client_binaries:
-
 Install Biicode
 -----------------
 
