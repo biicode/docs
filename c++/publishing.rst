@@ -26,7 +26,6 @@ Tag's default value is ``DEV``, but all Release life-cycle TAG values are availa
 * Publish a ``ALPHA`` version. That overwrites number ``1``.
 * Publish a ``STABLE`` version. That's number ``2``.
 
-
 .. _version_tags:
 
 Tag a version
@@ -42,6 +41,30 @@ Put a semantic name to your block versions. Once tagged, you can :ref:`depend on
 .. container:: infonote
 
     ``DEV`` versions can not be tagged.
+
+.. _git_commit:
+
+Publish from git commit
+-----------------------
+
+``bii publish -r`` or ``bii publish --remote`` uses the git info within your block to publish it to biicode along with your block. This way everyone knows "who is" the git repo mantaining the biicode block and the specific commit creating each block version.
+
+
+.. code-block:: bash
+
+  $ bii publish  -r
+
+This is how publishing with ``bii publish --remote`` looks like:
+
+.. image:: /_static/img/c++/bii_publish_remote.png
+
+
+.. container:: infonote
+
+    You can mix ``bii publish`` parameters, for example: ``bii publish -r --tag STABLE --versiontag v1.0.2``
+
+
+
 
 Block Tracks
 -------------

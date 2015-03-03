@@ -55,7 +55,7 @@ Publish your blocks with different tags:
 
 .. container:: infonote
 
-        Here's a full guide about :ref:`publishing<cpp_publishing >` to biicode.
+        Here's a full guide about :ref:`publishing<cpp_publishing>` to biicode.
 
 
 
