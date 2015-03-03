@@ -65,7 +65,6 @@ This is how publishing with ``bii publish --remote`` looks like:
 
 
 
-
 Block Tracks
 -------------
 
