@@ -70,4 +70,26 @@ That output is the MD5 hash value of your encrypted string.
 
 And that is the SHA1 hash value for the "hello world!" string.
 
-Got any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
+Develop your project
+--------------------
+
+You can develop your own project with OpenSSL. Choose your version or switch between them using the :ref:`block track feature<dependencies_block_track>`.
+
+Just modify the ``[requirements]`` section in the **biicode.conf** file of your block's folder:
+
+* To depend on **OpenSSL 1.0.1**:
+
+    .. code-block:: text
+
+        [requirements]
+     		lasote/openssl: 2
+
+* To depend on **OpenSSL 1.0.2**:
+
+    .. code-block:: text
+   
+        [requirements]
+     		 lasote/openssl(v1.0.2): 1
+
+
+Got any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_, visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.

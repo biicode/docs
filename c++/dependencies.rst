@@ -160,6 +160,7 @@ Execute ``bii deps`` to get all information related to biicode’s dependency sc
 
  	* Here's more information about :ref:`bii deps command<bii_deps_command>`.
 
+.. _dependencies_block_track:
 
 Depending on a block track
 ---------------------------
