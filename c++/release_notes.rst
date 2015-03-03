@@ -256,13 +256,13 @@ Release notes
 	* Added :ref:`arduino support <arduino>`
 	* Created raspbian native client
 	* Improved python native libraries
-	* Improved :ref:`virtual cells <virtual_cells>` management
+	* Improved virtual cells management
 	* :ref:`Policies <policies>` made easier and now  user find their own DEV (in master branches) versions by default
 	* Bugfixes
 	* Added new tagging system comments_tags.
 	* Added cpp:exe command that allows executing an already compiled binary w/o recompiling
 	* Improved renaming support
-	* Adding :ref:`OpenGL ES for RPI <opengles>` project generation
+	* Adding OpenGL ES for RPI project generation
 	* Improved cpp wizard
 
 **0.05 (10-Jan-14)**
