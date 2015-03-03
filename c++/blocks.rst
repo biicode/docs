@@ -1,7 +1,7 @@
 .. _cpp_blocks:
 
 What is a block?
-================
+----------------
 
 **A block** (also known as 'repo' or 'repository') is the place to put your code in biicode. 
 
@@ -31,61 +31,8 @@ These are the main components of a block (under the ``block_name/`` directory):
 
 * :ref:`Building Configuration your own Block <cpp_building>`
 
-Project Layout
---------------
-
-Blocks live in Biicode projects, each biicode project can have in it as many blocks as you want.
-
-**A project** is a combination of meta-data and folders containing your blocks, dependencies and files like ``policies.bii`` to apply when finding or updating your dependencies.
-
-Each project follows the same standard structure:
-
-.. code-block:: text
-
-  +-- myproject/
-  |    +-- bii/
-  |    |    +-- policies.bii
-  |    +-- blocks/
-  |    |    +-- owner1/
-  |    |    |    +-- blockA/
-  |    |    |    |    +-- src/
-  |    |    |    |    +-- include/
-  |    |    |    |    +-- test/   
-  |    |    |    |    +-- biicode.conf
-  |    |    |    |    +-- CMakeLists.txt
-  |    |    |    +-- blockB/
-  |    |    |    |    +-- main.cpp
-  |    |    |    |    +-- biicode.conf
-  |    |    |    |    +-- CMakeLists.txt
-  |    |    +-- owner2/
-  |    |    |    +-- blockC/
-  |    |    |    |    +-- tool.h
-  |    |    |    |    +-- tool.cpp
-  |    |    |    |    +-- biicode.conf
-  |    |    |    |    +-- CMakeLists.txt
-  |    +-- deps/
-  
-This structure empowers consistency between the blocks published in biicode, it also enables working with *different owner/blocks* at the same time.
-
-.. container:: infonote
-     
-     See more info about working around with blocks:
-    
-     * :ref:`Working with your blocks<workflows_own_blocks>`
-     * :ref:`Working with any published block<workflows_any_block>`
-
-**Note** that you can add as many directories as you want inside a block, so you can create the ``include``, ``src``, ``test`` ones manually as well as *cpp files* in them.
-
-.. container:: infonote
-     
-     **Tips naming your block:**
-
-        * Use underscores for multiple words
-        * Use lowercase letters (Newbies will thank this. OS X and Windows have case-insensitive filesystems by default)
-        * :ref:`Tag your STABLE versions <version_tags>`
-
 Block's web view
-----------------
+^^^^^^^^^^^^^^^^
 
 As you know, a block is where you place your code in biicode. Blocks available in the web are the ones you can depend on.
 

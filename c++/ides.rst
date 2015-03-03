@@ -98,6 +98,32 @@ For example:
   $ bii cpp:configure -G "Visual Studio 9 2008" -D CMAKE_BUILD_TYPE=DEBUG
   $ bii cpp:build
 
+.. _ide_clion:
+
+CLion
+-----
+
+Use |clion_link| - the intelligent cross-platform C/C++ IDE - with biicode.
+
+Get into your project's folder and execute:
+
+.. code-block:: bash
+
+   $ bii init -l clion myproject
+
+And configure your project to set the changes:
+
+.. code-block:: bash
+
+   $ bii cpp:configure
+
+Open the biicode project with CLion *(File -> Open)*. 
+
+Use biicode's commands from the embedded Terminal in CLion, open it with: ``Alt+F12`` or *View -> Tool Windows -> Terminal*.
+
+.. container:: infonote
+     
+     Here's more info about :ref:`working with CLion <ide_clion>`
 
 If you have any questions, we are available at |biicode_forum_link|. You can also |biicode_write_us| for suggestions and feedback.
 
@@ -109,3 +135,8 @@ If you have any questions, we are available at |biicode_forum_link|. You can als
 .. |biicode_write_us| raw:: html
 
    <a href="mailto:info@biicode.com" target="_blank">write us</a>
+
+.. |clion_link| raw:: html
+
+   <a href="https://confluence.jetbrains.com/display/CLION/Early+Access+Program" target="_blank">CLion</a>
+ 

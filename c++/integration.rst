@@ -5,6 +5,12 @@ Integrations
 
 Biicode integrates with other technologies and tools. We're already working with the services below:
 
+
+.. toctree::
+   :maxdepth: 2
+
+   ides
+
 .. _git_integration:
 
 VCS Git (GitHub, Bitbucket, etc.)
@@ -22,95 +28,117 @@ Biicode has some commands similar to VCS management but we recommend greatly to 
 	~/mygitproject/blocks/myusername$ git clone your_repository
 	~/mygitproject/blocks/myusername$ bii cpp:build
 
+Versioning your code
+^^^^^^^^^^^^^^^^^^^^
+
+The natural way to work is maintaining a correspondence between a *biicode block* and a *Git repository*.
+Just go to your block folder (**calc** and **math** if you followed the getting started) and initialize a new git repository.
+
+.. code-block:: text
+
+  +-- mycalc
+  |    +-- blocks
+  |    |    +-- myuser
+  |    |    |    +-- calc
+  |    |    |    |    +-- main.cpp
+  |    |    |    +-- math
+  |    |    |    |    +-- main.cpp
+  |    |    |    |    +-- operations.cpp
+  |    |    |    |    +-- operations.h
+  |    +-- deps
+
+Go to the block's folder and initialize the git repository. Then add the changes to index and commit them:
+
+.. code-block:: bash
+
+  $ cd mycalc/blocks/myuser/calc
+  $ git init .
+  $ git add .
+  $ git commit -m "Added new operation to operations.cpp"
+
+You can also add a remote repository:
+
+.. code-block:: bash
+
+  $ git remote add origin https://github.com/user/repo.git
+
+And push your commits: 
+
+.. code-block:: bash
+
+  $ git push origin master
+
+
+.. container:: infonote
+    
+  You can learn more about adding remote repositories on |github_remote| or on |bitbucket_remote|. 
+
+
+.. container:: infonote
+    
+  You can push to git the whole biicode project folder if you want to keep the building folder and project configuration. But, generally it's not necessary or recommended. Each computer may need their specific project settings, ant the you can regenerate all build layout with ``bii cpp:configure`` or ``bii cpp:build`` command. 
+
+
+As usual, you can publish your code to biicode when you want to, generally when you have a version to share.
+
+.. code-block:: bash
+
+  $ bii publish
+
+That's all! Now you have your code under version control.
+
+
+Ignoring files
+_______________
+
+Maybe you want to have all files on git, but there are some files you don't want to publish to biicode.
+Use :ref:`ignore.bii file<ignore_bii>` to specify which files should be ignored and not published to biicode.
+
+
+Working with published blocks
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In previous sections, it's explained how to work with any published block just using biicode (you would run ``bii open`` command). 
+
+Well, that's still available, but when working with Git, it's best to ``clone`` the github repository.
+
+Let's see an example:
+
+User ``mike`` has pushed to github and published a block named ``mike/math`` to biicode. 
+He was working at home, with Linux.
+
+Next day Mike wants to develop further his block at work, with Windows.
+If Mike executes ``bii open`` the source code is not a github repository, is only a copy of his block in biicode. 
+So Mike should better init a new biicode project and run:
+
+.. code-block:: bash
+
+  $ bii init work_project
+  $ cd work_project
+  $ bii new mike/math
+  $ cd blocks/mike/math
+  $ git clone https://github.com/mike_on_github/math.git .
+
+Now Mike has the github repository to continue developing his biicode block under a control version system.
+From now, Mike just needs to make ``git pull`` command to fetch and merge the remote changes.
+
+
+
+Continuous Integration
+----------------------
+
 .. _appveyor_integration:
 
 AppVeyor
----------
+^^^^^^^^
 
 |appveyor_homepage| provides Continuous Integration and Deploy for Windows and it's compatible with both GitHub and BitBucket. Place an ``appveyor.ymĺ`` file in your repo and each time you push to your Github repository it will kick-off a new build in Windows, executing your tests and publishing this project to your biicode user account. 
 
-Login AppVeyor and clic on ``+ NEW PROJECT`` and choose the repo you want to deploy with AppVeyor. Create an ``appveyor.yml`` file in your local project to automatically publish your block to biicode, including your version tags, here's an example file: ::
+Login AppVeyor and clic on ``+ NEW PROJECT`` and choose the repo you want to deploy with AppVeyor. Create an ``appveyor.yml`` file in your local project to automatically publish your block to biicode, including your version tags, here's an example file:
 
-    version: 1.0.{build}
 
-    install:
-      - ps: wget https://s3.amazonaws.com/biibinaries/thirdparty/cmake-3.0.2-win32-x86.zip -OutFile cmake.zip
-      - cmd: echo "Unzipping cmake..."
-      - cmd: 7z x cmake.zip -o"C:\Program Files (x86)\" -y > nul
-      - cmd: set PATH=%PATH:CMake 2.8\bin=%;C:\Program Files (x86)\cmake-3.0.2-win32-x86\bin
-      - cmd: cmake --version
-      - cmd: echo "Downloading biicode..."
-      - ps: wget http://www.biicode.com/downloads/latest/win -OutFile bii-win.exe
-      - cmd: bii-win.exe /VERYSILENT
-      - cmd: set PATH=%PATH%;C:\Program Files (x86)\BiiCode\bii
-      - cmd: bii -v
-      - cmd: del bii-win.exe
-      - cmd: del cmake.zip
-
-    before_build:
-      - cmd: cd \
-      - cmd: bii init %project_name%
-      - cmd: cd %project_name%
-      - cmd: bii new %block_user%/%block_name%
-        # copy files and folders
-      - cmd: xcopy "%APPVEYOR_BUILD_FOLDER%" blocks\%block_user%\%block_name%\ /e
-      - cmd: bii cpp:configure -G "Visual Studio 12"
-
-    build_script:
-      - cmd: bii cpp:build
-
-    test_script:
-      - cmd: cd bin
-      - cmd: amalulla_cpp-expression-parser_test-shunting-yard.exe
-    
-    deploy_script:
-      - cmd: bii user %block_user% -p %secured_passwd%
-      - if defined APPVEYOR_REPO_TAG_NAME set VERSION=%APPVEYOR_REPO_TAG_NAME%  
-      - if defined APPVEYOR_REPO_TAG_NAME bii publish --tag=%tag% --versiontag=%VERSION% 
-      - if not defined APPVEYOR_REPO_TAG_NAME bii publish --tag=%dev_tag% 
-
-    on_success:
-      - cmd: cd /%project_name%/blocks/%block_user%/%block_name%
-      - ps: |    
-            $new_biiconf = get-content biicode.conf
-            $orig_biiconf = get-content "$env:APPVEYOR_BUILD_FOLDER\biicode.conf"     
-            if (diff $new_biiconf $orig_biiconf){
-               'different, updating biicode parents'
-               git checkout "$env:APPVEYOR_REPO_BRANCH"
-               git config --global core.autocrlf true
-               git config --global credential.helper store 
-               Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
-               git remote add neworigin "$env:github_repo"
-               git config --global user.email "$env:github_email"
-               git config --global user.name "$env:github_user"
-               git add biicode.conf
-               git commit -m "Updated biicode parents [skip ci]"
-               git push neworigin "$env:APPVEYOR_REPO_BRANCH"
-               }Write-Host "Updated biicode parents" else {
-                'equal, no parents update needed'
-              }
-
-    environment:
-      project_name:
-        "myproject"
-      block_user:
-        "amalulla"
-      block_name:
-        "cpp-expression-parser"
-      secured_passwd:
-        secure: ZMvgETfLAUo7kISnvrinBA==
-      access_token:
-        secure: GdIDIRkmsM9blqS143lQErkxguMYgJBs74GzWw+lgzjvl/NoLs4ErcOZ2JBAEmkr
-      tag:
-        "STABLE"
-      dev_tag:
-        "DEV"
-      github_user:
-        "MariadeAnton"
-      github_email:
-        "maria.deanton@biicode.com"
-      github_repo:
-        "git@github.com:MariadeAnton/cpp-expression-parser.git"
+.. literalinclude:: /_static/code/cpp/integration/appveyor.yml
+   :language: text
 
 Use your own ``test_script`` and ``environment`` values to start deploying with it.
 
@@ -138,78 +166,15 @@ Learn more about AppVeyor visiting their `docs <http://www.appveyor.com/docs>`_.
 .. _travis_integration:
 
 Travis CI
----------
+^^^^^^^^^
 
 |travis_homepage| takes care of running your tests and deploying your apps. Like we work with VCS, many of the blocks published in our web have their ``.travis.yml`` files, that lets us pushing to our GitHub repository, and automatically build in Linux, execute and publish this project with your biicode user account thanks to this excellent service.
 
-If you're working with it, the ``.travis.yml`` file format will help to automatically publish to your biicode account with DEV tag unless your github repo is tagged, in this case, imports the tag and publishes as STABLE to biicode. ::
+If you're working with it, the ``.travis.yml`` file format will help to automatically publish to your biicode account with DEV tag unless your github repo is tagged, in this case, imports the tag and publishes as STABLE to biicode.
 
 
-    language: cpp
-    compiler:
-    - gcc
-    before_install:
-    - export TRAVIS_COMMIT_MSG="$(git log --format=%B --no-merges -n 1)"
-    - if [[ "$TRAVIS_COMMIT_MSG" = "$COMMIT_IGNORE_BUILD" ]]; then exit 0 ; fi
-    - if [ "$CXX" == "g++" ]; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test;
-      fi
-    - sudo apt-get update -qq
-    - git config --global user.email "$USER_EMAIL"
-    - git config --global user.name "$USER_NAME"
-    - git config --global push.default simple
-    - git checkout $TRAVIS_BRANCH
-    install:
-    - if [ "$CXX" == "g++" ]; then sudo apt-get install -qq g++-4.8; fi
-    - if [ "$CXX" == "g++" ]; then sudo update-alternatives --install /usr/bin/g++ g++
-      /usr/bin/g++-4.8 50; fi
-    - wget http://www.biicode.com/downloads/latest/ubuntu64
-    - mv ubuntu64 bii-ubuntu64.deb
-    - sudo dpkg -i bii-ubuntu64.deb && sudo apt-get -f install
-    - rm bii-ubuntu64.deb
-    - wget https://s3.amazonaws.com/biibinaries/thirdparty/cmake-3.0.2-Linux-64.tar.gz
-    - tar -xzf cmake-3.0.2-Linux-64.tar.gz
-    - sudo cp -fR cmake-3.0.2-Linux-64/* /usr
-    - rm -rf cmake-3.0.2-Linux-64
-    - rm cmake-3.0.2-Linux-64.tar.gz
-    - export TRAVIS_CXX=$CXX
-    script:
-    - cd /tmp
-    - bii init biicode_project
-    - mkdir -p ./biicode_project/blocks/$USER/$BLOCK_NAME
-    - cd biicode_project/blocks/$USER/$BLOCK_NAME
-    - shopt -s dotglob && mv $TRAVIS_BUILD_DIR/* ./
-    - if [ "$CXX" == "clang++" ]; then export CXX="clang++" && bii cpp:build; fi
-    - if [ "$CXX" == "g++" ];     then export CXX="g++"     && bii cpp:build; fi
-    - cd /tmp/biicode_project
-    ##################### CHANGE WITH YOUR CUSTOM CHECKS OR TEST EXECUTION ##################
-    - ls ./bin/lasote_docker_client_example_main
-    #########################################################################################
-    after_success:
-    - bii user $USER -p $BII_PASSWORD
-    - if [[ -n $TRAVIS_TAG ]]; then bii publish -r --tag STABLE --versiontag $TRAVIS_TAG
-      || echo "Ignored publish output..."; fi
-    - if [[ -z $TRAVIS_TAG ]]; then bii publish -r || echo "Ignored publish output...";
-      fi
-    # If there are changes, commit them
-    - cd /tmp/biicode_project/blocks/$USER/$BLOCK_NAME
-    - git config credential.helper "store --file=.git/credentials" 
-    - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-    - git add -A .
-    - git commit -m "$COMMIT_IGNORE_BUILD" 
-    - git remote -v
-    - git remote set-url origin https://github.com/$TRAVIS_REPO_SLUG.git 
-    - git push
-    env:
-      global:
-      - USER_EMAIL=lasote@gmail.com
-      - USER_NAME="Luis Martinez de Bartolome"
-      - COMMIT_IGNORE_BUILD="Promoted version.***travis***"
-      - BLOCK_NAME=docker_client
-      - USER=lasote
-      # BII_PASSWORD: Biicode USER's password. > travis encrypt BII_PASSWORD=XXXXXX --add
-      - secure: ENCRYPTED_BIICODE_PASSWORD_HERE
-      # GH_TOKEN: Github token > travis encrypt GH_TOKEN=XXXXXX --add
-      - secure: NCRYPTED_GITHUB_PASSWORD_HERE
+.. literalinclude:: /_static/code/cpp/integration/travis.yml
+   :language: text
 
 What's going on the ``.travis.yml`` file?
 
@@ -321,59 +286,11 @@ A good example is |doxygen_doxygenmainpage|:
 
 .. image:: ../_static/img/c++/doxygen.png
 
-.. code-block:: cpp 
-    :emphasize-lines: 2,3,9,17,30
 
-    /**
-    @mainpage  libfreenect
-    @author The OpenKinect Community - http://www.github.com/openkinect
+.. literalinclude:: /_static/code/cpp/integration/doxyfile.cpp
+   :language: cpp
+   :emphasize-lines: 2,3,9,17,30
 
-    Cross-platform driver for the Microsoft Kinect Camera
-
-    Website: http://www.openkinect.org
-
-    @section libfreenectIntro Introduction
-
-    libfreenect is an open source, cross platform development library for
-    the Microsoft Kinect camera. It provides basic functionality to
-    connect to the camera, set configuration values, retrieve (and in some
-    cases decompress) images, and provides functionalty for the LED and
-    Motor.
-
-    @section libfreenectDesignOverview Design Overview
-
-    libfreenect provides access to devices via two structs:
-
-    - A context, which manages aspects of thread safety when using
-      multiple devices on multiple threads.
-    - A device, which talks to the hardware and manages transfers and configuration.
-
-    Either or both of these structs are passed to the functions in order
-    to interact with the hardware. The USB access is handled by
-    libusb-1.0, which should work in a mostly non-blocking fashion across
-    all platforms (see function documentation for specifics).
-
-    @section libfreenectShouldIUseIt Should You Use libfreenect?
-
-    The main design goal of libfreenect is to provide a simple, usable
-    reference implementation of the Kinect USB protocol for access via
-    non-Xbox hardware. With this in mind, the library does not contain any
-    algorithms relevant to computer vision usages of the camera.
-
-    If you are looking for machine vision algorithms, we recommend the
-    OpenCV library, available at
-
-    http://www.opencv.org
-
-    If you are looking to use the kinect in a larger framework that may
-    involve other depth sensors, we recommend the OpenNI framework,
-    available at
-
-    http://www.openni.org
-
-    Note that libfreenect can be used as a hardware node in OpenNI.
-
-    */
 
 .. |doxygen_homepage| raw:: html
 
@@ -432,6 +349,15 @@ A good example is |doxygen_doxygenmainpage|:
 .. |biicode_block_parser| raw:: html
 
    <a href="http://www.biicode.com/amalulla/cpp-expression-parser" target="_blank">cpp-expression parser biicode block</a> 
+
+.. |github_remote| raw:: html
+    
+    <a href="https://help.github.com/articles/adding-a-remote/" target="_blank">github here</a>
+
+
+.. |bitbucket_remote| raw:: html
+    
+    <a href="https://confluence.atlassian.com/display/BITBUCKET/Create+a+repository" target="_blank">bitbucket here</a>
 
 
 **Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_
