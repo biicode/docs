@@ -39,7 +39,7 @@ Learn more about AppVeyor visiting their `docs <http://www.appveyor.com/docs>`_.
 
 .. container:: infonote
 
-   Here's a blog post about `using Appveyor CI and Deploy for Windows<http://blog.biicode.com/appveyor-ci-windows-biicode/>`_.
+   Here's a blog post about `using Appveyor CI <http://blog.biicode.com/appveyor-ci-windows-biicode/>`_ and Deploy for Windows 
 
 .. _travis_integration:
 

@@ -8,5 +8,3 @@ Using biicode
 
    using-biicode/blocks
    using-biicode/project
-   using-biicode/workflows
-  

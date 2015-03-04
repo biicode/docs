@@ -150,15 +150,6 @@ Congrats! You just edited your dependencies and updated the changes.
 You know that we are available at |biicode_forum_link| for any problems.
 You can also |biicode_write_us| for suggestions and feedback, they are always welcomed.
 
-.. |biicode_forum_link| raw:: html
-
-   <a href="http://forum.biicode.com" target="_blank">the biicode forum</a>
- 
-
-.. |biicode_write_us| raw:: html
-
-   <a href="mailto:info@biicode.com" target="_blank">write us</a>
-
 .. _workflows_any_block:
 
 Working with any published block
@@ -300,11 +291,8 @@ And push your commits:
 
 .. container:: infonote
     
-  You can learn more about adding remote repositories on |github_remote| or on |bitbucket_remote|. 
-
-.. container:: infonote
-    
-  You can push to git the whole biicode project folder if you want to keep the building folder and project configuration. But, generally it's not necessary or recommended. Each computer may need their specific project settings, ant the you can regenerate all build layout with ``bii cpp:configure`` or ``bii cpp:build`` command. 
+  You can learn more about adding remote repositories on |github_remote| or on|bitbucket_remote|
+  Each computer may need their specific project settings, and the you can regenerate all build layout with ``bii cpp:configure`` or ``bii cpp:build`` command. 
 
 As usual, you can publish your code to biicode when you want to, generally when you have a version to share.
 
@@ -314,9 +302,7 @@ As usual, you can publish your code to biicode when you want to, generally when 
 
 That's all! Now you have your code under version control.
 
-
-Ignoring files
-_______________
+**Ignoring files**
 
 Maybe you want to have all files on git, but there are some files you don't want to publish to biicode.
 Use :ref:`ignore.bii file<ignore_bii>` to specify which files should be ignored and not published to biicode.
@@ -400,6 +386,7 @@ Check our |biicode_forum_link| and/or |biicode_stackoverflow_link| for questions
 
 .. |bitbucket_remote| raw:: html
     
-    <a href="https://confluence.atlassian.com/display/BITBUCKET/Create+a+repository" 
+    <a href="https://confluence.atlassian.com/display/BITBUCKET/Create+a+repository" target="_blank">bitbucket docs</a>
+
 **Got any doubts?** Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
 

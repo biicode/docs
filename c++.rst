@@ -16,6 +16,7 @@ A multi-platform C and C++ dependency manager.
    c++/publishing
    c++/integration
    c++/examples
+   c++/workflows
    c++/configuration_files
    c++/commands
    c++/release_notes

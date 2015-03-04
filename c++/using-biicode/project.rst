@@ -98,7 +98,7 @@ Place your repo's code directly in your project's folder. Use ``bii init -l simp
 
   ~$ bii init -l simple myproject
 
-Creates a simple folder structure in which *deps/ , build/ and cmake/* folders - all auxiliary folders but *bin/* - are inside *bii/* folder:
+Creates a simple folder structure in which *deps/ , build/ and cmake/ folders - all auxiliary folders but bin/ - are inside bii/* folder:
 
 .. code-block:: text
 
@@ -147,13 +147,13 @@ TMP Layout
 ^^^^^^^^^^
 Looking for an even cleaner layout? Use ``bii init -l tmp``.
 
-This layout option redirects *deps/*,*build/* and *cmake/* folders to **tmp/myproject/** -all aux folders but **bin/** - and places your repo's code directly in your project's folder. 
+This layout option redirects *deps/ , build/ and cmake/ folders to tmp/myproject/ -all aux folders but bin/* - and places your repo's code directly in your project's folder. 
 
 .. -block:: bash
 
   ~$ bii init -l simple myproject
 
-Creates a simple folder structure in which *deps/*,*build/* and *cmake* folders (all auxiliary folders but **bin/** ) are inside ``bii/`` folder:
+Creates a simple folder structure in which *deps/,build/ and cmake/ folders (all auxiliary folders but bin/ are inside bii/* folder:
 
 .. code-block:: text
 
@@ -174,20 +174,19 @@ in which ``layout.bii`` content is:
     deps: $TMP/deps
     auto-root-block: True
 
-
 For example, this is **a project with simple layout** :
 
 .. code-block:: text
 
-  +-- myproject/
-  |    +-- bii/
-  |    |    +-- layout.bii
-  |    |    +-- policies.bii
-  |    |    +-- settings.bii
-  |    +-- bin/
-  |    +-- src/  
-  |    +-- biicode.conf
-  |    +-- CMakeLists.txt
+    +-- myproject/
+    |    +-- bii/
+    |    |    +-- layout.bii
+    |    |    +-- policies.bii
+    |    |    +-- settings.bii
+    |    +-- bin/
+    |    +-- src/  
+    |    +-- biicode.conf
+    |    +-- CMakeLists.txt
 
 
 .. _clion_layout:
@@ -206,20 +205,20 @@ This working project looks like this:
 
 .. code-block:: text
 
-  +-- myproject/
-  |    +-- bii/
-  |    |    +-- policies.bii
-  |    |    +-- settings.bii
-  |    |    +-- layout.bii  
-  |    +-- blocks/
-  |    |    +-- owner1/
-  |    |    |    +-- blockA/
-  |    |    |    |    +-- src/
-  |    |    |    |    +-- include/
-  |    |    |    |    +-- test/   
-  |    |    |    |    +-- biicode.conf
-  |    |    |    |    +-- CMakeLists.txt
-  |    +-- deps/
+    +-- myproject/
+    |    +-- bii/
+    |    |    +-- policies.bii
+    |    |    +-- settings.bii
+    |    |    +-- layout.bii  
+    |    +-- blocks/
+    |    |    +-- owner1/
+    |    |    |    +-- blockA/
+    |    |    |    |    +-- src/
+    |    |    |    |    +-- include/
+    |    |    |    |    +-- test/   
+    |    |    |    |    +-- biicode.conf
+    |    |    |    |    +-- CMakeLists.txt
+    |    +-- deps/
 
 
 in which ``layout.bii`` content is:
@@ -232,7 +231,7 @@ in which ``layout.bii`` content is:
 
 .. container:: infonote
      
-     Here's more info about :ref:`working with CLion <ide_clion>`*
+     Here's more info about :ref:`working with CLion <ide_clion>`
 
 
 Check our |biicode_forum_link| and/or |biicode_stackoverflow_link| for questions and answers. You can also |biicode_write_us| for suggestions and feedback.
