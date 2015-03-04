@@ -23,7 +23,7 @@ And executing:
   ~$ cd myproject
   ~/myproject$ bii new username/blockname --hello=cpp
 
-Creates this structure into myproject: 
+Creates this structure into *myproject*: 
 
 .. code-block:: text
 
@@ -42,8 +42,6 @@ Each project follows the same standard structure, for example:
 
   +-- myproject/
   |    +-- bii/
-  |    |    +-- policies.bii
-  |    |    +-- settings.bii
   |    +-- blocks/
   |    |    +-- owner1/
   |    |    |    +-- blockA/
@@ -54,7 +52,7 @@ Each project follows the same standard structure, for example:
   |    |    |    |    +-- CMakeLists.txt
   |    +-- deps/
   
-This structure empowers consistency between the blocks published in biicode, it also enables working with *different owner/blocks* at the same time: ::
+This structure empowers consistency between the blocks published in biicode, it also enables working with *different owner/blocks* at the same time:
 
 .. code-block:: text
 
@@ -85,7 +83,7 @@ This structure empowers consistency between the blocks published in biicode, it 
 Customize your layout
 ----------------------
 
-Use ``bii init -l`` or ``bii init --layout`` to use a different folder structure.
+Use ``bii init -l`` or ``bii init --layout`` command to use a different folder structure.
 
 Simple Layout
 ^^^^^^^^^^^^^
@@ -96,7 +94,7 @@ Place your repo's code directly in your project's folder. Use ``bii init -l simp
 
   ~$ bii init -l simple myproject
 
-Creates a simple folder structure in which *deps/*,*build/* and *cmake/* folders - all auxiliary folders ** but bin/** - are inside ``bii/`` folder:
+Creates a simple folder structure in which *deps/ , build/ and cmake/* folders - all auxiliary folders but *bin/* - are inside *bii/* folder:
 
 .. code-block:: text
 
@@ -122,7 +120,6 @@ in which ``layout.bii`` content is:
     # the block will be named as your project folder
     auto-root-block: True
 
-
 For example, this is **a project with simple layout** :
 
 .. code-block:: text
@@ -136,11 +133,11 @@ For example, this is **a project with simple layout** :
   |    |    +-- cmake/
   |    |    +-- deps/
   |    +-- bin/
-  |    +-- src/
-  |    +-- include/
-  |    +-- test/   
+  |    +-- src/  
   |    +-- biicode.conf
   |    +-- CMakeLists.txt
+
+A project's layout is fully customizable via **layout.bii** file, you can place the auxiliary folders wherever you want, just specify the relative routes to the folders you want to use instead.
 
 TMP Layout
 ^^^^^^^^^^
@@ -184,16 +181,16 @@ For example, this is **a project with simple layout** :
   |    |    +-- policies.bii
   |    |    +-- settings.bii
   |    +-- bin/
-  |    +-- src/
-  |    +-- test/   
+  |    +-- src/  
   |    +-- biicode.conf
   |    +-- CMakeLists.txt
 
 
+.. _clion_layout:
 
 CLion Layout
 ^^^^^^^^^^^^
-Use CLion with biicode, just like the regular biicode layout but with a ``bii/layout.bii`` to integrate biicode with the C/C++ IDE.
+Use |clion_link| with biicode, just like the regular biicode layout but with a ``bii/layout.bii`` to integrate biicode with the C/C++ IDE.
 
 This layout places your repo's code as usual, in your ``project_name/blocks/owner/blockname`` directory:
 
@@ -229,9 +226,25 @@ in which ``layout.bii`` content is:
     # This layout DOES NOT allow root-block, as it will overwrite the project CMakeLists
     cmake: /
 
-
 .. container:: infonote
      
-     Here's more info about :ref:`working with CLion <ide_clion>`*.
+     Here's more info about :ref:`working with CLion <ide_clion>`*
 
 
+Check our |biicode_forum_link| and/or |biicode_stackoverflow_link| for questions and answers. You can also |biicode_write_us| for suggestions and feedback.
+
+.. |biicode_forum_link| raw:: html
+
+   <a href="http://forum.biicode.com" target="_blank">biicode's forum</a>
+
+.. |biicode_write_us| raw:: html
+
+   <a href="mailto:support@biicode.com" target="_blank">write us</a>
+
+.. |biicode_stackoverflow_link| raw:: html
+
+   <a href="http://stackoverflow.com/questions/tagged/biicode" target="_blank">StackOverflow tag</a>
+   
+.. |clion_link| raw:: html
+ 
+   <a href="https://confluence.jetbrains.com/display/CLION/Early+Access+Program" target="_blank">CLion</a>

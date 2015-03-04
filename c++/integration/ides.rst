@@ -123,20 +123,24 @@ Use biicode's commands from the embedded Terminal in CLion, open it with: ``Alt+
 
 .. container:: infonote
      
-     Here's more info about :ref:`working with CLion <ide_clion>`
+     Here's more info about :ref:`CLion's project layout <clion_layout>`
 
-If you have any questions, we are available at |biicode_forum_link|. You can also |biicode_write_us| for suggestions and feedback.
+If you have any questions, we are available at |biicode_forum_link| and/or |biicode_stackoverflow_link|. You can also |biicode_write_us| for suggestions and feedback.
 
 .. |biicode_forum_link| raw:: html
 
    <a href="http://forum.biicode.com" target="_blank">biicode's forum</a>
- 
 
 .. |biicode_write_us| raw:: html
 
-   <a href="mailto:info@biicode.com" target="_blank">write us</a>
+   <a href="mailto:support@biicode.com" target="_blank">write us</a>
+
+.. |biicode_stackoverflow_link| raw:: html
+
+   <a href="http://stackoverflow.com/questions/tagged/biicode" target="_blank">StackOverflow tag</a>
 
 .. |clion_link| raw:: html
-
+ 
    <a href="https://confluence.jetbrains.com/display/CLION/Early+Access+Program" target="_blank">CLion</a>
  
+

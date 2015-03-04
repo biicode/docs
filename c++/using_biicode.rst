@@ -6,7 +6,7 @@ Using biicode
 .. toctree::
    :maxdepth: 2
 
-   blocks
-   project
-   workflows
+   using-biicode/blocks
+   using-biicode/project
+   using-biicode/workflows
   
