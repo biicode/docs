@@ -127,13 +127,15 @@ This badge lets developers know your code is available to reuse at biicode. It i
 
 Let people know your code can be reused easily!
 
+.. _cpp_block_git:
+
 Create a block from a git repository
 ------------------------------------
 
 The code
 ^^^^^^^^
 
-Put your code into a biicode block:
+Put your code into a biicode block, as usual:
 
 .. code-block:: bash
 
@@ -142,6 +144,14 @@ Put your code into a biicode block:
   $~ mkdir username
   $~ cd username
   $~ git clone https://Your_Repo_URL.git
+
+Or using the :ref:`custom layout <custom_layout>` feature:
+
+.. code-block:: bash
+
+  ~$ git clone https://Your_Repo_URL.git
+  ~$ cd your_repository
+  ~/your_repository$ bii init -l simple
 
 biicode.conf
 ^^^^^^^^^^^^
@@ -197,8 +207,6 @@ This is an example of a biicode.conf file: ::
           # Manually define data files dependencies, that will be copied to bin for execution
           # By default they are copied to bin/user/block/...
           # image.cpp + image.jpg  # code should write open("user/block/image.jpg")
-
-
 
 CMakeLists.txt
 ^^^^^^^^^^^^^^

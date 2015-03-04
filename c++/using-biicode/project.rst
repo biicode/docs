@@ -80,10 +80,14 @@ This structure empowers consistency between the blocks published in biicode, it 
   |    |    |    |    +-- CMakeLists.txt
   |    +-- deps/
 
+.. _custom_layout:
+
 Customize your layout
 ----------------------
 
 Use ``bii init -l`` or ``bii init --layout`` command to use a different folder structure.
+
+.. _simple_layout:
 
 Simple Layout
 ^^^^^^^^^^^^^
