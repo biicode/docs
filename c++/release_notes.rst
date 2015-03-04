@@ -3,6 +3,17 @@
 Release notes
 =============
 
+**2.5.2** (3-Mar-2015)
+
+	* New custom project layouts available, with layouts.bii. 
+	* Enabled edition in the project root folder
+	* Fixed problems with paths with spaces
+	* Changed arduino toolchains, now use cpp:configure -t=arduino, and cpp:build
+	* Fixes to windows installer, shortcuts load biicode path even if not in system path
+	* Free accounts have collaborators now too
+	* Fix in noderunner script
+
+
 **2.4.1** (18-Feb-2015)
 
 	* Improved windows installer, more user options for path, icons, uninstaller, and fixed readme.txt linefeeds
