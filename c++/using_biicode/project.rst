@@ -147,7 +147,7 @@ TMP Layout
 ^^^^^^^^^^
 Looking for an even cleaner layout? Use ``bii init -l tmp``.
 
-This layout option redirects *deps/ , build/ and cmake/ folders to tmp/myproject/ -all aux folders but bin/* - and places your repo's code directly in your project's folder. 
+This layout option redirects *deps/ , build/ and cmake/* folders to the temporal folder of your system *tmp/myproject/* -all aux folders but *bin/*- and places your repo's code directly in your project's folder. 
 
 .. -block:: bash
 
@@ -174,7 +174,7 @@ in which ``layout.bii`` content is:
     deps: $TMP/deps
     auto-root-block: True
 
-For example, this is **a project with simple layout** :
+For example, this is **a project with TMP layout** :
 
 .. code-block:: text
 
