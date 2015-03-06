@@ -1,9 +1,9 @@
 POCO 
 ====
 
-`POCO <http://pocoproject.org/>`_ POCO is an open-source third-party library, which contains a collection of C++ class libraries that simplify and accelerate the development of network-centric, portable applications in C++. With POCO yo can develop network- and internet-based applications that run on desktop, server, mobile and embedded systems.
+`POCO <http://pocoproject.org/>`_ POCO is an open-source third-party library, which contains a collection of C++ class libraries that simplify and accelerate the development of network-centric, portable applications in C++. With POCO you can develop network- and internet-based applications that run on desktop, server, mobile and embedded systems.
 
-The versions of POCO library at biicode are:
+POCO C++ libraries available at biicode are:
 	
 	* `Poco (develop) <https://www.biicode.com/fenix/fenix/poco/develop>`_
 
@@ -18,7 +18,7 @@ There are so many things you can try with POCO. This example shows a **PDF conve
 PDF example
 -----------
 
-This example is `already in biicode <http://www.biicode.com/examples/poco_pdf>`_. So you just have to open the block:
+This example is `already in biicode <http://www.biicode.com/examples/poco_pdf>`_. So just open the block:
 
 .. code-block:: bash
 
