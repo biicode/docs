@@ -13,6 +13,7 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/box2d
    examples/crypto++
    examples/opencv
+   examples/poco
    examples/muparser
    examples/glfw
    examples/eigen
