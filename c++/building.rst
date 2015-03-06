@@ -9,6 +9,8 @@ Biicode knows how the source code files connect to each other, with this informa
 
 But this automatic process is just a feature, **you can have full control over the building process**.
 
+.. _cmake_introduction:
+
 Here, you'll learn how to define your **CMakeLists.txt** to delve into full functionality.
 
 
@@ -16,8 +18,6 @@ Here, you'll learn how to define your **CMakeLists.txt** to delve into full func
      
      Use your IDE with biicode, check the section :ref:`Generators and IDEs<generators_ide>`.
 
-
-.. _cmake_introduction:
 .. _cmakelists_txt:
 
 CMakeLists.txt

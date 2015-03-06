@@ -1,0 +1,24 @@
+.. _layout:
+
+**layout.bii**: define your project layout 
+==========================================
+
+Specify your project layout config with ``layout.bii`` file.
+
+``layout.bii`` content is:
+
+.. code-block:: text
+
+    # Minimal layout, with all auxiliary folders inside "bii" and
+    # The binary "bin" folder as is, and enabled code edition in the project root
+    cmake: bii/cmake
+    lib: bii/lib
+    build: bii/build
+
+    deps: bii/deps
+    # Setting this to True enables directly editing in the project root
+    # instead of blocks/youruser/yourblock
+    # the block will be named as your project folder
+    auto-root-block: True
+    # Parent blockname (if exists)
+
