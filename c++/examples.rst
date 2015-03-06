@@ -16,6 +16,7 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/muparser
    examples/glfw
    examples/eigen
+   examples/openssl
    examples/cimg
    examples/freeglut
    examples/jsonxx
@@ -23,7 +24,6 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/boost
    examples/glui
    examples/littlecms
-   examples/openssl
    examples/zmq
    examples/zmq_protobuf
    examples/google-test-tutorial
