@@ -92,11 +92,12 @@ Just, define your Arduino board using the ``arduino:settings`` command. In this 
 
 Build and upload your program
 -----------------------------
-Lets check that everything is fine by building and uploading the blink application to your Arduino.
+Let's specify the toolchain to use, build and check that everything is fine by building and uploading the blink application to your Arduino.
 
 .. code-block:: bash
 
-   ~/myproject$ bii arduino:build
+   ~/myproject$ bii cpp:configure -t arduino
+   ~/myproject$ bii cpp:build
    ...
    [100%] Built target myuser_myblock_main
    
@@ -138,7 +139,7 @@ Now we're going to implement a non blocking blink in arduino. Copy the following
 
 This code requires the *fenix's* **blink.h** *file* (You can see it in the ``include`` section). 
 
-If you try to ``arduino:build`` you will get a **build error**, that's because your project doesn't have the *fenix/blink/blink.h* dependency.
+If you try to ``build`` you will get a **build error**, that's because your project doesn't have the *fenix/blink/blink.h* dependency.
 
 Execute the following command to **find unresolved dependencies** and **retrieve necessary files** from servers:
 
@@ -153,7 +154,7 @@ Now can now build your firmware and upload it to your Arduino:
 
 .. code-block:: bash
 
-  ~/arduino_hello_project$ bii arduino:build
+  ~/arduino_hello_project$ bii cpp:build
   ...
   [100%] Built target myuser_myblock_main
 

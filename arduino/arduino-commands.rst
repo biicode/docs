@@ -26,14 +26,14 @@ This section summarizes the **Arduino commands available to be used with the bii
 
 **Note**: You need to have arduino :ref:`correctly set up <arduino_installation>`.
 
-**bii arduino:configure**: configure your project
+**bii cpp:configure -t arduino**: configure your project
 -------------------------------------------------
 
 If you have configured your project as a C/C++ project and you want to develop in arduino language, this command helps you! Enter it and **configure your project like an arduino project**. It invokes arduino cross compiler and you are ready to start with your arduino.
 
 .. code-block:: bash
 
-	$ bii arduino:configure
+	$ bii cpp:configure -t arduino
 
 	invoking cmake  -G "MinGW Makefiles" -Wno-dev ../cmake
 	-- The C compiler identification is GNU 4.3.2
@@ -57,14 +57,14 @@ If you have configured your project as a C/C++ project and you want to develop i
 	Here's how to configure :ref:`Eclipse for Arduino<bii_arduino_ide>`.
 
 
-**bii arduino:build**: build your project
+**bii cpp:build**: build your project
 -----------------------------------------
 
-This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX compiler -> avr-g++) to **build and compile the project**.
+This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX compiler -> avr-g++) to **build and compile the project** via the toolchain you configure it with ``bii cpp:configure -t arduino``.
 
 .. code-block:: bash
 
-	$ bii arduino:build
+	$ bii cpp:build
 	
 	...
 	
