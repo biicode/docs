@@ -151,9 +151,9 @@ This layout option redirects *deps/ , build/ and cmake/* folders to the temporal
 
 .. -block:: bash
 
-  ~$ bii init -l simple myproject
+  ~$ bii init -l tmp myproject
 
-Creates a simple folder structure in which *deps/,build/ and cmake/ folders (all auxiliary folders but bin/ are inside bii/* folder:
+Creates a folder structure in which *deps/,build/ and cmake/ folders (all auxiliary folders but bin/ are inside bii/* folder:
 
 .. code-block:: text
 
