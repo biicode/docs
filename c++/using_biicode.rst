@@ -6,5 +6,5 @@ Using biicode
 .. toctree::
    :maxdepth: 2
 
-   using-biicode/blocks
-   using-biicode/project
+   using_biicode/blocks
+   using_biicode/project
