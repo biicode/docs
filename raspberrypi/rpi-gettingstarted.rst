@@ -3,16 +3,18 @@
 Getting started
 ===============
 
-This example shows **how to install biicode, code a C++ led blink with |wiringpi_link|, make the cross compilation and send the executable to your Raspberry Pi**. You don't need to have WiringPi installed in your computer or the rpi. Biicode will download and configure it automatically for you, |wiringpi_biicode_link|.
+This example shows **how to install biicode, code a C++ led blink with** |wiringpi_link|, **make the cross compilation and send the executable to your Raspberry Pi**.
+
+You don't need to have WiringPi installed in your computer or the rpi. Biicode will download and configure it automatically for you, |wiringpi_biicode_link|!
 
 
 .. |wiringpi_link| raw:: html
 
-   <a href="http://wiringpi.com/" target="_blank">WiringPi</a>
+   <a href="http://www.wiringpi.com/" target="_blank">WiringPi</a>
 
 .. |wiringpi_biicode_link| raw:: html
 
-   <a href="https://www.biicode.com/drogon/drogon/wiringpi/master" target="_blank">it is already in biicode!</a>
+   <a href="https://www.biicode.com/drogon/drogon/wiringpi/master" target="_blank">it is already in biicode</a>
 
 
 1. Installing biicode and C/C++ cross-building tools
@@ -24,14 +26,14 @@ This example shows **how to install biicode, code a C++ led blink with |wiringpi
 
     You need to use a native debian linux or in a virtual machine to use the cross compilation tools.
 
-First |downloads_link| and install biicode
+First, |downloads_link| and install biicode.
 
 .. |downloads_link| raw:: html
 
    <b><a href="https://www.biicode.com/downloads" target="_blank">download</a></b>
 
 
-Then, open the console and type
+Then, open the console and type:
 
 .. code-block:: bash
 
@@ -174,9 +176,13 @@ Now you are ready to compile and deploy your new application. First, **cross-com
 	...
 	[100%] Built target myuser_myblock_main
 
-The binaries are created in ``bin`` folder, but remember that **you cannot run this program locally, as it has been compiled for a different architecture** using the cross-compiling tools. You need to send the binary to your Raspberry Pi before executing it.
+The binaries are created in ``bin`` folder.
 
-Didn't work? No problem, read or contact us in |biicode_forum_link|
+.. container:: infonote
+
+ Remember that **you cannot run this program locally, as it has been compiled for a different architecture** using the cross-compiling tools. You need to send the binary to your Raspberry Pi before executing it.
+
+Didn't work? No problem, read or contact us in |biicode_forum_link|.
 
 .. |biicode_forum_link| raw:: html
 
