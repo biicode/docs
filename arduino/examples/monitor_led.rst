@@ -9,7 +9,7 @@ If you don't know how to start using Arduino with biicode, check out our :ref:`g
 C++ code
 --------
 
-Put the following file in your ``~/project_name/blocks/your_user_name/block_name/``:
+Put the following file in your ``~/project_name/blocks/your_user_name/block_name/`` or just *open* the `example block <https://www.biicode.com/examples/serial_monitor>`_.
 
 **monitor_led.cpp**
 
@@ -23,7 +23,22 @@ Put the following file in your ``~/project_name/blocks/your_user_name/block_name
 Turn ON/OFF one LED
 -------------------
 
-First, **upload this firmware to your Arduino** with the following command:
+First, configure your arduino settings and toolchain:
+
+.. code-block:: bash
+
+ $ bii arduino:settings
+ ...
+ $ bii cpp:configure -toolchain=arduino
+ ...
+
+Sencond, build your project:
+
+.. code-block:: bash
+
+ $ bii cpp:build
+
+Now **upload this firmware to your Arduino** with the following command:
 
 .. code-block:: bash
 
