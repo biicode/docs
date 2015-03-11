@@ -3,6 +3,23 @@
 Release notes
 =============
 
+**2.6.1** (11-Mar-2015)
+
+	* New [tests] section in biicode.conf. Automatically define your tests, and build and run them with "bii test"
+	* New simplified alias "bii build", "bii configure", "bii test" for "bii cpp:xxx" commands
+	* New "bii buzz" command. It "bii init -L" + "bii find" + "bii build" for quick getting started for newbies, or after a git clone
+	* New project layout fixes, the default block at root is named after its biicode.conf [parents] if existing
+	* Added layout variables to CMakeLists.txt, so cmake can account for variable layouts. Also added CMake variable to indicate a block is a dependency or not.
+	* Added layout variables to hooks (bii.paths.deps, bii.paths.bin, etc)
+	* New command options for arduino:settings (--board=uno, --port=auto, etc), so interactive mode can be avoided. Same for rpi:settings
+	* Automatic handling of PATH, sh.exe is removed from mingw builds, as cmake-mingw builds doesnt work well with it in the path
+	* Updated supported arduino SDKs to 1.6
+	* New --hello=c (<stdio>, printf) for pure C projects
+	* Fixed broken Eclipse project generation
+	* Fixed changing [requirements] when several blocks are simultaneously opened
+	* Fixed incorrect warning about bad filenames of files which were in ignore.bii
+	
+	
 **2.5.2** (3-Mar-2015)
 
 	* New custom project layouts available, with layouts.bii. 
