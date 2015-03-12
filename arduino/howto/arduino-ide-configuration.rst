@@ -13,10 +13,10 @@ First of all, you need to configure your project for arduino and **Eclipse IDE f
 	Enter SDK path (/../biicode_env/arduino-1.0.6): [ENTER]
 	Enter board (/o list supported options): uno
 	Arduino detected on port COM14
-	$ bii arduino:configure -G "Eclipse CDT4 - Unix Makefiles"
+	$ bii configure -G "Eclipse CDT4 - Unix Makefiles"
 	...
 	A new Eclipse project has been generated for you.
-	Open eclipse, select "File > Import > General > Existing project into Workspace"and select folder "YOUR_PROJECT_FOLDER"
+	Open eclipse, select "File > Import > General > Existing project into Workspace" and select folder "YOUR_PROJECT_FOLDER"
 
 
 Depending on your OS and desired compiler you can use different Eclipse generators:
@@ -56,9 +56,9 @@ How to fix "Unresolved inclusion: Arduino.h"
 
 * For Arduino IDE installed with biicode:
 
-	- MAC: ``~/.biicode_env/arduino-1.0.5/Arduino.app/Contents/Resources/Java/hardware/arduino/cores/arduino``
-	- Linux: ``~/.biicode_env/arduino-1.0.5/hardware/arduino/cores/arduino``
-	- Windows: ``C:\biicode_env\arduino-1.0.5\hardware\arduino\cores\arduino``
+	- MAC: ``~/.biicode_env/arduino-1.0.6/Arduino.app/Contents/Resources/Java/hardware/arduino/cores/arduino``
+	- Linux: ``~/.biicode_env/arduino-1.0.6/hardware/arduino/cores/arduino``
+	- Windows: ``C:\biicode_env\arduino-1.0.6\hardware\arduino\cores\arduino``
 
 * For manually installed Arduino IDE, just add the equivalent route.
 
