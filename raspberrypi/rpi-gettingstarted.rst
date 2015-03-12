@@ -166,7 +166,7 @@ Execute the following command to find unresolved dependencies and retrieve neces
 
    ~/myproject$ bii find
 
-Now you are ready to compile and deploy your new application. First, **cross-compile your program** and make sure the binary is generated running ``bii cpp:build`` from your project location:
+Now you are ready to compile and deploy your new application. First, **cross-compile your program** and make sure the binary is generated running ``bii build`` from your project location:
 
 .. code-block:: bash
 

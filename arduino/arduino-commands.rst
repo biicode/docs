@@ -61,7 +61,7 @@ This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX c
 
 .. code-block:: bash
 
-	$ bii cpp:build
+	$ bii build
 	
 	...
 	
