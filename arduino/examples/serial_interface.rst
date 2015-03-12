@@ -69,9 +69,9 @@ Execute following commands in each project:
 
     $ bii arduino:settings
     ...
-    $ bii cpp:configure -t arduino
+    $ bii configure -t arduino
     ...
-    $ bii cpp:build
+    $ bii build
     ...
     $ bii arduino:upload
 
@@ -79,7 +79,7 @@ Execute following commands in each project:
 
 .. code-block:: bash
 
-    $ bii cpp:build
+    $ bii build
     $ cd bin
     $ #run solver executable
     Enter: servo
