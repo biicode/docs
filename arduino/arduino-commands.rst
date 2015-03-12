@@ -7,33 +7,30 @@ This section summarizes the **Arduino commands available to be used with the bii
 
 .. code-block:: bash
 
-	$ bii -h arduino
+ $ bii -h arduino
 	
 	SYNOPSIS:
-	    $ bii COMMAND [options]
-	For help about a command:
-	    $ bii COMMAND --help
-	To change verbosity, use options --quiet --verbose
+    		$ bii COMMAND [options]
+   	For help about a command:
+    		$ bii COMMAND --help
+        To change verbosity, use options --quiet --verbose
 
-	---------Arduino commands--------
-	  arduino:build   Build your firmware
-	  arduino:configure Configure project with cmake
-	  arduino:monitor open serial monitor
-	  arduino:settings Configure project settings for arduino
-	  arduino:upload  Upload a firmware in Arduino
-
-
+ ---------Arduino commands--------
+   arduino:monitor  Open serial monitor
+   arduino:settings Configure project settings for arduino
+   arduino:test     Build only the tests declared into your biicode.conf '[tests]' section.
+   arduino:upload   Upload a firmware in Arduino
 
 **Note**: You need to have arduino :ref:`correctly set up <arduino_installation>`.
 
-**bii cpp:configure -t arduino**: configure your project
--------------------------------------------------
+**bii configure -t arduino**: configure your project
+----------------------------------------------------
 
 If you have configured your project as a C/C++ project and you want to develop in arduino language, this command helps you! Enter it and **configure your project like an arduino project**. It invokes arduino cross compiler and you are ready to start with your arduino.
 
 .. code-block:: bash
 
-	$ bii cpp:configure -t arduino
+	$ bii configure -t arduino
 
 	invoking cmake  -G "MinGW Makefiles" -Wno-dev ../cmake
 	-- The C compiler identification is GNU 4.3.2
@@ -57,10 +54,10 @@ If you have configured your project as a C/C++ project and you want to develop i
 	Here's how to configure :ref:`Eclipse for Arduino<bii_arduino_ide>`.
 
 
-**bii cpp:build**: build your project
------------------------------------------
+**bii build**: build your project
+---------------------------------
 
-This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX compiler -> avr-g++) to **build and compile the project** via the toolchain you configure it with ``bii cpp:configure -t arduino``.
+This command uses the cross compiler of Arduino (C compiler -> avr-gcc and CXX compiler -> avr-g++) to **build and compile the project** via the toolchain you configure it with ``bii configure -t arduino``.
 
 .. code-block:: bash
 
@@ -150,14 +147,14 @@ This command **opens a serial monitor** to read the serial port of your Arduino 
 
 	$ bii arduino:monitor
 
-**bii cpp:configure --toolchain=arduino**: enable, disable or change the Arduino cross compilation
+**bii configure --toolchain=arduino**: enable, disable or change the Arduino cross compilation
 --------------------------------------------------------------------------------------------------
 
 Use this command to enable Arduino Cross Compilation.
 
 .. code-block:: bash
 
-	$ bii cpp:configure --toolchain=arduino
+	$ bii configure --toolchain=arduino
 
 If you need the default arduino-toolchain.cmake, execute ``bii arduino:settings`` first.
 
@@ -165,23 +162,23 @@ If you need the default arduino-toolchain.cmake, execute ``bii arduino:settings`
 
 	$ bii arduino:settings
 	...
-	$ bii cpp:configure --toolchain=arduino
+	$ bii configure --toolchain=arduino
 
 If you want to disable it, use this command.
 
 .. code-block:: bash
 
-	$ bii cpp:configure --toolchain=None
+	$ bii configure --toolchain=None
 
 To **use a custom tool-chain** you need to **place it in the bii folder** of your project **with the name <my_toolchain_name>-toolchain.cmake**.
 
-To use it, just pass it as argument of ``bii cpp:configure -t my_toolchain_name``.
+To use it, just pass it as argument of ``bii configure -t my_toolchain_name``.
 
 .. code-block:: bash
 
-	$ bii cpp:configure --toolchain=my_toolchain_name
+	$ bii configure --toolchain=my_toolchain_name
 
-If you use a custom toolchain, remember that you need to use the ``bii cpp:build`` to compile your projects.
+If you use a custom toolchain, remember that you need to use the ``bii build`` to compile your projects.
 
 .. container:: infonote
 
