@@ -216,8 +216,7 @@ CMakeLists.txt
 
 .. code-block:: cmake
 
-   IF(BIICODE)
-      INIT_BIICODE_BLOCK()    
+   IF(BIICODE)   
       ADD_BIICODE_TARGETS()  
    ELSE()
       # Your regular CMakeLists configuration here

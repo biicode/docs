@@ -1,5 +1,5 @@
 include(${CMAKE_HOME_DIRECTORY}/biicode.cmake)
-INIT_BIICODE_BLOCK()
+
 ADD_BIICODE_TARGETS()
 
 MESSAGE("Copying lwan.conf to ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")

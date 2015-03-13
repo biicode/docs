@@ -56,8 +56,6 @@ To enable Boost in your biicode project, just go to the block's ``CMakeLists.txt
 
 .. code-block:: cmake
 
-    INIT_BIICODE_BLOCK()
-
     #Include the biicode Boost setup script
     include(biicode/boost/setup)
 
@@ -178,7 +176,6 @@ This is the ``CMakeLists.txt`` from the example:
 
     include(biicode/boost/setup)
 
-    INIT_BIICODE_BLOCK()
     ADD_BIICODE_TARGETS()
 
     set(Boost_USE_STATIC_LIBS ON)
@@ -242,8 +239,6 @@ Take `Boost.Log <http://www.biicode.com/examples/examples/boost-log/master>`_ as
 ``examples/boost-log/CMakeLists.txt``
 
 .. code-block:: cmake
-    
-    INIT_BIICODE_BLOCK()
 
     include(biicode/boost/setup)
 
