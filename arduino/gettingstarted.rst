@@ -96,8 +96,8 @@ Let's specify the toolchain to use, build and check that everything is fine by b
 
 .. code-block:: bash
 
-   ~/myproject$ bii cpp:configure -t arduino
-   ~/myproject$ bii cpp:build
+   ~/myproject$ bii configure -t arduino
+   ~/myproject$ bii build
    ...
    [100%] Built target myuser_myblock_main
    
@@ -154,7 +154,7 @@ Now can now build your firmware and upload it to your Arduino:
 
 .. code-block:: bash
 
-  ~/arduino_hello_project$ bii cpp:build
+  ~/arduino_hello_project$ bii build
   ...
   [100%] Built target myuser_myblock_main
 

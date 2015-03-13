@@ -29,14 +29,14 @@ First, configure your arduino settings and toolchain:
 
  $ bii arduino:settings
  ...
- $ bii cpp:configure -toolchain=arduino
+ $ bii configure -toolchain=arduino
  ...
 
 Sencond, build your project:
 
 .. code-block:: bash
 
- $ bii cpp:build
+ $ bii build
 
 Now **upload this firmware to your Arduino** with the following command:
 

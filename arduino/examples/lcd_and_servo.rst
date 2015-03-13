@@ -45,14 +45,14 @@ First, we have to configure the settings and select the arduino toolchain:
 
  $ bii arduino:settings
  ...
- $ bii cpp:configure -toolchain=arduino
+ $ bii configure -toolchain=arduino
  ...
 
 Secondly, build this c++ example for arduino:
 
 .. code-block:: bash
 
- $ bii cpp:build
+ $ bii build
 
 And upload it to your board:
 

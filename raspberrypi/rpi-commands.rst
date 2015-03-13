@@ -73,14 +73,14 @@ If you want a remotely access to your Raspberry Pi you can get it with this comm
 
 	pi@raspberrypi ~ $
 
-**bii cpp:configure --toolchain=rpi**: enable, disable or change the Raspberry Pi cross compilation.
+**bii configure --toolchain=rpi**: enable, disable or change the Raspberry Pi cross compilation.
 ------------------------------------------------------------------------------------------------------
 
 Use this command to enable Raspberry Pi Cross Compilation.
 
 .. code-block:: bash
 
-	$ bii cpp:configure --toolchain=rpi
+	$ bii configure --toolchain=rpi
 
 If you need the default rpi-toolchain.cmake, execute ``bii rpi:settings`` first.
 
@@ -88,21 +88,21 @@ If you need the default rpi-toolchain.cmake, execute ``bii rpi:settings`` first.
 
 	$ bii rpi:settings
 	...
-	$ bii cpp:configure --toolchain=rpi
+	$ bii configure --toolchain=rpi
 
 If you want to disable it, use this command.
 
 .. code-block:: bash
 
-	$ bii cpp:configure --toolchain=None
+	$ bii configure --toolchain=None
 
 To **use a custom tool-chain** you need to **place it in the bii folder** of your project **with the name <my_toolchain_name>-toolchain.cmake**.
 
-To use it, just pass it as argument of ``bii cpp:configure -t my_toolchain_name``.
+To use it, just pass it as argument of ``bii configure -t my_toolchain_name``.
 
 .. code-block:: bash
 
-	$ bii cpp:configure --toolchain=my_toolchain_name
+	$ bii configure --toolchain=my_toolchain_name
 
 .. container:: infonote
 

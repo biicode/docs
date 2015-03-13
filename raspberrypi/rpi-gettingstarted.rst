@@ -103,13 +103,13 @@ Activate the toolchain for Raspberry PI with ``bii cpp:configure --toolchain=rpi
 
 .. code-block:: bash
 
-   bii cpp:configure --toolchain=rpi
+   bii configure --toolchain=rpi
 
 Lets check that everything is fine by building and trying to run the hello world aplication. It could fail the execution because it is compiled to Raspberry PI. 
 
 .. code-block:: bash
 
-  ~/myproject$ bii cpp:build
+  ~/myproject$ bii build
   ...
   ~/myproject$ ./bin/user_myblock_main
   ./bin/user_myblock_main: cannot execute binary file
@@ -166,11 +166,11 @@ Execute the following command to find unresolved dependencies and retrieve neces
 
    ~/myproject$ bii find
 
-Now you are ready to compile and deploy your new application. First, **cross-compile your program** and make sure the binary is generated running ``bii cpp:build`` from your project location:
+Now you are ready to compile and deploy your new application. First, **cross-compile your program** and make sure the binary is generated running ``bii build`` from your project location:
 
 .. code-block:: bash
 
-	$ bii cpp:build
+	$ bii build
 	...
 	Configuring cross compiler for ARM architecture:
 	...
