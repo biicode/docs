@@ -14,6 +14,16 @@ First let's configure the examples project:
 
 We will be using that project across all the examples.
 
+.. container:: infonote
+
+ **Windows users**
+
+ Visual Studio is recommended for these examples.
+
+ .. code-block:: bash 
+
+     $ bii cpp:configure -G "Visual Studio 12"
+
 Boost.Lambda
 ------------
 
