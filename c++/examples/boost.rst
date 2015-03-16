@@ -3,6 +3,8 @@
 Boost Libraries
 ===============
 
+`Boost <http://www.boost.org/>`_ is a set of libraries for the C++ programming language that provide support for tasks and structures such as linear algebra,  multithreading, image processing, unit testing...
+
 The examples below demonstrate how to use biicode to set up Boost-based projects.
 
 First let's configure the examples project:
@@ -13,16 +15,6 @@ First let's configure the examples project:
     $ cd boost-examples
 
 We will be using that project across all the examples.
-
-.. container:: infonote
-
- **Windows users**
-
- Visual Studio is recommended for these examples.
-
- .. code-block:: bash 
-
-     $ bii cpp:configure -G "Visual Studio 12"
 
 Boost.Lambda
 ------------
@@ -209,7 +201,17 @@ Besides Visual Studio specific configuration (`See <https://msdn.microsoft.com/e
 
 4. Link your target against Boost libraries using the ``Boost_LIBRARIES`` variable. 
 
-Now just run ``bii cpp:configure``, wait until the Boost components are built (If those were not used previously), and then build your project with ``bii cpp:build``:
+Now just run ``bii cpp:configure``, wait until the Boost components are built (If those were not used previously), and then build your project with ``bii cpp:build``.
+
+.. container:: infonote
+
+ **Configure Generator**
+
+ Generators recommended for this example:
+
+ * **Windows:** Visual Studio
+
+ * **Linux & MacOS:** Unix Makefiles
 
 .. code-block:: bash
 
