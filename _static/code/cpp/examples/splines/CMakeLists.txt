@@ -5,8 +5,7 @@
 
 
 include(${CMAKE_HOME_DIRECTORY}/biicode.cmake)
-# Initializes block variables
-INIT_BIICODE_BLOCK()
+
 # ACTIVATING C++11 FLAG
 IF(APPLE)
         SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -stdlib=libc++")

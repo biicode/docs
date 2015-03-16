@@ -37,8 +37,6 @@ If you are directly depending to CImg (using the **#include "tschumperle/cimg/CI
 
     include(${CMAKE_HOME_DIRECTORY}/biicode.cmake)
 
-    INIT_BIICODE_BLOCK()
-
     ADD_BIICODE_TARGETS()
 
     IF(APPLE)

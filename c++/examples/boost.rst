@@ -3,6 +3,8 @@
 Boost Libraries
 ===============
 
+`Boost <http://www.boost.org/>`_ is a set of libraries for the C++ programming language that provide support for tasks and structures such as linear algebra,  multithreading, image processing, unit testing...
+
 The examples below demonstrate how to use biicode to set up Boost-based projects.
 
 First let's configure the examples project:
@@ -55,8 +57,6 @@ To enable Boost in your biicode project, just go to the block's ``CMakeLists.txt
 ``blocks/your-account/boost-lambda/CMakeLists.txt``
 
 .. code-block:: cmake
-
-    INIT_BIICODE_BLOCK()
 
     #Include the biicode Boost setup script
     include(biicode/boost/setup)
@@ -178,7 +178,6 @@ This is the ``CMakeLists.txt`` from the example:
 
     include(biicode/boost/setup)
 
-    INIT_BIICODE_BLOCK()
     ADD_BIICODE_TARGETS()
 
     set(Boost_USE_STATIC_LIBS ON)
@@ -202,7 +201,17 @@ Besides Visual Studio specific configuration (`See <https://msdn.microsoft.com/e
 
 4. Link your target against Boost libraries using the ``Boost_LIBRARIES`` variable. 
 
-Now just run ``bii cpp:configure``, wait until the Boost components are built (If those were not used previously), and then build your project with ``bii cpp:build``:
+Now just run ``bii cpp:configure``, wait until the Boost components are built (If those were not used previously), and then build your project with ``bii cpp:build``.
+
+.. container:: infonote
+
+ **Configure Generator**
+
+ Generators recommended for this example:
+
+ * **Windows:** Visual Studio
+
+ * **Linux & MacOS:** Unix Makefiles
 
 .. code-block:: bash
 
@@ -242,8 +251,6 @@ Take `Boost.Log <http://www.biicode.com/examples/examples/boost-log/master>`_ as
 ``examples/boost-log/CMakeLists.txt``
 
 .. code-block:: cmake
-    
-    INIT_BIICODE_BLOCK()
 
     include(biicode/boost/setup)
 

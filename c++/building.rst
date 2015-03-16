@@ -32,12 +32,9 @@ CMakeLists.txt
 
 ``CMakeLists.txt`` is generated in the root directory of your block (or blocks) that you have in your biicode project.
 
-``CMakeLists.txt`` has 2 useful lines by default (stripping out comments):
+``CMakeLists.txt`` has 1 line by default (stripping out comments):
 
 .. code-block:: cmake
-
-    # Initializes block variables
-    INIT_BIICODE_BLOCK()
 
     # Actually create targets: EXEcutables and libraries.
     ADD_BIICODE_TARGETS()
@@ -46,12 +43,11 @@ If you already have a ``CMakeLists.txt`` file there's no need to replace it, jus
 
 .. code-block:: cmake
 
-   IF(BIICODE)
-      INIT_BIICODE_BLOCK()    
+   IF(BIICODE)  
       ADD_BIICODE_TARGETS()  
    ELSE()
       # Your regular project configuration here
-   ENDIF() 
+   ENDIF()
 
 
 
@@ -213,9 +209,6 @@ The project's layout is:
 
 .. code-block:: cmake
 
-  # Define block variables
-  INIT_BIICODE_BLOCK() 
-
   set(Boost_USE_STATIC_LIBS ON)
   find_package(Boost REQUIRED COMPONENTS system)
   # Actually create targets: EXEcutables, STATIC libraries.
@@ -259,9 +252,6 @@ Edit your ``CMakeLists.txt`` file and include the CMake file from the block that
 
 .. code-block:: cmake
 
-   # Initializes block variables
-   INIT_BIICODE_BLOCK()
-
    INCLUDE(user/block/path_to_macros_file) # Without .cmake extension
    MACRO_NAME_TO_USE() # Macro defined in My_macros.cmake
 
@@ -290,8 +280,6 @@ Just edit your ``CMakeLists.txt`` file, include ``INCLUDE(biicode/cmake/tools)``
 CMakeLists.txt
 
 .. code-block:: bash
-
-    INIT_BIICODE_BLOCK()
 
     # Including tools.cmake from biicode/cmake user block
     # see https://www.biicode.com/biicode/cmake
@@ -391,8 +379,7 @@ This is fairly simple, there's a variable you can use to check it:
 
 .. code-block:: cmake
 
-   if(BIICODE)
-      INIT_BIICODE_BLOCK()    
+   if(BIICODE)   
       ADD_BIICODE_TARGETS()  
    ELSE()
       # Your regular project configuration here
