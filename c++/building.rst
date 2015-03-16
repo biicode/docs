@@ -47,7 +47,54 @@ If you already have a ``CMakeLists.txt`` file there's no need to replace it, jus
       ADD_BIICODE_TARGETS()  
    ELSE()
       # Your regular project configuration here
-   ENDIF() 
+   ENDIF()
+
+
+
+INIT_BIICODE_BLOCK
+__________________
+
+This function initializes several variables that you can use to adapt the default behavior:
+
+  + **${BII_BLOCK_NAME}** The name of the block, for block *myuser/myblock* its value is **myblock**
+  + **${BII_BLOCK_USER}** The user name, for block *myuser/myblock* its value is **myuser**
+  + **${BII_LIB_SRC}**  List of files belonging to library 
+  + **${BII_LIB_TYPE}** Empty (default, STATIC most cases) STATIC or SHARED
+  + **${BII_LIB_DEPS}** Dependencies to other libraries (user2_block2, user3_blockX)
+  + **${BII_LIB_SYSTEM_HEADERS}** System linking requirements as windows.h, pthread.h, etc
+  + **${BII_exe_name_SRC}**  List of files belonging to an exe. "exe_name" has this pattern: **path_to_mainfile**. EX: For the block *lasote/game* if there is a main.cpp in a folder named "src" the variable will be: "BII_src_main_SRC"  
+  + **${BII_BLOCK_EXES}**: List of targets that represent the executables (mains) defined in this block. If you want to prevent biicode to create an EXE target, remove first from this list.
+
+After ``INIT_BIICODE_BLOCK()`` call, we can use, modify, or override the values of these variables. 
+
+- **EXAMPLE**: Exclude ``my_file.cpp`` to be compiled in the block library.
+
+.. code-block:: cmake
+
+    # Initializes block variables
+    INIT_BIICODE_BLOCK()
+
+    # Remove my_file.cpp to be compiled in library
+    LIST(REMOVE_ITEM BII_LIB_SRC my_file.cpp) 
+    MESSAGE(${BII_LIB_SRC}) # Print files
+
+    # Actually create targets: EXEcutables and libraries.
+    ADD_BIICODE_TARGETS()
+
+- **EXAMPLE**: Make a *shared* library.
+
+By default biicode builds a *static* library (.a, .lib). Let's see how to get a *shared* library (.dll, .so):
+
+.. code-block:: cmake
+
+    # Initializes block variables
+    INIT_BIICODE_BLOCK()
+
+    SET(BII_LIB_TYPE SHARED)
+
+    # Actually create targets: EXEcutables and libraries.
+    ADD_BIICODE_TARGETS()
+
 
 ADD_BIICODE_TARGETS
 ___________________
