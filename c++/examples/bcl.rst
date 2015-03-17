@@ -34,158 +34,158 @@ Copy the code in the *main.cpp*:
 
 .. code-block:: cpp
 
+  /* Standard libraries */
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include <string.h>
 
-   /* Standard libraries */
-   #include <stdio.h>
-   #include <stdlib.h>
-   #include <string.h>
+  /* Basic Compression Library */
+  #include "src/huffman.h"
 
-   /* Basic Compression Library */
-   #include "src/huffman.h"
-
-   /* Timing */
-   #include "src/systimer.h"
-
-
-   /*************************************************************************
-   * GetFileSize()
-   *************************************************************************/
-
-   long GetFileSize( FILE *f )
-   {
-     long pos, size;
-     pos = ftell( f );
-     fseek( f, 0, SEEK_END );
-     size = ftell( f );
-     fseek( f, pos, SEEK_SET );
-     return size;
-   }
+  /* Timing */
+  #include "src/systimer.h"
 
 
-   /*************************************************************************
-   * CompressFile()
-   *************************************************************************/
+  /*************************************************************************
+  * GetFileSize()
+  *************************************************************************/
 
-   int TestFile( ) 
-   {
-     unsigned int  insize, outsize, bufsize, *work, k, err_count;
-     unsigned char *in, *out, *buf;
-     FILE          *f;
-     double        t0, t1, t_comp, t_uncomp;
+  long GetFileSize( FILE *f )
+  {
+    long pos, size;
+    pos = ftell( f );
+    fseek( f, 0, SEEK_END );
+    size = ftell( f );
+    fseek( f, pos, SEEK_SET );
+    return size;
+  }
 
-     printf( "Compressing MyFile, ");
 
-     /* Open input file */
-     f = fopen( "myfile.txt", "rb" );
-     if( !f )
-     {
-       printf( "unable to open!\n" );
-       return 0;
-     }
+  /*************************************************************************
+  * CompressFile()
+  *************************************************************************/
 
-     /* Get input size */
-     insize = GetFileSize( f );
-     printf( "File Size:",f );
-     if( insize < 1 )
-     {
-       printf( "empty file!\n" );
-       fclose( f );
-       return 0;
-     }
+  int TestFile( ) 
+  {
+    unsigned int  insize, outsize, bufsize, *work, k, err_count;
+    unsigned char *in, *out, *buf;
+    FILE          *f;
+    double        t0, t1, t_comp, t_uncomp;
 
-     /* Worst case output buffer size */
-     bufsize = (insize*104+50)/100 + 384;
+    printf( "Compressing MyFile, ");
 
-     /* Allocate memory */
-     in = (unsigned char *) malloc( insize + 2*bufsize );
-     if( !in )
-     {
-       printf( "out of memory!\n" );
-       fclose( f );
-       return 0;
-     }
+    /* Open input file */
+    f = fopen( "myfile.txt", "rb" );
+    if( !f )
+    {
+      printf( "unable to open!\n" );
+      return 0;
+    }
 
-     /* Pointers to compression buffer and output memory */
-     buf = &in[ insize ];
-     out = &buf[ bufsize ];
+    /* Get input size */
+    insize = GetFileSize( f );
+    printf( "File Size:",f );
+    if( insize < 1 )
+    {
+      printf( "empty file!\n" );
+      fclose( f );
+      return 0;
+    }
 
-     /* Read and close input file */
-     fread( in, 1, insize, f );
-     fclose( f );
+    /* Worst case output buffer size */
+    bufsize = (insize*104+50)/100 + 384;
 
-     /* Compress and decompress */
-    
-     t0 = GetTime();
-     outsize = Huffman_Compress( in, buf, insize );
-     t_comp = GetTime() - t0;
-     t1 = GetTime();
-     Huffman_Uncompress( buf, out, outsize, insize );
-     t_uncomp = GetTime() - t1;
+    /* Allocate memory */
+    in = (unsigned char *) malloc( insize + 2*bufsize );
+    if( !in )
+    {
+      printf( "out of memory!\n" );
+      fclose( f );
+      return 0;
+    }
 
-     err_count = 0;
-     if(outsize > 0)
-     {
-       /* Show compression result */
-       printf( "\n  Compression: %d/%d bytes (%.1f%%)", outsize, insize,
-               100*(float)outsize/(float)insize );
+    /* Pointers to compression buffer and output memory */
+    buf = &in[ insize ];
+    out = &buf[ bufsize ];
 
-       /* Compare input / output data */
-       for( k = 0; k < insize; ++ k )
-       {
-         if( in[ k ] != out[ k ] )
-         {
-           if( err_count == 0 ) printf( "\n" );
-           if( err_count == 30 ) printf( "    ...\n" );
-           else if( err_count < 30 )
-           {
-               printf( "    %d: %d != %d\n", k, out[ k ], in[ k ] );
-           }
-           ++ err_count;
-         }
-       }
+    /* Read and close input file */
+    fread( in, 1, insize, f );
+    fclose( f );
 
-       /* Did we have success? */
-       if( err_count == 0 )
-       {
-         printf( " - OK!\n" );
-         printf( "    Compression speed: %.1f KB/s (%.2f ms)\n",
-                 (double) insize / (1024.0 * t_comp), 1000.0 * t_comp );
-         printf( "    Uncompression speed: %.1f KB/s (%.2f ms)\n",
-                 (double) insize / (1024.0 * t_uncomp), 1000.0 * t_uncomp );
-       }
-       else
-       {
-         printf( "    *******************************\n" );
-         printf( "    ERROR: %d faulty bytes\n", err_count );
-         printf( "    *******************************\n" );
-       }
-     }
+    /* Compress and decompress */
+   
+        t0 = GetTime();
+        outsize = Huffman_Compress( in, buf, insize );
+        t_comp = GetTime() - t0;
+        t1 = GetTime();
+        Huffman_Uncompress( buf, out, outsize, insize );
+        t_uncomp = GetTime() - t1;
 
-     /* Free all memory */
-     free( in );
+    err_count = 0;
+    if(outsize > 0)
+    {
+      /* Show compression result */
+      printf( "\n  Compression: %d/%d bytes (%.1f%%)", outsize, insize,
+              100*(float)outsize/(float)insize );
 
-     return (outsize > 0) && (err_count == 0);
-   }
+      /* Compare input / output data */
+      for( k = 0; k < insize; ++ k )
+      {
+        if( in[ k ] != out[ k ] )
+        {
+          if( err_count == 0 ) printf( "\n" );
+          if( err_count == 30 ) printf( "    ...\n" );
+          else if( err_count < 30 )
+          {
+              printf( "    %d: %d != %d\n", k, out[ k ], in[ k ] );
+          }
+          ++ err_count;
+        }
+      }
 
-   int main()
-   {
-      FILE * pFile;
-      char buffer [100];
-
-      pFile = fopen ("myfile.txt" , "w+");
-      fprintf(pFile, "%s %s %s %d", "We", "are", "in", 2014);
-      if (pFile == NULL) perror ("Error opening file");
+      /* Did we have success? */
+      if( err_count == 0 )
+      {
+        printf( " - OK!\n" );
+        printf( "    Compression speed: %.1f KB/s (%.2f ms)\n",
+                (double) insize / (1024.0 * t_comp), 1000.0 * t_comp );
+        printf( "    Uncompression speed: %.1f KB/s (%.2f ms)\n",
+                (double) insize / (1024.0 * t_uncomp), 1000.0 * t_uncomp );
+      }
       else
       {
-        while ( ! feof (pFile) )
-        {
-          if ( fgets (buffer , 100 , pFile) == NULL ) break;
-          fputs (buffer , stdout);
-        }
-        fclose (pFile);
+        printf( "    *******************************\n" );
+        printf( "    ERROR: %d faulty bytes\n", err_count );
+        printf( "    *******************************\n" );
       }
-      TestFile();
-   }
+    }
+
+    /* Free all memory */
+    free( in );
+
+    return (outsize > 0) && (err_count == 0);
+  }
+
+  int main()
+  {
+     FILE * pFile;
+     char buffer [100];
+
+     pFile = fopen ("myfile.txt" , "w+");
+     fprintf(pFile, "%s %s %s %d", "We", "are", "in", 2014);
+     if (pFile == NULL) perror ("Error opening file");
+     else
+     {
+       while ( ! feof (pFile) )
+       {
+         if ( fgets (buffer , 100 , pFile) == NULL ) break;
+         fputs (buffer , stdout);
+       }
+       fclose (pFile);
+     }
+     TestFile();
+  }
+
 
 Manage your dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^
