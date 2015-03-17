@@ -6,25 +6,29 @@ Box2D
 
 |box2d_homepage| is an open source C++ engine to simulate rigid bodies in 2D, it is also, AngryBirds' motor engine. You can check |wiki_box2d|. 
 
-The main block is |bii_box2d|, which is generated from this |fork_box2d|.
+Box2D library is stored at `erincatto/box2d <https://www.biicode.com/erincatto/erincatto/box2d/master>`_, which is generated from this |fork_box2d|.
 
 Bounces of a circle falling
-----------------------------
+---------------------------
 
-In this example you will calculate whenever a circle falls from a certain height and bounces at a defined lower limit in the created world. Then, create a project, one block and copy the bellow main.cpp file:
+In this example you will calculate whenever a circle falls from a certain height and bounces at a defined lower limit in the created world.
+
+Creating a new project
+^^^^^^^^^^^^^^^^^^^^^^
+
+Create a new project and a *main.cpp* file:
 
 .. code-block:: bash
 
-   ~$ bii init box2d
-   ~$ cd box2d
-   ~/box2d$ bii new myuser/box2d_example --hello cpp
+   $ bii init box2d_example -L
+   $ cd box2d_example
+   $ # Create main.cpp
 
-Now **replace the main.cpp** file in ``blocks/myuser/box2d_example`` with 
-the following code:
+Now place the following code inside *main.cpp*:
 
 .. code-block:: cpp
 
-    #include "erincatto/box2d/Box2D/Box2D.h"
+    #include "Box2D/Box2D.h"
     #include <iostream>
 
     using namespace std;
@@ -115,15 +119,43 @@ the following code:
         }
     }
 
+Manage your dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-Find your dependency to ``#include "erincatto/box2d/box2d/box2d.h"`` and build the project:
+Check the dependencies of the project with **bii deps**:
+
+..  code-block:: bash
+ 
+ $ bii deps
+ your_user/box2d_example depends on:
+       system:
+          iostream
+       unresolved:
+          Box2D/Box2D.h
+
+Now, edit the *biicode.conf* file generated in the project folder. Add your ``[requirements]`` depending on the version you want and map your ``[includes]``:
+
+.. code-block:: text
+
+ [requirements]
+     erincatto/box2d: 10
+ 
+ [includes]
+     Box2D/Box2d.h: erincatto/box2d
+
+
+Check again with **bii deps** and now all dependencies are resolved.
+
+Build the project
+^^^^^^^^^^^^^^^^^
+
+Next, the only thing left is building the project:
 
 .. code-block:: bash
 
-  ~/box2d$ bii find
-  ~/box2d$ bii cpp:build
+  $ bii build
 
-Execute the binary and this is how output looks like:
+Execute the binary placed in bin directory and this is how output looks like:
 
 .. code-block:: bash
 
@@ -139,21 +171,28 @@ Execute the binary and this is how output looks like:
 
 That's it!
 
-Didn't work? No problem, read or contact us in |biicode_forum_link|.
+Quick way
+---------
 
-.. |biicode_forum_link| raw:: html
+This example is already in biicode: `examples/box2d <http://www.biicode.com/examples/box2d>`_.
 
-   <a href="http://forum.biicode.com" target="_blank">the biicode forum</a>
+To give it a try, create a new project and open the block:
 
+.. code-block:: bash
 
+ $ bii init box2d_example
+ $ cd box2d_example
+ $ bii open examples/box2d
 
-Any suggestion or feedback? |biicode_write_us| It is very welcomed :)
+Build the example and execute it:
 
-.. |biicode_write_us| raw:: html
+.. code-block:: bash
 
-   <a href="mailto:info@biicode.com" target="_blank">Write us!</a>
+ $ bii build
+ $ cd bin
+ $ # Execute it
 
-
+Got any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_, visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
 
 .. |box2d_homepage| raw:: html
 
@@ -162,10 +201,6 @@ Any suggestion or feedback? |biicode_write_us| It is very welcomed :)
 .. |wiki_box2d| raw:: html
 
    <a href="http://es.wikipedia.org/wiki/Box2D" target="_blank">wikipedia Box2D explanation</a>
-
-.. |bii_box2d| raw:: html
-
-   <a href="https://www.biicode.com/erincatto/erincatto/box2d/master" target="_blank">here</a>
 
 .. |fork_box2d| raw:: html
 

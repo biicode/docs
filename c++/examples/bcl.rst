@@ -3,29 +3,34 @@
 Basic Compression Library
 ==========================
 
-This example demonstrates how to get started using **BCL** by Marcus Geelnard with biicode. The **Basic Compression Library** is a set of open source implementations of several well known lossless compression algorithms, such as Huffman and RLE, written in portable ANSI C.
+`Basic Compression Library <http://bcl.comli.eu/>`_ by Marcus Geelnardis a set of open source implementations of several well known lossless compression algorithms, such as Huffman and RLE, written in portable ANSI C.
 Currently, RLE (Run Length Encoding), Huffman, Rice, Lempel-Ziv (LZ77) and Shannon-Fano compression algorithms are implemented.
-The Basic Compression Library is completely independent of system functions, such as file I/O or memory allocation routines. As such it can be used in almost any system, ranging from Windows, Mac OS X and Linux-systems to embedded systems.
-Check the Sources:
 
-   1. `Original Basic Compression Library <http://bcl.comli.eu/>`_
-   2. `Biicode BCL block <http://www.biicode.com/marcus256/bcl>`_
-   3. `Github repository <https://github.com/MariadeAnton/bcl>`_
-   4. `BCL documentation <http://bcl.comli.eu/index.php?media=manual>`_
+The Basic Compression Library is completely independent of system functions, such as file I/O or memory allocation routines. As such it can be used in almost any system, ranging from Windows, Mac OS X and Linux-systems to embedded systems.
+
+You can check the `BCL documentation <http://bcl.comli.eu/index.php?media=manual>`_ for more information.
+
+BCL library is stored at `marcus256/bcl <http://www.biicode.com/marcus256/bcl>`_ an it is generated from this `Github repository <https://github.com/MariadeAnton/bcl>`_.
 
 Simple Huffman Compression - Uncompression
 -----------------------------------------------
 
-This example is `already in biicode <http://www.biicode.com/examples/bcl>`_, it's simple to run, just open the block and build it like this:
+This example demonstrates how to get started using **BCL**. You'll learn to compress and uncompress a text file. It is simple to run.
+
+Creating a new project
+^^^^^^^^^^^^^^^^^^^^^^
+
+Create a new project and a *main.cpp* inside like this:
 
 .. code-block:: bash
 
-   $ bii init compression
-   $ cd compression
-   $ bii open examples/bcl
-   $ bii cpp:build
+   $ bii init bcl_example -L
+   $ cd bcl_example
+   $ # Create main.cpp
 
-The code of the example is this one, it simply creates a new file ``myfile.txt`` and then it compresses and uncompresses the file created. It also calculates the time it takes to compress it:
+The code of the example is this one, it simply creates a new file *myfile.txt* and then it compresses and uncompresses the file created. It also calculates the time it takes to compress it.
+
+Copy the code in the *main.cpp*:
 
 .. code-block:: cpp
 
@@ -36,10 +41,10 @@ The code of the example is this one, it simply creates a new file ``myfile.txt``
    #include <string.h>
 
    /* Basic Compression Library */
-   #include "marcus256/bcl/src/huffman.h"
+   #include "src/huffman.h"
 
    /* Timing */
-   #include "marcus256/bcl/src/systimer.h"
+   #include "src/systimer.h"
 
 
    /*************************************************************************
@@ -182,17 +187,49 @@ The code of the example is this one, it simply creates a new file ``myfile.txt``
       TestFile();
    }
 
+Manage your dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check the dependencies of the project with **bii deps**:
+
+..  code-block:: bash
+ 
+ $ bii deps
+ your_user/bcl_example depends on:
+       system:
+          stdio.h
+          stdlib.h
+          string.h
+       unresolved:
+          src/huffman.h
+          src/systimer.h
 
 
+Now, edit the *biicode.conf* file generated in the project folder. Add your ``[requirements]`` depending on the version you want and map your ``[includes]``:
 
-Now, run the huffman compression-uncompression example.
+.. code-block:: text
+
+ [requirements]
+     marcus256/bcl: 2
+ 
+ [includes]
+     src/*.h: marcus256/bcl
+
+
+Check again with **bii deps** to show all resolved dependencies.
+
+Build the project
+^^^^^^^^^^^^^^^^^
+
+Now, build and run the huffman compression-uncompression example.
 
 .. code-block:: bash
 
-   $ bin/examples_bcl_main.exe
+ $ bii build
+ $ cd bin
+ $ examples_bcl_main
 
 Once you execute you should see an output like this one, it may vary depending on your computer:
-
   
 .. code-block:: bash
    
@@ -201,6 +238,28 @@ Once you execute you should see an output like this one, it may vary depending o
        Compression speed: 1246.6 KB/s (0.01 ms)
        Uncompression speed: 4778.7 KB/s (0.00 ms)
 
+That's all! You can try it with other files.
+
+Quick way
+---------
+
+This example is already in biicode: `examples/bcl <http://www.biicode.com/examples/bcl>`_.
+
+To give it a try, create a new project and open the block:
+
+.. code-block:: bash
+
+ $ bii init bcl_example
+ $ cd bcl_example
+ $ bii open examples/bcl
+
+Build the example and execute it:
+
+.. code-block:: bash
+
+ $ bii build
+ $ cd bin
+ $ # Execute it
 
 Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
 
