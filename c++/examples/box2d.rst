@@ -191,6 +191,11 @@ Build the example and execute it:
  $ bii build
  $ cd bin
  $ # Execute it
+ ...
+  X = 0 Y = 3.95833
+  X = 0 Y = 3.94167
+  X = 0 Y = 3.92222
+  Ball hits the ground!!
 
 Got any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_, visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
 
