@@ -356,7 +356,7 @@ For example, if we have ``lasote/superlibrary`` block as a dependency, we can re
 
 .. code-block:: cmake
 
-  target_compile_options(lasote_superlibrary_interface PUBLIC -std=c++11)
+  target_compile_options(lasote_superlibrary_interface INTERFACE -std=c++11)
 
 
 - **EXAMPLE**: Change a compilation option:
