@@ -314,8 +314,8 @@ You can aggregate as many tests as you want to a suite so you can organize your 
 
 **Note:** You can find more google test samples in the `google/gtestsamples <https://www.biicode.com/google/gtestsamples>`_ block.
 
-Quick way
----------
+Open and build
+--------------
 
 This example is already in biicode: `examples/gtest <http://www.biicode.com/examples/gtest>`_.
 

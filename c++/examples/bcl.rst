@@ -242,8 +242,8 @@ Once you execute you should see an output like this one, it may vary depending o
 
 That's all! You can try it with other files too.
 
-Quick way
----------
+Open and build
+--------------
 
 This example is already in biicode: `examples/bcl <http://www.biicode.com/examples/bcl>`_.
 

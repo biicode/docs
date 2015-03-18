@@ -173,8 +173,8 @@ Execute the binary placed in bin directory and this is how output looks like:
 
 That's it!
 
-Quick way
----------
+Open and build
+--------------
 
 This example is already in biicode: `examples/box2d <http://www.biicode.com/examples/box2d>`_.
 
