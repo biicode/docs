@@ -81,6 +81,8 @@ For OpenSSL, there are two tracks available:
 
 * ``OpenSSL 1.0.2`` is available at *lasote/openssl(v1.0.2)* versions 0 and 1.
 
+Depending on OpenSSL 1.0.1 
+
 To update to version 1.0.2, just write the one you want in your ***biicode.conf**:
 
 .. code-block:: text
@@ -114,8 +116,7 @@ Depend on one or another to fit your needs:
 	.. code-block:: cpp
 	    :emphasize-lines: 1
 
-	   	#include "include/uv.h"
-
+	   	#include "uv.h"
 
 * And depend on |libuv_0_11|, write in your **biicode.conf** file ``[requirements]`` :
 
@@ -126,7 +127,10 @@ Depend on one or another to fit your needs:
 		[requirements] 
 			lasote/libuv(v0.11): 1
 
-* Execute ``bii build`` and you're ready to go. 
+		[includes]
+			uv.h : lasote/libuv/include
+
+* Execute **bii build** and you're ready to go. 
 
 Let's switch to |libuv_1_0|:
 
@@ -139,7 +143,7 @@ Let's switch to |libuv_1_0|:
 		[requirements]
 			lasote/libuv(v1.0): 0
 
-* Execute ``bii build`` and it's switched.
+* Execute **bii build** and it's switched.
 
 And now, switch to |libuv_0_10|:
 
@@ -164,14 +168,11 @@ Use a specific block version using just its version tag. Write in your **biicode
 .. code-block:: text
 
 	[requirements] 
-		# required blocks (with version)
 		Maria/oscpack @v1.1.0
 
 Execute **bii build** and biicode will retrieve the latest version with that tag and update the ``[requirements]`` section:
 
 *biicode.conf*
-
-
 .. code-block:: text
 
 	[requirements] 
