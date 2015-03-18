@@ -88,7 +88,7 @@ If you build your project and run it (look for the executable on the /bin folder
 
 .. code-block:: bash
 
-	$ bii cpp:build
+	$ bii build
 	...
 	Hello STABLE
 
@@ -223,7 +223,7 @@ Now, you can build your block and run it (as before, look for the executable in 
 
 .. code-block:: bash
 
-	$ bii cpp:build
+	$ bii build
 	...
 	Hello BETA
 
@@ -246,7 +246,7 @@ Update the dependencies again, build your block and run the code:
 
 	$ bii find --update
 	...
-	$ bii cpp:build
+	$ bii build
 	...
 	Hello ALPHA
 
@@ -267,7 +267,7 @@ Once more find the dependencies, build and execute your code:
 
 	$ bii find --update
 	...
-	$ bii cpp:build
+	$ bii build
 	...
 	Hello DEVELOP
 

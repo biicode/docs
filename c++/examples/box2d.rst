@@ -121,7 +121,7 @@ Find your dependency to ``#include "erincatto/box2d/box2d/box2d.h"`` and build t
 .. code-block:: bash
 
   ~/box2d$ bii find
-  ~/box2d$ bii cpp:build
+  ~/box2d$ bii build
 
 Execute the binary and this is how output looks like:
 

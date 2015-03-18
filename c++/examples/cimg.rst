@@ -15,7 +15,7 @@ from this `github repo <https://github.com/lasote/cimg>`_.
 General usage
 ----------------------------------
 
-Just **#include "tschumperle/cimg/CImg.h"** in your cpp file, execute **bii find** to download the requirements and **bii cpp:build** for build your project.
+Just **#include "tschumperle/cimg/CImg.h"** in your cpp file, execute **bii find** to download the requirements and **bii build** for build your project.
 
 .. container:: infonote
   
@@ -65,7 +65,7 @@ Simply open the examples/cimg block:
     $ bii init myproject
     $ cd myproject
     $ bii open examples/cimg
-    $ bii cpp:build
+    $ bii build
     $ cd bin
     $ # Run the generated executable
     $ ./examples_cimg_tron # on linux

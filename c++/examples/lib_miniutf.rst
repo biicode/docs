@@ -24,7 +24,7 @@ Now you can compile it:
 
 .. code-block:: bash
 
-	$ bii cpp:build
+	$ bii build
 
 
 You will see next console output after executing the command:

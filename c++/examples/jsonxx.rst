@@ -17,7 +17,7 @@ This example is `already in biicode <http://www.biicode.com/examples/jsonxx>`_, 
    ~$ bii init jsonxx
    ~$ cd jsonxx
    ~/jsonxx$ bii open examples/jsonxx
-   ~/jsonxx$ bii cpp:build
+   ~/jsonxx$ bii build
 
 The code of the example is like this:
 

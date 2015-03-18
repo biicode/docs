@@ -13,7 +13,7 @@ A multi-platform C and C++ dependency manager.
    c++/dependencies
    c++/publishing
    c++/building
-   c++/workflows
+   c++/advanced
    c++/examples
    c++/integration
    c++/reference

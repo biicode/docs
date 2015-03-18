@@ -23,7 +23,7 @@ This example is `already in biicode <http://www.biicode.com/examples/bcl>`_, it'
    $ bii init compression
    $ cd compression
    $ bii open examples/bcl
-   $ bii cpp:build
+   $ bii build
 
 The code of the example is this one, it simply creates a new file ``myfile.txt`` and then it compresses and uncompresses the file created. It also calculates the time it takes to compress it:
 

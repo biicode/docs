@@ -26,7 +26,7 @@ Copy the main_cryptyo file in your block, then you need to resolve all the depen
 .. code-block:: bash
 
 	$ bii find
-	$ bii cpp:build
+	$ bii build
 
 You will see next console output after executing the command:
 

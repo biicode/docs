@@ -23,7 +23,7 @@ Here, you'll learn how to define your **CMakeLists.txt** to delve into full func
 CMakeLists.txt
 --------------
 
-``bii cpp:configure`` command or ``bii cpp:build`` (which calls configure first), will generate all the build layout including your ``CMakeLists.txt`` file/s (one per block).
+``bii configure`` command or ``bii build`` (which calls configure first), will generate all the build layout including your ``CMakeLists.txt`` file/s (one per block).
 
 .. container:: infonote
      
@@ -235,7 +235,7 @@ To ensure the program is working, build and execute:
 
 .. code-block:: bash
 
-   ~/boost_project$ bii cpp:build
+   ~/boost_project$ bii build
    ~/boost_project$ bin/phil_boost_example_main
    Usage: server <port>
 
@@ -426,13 +426,13 @@ Zip ``myproject`` folder and compile in other computer without biicode, just exe
 Build type: Debug or Release
 ----------------------------
 
-You can set the build type with -D option in ``bii cpp:configure`` command:
+You can set the build type with -D option in ``bii configure`` command:
 
 
 .. code-block:: sh
 
-    $ bii cpp:configure -DCMAKE_BUILD_TYPE=DEBUG
-    $ bii cpp:build
+    $ bii configure -DCMAKE_BUILD_TYPE=DEBUG
+    $ bii build
 
 Possible values are: **DEBUG**, **RELEASE**, **RELWITHDEBINFO**, **MINSIZEREL**
 
@@ -446,22 +446,22 @@ Using a custom tool-chain
 When you build your projects, biicode automatically generates a default tool-chain to build it.
 To **use a custom tool-chain** you need to **place it in the bii folder** of your project **with the name <your_toolchain_name>-toolchain.cmake**.
 
-To use it, just pass it as argument of ``bii cpp:configure -t your_toolchain_name``.
+To use it, just pass it as argument of ``bii configure -t your_toolchain_name``.
 
-For example, I want to write a program to my armv7 and I have a toolchain named armv7-toolchain.cmake. First, copy my toolchain with the name armv7-toolchain.cmake into the bii folder. Then, execute ``bii cpp:configure`` with ``-t`` or ``--toolchain`` flag whith the name ``armv7``:
+For example, I want to write a program to my armv7 and I have a toolchain named armv7-toolchain.cmake. First, copy my toolchain with the name armv7-toolchain.cmake into the bii folder. Then, execute ``bii configure`` with ``-t`` or ``--toolchain`` flag whith the name ``armv7``:
 
 .. code-block:: bash
 
     $ bii init my_armv7_machine
     $ cd my_armv7_machine
     $ #copy armv7-toolchain.cmake into init my_armv7_machine/bii
-    $ bii cpp:configure -t armv7
+    $ bii configure -t armv7
 
-If you want to change the toolchain that you are using, just execute ``bii cpp:configure -t my_new_toolchain_name``
+If you want to change the toolchain that you are using, just execute ``bii configure -t my_new_toolchain_name``
 
-If you want to use the native environment, just execute ``bii cpp:configure -t`` without any toochain name or None as name.
+If you want to use the native environment, just execute ``bii configure -t`` without any toochain name or None as name.
 
-There are two default toolchains you can use, the ``arduino-toolchain.cmake`` and the ``rpi-toolchain.cmake``. If you want to use one of it, just use ``bii arduino:settings`` and ``bii cpp:configure -t arduino`` or ``bii rpi:settings`` and ``bii cpp:configure -t rpi``.
+There are two default toolchains you can use, the ``arduino-toolchain.cmake`` and the ``rpi-toolchain.cmake``. If you want to use one of it, just use ``bii arduino:settings`` and ``bii configure -t arduino`` or ``bii rpi:settings`` and ``bii configure -t rpi``.
 
 .. container:: infonote
 

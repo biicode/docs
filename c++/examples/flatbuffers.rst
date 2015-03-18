@@ -17,7 +17,7 @@ You can check all the flatbuffers examples which are uploaded in biicode and exe
    ~$ bii init flatb_sample
    ~$ cd flatb_sample
    ~/flatb_sample$ bii open examples/flatbuffers
-   ~/flatb_sample$ bii cpp:build
+   ~/flatb_sample$ bii build
 
 .. container:: infonote
 

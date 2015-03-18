@@ -65,7 +65,7 @@ Place it into your block, next to your source code: ::
 
 ``[requirements]`` section is fullfiled after executing ``bii find`` with the blocks and versions your block depends on.
 
-You can manually specify the block to depend on with its corresponding version or override a dependency just writing the version you want and executing ``bii cpp:build`` after that.
+You can manually specify the block to depend on with its corresponding version or override a dependency just writing the version you want and executing ``bii build`` after that.
 
 
 .. code-block:: text
@@ -279,7 +279,7 @@ Use ``[hooks]`` section to link to certain python scripts that will be executed,
 
 This scripts have ".py" extension and name matches:
 
-+ ``bii*post_process*hook.py``: For scripts that will be launched before project building (*bii cpp:build* or *bii cpp:configure*)
++ ``bii*post_process*hook.py``: For scripts that will be launched before project building (*bii build* or *bii configure*)
 + ``bii*clean*hook.py``: For scripts that will be launched before a *bii clean* command.
 
 These are defined like :ref:`[dependencies] <dependencies_conf>`. 
@@ -355,7 +355,7 @@ This is pretty useful when using already existing libraries and you don't want t
 [data]
 --------
 Use ``[data]`` to specify a link with any file (.h, .cpp, ...) with any data (.txt, .jpg, ...) in your block.
-Once ``[data]`` section is specified and the code is built (``bii cpp:build``), the data files will be saved, by default, in your *project/bin/user/block* folder.
+Once ``[data]`` section is specified and the code is built (``bii build``), the data files will be saved, by default, in your *project/bin/user/block* folder.
 
 **Example:**
 

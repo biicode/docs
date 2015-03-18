@@ -18,7 +18,7 @@ This example is `already in biicode <http://www.biicode.com/examples/sqlite_basi
    $ bii init sql
    $ cd sql
    $ bii open examples/sqlite_basic
-   $ bii cpp:build
+   $ bii build
 
 The code of the example is this one:
 
@@ -171,7 +171,7 @@ Compile it and run the executable by doing:
 
 .. code-block:: bash
 
-	$ bii cpp:build
+	$ bii build
 	$ cd bin
 	$ # run executable
 

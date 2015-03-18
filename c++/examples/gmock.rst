@@ -18,7 +18,7 @@ You can execute all of them locally just creating a new project and opening the 
    ~$ bii init gmock_sample 
    ~$ cd gmock_sample
    ~/gmock_sample$ bii open google/gmocksamples
-   ~/gmock_sample$ bii cpp:build
+   ~/gmock_sample$ bii build
    ~/gmock_sample$ #execute any example
 
 
@@ -35,7 +35,7 @@ You can execute it locally just creating a new project and opening the block: `G
    ~$ bii init samples 
    ~$ cd samples
    ~/samples$ bii open examples/gmock
-   ~/samples$ bii cpp:build
+   ~/samples$ bii build
    ~/samples$ bin/examples_gmock_test_mock_turtle_test
 	[==========] Running 1 test from 1 test case.
 	[----------] Global test environment set-up.

@@ -84,7 +84,7 @@ Now, we compile and execute the test:
 
 .. code-block:: bash
 
-	~/gtest_sample$ bii cpp:build
+	~/gtest_sample$ bii build
 	~/gtest_sample$ bin/examples_gtest_simple_test_simple_test
 	[==========] Running 3 tests from 1 test case.
 	[----------] Global test environment set-up.

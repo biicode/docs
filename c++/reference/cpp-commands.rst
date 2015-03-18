@@ -1,14 +1,14 @@
 .. _bii_cpp_tools:
 
 
-**bii cpp:configure**: configure your project
+**bii configure**: configure your project
 ---------------------------------------------
 
 This command calls ``bii work`` command to analyze your project and process dependencies, then creates or updates the required project CMake files. You can use it to specify which CMake generator you want to use. 
 
 This command accepts all CMake directives, you could say this command is basically a ``cmake .`` invocation within the project ``build`` folder.
 
-* Use ``bii cpp:configure`` to :ref:`configure a project for your IDE<generators_ide>`.
+* Use ``bii configure`` to :ref:`configure a project for your IDE<generators_ide>`.
 
 * You can also :ref:`delve into specifics about building with biicode.<cpp_building>`
 
@@ -21,7 +21,7 @@ Passing variables to cmake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can define a variable in your CMakeLists.txt and pass the value from command line.
-To do this, just pass the value as a parameter of ``bii cpp:configure``.
+To do this, just pass the value as a parameter of ``bii configure``.
 
 Imagine you have defined a variable name FOO in your ``CMakeList.txt`` and you want to define it with TRUE or FALSE.
 
@@ -37,7 +37,7 @@ Define the value of ``FOO`` with the flag ``-DFOO=TRUE`` or ``-DFOO=FALSE``:
 
 .. code-block:: bash
 
-   $ bii cpp:configure -DFOO=TRUE
+   $ bii configure -DFOO=TRUE
    Running: cmake  -G "MinGW Makefiles" -Wno-dev -DFOO=TRUE ../cmake
 
    FOO Enabled!!
@@ -47,14 +47,14 @@ Define a tool-chain
 
 ``bii configure --toolchain`` command define the tool-chain to use, here's more about the :ref:`custom tool-chains <custom_toolchains>`.
 
-**bii cpp:build**: build your project
+**bii build**: build your project
 -------------------------------------
 
 This command invokes the C++ compiler to build your project.
 
 .. code-block:: bash
 
-	$ bii cpp:build	
+	$ bii build	
 	Building: cmake --build .
    ...
 
@@ -85,7 +85,7 @@ Now, using biicode, for example:
 
 .. code-block:: bash
 
-   $ bii cpp:build --use-stderr
+   $ bii build --use-stderr
    
 If you are building in a Linux or Mac system or MinGW (with make), you can probably 
 speed up your builds **using multiple jobs** (threads, cores) with the **-jN make** option
@@ -93,14 +93,14 @@ where N is the number of concurrent jobs desired (please note the -- before -jN)
 
 .. code-block:: bash
 
-   $ bii cpp:build -- - j4
+   $ bii build -- - j4
    
 If you are building with Visual Studio compiler (even in the command line), the
 equivalent option is /m:N, so you can:
 
 .. code-block:: bash
 
-   $ bii cpp:build -- /m:4
+   $ bii build -- /m:4
    
    
 If you got any questions left, you can ask them at our `forum <http://forum.biicode.com/>`_.

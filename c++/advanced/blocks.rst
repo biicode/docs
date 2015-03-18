@@ -211,7 +211,7 @@ This is an example of a biicode.conf file: ::
 CMakeLists.txt
 ^^^^^^^^^^^^^^
 
-* For projects with no ``CMakeLists.txt`` just execute ``bii cpp:build``. 
+* For projects with no ``CMakeLists.txt`` just execute ``bii build``. 
 * Had a previous ``CMakeLists.txt``? Adapt it like this:
 
 .. code-block:: cmake

@@ -48,7 +48,7 @@ Next, you can build and run the code:
 
 .. code-block:: bash
 
-	$ bii cpp:build
+	$ bii build
 	$ cd bin
 	$ #run executable
 

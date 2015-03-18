@@ -1,3 +1,5 @@
+.. _openssl_examples:
+
 OpenSSL
 =======
 
@@ -47,11 +49,11 @@ Next, we'll use a similar code to encrypt a "hello world!" string with SHA1:
 Encrypt strings
 ---------------
 
-Now execute ``bii cpp:build`` to build the project.
+Now execute ``bii build`` to build the project.
 
 .. code-block:: bash
  
- $ bii cpp:build
+ $ bii build
 
 Go to bin directory and execute the binaries:
 

@@ -15,10 +15,10 @@ Choose yours, and tell biicode to configure your project for that IDE:
 
 .. code-block:: bash
 
-	$ bii cpp:configure -G "CMake Generator Name"
+	$ bii configure -G "CMake Generator Name"
 
 
-``bii cpp:configure`` admits any CMake directives. Your latest configuration is stored in your project's ``settings.bii`` file as the default settings for that project. 
+``bii configure`` admits any CMake directives. Your latest configuration is stored in your project's ``settings.bii`` file as the default settings for that project. 
 
 .. container:: infonote
      
@@ -33,7 +33,7 @@ To create an Eclipse CDT project, run:
 
 .. code-block:: bash
 
-  $ bii cpp:configure -G "Eclipse CDT4 - Unix Makefiles"
+  $ bii configure -G "Eclipse CDT4 - Unix Makefiles"
 
 
 .. container:: infonote
@@ -42,7 +42,7 @@ To create an Eclipse CDT project, run:
 
     .. code-block:: bash
 
-      $ bii cpp:configure -G "Eclipse CDT4 - MinGW Makefiles"
+      $ bii configure -G "Eclipse CDT4 - MinGW Makefiles"
 
 Now, import your project into the Eclipse IDE.
 
@@ -57,12 +57,12 @@ If you want to add new files to your block, just right-click on the folder of yo
 
 You can build your application in *Project > Build project* if you don't have automated builds set.
 
-``debug`` your project using gdb inside Eclipse CDT. Make sure you set -D CMAKE_BUILD_TYPE=DEBUG in ``bii cpp:configure`` command: 
+``debug`` your project using gdb inside Eclipse CDT. Make sure you set -D CMAKE_BUILD_TYPE=DEBUG in ``bii configure`` command: 
 
 .. code-block:: bash
 
-  $ bii cpp:configure -G "Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=DEBUG
-  $ bii cpp:build
+  $ bii configure -G "Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=DEBUG
+  $ bii build
 
 
 
@@ -78,25 +78,25 @@ Generate a Microsoft Visual Studio project, for a Visual Studio 10 project:
 
 .. code-block:: bash
 
-   $ bii cpp:configure -G "Visual Studio 10"
+   $ bii configure -G "Visual Studio 10"
 
 For example:
 
 .. code-block:: bash
 
-   $ bii cpp:configure -G "Visual Studio 9 2008"
+   $ bii configure -G "Visual Studio 9 2008"
    ...
-   $ bii cpp:configure
+   $ bii configure
    #Calling to Visual Studio 9 2008 generator
 
 **Open your project with Visual Studio**. Just **double-click on the .sln file inside the build folder** of your project and a VS project will open.
 
-``debug`` your project setting -D CMAKE_BUILD_TYPE=DEBUG in ``bii cpp:configure`` command: 
+``debug`` your project setting -D CMAKE_BUILD_TYPE=DEBUG in ``bii configure`` command: 
 
 .. code-block:: bash
 
-  $ bii cpp:configure -G "Visual Studio 9 2008" -D CMAKE_BUILD_TYPE=DEBUG
-  $ bii cpp:build
+  $ bii configure -G "Visual Studio 9 2008" -D CMAKE_BUILD_TYPE=DEBUG
+  $ bii build
 
 .. _ide_clion:
 
@@ -115,7 +115,7 @@ And configure your project to set the changes:
 
 .. code-block:: bash
 
-   $ bii cpp:configure
+   $ bii configure
 
 Open the biicode project with CLion *(File -> Open)*. 
 
