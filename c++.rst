@@ -10,13 +10,12 @@ A multi-platform C and C++ dependency manager.
 
    c++/installation
    c++/gettingstarted
-   c++/using_biicode
-   c++/building
    c++/dependencies
    c++/publishing
-   c++/integration
-   c++/examples
+   c++/building
    c++/workflows
+   c++/examples
+   c++/integration
    c++/reference
    c++/release_notes
    c++/faqs

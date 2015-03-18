@@ -1,6 +1,6 @@
 .. _cpp_dependencies:
 
-Manage your dependencies
+Dependencies with biicode
 =========================
 
 Learn how to get the dependencies your project needs and how to handle their versions.
