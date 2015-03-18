@@ -32,6 +32,8 @@ The code of the example is this one, it simply creates a new file *myfile.txt* a
 
 Copy the code in the *main.cpp*:
 
+**main.cpp**
+
 .. code-block:: cpp
 
   /* Standard libraries */
@@ -40,10 +42,10 @@ Copy the code in the *main.cpp*:
   #include <string.h>
 
   /* Basic Compression Library */
-  #include "src/huffman.h"
+  #include "huffman.h"
 
   /* Timing */
-  #include "src/systimer.h"
+  #include "systimer.h"
 
 
   /*************************************************************************
@@ -201,8 +203,8 @@ Check the dependencies of the project with **bii deps**:
           stdlib.h
           string.h
        unresolved:
-          src/huffman.h
-          src/systimer.h
+          huffman.h
+          systimer.h
 
 
 Now, edit the *biicode.conf* file generated in the project folder. Add your ``[requirements]`` depending on the version you want and map your ``[includes]``:
@@ -213,7 +215,7 @@ Now, edit the *biicode.conf* file generated in the project folder. Add your ``[r
      marcus256/bcl: 2
  
  [includes]
-     src/*.h: marcus256/bcl
+     *.h: marcus256/bcl/src
 
 
 Check again with **bii deps** to show all resolved dependencies.
@@ -238,7 +240,7 @@ Once you execute you should see an output like this one, it may vary depending o
        Compression speed: 1246.6 KB/s (0.01 ms)
        Uncompression speed: 4778.7 KB/s (0.00 ms)
 
-That's all! You can try it with other files.
+That's all! You can try it with other files too.
 
 Quick way
 ---------
@@ -260,6 +262,11 @@ Build the example and execute it:
  $ bii build
  $ cd bin
  $ # Execute it
+   Compressing MyFile, File Size:
+     Compression: 20/14 bytes (142.9%) - OK!
+       Compression speed: 1246.6 KB/s (0.01 ms)
+       Uncompression speed: 4778.7 KB/s (0.00 ms)
+
 
 Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
 

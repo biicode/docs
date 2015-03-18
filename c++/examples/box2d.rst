@@ -26,6 +26,8 @@ Create a new project and a *main.cpp* file:
 
 Now place the following code inside *main.cpp*:
 
+**main.cpp**
+
 .. code-block:: cpp
 
     #include "Box2D/Box2D.h"
