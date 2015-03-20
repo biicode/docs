@@ -3,7 +3,7 @@
 **bii update**: update a block
 ===============================
 
-Use ``bii update`` command to get the latest version of a local block you're working on. 
+Use **bii update** command to get the latest version of a local block you're working on. 
 
 
 Update an outdated block (get into your project's or block's folder):

@@ -3,7 +3,7 @@
 **bii diff**: compare block versions
 -------------------------------------
 
-Compare files and show their differences with ``bii diff`` command. You can compare your current local project against a previously published version or compare between published versions.
+Compare files and show their differences with **bii diff** command. You can compare your current local project against a previously published version or compare between published versions.
 
 .. code-block:: bash
 

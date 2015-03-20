@@ -23,9 +23,9 @@ Update your dependencies and find new unresolved ones in one step:
 
 	$ bii find --update
 
-Biicode uses :ref:`policies.bii<policies>` to resolve your dependencies. You can find ``policies.bii`` in your project's ``bii`` folder. 
+Biicode uses :ref:`policies.bii<policies>` to resolve your dependencies. You can find *policies.bii* in your project's *bii* folder. 
 
-**Note:** ``policies.bii`` defines the way ``bii find`` command retrieves dependencies. For example, if you only want STABLE versions and there's a newer DEV version, this version will only retrieved if you say so in your ``policies.bii``.
+**Note:** *policies.bii* defines the way **bii find** command retrieves dependencies. For example, if you only want STABLE versions and there's a newer DEV version, this version will only retrieved if you say so in your *policies.bii*.
 
 
 Find compatible downgrades:

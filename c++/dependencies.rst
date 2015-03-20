@@ -78,11 +78,11 @@ Biicode takes by default the latest version available.  To change it, just write
 
 |
 
-Execute ``bii work`` command, once modified, to update a specific block version: 
+Execute ``bii build`` command, once modified, to update a specific block version and build: 
 
 .. code-block:: bash
 
-	$ bii work
+	$ bii build
 
 And you'll see the new dependencies retrieved in your ``deps folder``.
 

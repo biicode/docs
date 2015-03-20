@@ -4,7 +4,7 @@
 **bii configure**: configure your project
 ---------------------------------------------
 
-This command calls **bii work** command to analyze your project and process dependencies, then creates or updates the required project CMake files. You can use it to specify which CMake generator you want to use. 
+This command analyzes your project and process dependencies, then creates or updates the required project CMake files. You can use it to specify which CMake generator you want to use. 
 
 This command accepts all CMake directives, you could say this command is basically a **cmake**. invocation within the project *build* folder.
 

@@ -37,4 +37,3 @@ You can:
    commands/test
    commands/update
    commands/user
-   commands/work

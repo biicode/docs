@@ -3,16 +3,16 @@
 **bii init**: creates a new project
 ------------------------------------
 
-Use ``bii init`` command to **create new project**. 
+Use **bii init** command to **create new project**. 
 
 **One step-** Create a folder *project_name* and init your project inside:
 
 .. code-block:: bash
 
-	$ bii init <project_name>
+	$ bii init project_name
 
 
-Also use ``bii init`` inside a folder to init a biicode project:
+Also use **bii init** inside a folder to init a biicode project:
 
 .. code-block:: bash
 
