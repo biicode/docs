@@ -10,6 +10,7 @@ Here's a few usage cases for understanding biicode in depth:
    :maxdepth: 1
    :glob:
 
+   advanced/blocks
    advanced/project
    advanced/open_blocks
    advanced/override_deps

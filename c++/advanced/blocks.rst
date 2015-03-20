@@ -5,7 +5,7 @@ What is a block?
 
 **A block** (also known as 'repo' or 'repository') is the place to put your code in biicode. 
 
-Each block has an *owner, name, version* and *tag*. For example, the |openssl_link| block has an **owner** (lasote) and latest version is **3 DEV**.
+Each block has an *owner, name, version* and *tag*. For example, the |openssl_link| block has an **owner** (lasote) and latest version is **4 DEV**.
 
 Here's an example block structure:
 
@@ -158,7 +158,6 @@ Create private blocks in our web page. Just press **Add block button** and choos
 
    <a href="http://forum.biicode.com" target="_blank">Ask in our forum </a>
 
-
 .. |biicode_write_us| raw:: html
 
    <a href="mailto:support@biicode.com" target="_blank">write us</a>
@@ -167,4 +166,6 @@ Create private blocks in our web page. Just press **Add block button** and choos
 
    <a href="http://blog.biicode.com/new-feature-block-tracks/" target="_blank">block traks</a>
 
-
+.. |openssl_link| raw:: html
+  
+   <a href="http://www.biicode.com/lasote/openssl" target="_blank">OpenSSL block</a>

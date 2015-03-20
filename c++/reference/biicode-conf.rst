@@ -334,7 +334,7 @@ Use ``bii`` variable inside hook scripts to:
 
 + Print text:
 
-.. code-block:: textg
+.. code-block:: text
 
 	bii.out.debug("error_msg")
 	bii.out.info("error_msg")
