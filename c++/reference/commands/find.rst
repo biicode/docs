@@ -1,5 +1,3 @@
-
-
 .. _bii_find_command:
 
 **bii find**: find your external dependencies
