@@ -75,12 +75,7 @@ Here's a *biicode.conf* example:
 
 ``[requirements]`` section is fullfiled after executing **bii find** with the blocks and versions your block depends on.
 
-<<<<<<< HEAD
-You can manually specify the block to depend on with its corresponding version or override a dependency just writing the version you want and executing ``bii build`` after that.
-=======
 You can manually specify the block to depend on with its corresponding version or override a dependency just writing the version you want and executing **bii build** after that.
->>>>>>> 3dd7d361ca52ac22a0e766e0fa1b22e78f452c53
-
 
 .. code-block:: text
 
@@ -321,13 +316,8 @@ Use ``[hooks]`` section to link to certain python scripts that will be executed,
 
 This scripts have ".py" extension and name matches:
 
-<<<<<<< HEAD
-+ ``bii*post_process*hook.py``: For scripts that will be launched before project building (*bii build* or *bii configure*)
-+ ``bii*clean*hook.py``: For scripts that will be launched before a *bii clean* command.
-=======
 + ``bii*post_process*hook.py``: For scripts that will be launched before project building (**bii build** or **bii configure**)
 + ``bii*clean*hook.py``: For scripts that will be launched before a **bii clean** command.
->>>>>>> 3dd7d361ca52ac22a0e766e0fa1b22e78f452c53
 
 These are defined like :ref:`[dependencies] <dependencies_conf>`. 
 
@@ -336,14 +326,13 @@ In the following example we define that *CMakeLists.txt* depends on two hooks:
 .. code-block:: text
 
 	[hooks]
-	    CMakeLists.txt + bii/my_post_process1_hook.py bii_clean_hook.py
-
+	    CMakeLists.txt + bii/my_post_process1_hook.py bii_clean_hook.pyw
 
 Use ``bii`` variable inside hook scripts to:
 
 + Print text:
 
-.. code-block:: text
+.. code-block:: textg
 
 	bii.out.debug("error_msg")
 	bii.out.info("error_msg")
@@ -402,11 +391,8 @@ This is pretty useful when using already existing libraries and you don't want t
 [data]
 --------
 Use ``[data]`` to specify a link with any file (.h, .cpp, ...) with any data (.txt, .jpg, ...) in your block.
-<<<<<<< HEAD
-Once ``[data]`` section is specified and the code is built (``bii build``), the data files will be saved, by default, in your *project/bin/user/block* folder.
-=======
+
 Once ``[data]`` section is specified and the code is built (**bii build**), the data files will be saved, by default, in your *project/bin/user/block* folder.
->>>>>>> 3dd7d361ca52ac22a0e766e0fa1b22e78f452c53
 
 **Example:**
 
