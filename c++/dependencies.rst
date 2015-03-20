@@ -1,9 +1,9 @@
 .. _cpp_dependencies:
 
-Dependencies with biicode
-=========================
+Dependencies and tests
+======================
 
-Learn how to get the dependencies your project needs and how to handle their versions.
+Learn how to get the dependencies your project needs and how to handle their versions via your ``[requirements]`` and ``[includes]`` sections of your *biicode.conf* file. Also check how to get the most of **bii test** command along with ``[tests]`` section.
 
 Dependencies
 ------------
@@ -60,20 +60,35 @@ Write in your *biicode.conf*:
 
 
 Modifying the version you depend on
-------------------------------------
+-----------------------------------
 
 Manually edit your **biicode.conf** file to depend on any version you want. 
 
 To depend on *lasote/openssl* version 2, write in your *biicode.conf*:
 
-	.. code-block:: text
-	    :emphasize-lines: 2
+.. code-block:: text
+    :emphasize-lines: 2
 
-		[requirements]
-		     lasote/openssl: 2
+	[requirements]
+	    lasote/openssl: 2
 
-		[includes]
-		    openssl/md5.h: lasote/openssl/include
+	[includes]
+	    openssl/md5.h: lasote/openssl/include
+
+.. _tag_dependencies:
+
+Update your *biicode.conf* file to depend on *lasote/OpenSSL tagged version 1.0.1l*:
+
+.. code-block:: text
+    :emphasize-lines: 2
+
+	[requirements]
+	    lasote/openssl: @1.0.1l
+
+	[includes]
+	    openssl/md5.h: lasote/openssl/include
+
+Run **bii build** and you'll see the new dependencies in your *bii/deps* folder.
 
 For OpenSSL, there are two tracks available:
  
@@ -81,25 +96,23 @@ For OpenSSL, there are two tracks available:
 
 * ``OpenSSL 1.0.2`` is available at *lasote/openssl(v1.0.2)* versions 0 and 1.
 
-Depending on OpenSSL 1.0.1 
-
-To update to version 1.0.2, just write the one you want in your ***biicode.conf**:
+Update to release 1.0.2, just write it in your *biicode.conf*:
 
 .. code-block:: text
     :emphasize-lines: 2
 
 	[requirements]
-	 	lasote/openssl(v1.0.2): 0
+	    lasote/openssl(v1.0.2): 0
 
 	[includes]
-		openssl/md5.h: lasote/openssl/include
+	    openssl/md5.h: lasote/openssl/include
 
 Execute **bii build** and you'll see the new dependencies in your *bii/deps* folder.
 
 .. _dependencies_block_track:
 
 Depending on a block track
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Currently, **libuv** keeps 3 mantained versions or **block tracks**:
 
@@ -118,11 +131,10 @@ Depend on one or another to fit your needs:
 
 	   	#include "uv.h"
 
-* And depend on |libuv_0_11|, write in your **biicode.conf** file ``[requirements]`` :
-
-	*biicode.conf*
+* And depend on |libuv_0_11|, write in your *biicode.conf* file ``[requirements]`` :
 
 	.. code-block:: text
+	    :emphasize-lines: 2
 
 		[requirements] 
 			lasote/libuv(v0.11): 1
@@ -134,52 +146,56 @@ Depend on one or another to fit your needs:
 
 Let's switch to |libuv_1_0|:
 
-* Modify ``[requirements]`` section :
-
-	*biicode.conf*
+* Modify ``[requirements]`` section in your *biicode.conf* :
 
 	.. code-block:: text
+		:emphasize-lines: 2
 
 		[requirements]
 			lasote/libuv(v1.0): 0
+
+		[includes]
+			uv.h : lasote/libuv/include
 
 * Execute **bii build** and it's switched.
 
 And now, switch to |libuv_0_10|:
 
-* Modify ``[requirements]`` section :
-
-	*biicode.conf*
+* Modify ``[requirements]`` section in your *biicode.conf* :
 
 	.. code-block:: text
+	    :emphasize-lines: 2
 
 		[requirements] 
 			lasote/libuv(v0.10): 1
 
+		[includes]
+			uv.h : lasote/libuv/include
+
 * **bii build** and it's switched.
 
-.. _tag_dependencies:
+Tests
+-----
 
-Depending on a tagged version
------------------------------
-Use a specific block version using just its version tag. Write in your **biicode.conf** file ``[requirements]``:
-*biicode.conf*
+Sometimes your library includes some tests to check your its functionality. Your *biicode.conf* ``[tests]`` section is here to cover these tests.
+
+Just write the test files specifically or the path to the folder that contains them like this:
+
 
 .. code-block:: text
 
-	[requirements] 
-		Maria/oscpack @v1.1.0
+	[tests]
 
-Execute **bii build** and biicode will retrieve the latest version with that tag and update the ``[requirements]`` section:
+		projects/SelfTest/*
+		tests/unit_test.cpp
 
-*biicode.conf*
-.. code-block:: text
+Run **bii test** command and you're ready to go. 
 
-	[requirements] 
-		# required blocks (with version)
-		Maria/oscpack: 0 @v1.1.0
+.. container:: infonote
 
-* Execute **bii build** and it's updated.
+    You can specify in your ``[mains]`` section that your tests aren't mains. 
+    :ref:`Here's more on [mains] section. <mains_conf>`
+
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
 
@@ -204,3 +220,7 @@ Execute **bii build** and biicode will retrieve the latest version with that tag
 .. |libuv_1_0| raw:: html
 
    <a href="http://www.biicode.com/lasote/lasote/libuv/v1.0" target="_blank"><strong>Libuv library v1.0</strong></a>
+
+.. |Oscpack_biicode| raw:: html
+
+   <a href="http://www.biicode.com/Maria/oscpack" target="_blank"><strong>Oscpack library</strong></a>

@@ -112,149 +112,64 @@ Below the header there are some tabs showing:
 
         .. image:: /_static/img/c++/dependency_graph.png
 
-biicode status badge
-^^^^^^^^^^^^^^^^^^^^
 
-The biicode satus badge is a dynamically generated image displaying your block's latest published :ref:`version<cpp_publishing>` in biicode.
+Block Tracks
+-------------
 
-.. image:: /_static/img/c++/biicode_badge.png
-
-This badge lets developers know your code is available to reuse at biicode. It is something determinant in the use of a dependency manager and you can place it in the *readme files* of your :ref:`VCS repository <git_integration>` and in the biicode block.
-
-.. container:: infonote
-
- Get your badge in your block's **settings**.
-
-Let people know your code can be reused easily!
-
-.. _cpp_block_git:
-
-Create a block from a git repository
-------------------------------------
-
-The code
-^^^^^^^^
-
-Put your code into a biicode block, as usual:
-
-.. code-block:: bash
-
-  $~ bii init project_name
-  $~ cd project_name/blocks
-  $~ mkdir username
-  $~ cd username
-  $~ git clone https://Your_Repo_URL.git
-
-Or using the :ref:`custom layout <custom_layout>` feature:
-
-.. code-block:: bash
-
-  ~$ git clone https://Your_Repo_URL.git
-  ~$ cd your_repository
-  ~/your_repository$ bii init -l simple
-
-biicode.conf
-^^^^^^^^^^^^
-
-Now execute ``bii deps`` or ``bii deps --files`` to get all information related to biicode's dependency scanning. This tells you all the unresolved ``#include``. 
-
-Create a ``biicode.conf`` file and fill the ``[requirements]``,  and ``[includes]`` section to retrieve the libs you need (Box2D, OpenSSl, OpenCV, Libuv, GTest ...)
-
-Also, write the ``[paths]`` section to tell biicode in which folders it has to look for the local files from your includes (You only need to specify this when your project has non-file-relative ``#include (s)``). 
-
-* :ref:`More information on the biicode.conf file<biicode_conf>` and on :ref:`[paths] section<biicode_conf>`
-
-This is an example of a biicode.conf file: ::
-
-      # Biicode configuration file
-
-      [requirements]
-        # Blocks and versions this block depends on
-        diego/glfw: 1
-        lasote/openssl(v1.0.2): 0
-        google/gtest: 9
-
-      [parent]
-        owner/block: 0
-
-      [paths]
-          # Local directories to look for headers (within block)
-          include
-          /
-
-      [dependencies]
-          # Manual adjust file implicit dependencies, add (+), remove (-), or overwrite (=)
-          # hello.h + hello_imp.cpp hello_imp2.cpp
-          # *.h + *.cpp
-
-      [mains]
-          # Manual adjust of files that define an executable
-          # !main.cpp  # Do not build
-          # main2.cpp # Build it
-
-      [hooks]
-          #  add (+), remove (-), or overwrite (=) files names matching bii*stage*hook.py
-          # biicode launches them as python scripts at stage = {post_process, clean}
-          # CMakeLists.txt + bii/my_post_process1_hook.py bii_clean_hook.py
-
-      [includes]
-          # Mapping of include patterns
-          gtest/gtest.h: google/gtest/include/gtest
-          GLFW/glfw3.h: diego/glfw/include
-          openssl/.h: lasote/openssl/include
-
-      [data]
-          # Manually define data files dependencies, that will be copied to bin for execution
-          # By default they are copied to bin/user/block/...
-          # image.cpp + image.jpg  # code should write open("user/block/image.jpg")
-
-CMakeLists.txt
-^^^^^^^^^^^^^^
-
-* For projects with no ``CMakeLists.txt`` just execute ``bii build``. 
-* Had a previous ``CMakeLists.txt``? Adapt it like this:
-
-.. code-block:: cmake
-
-   IF(BIICODE)   
-      ADD_BIICODE_TARGETS()  
-   ELSE()
-      # Your regular CMakeLists configuration here
-   ENDIF() 
+Use **Block Tracks** to publish different development *versions* of a block using the same block name-space. This way, dependent blocks can keep the same *#includes* in their source code.
 
 
+Publish a new block Track
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Follow this :ref:`Build Config Guide <cpp_building>` for specifics.
+Write the track name between brackets in the ``[parent]`` section of the **biicode.conf** file. Specify ``version -1`` because we want create a new block. 
 
-* There's also a post series explaining how to |upload_to_biicode|.
+*biicode.conf*
 
-   
-.. container:: infonote
+.. code-block:: text
 
-    **Are you using boost?** :ref:`Check how to use boost features with biicode <boost_examples>`.
+  [parent]
+      myuser/myblock(track1): -1
+
+Now you have configured a track of your block.
+
+In case you need a personalized fix over the original library from other user, just indicate it in the ``[parent]`` section like this:
+
+*biicode.conf*
+
+.. code-block:: text
+
+  [parent]
+      lasote/libuv(myuser/track1): -1
+
+This way, you have configured a track of other user whitout changing *includes*.
+
+Execute ``bii publish`` and enter your profile *www.biicode.com/myuser* to check the new track. 
+
+Read a bit more about how *tracks* work, visit our post in the blog about |biicode_blog_blocktracks|.
+
+Private blocks
+--------------
+
+Upgrade your account to Premium, |biicode_write_us|, to use Private blocks. Store your code in private, choose who can see or edit your blocks.
+
+Create private blocks in our web page. Just press **Add block button** and choose private.
 
 
-You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_stackoverflow| and |biicode_write_us| for suggestions and feedback.
+**Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
+
 
 .. |biicode_forum_link| raw:: html
 
-   <a href="http://forum.biicode.com" target="_blank">the biicode forum</a>
- 
+   <a href="http://forum.biicode.com" target="_blank">Ask in our forum </a>
+
 
 .. |biicode_write_us| raw:: html
 
    <a href="mailto:info@biicode.com" target="_blank">write us</a>
 
-.. |biicode_stackoverflow| raw:: html
+.. |biicode_blog_blocktracks| raw:: html
 
-   <a href="http://stackoverflow.com/questions/tagged/biicode" target="_blank">tag your question in StackOverflow</a>
-
-.. |upload_to_biicode| raw:: html
-
-   <a href="http://blog.biicode.com/tag/upload-libraries-to-biicode/" target="_blank">Upload libraries to Biicode</a>
-
-.. |openssl_link| raw:: html
-
-   <a href="http://www.biicode.com/lasote/openssl" target="_blank">OpenSSL</a>
+   <a href="http://blog.biicode.com/new-feature-block-tracks/" target="_blank">block traks</a>
 
 

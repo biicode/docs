@@ -1,6 +1,6 @@
 .. _git_integration:
 
-VCS Git (GitHub, Bitbucket, etc.)
+Git (GitHub, Bitbucket, etc.)
 =================================
 
 |github_homepage| and |bitbucket_homepage| are notorious Git (Bitbucket works with Mercurial too) repository web-based hosting service which offers the distributed revision control and source code management (SCM) functionality of Git as well as add their own features.
@@ -136,7 +136,26 @@ This badge lets developers know your code is available to reuse at biicode. It i
 
 Let people know your code can be reused easily!
 
+.. _git_commit:
 
+Publish from git commit
+-----------------------
+
+``bii publish -r`` or ``bii publish --remote`` uses the git info within your block to publish it to biicode along with your block. This way everyone knows "who is" the git repo mantaining the biicode block and the specific commit creating each block version.
+
+
+.. code-block:: bash
+
+  $ bii publish  -r
+
+This is how publishing with ``bii publish --remote`` looks like:
+
+.. image:: /_static/img/c++/bii_publish_remote.png
+
+
+.. container:: infonote
+
+    You can mix ``bii publish`` parameters, for example: ``bii publish -r --tag STABLE --versiontag v1.0.2``
 
 You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_stackoverflow| and |biicode_write_us| for suggestions and feedback.
 
