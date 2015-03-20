@@ -1,9 +1,9 @@
 .. _cpp_dependencies:
 
-Dependencies and tests
-======================
+Dependencies 
+=============
 
-Learn how to get the dependencies your project needs and how to handle their versions via your ``[requirements]`` and ``[includes]`` sections of your *biicode.conf* file. Also check how to get the most of **bii test** command along with ``[tests]`` section.
+Learn how to get the dependencies your project needs and how to handle their versions via your ``[requirements]`` and ``[includes]`` sections of your *biicode.conf* file.
 
 Dependencies
 ------------
@@ -173,29 +173,6 @@ And now, switch to |libuv_0_10|:
 			uv.h : lasote/libuv/include
 
 * **bii build** and it's switched.
-
-Tests
------
-
-Sometimes your library includes some tests to check your its functionality. Your *biicode.conf* ``[tests]`` section is here to cover these tests.
-
-Just write the test files specifically or the path to the folder that contains them like this:
-
-
-.. code-block:: text
-
-	[tests]
-
-		projects/SelfTest/*
-		tests/unit_test.cpp
-
-Run **bii test** command and you're ready to go. 
-
-.. container:: infonote
-
-    You can specify in your ``[mains]`` section that your tests aren't mains. 
-    :ref:`Here's more on [mains] section. <mains_conf>`
-
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
 
