@@ -3,7 +3,7 @@
 Making your own library with biicode
 =====================================
 
-Follow this guide to develop your library along with biicode wether if it's tiny or huge, these are basic steps to go. 
+Follow this guide to develop your library along with biicode wether if it's tiny or huge. These are basic steps to go. 
 
 .. code-block:: bash
 
@@ -16,12 +16,13 @@ If you haven't got yours yet, create a *biicode.conf* file.
 biicode.conf
 ------------
 
-After that, fill ``[requirements]``,  and ``[includes]`` sections to retrieve the libs you need (Box2D, OpenSSl, OpenCV, Libuv, GTest ...) as shown in :ref:` dependencies<cpp_dependencies>`.
+Fill ``[requirements]``,  and ``[includes]`` sections to retrieve the libs you need (Box2D, OpenSSl, OpenCV, Libuv, GTest ...) as shown in :ref:`dependencies<cpp_dependencies>` section.
 
 Paths 
 ^^^^^
 
-Write ``[paths]`` section to tell biicode in which folders it has to look for the local files from your includes (You only need to specify this when your project has non-file-relative ``#include (s)``).
+After that, write ``[paths]`` section to tell biicode in which folders it has to look for the local files from your includes.
+You only need to specify your paths when your project has non-file-relative ``#include (s)``.
 
 For example:
 
