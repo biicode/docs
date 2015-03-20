@@ -21,26 +21,10 @@ Basics
 
 Make sure :ref:`biicode is installed<first_steps>`. Execute ``bii setup:cpp`` to ensure you've got all tools required.
 
-What is a block?
-----------------
+Create your first project
+-------------------------
 
-A block (also known as 'repo' or 'repository') is the place to put your code in biicode. 
-
-Each block has an *owner, name, version* and *tag*. For example, |google_test_biicode_link| block has an **owner: google** and latest version is **10 tagged STABLE**.
-
-.. image:: /_static/img/c++/gtest_include.png
-
-A block's main components are:
-
-  - *Code*, with its sources and folders.
-  - *biicode.conf* file with information about your block and its dependencies.
-  - *bii/* auxiliary folder
-  - *CMakeLists.txt* file, specifies your build config.
-
-Create your first block
------------------------
-
-**bii init -L** a folder to create a new block. The command below creates and inits *unit_test/* folder as a biicode block. 
+**bii init -L** a folder to create a new project. The command below creates and inits *unit_test/* folder as a biicode project containing a block. 
 
 .. code-block:: bash
 
@@ -78,7 +62,11 @@ Place this code into the *main.cpp* file:
 This is just a sum function and a test using Google Test framework. 
 Executing **bii deps** you can see there's an unresolved dependency for *"gtest/gtest.h"*. 
 
-Now write the specs to retrieve the dependency in your *biicode.conf* file:
+Let's retrieve |google_test_biicode_link| block. It has an **owner: google** and latest version is **10 tagged STABLE**.
+
+.. image:: /_static/img/c++/gtest_include.png
+
+Now write the specs to retrieve this dependency in your *biicode.conf* file:
 
 .. code-block:: text
 
@@ -96,6 +84,9 @@ Now write the specs to retrieve the dependency in your *biicode.conf* file:
 
           [includes]
               gtest/*.h: google/gtest/include
+    
+    Or the whole #include route, executing **bii find**: 
+    ``#include "google/gtest/include/gtest/gtest.h"``
 
 Build and run it
 ----------------
@@ -124,7 +115,7 @@ Build and run your Unit Test, check it works:
 
 **That's it**, that output means Google Test was downloaded, configured and built in your project!
 
-Check in your ``bii/deps`` folder, GoogleTest code is there:
+Check in your ``bii/deps`` folder, GoogleTest block is there:
 
 .. code-block:: text
     :emphasize-lines: 1,2,5,6,7
@@ -167,9 +158,6 @@ Publishing
 **Publish** to make your libs available in biicode.
 
   * Execute **$ bii user your_username**. 
-  * Update *root-block* value in *bii/layout.bii* file, replace *user* with your biicode *username*.
-
-.. image:: /_static/img/c++/layout_bii_publish.png
 
 .. code-block:: bash
 
@@ -190,10 +178,6 @@ Go to your profile at **www.biicode.com/your_username** to check what you've jus
 
      * Log in to edit the block's web description. 
      * Make sure you've |biicode_signup| to publish. It's **free**.
-
-``bii publish`` publishes your code as ``DEV``, for development and testing. 
-Every time you publish over ``DEV``, you overwrite the latest ``DEV`` version.
-Release life-cycle tags are available: **DEV, ALPHA, BETA, STABLE**. Use them with ``bii publish --tag=STABLE``. 
 
 Take a look into your **block's biicode.conf file** *(~/unit_test/biicode.conf)*. ``[parent]`` section tells you  *"who is your parent version"*, the latest published version of your block and looks like this:
 
