@@ -30,7 +30,7 @@ Create your first project
 
     ~$ bii init unit_test -L
     ~$ cd unit_test
-    ~$ #create a main.cpp and a biicode.conf files
+    ~/unit_test$ #create a main.cpp and a biicode.conf
 
 Create a *main.cpp* and a *biicode.conf* file into *unit_test/* folder.
 

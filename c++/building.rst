@@ -478,7 +478,7 @@ There are two default toolchains you can use, the ``arduino-toolchain.cmake`` an
 
 .. |biicode_write_us| raw:: html
 
-   <a href="mailto:info@biicode.com" target="_blank">write us</a>
+   <a href="mailto:support@biicode.com" target="_blank">write us</a>
 
 
 .. |biicode_cmake_block| raw:: html

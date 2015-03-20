@@ -71,6 +71,6 @@ Create private blocks in our web page. Just press **Add block button** and choos
 
 .. |biicode_write_us| raw:: html
 
-   <a href="mailto:info@biicode.com" target="_blank">write us</a>
+   <a href="mailto:support@biicode.com" target="_blank">write us</a>
 
 

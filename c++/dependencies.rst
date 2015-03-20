@@ -184,7 +184,7 @@ And now, switch to |libuv_0_10|:
 
 .. |biicode_write_us| raw:: html
 
-   <a href="mailto:info@biicode.com" target="_blank">write us</a>
+   <a href="mailto:support@biicode.com" target="_blank">write us</a>
 
 .. |libuv_0_11| raw:: html
 

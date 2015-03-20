@@ -292,12 +292,12 @@ An example:
 		funct.cpp
 		!no_main.cpp
 
-.. _hooks_conf:
+.. _test_conf:
 
 [tests]
 -------
 
-Tests section is useful to define specific tests for your code. Here you can adjust files manually that define a CTest test.
+Tests section is useful to define specific tests for your code. Adjust files manually that define a CTest test.
 
 Indicate the patter to your test files:
 
@@ -308,6 +308,8 @@ Indicate the patter to your test files:
      test/simple_test.cpp
 
 Those test are excluded from the normal building and are built and executed only when doing :ref:`bii test<bii_test_command>`.
+
+.. _hooks_conf:
 
 [hooks]
 -------
@@ -423,4 +425,5 @@ Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`
 .. |maria_bitscope| raw:: html
 
    <a href="https://www.biicode.com/Maria/bitscope" target="_blank">Maria/bitscope</a>
+
 

@@ -80,28 +80,6 @@ This is how publishing with ``bii publish --remote`` looks like:
 
     You can mix ``bii publish`` parameters, for example: ``bii publish -r --tag STABLE --versiontag v1.0.2``
 
-You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_stackoverflow| and |biicode_write_us| for suggestions and feedback.
-
-.. |biicode_forum_link| raw:: html
-
-   <a href="http://forum.biicode.com" target="_blank">the biicode forum</a>
- 
-
-.. |biicode_write_us| raw:: html
-
-   <a href="mailto:info@biicode.com" target="_blank">write us</a>
-
-.. |biicode_stackoverflow| raw:: html
-
-   <a href="http://stackoverflow.com/questions/tagged/biicode" target="_blank">tag your question in StackOverflow</a>
-
-.. |upload_to_biicode| raw:: html
-
-   <a href="http://blog.biicode.com/tag/upload-libraries-to-biicode/" target="_blank">Upload libraries to Biicode</a>
-
-.. |openssl_link| raw:: html
-
-   <a href="http://www.biicode.com/lasote/openssl" target="_blank">OpenSSL</a>
 
 Check our |biicode_forum_link| and/or |biicode_stackoverflow_link| for questions and answers. You can also |biicode_write_us| for suggestions and feedback.
 
