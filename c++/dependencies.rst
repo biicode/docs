@@ -1,171 +1,118 @@
 .. _cpp_dependencies:
 
-Manage your dependencies
-=========================
+Dependencies and tests
+======================
 
-Learn how to get the dependencies your project needs and how to handle their versions.
-
+Learn how to get the dependencies your project needs and how to handle their versions via your ``[requirements]`` and ``[includes]`` sections of your *biicode.conf* file. Also check how to get the most of **bii test** command along with ``[tests]`` section.
 
 Dependencies
 ------------
-The :ref:`getting started guide<cpp_getting_started>` explained basics on depending. To recall, these are the steps to depend on a library available in biicode:
+The :ref:`getting started guide<cpp_getting_started>` explained basics on depending. To recall, these are the steps to depend on a library available in biicode, we're using **OpenSSL** in this guide:
 
-* Search the library you want on biicode.
+* Write your source code as usual:
 
-* Write the include line in your source code:
+.. code-block:: cpp
+    :emphasize-lines: 3
 
-	.. code-block:: cpp
-	    :emphasize-lines: 1
+	#include <stdio.h>
+	#include <string.h>
+	#include "openssl/md5.h"
+	 
+	int main()
+	{
+	    unsigned char digest[MD5_DIGEST_LENGTH];
+	    char string[] = "happy";
+	    
+	    MD5((unsigned char*)&string, strlen(string), (unsigned char*)&digest);    
+	 
+	    char mdString[33];
+	 
+	    for(int i = 0; i < 16; i++)
+	         sprintf(&mdString[i*2], "%02x", (unsigned int)digest[i]);
+	 
+	    printf("md5 digest: %s\n", mdString);
+	 
+	    return 0;
+	}
 
-	   	    #include "erincatto/box2d/Box2D/Box2D.h"
+* Search the library you want in biicode, then specify which lib is the one you're using in your *biicode.conf* file.
 
+Let's use first OpenSSL 1.0.1 available in *lasote/openssl* version 0:
 
-	In a project like this one: ::
+.. image:: /_static/img/c++/dependencies/openssl_md5_simple.png
 
-		|-- my_project
-		|    +-- bii
-		|    +-- bin
-		|    +-- blocks
-		|    |	  +-- myuser
-		|    |    |     +-- box2d_example
-		|    |    |  	|     |-- main.cpp   --->  #include "erincatto/box2d/Box2D/Box2D.h"
-		|    |    |  	|     |-- biicode.conf
-
-
-	.. container:: infonote
-
-	    Here's more on this :ref:`Box2D example project <box2d>`.
-
-
-* Execute :ref:`bii find command <bii_find_command>` to retrieve dependencies:
-
-	.. code-block:: bash
-
-		$ bii find
-
-	And ``biicode.conf`` file is updated: 
+Write in your *biicode.conf*:
 
 	.. code-block:: text
 
-		[requirements] 
-		    # required blocks (with version)
-			erincatto/box2d: 10
+		[requirements]
+		     lasote/openssl: 0
+
+		[includes]
+		    openssl/md5.h: lasote/openssl/include
 
 
-	That's because :underline:`myuser/box2d_example` depends on ``ericatto/box2d`` block ``version number 10``.
+* **bii build** and you're done. Make sure you've **bii init -L** your repo's folder first.
 
 .. container:: infonote
 
- 	* Here's more information about :ref:`requirements<requirements_conf>`.
+	    Here's more on this :ref:`OpenSSL example project <openssl_examples>`.
 
 
 Modifying the version you depend on
-------------------------------------
+-----------------------------------
 
-Manually edit your **biicode.conf** file to depend on any version you want. For example, on Erin Catto's Box2D:
- 
-* ``Box2D v 2.3.1`` is available on ``erincatto/box2d version 10``
+Manually edit your **biicode.conf** file to depend on any version you want. 
 
-* ``Box2D v 2.3.0`` is available on ``erincatto/box2d version 8``
-
-Biicode takes by default the latest version available.  To change it, just write the one you want in your ***biicode.conf**:
+To depend on *lasote/openssl* version 2, write in your *biicode.conf*:
 
 .. code-block:: text
+    :emphasize-lines: 2
 
-	[requirements] 
-		# required blocks (with version)
-		erincatto/box2d: 8
+	[requirements]
+	    lasote/openssl: 2
 
-|
+	[includes]
+	    openssl/md5.h: lasote/openssl/include
 
-Execute ``bii work`` command, once modified, to update a specific block version: 
+.. _tag_dependencies:
 
-.. code-block:: bash
+Update your *biicode.conf* file to depend on *lasote/OpenSSL tagged version 1.0.1l*:
 
-	$ bii work
+.. code-block:: text
+    :emphasize-lines: 2
 
-And you'll see the new dependencies retrieved in your ``deps folder``.
+	[requirements]
+	    lasote/openssl: @1.0.1l
 
+	[includes]
+	    openssl/md5.h: lasote/openssl/include
 
-Checking dependencies
----------------------
+Run **bii build** and you'll see the new dependencies in your *bii/deps* folder.
+
+For OpenSSL, there are two tracks available:
  
-Execute ``bii deps`` to get all information related to biicode’s dependency scanning. It shows all dependencies, system, local and biicode's.
+* ``OpenSSL 1.0.1`` is available at *lasote/openssl* versions 0,1,2 and 3.
 
-.. code-block:: bash
+* ``OpenSSL 1.0.2`` is available at *lasote/openssl(v1.0.2)* versions 0 and 1.
 
-	$ bii deps
-	INFO: Processing changes...
-	erincatto/box2d depends on:
-       diego/glfw: 0
-          include/GLFW/glfw3.h
-       system:
-          GL/gl.h
-          GL/glu.h
-          OpenGL/glu.h
-          algorithm
-          assert.h
-          float.h
-          inttypes.h
-          limits.h
-          math.h
+Update to release 1.0.2, just write it in your *biicode.conf*:
 
+.. code-block:: text
+    :emphasize-lines: 2
 
-``bii deps --detail`` comes in handy to locate unresolved dependencies. 
+	[requirements]
+	    lasote/openssl(v1.0.2): 0
 
-.. code-block:: bash
+	[includes]
+	    openssl/md5.h: lasote/openssl/include
 
-	$ bii deps --detail
-	INFO: Processing changes...
-	erincatto/box2d depends on:
-	       diego/glfw: 0
-	          include/GLFW/glfw3.h
-	                Testbed/Framework/DebugDraw.cpp (E)
-	                Testbed/Framework/Main.cpp (E)
-	                Testbed/Framework/Test.h (E)
-	       erincatto/box2d (self)
-	          Box2D/Box2D.h
-	                HelloWorld/HelloWorld.cpp (E)
-	                Testbed/Framework/DebugDraw.h (E)
-	                Testbed/Framework/Test.h (E)
-	          Box2D/Collision/Shapes/b2ChainShape.cpp
-	                Box2D/Collision/Shapes/b2ChainShape.h (I)
-	       ...
-
-
-``bii deps --files`` let's you check the dependant files extension.
-
-.. code-block:: bash
-
-	$ bii deps --files
-	INFO: Processing changes...
-	erincatto/box2d
-	       Box2D/Box2D.h [CPP]
-	           erincatto/box2d/Box2D/Collision/Shapes/b2ChainShape.h (E)
-	           erincatto/box2d/Box2D/Collision/Shapes/b2CircleShape.h (E)
-	           erincatto/box2d/Box2D/Collision/Shapes/b2EdgeShape.h (E)
-	           erincatto/box2d/Box2D/Collision/Shapes/b2PolygonShape.h (E)
-	           erincatto/box2d/Box2D/Collision/b2BroadPhase.h (E)
-	       ...
-	       Box2D/Box2DConfig.cmake.in [TEXT]
-	       Box2D/CMakeLists.txt [TEXT]
-	       Box2D/Collision/Shapes/b2ChainShape.cpp [CPP]
-	           erincatto/box2d/Box2D/Collision/Shapes/b2ChainShape.h (E)
-	           erincatto/box2d/Box2D/Collision/Shapes/b2EdgeShape.h (E)
-	           new (S)
-	           string.h (S)
-	       ...
-
-.. container:: infonote
-
- 	* Here's more information about :ref:`bii deps command<bii_deps_command>`.
+Execute **bii build** and you'll see the new dependencies in your *bii/deps* folder.
 
 .. _dependencies_block_track:
 
 Depending on a block track
----------------------------
-
-**Block Tracks** are different development *versions* of a block using the same block name-space. This way, you can switch between different development versions or **block tracks**, keeping the same *#includes* in your source code. Let's see an example with **libuv library**. 
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Currently, **libuv** keeps 3 mantained versions or **block tracks**:
 
@@ -182,158 +129,73 @@ Depend on one or another to fit your needs:
 	.. code-block:: cpp
 	    :emphasize-lines: 1
 
-	   	#include "lasote/libuv/include/uv.h"
+	   	#include "uv.h"
 
-
-* And depend on |libuv_0_11|, write in your **biicode.conf** file ``[requirements]`` :
-
-	*biicode.conf*
+* And depend on |libuv_0_11|, write in your *biicode.conf* file ``[requirements]`` :
 
 	.. code-block:: text
+	    :emphasize-lines: 2
 
 		[requirements] 
-			# required blocks (with version)
 			lasote/libuv(v0.11): 1
 
-* Execute ``bii cpp:build`` and you're ready to go. 
+		[includes]
+			uv.h : lasote/libuv/include
+
+* Execute **bii build** and you're ready to go. 
 
 Let's switch to |libuv_1_0|:
 
-* Modify ``[requirements]`` section :
-
-	*biicode.conf*
+* Modify ``[requirements]`` section in your *biicode.conf* :
 
 	.. code-block:: text
+		:emphasize-lines: 2
 
 		[requirements]
-			# required blocks (with version)
 			lasote/libuv(v1.0): 0
 
-* Execute ``bii cpp:build`` and it's switched.
+		[includes]
+			uv.h : lasote/libuv/include
+
+* Execute **bii build** and it's switched.
 
 And now, switch to |libuv_0_10|:
 
-* Modify ``[requirements]`` section :
-
-	*biicode.conf*
+* Modify ``[requirements]`` section in your *biicode.conf* :
 
 	.. code-block:: text
+	    :emphasize-lines: 2
 
 		[requirements] 
-			# required blocks (with version)
 			lasote/libuv(v0.10): 1
 
-* Execute ``bii cpp:build`` and it's switched.
+		[includes]
+			uv.h : lasote/libuv/include
 
-.. _tag_dependencies:
+* **bii build** and it's switched.
 
-Depending on a tagged version
------------------------------
-Use a specific block version using just its version tag. Write in your **biicode.conf** file ``[requirements]``:
-*biicode.conf*
+Tests
+-----
 
-.. code-block:: text
+Sometimes your library includes some tests to check your its functionality. Your *biicode.conf* ``[tests]`` section is here to cover these tests.
 
-	[requirements] 
-		# required blocks (with version)
-		Maria/oscpack @v1.1.0
-
-Execute ``bii cpp:build`` and biicode will retrieve the latest version with that tag and update the ``[requirements]`` section:
-
-*biicode.conf*
+Just write the test files specifically or the path to the folder that contains them like this:
 
 
 .. code-block:: text
 
-	[requirements] 
-		# required blocks (with version)
-		Maria/oscpack: 0 @v1.1.0
+	[tests]
 
+		projects/SelfTest/*
+		tests/unit_test.cpp
 
-.. _override_deps:
-
-Override a dependency
-----------------------
-
-Let's say you depend on: 
-
-* ``erincatto/box2d:10`` that depends on ``diego/glfw:0``. 
-
-|
-
-And you'd rather depend on:
-
-*  ``erincatto/box2d:10`` and ``diego/glfw:1``. 
-
-|
-
-Write your preferred versions in your **biicode.conf** and biicode will use those versions in your project: 
-
-.. code-block:: text
-
-	[requirements] 
-		# required blocks (with version)
-		erincatto/box2d: 10
-		diego/glfw:1
-
-Execute ``bii cpp:build`` and it's updated.
-
-
-Override a dependency with block tracks
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Create a block track when you need a personalized fix over the original library**.
-
-Let's create a block track from **diego/glfw** block:
-
-* Open the block:
-
-.. code-block:: bash
-
-	~$ bii init myproject
-	~$ cd myproject
-	~/myproject$ bii open diego/glfw
-
-* Code, adjust it to your needs.
-
-* Write the track name between brackets in the ``[parent]`` section of the **biicode.conf** file. Specify ``version -1`` because we want create a new block. 
-
-*biicode.conf*
-
-.. code-block:: text
-
-	[parent]
-  		diego/glfw(myuser/glfw): -1
-
-* Execute ``bii publish`` and enter your profile *www.biicode.com/myuser* to check the new track. 
-
-**Depend on that new block track:**
-
-* Write in your **biicode.conf** file ``[requirements]`` :
-
-		*biicode.conf*
-
-		.. code-block:: text
-
-			[requirements] 
-				# required blocks (with version)
-				diego/glfw(myuser/glfw): 1
-
-* Execute ``bii cpp:build`` and it's updated.
+Run **bii test** command and you're ready to go. 
 
 .. container:: infonote
 
-    What if you want to get back again to the original library? 
-    	
-    * Write in your **biicode.conf** file ``[requirements]`` :
+    You can specify in your ``[mains]`` section that your tests aren't mains. 
+    :ref:`Here's more on [mains] section. <mains_conf>`
 
-	    .. code-block:: text
-
-		    [requirements] 
-		        # required blocks (with version)
-			    diego/glfw: 0
-		
-    * Execute ``bii cpp:build`` and it's updated.
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
 
@@ -358,3 +220,7 @@ Let's create a block track from **diego/glfw** block:
 .. |libuv_1_0| raw:: html
 
    <a href="http://www.biicode.com/lasote/lasote/libuv/v1.0" target="_blank"><strong>Libuv library v1.0</strong></a>
+
+.. |Oscpack_biicode| raw:: html
+
+   <a href="http://www.biicode.com/Maria/oscpack" target="_blank"><strong>Oscpack library</strong></a>

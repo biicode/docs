@@ -17,7 +17,7 @@ Now, you can check all the csparse examples which are uploaded in biicode and ex
   ~$ bii init csparse_sample
   ~$ cd csparse_sample
   ~/csparse_sample$ bii open examples/csparse
-  ~/csparse_sample$ bii cpp:build
+  ~/csparse_sample$ bii build
 
 Execute any you want, for example, read a matrix saved in a file and solve a linear system:
 

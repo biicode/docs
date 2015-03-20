@@ -25,7 +25,7 @@ The ``main.cpp`` file is now in your block. Now you just have to build it and ru
 
 .. code-block:: bash
 
-	$ bii cpp:build
+	$ bii build
 	$ cd bin
 	$ # run executable
 

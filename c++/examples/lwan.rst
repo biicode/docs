@@ -17,7 +17,7 @@ This example is `already in biicode <http://www.biicode.com/examples/lwan>`_, it
    $ bii init lwan
    $ cd lwan
    $ bii open examples/lwan
-   $ bii cpp:build
+   $ bii build
 
 This example needs three files, first one that defines the server configuration:
 

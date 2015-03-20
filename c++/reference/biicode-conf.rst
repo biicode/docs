@@ -17,7 +17,7 @@ Place it into your block, next to your source code: ::
 	|    |    |  	|     |-- biicode.conf
 
 
-``biicode.conf`` has 8 different sections to configure your project.
+``biicode.conf`` has 9 different sections to configure your project.
 
 
 *biicode.conf example*
@@ -29,34 +29,46 @@ Place it into your block, next to your source code: ::
 			# Blocks and versions this block depends on e.g.
 			# user/depblock1: 3
 			# user2/depblock2(track) @tag
-			lasote/libuv(v0.11): 0
+
 		[parent]
-			lasote/haywire: 0
+		    # The parent version of this block. Must match folder name. E.g.
+		    # user/block  # No version number means not published yet
+		    # You can change it to publish to a different track, and change version, e.g.
+		    # user/block(track): 7
+
 		[paths]
-			# Local directories to look for headers (within block)
-			# /
-			include
+		    # Local directories to look for headers (within block)
+		    # /
+		    # include
+
 		[dependencies]
-			# Manual adjust file implicit dependencies, add (+), remove (-), or overwrite (=)
-			# hello.h + hello_imp.cpp hello_imp2.cpp
-			# *.h + *.cpp
+		    # Manual adjust file implicit dependencies, add (+), remove (-), or overwrite (=)
+		    # hello.h + hello_imp.cpp hello_imp2.cpp
+		    # *.h + *.cpp
+
 		[mains]
-			# Manual adjust of files that define an executable
-			# !main.cpp # Do not build executable from this file
-			# main2.cpp # Build it (it doesnt have a main() function, but maybe it includes it)
+		    # Manual adjust of files that define an executable
+		    # !main.cpp  # Do not build executable from this file
+		    # main2.cpp # Build it (it doesnt have a main() function, but maybe it includes it)
+
+		[tests]
+		    # Manual adjust of files that define a CTest test
+		    # test/* pattern to evaluate this test/ folder sources like tests
+
 		[hooks]
-			# These are defined equal to [dependencies],files names matching bii*stage*hook.py
-			# will be launched as python scripts at stage = {post_process, clean}
-			# CMakeLists.txt + bii/my_post_process1_hook.py bii_clean_hook.py
+		    # These are defined equal to [dependencies],files names matching bii*stage*hook.py
+		    # will be launched as python scripts at stage = {post_process, clean}
+		    # CMakeLists.txt + bii/my_post_process1_hook.py bii_clean_hook.py
+
 		[includes]
-			# Mapping of include patterns to external blocks
-			# hello*.h: user3/depblock # includes will be processed as user3/depblock/hello*.h
-			uv.h: lasote/libuv/include
+		    # Mapping of include patterns to external blocks
+		    # hello*.h: user3/depblock  # includes will be processed as user3/depblock/hello*.h
+
 		[data]
-			# Manually define data files dependencies, that will be copied to bin for execution
-			# By default they are copied to bin/user/block/... which should be taken into account
-			# when loading from disk such data
-			# image.cpp + image.jpg # code should write open("user/block/image.jpg")
+		    # Manually define data files dependencies, that will be copied to bin for execution
+		    # By default they are copied to bin/user/block/... which should be taken into account
+		    # when loading from disk such data
+		    # image.cpp + image.jpg  # code should write open("user/block/image.jpg")
 
 .. _requirements_conf:
 
@@ -65,7 +77,7 @@ Place it into your block, next to your source code: ::
 
 ``[requirements]`` section is fullfiled after executing ``bii find`` with the blocks and versions your block depends on.
 
-You can manually specify the block to depend on with its corresponding version or override a dependency just writing the version you want and executing ``bii cpp:build`` after that.
+You can manually specify the block to depend on with its corresponding version or override a dependency just writing the version you want and executing ``bii build`` after that.
 
 
 .. code-block:: text
@@ -187,12 +199,11 @@ Pattern 	Meaning
 ==========	========================================
 
 Examples
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^
 
 Let's see a few examples:
 
 * ``matrix32.h`` is dependency of the ``main.cpp`` file.
-
 
 .. code-block:: text
 
@@ -279,7 +290,7 @@ Use ``[hooks]`` section to link to certain python scripts that will be executed,
 
 This scripts have ".py" extension and name matches:
 
-+ ``bii*post_process*hook.py``: For scripts that will be launched before project building (*bii cpp:build* or *bii cpp:configure*)
++ ``bii*post_process*hook.py``: For scripts that will be launched before project building (*bii build* or *bii configure*)
 + ``bii*clean*hook.py``: For scripts that will be launched before a *bii clean* command.
 
 These are defined like :ref:`[dependencies] <dependencies_conf>`. 
@@ -355,7 +366,7 @@ This is pretty useful when using already existing libraries and you don't want t
 [data]
 --------
 Use ``[data]`` to specify a link with any file (.h, .cpp, ...) with any data (.txt, .jpg, ...) in your block.
-Once ``[data]`` section is specified and the code is built (``bii cpp:build``), the data files will be saved, by default, in your *project/bin/user/block* folder.
+Once ``[data]`` section is specified and the code is built (``bii build``), the data files will be saved, by default, in your *project/bin/user/block* folder.
 
 **Example:**
 

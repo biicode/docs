@@ -66,7 +66,7 @@ Now it is time to see the result of the previous steps. You can build your main 
 
 .. code-block:: bash
 
-   $ bii cpp:build
+   $ bii build
    $ cd bin
    $ #run your executable
 

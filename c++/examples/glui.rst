@@ -50,11 +50,11 @@ You can explore the **source code block** for this example `following this link 
 		<project_name>$ bii find
 
 
-4. Finally, **compile your program** using the ``bii cpp:build`` command:
+4. Finally, **compile your program** using the ``bii build`` command:
 
 .. code-block:: bash
 
-		<project_name>$ bii cpp:build
+		<project_name>$ bii build
 
 If there were no errors during compilation, you'll find a new executable file inside your project's ``bin`` folder. If you run this program, you should see something similar to this screen capture. If you found any problems, `please contact us at our forum <http://forum.biicode.com/category/c-c>`__.
 

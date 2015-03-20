@@ -30,7 +30,7 @@ This example is already in biicode, `check it out <http://www.biicode.com/exampl
 
  .. code-block:: bash 
 
-     $ bii cpp:configure -G "Visual Studio 12"
+     $ bii configure -G "Visual Studio 12"
 
 Check the code
 --------------
@@ -55,11 +55,11 @@ Next, we'll use the object detection example. It uses a CascadeClasifier class a
 Build and run the examples
 --------------------------
 
-Now execute ``bii cpp:build`` to build the project.
+Now execute ``bii build`` to build the project.
 
 .. code-block:: bash
  
- $ bii cpp:build
+ $ bii build
 
 Go to bin directory and execute the binaries:
 

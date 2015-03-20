@@ -32,7 +32,7 @@ This example is `already in biicode <http://www.biicode.com/examples/poco_pdf>`_
 
  .. code-block:: bash 
 
-     $ bii cpp:configure -G "Visual Studio 12"
+     $ bii configure -G "Visual Studio 12"
 
 Choose your PDF output name, the font and size, the page of the document, the content of the string and the margins from the pdf page you want to generate:
 
@@ -47,11 +47,11 @@ Choose your PDF output name, the font and size, the page of the document, the co
 Generate the PDF
 ^^^^^^^^^^^^^^^^
 
-Now execute ``bii cpp:build`` to build the project.
+Now execute ``bii build`` to build the project.
 
 .. code-block:: bash
  
- $ bii cpp:build
+ $ bii build
 
 Go to bin directory and execute:
 
