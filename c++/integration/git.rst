@@ -7,14 +7,14 @@ Git (GitHub, Bitbucket, etc.)
 
 Biicode does not intend to be version control system. We recommend you using a control version system so you can keep your code safe and versioned. You can use also SVN or CVS.
 
-With a new project
-------------------
+With a new repository
+---------------------
 
 Just ``init`` the git repository in your block folder. As in the example:
 
 .. code-block:: bash
 
-  $ bii init my_block
+  $ bii init my_block -L
   $ cd my_block
   $ git init .
   $ git add .
