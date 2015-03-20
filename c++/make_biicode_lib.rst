@@ -1,7 +1,7 @@
 .. _make_block:
 
-Making your own library with biicode
-=====================================
+Developing with biicode
+=======================
 
 Follow this guide to develop your library along with biicode wether if it's tiny or huge. These are basic steps to go. 
 
@@ -35,7 +35,7 @@ For example:
 
 .. container:: infonote
 
-    :ref:`More information on :ref:`[paths] section<paths_conf>`
+    More information on :ref:`[paths] section<paths_conf>`
 
 Tests
 ^^^^^
@@ -64,35 +64,35 @@ CMakeLists.txt
 * For projects with no *CMakeLists.txt* just execute **bii build** and biicode will create a default one. 
 * Had a previous *CMakeLists.txt*? There are different approaches: 
 
-You can adapt your *CMakeLists.txt* like this: 
+    You can adapt your *CMakeLists.txt* like this: 
 
-.. code-block:: cmake
+    .. code-block:: cmake
 
-   IF(BIICODE)   
-      ADD_BIICODE_TARGETS()  
-   ELSE()
-      # Your regular CMakeLists configuration here
-   ENDIF() 
+       IF(BIICODE)   
+          ADD_BIICODE_TARGETS()  
+       ELSE()
+          # Your regular CMakeLists configuration here
+       ENDIF() 
 
-Or being less intrusive:
+    Or being less intrusive:
 
-.. code-block:: cmake
+    .. code-block:: cmake
 
-    if (BIICODE)
-    include(biicode.cmake)
-    return()
-    endif ()
+        if (BIICODE)
+        include(biicode.cmake)
+        return()
+        endif ()
 
-And write in that macro the specific cmake config for biicode, like:
+    And write in that macro the specific cmake config for biicode, like:
 
-.. code-block:: cmake
+    .. code-block:: cmake
 
-    #biicode.cmake file
+        #biicode.cmake file
 
-    ADD_BIICODE_TARGETS()
+        ADD_BIICODE_TARGETS()
 
 
-* Follow this :ref:`Build Config Guide <cpp_building>` for understanding in depth building with biicode and CMake.
+* Follow this :ref:`Build Config Guide <cpp_building>` to understand in depth building with biicode and CMake.
 
 * There's also a post series explaining how to |upload_to_biicode| and a blogpost explaining how to |reuse_cmake_macros|.
 
