@@ -29,7 +29,7 @@ Place it into your block, next to your source code: ::
 			# Blocks and versions this block depends on e.g.
 			# user/depblock1: 3
 			# user2/depblock2(track) @tag
-			
+
 		[parent]
 		    # The parent version of this block. Must match folder name. E.g.
 		    # user/block  # No version number means not published yet
@@ -199,12 +199,11 @@ Pattern 	Meaning
 ==========	========================================
 
 Examples
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^
 
 Let's see a few examples:
 
 * ``matrix32.h`` is dependency of the ``main.cpp`` file.
-
 
 .. code-block:: text
 

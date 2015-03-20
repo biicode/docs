@@ -112,7 +112,6 @@ Below the header there are some tabs showing:
 
         .. image:: /_static/img/c++/dependency_graph.png
 
-
 Block Tracks
 -------------
 
@@ -124,8 +123,6 @@ Publish a new block Track
 
 Write the track name between brackets in the ``[parent]`` section of the **biicode.conf** file. Specify ``version -1`` because we want create a new block. 
 
-*biicode.conf*
-
 .. code-block:: text
 
   [parent]
@@ -134,8 +131,6 @@ Write the track name between brackets in the ``[parent]`` section of the **biico
 Now you have configured a track of your block.
 
 In case you need a personalized fix over the original library from other user, just indicate it in the ``[parent]`` section like this:
-
-*biicode.conf*
 
 .. code-block:: text
 

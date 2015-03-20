@@ -10,21 +10,31 @@ Publishing
   $ bii publish
 
 
-Tag's default value is ``DEV``, but all Release life-cycle TAG values are available: ``DEV``, ``ALPHA``, ``BETA`` and ``STABLE``:
+Tag's default value is ``DEV``.
 
 .. code-block:: bash
 
   $ bii publish  --tag STABLE
 
- 
-``ALPHA``, ``BETA`` and ``STABLE`` versions, are frozen after publication to achieve full reproducibility. ``DEV`` versions are overridden by a new version on any tag. Let's understand its behavior with an example:
+ ``STABLE`` versions are frozen after publication and ``DEV`` versions are overridden by a new version. Each time you publish to biicode your local ``[parent]`` value updates to the latest one you just published. 
 
-* Publish a ``DEV`` version. That's number ``0``.
+ Let's understand this behavior with an example:
+
+* Publish your first **DEV** version.
+
+  Its ``[parent]`` section should be empty or with its first value like this:
+
+    .. code-block:: text
+      :emphasize-lines: 2
+
+       [parent]
+          user_name/block_name: -1
+
+Once published, your ``[parent]`` updates to version ``0`` and that's also number ``0`` in biicode. 
+
 * Publish a ``DEV`` version. That's still number ``0``.
-* Publish a ``BETA`` version. That overwrites number ``0``.
-* Publish a ``DEV`` version. That's number ``1``.
-* Publish a ``ALPHA`` version. That overwrites number ``1``.
-* Publish a ``STABLE`` version. That's number ``2``.
+* Publish a ``STABLE`` version. That's still number ``0``.
+* Publish another ``STABLE`` version. That's number ``1`` in biicode.
 
 .. _version_tags:
 
@@ -42,43 +52,6 @@ Put a semantic name to your block versions. Once tagged, you can :ref:`depend on
 
     ``DEV`` versions can not be tagged.
 
-
-
-
-Block Tracks
--------------
-
-Use **Block Tracks** to publish different development *versions* of a block using the same block name-space. This way, dependent blocks can keep the same *#includes* in their source code.
-
-
-Publish a new block Track
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Write the track name between brackets in the ``[parent]`` section of the **biicode.conf** file. Specify ``version -1`` because we want create a new block. 
-
-*biicode.conf*
-
-.. code-block:: text
-
-	[parent]
-  		myuser/myblock(track1): -1
-
-Now you have configured a track of your block.
-
-In case you need a personalized fix over the original library from other user, just indicate it in the ``[parent]`` section like this:
-
-*biicode.conf*
-
-.. code-block:: text
-
-	[parent]
-  		lasote/libuv(myuser/track1): -1
-
-This way, you have configured a track of other user whitout changing *includes*.
-
-Execute ``bii publish`` and enter your profile *www.biicode.com/myuser* to check the new track. 
-
-Read a bit more about how *tracks* work, visit our post in the blog about |biicode_blog_blocktracks|.
 
 Private blocks
 --------------
