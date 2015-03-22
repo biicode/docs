@@ -114,13 +114,15 @@ Execute **bii build** and you'll see the new dependencies in your *bii/deps* fol
 Depending on a block track
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Currently, **libuv** keeps 3 mantained versions or **block tracks**:
+Currently, **libuv** keeps 4 mantained versions or **block tracks**:
 
 		* |libuv_0_10| (Stable, used by Nodejs)
 
 		* |libuv_0_11| (Non stable, but commonly used)
 
-		* |libuv_1_0| (Made stable few days ago)
+		* |libuv_1_0|
+
+		* |libuv_1_x| (Latest)
 
 Depend on one or another to fit your needs:
 
@@ -174,6 +176,22 @@ And now, switch to |libuv_0_10|:
 
 * **bii build** and it's switched.
 
+At last, switch to |libuv_1_x|:
+
+* Modify ``[requirements]`` section in your *biicode.conf* :
+
+	.. code-block:: text
+	    :emphasize-lines: 2
+
+		[requirements] 
+			lasote/libuv(v1.x): 8
+
+		[includes]
+			uv.h : lasote/libuv/include
+
+* **bii build** and it's switched.
+
+
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
 
 
@@ -197,6 +215,12 @@ And now, switch to |libuv_0_10|:
 .. |libuv_1_0| raw:: html
 
    <a href="http://www.biicode.com/lasote/lasote/libuv/v1.0" target="_blank"><strong>Libuv library v1.0</strong></a>
+
+
+.. |libuv_1_x| raw:: html
+
+   <a href="http://www.biicode.com/lasote/lasote/libuv/v1.x" target="_blank"><strong>Libuv library v1.x</strong></a>
+
 
 .. |Oscpack_biicode| raw:: html
 
