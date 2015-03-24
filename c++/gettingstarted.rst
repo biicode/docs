@@ -30,23 +30,16 @@ Create your first project
 
     ~$ bii init unit_test -L
     ~$ cd unit_test
-    ~/unit_test$ #create a main.cpp and a biicode.conf
+    ~/unit_test$ #create a main.cpp
 
-Create a *main.cpp* and a *biicode.conf* file into *unit_test/* folder.
-
-.. code-block:: text
-
-  unit_test/
-        ├── bii/
-        ├── biicode.conf
-        └── main.cpp
+Create a *main.cpp* into *unit_test/* folder.
 
 Place this code into the *main.cpp* file:
 
 .. code-block:: cpp
   :emphasize-lines: 1
 
-  #include "gtest/gtest.h"
+  #include "google/gtest/include/gtest/gtest.h"
   
   int sum(int a, int b) {return a+b;}
   
@@ -59,14 +52,48 @@ Place this code into the *main.cpp* file:
     return RUN_ALL_TESTS();
   }
 
-This is just a sum function and a test using Google Test framework. 
-Executing **bii deps** you can see there's an unresolved dependency for *"gtest/gtest.h"*. 
+This is just a sum function and a test using Google Test framework.  
 
-Let's retrieve |google_test_biicode_link| block. It has an **owner: google** and latest version is **10 tagged STABLE**.
+It *#includes* |google_test_biicode_link| block. It has an **owner: google** and latest version is **10 tagged STABLE**.
 
-.. image:: /_static/img/c++/gtest_include.png
+.. image:: /_static/img/c++/gtest_in_biicode.png
 
-Now write the specs to retrieve this dependency in your *biicode.conf* file:
+Retrieve the dependency:
+
+.. code-block:: bash
+
+  ~$ bii find
+  ...
+
+  INFO: Analyzing compatibility for found dependencies... 
+  INFO: All dependencies resolved
+  Find resolved new dependencies:
+    google/gtest: 10
+  INFO: Saving files from: google/gtest
+
+This creates a *biicode.conf* file and places GoogleTest block in your *bii/deps* folder:
+
+.. code-block:: text
+
+    unit_test/
+          ├── bii/
+          │   ├── deps/
+          │   │   └── google/
+          │   │       └── gtest/
+          ├── biicode.conf
+          └── main.cpp
+
+Keeping #includes short
+^^^^^^^^^^^^^^^^^^^^^^^
+
+  .. code-block:: cpp
+    :emphasize-lines: 1
+
+    #include "gtest/gtest.h"
+
+Instead of using long *#includes* and **bii find**, you can write the specs to retrieve this dependency in your *biicode.conf*.
+
+* Split the long ``#include "google/gtest/include/gtest/gtest.h"`` in two halfs :
 
 .. code-block:: text
 
@@ -84,9 +111,6 @@ Now write the specs to retrieve this dependency in your *biicode.conf* file:
 
           [includes]
               gtest/*.h: google/gtest/include
-    
-    Or the whole #include route, executing **bii find**: 
-    ``#include "google/gtest/include/gtest/gtest.h"``
 
 Build and run it
 ----------------
@@ -95,7 +119,6 @@ Build and run your Unit Test, check it works:
 
 .. code-block:: bash
 
-  ~/$ cd unit_test
   ~/unit_test$ bii build
   ...
   ~/unit_test$ bin\user_unit_test_main
@@ -115,22 +138,11 @@ Build and run your Unit Test, check it works:
 
 **That's it**, that output means Google Test was downloaded, configured and built in your project!
 
-Check in your ``bii/deps`` folder, GoogleTest block is there:
-
 .. code-block:: text
-    :emphasize-lines: 1,2,5,6,7
+    :emphasize-lines: 1,3,6,7
 
     unit_test/
-          ├── bii
-          │   ├── build/
-          │   ├── cmake/
-          │   ├── deps
-          │   │   └── google
-          │   │       └── gtest/
-          │   ├── layout.bii
-          │   ├── lib/
-          │   ├── policies.bii
-          │   └── settings.bii
+          ├── bii/
           ├── biicode.conf
           ├── bin
           │   └── user_unit_test_main
@@ -145,8 +157,8 @@ biicode configures your default settings to no IDE and MinGW (Windows) or UNIX M
 
   .. code-block:: bash
 
-    ~/unit_test$ bii configure -G "Eclipse CDT4 - Unix Makefiles"
     ~/unit_test$ bii configure -G "Visual Studio 10"
+    ~/unit_test$ bii build
 
 Here's more about :ref:`configuring your IDE <generators_ide>`.
 
@@ -195,7 +207,7 @@ Celebrate! You've just published your first block in biicode. You know that we a
 
 .. |biicode_forum_link| raw:: html
 
-   <a href="http://forum.biicode.com" target="_blank">the biicode forum</a>
+   <a href="http://forum.biicode.com" target="_blank">biicode's forum</a>
  
 
 .. |biicode_write_us| raw:: html
