@@ -7,10 +7,10 @@ Release notes
 
 	* New [tests] section improved, working fine in Visual Studio
 	* "bii test" now allows parameters (-jN for parallel builds/runs, and CTest other parameters -R -E -C Debug, etc)
-	* Much simples "policies.bii" configuration, old ones will be automatically migrated
+	* Simpler "policies.bii" configuration, old ones will be automatically migrated
 	* Now "bii find" works also with [includes], so it is not necessary to fill both the [includes] and the [requirements]
-	* Possible to search in web for file names with the "file:" label inside the search box
-	* Issue warning when using absolute #include paths within the current block, as this wouldnt work in simple layouts
+	* Search in web for file names with the "file:" label inside the search box
+	* Issue warning when using absolute #include paths within the current block, as this wouldn't work in simple layouts
 	* Fixed bug with "bii publish -r" in simple layout
 	* Renamed custom target "check" associated with "bii test" to "biitest", as the check target might collide with user ones
 	
