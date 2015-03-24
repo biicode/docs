@@ -16,9 +16,9 @@ Tag's default value is ``DEV``.
 
   $ bii publish  --tag STABLE
 
- ``STABLE`` versions are frozen after publication and ``DEV`` versions are overridden by a new version. Each time you publish to biicode your local ``[parent]`` value updates to the latest one you just published. 
+``STABLE`` versions are frozen after publication and ``DEV`` versions are overridden by a new version. Each time you publish to biicode your local ``[parent]`` value updates to the latest one you just published. 
 
- Let's understand this behavior with an example:
+Let's understand this behavior with an example:
 
 * Publish your first **DEV** version.
 
