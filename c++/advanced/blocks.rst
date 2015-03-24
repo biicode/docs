@@ -35,7 +35,7 @@ Execute ``bii publish`` and enter your profile *www.biicode.com/myuser* to check
 Read a bit more about how *tracks* work, visit our post in the blog about |biicode_blog_blocktracks|.
 
 Private blocks
---------------
+==============
 
 Upgrade your account to Premium, |biicode_write_us|, to use Private blocks. Store your code in private, choose who can see or edit your blocks.
 
