@@ -1,125 +1,16 @@
 .. _cpp_blocks:
 
-What is a block?
-----------------
-
-**A block** (also known as 'repo' or 'repository') is the place to put your code in biicode. 
+Publish a block track
+=====================
 
 Each block has an *owner, name, version* and *tag*. For example, the |openssl_link| block has an **owner** (lasote) and latest version is **4 DEV**.
-
-Here's an example block structure:
-
-.. code-block:: text
-
-  +-- block_name/
-  |   +-- src/
-  |   |   +-- main.cpp
-  |   +-- test/
-  |   |   +-- test1.cpp 
-  |   +-- biicode.conf
-  |   +-- CMakeLists.txt
-  |   +-- README
-
-These are the main components of a block (under the ``block_name/`` directory):
-
-  - Your repo's code, with its sources and folders.
-  - ``CMakeLists.txt`` file, to specify your build config.
-  - ``biicode.conf`` file with information about your block and its dependencies.
-  - a README 
-
-* :ref:`More information on the biicode.conf file<biicode_conf>`
-
-* :ref:`Building Configuration your own Block <cpp_building>`
-
-Block's web view
-^^^^^^^^^^^^^^^^
-
-As you know, a block is where you place your code in biicode. Blocks available in the web are the ones you can depend on.
-
-Take a look at blocks in a `profile main page <https://www.biicode.com/examples>`_:
-
-.. image:: /_static/img/c++/profile_view.png
-
-As you see, blocks are organized in the web as ``owner/block_name`` too.
-
-You can create a public or private block in the web by clicking on "Create block" and add directly a description.
-
-.. image:: /_static/img/c++/create_block.png
-
-Start working with the block you just created, type in your project folder:
-
-.. code-block:: bash
- 
-  $ bii open owner/block_name
-
-In the block's view you see the code, structure and information:
-
-.. image:: /_static/img/c++/block_view.png
-
-In the header you see:
-
-  * **Block's name**
-  * :ref:`Version<cpp_publishing>`
-  * **Last time published**
-  * **Description**: A brief description of the block. For longer description it's recommended to add a README file.
-  * **Tags**: topics your block is related to.
-  * **Settings**: Edit your block's settings by giving a description or tagging the block.
-
-Below the header there are some tabs showing:
-
-.. container:: tabs-section
-    
-    .. _block_web_tabs_code:
-    .. container:: tabs-item
-
-        .. rst-class:: tabs-title
-            
-            Code Browser
-
-        This is the default view.
-        You have the structure of your project and you can check the code or the files inside directories, as well as download all the block in a ZIP file.
-
-    .. _block_web_tabs_requirements:
-    .. container:: tabs-item
-
-        .. rst-class:: tabs-title
-            
-            Block requirements
-
-        This section shows blocks and versions your block depends on. You can view here the reuses of your block too.
-
-        .. image:: /_static/img/c++/block_requirements.png
-
-    .. _block_web_tabs_dependencies:
-    .. container:: tabs-item
-
-        .. rst-class:: tabs-title
-
-           Block dependencies
-
-        Block's dependencies of all kind: system, resolved and unresolved ones.
-
-        .. image:: /_static/img/c++/block_dependencies.png
-
-    .. _block_web_tabs_graph:
-    .. container:: tabs-item
-
-        .. rst-class:: tabs-title
-
-            Dependencies graph
-
-        Visual representation of block's dependencies.
-
-        .. image:: /_static/img/c++/dependency_graph.png
-
-Block Tracks
--------------
 
 Use **Block Tracks** to publish different development *versions* of a block using the same block name-space. This way, dependent blocks can keep the same *#includes* in their source code.
 
 
+
 Publish a new block Track
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 Write the track name between brackets in the ``[parent]`` section of the **biicode.conf** file. Specify ``version -1`` because we want create a new block. 
 

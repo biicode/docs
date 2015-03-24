@@ -55,8 +55,35 @@ Run **bii test** command and you're ready to go.
 
 .. container:: infonote
 
-    You can specify in your ``[mains]`` section that your tests aren't mains. 
+    You can specify in your ``[mains]`` section that which tests aren't mains. 
     :ref:`Here's more on [mains]<mains_conf>` and :ref:`[tests] <test_conf>` sections.
+    
+--------------------------------
+
+Ahora bii test es un wrapper del comando "bii build" y "ctest", es decir, que ahora tus test son totalmente configurables con las opciones que brinda CTest de CMake.
+
+$ bii test -E _main -R test_
+
+Para mas info http://www.cmake.org/cmake/help/v2.8.8/ctest.html
+
+Además de esto hay varios comportamientos a destacar.
+
+- Por defecto (sino pones ninguna opción) biicode ejecutaría:
+
+$ bii test ==  $bii test -VV   (opción extra verbose de ctest)
+
+- Si estas usando Visual Studio. Tanto por defecto o con opciones:
+
+$ bii test == $bii test -VV -C Debug
+
+Si metieras por ejemplo -C Release  te lo respeta.
+
+- Por último hay que mencionar la opción -jx  que serviría tanto para lanzar el build y los test con ese flag (tienen efectos diferentes):
+
+$ bii test -j2 == $ bii build -j2 + $ bii test -j2
+
+
+
 
 CMakeLists.txt
 --------------
