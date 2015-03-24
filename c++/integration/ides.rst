@@ -18,8 +18,7 @@ Choose yours, and tell biicode to configure your project for that IDE:
 	$ bii configure -G "CMake generator name"
 
 
-``bii configure`` admits any other CMake directives. For example, to enable the **Debug** build configuration,
-(e.g. Visual Studio, Eclipse):
+``bii configure`` admits any other CMake directives. For example, to enable the **Debug** build configuration,(e.g. Visual Studio, Eclipse):
 
 .. code-block:: bash
 
@@ -28,8 +27,7 @@ Choose yours, and tell biicode to configure your project for that IDE:
 
 .. container:: infonote
 
-	**Note:** If you are working with an IDE (Visual, Eclipse, CLion), and you change your project structure,
-	add/remove files, add/remove dependencies, you might need to manually invoke ``bii configure`` again in your terminal.
+	**Note:** When you are working with an IDE (Visual, Eclipse, CLion), and you change your project structure, add/remove files or dependencies, you might need to run **bii configure** again.
 
 
 .. _ide_eclipse:
@@ -63,7 +61,7 @@ If you want to add new files to your block, just right-click on the folder of yo
 
 You can build your application in *Project > Build project*
 
-If you are using  Eclipse with **OS X** as development platform, you will need some additional setup to execute your binaries within this IDE. :ref:`Read this troubleshooting section for more information <eclipse_osx_binaries>`.
+If you are using  Eclipse with **Mac OS X**, you will need some additional setup to execute your binaries within this IDE. :ref:`Read this troubleshooting section for more information <eclipse_osx_binaries>`.
 
 
 .. _ide_visual:
@@ -79,7 +77,6 @@ Generate a Microsoft Visual Studio 12 (2013) project:
 
 
 **Open your project with Visual Studio**. Just **double-click on the .sln file inside the build folder** of your project and a VS project will open.
-
 
 .. _ide_clion:
 
@@ -102,7 +99,7 @@ And configure your project to set the changes:
 
 Open the biicode project with CLion *(File -> Open)*. 
 
-Use biicode's commands from the embedded Terminal in CLion, open it with: ``Alt+F12`` or *View -> Tool Windows -> Terminal*.
+Use biicode's commands from the embedded Terminal in CLion, open it with: **Alt+F12** or *View -> Tool Windows -> Terminal*.
 
 .. container:: infonote
      
@@ -111,25 +108,26 @@ Use biicode's commands from the embedded Terminal in CLion, open it with: ``Alt+
      
 IDEs and VCS
 ==============
-If you are working with Eclipse or CLion IDEs that do not allow the simple biicode layout with code in the root folder,
-the workflow for working with them would be the following, instructing to clone/checkout the code at the corresponding folder.
-For example, for CLion:
 
-.. code-block:: bash
+Eclipse or CLion IDEs need the classic biicode folder layout (can't handle your code directly in the root folder). Next steps cover how to use them when importing a project from a git repo.  Just clone/checkout the code at the corresponding folder.
 
-   $ bii init myproject -l=clion
-   $ cd myproject
-   $ git clone https://github.com...    blocks/username/blockname
-   $ bii configure 
-   
-Similarly for Eclipse CDT projects:
+* CLion:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-   $ bii init myproject
-   $ cd myproject
-   $ git clone https://github.com...    blocks/username/blockname
-   $ bii configure -G "Eclipse CDT4 - MinGW Makefiles" (or Unix)
+     $ bii init myproject -l=clion
+     $ cd myproject
+     $ git clone https://github.com...    blocks/username/blockname
+     $ bii configure 
+     
+* Eclipse CDT projects:
+
+  .. code-block:: bash
+
+     $ bii init myproject
+     $ cd myproject
+     $ git clone https://github.com...    blocks/username/blockname
+     $ bii configure -G "Eclipse CDT4 - MinGW Makefiles" (or Unix)
 
 If you have any questions, we are available at |biicode_forum_link| and/or |biicode_stackoverflow_link|. You can also |biicode_write_us| for suggestions and feedback.
 
