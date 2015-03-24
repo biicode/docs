@@ -11,7 +11,7 @@ This command invokes the C++ compiler to build your project.
  Building: cmake --build .
  ...
 
-  [100%] Built target myuser_myblock_main
+ [100%] Built target myuser_myblock_main
 
 
 .. _build_cmake_options:
@@ -40,17 +40,29 @@ Now, using biicode, for example:
 
    $ bii build --use-stderr
    
-If you are building in a Linux or Mac system or MinGW (with make), you can probably 
-speed up your builds **using multiple jobs** (threads, cores) with the **-jN make** option
-where N is the number of concurrent jobs desired (please note the -- before -jN):
+Building in a Linux or Mac OS X system or MinGW (with make). You can probably **speed up your builds using multiple jobs** (threads, cores):
+
+Execute **bii build -jN** to run Makefile with this option and use the N cores of your machine: 
+
+.. code-block:: bash
+
+    $ bii build -j4 == cmake --build . -- -j4
+
+This also works with Visual Studio compiler:
+
+.. code-block:: bash
+
+    $ bii build -j4 == cmake --build . -- /m:4
+
+You can also use the **-jN make** option where N is the number of concurrent jobs desired (please note the - - before - jN): 
 
 .. code-block:: bash
 
    $ bii build -- - j4
    
-If you are building with Visual Studio compiler (even in the command line), the
-equivalent option is /m:N, so you can:
+Building with Visual Studio compiler (even in the command line), the equivalent option is /m:N, so you can:
 
 .. code-block:: bash
 
    $ bii build -- /m:4
+
