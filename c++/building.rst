@@ -16,4 +16,3 @@ Here, you'll learn how to define your **CMakeLists.txt** to delve into full func
 
    building/cmake_basics
    building/biicode_building
-   building/adapt_library

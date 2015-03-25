@@ -197,6 +197,29 @@ Configure **executable** target
 
      TARGET_COMPILE_DEFINITIONS(${BII_my_main_TARGET} PUBLIC "MY_DEFINITION=1")
 
+  .. container:: infonote
+
+     If someone depends on your library, biicode will download only the required files (according to dependency graph). So you can't assume that ${BII_my_main_TARGET} target will exist. If you reference a target that doesn't exist build will fail. Whenever possible don't act upon EXE targets. Remember that **BII_BLOCK_TARGET** will be applied to each target in your block. Act upon **BII_BLOCK_TARGET**.
+
+
+Select build type: Debug or Release
+-----------------------------------
+
+You can set the build type with -D option in ``bii configure`` command:
+
+
+.. code-block:: sh
+
+    $ bii configure -DCMAKE_BUILD_TYPE=DEBUG
+    $ bii build
+
+Possible values are: **DEBUG**, **RELEASE**, **RELWITHDEBINFO**, **MINSIZEREL**
+
+Check official docs from |cmake_build_type|.
+
+.. container:: infonote
+     
+     Use ``bii clean`` command to restore most of your project's meta-information. Here's more about :ref:`bii clean command<biiclean>`.
 
 
 
@@ -222,29 +245,6 @@ Complete variable reference
 :**BII_BLOCK_TARGET**: CMake **Interface** that represents the whole block. Always exists and is applied both library and executables (each target). You can use it to configure block building configuration: Link libraries, compile flags...etc 
 :**BII_BLOCK_TARGETS**: List of all targets defined in this block
 :**BII_exe_name_TARGET**: Executable target (listed in ${BII_BLOCK_EXES}) (e.g. ${BII_main_TARGET}. You can also use directly the name of the executable target (e.g. user_block_main)
-
-
-
-
-Select build type: Debug or Release
------------------------------------
-
-You can set the build type with -D option in ``bii configure`` command:
-
-
-.. code-block:: sh
-
-    $ bii configure -DCMAKE_BUILD_TYPE=DEBUG
-    $ bii build
-
-Possible values are: **DEBUG**, **RELEASE**, **RELWITHDEBINFO**, **MINSIZEREL**
-
-Check official docs from |cmake_build_type|.
-
-.. container:: infonote
-     
-     Use ``bii clean`` command to restore most of your project's meta-information. Here's more about :ref:`bii clean command<biiclean>`.
-
 
 
 
