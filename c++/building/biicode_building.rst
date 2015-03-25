@@ -89,7 +89,7 @@ For example, if the block *lasote/game* has a *main.cpp* in a folder named "src"
 Which source code files are part of each **executable**
 =======================================================
 
-``BII_exe_name_SRC`` contains all source code that will be added to the exe. "exe_name" matches this pattern: *path_to_mainfil*.
+``BII_exe_name_SRC`` contains all source code that will be added to the exe. "exe_name" matches this pattern: *path_to_mainfile*.
 
 For example, if the block *lasote/game* has a *main.cpp* in a folder named "src" the variable will be: "BII_src_main_SRC"  
   
