@@ -5,7 +5,7 @@
 
 Specify your project layout config with ``layout.bii`` file.
 
-With ``layout.bii`` you can place the auxiliary folders *(cmake/ build/ deps/ and lib/)*wherever you want, just specify the relative routes to the folders you want to use instead.
+With ``layout.bii`` you can place the auxiliary folders *(cmake/ build/ deps/ and lib/)* wherever you want, just specify the relative routes to the folders you want to use instead.
 
 ``bii init -l simple`` creates a default ``layout.bii`` content that places all auxiliary folders in your project's *bii/* folder:
 
