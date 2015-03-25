@@ -38,7 +38,7 @@ Check the dependencies of the project with **bii deps**:
  
  $ bii deps
  INFO: Processing changes...
- examples/cryptopp depends on:
+ your_user/cryptopp depends on:
        system:
           iostream
           string
