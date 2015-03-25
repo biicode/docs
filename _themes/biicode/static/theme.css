@@ -5605,7 +5605,8 @@ body.nodejs .nav-rel a:hover {
 
 .toctree-wrapper
 {
-  margin-bottom:10px;
+  margin-bottom: 47px;
+  margin-top: 47px;
 }
 .toctree-wrapper tt {
     font-size: 90% !important;
