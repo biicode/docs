@@ -358,6 +358,7 @@ Use ``bii`` variable inside hook scripts to:
 
 Check an example in this block: |maria_bitscope|.
 
+.. _includes_conf:
 
 [includes]
 ----------
