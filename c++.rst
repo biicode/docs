@@ -13,8 +13,7 @@ A multi-platform C and C++ dependency manager.
    c++/dependencies
    c++/publishing
    c++/make_biicode_lib
-   c++/building
-   c++/adapt_library_guide   
+   c++/building  
    c++/advanced
    c++/examples
    c++/integration
