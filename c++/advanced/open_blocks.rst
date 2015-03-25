@@ -1,7 +1,10 @@
 .. _workflows_own_blocks:
 
+Open multiple blocks
+--------------------
+
 Working with your own blocks
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the :ref:`Getting Started guide <cpp_getting_started>` we built a program and reused the **sum function**. Now it's time to add new functionality to your published **myuser/math** block, like a **subtract function**, and use it in your block **myuser/calc**.
 
@@ -148,7 +151,7 @@ You can also |biicode_write_us| for suggestions and feedback, they are always we
 .. _workflows_any_block:
 
 Working with any published block
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To **edit a published block**, follow the steps below:
 

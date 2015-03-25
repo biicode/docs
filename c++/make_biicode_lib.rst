@@ -51,12 +51,13 @@ Just write the test files specifically or the path to the folder that contains t
     projects/SelfTest/*
     tests/unit_test.cpp
 
-Run **bii test** command and you're ready to go. 
+Run **bii test**  and you're ready to go. Check :ref:`bii test options here<bii_test_command>`.
 
 .. container:: infonote
 
-    You can specify in your ``[mains]`` section that your tests aren't mains. 
+    You can specify in your ``[mains]`` section that which tests aren't mains. 
     :ref:`Here's more on [mains]<mains_conf>` and :ref:`[tests] <test_conf>` sections.
+
 
 CMakeLists.txt
 --------------

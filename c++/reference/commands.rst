@@ -1,7 +1,7 @@
 .. _bii_commands:
 
 Commands
-==========
+========
 
 These are the **commands available in biicode**.
 You can:
@@ -16,7 +16,6 @@ You can:
 
 * **reuse** from other user's code.
 
-|
 |
 
 .. toctree::

@@ -22,7 +22,7 @@ Let's understand this behavior with an example:
 
 * Publish your first **DEV** version.
 
-  Its ``[parent]`` section should be empty or with its first value like this:
+  Its ``[parent]`` section should be **empty** or with its first value like this:
 
     .. code-block:: text
       :emphasize-lines: 2
