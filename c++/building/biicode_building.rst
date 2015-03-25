@@ -28,7 +28,7 @@ Define and prepare targets
 
 In the *CMakeLists.txt*  file, before ``ADD_BIICODE_TARGETS()`` you can adjust:
 
-Which source code files are part of the **block / library**
+Which source code files are part of the **block's library**
 ===========================================================
 
 ``BII_LIB_SRC`` contains all the source code biicode adds to the library (through CMake *add_library*)
