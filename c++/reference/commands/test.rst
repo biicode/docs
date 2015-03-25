@@ -45,8 +45,7 @@ Also enables **-jx** option to launch build and/or tests with this flag (they've
    
 If you got any questions left, you can ask them at our `forum <http://forum.biicode.com/>`_.
 
-
-.. |google_test_link| raw:: html
+.. |ctest_options| raw:: html
 
    <a href="http://www.cmake.org/cmake/help/v2.8.8/ctest.html" target="_blank">CTest docs</a>
 
