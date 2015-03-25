@@ -1,4 +1,4 @@
-.. _building:
+.. _adapt_library:
 
 Adapt your library
 --------------------
@@ -13,14 +13,14 @@ Adapt your library
 4. Given that a library must be built only with few files of the whole library, you can't assume in your ```CMakeLists.txt``` file that all files are present. For example: You cannot add include path to an exe target without check if it exist.
 
 
-Without previous CMakeLists.txt
-===============================
+Without a previous CMakeLists.txt
+=================================
 
 - Solo 2 cambios generalmente
 - Tips: Asegurar bien hiladas deps
 
-With previous CMakeLists.txt
-===========================
+With a previous CMakeLists.txt
+==============================
 
 - Tips: Asegurar bien hiladas deps
 - Checks si hacemos comprobaciones a nivel de file
