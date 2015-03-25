@@ -12,5 +12,7 @@ Here's a few usage cases for understanding biicode in depth:
 
    advanced/blocks
    advanced/project
+   advanced/toolchain
+   advanced/cmake
    advanced/open_blocks
    advanced/override_deps
