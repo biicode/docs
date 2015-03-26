@@ -229,6 +229,13 @@ Possible values are: **DEBUG**, **RELEASE**, **RELWITHDEBINFO**, **MINSIZEREL**
 
 Check official docs from |cmake_build_type|.
 
+If you are using *Visual Studio* or any other IDE with a select list box for build type use:
+
+.. code-block:: sh
+    
+    $ bii build --config=DEBUG
+
+
 .. container:: infonote
      
      Use ``bii clean`` command to restore most of your project's meta-information. Here's more about :ref:`bii clean command<biiclean>`.
