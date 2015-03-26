@@ -16,7 +16,6 @@ With *layout.bii* you can place the auxiliary folders *(cmake/ build/ deps/ and 
     cmake: bii/cmake
     lib: bii/lib
     build: bii/build
-
     deps: bii/deps
     # Setting this to True enables directly editing in the project root
     # instead of blocks/youruser/yourblock

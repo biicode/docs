@@ -12,8 +12,8 @@ A multi-platform C and C++ dependency manager.
    c++/gettingstarted
    c++/dependencies
    c++/publishing
-   c++/building
    c++/make_biicode_lib
+   c++/building  
    c++/advanced
    c++/examples
    c++/integration
