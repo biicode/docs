@@ -1,6 +1,6 @@
-#include "cryptopp/cryptopp/sha.h"
-#include "cryptopp/cryptopp/filters.h"
-#include "cryptopp/cryptopp/hex.h"
+#include "sha.h"
+#include "filters.h"
+#include "hex.h"
 #include <iostream>
 #include <string>
 

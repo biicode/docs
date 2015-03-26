@@ -13,14 +13,14 @@ Where is biicode´s *"magic"*?
 ..
 
 
-  So Biicode:
+  So biicode:
 
-  + detects how source code files are connected and builds a dependency graph. (following #includes and searching for implementations). 
-  + generates, for each block, a *CMakeLists.txt* defining some variables in accordance to the detected dependency graph. These variables allow Biicode to "plug" your library to its cloud so it will be easily reused.
-  + builds a **library** for each block you have in your project (including each dependency).
-  + builds an **executable** for each file with a ``main()`` function.
-  + link the block's **library** to all **executables** within the block.
-  + builds the block's library **only** with the source code files needed, according to detected dependencies (how files are connected).
+  + Detects how source code files are connected and builds a dependency graph (following #includes and searching for implementations). 
+  + Generates, for each block, a *CMakeLists.txt* defining some variables in accordance to the detected dependency graph. These variables allow Biicode to "plug" your library to its cloud so it will be easily reused.
+  + Builds a **library** for each block you have in your project (including each dependency).
+  + Builds an **executable** for each file with a ``main()`` function.
+  + Link the block's **library** to all **executables** within the block.
+  + Builds the block's library **only** with the source code files needed, according to detected dependencies (how files are connected).
 
 
 Define and prepare targets
@@ -86,6 +86,11 @@ For example, if the block *lasote/game* has a *main.cpp* in a folder named "src"
 
       ADD_BIICODE_TARGETS()
 
+  .. container:: infonote
+
+     You can also do this by adding ``!examples_src_my_program`` line to ``[mains]`` :ref:`section <mains_conf>`.
+
+
 Which source code files are part of each **executable**
 =======================================================
 
@@ -105,7 +110,7 @@ For example, if the block *lasote/game* has a *main.cpp* in a folder named "src"
 Modify which test targets are made
 ==================================
 
-``BII_BLOCK_TEST`` is a subset of BII_BLOCK_EXES and contains the executables specified in [tests] section of *biicode.conf* file.
+``BII_BLOCK_TESTS`` is a subset of BII_BLOCK_EXES and contains the executables specified in [tests] section of *biicode.conf* file.
 
   **EXAMPLE**: Exclude *tests/one.cpp* from tests.
 
@@ -152,6 +157,10 @@ Configure **library** target
     # You can also add private include directories to the Lib (if existing)
     TARGET_INCLUDE_DIRECTORIES(${BII_LIB_TARGET} PRIVATE myincludedir)
 
+  .. container:: infonote
+
+     You can also do this by adding ``myincludedir`` line to ``[paths]`` :ref:`section <paths_conf>`.
+
 
   **EXAMPLE**: How to activate C++11 for all targets (including lib target).
 
@@ -179,7 +188,7 @@ Configure **library** target
 
   .. container:: infonote
 
-     ``SET_TARGET_PROPERTIES`` only allows setting some white-listed properties. Use ``BII_LIB_TARGET`` to set target properties.
+     ``SET_TARGET_PROPERTIES`` only allows setting some white-listed properties to BII_BLOCK_TARGET, because it is an interface. Use ``BII_LIB_TARGET`` to set target properties.
      
 
 Configure **executable** target
@@ -245,6 +254,7 @@ Complete variable reference
 :``BII_BLOCK_TARGET``: CMake **Interface** that represents the whole block. It always exists and it's applied both library and executables (each target). You can use it to configure a block's building configuration: Link libraries, compile flags...etc 
 :``BII_BLOCK_TARGETS``: List of all targets defined in the block
 :``BII_exe_name_TARGET``: Executable target (listed in ``${BII_BLOCK_EXES}``) (e.g. ``${BII_main_TARGET}``. You can also use directly the name of the executable target (e.g. user_block_main)
+
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.
 
