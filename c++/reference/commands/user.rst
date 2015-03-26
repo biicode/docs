@@ -9,10 +9,12 @@ Show or change your current biicode user.
 
 .. container:: todo
 
-    **You're now ready to** :ref:`get started.<cpp_getting_started>`.
+    **You're now ready to** :ref:`get started<cpp_getting_started>`.
 
 
-Execute ``bii user`` to show the current user. **Note**: It can be None (anonymous).
+Execute ``bii user`` to show the current user.
+
+**Note**: It can be None (anonymous).
 
 .. code-block:: bash
 

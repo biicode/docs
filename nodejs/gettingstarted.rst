@@ -121,4 +121,4 @@ Any suggestion or feedback? |biicode_write_us| It is very welcomed :)
 
 .. |biicode_write_us| raw:: html
 
-   <a href="mailto:info@biicode.com" target="_blank">Write us!</a>
+   <a href="mailto:support@biicode.com" target="_blank">Write us!</a>

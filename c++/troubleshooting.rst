@@ -51,10 +51,10 @@ If you have a block that **links to pthread library** and you're using **Ubuntu 
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--no-as-needed")
 
 
-Default Build Configuration with bii cpp:build not working
+Default Build Configuration with bii build not working
 ----------------------------------------------------------
 
-Sometimes the default configuration when installing biicode does not detect the compiler you are using, ``bii cpp:build`` does not work and it is necessary to configure your compiler with biicode.
+Sometimes the default configuration when installing biicode does not detect the compiler you are using, ``bii build`` does not work and it is necessary to configure your compiler with biicode.
 
 .. container:: infonote
  
@@ -66,7 +66,7 @@ Type inside your project directory:
 
 .. code-block:: bash
  
- $ bii cpp:configure -G "CMake generator name"
+ $ bii configure -G "CMake generator name"
 
 If you want to check the generators available in your platform:
 
@@ -80,17 +80,17 @@ To configure your project as default just type:
 
 	.. code-block:: bash
 
-	 $ bii cpp:configure -G "MinGW Makefiles"
+	 $ bii configure -G "MinGW Makefiles"
     
 * **Linux & MacOS:**
 
     .. code-block:: bash
 
-     $ bii cpp:configure -G "Unix Makefiles"
+     $ bii configure -G "Unix Makefiles"
 
 **Note:** You can also type ``bii clean`` to :ref:`restore default configuration<biiclean>`.
 
-Now doing ``bii cpp:build`` should work properly.
+Now doing ``bii build`` should work properly.
 
 Check for more information about **generators** :ref:`here <generators_ide>`.
 

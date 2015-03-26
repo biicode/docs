@@ -24,7 +24,7 @@ Compile ``stream.cpp`` file:
 
 .. code-block:: bash
 
-	$ bii cpp:build
+	$ bii build
 
 
 Now you can run it and check it generates a file:

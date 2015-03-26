@@ -17,7 +17,7 @@ Now, you can check all the eigen examples which are uploaded in biicode and exec
    ~$ bii init eigen_sample
    ~$ cd eigen_sample
    ~/eigen_sample$ bii open examples/eigen
-   ~/eigen_sample$ bii cpp:build
+   ~/eigen_sample$ bii build
 
 Execute any you want, for example, show the matrix's middle rows:
 

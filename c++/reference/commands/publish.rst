@@ -3,7 +3,7 @@
 **bii publish**: publish your blocks
 =========================================
 
-``bii publish`` publishes your code to biicode. 
+**bii publish** publishes your code to biicode. 
 
 .. code-block:: bash
 

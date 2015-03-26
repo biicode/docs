@@ -34,7 +34,7 @@ Project should be compiled with C++11 so you also need the CMakeLists which spec
 		$ bii init my_project
 		$ cd my_project
 		$ bii open examples/multivariate_splines
-		$ bii cpp:build
+		$ bii build
 
 
 * **Only if you want to do it manually**, create a *cpp file* in your block, copy the code above and resolve all the dependencies of the ``main.cpp``. Create a ``CMakeLists.txt`` file with the content above too. Then you can compile it:
@@ -47,7 +47,7 @@ Project should be compiled with C++11 so you also need the CMakeLists which spec
 		$ # Create a main.cpp file in my_user/my_block and copy the code
 		$ # Create a CMakeLists.txt file in my_user/my_block an copy the code
 		$ bii find
-		$ bii cpp:build
+		$ bii build
 
 You will see next console output after executing the command:
 

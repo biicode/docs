@@ -17,7 +17,7 @@ This example is `already in biicode <http://www.biicode.com/examples/expression-
    $ bii init exp-parser
    $ cd exp-parser
    $ bii open examples/expression_parser
-   $ bii cpp:build
+   $ bii build
 
 The code of the example is this one:
 

@@ -26,7 +26,7 @@ Calculate giving the coordinates, the angles and sides length of a polygon betwe
    ~$ bii init fit
    ~$ cd fit
    ~/fit$ bii open examples/fit
-   ~/fit$ bii cpp:build
+   ~/fit$ bii build
    ~/fit$ #execute the tests on bin folder
 
 
@@ -70,7 +70,7 @@ Any suggestion or feedback? |biicode_write_us| It is very welcomed :)
 
 .. |biicode_write_us| raw:: html
 
-   <a href="mailto:info@biicode.com" target="_blank">Write us!</a>
+   <a href="mailto:support@biicode.com" target="_blank">Write us!</a>
 
 .. |fit_homepage| raw:: html
 

@@ -125,4 +125,4 @@ If you have any questions, we are available at |biicode_forum_link|. You can als
 
 .. |biicode_write_us| raw:: html
 
-   <a href="mailto:info@biicode.com" target="_blank">write us</a>
+   <a href="mailto:support@biicode.com" target="_blank">write us</a>

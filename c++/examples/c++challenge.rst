@@ -118,11 +118,11 @@ At this point, you'll find some new folders and files in your ``challenge/dep`` 
 Build and run
 -------------
 
-The final step is to actually compile and run the app. You can accomplish this task with the ``bii cpp:build`` command and run the executable inside the bin folder:
+The final step is to actually compile and run the app. You can accomplish this task with the ``bii build`` command and run the executable inside the bin folder:
 
 .. code-block:: bash
 
-	$ bii cpp:build
+	$ bii build
 
 	...
 

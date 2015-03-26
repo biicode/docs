@@ -21,7 +21,7 @@ Now, you can check all the log4z examples which are uploaded in biicode and exec
 	~$ bii init log4z_sample
 	~$ cd log4z_sample
 	~/log4z_sample$ bii open examples/log4z
-	~/log4z_sample$ bii cpp:build
+	~/log4z_sample$ bii build
 
 .. container:: infonote
 
@@ -31,7 +31,7 @@ Now, you can check all the log4z examples which are uploaded in biicode and exec
 
    .. code-block:: bash
 
-     bii cpp:configure -G "Visual Studio 12"
+     bii configure -G "Visual Studio 12"
 
 
 When all the examples are built, execute for fast stream log strings testing:

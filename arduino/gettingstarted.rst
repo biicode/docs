@@ -185,4 +185,4 @@ Didn't work? No problem, read or contact us in |biicode_forum_link|. Any suggest
 
 .. |biicode_write_us| raw:: html
 
-   <a href="mailto:info@biicode.com" target="_blank">Write us!</a>
+   <a href="mailto:support@biicode.com" target="_blank">Write us!</a>

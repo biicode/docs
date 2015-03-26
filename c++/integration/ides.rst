@@ -15,14 +15,20 @@ Choose yours, and tell biicode to configure your project for that IDE:
 
 .. code-block:: bash
 
-	$ bii cpp:configure -G "CMake Generator Name"
+	$ bii configure -G "CMake generator name"
 
 
-``bii cpp:configure`` admits any CMake directives. Your latest configuration is stored in your project's ``settings.bii`` file as the default settings for that project. 
+``bii configure`` admits any other CMake directives. For example, to enable the **Debug** build configuration,(e.g. Visual Studio, Eclipse):
+
+.. code-block:: bash
+
+	$ bii configure -G "CMake generator name" -DCMAKE_BUILD_TYPE=Debug
+
 
 .. container:: infonote
-     
-     ``bii clean`` command restores your project's settings to no IDE and MinGW (Windows) or UNIX Makefiles with no IDE (MacOS and Linux). Here's more about :ref:`bii clean command<biiclean>`.
+
+	**Note:** When you are working with an IDE (Visual, Eclipse, CLion), and you change your project structure, add/remove files or dependencies, you might need to run **bii configure** again.
+
 
 .. _ide_eclipse:
 
@@ -33,7 +39,7 @@ To create an Eclipse CDT project, run:
 
 .. code-block:: bash
 
-  $ bii cpp:configure -G "Eclipse CDT4 - Unix Makefiles"
+  $ bii configure -G "Eclipse CDT4 - Unix Makefiles"
 
 
 .. container:: infonote
@@ -42,7 +48,7 @@ To create an Eclipse CDT project, run:
 
     .. code-block:: bash
 
-      $ bii cpp:configure -G "Eclipse CDT4 - MinGW Makefiles"
+      $ bii configure -G "Eclipse CDT4 - MinGW Makefiles"
 
 Now, import your project into the Eclipse IDE.
 
@@ -53,20 +59,9 @@ Now, import your project into the Eclipse IDE.
 
 If you want to add new files to your block, just right-click on the folder of your block and create a new file.
 
-**Note:** If you add new dependencies to your project you'll need to manually invoke ``bii find``.
+You can build your application in *Project > Build project*
 
-You can build your application in *Project > Build project* if you don't have automated builds set.
-
-``debug`` your project using gdb inside Eclipse CDT. Make sure you set -D CMAKE_BUILD_TYPE=DEBUG in ``bii cpp:configure`` command: 
-
-.. code-block:: bash
-
-  $ bii cpp:configure -G "Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=DEBUG
-  $ bii cpp:build
-
-
-
-If you are using  Eclipse with **OS X** as development platform, you will need some additional setup to execute your binaries within this IDE. :ref:`Read this troubleshooting section for more information <eclipse_osx_binaries>`.
+If you are using  Eclipse with **Mac OS X**, you will need some additional setup to execute your binaries within this IDE. :ref:`Read this troubleshooting section for more information <eclipse_osx_binaries>`.
 
 
 .. _ide_visual:
@@ -74,29 +69,14 @@ If you are using  Eclipse with **OS X** as development platform, you will need s
 Visual Studio
 -------------
 
-Generate a Microsoft Visual Studio project, for a Visual Studio 10 project:
+Generate a Microsoft Visual Studio 12 (2013) project:
 
 .. code-block:: bash
 
-   $ bii cpp:configure -G "Visual Studio 10"
+   $ bii configure -G "Visual Studio 12"
 
-For example:
-
-.. code-block:: bash
-
-   $ bii cpp:configure -G "Visual Studio 9 2008"
-   ...
-   $ bii cpp:configure
-   #Calling to Visual Studio 9 2008 generator
 
 **Open your project with Visual Studio**. Just **double-click on the .sln file inside the build folder** of your project and a VS project will open.
-
-``debug`` your project setting -D CMAKE_BUILD_TYPE=DEBUG in ``bii cpp:configure`` command: 
-
-.. code-block:: bash
-
-  $ bii cpp:configure -G "Visual Studio 9 2008" -D CMAKE_BUILD_TYPE=DEBUG
-  $ bii cpp:build
 
 .. _ide_clion:
 
@@ -109,21 +89,45 @@ Get into your project's folder and execute:
 
 .. code-block:: bash
 
-   $ bii init -l clion myproject
+   $ bii init myproject -l=clion 
 
 And configure your project to set the changes:
 
 .. code-block:: bash
 
-   $ bii cpp:configure
+   $ bii configure
 
 Open the biicode project with CLion *(File -> Open)*. 
 
-Use biicode's commands from the embedded Terminal in CLion, open it with: ``Alt+F12`` or *View -> Tool Windows -> Terminal*.
+Use biicode's commands from the embedded Terminal in CLion, open it with: **Alt+F12** or *View -> Tool Windows -> Terminal*.
 
 .. container:: infonote
      
      Here's more info about :ref:`CLion's project layout <clion_layout>`
+     
+     
+IDEs and VCS
+==============
+
+Eclipse or CLion IDEs need the classic biicode folder layout (can't handle your code directly in the root folder). Next steps cover how to use them when importing a project from a git repo.  Just clone/checkout the code at the corresponding folder.
+
+* CLion:
+
+  .. code-block:: bash
+
+     $ bii init myproject -l=clion
+     $ cd myproject
+     $ git clone https://github.com...    blocks/username/blockname
+     $ bii configure 
+     
+* Eclipse CDT projects:
+
+  .. code-block:: bash
+
+     $ bii init myproject
+     $ cd myproject
+     $ git clone https://github.com...    blocks/username/blockname
+     $ bii configure -G "Eclipse CDT4 - MinGW Makefiles" (or Unix)
 
 If you have any questions, we are available at |biicode_forum_link| and/or |biicode_stackoverflow_link|. You can also |biicode_write_us| for suggestions and feedback.
 

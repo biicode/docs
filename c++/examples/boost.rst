@@ -83,19 +83,19 @@ biicode uses the current cmake C++ compiler as Boost toolset, multiple toolsets 
 Build and run project
 ^^^^^^^^^^^^^^^^^^^^^
 
-To configure and build your project, run ``bii find`` to get the dependencies (The boost setup block), and then run ``bii cpp:configure`` and ``bii cpp:build`` as usual:
+To configure and build your project, run ``bii find`` to get the dependencies (The boost setup block), and then run ``bii configure`` and ``bii build`` as usual:
 
 .. code-block:: bash
 
     $ bii find
-    $ bii cpp:configure 
+    $ bii configure 
              block your-account/boost-lambda
     ------------------------------------------------
     -- Setting up biicode Boost configuration...
     -- Boost version: 1.57.0
     ...
 
-    $ bii cpp:build
+    $ bii build
 
 Boost version
 ^^^^^^^^^^^^^
@@ -201,7 +201,7 @@ Besides Visual Studio specific configuration (`See <https://msdn.microsoft.com/e
 
 4. Link your target against Boost libraries using the ``Boost_LIBRARIES`` variable. 
 
-Now just run ``bii cpp:configure``, wait until the Boost components are built (If those were not used previously), and then build your project with ``bii cpp:build``.
+Now just run ``bii configure``, wait until the Boost components are built (If those were not used previously), and then build your project with ``bii build``.
 
 .. container:: infonote
 
@@ -216,7 +216,7 @@ Now just run ``bii cpp:configure``, wait until the Boost components are built (I
 .. code-block:: bash
 
     $ bii find
-    $ bii cpp:configure -G "Unix Makefiles"
+    $ bii configure -G "Unix Makefiles"
 
           examples/boost-corutine
     ---------------------------------
@@ -236,7 +236,7 @@ Now just run ``bii cpp:configure``, wait until the Boost components are built (I
 
     ...
 
-    $ bii cpp:build
+    $ bii build
 
 Alternative setup call
 ----------------------
@@ -277,7 +277,7 @@ The Boost setup scripts have some extra variables to debug and or customize Boos
 
 * ``BII_BOOST_LIBCXX``: When using the Clang compiler, enables Boost build using LLVM's libc++ instead of the default GNU's stdlibc++ standard library implementation.
 
-* ``BII_BOOST_BUILD_J``: Specifies the number of threads used when building Boost libraries. May be useful to speed up Boost builds in setups where the libraries are always built, like continuous integration builds without cache. For example: ``bii cpp:configure -DBII_BOOST_BUILD_J=16``
+* ``BII_BOOST_BUILD_J``: Specifies the number of threads used when building Boost libraries. May be useful to speed up Boost builds in setups where the libraries are always built, like continuous integration builds without cache. For example: ``bii configure -DBII_BOOST_BUILD_J=16``
 
 * ``BII_BOOST_GLOBAL_USE_STATIC_LIBS``: Overrides the ``Boost_USE_STATIC_LIBS`` values specified in each ``CMakeLists.txt`` and sets a value globally. Useful when you depend on many Boost-related blocks and you may experience issues related to different linkages against Boost in that blocks. Use this variable carefully.
 

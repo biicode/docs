@@ -1,11 +1,12 @@
-
 .. _bii_new_command:
 
 **bii new**: creates new blocks
 ---------------------------------
 
-``bii new`` command **creates a new biicode block inside your project**. 
+**bii new** command **creates a new biicode block inside your project**. 
+
 |
+
 Use it inside a biicode project folder like this:
 
 .. code-block:: bash
@@ -16,7 +17,7 @@ Use it inside a biicode project folder like this:
 Take a look at :ref:`the Getting Started guide<cpp_getting_started>` to know more.
 
 
-``bii new user_name/block_name`` command creates new folders in your blocks folder:
+**bii new** ``user_name/block_name`` command creates new folders in your blocks folder:
 
 .. code-block:: text
 

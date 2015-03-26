@@ -22,7 +22,7 @@ We will first create a project and open the protocol buffers block:
    $ bii init zmq_protobuf
    $ cd zmq_protobuf
    $ bii open google/protobuf
-   $ bii cpp:build
+   $ bii build
    
 This will build the Protocol Buffers compiler (protoc or protoc.exe). Note that this is an optional
 step, you can of course download manually this binary from the web.
@@ -169,7 +169,7 @@ If in windows, it is necessary to specify VS (it doesnt work with MinGW), otherw
 
 .. code-block:: bash
 
-   $ bii cpp:configure -G “Visual Studio 12”
+   $ bii configure -G “Visual Studio 12”
 
 
 Then build and run, first the server, then the client (you need to open another console,
@@ -177,7 +177,7 @@ in the same folder)
 
 .. code-block:: bash
 
-   $ bii cpp:build
+   $ bii build
    $ bin/examples_zmq_protobuf_hwserver
    // another console
    $ bin/examples_zmq_protobuf_hwclient

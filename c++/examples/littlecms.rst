@@ -23,7 +23,7 @@ These examples are `already in biicode <http://www.biicode.com/examples/littlecm
    $ bii init lcms
    $ cd lcms
    $ bii open examples/littlecms
-   $ bii cpp:build
+   $ bii build
 
 There are three different examples in the project, note that all of them use Little CMS , simply by including the library. We're focusing on *mktiff8* example but you can execute and try any of them. This example creates a devicelink that decodes TIFF8 Lab files. This is the code used for the example:
 

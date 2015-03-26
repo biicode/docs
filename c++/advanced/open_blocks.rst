@@ -1,12 +1,10 @@
-.. _cpp_workflows:
-
-Workflows
-==========
-
 .. _workflows_own_blocks:
 
+Open multiple blocks
+--------------------
+
 Working with your own blocks
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the :ref:`Getting Started guide <cpp_getting_started>` we built a program and reused the **sum function**. Now it's time to add new functionality to your published **myuser/math** block, like a **subtract function**, and use it in your block **myuser/calc**.
 
@@ -89,7 +87,7 @@ Now, add the new function, **subtract** and use it on your main.cpp
    }
 
 
-Build, ``bii cpp:build`` and run your tests ``myuser_math_main`` to check everything is working.
+Build, ``bii build`` and run your tests ``myuser_math_main`` to check everything is working.
 
 
 Publishing updated code
@@ -141,7 +139,7 @@ and build it, reusing also the new function:
 
 .. code-block:: bash
 
-   ~/mycalc$ bii cpp:build
+   ~/mycalc$ bii build
    ~/mycalc$ bin\myuser_calc_main
    2 + 3 = 5
    2 - 3 = -1
@@ -153,7 +151,7 @@ You can also |biicode_write_us| for suggestions and feedback, they are always we
 .. _workflows_any_block:
 
 Working with any published block
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To **edit a published block**, follow the steps below:
 
@@ -202,7 +200,7 @@ If **the block in edition isn't yours**:
 
 .. container:: infonote
 
-    Remember to ``bii cpp:build`` before publishing!
+    Remember to ``bii build`` before publishing!
 
 And publish:
 
@@ -246,113 +244,6 @@ Now, if you want to depend on the block you've just published:
   * :ref:`Publish command <bii_publish_command>`
   * :ref:`Close command <bii_close_command>`
 
-.. _git_workflows:
-
-Git: Versioning your code
--------------------------
-
-The natural way to work is maintaining a correspondence between a *biicode block* and a *Git repository*.
-Just go to your block folder (**calc** and **math** if you followed the getting started) and initialize a new git repository.
-
-.. code-block:: text
-
-  +-- mycalc
-  |    +-- blocks
-  |    |    +-- myuser
-  |    |    |    +-- calc
-  |    |    |    |    +-- main.cpp
-  |    |    |    +-- math
-  |    |    |    |    +-- main.cpp
-  |    |    |    |    +-- operations.cpp
-  |    |    |    |    +-- operations.h
-  |    +-- deps
-
-Go to the block's folder and initialize the git repository. Then add the changes to index and commit them:
-
-.. code-block:: bash
-
-  $ cd mycalc/blocks/myuser/calc
-  $ git init .
-  $ git add .
-  $ git commit -m "Added new operation to operations.cpp"
-
-You can also add a remote repository:
-
-.. code-block:: bash
-
-  $ git remote add origin https://github.com/user/repo.git
-
-And push your commits: 
-
-.. code-block:: bash
-
-  $ git push origin master
-
-
-.. container:: infonote
-    
-  You can learn more about adding remote repositories on |github_remote| or on|bitbucket_remote|
-  Each computer may need their specific project settings, and the you can regenerate all build layout with ``bii cpp:configure`` or ``bii cpp:build`` command. 
-
-As usual, you can publish your code to biicode when you want to, generally when you have a version to share.
-
-.. code-block:: bash
-
-  $ bii publish
-
-That's all! Now you have your code under version control.
-
-**Ignoring files**
-
-Maybe you want to have all files on git, but there are some files you don't want to publish to biicode.
-Use :ref:`ignore.bii file<ignore_bii>` to specify which files should be ignored and not published to biicode.
-
-
-Git and any published blocks
-----------------------------
-
-In previous sections, it's explained how to work with any published block just using biicode (you would run ``bii open`` command). 
-
-Well, that's still available, but when working with Git, it's best to ``clone`` the github repository.
-
-Let's see an example:
-
-User ``mike`` has pushed to github and published a block named ``mike/math`` to biicode. 
-He was working at home, with Linux.
-
-Next day Mike wants to develop further his block at work, with Windows.
-If Mike executes ``bii open`` the source code is not a github repository, is only a copy of his block in biicode. 
-So Mike should better init a new biicode project and run:
-
-.. code-block:: bash
-
-  $ bii init work_project
-  $ cd work_project
-  $ bii new mike/math
-  $ cd blocks/mike/math
-  $ git clone https://github.com/mike_on_github/math.git .
-
-Now Mike has the github repository to continue developing his biicode block under a control version system.
-From now on, Mike just needs to make ``git pull`` command to fetch and merge the remote changes.
-
-Git repos with biicode support
--------------------------------
-
-Take a git repo that also is a biicode block (for example: https://github.com/bamos/cpp-expression-parser) and build locally just doing:
-
-.. code-block:: bash
-
-  ~$ git clone https://Your_Repo_URL.git
-  ~$ cd your_repository
-  ~/your_repository$ bii init -l simple
-
-Make sure the ``[parents]`` section of the ``biicode.conf`` file is empty or delete its content and:
-
-.. code-block:: bash
-
-  ~$ bii cpp:build
-
-And this is it.
 
 .. container:: infonote
 

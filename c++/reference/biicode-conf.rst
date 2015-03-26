@@ -16,11 +16,9 @@ Place it into your block, next to your source code: ::
 	|    |    |  	|     |-- main.cpp   
 	|    |    |  	|     |-- biicode.conf
 
+*biicode.conf* has 9 different sections to configure your project.
 
-``biicode.conf`` has 8 different sections to configure your project.
-
-
-*biicode.conf example*
+Here's a *biicode.conf* example:
 
 .. code-block:: text
 
@@ -29,44 +27,55 @@ Place it into your block, next to your source code: ::
 			# Blocks and versions this block depends on e.g.
 			# user/depblock1: 3
 			# user2/depblock2(track) @tag
-			lasote/libuv(v0.11): 0
+
 		[parent]
-			lasote/haywire: 0
+		    # The parent version of this block. Must match folder name. E.g.
+		    # user/block  # No version number means not published yet
+		    # You can change it to publish to a different track, and change version, e.g.
+		    # user/block(track): 7
+
 		[paths]
-			# Local directories to look for headers (within block)
-			# /
-			include
+		    # Local directories to look for headers (within block)
+		    # /
+		    # include
+
 		[dependencies]
-			# Manual adjust file implicit dependencies, add (+), remove (-), or overwrite (=)
-			# hello.h + hello_imp.cpp hello_imp2.cpp
-			# *.h + *.cpp
+		    # Manual adjust file implicit dependencies, add (+), remove (-), or overwrite (=)
+		    # hello.h + hello_imp.cpp hello_imp2.cpp
+		    # *.h + *.cpp
+
 		[mains]
-			# Manual adjust of files that define an executable
-			# !main.cpp # Do not build executable from this file
-			# main2.cpp # Build it (it doesnt have a main() function, but maybe it includes it)
+		    # Manual adjust of files that define an executable
+		    # !main.cpp  # Do not build executable from this file
+		    # main2.cpp # Build it (it doesnt have a main() function, but maybe it includes it)
+
+		[tests]
+		    # Manual adjust of files that define a CTest test
+		    # test/* pattern to evaluate this test/ folder sources like tests
+
 		[hooks]
-			# These are defined equal to [dependencies],files names matching bii*stage*hook.py
-			# will be launched as python scripts at stage = {post_process, clean}
-			# CMakeLists.txt + bii/my_post_process1_hook.py bii_clean_hook.py
+		    # These are defined equal to [dependencies],files names matching bii*stage*hook.py
+		    # will be launched as python scripts at stage = {post_process, clean}
+		    # CMakeLists.txt + bii/my_post_process1_hook.py bii_clean_hook.py
+
 		[includes]
-			# Mapping of include patterns to external blocks
-			# hello*.h: user3/depblock # includes will be processed as user3/depblock/hello*.h
-			uv.h: lasote/libuv/include
+		    # Mapping of include patterns to external blocks
+		    # hello*.h: user3/depblock  # includes will be processed as user3/depblock/hello*.h
+
 		[data]
-			# Manually define data files dependencies, that will be copied to bin for execution
-			# By default they are copied to bin/user/block/... which should be taken into account
-			# when loading from disk such data
-			# image.cpp + image.jpg # code should write open("user/block/image.jpg")
+		    # Manually define data files dependencies, that will be copied to bin for execution
+		    # By default they are copied to bin/user/block/... which should be taken into account
+		    # when loading from disk such data
+		    # image.cpp + image.jpg  # code should write open("user/block/image.jpg")
 
 .. _requirements_conf:
 
 [requirements]
 -------------------
 
-``[requirements]`` section is fullfiled after executing ``bii find`` with the blocks and versions your block depends on.
+``[requirements]`` section is fullfiled after executing **bii find** with the blocks and versions your block depends on.
 
-You can manually specify the block to depend on with its corresponding version or override a dependency just writing the version you want and executing ``bii cpp:build`` after that.
-
+You can manually specify the block to depend on with its corresponding version or override a dependency just writing the version you want and executing **bii build** after that.
 
 .. code-block:: text
 
@@ -81,14 +90,28 @@ Take a look at the :ref:`docs about dependencies <cpp_dependencies>` to know mor
 
 ``[parent]`` section tells you  *"who is your parent version"*. Indicates the version of the remote block being edited and looks like this:
 
-
-
 .. code-block:: text
 
    [parent]
-      myuser/myblock: 0
+        myuser/myblock: 0
 
-It comes in handy while :ref:`publishing <cpp_publishing>` take a look at it.
+This section is fullfilled automatically when publishing or opening a block and comes in handy while :ref:`publishing <cpp_publishing>` take a look at it.
+
+.. container:: infonote
+
+ **When publishing a new block** this section should be blank or referenced as -1 version:
+ 
+ .. code-block:: text
+    
+    [parent]
+        # Comments like this are ignored
+
+ or
+
+ .. code-block:: text
+    
+    [parent]
+        myuser/my_new_block: -1
 
 .. _paths_conf:
 
@@ -109,10 +132,10 @@ Libraries usually have a folder structure like this one ::
 |    +-- test
 |    |    |-- main1.cpp (#include "tool.h")
 
-In which main1.cpp includes: ``#include "tool.h"`` that it is truly located into **/include** folder. The proper #include would be ``#include "../include/tool.h"``
+In which main1.cpp includes: ``#include "tool.h"`` that it is truly located into */include* folder. The proper #include would be ``#include "../include/tool.h"``
 
-If we execute ``bii deps`` on this example, we'll see ``#include "tool.h"`` as unresolved. Why is this happening? 
-Biicode can't find the ``tool.h`` file unless we specify where they can find it. 
+If we execute **bii deps** on this example, we'll see ``#include "tool.h"`` as unresolved. Why is this happening? 
+Biicode can't find the *tool.h* file unless we specify where they can find it. 
 
 Let's fix this write into the ``[paths]`` section:
 
@@ -134,8 +157,8 @@ Let's imagine now that we have a folder with the following structure into it ::
 |    +-- examples
 |    |	  |-- main.cpp (#include "mylib.h")
 
-If we execute ``bii deps`` on this example, we'll see ``mylib.h`` as unresolved. Why is this happening? 
-Biicode, considers the ``#include(s)`` relative to their location. So if there isn't a root folder they can refer to, when looking for ``mylib.h`` they will search it in the ``examples`` folder and they won't be able to find it.
+If we execute **bii deps** on this example, we'll see *mylib.h* as unresolved. Why is this happening? 
+Biicode, considers the ``#include(s)`` relative to their location. So if there isn't a root folder they can refer to, when looking for *mylib.h* they will search it in the *examples* folder and they won't be able to find it.
 
 What should we write on the ``[paths]`` section?
 
@@ -147,7 +170,7 @@ What should we write on the ``[paths]`` section?
 		/
 
 
-Write ``/`` in ``paths`` section and biicode will know that it has to include the root directory on its search.
+Write ``/`` in ``[paths]`` section and biicode will know that it has to include the root directory on its search.
 
 .. _dependencies_conf:
 
@@ -187,12 +210,11 @@ Pattern 	Meaning
 ==========	========================================
 
 Examples
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^
 
 Let's see a few examples:
 
-* ``matrix32.h`` is dependency of the ``main.cpp`` file.
-
+* *matrix32.h* is dependency of the *main.cpp* file.
 
 .. code-block:: text
 
@@ -200,7 +222,7 @@ Let's see a few examples:
 	    main.cpp + matrix32.h
 
 
-* Delete ``matrix16.h`` dependency to ``main.cpp``.
+* Delete *matrix16.h* dependency to *main.cpp*.
 
 
 .. code-block:: text
@@ -209,7 +231,7 @@ Let's see a few examples:
 	    main.cpp - matrix16.h
 
 
-* ``test.cpp`` depends on both ``example.h`` and ``LICENSE``. And ``LICENSE`` will be excluded from the compilation process.
+* *test.cpp* depends on both *example.h* and *LICENSE*. And *LICENSE* will be excluded from the compilation process.
 
 
 .. code-block:: text
@@ -218,7 +240,7 @@ Let's see a few examples:
 	    test.cpp + example.h !LICENSE
 
 
-* All files with ``.cpp`` extension depend on the ``README`` file, but this dependency won't be compiled.
+* All files with *.cpp* extension depend on the *README* file, but this dependency won't be compiled.
 
 
 .. code-block:: text
@@ -227,7 +249,7 @@ Let's see a few examples:
 	     *.cpp + !README
 
 
-* ``example.h = NULL`` tells biicode that ``example.h`` has no dependencies (even if it truly has).
+* ``example.h = NULL`` tells biicode that *example.h* has no dependencies (even if it truly has).
 
 
 .. code-block:: text
@@ -236,7 +258,7 @@ Let's see a few examples:
          example.h = NULL
 
 
-* Both ``solver.h`` and ``type.h`` are ``calculator.cpp`` are the only dependencies of ``calculator.cpp``, overwriting any existing implicit dependencies.
+* Both *solver.h* and *type.h* are the only dependencies of *calculator.cpp*, overwriting any existing implicit dependencies.
 
 
 .. code-block:: text
@@ -252,7 +274,7 @@ Let's see a few examples:
 
 Use ``[mains]`` section to define entry points in your code. 
 
-Biicode automatically detects entry points to your programs by examining which files contain a ``main`` function definition. But when that's not enough you can **explicitly tell biicode where are your entry points**. 
+Biicode automatically detects entry points to your programs by examining which files contain a **main function** definition. But when that's not enough you can **explicitly tell biicode where are your entry points**. 
 
 ``[mains]`` has the following structure: ::
 
@@ -270,6 +292,23 @@ An example:
 		funct.cpp
 		!no_main.cpp
 
+.. _test_conf:
+
+[tests]
+-------
+
+Tests section is useful to define specific tests for your code. Adjust files manually that define a CTest test.
+
+Indicate the patter to your test files:
+
+.. code-block:: text
+ 
+ [tests]
+     test/*
+     test/simple_test.cpp
+
+Those test are excluded from the normal building and are built and executed only when doing :ref:`bii test<bii_test_command>`.
+
 .. _hooks_conf:
 
 [hooks]
@@ -279,18 +318,17 @@ Use ``[hooks]`` section to link to certain python scripts that will be executed,
 
 This scripts have ".py" extension and name matches:
 
-+ ``bii*post_process*hook.py``: For scripts that will be launched before project building (*bii cpp:build* or *bii cpp:configure*)
-+ ``bii*clean*hook.py``: For scripts that will be launched before a *bii clean* command.
++ ``bii*post_process*hook.py``: For scripts that will be launched before project building (**bii build** or **bii configure**)
++ ``bii*clean*hook.py``: For scripts that will be launched before a **bii clean** command.
 
 These are defined like :ref:`[dependencies] <dependencies_conf>`. 
 
-In the following example we define that CMakeLists.txt depends on two hooks:
+In the following example we define that *CMakeLists.txt* depends on two hooks:
 
 .. code-block:: text
 
 	[hooks]
-	    CMakeLists.txt + bii/my_post_process1_hook.py bii_clean_hook.py
-
+	    CMakeLists.txt + bii/my_post_process1_hook.py bii_clean_hook.pyw
 
 Use ``bii`` variable inside hook scripts to:
 
@@ -318,8 +356,9 @@ Use ``bii`` variable inside hook scripts to:
 	bii.settings.cpp.cross_build
 
 
-Check an example in this block: |maria_bitscope|
+Check an example in this block: |maria_bitscope|.
 
+.. _includes_conf:
 
 [includes]
 ----------
@@ -355,7 +394,8 @@ This is pretty useful when using already existing libraries and you don't want t
 [data]
 --------
 Use ``[data]`` to specify a link with any file (.h, .cpp, ...) with any data (.txt, .jpg, ...) in your block.
-Once ``[data]`` section is specified and the code is built (``bii cpp:build``), the data files will be saved, by default, in your *project/bin/user/block* folder.
+
+Once ``[data]`` section is specified and the code is built (**bii build**), the data files will be saved, by default, in your *project/bin/user/block* folder.
 
 **Example:**
 
@@ -377,7 +417,7 @@ Then, add to your configuration file:
 	    main.cpp + lena.jpg
 
 
-This will copy lena.jpg to *project/bin/user/block/* when main.cpp is builded.
+This will copy *lena.jpg* to *project/bin/user/block/* when *main.cpp* is built.
 
 
 Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
@@ -386,4 +426,5 @@ Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`
 .. |maria_bitscope| raw:: html
 
    <a href="https://www.biicode.com/Maria/bitscope" target="_blank">Maria/bitscope</a>
+
 

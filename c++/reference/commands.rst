@@ -1,7 +1,7 @@
 .. _bii_commands:
 
 Commands
-==========
+========
 
 These are the **commands available in biicode**.
 You can:
@@ -17,21 +17,22 @@ You can:
 * **reuse** from other user's code.
 
 |
-|
 
 .. toctree::
    :maxdepth: 2
 
+   commands/build
    commands/clean
+   commands/close
+   commands/configure
    commands/deps
+   commands/diff
    commands/find
    commands/init
    commands/new
    commands/open
    commands/publish
-   commands/update
-   commands/close
-   commands/user
-   cpp-commands
-   commands/diff
    commands/setup
+   commands/test
+   commands/update
+   commands/user

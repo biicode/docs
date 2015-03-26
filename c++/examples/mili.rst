@@ -25,7 +25,7 @@ Now build your project and run the executable:
 
 .. code-block:: bash
 	
-	$ bii cpp:build
+	$ bii build
 	$ cd bin
 	$ # run executable
 

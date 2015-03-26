@@ -20,7 +20,7 @@ It is very simple to build it, by just opening the block.
    $ bii init tinythread
    $ cd tinythread
    $ bii open examples/tinythread
-   $ bii cpp:build
+   $ bii build
 
 Simple Hello World with a thread
 --------------------------------

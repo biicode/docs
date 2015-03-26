@@ -38,7 +38,7 @@ If in windows, it is necessary to specify VS (it doesnt work with MinGW), otherw
 
 .. code-block:: bash
 
-   $ bii cpp:configure -G “Visual Studio 12”
+   $ bii configure -G “Visual Studio 12”
 
 
 Then build and run, first the server, then the client (you need to open another console,
@@ -46,7 +46,7 @@ in the same folder).
 
 .. code-block:: bash
 
-   $ bii cpp:build
+   $ bii build
    $ bin/examples_zmq_cpp_hwserver
    // another console
    $ bin/examples_zmq_cpp_hwclient

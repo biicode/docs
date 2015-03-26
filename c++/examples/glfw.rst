@@ -19,7 +19,7 @@ It is very simple. Create a **new project**, open the examples, build and run th
    $ bii init glfwexamples
    $ cd glfwexamples
    $ bii open examples/glfw
-   $ bii cpp:build
+   $ bii build
    $ ./bin/examples_glfw_particles
    
    
@@ -69,7 +69,7 @@ And then, find and retrieve dependencies, build and run your program:
 .. code-block:: bash
 
    $ bii find
-   $ bii cpp:build
+   $ bii build
  
 
 
