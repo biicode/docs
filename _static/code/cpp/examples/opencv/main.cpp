@@ -1,10 +1,9 @@
-#include "diego/opencv/opencv/cv.h"      // include it to used Main OpenCV functions.
-#include "diego/opencv/opencv/highgui.h" //include it to use GUI functions.
+#include "opencv/cv.h"      // include it to used Main OpenCV functions.
+#include "opencv/highgui.h" //include it to use GUI functions.
  
 int main(int argc, char** argv)
 {
-    //bii://bii.png
-    IplImage* img = cvLoadImage( "examples/opencv_sample/bii.png" );
+    IplImage* img = cvLoadImage( "examples/opencv_sample/bii.png" ); //NOTE "examples" should be your user
     cvNamedWindow( "Example1", CV_WINDOW_AUTOSIZE );
 
     cvShowImage("Example1", img);
