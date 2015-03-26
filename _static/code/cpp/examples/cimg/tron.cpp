@@ -41,7 +41,7 @@
  #
 */
 
-#include "tschumperle/cimg/CImg.h"
+#include "CImg.h"
 
 using namespace cimg_library;
 
@@ -54,7 +54,7 @@ int main(int argc, char **argv) {
   cimg_usage("A very simple Tron game, using the CImg Library");
   cimg_help("--- Quick help ----------------------------\n"
             " Player 1 (blue) :\n"
-            " Use keys 'Z' (up), 'S' (down), 'Q' (left)\n"
+            " Use keys 'W' (up), 'S' (down), 'A' (left)\n"
             "     and 'D' (right) to control your player.\n"
             "     Right 'CONTROL' key enables turbospeed\n"
             " Player 2 (red) : \n"
@@ -162,9 +162,9 @@ int main(int argc, char **argv) {
     if (disp.is_keyARROWDOWN())  { nu1 = 0; nv1 = 1; }
     turbo1 = disp.is_keyCTRLRIGHT();
     if (twoplayers) {
-      if (disp.is_keyQ()) { nu2 = -1; nv2 = 0; }
+      if (disp.is_keyA()) { nu2 = -1; nv2 = 0; }
       if (disp.is_keyD()) { nu2 = 1; nv2 = 0; }
-      if (disp.is_keyZ()) { nu2 = 0; nv2 = -1; }
+      if (disp.is_keyW()) { nu2 = 0; nv2 = -1; }
       if (disp.is_keyS()) { nu2 = 0; nv2 = 1; }
       turbo2 = disp.is_keyTAB();
     }
