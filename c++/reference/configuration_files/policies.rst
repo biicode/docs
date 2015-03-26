@@ -18,11 +18,13 @@ Policies are **rules bii find applies** when finding or updating external depend
 	your_username/* : DEV
 	* : STABLE
 
-**Notes**:
+.. container:: infonote
 
-* *block_pattern* fits the *owner/block_name* pattern. 
+ **Notes**:
 
-* TAG can be **STABLE**, **BETA**, **DEV** or **ALPHA**.
+ * *block_pattern* fits the *owner/block_name* pattern. 
+
+ * TAG can be **STABLE**, **BETA**, **DEV** or **ALPHA**.
 	
 Changing your policies
 ----------------------
@@ -53,4 +55,4 @@ Don't forget to update your dependencies according to your new *policies.bii*:
 	$ bii find --update
 
 
-**Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_
+**Got any doubts?** `Ask in our forum <http://forum.biicode.com>`_.

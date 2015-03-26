@@ -2,20 +2,64 @@ CImg
 ====
 
 The CImg Library is an open-source C++ toolkit for image processing.
-It consists of a single header file 'CImg.h' providing a minimal set of C++
+It consists of a single header file "CImg.h" providing a minimal set of C++
 classes and methods that can be used in your own sources, to load/save,
 process and display images. Very portable (Unix/X11,Windows, MacOS X, FreeBSD, .. ),
 efficient, easy to use, it's a pleasant library for developping image processing
 algorithms in C++.
 
-The main CImg block is `here <https://www.biicode.com/tschumperle/cimg>`_ and contains several examples. Its generated
+The main CImg block is at `tschumperle/cimg <https://www.biicode.com/tschumperle/cimg>`_ and contains several examples. Its generated
 from this `github repo <https://github.com/lasote/cimg>`_.
 
+Tron game
+---------
 
-General usage
-----------------------------------
+This is a classic Tron game that shows how to load and manipulate images with Cimg library in a simple way.
 
-Just **#include "tschumperle/cimg/CImg.h"** in your cpp file, execute **bii find** to download the requirements and **bii build** for build your project.
+Let's try it out!
+
+Create a new project
+^^^^^^^^^^^^^^^^^^^^
+
+Init a new project and a new *tron.cpp* file inside and copy the code below:
+
+.. code-block:: bash
+
+ $ bii init tron_example -L
+ $ cd tron_example
+ $ # Create tron.cpp and copy the code
+
+**tron.cpp**
+
+.. literalinclude:: /_static/code/cpp/examples/cimg/tron.cpp
+   :language: cpp
+   :linenos:
+   :emphasize-lines: 44
+
+Manage your dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check the dependencies of the project with **bii deps**:
+
+..  code-block:: bash
+ 
+ $ bii deps
+ INFO: Processing changes...
+ your_user/cimg_example depends on:
+       unresolved:
+          CImg.h
+
+Now, edit the *biicode.conf* file generated in the project folder. Add your ``[requirements]`` depending on the version you want and map your ``[includes]``:
+
+.. code-block:: text
+
+ [requirements]
+     tschumperle/cimg: 4
+ 
+ [includes]
+     CImg.h: tschumperle/cimg
+
+Now, checking again **bii deps** shows all resolved dependencies.
 
 .. container:: infonote
   
@@ -31,7 +75,7 @@ Just **#include "tschumperle/cimg/CImg.h"** in your cpp file, execute **bii find
 
   Go to `XQuartz home page <http://xquartz.macosforge.org/landing/>`_, download the package and install it.
 
-If you are directly depending to CImg (using the **#include "tschumperle/cimg/CImg.h"**) you might need to modify the CMakeLists.txt of your block in order to include the external X11 dependency in the linking process:
+You might need to modify the CMakeLists.txt of your block in order to include the external X11 dependency in the linking process:
 
 .. code-block:: cmake
 
@@ -51,19 +95,26 @@ If you are directly depending to CImg (using the **#include "tschumperle/cimg/CI
         ENDIF()
     ENDIF()
 
+Build the project
+^^^^^^^^^^^^^^^^^
 
-Usage example: Tron game
-----------------------------------
-
-This example is extracted from `examples/cimg/tron.cpp <http://www.biicode.com/examples/cimg>`_.
-It's a classic Tron game and shows how to load and manipulate images with Cimg library in a simple way.
-
-Simply open the examples/cimg block:
+Now, build and run your Tron game!
 
 .. code-block:: bash
 
-    $ bii init myproject
-    $ cd myproject
+ $ bii build
+ $ cd bin
+ $ # Run the executable
+
+Open and build
+--------------
+
+This example is already in biicode: `examples/cimg <http://www.biicode.com/examples/cimg>`_. Give it a try, just open a new project and open the block.
+
+.. code-block:: bash
+
+    $ bii init cimg_example
+    $ cd cimg_example
     $ bii open examples/cimg
     $ bii build
     $ cd bin
@@ -73,11 +124,7 @@ Simply open the examples/cimg block:
 
 .. container:: infonote
 
-    Note that by opening the block, the CMakeLists.txt already includes the required modification. If you manually create the block the CMakeLists.txt has to be modified or a linking error will appear.
+    Note that this example block  already includes all required modifications above in both *biicode.conf* and *CMakeLists.txt*.
 
-**tron.cpp**
 
-.. literalinclude:: /_static/code/cpp/examples/cimg/tron.cpp
-   :language: cpp
-   :linenos:
-   :emphasize-lines: 44
+Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
