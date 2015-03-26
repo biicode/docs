@@ -98,13 +98,13 @@ Which source code files are part of each **executable**
 
 For example, if the block *lasote/game* has a *main.cpp* in a folder named "src" the variable will be: "BII_src_main_SRC"  
   
-**EXAMPLE**: Exclude *my_file.cpp* from being compiled with *examples/main.cpp* executable.
+  **EXAMPLE**: Exclude *my_file.cpp* from being compiled with *examples/main.cpp* executable.
 
-.. code-block:: cmake
+  .. code-block:: cmake
 
-    LIST(REMOVE_ITEM BII_examples_main_SRC my_file.cpp) 
+      LIST(REMOVE_ITEM BII_examples_main_SRC my_file.cpp) 
 
-    ADD_BIICODE_TARGETS()
+      ADD_BIICODE_TARGETS()
 
 
 Modify which test targets are made
