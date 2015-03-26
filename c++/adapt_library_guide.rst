@@ -3,21 +3,21 @@
 Adapt your library
 ------------------
 
- Transform your **library** in a fully functional **block** can be almost immediately or require some work. The more bigger or heavy configured libraries, the higher time require to adapt it.
+Transforming your **library** in a full functional biicode **block** can be straightforward or require some work. The bigger or "heavier" a library is, the higher time it takes to adapt it.
 
- We assume you read the section :ref:`Custom build configuration<_cmakelists_txt>` and you have understand how biicode builds your code.
+We assume you've read :ref:`Custom build configuration<_cmakelists_txt>` section and have understood how biicode builds your code.
 
-Concepts you must understand
-============================
+Concepts to understand
+======================
 
-* Put your library source code in a biicode block.
+* Place your library's source code in a biicode block.
 * Biicode **analyzes** your code and builds a **dependency graph** with how each file are connected to each others. These files are appended to ``BII_LIB_SRC`` variable in your *CMakeLists.txt* file 
-* When some user **#includes** a header (ex: file.h) from a remote block, biicode will download only the files that depends on "file.h" (recursively) and will build a **library** with only needed files. The library built for the dependency will be linked to your targets automatically.
+* When some user *#includes* a header (ex: file.h) from a remote block, biicode will download only the files that depends on "file.h" (recursively) and will build a **library** with only needed files. The library built for the dependency will be linked to your targets automatically.
 * So dependency graph must be built correctly in order to reuse a library.
 * To be sure that a library is uploaded correctly is recommended to publish it with DEV tag and reuse it from other project making an example. The example can be a main including a header from your own library. You can check a lot of examples of reuse in |examples_user|.
 
 **Key facts** 
-_____________
+-------------
 
 .. container:: infonote numeric one
 
@@ -39,8 +39,7 @@ Without previous CMakeLists.txt
 If your current library doesn't have a *CMakeLists.txt* biicode will create it when you execute **bii configure** or **bii build**.
 
 1. Execute **bii deps** and check ``unresolved`` dependencies. 
-______________________________________________________________
-
+--------------------------------------------------------------
 
  * If you see there **some of your header** files (\*.h) biicode are not detecting them right.  check :ref:`[paths]<paths_conf>` section in *biicode.conf*. Maybe you have non-relative #includes and need to add the folder with the headers to let biicode find them.
  
@@ -52,7 +51,7 @@ ______________________________________________________________
  * If you don't have unresolved dependencies or it seems to be system dependencies, try to compile it (point 2).
 
 2. Execute **bii build**
-________________________
+------------------------
 
   * If there are compile errors
 
@@ -67,8 +66,8 @@ ________________________
   	*  If you don't find them you can try to google. Maybe you need to link a system library. You can use *TARGET_LINK_LIBRARIES(${BII_LIB_TARGET} PUBLIC pthread)* in your *CMakeLists.txt* after *ADD_BIICODE_TARGETS()*.
 
 3. Test the library reuse
-__________________________
- 
+--------------------------
+
 Well, at this point biicode knows how to build your code. But you are not done yet. You should check that your library can be included and works fine.
 
 	* ``bii publish`` to publish a DEV version of your code. 
@@ -89,8 +88,8 @@ Well, at this point biicode knows how to build your code. But you are not done y
 With previous CMakeLists.txt
 ============================
 
-**Option 1**: Let biicode do their job in an isolated file
-__________________________________________________________
+**Option 1**: Let biicode do its job in an isolated file
+--------------------------------------------------------
 
   If you already have a *CMakeLists.txt* file there's no need to replace it, just adapt it like this:
 
@@ -107,7 +106,7 @@ __________________________________________________________
 
 
 **Option 2**: Build your own target library and link them to *BII_LIB_TARGET*
-______________________________________________________________________________
+-----------------------------------------------------------------------------
 
   	Sometimes, with big and complex libraries that already have their CMakeLists.txt and builds his own library, the best approach is to link the result library to **${BII_LIB_TARGET}**
 
@@ -197,7 +196,7 @@ You can check a complete example of **Option 2** here with |curl_block| and |lib
 This **Option 2** is not ideal because is downloading, compiling and linking the whole library and some files may be unnecessary. But if your library files is heavily connected and/or there are so much files this is your best option.
 
 **Option 3**: Adapt your CMakeLists.txt filtering files
-_______________________________________________________
+-------------------------------------------------------
 
 There is a third option, a mix of two previous option:
 	
