@@ -1,6 +1,6 @@
- #include "diego/opencv/opencv2/objdetect/objdetect.hpp"
- #include "diego/opencv/opencv2/highgui/highgui.hpp"
- #include "diego/opencv/opencv2/imgproc/imgproc.hpp"
+ #include "opencv2/objdetect/objdetect.hpp"
+ #include "opencv2/highgui/highgui.hpp"
+ #include "opencv2/imgproc/imgproc.hpp"
 
  #include <iostream>
  #include <stdio.h>
@@ -12,8 +12,8 @@
  void detectAndDisplay( Mat frame );
 
  /** Global variables */
- String face_cascade_name = "examples/opencv_sample/haarcascade_frontalface_alt.xml";
- String eyes_cascade_name = "examples/opencv_sample/haarcascade_eye_tree_eyeglasses.xml";
+ String face_cascade_name = "examples/opencv_sample/haarcascade_frontalface_alt.xml"; //NOTE "examples" should be your user
+ String eyes_cascade_name = "examples/opencv_sample/haarcascade_eye_tree_eyeglasses.xml"; //NOTE "examples" should be your user
  CascadeClassifier face_cascade;
  CascadeClassifier eyes_cascade;
  string window_name = "Capture - Face detection";
@@ -29,7 +29,7 @@
    if( !eyes_cascade.load( eyes_cascade_name ) ){ printf("--(!)Error loading\n"); return -1; };
 
 // Read the image file
-    Mat frame = imread("examples/opencv_sample/hugh.png");
+    Mat frame = imread("examples/opencv_sample/hugh.png"); //NOTE "examples" should be your user
     // Apply the classifier to the frame
     if (!frame.empty())
       detectAndDisplay(frame);

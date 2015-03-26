@@ -1,12 +1,12 @@
 GLFW
 ====
 
-`GLFW <http://www.glfw.org/>`__ is a free, Open Source, multi-platform library for OpenGL and OpenGL ES application development.
+`GLFW <http://www.glfw.org/>`_ is a free, Open Source, multi-platform library for OpenGL and OpenGL ES application development.
 It provides a simple, platform-independent API for creating windows and contexts, reading input, handling events, etc.
 
 It is a great library, if you want to build OpenGL applications it is highly recommended.
 
-You can find it ready for simple use `in biicode <http://www.biicode.com/diego/glfw>`__.
+You can find GLFW library at `diego/glfw <http://www.biicode.com/diego/glfw>`_.
 
 
 Running the examples
