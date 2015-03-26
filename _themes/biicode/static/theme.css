@@ -5843,6 +5843,29 @@ body.nodejs .tabs .tab.current
   font-size: 25px;
 }
 
+.infonote.numeric:before{
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 3px;
+    padding-top: 10px;
+}
+
+.infonote.one:before {
+    content: "1";
+}
+
+.infonote.two:before {
+    content: "2";
+}
+
+.infonote.three:before {
+    content: "3";
+}
+
+.infonote.four:before {
+    content: "4";
+}
+
 .biicode-sections {
   position: fixed;
   top: 98px;
