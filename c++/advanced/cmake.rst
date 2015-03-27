@@ -132,3 +132,8 @@ We are available at |biicode_forum_link| for any issues. You can also |biicode_w
 .. |biicode_write_us| raw:: html
 
    <a href="mailto:support@biicode.com" target="_blank">write us</a>
+
+
+   .. |biicode_cmake_block| raw:: html
+
+   <a href="https://www.biicode.com/biicode/cmake" target="_blank">cmake</a>
