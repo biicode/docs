@@ -97,7 +97,7 @@ At this point biicode knows how to build your code. But you are not done yet. Yo
 	* Execute **bii deps** to ensure your requirement is wired right.
 	* Execute **bii build** to build the example
 		
-		* If compilation fails because any files are missing, check ``deps/`` folder to review the files biicode downloaded. If you notice some file are missing you probably need to add them in :ref:`[dependencies]<dependencies_conf>` section in *biicode.conf*. Fix the library and **bii publish** again. Then execute **bii  build**in your example folder again, this downloads the updated library automatically. Check again the files downloaded.
+		* If compilation fails because any files are missing, check ``bii/deps/`` folder to review the files biicode downloaded. If you notice some file are missing you probably need to add them in :ref:`[dependencies]<dependencies_conf>` section in *biicode.conf*. Fix the library and **bii publish** again. Then execute **bii  build**in your example folder again, this downloads the updated library automatically. Check again the files downloaded.
 
 		* If compilation fails in cause of an error in your library's *CMakeLists.txt* check that you are not presuming that (*key fact 1*) all files are present. Fix *CMakeLists.txt* or wire a dependency (if needed) in :ref:`[dependencies]<dependencies_conf>` section in *biicode.conf*.
 
