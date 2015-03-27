@@ -58,7 +58,7 @@ Place this code into the *main.cpp* file:
 
 This is just a sum function and a test using Google Test framework.  
 
-It *#includes* |google_test_biicode_link| block. It has an **owner: google** and latest version is **10 tagged STABLE**.
+The *#include* is composed as ``#include <biicode_user>/<block_name>/path/to/file``. In this case, it *#includes* the ``include/gtest/gtest.h`` header from |google_test_biicode_link| block, user **google** and latest version is **10 tagged STABLE**.
 
 .. image:: /_static/img/c++/gtest_in_biicode.png
 
