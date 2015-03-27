@@ -81,8 +81,8 @@ Edit *biicode.conf* file generated in the project folder. Add your ``[requiremen
     opencv2/*: diego/opencv
  
  [data]
-    main.cpp + opencv_bii.png
-    mainface.cpp + haarcascade_frontalface_alt.xml haarcascade_eye_tree_eyeglasses.xml opencv_hugh.png
+    main.cpp + bii.png
+    mainface.cpp + haarcascade_frontalface_alt.xml haarcascade_eye_tree_eyeglasses.xml hugh.png
 
 Now, checking **bii deps**, your dependencies are resolved.
 
