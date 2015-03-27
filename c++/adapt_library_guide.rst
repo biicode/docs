@@ -3,69 +3,7 @@
 Adapt your library
 ======================
 
-Follow this guide to develop your library along with biicode whether it's tiny or huge, these are basic steps to go. 
-
-.. code-block:: bash
-
-  ~$ cd your_lib_directory
-  ~/your_lib_directory$ bii init -L
-  ~/your_lib_directory$ #create a biicode.conf file
-
-If you haven't got yours yet, create a *biicode.conf* file.
-
-.. _adapt_library_biiconf:
-
-biicode.conf
-------------
-
-Fill ``[requirements]``,  and ``[includes]`` sections to retrieve the libs you need (Box2D, OpenSSl, OpenCV, Libuv, GTest ...) as shown in :ref:`dependencies<cpp_dependencies>` section.
-
-Paths 
-^^^^^
-
-After that, write ``[paths]`` section to tell biicode in which folders it has to look for the local files from your includes.
-You only need to specify your paths when your project has non-file-relative ``#include (s)``.
-
-For example:
-
-.. code-block:: text
-
-      [paths]
-          # Local directories to look for headers in your block
-          include
-          /
-
-.. container:: infonote
-
-    Here's more information on :ref:`[paths] section<paths_conf>`
-
-Run **bii build**  and check :ref:`next section to keep going<adapt_library_cmakelists>`.
-
-Tests
-^^^^^
-
-Sometimes your library includes some tests to check your its functionality. Your *biicode.conf* ``[tests]`` section is here to cover these tests.
-
-Just write the test files specifically or the path to the folder that contains them like this:
-
-.. code-block:: text
-
-  [tests]
-
-    projects/SelfTest/*
-    tests/unit_test.cpp
-
-Run **bii test**  and you're ready to go. Check :ref:`bii test options here<bii_test_command>`.
-
-.. container:: infonote
-
-    You can specify in your ``[mains]`` section that which tests aren't mains. 
-    :ref:`Here's more on [mains]<mains_conf>` and :ref:`[tests] <test_conf>` sections.
-
 .. _adapt_library_cmakelists:
-
-CMakeLists.txt
---------------
 
 Transforming your **library** in a full functional biicode **block** can be straightforward or require some work. The bigger or "heavier" a library is, the higher time it takes to adapt it.
 
@@ -85,7 +23,7 @@ Concepts to understand
 
 .. container:: infonote numeric one
 
-	As biicode may build the libraries with just a few files from the whole library (biicode only builds the files you need), when you're depending on a library you better not assume in your *CMakeLists.txt* file that all files are present. 
+	As biicode may build the libraries with just a few files from the whole library (biicode only downloads and builds the needed files), you shouldn't assume in your *CMakeLists.txt* that all your library files will be present. 
 		
 		> **Example**: Make sure an *exe target* exists before executing ``TARGET_LINK_LIBRARIES`` upon it. 
 
@@ -93,9 +31,9 @@ Concepts to understand
 
 .. container:: infonote numeric two
 
-	To make a reusable library, set ``${BII_LIB_TARGET}`` in *CMakeLists.txt* as a "plug". 
+	Biicode needs a library in ``BII_LIB_TARGET`` variable to make it reusable, as a "plug". 
 
-	You can also name ``BII_LIB_TARGET`` as your cmake library. It only needs that ``${BII_LIB_TARGET}`` exists and is a library.
+	It builds ``${BII_LIB_TARGET}`` for each block with the source code files in ``BII_LIB_SRC`` variable (list).
 
 .. _without-previous-cmakelists-txt:
 
@@ -104,10 +42,24 @@ Without a previous CMakeLists.txt
 
 If your current library doesn't have a *CMakeLists.txt* biicode creates it when you execute **bii configure** or **bii build**.
 
-1. Look for``unresolved`` dependencies with **bii deps**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Look for ``unresolved`` dependencies with **bii deps**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
- * When **some of your header** files (\*.h) are *unresolved*, biicode can't detect them. You can solve this by filling :ref:`[paths]<paths_conf>` section in *biicode.conf* with the folders containing the headers to let biicode find them.
+ * If **some of your header** files (\*.h) are *unresolved*, biicode has not been able to detect them. You can solve this by filling :ref:`[paths]<paths_conf>` section in *biicode.conf* with the folders containing the headers to let biicode find them.  
+	
+	You only need to specify your paths when your project has non-file-relative ``#include (s)``.
+
+	For example:
+
+	.. code-block:: text
+
+	      [paths]
+	          # Local directories to look for headers in your block
+	          include
+	          /
+
+	.. container:: infonote
+
  
  * If there are references to **external headers**, look for the library you need in biicode. You can use the search engine in https://www.biicode.com and search for the file typing ``file:my_include.h``
 
