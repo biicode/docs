@@ -276,10 +276,6 @@ Complete variable reference
    <a href="mailto:support@biicode.com" target="_blank">write us</a>
 
 
-.. |biicode_cmake_block| raw:: html
-
-   <a href="https://www.biicode.com/biicode/cmake" target="_blank">cmake</a>
-
 .. |cmake_build_type| raw:: html
 
    <a href="http://www.cmake.org/cmake/help/v3.0/variable/CMAKE_BUILD_TYPE.html" target="_blank"> CMake Build Type</a>

@@ -79,7 +79,7 @@ If your current library doesn't have a *CMakeLists.txt* biicode creates it when 
   
   * If you receive **linker errors**, search in the code the missing symbols.
 
-  	*  If they are in you source code, maybe biicode is not finding some implementation and the dependency graph wasn't built correctly. Use :ref:`[dependencies]<dependencies_conf>` section in *biicode.conf* to specify the missing source file.
+  	*  If they are in you source code, maybe biicode is not finding some implementation and the dependency graph wasn't built correctly. You can use :ref:`[bii deps --files]<bii_deps_command>` to inspect how the code is connected. Use :ref:`[dependencies]<dependencies_conf>` section in *biicode.conf* to specify the missing source file.
 
   	*  Can't find them in your sources? Try to google them. You may need to link a system library. You can use ``TARGET_LINK_LIBRARIES(${BII_LIB_TARGET} PUBLIC pthread)`` in your *CMakeLists.txt* after ``ADD_BIICODE_TARGETS()``.
 
@@ -265,7 +265,7 @@ There is a third option, a mix of the two previous options:
 
 			SET(BII_LIB_TARGET my_library)
 
-As you know we're available at |biicode_forum_link| for questions and answers. You can also|biicode_write_us|.
+As you know we're available at |biicode_forum_link| for questions and answers. You can also |biicode_write_us|.
 
 
 .. |biicode_forum_link| raw:: html
