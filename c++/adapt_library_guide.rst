@@ -1,158 +1,297 @@
 .. _adapt_library:
 
 Adapt your library
-------------------------
+======================
 
- Transform your **library** in a fully functional **block** can be almost immediately or require some work. The more bigger or heavy configured libraries, the higher time require to adapt it.
+.. _adapt_library_cmakelists:
 
- We assume you read the section :ref:`Custom build configuration<_cmakelists_txt>` and you have understand how biicode builds your code.
+Transforming your **library** in a full functional biicode **block** can be straightforward or require some work. The bigger or "heavier" a library is, the higher time it takes to adapt it.
 
-**Key concepts** to keep in mind
-=================================
+We assume you've read :ref:`Custom build configuration<cmakelists_txt>` section and have understood how biicode builds your code.
 
-1. Put your library source code in a biicode block.
-2. Biicode **analyzes** your code and builds a **dependency graph** with how each file are connected to each others.
-3. When some user **#includes** a header (ex: file.h) from a remote block, biicode will download only the files that depends on "file.h" (recursively) and will build a **library** with only needed files. The library built for the dependency will be linked to your targets automatically.
-4. So dependency graph must be built correctly in order to reuse a library.
-5. Given that a library must be built only with few files of the whole library, you can't assume in your ``CMakeLists.txt`` file that all files are present. Example: You should not execute TARGET_LINK_LIBRARIES upon an exe target without check if it exist first.
-6. To be sure that a library is uploaded correctly is recommended to publish it with DEV tag and reuse it from other project making an example. The example can be a main including a header from your own library. You can check a lot of examples of reuse in |examples_user|. https://www.biicode.com/examples
-7. The previous points can be condensed in one: You need a CMakeLists.txt that build **${BII_LIB_TARGET}** in order to let biicode have an  "interface" through build and link libraries.
+Concepts to understand
+----------------------
+
+* Place your library's source code in a biicode block.
+* Biicode **analyzes** your code and builds a **dependency graph** with how each file connects to the others. These files are appended to ``BII_LIB_SRC`` variable in your *CMakeLists.txt* file.
+* When you *#include* a header (ex: file.h) from a remote block, biicode only downloads the files that depend on "file.h" (recursively) and builds a **library** with the files needed. The dependency library built is linked to your targets automatically.
+* When you're the one uploading a "reusable" library, it's really important that the dependency graph for that lib is built correctly.
+* A quick way to be sure that your library is fully reusable, is publishing with DEV tag and then depend on it from another project making an example. The example can be a main including a header from your own library. You can check a lot of examples reusing libsS in |examples_user|.
+
+**Key facts**
+^^^^^^^^^^^^^
+
+.. container:: infonote numeric one
+
+	As biicode may build the libraries with just a few files from the whole library (biicode only downloads and builds the needed files), you shouldn't assume in your *CMakeLists.txt* that all your library files will be present. 
+		
+		> **Example**: Make sure an *exe target* exists before executing ``TARGET_LINK_LIBRARIES`` upon it. 
+
+		> **Example**: Adding *my_file.cpp* to your library explicitly isn't recommended as you don't know if biicode has downloaded this file.
+
+.. container:: infonote numeric two
+
+	Biicode needs a library in ``BII_LIB_TARGET`` variable to make it reusable, as a "plug". 
+
+	It builds ``${BII_LIB_TARGET}`` for each block with the source code files in ``BII_LIB_SRC`` variable (list).
 
 .. _without-previous-cmakelists-txt:
 
-Without previous CMakeLists.txt
-===============================
+Without a previous CMakeLists.txt
+---------------------------------
 
-If your current library don't have a **CMakeLists.txt** file biicode will create one when you execute ``bii configure`` or ``bii build``.
+If your current library doesn't have a *CMakeLists.txt* biicode creates it when you execute **bii configure** or **bii build**.
 
-1. Execute ``bii deps`` and check ``unresolved`` dependencies. 
+1. Look for ``unresolved`` dependencies with **bii deps**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
- * If you see there some that biicode are not detecting **some of your header** files (\*.h) check :ref:`[paths]<paths_conf>` section in ``biicode.conf``. Maybe you have non-relative #includes and need to add the folder with the headers to let biicode find them.
+ * If **some of your header** files (\*.h) are *unresolved*, biicode has not been able to detect them. You can solve this by filling :ref:`[paths]<paths_conf>` section in *biicode.conf* with the folders containing the headers to let biicode find them.  
+	
+	You only need to specify your paths when your project has non-file-relative ``#include (s)``.
+
+	For example:
+
+	.. code-block:: text
+
+	      [paths]
+	          # Local directories to look for headers in your block
+	          include
+	          /
+
+	.. container:: infonote
+
  
- * If you see there are references to **external** **headers** you have to check that the required library is in biicode. You can use the search engine in https://www.biicode.com and search for a file typing ``file:my_include.h``
+ * If there are references to **external headers**, look for the library you need in biicode. You can use the search engine in https://www.biicode.com and search for the file typing ``file:my_include.h``
 
- 	* If you find the library in a block, just fill your :ref:`[requirements]<requirements_conf>` section of ``biicode.conf`` with it and ensure again with ``bii deps`` command that the #includes are resolved. If don't check :ref:`[includes]<includes_conf>` section in ``biicode.conf``.
- 	* If you don't find it you can try to upload it to biicode first ;)
+ 	* Found the library in biicode? Just fill your :ref:`[requirements]<requirements_conf>` section of *biicode.conf* as shown in :ref:`dependencies<cpp_dependencies>` section. Re-run **bii deps** command to ensure the #includes are resolved.
+ 	* Didn't find the library in biicode? You could be the first one adding it ;)
  
- * If you don't have unresolved dependencies or it seems to be system dependencies, try to compile it (point 2).
+ * If there are no unresolved dependencies or it seems your unresolved dependencies are **system dependencies**, try to compile it (point 2).
 
-2. Execute ``bii build``
+2. Execute **bii build**
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-  * If there are compile errors
+  * There are **compilation errors**:
 
-  	* Check if some compile definition is needed. You can use *TARGET_COMPILE_DEFINITIONS(${BII_BLOCK_TARGET} PUBLIC "MY_DEFINITION=1")* in your CMakeLists after *ADD_BIICODE_TARGETS()*.
-  	* Review the **BII_LIB_SRC** variable in CMakeLists.txt (and **BII_exe_name_SRC**) and look for missing files. If you detect a file is missing, add it to ref:`[dependencies]<dependencies_conf>` section in ``biicode.conf``.
+  	* Check if some compile definition is needed. You can use *TARGET_COMPILE_DEFINITIONS(${BII_BLOCK_TARGET} PUBLIC "MY_DEFINITION=1")* in your CMakeLists after ``ADD_BIICODE_TARGETS()``.
+
+  	* Review the ``BII_LIB_SRC`` variable in CMakeLists.txt (and ``BII_exe_name_SRC``) and look for missing files. 
+
+  	If you detect a file is missing, add it to :ref:`[dependencies]<dependencies_conf>` section in *biicode.conf*.
   
-  * If there are linker errors, search in code the missing symbols.
+  * If you receive **linker errors**, search in the code the missing symbols.
 
-  	*  If you find them in you source code maybe biicode is not finding some implementation and dependency graph is not build correctly. Use :ref:`[dependencies]<dependencies_conf>` section in ``biicode.conf`` to specify missing source file.
+  	*  If they are in you source code, maybe biicode is not finding some implementation and the dependency graph wasn't built correctly. Use :ref:`[dependencies]<dependencies_conf>` section in *biicode.conf* to specify the missing source file.
 
-  	*  If you don't find them you can try to google. Maybe you need to link a system library. You can use *TARGET_LINK_LIBRARIES(${BII_LIB_TARGET} PUBLIC pthread)* in your ``CMakeLists.txt`` after *ADD_BIICODE_TARGETS()*.
+  	*  Can't find them in your sources? Try to google them. You may need to link a system library. You can use ``TARGET_LINK_LIBRARIES(${BII_LIB_TARGET} PUBLIC pthread)`` in your *CMakeLists.txt* after ``ADD_BIICODE_TARGETS()``.
 
-3. Test the library reuse.
- 
-Well, biicode now knows how to build your code. But you are not done yet. You should check that your library can be included and works fine.
+3. Test the libary's reusability
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+At this point biicode knows how to build your code. But you are not done yet. You should check that your library can be included and works fine.
 
 	* ``bii publish`` to publish a DEV version of your code. 
-	* Open a new terminal and create a new biicode project with an example that includes your library. You can check a lot of examples of reuse in |examples_user|. https://www.biicode.com/examples. So create a new folder and execute ``bii init -l`` and ``bii new --hello cpp``.
-	* Execute ``bii configure`` to create ``biicode.conf`` and ``CMakeFiles.txt`` files.
-	* Require your original block library in :ref:`[requirements]<requirements_conf>` section of ``biicode.conf``
-	* Execute ``bii deps`` to ensure your requirement is wired right.
-	* Execute ``bii build`` to build the example
+	* Open a new terminal and create a new biicode project with an example including your library. You can check a lot of reuse examples in |examples_user|.  Create a new folder and execute **bii init -l** and **bii new --hello cpp**. Replace *main.cpp* code with your example code.  
+	* Run **bii configure** to create *biicode.conf* and *CMakeLists.txt* files.
+	* Require your original block library in :ref:`[requirements]<requirements_conf>` section of *biicode.conf*
+	* Execute **bii deps** to ensure your requirement is wired right.
+	* Execute **bii build** to build the example
 		
-		* If compilation fails because a missing file/s you can check the ``deps/`` folder to check the files that biicode has downloaded. If some file are missing you probably need to add some file in :ref:`[dependencies]<dependencies_conf>` section in ``biicode.conf``. Fix the library and publish again. Then execute ``bii build`` in your example folder again, it will be download the updated library automatically. Check again the downloaded files.
+		* If compilation fails because any files are missing, check ``deps/`` folder to review the files biicode downloaded. If you notice some file are missing you probably need to add them in :ref:`[dependencies]<dependencies_conf>` section in *biicode.conf*. Fix the library and **bii publish** again. Then execute **bii  build**in your example folder again, this downloads the updated library automatically. Check again the files downloaded.
 
-		* If compilation fails because an error in the **CMakeLists.txt** of your library check **key concepts number 5**.
+		* If compilation fails in cause of an error in your library's *CMakeLists.txt* check that you are not presuming that (*key fact 1*) all files are present. Fix *CMakeLists.txt* or wire a dependency (if needed) in :ref:`[dependencies]<dependencies_conf>` section in *biicode.conf*.
 
-	* You can build more examples including (if exists) more headers from your library for ensure it works well.
-	* Congrats! You have a fully functionally library in biicode! Execute ``bii publish --tag STABLE`` for freeze an stable version.
+	* You can build more examples including more headers from your library to ensure it works well.
+
+	* Congrats! You have a full functional library in biicode! Execute ``bii publish --tag STABLE`` to freeze an stable version.
+
+**Got any doubts?** Ask in |biicode_forum_link| or |biicode_write_us|.
+
+With a previous CMakeLists.txt
+------------------------------
+
+**Option 1**: Let biicode do its job in an isolated file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you already have a *CMakeLists.txt* file there's no need to replace it, just adapt it like this:
+
+.. code-block:: cmake
+
+   IF(BIICODE)  
+      INCLUDE("biicode.cmake")
+      RETURN()
+   ENDIF()
+   # Your regular project configuration here
+
+Now create a file named *biicode.cmake* an add the line **ADD_BIICODE_TARGETS()**.
+Then read :ref:`without a previous CMakeLists.txt<without-previous-cmakelists-txt>` section knowing that *biicode.cmake* is now the file where you will write the code needed.
 
 
-With previous CMakeLists.txt
-============================
+**Option 2**: Build your own target library and link them to *BII_LIB_TARGET*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Let biicode do their job in an isolated file:
+Sometimes, when adapting big and complex libraries that already have a CMakeLists.txt building its onw library, the best approach is to link the resulting library to ``${BII_LIB_TARGET}``
 
-  If you already have a ``CMakeLists.txt`` file there's no need to replace it, just adapt it like this:
+* As you want to use your own library targets and these take for granted that all files are always present, it's violating *key fact nº1*. The way to proceed is wiring all your library files together in :ref:`[dependencies]<dependencies_conf>` section in *biicode.conf*.
 
-  .. code-block:: cmake
+	**EXAMPLE**: ``[dependencies]`` section from |curl_block|. 
 
-	   IF(BIICODE)  
-	      INCLUDE("biicode.cmake")
-	      RETURN()
-	   ENDIF()
-	   # Your regular project configuration here
+	.. code-block:: cmake
+	
+	    [dependencies]
+	    # Nothing depend on tests, so do not include tests if not needed
+	    src/* - tests/*
+	    lib/* - tests/*
+	    include/* - tests/*
 
-  Now create a file named ``biicode.cmake`` an add the line **ADD_BIICODE_TARGETS()**.
-  Proceed reading :ref:`Without previous CMakeLists.txt<without-previous-cmakelists-txt>` section assuming ``biicode.cmake`` is now the file where you will write the needed code.
+	    # Lib doesn't depend on src
+	    lib/* - src/*
 
-2. Adapt 
+	    # Everything depends on libcurl
+	    src/* + lib/* docs/MANUAL docs/curl.1 src/mkhelp.pl
+	    include/* + lib/*
+	    tests/*.h + src/* lib/* include/* tests/*
 
+	    # Src module goes together
+	    src/*.h + src/*.c
 
+	.. _link_to_bii_lib_target:
 
-3. Build your own target library and link them to **${BII_LIB_TARGET}**
+* Enable a plug for biicode (*key fact nº2*) at the end of your *CMakeLists.txt* (or before installation steps), assuming ``${LIB_NAME}`` is the name of the library you've built:
 
-  Sometimes, with big and complex libraries that already have their CMakeLists.txt and builds his own library, the best approach is to link the result library to **${BII_LIB_TARGET}**
+	.. code-block:: cmake
 
-	* At the end of your **CMakeLists.txt** (or before installation steps), assuming ``${LIB_NAME}`` is the name of the library that you have built:
+		IF(BIICODE)
+		  # Clear biicode auto detected files. 
+		  # BII_LIB_TARGET will be an interface target.
+		  SET(BII_LIB_SRC) 
+		  
+		  ADD_BIICODE_TARGETS()
+		  
+		  # If you have configured some file, include the output directory
+		  # TARGET_INCLUDE_DIRECTORIES(${BII_LIB_TARGET} INTERFACE ${CMAKE_CURRENT_BINARY_DIR}) 
+		  
+		  # Apply biicode dependencies to my library
+		  TARGET_LINK_LIBRARIES(${LIB_NAME} PUBLIC ${BII_LIB_DEPS}) 
+		  # Also the interface properties
+		  TARGET_LINK_LIBRARIES(${LIB_NAME} PUBLIC ${BII_BLOCK_TARGET})
+		  # Wire your lib to ${BII_LIB_TARGET} so biicode can use it
+		  TARGET_LINK_LIBRARIES(${BII_LIB_TARGET} INTERFACE ${LIB_NAME})
+
+		ENDIF()
+
+* Don't presume that targets are always present *(key fact nº1)*:
+
+	**EXAMPLE**: *tests* folder is not present (because tests not depend on any header of your library), so its not downloaded.
+
+	.. code-block:: cmake
+	
+		IF(BIICODE AND (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests"))
+		   # Your code for generate examples targets
+		ENDIF()
+
+* If your *CMakeLists.txt* uses ``find_package`` directive and you want to replace these dependencies and depend on biicode blocks:
+
+	* Let biicode handle requirements:
+
+		**EXAMPLE**: This library links OpenSSL library of the system. But we want to link openssl from biicode:
 
 		.. code-block:: cmake
 
+			if(NOT BIICODE) # Biicode uses OpenSSL as a dep, do not find it in system
+			  find_package(OpenSSL)
+			  if(OPENSSL_FOUND)
+				set(USE_OPENSSL ON)
+				# ...
+				# ...
+			  endif()
+			else()
+			  set(USE_OPENSSL ON)
+			endif()
+
+		* Require your original block library in :ref:`[requirements]<requirements_conf>` section in *biicode.conf*
+
+		* Execute **bii deps** to ensure your requirement is wired right.
+
+There's a complete example of **Option 2** you can check here at |curl_block| and |lib_curl_cmakelists|.
+
+**Option 2** is not "ideal" because is downloading, compiling and linking the whole library and some files may be unnecessary. But if your library files are heavily connected and/or there are so many files this is your best option.
+
+**Option 3**: Adapt your CMakeLists.txt filtering files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There is a third option, a mix of the two previous options:
+	
+	* Filter the files with the set of files detected by biicode ``${BII_LIB_SRC}``, not forcing  all source code to interconnect.
+
+		*key fact 1* said not to presume all files exist in our CMakeLists.txt, but we know which files has downloaded looking the ``BII_LIB_SRC`` variable, so you can always compose your library with the intersection of your list of sources and ``BII_LIB_SRC``
+
+		**EXAMPLE**:
+
+		.. code-block:: cmake
+
+			
+			MACRO(INTERSECTION var_name list1 list2)
+			  # Store the intersection between the two given lists in var_name.
+			  SET(intersect_tmp "")
+			  FOREACH(l ${list1})
+			    IF("${list2}" MATCHES "(^|;)${l}(;|$)")
+			      SET(intersect_tmp ${intersect_tmp} ${l})
+			    ENDIF("${list2}" MATCHES "(^|;)${l}(;|$)")
+			  ENDFOREACH(l)
+			  SET(${var_name} ${intersect_tmp})
+			ENDMACRO(INTERSECTION)
+
+			# Biicode detects that file2.cpp is not a dependency of the block that includes this one.
+			# So in BII_LIB_SRC there are only file1.cpp and file3.cpp
+			# If we try to add_library using file2.cpp will fail, so lets filter it.
+
+			set(my_library_files file1.cpp file2.cpp file3.cpp)
 			IF(BIICODE)
-			  SET(BII_LIB_SRC) # Clear biicode auto detected files. BII_LIB_TARGET will be an interface target.
-			  
-			  ADD_BIICODE_TARGETS()
-			  
-			  # If you have configured some file
-			  # TARGET_INCLUDE_DIRECTORIES(${BII_LIB_TARGET} INTERFACE ${CMAKE_CURRENT_BINARY_DIR}) 
-			  
-			  # Apply biicode dependencies to my library
-			  TARGET_LINK_LIBRARIES(${LIB_NAME} PUBLIC ${BII_LIB_DEPS}) 
-			  # Also the interface properties
-			  TARGET_LINK_LIBRARIES(${LIB_NAME} PUBLIC ${BII_BLOCK_TARGET})
-			  # Wire your lib to ${BII_LIB_TARGET} so biicode can use it
-			  TARGET_LINK_LIBRARIES(${BII_LIB_TARGET} INTERFACE ${LIB_NAME})
-
-			ENDIF()
+			  INTERSECTION(filtered_files "${my_library_files}" "${BII_LIB_SRC}")
+			ELSE()
+			  set(filtered_files ${my_library_files})
+			END()
+			add_library(my_library ${filtered_files})
 
 
-	* If you CMakeLists.txt has ``find_package`` calls and you want to replace this dependencies with the uploaded to biicode:
+		.. container:: infonote
 
-		* Let biicode handle requirements
+			You can include |macro_intersection| from *biicode/cmake* block and reuse the macro ``INTERSECTION``. Check :ref:`[Publish, share and reuse CMake scripts]<reuse_cmake>` section for more information.
 
-			*EXAMPLE*: This library links OpenSSL library of the system. But we want to link openssl from biicode:
+	* Keep the way you build the library:
 
-			.. code-block:: cmake
-
-				if(NOT BIICODE) # Biicode uses OpenSSL as a dep, do not find it in system
-				  find_package(OpenSSL)
-				  if(OPENSSL_FOUND)
-					set(USE_OPENSSL ON)
-					# ...
-					# ...
-				  endif()
-				else()
-				  set(USE_OPENSSL ON)
-				endif()
-
-  		* Require your original block library in :ref:`[requirements]<requirements_conf>` section of ``biicode.conf``
-		* Execute ``bii deps`` to ensure your requirement is wired right.
-
-
-	* If you are assuming that targets always are present, tests for example:
+		Following *key fact 2*, you can build your library and :ref:`link to ${BII_LIB_TARGET}<link_to_bii_lib_target>`, or even change the value of ``BII_LIB_TARGET`` variable to match your library name. The only thing important is that the variable ``BII_LIB_TARGET`` contains a cmake library.
 
 		.. code-block:: cmake
-		
-			IF(BIICODE AND (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests"))
-			   # Your code for generate examples targets
-			ENDIF()
+
+			SET(BII_LIB_TARGET my_library)
+
+As you know we're available at |biicode_forum_link| for questions and answers. You can also|biicode_write_us|.
 
 
+.. |biicode_forum_link| raw:: html
 
-Example here: https://www.biicode.com/lasote/lasote/curl/master/2/lib/CMakeLists.txt
+   <a href="http://forum.biicode.com" target="_blank">our forum </a>
 
+
+.. |biicode_write_us| raw:: html
+
+   <a href="mailto:support@biicode.com" target="_blank">write us</a>
+
+
+.. |macro_intersection| raw:: html
+    
+    <a href="https://www.biicode.com/biicode/biicode/cmake/master/4/tools.cmake" target="_blank">tools.cmake</a>
 
 .. |examples_user| raw:: html
     
     <a href="https://www.biicode.com/examples" target="_blank">examples user</a>
 
+.. |curl_block| raw:: html
+	
+	<a href="https://www.biicode.com/lasote/curl" target="_blank">curl block</a>
+
+.. |lib_curl_cmakelists| raw:: html
+	
+	<a href="https://www.biicode.com/lasote/lasote/curl/master/2/lib/CMakeLists.txt" target="_blank">libcurl CMakeLists.txt</a>

@@ -12,6 +12,7 @@ Here's a few usage cases for understanding biicode in depth:
 
   
    advanced/project
+   advanced/test
    advanced/open_blocks
    advanced/toolchain
    advanced/override_deps
