@@ -267,7 +267,7 @@ There is a third option, a mix of the two previous options:
 
 			SET(BII_LIB_TARGET my_library)
 
-As you know we're available at |biicode_forum_link| for questions and answers. You can also|biicode_write_us|.
+As you know we're available at |biicode_forum_link| for questions and answers. You can also |biicode_write_us|.
 
 
 .. |biicode_forum_link| raw:: html
