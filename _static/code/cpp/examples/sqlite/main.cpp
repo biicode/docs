@@ -14,7 +14,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstdlib>
-#include <sqlite/sqlite/include/SQLiteCpp/SQLiteCpp.h>
+#include <SQLiteCpp/SQLiteCpp.h>
 
 #ifdef SQLITECPP_ENABLE_ASSERT_HANDLER
 namespace SQLite
@@ -29,12 +29,11 @@ void assertion_failed(const char* apFile, const long apLine, const char* apFunc,
 }
 #endif
 
-// bii://example.db3
 /// Example Database
-static const char* filename_example_db3 = "examples/sqlite/example.db3";
-// bii://logo.png
+static const char* filename_example_db3 = "examples/sqlite_basic/example.db3"; //NOTE "examples" should be your user
+
 /// Image
-static const char* filename_logo_png    = "examples/sqlite/logo.png";
+static const char* filename_logo_png    = "examples/sqlite_basic/logo.png"; //NOTE "examples" should be your user
 
 
 /// Object Oriented Basic example
