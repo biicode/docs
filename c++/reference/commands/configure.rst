@@ -6,11 +6,11 @@
 
 This command analyzes your project and process dependencies, then creates or updates the required project CMake files. You can use it to specify which CMake generator you want to use. 
 
-This command accepts all CMake directives, you could say this command is basically a **cmake**. invocation within the project *build* folder.
+This command accepts all CMake directives, you could say this command is basically a **cmake** invocation within the project *build* folder.
 
 * Use **bii configure** to :ref:`configure a project for your IDE<generators_ide>`.
 
-* You can also :ref:`delve into specifics about building with biicode.<cpp_building>`
+* You can also :ref:`delve into specifics about building with biicode<building>`.
 
 
 .. container:: infonote
