@@ -19,12 +19,20 @@ So CMake:
 	# Name your project here (biicode names it automatically)
 	project(fibonacci)
 
+	# This tells CMake to build a library with other.c and file.c and name it mylib
+	# (biicode automatically creates a library for each block)
+	add_library(mylib other.c file.c) 
+
+	# Sends the -std=c99 flag to the gcc compiler
+	add_definitions(-std=c99)
+
 	# This tells CMake to build an executable with fib.c and name it fibonacci
 	# (biicode automatically adds detected targets in your source code)
 	add_executable(fibonacci fib.c) 
 
-	# Sends the -std=c99 flag to the gcc compiler
-	add_definitions(-std=c99)
+	# Links mylib to the fibonacci executable
+	# (biicode automatically links block's library to each executable)
+	target_link_libraries(fibonacci PUBLIC mylib)
 
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.

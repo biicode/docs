@@ -5,6 +5,8 @@ Advanced build configuration
 
 Apart from all the building with CMake tips available in :ref:`custom build configuration guide<building>`, there's also a few things that may come in handy while using biicode with CMake.
 
+.. _reuse_cmake:
+
 Publish, share and reuse CMake scripts
 --------------------------------------
 
