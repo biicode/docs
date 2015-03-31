@@ -1,31 +1,34 @@
 SQLite
 ======
 
-SQLite is a software library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine. SQLite is the most widely deployed SQL database engine in the world. For more information about this library, visit their `official website <http://www.sqlite.org/>`_.
+SQLite is a software library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine. SQLite is the most widely deployed SQL database engine in the world.
 
-You can find here the `SQLite library site <http://www.biicode.com/sqlite/sqlite/sqlite/master/5>`_.
+For more information about this library, visit their `official website <http://www.sqlite.org/>`_.
 
-Hello SQLite Example
-^^^^^^^^^^^^^^^^^^^^
+You can find SQLite library at `sqlite/sqlite <http://www.biicode.com/sqlite/sqlite/sqlite/master/5>`_.
+
+Shopping list database
+----------------------
 This example creates a database called LIST in which stores information about your shopping list. Take a deep look into the code in order to understand how it works and make your own one soon!
 
-How to replicate
------------------
-This example is `already in biicode <http://www.biicode.com/examples/sqlite_basic>`_, it's simple to run, just open the block and build it like this:
+Creating a project
+^^^^^^^^^^^^^^^^^^
+
+Create a new project with a simple layout and place the code inside.
 
 .. code-block:: bash
 
-   $ bii init sql
-   $ cd sql
-   $ bii open examples/sqlite_basic
-   $ bii build
+   $ bii init sqlite_basic -L
+   $ cd sqlite_basic
+   $ # create shopping_db.cpp and copy its content
 
-The code of the example is this one:
+**shopping_db.cpp**
 
 .. code-block:: cpp
+   :emphasize-lines: 2
 
 	#include <stdlib.h>
-	#include <sqlite/sqlite/sqlite3.h>
+	#include <sqlite3.h>
 	#include <string>
 	#include <stdio.h>
 	 
@@ -105,15 +108,47 @@ The code of the example is this one:
 	    return 0;
 	}
 
+Manage your dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now, run the hello example.
+Check the dependencies of the project with **bii deps**:
+
+..  code-block:: bash
+ 
+ $ bii deps
+ INFO: Processing changes...
+ your_user/sqlite_basic depends on:
+       system:
+          stdio.h
+          stdlib.h
+          string
+       unresolved:
+          sqlite3.h
+
+Edit the *biicode.conf* file generated in the project folder. Add your ``[requirements]`` depending on the version you want and map your ``[includes]``:
+
+.. code-block:: text
+
+ [requirements]
+     sqlite/sqlite: 8
+ 
+ [includes]
+     sqlite3.h: sqlite/sqlite/sqlite3
+
+Check again with **bii deps** to show all dependencies are now resolved.
+
+Build the project
+^^^^^^^^^^^^^^^^^
+
+Build the *shopping_db.cpp* and execute it.
 
 .. code-block:: bash
 
-   $ bin/examples_sqlite_basic_main.exe
+ $ bii build
+ $ cd bin
+ $ # execute it!
 
 You can see the results of the queries at the output:
-
   
 .. code-block:: bash
    
@@ -149,23 +184,38 @@ You can see the results of the queries at the output:
 		Closed database successfully
   
 SQLite++ Wrapper
-^^^^^^^^^^^^^^^^
-The following example how-to use the SQLite++ wrapper. You can find this example in `the biicode SQLite samples block <http://www.biicode.com/examples/sqlite>`_.
+----------------
+The following example how-to use the SQLite++ wrapper. Following the previous example, we'll develop this in the same project's folder.
 
-**main.cpp**
+Jus place *main.cpp*, *example.db3* and *logo.png* files inside:
+
+**sqlite_basic/main.cpp**
 
 .. literalinclude:: /_static/code/cpp/examples/sqlite/main.cpp
    :language: cpp
-   :linenos:
+   :emphasize-lines: 17
 
-Create a block:
+Download: :download:`example.db3 </_static/code/cpp/examples/sqlite/example.db3>`, :download:`logo.png </_static/img/c++/examples/logo.png>`.
 
-.. code-block:: bash
+Manage your dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-	$ bii init my_project
-	$ cd my_project
-	$ bii open examples/sqlite
+Check again with **bii deps** and edit the *biicode.conf* file.
 
+.. code-block:: text
+
+ [requirements]
+     sqlite/sqlite: 8
+ 
+ [includes]
+     sqlite3.h: sqlite/sqlite/sqlite3
+     SQLiteCpp/*: sqlite/sqlite/include
+
+ [data]
+     main.cpp + examle.db3 logo.png
+
+Build the example
+^^^^^^^^^^^^^^^^^
 
 Compile it and run the executable by doing:
 
@@ -190,5 +240,21 @@ You will see next console output:
 	row (3, "and a last one" 14 bytes, 9.5)
 	row (4, "" 0 bytes, 18)
 	...
+
+Open and build
+--------------
+This examples are already in biicode at `examples/sqlite_basic <http://www.biicode.com/examples/sqlite_basic>`_ and `examples/sqlite <http://www.biicode.com/examples/sqlite>`_.
+
+This is a way to give them a quick look and check how it works.
+
+Both examples are simple to run, just open the blocks and build them like this:
+
+.. code-block:: bash
+
+   $ bii init sqlite_project
+   $ cd sqlite_project
+   $ bii open examples/sqlite_basic
+   $ bii open examples/sqlite
+   $ bii build
 
 Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.

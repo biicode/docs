@@ -5,13 +5,13 @@ POCO
 
 POCO C++ libraries available at biicode are:
 	
-	* `Poco (develop) <https://www.biicode.com/fenix/fenix/poco/develop>`_
+	* Poco (develop) at `fenix/poco (develop) <https://www.biicode.com/fenix/fenix/poco/develop>`_.
 
-	* `Poco v1.6.0 <https://www.biicode.com/fenix/fenix/poco/v1.6.0>`_
+	* Poco v1.6.0 at `fenix/poco (v1.6.0) <https://www.biicode.com/fenix/fenix/poco/v1.6.0>`_.
 
-  	* `Poco v1.5.4 <https://www.biicode.com/fenix/fenix/poco/v1.5.4>`_
+  	* Poco v1.5.4 at `fenix/poco (v1.5.4) <https://www.biicode.com/fenix/fenix/poco/v1.5.4>`_.
 
-  	* `Poco v1.4.7p1 <https://www.biicode.com/fenix/fenix/poco/v1.4.7p1>`_
+  	* Poco v1.4.7p1 at `fenix/poco (v1.4.7p1) <https://www.biicode.com/fenix/fenix/poco/v1.4.7p1>`_.
 
 There are so many things you can try with POCO. This example shows a **PDF conversion** example from strings.
 
@@ -42,12 +42,23 @@ Choose your PDF output name, the font and size, the page of the document, the co
    :language: cpp
    :linenos:
 
-**Note** that the original ``includes`` are mapped in the **biicode.conf** file of the block.
+**Note** that the original ``[includes]`` are mapped in the *biicode.conf* file of the block.
+
+.. code-block:: Text
+ 
+ # Biicode configuration file
+ 
+ [requirements]
+     fenix/poco(develop): 0
+
+ [includes]
+     Poco/PDF/*.h: fenix/poco/PDF/include
+     Poco/*.h: fenix/poco/Foundation/include
 
 Generate the PDF
 ^^^^^^^^^^^^^^^^
 
-Now execute ``bii build`` to build the project.
+Now execute **bii build** to build the project.
 
 .. code-block:: bash
  
@@ -98,7 +109,7 @@ For example:
  
  /* Main code */
 
-The **biicode.conf** would be:
+The *biicode.conf* would be:
 
 .. code-block:: bash
  

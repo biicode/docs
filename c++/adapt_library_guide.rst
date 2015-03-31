@@ -58,8 +58,6 @@ If your current library doesn't have a *CMakeLists.txt* biicode creates it when 
 	          include
 	          /
 
-	.. container:: infonote
-
  
  * If there are references to **external headers**, look for the library you need in biicode. You can use the search engine in https://www.biicode.com and search for the file typing ``file:my_include.h``
 
@@ -90,7 +88,7 @@ If your current library doesn't have a *CMakeLists.txt* biicode creates it when 
 
 At this point biicode knows how to build your code. But you are not done yet. You should check that your library can be included and works fine.
 
-	* ``bii publish`` to publish a DEV version of your code. 
+	* **bii publish** to publish a DEV version of your code. 
 	* Open a new terminal and create a new biicode project with an example including your library. You can check a lot of reuse examples in |examples_user|.  Create a new folder and execute **bii init -l** and **bii new --hello cpp**. Replace *main.cpp* code with your example code.  
 	* Run **bii configure** to create *biicode.conf* and *CMakeLists.txt* files.
 	* Require your original block library in :ref:`[requirements]<requirements_conf>` section of *biicode.conf*
@@ -139,21 +137,21 @@ Sometimes, when adapting big and complex libraries that already have a CMakeList
 	.. code-block:: cmake
 	
 	    [dependencies]
-	    # Nothing depend on tests, so do not include tests if not needed
-	    src/* - tests/*
-	    lib/* - tests/*
-	    include/* - tests/*
+		    # Nothing depend on tests, so do not include tests if not needed
+		    src/* - tests/*
+		    lib/* - tests/*
+		    include/* - tests/*
 
-	    # Lib doesn't depend on src
-	    lib/* - src/*
+		    # Lib doesn't depend on src
+		    lib/* - src/*
 
-	    # Everything depends on libcurl
-	    src/* + lib/* docs/MANUAL docs/curl.1 src/mkhelp.pl
-	    include/* + lib/*
-	    tests/*.h + src/* lib/* include/* tests/*
+		    # Everything depends on libcurl
+		    src/* + lib/* docs/MANUAL docs/curl.1 src/mkhelp.pl
+		    include/* + lib/*
+		    tests/*.h + src/* lib/* include/* tests/*
 
-	    # Src module goes together
-	    src/*.h + src/*.c
+		    # Src module goes together
+		    src/*.h + src/*.c
 
 	.. _link_to_bii_lib_target:
 
