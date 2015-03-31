@@ -80,18 +80,3 @@ Let's create a block track from **diego/glfw** block:
         [requirements] 
             # required blocks (with version)
           diego/glfw: 0
-    
-Se ha metido la opción ahora de poder hacer un bii build -jN para ejecutar Makefile con esa opción y usar N núcleos  de vuestras máquinas:
-
-$ bii build -j4 == cmake --build . -- -j4
-
-Si es Visual Studio te lo transforma igualmente:
-
-$ bii build -j4 == cmake --build . -- /m:4
-
-Se repeta si pones directamente:
-
-$ bii build -- -j4
-
-si lo pones directamente biicode no te cambia ese codigo
-es decir ahi ya te arriesgas a tenerlo mal  bien o poner lo que se te antoje
