@@ -42,7 +42,7 @@ Put your code into a biicode block, as usual:
   ~$ cd your_repository
   ~/your_repository$ bii init -L
 
-And follow this guide to integrate it with biicode.
+And follow this :ref:`guide to adapt your library to biicode <adapt_library>`.
 
 biicode status badge
 ^^^^^^^^^^^^^^^^^^^^
