@@ -44,7 +44,7 @@ Choose your PDF output name, the font and size, the page of the document, the co
 
 **Note** that the original ``[includes]`` are mapped in the *biicode.conf* file of the block.
 
-.. code-block:: Text
+.. code-block:: text
  
  # Biicode configuration file
  
