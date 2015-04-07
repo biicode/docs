@@ -3,6 +3,20 @@
 Release notes
 =============
 
+
+**2.8** (7-Apr-2015)
+
+	* Better computation of binary targets, if an executable does not depend on its own block library, it will not be linked
+	* Removed automatic creation of cmake_dummy.cpp to avoid problems with header only libraries
+	* Removed automatic handling of system deps (math, pthread, winsock), that created problems in new toolchains. Now users directly specify in CMakeLists their libs.
+	* ADD_BIICODE_TARGETS() has been superseded by ADD_BII_TARGETS(), which will admit a biicode version number, this is done to achieve backwards compatibility while introducing new build behavior.
+	* Fixed bug of include paths missing in [tests] targets
+	* Fixed extra verbose message of warning about full path #includes
+	* Optimized performance of ignore.bii for large number of patterns, that was incredibly slow
+	* Now published blocks shows publisher user name
+	* Security fixes
+	
+	
 **2.7** (23-Mar-2015)
 
 	* New [tests] section improved, working fine in Visual Studio
