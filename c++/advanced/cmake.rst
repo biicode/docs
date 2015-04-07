@@ -23,7 +23,7 @@ Edit your *CMakeLists.txt* file and include the CMake file from the block that y
    MACRO_NAME_TO_USE() # Macro defined in My_macros.cmake
 
    # Actually create targets: EXEcutables and libraries.
-   ADD_BIICODE_TARGETS()
+   ADD_BII_TARGETS()
   
 
 And run **bii find** command:
@@ -50,7 +50,7 @@ CMakeLists.txt
     # see https://www.biicode.com/biicode/cmake
     INCLUDE(biicode/cmake/tools)
 
-    ADD_BIICODE_TARGETS()
+    ADD_BII_TARGETS()
 
     # Calling specific macro to activate c++11 flags
     ACTIVATE_CPP11(INTERFACE ${BII_BLOCK_TARGET})

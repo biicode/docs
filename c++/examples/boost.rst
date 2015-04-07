@@ -61,7 +61,7 @@ To enable Boost in your biicode project, just go to the block's ``CMakeLists.txt
     #Include the biicode Boost setup script
     include(biicode/boost/setup)
 
-    ADD_BIICODE_TARGETS()
+    ADD_BII_TARGETS()
 
     #Setup Boost and build (if needed) the required Boost components
     #Since lambda is header-only, there are no components to build and find
@@ -178,7 +178,7 @@ This is the ``CMakeLists.txt`` from the example:
 
     include(biicode/boost/setup)
 
-    ADD_BIICODE_TARGETS()
+    ADD_BII_TARGETS()
 
     set(Boost_USE_STATIC_LIBS ON)
     bii_find_boost(COMPONENTS system coroutine context thread REQUIRED)
@@ -254,7 +254,7 @@ Take `Boost.Log <http://www.biicode.com/examples/examples/boost-log/master>`_ as
 
     include(biicode/boost/setup)
 
-    ADD_BIICODE_TARGETS()
+    ADD_BII_TARGETS()
 
     set(Boost_USE_STATIC_LIBS OFF)
     set(Boost_USE_MULTITHREADED ON)

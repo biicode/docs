@@ -71,7 +71,7 @@ If your current library doesn't have a *CMakeLists.txt* biicode creates it when 
 
   * There are **compilation errors**:
 
-  	* Check if some compile definition is needed. You can use *TARGET_COMPILE_DEFINITIONS(${BII_BLOCK_TARGET} PUBLIC "MY_DEFINITION=1")* in your CMakeLists after ``ADD_BIICODE_TARGETS()``.
+  	* Check if some compile definition is needed. You can use *TARGET_COMPILE_DEFINITIONS(${BII_BLOCK_TARGET} PUBLIC "MY_DEFINITION=1")* in your CMakeLists after ``ADD_BII_TARGETS()``.
 
   	* Review the ``BII_LIB_SRC`` variable in CMakeLists.txt (and ``BII_exe_name_SRC``) and look for missing files. 
 
@@ -81,7 +81,7 @@ If your current library doesn't have a *CMakeLists.txt* biicode creates it when 
 
   	*  If they are in you source code, maybe biicode is not finding some implementation and the dependency graph wasn't built correctly. You can use :ref:`[bii deps --files]<bii_deps_command>` to inspect how the code is connected. Use :ref:`[dependencies]<dependencies_conf>` section in *biicode.conf* to specify the missing source file.
 
-  	*  Can't find them in your sources? Try to google them. You may need to link a system library. You can use ``TARGET_LINK_LIBRARIES(${BII_LIB_TARGET} PUBLIC pthread)`` in your *CMakeLists.txt* after ``ADD_BIICODE_TARGETS()``.
+  	*  Can't find them in your sources? Try to google them. You may need to link a system library. You can use ``TARGET_LINK_LIBRARIES(${BII_LIB_TARGET} PUBLIC pthread)`` in your *CMakeLists.txt* after ``ADD_BII_TARGETS()``.
 
 3. Test the libary's reusability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -121,7 +121,7 @@ If you already have a *CMakeLists.txt* file there's no need to replace it, just 
    ENDIF()
    # Your regular project configuration here
 
-Now create a file named *biicode.cmake* an add the line **ADD_BIICODE_TARGETS()**.
+Now create a file named *biicode.cmake* an add the line **ADD_BII_TARGETS()**.
 Then read :ref:`without a previous CMakeLists.txt<without-previous-cmakelists-txt>` section knowing that *biicode.cmake* is now the file where you will write the code needed.
 
 
@@ -164,7 +164,7 @@ Sometimes, when adapting big and complex libraries that already have a CMakeList
 		  # BII_LIB_TARGET will be an interface target.
 		  SET(BII_LIB_SRC) 
 		  
-		  ADD_BIICODE_TARGETS()
+		  ADD_BII_TARGETS()
 		  
 		  # If you have configured some file, include the output directory
 		  # TARGET_INCLUDE_DIRECTORIES(${BII_LIB_TARGET} INTERFACE ${CMAKE_CURRENT_BINARY_DIR}) 

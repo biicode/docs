@@ -45,7 +45,7 @@ If you have a block that **links to pthread library** and you're using **Ubuntu 
 	#############BIICODE MACROS###################
 	include(${CMAKE_HOME_DIRECTORY}/biicode.cmake)
 
-	ADD_BIICODE_TARGETS()
+	ADD_BII_TARGETS()
 	#############################################
 
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--no-as-needed")

@@ -9,7 +9,7 @@ Where is biicode´s *"magic"*?
 
 .. code-block:: cmake
 
-    ADD_BIICODE_TARGETS()
+    ADD_BII_TARGETS()
 ..
 
 
@@ -26,7 +26,7 @@ Where is biicode´s *"magic"*?
 Define and prepare targets
 ---------------------------
 
-In the *CMakeLists.txt*  file, before ``ADD_BIICODE_TARGETS()`` you can adjust:
+In the *CMakeLists.txt*  file, before ``ADD_BII_TARGETS()`` you can adjust:
 
 Which source code files are part of the **block's library**
 ===========================================================
@@ -40,7 +40,7 @@ Which source code files are part of the **block's library**
      # Remove my_file.cpp from being compiled in library
      LIST(REMOVE_ITEM BII_LIB_SRC my_file.cpp) 
 
-     ADD_BIICODE_TARGETS()
+     ADD_BII_TARGETS()
 
 
   **EXAMPLE**: Include **other_file.cpp** to be compiled in the block library.
@@ -50,7 +50,7 @@ Which source code files are part of the **block's library**
      # Include my_file.cpp to be compiled in library
      LIST(APPEND BII_LIB_SRC other_file.cpp) 
 
-     ADD_BIICODE_TARGETS()
+     ADD_BII_TARGETS()
 
   .. container:: infonote
 
@@ -68,7 +68,7 @@ Choose STATIC or SHARED **library**
 
       SET(BII_LIB_TYPE SHARED)
 
-      ADD_BIICODE_TARGETS()
+      ADD_BII_TARGETS()
 
 
 Modify which executable targets are made
@@ -84,7 +84,7 @@ For example, if the block *lasote/game* has a *main.cpp* in a folder named "src"
 
       LIST(REMOVE_ITEM BII_BLOCK_EXES examples_src_my_program)
 
-      ADD_BIICODE_TARGETS()
+      ADD_BII_TARGETS()
 
   .. container:: infonote
 
@@ -104,7 +104,7 @@ For example, if the block *lasote/game* has a *main.cpp* in a folder named "src"
 
       LIST(REMOVE_ITEM BII_examples_main_SRC my_file.cpp) 
 
-      ADD_BIICODE_TARGETS()
+      ADD_BII_TARGETS()
 
 
 Modify which test targets are made
@@ -118,12 +118,12 @@ Modify which test targets are made
 
       LIST(REMOVE_ITEM BII_BLOCK_TESTS tests_one) 
 
-      ADD_BIICODE_TARGETS()
+      ADD_BII_TARGETS()
 
 Configure targets
 -----------------
 
-Once we have selected which files belong to each target and the targets we want, we are ready to call **ADD_BIICODE_TARGETS()**.
+Once we have selected which files belong to each target and the targets we want, we are ready to call **ADD_BII_TARGETS()**.
 
 This will generate the block's **library** target and a target for each **executable**.
 
@@ -145,7 +145,7 @@ Configure **library** target
 
   .. container:: infonote
 
-     You can also do this by adding pthread to ``${BII_LIB_DEPS}`` before calling ``ADD_BIICODE_TARGETS()``
+     You can also do this by adding pthread to ``${BII_LIB_DEPS}`` before calling ``ADD_BII_TARGETS()``
 
 
   **EXAMPLE**: Adding include directories to all targets of this block.
@@ -254,7 +254,7 @@ Complete variable reference
 
 .. code-block:: cmake
 
-    ADD_BIICODE_TARGETS()
+    ADD_BII_TARGETS()
 ..
 
 :``BII_LIB_TARGET``: Target library name, usually in the form "user_block". It may not exist if ``BII_LIB_SRC`` is empty, so better use ``${BII_BLOCK_TARGET}`` as a general rule. 

@@ -81,7 +81,7 @@ You might need to modify the CMakeLists.txt of your block in order to include th
 
     include(${CMAKE_HOME_DIRECTORY}/biicode.cmake)
 
-    ADD_BIICODE_TARGETS()
+    ADD_BII_TARGETS()
 
     IF(APPLE)
        FIND_PACKAGE(X11)
