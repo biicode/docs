@@ -13,7 +13,7 @@ Release notes
 	* Fixed bug of include paths missing in [tests] targets
 	* Fixed extra verbose message of warning about full path #includes
 	* Optimized performance of ignore.bii for large number of patterns, that was incredibly slow
-	* Now published blocks shows publisher user name
+	* Now published blocks show publisher's user name
 	* Security fixes
 	
 	
