@@ -250,6 +250,7 @@ Complete variable reference
 :``BII_LIB_INCLUDE_PATHS``: List of directories that the library target will include through a call to TARGET_INCLUDE_DIRECTORIES
 :``BII_BLOCK_EXES``: List of targets that represent the executables (mains) defined in this block. If you want to prevent biicode from creating an EXE target, first remove it from this list.
 :``BII_exe_name_SRC``: List of files belonging to an "exe". "exe_name" matches this pattern: *path_to_mainfile*. For example, if the block *lasote/game* has a *main.cpp* in a folder named "src" the variable will be: ``BII_src_main_SRC``  
+:``BII_exe_name_DEPS``: Dependencies of this "exe" target to other libraries, including its own block library if any (user2_block2, user3_blockX). 
 :``BII_BLOCK_TESTS``: List of executables specified in ``[tests]`` section of *biicode.conf* file. Will be excluded from **bii build** compilation and compiled with **bii test** command. add_test
 
 .. code-block:: cmake
