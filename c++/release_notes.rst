@@ -3,7 +3,17 @@
 Release notes
 =============
 
+**3.0** (15-Apr-2015)
 
+        * Open source release of client and common repositories, dev infraestructure re-made
+        * Release of premium accounts for private blocks
+        * Enabled OAuth with Github and Google
+        * Fixed bug in C++ parser for <code>using</code> statements
+        * Fixed bug in [tests] pattern that incorrectly affected dependencies
+        * New Terms of Service, clarifying source code licenses and accounting for premium accounts and open source contributions
+        * Fixed bug in user folder ".biicode" path, some config files were stored out of it
+
+ 
 **2.8** (7-Apr-2015)
 
 	* Better computation of binary targets, if an executable does not depend on its own block library, it will not be linked
