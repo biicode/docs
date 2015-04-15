@@ -3,6 +3,7 @@
 Release notes
 =============
 
+
 **3.0** (15-Apr-2015)
 
         * Open source release of client and common repositories, dev infraestructure re-made
