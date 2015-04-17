@@ -23,7 +23,7 @@ Let's run a block with a unit test using the |google_test_link| in biicode. Ther
 
 Basics
 ------
-Make sure :ref:`biicode is installed<first_steps>`. Execute ``bii setup:cpp`` to ensure you've got all tools required.
+Make sure :ref:`biicode is installed<first_steps>`. Open the terminal and execute **bii setup:cpp** to ensure you've got all tools required.
 
 Create your first project
 -------------------------
@@ -58,7 +58,9 @@ Place this code into the *main.cpp* file:
 
 This is just a sum function and a test using Google Test framework.  
 
-The *#include* is composed as ``#include <biicode_user>/<block_name>/path/to/file``. In this case, it *#includes* the ``include/gtest/gtest.h`` header from |google_test_biicode_link| block, user **google** and latest version is **10 tagged STABLE**.
+The *#include* is composed as ``#include <biicode_user>/<block_name>/path/to/file``. In this case, it *#includes* the ``include/gtest/gtest.h`` header from |google_test_biicode_link| block and user **google**.
+
+In the web you see its latest version is **10 tagged STABLE**:
 
 .. image:: /_static/img/c++/gtest_in_biicode.png
 
@@ -95,9 +97,9 @@ Keeping #includes short
 
     #include "gtest/gtest.h"
 
-Instead of using long *#includes* and **bii find**, you can write the specs to retrieve this dependency in your *biicode.conf*.
+Instead of using long *#includes*, you can write the specs to retrieve this dependency in your *biicode.conf*.
 
-* Split the long ``#include "google/gtest/include/gtest/gtest.h"`` in two halfs :
+* Split the long ``#include "google/gtest/include/gtest/gtest.h"`` in two halfs:
 
 .. code-block:: text
 
