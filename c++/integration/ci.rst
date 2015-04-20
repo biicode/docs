@@ -6,19 +6,23 @@ Continuous Integration
 AppVeyor
 ^^^^^^^^
 
-|appveyor_homepage| provides Continuous Integration and Deploy for Windows and it's compatible with both |github_homepage| and |bitbucket_homepage|. Place an ``appveyor.ymĺ`` file in your repo and each time you push to your Github repository it will kick-off a new build in Windows, executing your tests and publishing this project to your biicode user account. 
+|appveyor_homepage| provides Continuous Integration and Deploy for Windows and it is compatible with both |github_homepage| and |bitbucket_homepage|. 
 
-Login AppVeyor and clic on ``+ NEW PROJECT`` and choose the repo you want to deploy with AppVeyor. Create an ``appveyor.yml`` file in your local project to automatically publish your block to biicode, including your version tags, here's an example file:
+Place an ``appveyor.ymĺ`` file in your repository and each time you push to your Github repository it will kick-off a new build in Windows, executing your tests and publishing it as a biicode block into your biicode user account. 
 
+Login AppVeyor and click on ``+ NEW PROJECT`` and choose the repository you want to deploy with. Create an ``appveyor.yml`` file in your local project to automatically publish your block to biicode, including your version tags, here's an example file:
+
+.. literalinclude:: /_static/code/cpp/integration/appveyor-basic.yml
+   :language: text
+
+Encrypt your biicode password and your access token using |appveyor_encrypt_data|, copy the values generated and put them it in your  environment like ``secured_password: secure:``.
+Use your own ``test_script`` and ``environment`` values to start deploying with it.
+
+Here's an appveyor guide about how to |appveyor_git_push|. Following this Appveyor Guide we're using it as credentials with Git commands. Use this GitHub guide to create your |github_access_token|. This is a full *appveyor.yml* file to automatically publish to biicode DEV and STABLE versions:
 
 .. literalinclude:: /_static/code/cpp/integration/appveyor.yml
    :language: text
 
-Use your own ``test_script`` and ``environment`` values to start deploying with it.
-
-Here's an appveyor guide about how to |appveyor_git_push|. Following this Appveyor Guide we're using it as credentials with Git commands. Use this GitHub guide to create your |github_access_token|.
-
-Encrypt your biicode password and your access token using |appveyor_encrypt_data|, copy the values generated and put them it in your  environment like ``secured_password: secure:``.
 
 What's going on the ``appveyor.yml`` file?
 
@@ -29,7 +33,7 @@ What's going on the ``appveyor.yml`` file?
    * ``on_success:`` If your biicode.conf file is updated commit its changes to github without launching a new build. Else do nothing.
    * ``environment:`` Replace all environment variables here with your values: project_name, tag, default version tag value... Also your encrypted variables.
 
-You can see this live example here:
+You can see this example live:
 
 * |github_appveyor_parser| in GitHub
 * |appveyor_build_parser| in AppVeyor
@@ -39,7 +43,7 @@ Learn more about AppVeyor visiting their `docs <http://www.appveyor.com/docs>`_.
 
 .. container:: infonote
 
-   Here's a blog post about `using Appveyor CI <http://blog.biicode.com/appveyor-ci-windows-biicode/>`_ and Deploy for Windows 
+   Here's a blog-post about `using Appveyor CI <http://blog.biicode.com/appveyor-ci-windows-biicode/>`_ and Deploy for Windows 
 
 .. _travis_integration:
 
@@ -48,8 +52,12 @@ Travis CI
 
 |travis_homepage| takes care of running your tests and deploying your apps. Like we work with VCS, many of the blocks published in our web have their ``.travis.yml`` files, that lets us pushing to our |github_homepage| repository, and automatically build in Linux, execute and publish this project with your biicode user account thanks to this excellent service.
 
-If you're working with it, the ``.travis.yml`` file format will help to automatically publish to your biicode account with DEV tag unless your github repo is tagged, in this case, imports the tag and publishes as STABLE to biicode.
+If you're working with it, the ``.travis.yml`` file format will help to automatically publish to your biicode account with DEV tag: 
 
+.. literalinclude:: /_static/code/cpp/integration/travis-basic.yml
+   :language: text
+
+Here's a way to automatically publish to your biicode account with DEV tag unless your github repository is tagged, in this case, imports the tag and publishes as STABLE to biicode: 
 
 .. literalinclude:: /_static/code/cpp/integration/travis.yml
    :language: text

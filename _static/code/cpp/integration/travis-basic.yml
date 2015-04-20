@@ -1,0 +1,37 @@
+language: cpp
+compiler:
+  - clang
+  - gcc
+before_install:
+  - if [ "$CXX" == "g++" ]; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test; fi
+  - if [ "$CXX" == "clang++" ]; then sudo add-apt-repository -y ppa:h-rayflood/llvm; fi
+  - sudo apt-get update -qq
+
+  - if [ "$CXX" == "g++" ]; then sudo apt-get install -qq g++-${GCC_VERSION}; fi
+  - if [ "$CXX" == "g++" ]; then sudo apt-get install -qq gcc-${GCC_VERSION}; fi
+  - if [ "$CXX" == "g++" ]; then sudo ln -s -v -f $(which g++-${GCC_VERSION}) /usr/bin/g++; fi
+  - if [ "$CXX" == "g++" ]; then sudo ln -s -v -f $(which gcc-${GCC_VERSION}) /usr/bin/gcc; fi
+install:
+  - wget http://apt.biicode.com/install.sh && chmod +x install.sh && ./install.sh
+  - bii --version
+  - wget https://s3.amazonaws.com/biibinaries/thirdparty/cmake-3.0.2-Linux-64.tar.gz
+  - tar -xzf cmake-3.0.2-Linux-64.tar.gz
+  - sudo cp -fR cmake-3.0.2-Linux-64/* /usr
+  - rm -rf cmake-3.0.2-Linux-64
+  - rm cmake-3.0.2-Linux-64.tar.gz
+script:
+  - cmake --version
+  - bii init -L
+  - if [ "$CXX" == "clang++" ]; then export CXX="clang++" && bii build; fi
+  - if [ "$CXX" == "g++" ];     then export CXX="g++"     && bii build; fi
+##################### CHANGE WITH YOUR CUSTOM CHECKS OR TEST EXECUTION ##################
+  - ./bin/amalulla_unit_test_main
+########################################################################################
+after_success:
+  - bii user $USER -p $BII_PASSWORD
+  - bii publish
+env:
+  global:
+  - GCC_VERSION="4.9"
+  - USER=amalulla
+  - secure: Z1IrvEQFr/poZNXRWAVPXB7eDIUwQWXMgkjMWNTJuXAsjKHTXazd5SaOc88Fd6ajU8ZyJfbX1P25bO0A1G+GS15OVq0i28tuFp1HuHF/YmTKu9Ig5erBW36Huj5ijysKbpPeyQxYIpuFcOsCH3MjghQ1nV0Zo+CdnM0OSB2hgcc=
