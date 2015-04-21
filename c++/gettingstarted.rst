@@ -35,7 +35,7 @@ Create your first project
     ~$ bii init unit_test -L
     ~$ cd unit_test
     ~/unit_test$ #create a main.cpp
-    /unit_test$ echo "//main.cpp code goes here" >> main.cpp
+    ~/unit_test$ echo "//main.cpp code goes here" >> main.cpp
 
 Create a *main.cpp* into *unit_test/* folder.
 
@@ -57,11 +57,11 @@ Place this code into the *main.cpp* file:
     return RUN_ALL_TESTS();
   }
 
-This is just a sum function and a test using Google Test framework.  
+It is just a sum function and a test using Google Test framework.  
 
 The *#include* is composed as ``#include <biicode_user>/<block_name>/path/to/file``. In this case, it *#includes* the ``include/gtest/gtest.h`` header from |google_test_biicode_link| block and user **google**.
 
-In the web you see its latest version is **10 tagged STABLE**:
+In the web, you see its latest version is **10 tagged STABLE**:
 
 .. image:: /_static/img/c++/gtest_in_biicode.png
 
@@ -78,7 +78,7 @@ Retrieve the dependency:
     google/gtest: 10
   INFO: Saving files from: google/gtest
 
-This creates a *biicode.conf* file and downloads GoogleTest block into your *bii/deps* folder:
+**bii find** creates a *biicode.conf* file and downloads GoogleTest block into your *bii/deps* folder:
 
 .. code-block:: text
 
