@@ -16,11 +16,11 @@ Where is biicode´s *"magic"*?
   So biicode:
 
   + Detects how source code files are connected and builds a dependency graph (following #includes and searching for implementations). 
-  + Generates, for each block, a *CMakeLists.txt* defining some variables in accordance to the detected dependency graph. These variables allow Biicode to "plug" your library to its cloud so it will be easily reused.
+  + Generates, for each block, a *CMakeLists.txt* defining some variables according to the dependency graph detected. These variables allow Biicode to "plug" your library to its cloud so it is easily reused.
   + Builds a **library** for each block you have in your project (including each dependency).
   + Builds an **executable** for each file with a ``main()`` function.
   + Link the block's **library** to all **executables** within the block.
-  + Builds the block's library **only** with the source code files needed, according to detected dependencies (how files are connected).
+  + Builds the block's library **only** with the source code files needed, according to the  dependencies detected (how files are connected).
 
 
 Define and prepare targets
@@ -54,7 +54,7 @@ Which source code files are part of the **block's library**
 
   .. container:: infonote
 
-     **ESSENTIAL TIP**: If biicode didn't add a file needed to your block's library, you can specify this dependency in the ``[dependencies]`` section of the *biicode.conf* file. *Why?* This way you wire the dependency (fixing the dependency graph). If someone depends on your library, biicode will also download the missing file and will add it to ``BII_LIB_SRC`` automatically. Otherwise file won't be downloaded and their build will fail.
+     **ESSENTIAL TIP**: If biicode did not add a file needed to your block's library, you could specify this dependency in the ``[dependencies]`` section of the *biicode.conf* file. *Why?* This way you wire the dependency (fixing the dependency graph). If someone depends on your library, biicode will also download the missing file and will add it to ``BII_LIB_SRC`` automatically. Otherwise file won't be downloadedm and their build will fail.
 
 
 Choose STATIC or SHARED **library** 
@@ -76,7 +76,7 @@ Modify which executable targets are made
 
 ``BII_BLOCK_EXES`` List of executable targets (mains). Each "exe" matches this pattern: *path_to_mainfile*. 
 
-For example, if the block *lasote/game* has a *main.cpp* in a folder named "src" the variable will have an element: "src_main"  
+For example, if the block *lasote/game* has a *main.cpp* in a folder named "src", the variable has an element: "src_main"  
 
   **EXAMPLE**: Prevent biicode from creating an EXE target for *(examples/src/my_program.cpp)*:
 
@@ -96,7 +96,7 @@ Which source code files are part of each **executable**
 
 ``BII_exe_name_SRC`` contains all source code that will be added to the exe. "exe_name" matches this pattern: *path_to_mainfile*.
 
-For example, if the block *lasote/game* has a *main.cpp* in a folder named "src" the variable will be: "BII_src_main_SRC"  
+For example, if the block *lasote/game* has a *main.cpp* in a folder named "src" the variable is: "BII_src_main_SRC"  
   
   **EXAMPLE**: Exclude *my_file.cpp* from being compiled with *examples/main.cpp* executable.
 
@@ -125,14 +125,14 @@ Configure targets
 
 Once we have selected which files belong to each target and the targets we want, we are ready to call **ADD_BII_TARGETS()**.
 
-This will generate the block's **library** target and a target for each **executable**.
+**ADD_BII_TARGETS()** generates the block's **library** target and a target for each **executable**.
 
 Configure **library** target
 ============================
 
 ``BII_LIB_TARGET`` contains the name of the block's library target. This target may be an ``INTERFACE`` target (no source files) if ``BII_LIB_SRC`` is empty before ``ADD_BIICODE_TARGETS`` call. For this reason we recommend you to always use ``BII_BLOCK_TARGET``.
 
-``BII_BLOCK_TARGET``: :underline:`Use this better, instead of BII_LIB_TARGET`. Created to ease target configuration. It always exists and it's always a CMake **Interface**. Represents the whole block and it is applied to ``BII_LIB_TARGET`` and *each target executable*.
+``BII_BLOCK_TARGET``: :underline:`Use this better, instead of BII_LIB_TARGET`. Created to ease target configuration. It always exists and it is always a CMake **Interface**. Represents the whole block, and it is applied to ``BII_LIB_TARGET`` and *each target executable*.
 
   **EXAMPLE**: Linking with pthread.
 
@@ -210,9 +210,9 @@ Configure **executable** target
 
   .. container:: infonote
 
-     When someone depends on your library, biicode only downloads the required files (according to the dependency graph). So you can't assume that ``${BII_my_main_TARGET}`` target will exist. If you reference a target that doesn't exist build will fail. Whenever it is possible it's better to not act upon EXE targets. Remember that ``BII_BLOCK_TARGET`` will be applied to each target in your block. 
+     When someone depends on your library, biicode only downloads the required files (according to the dependency graph). So you can not assume that ``${BII_my_main_TARGET}`` target will exist. It may seem obvious, but if you reference a target that doesn't exist build fails. When possible it's better to not act upon EXE targets. Remember that ``BII_BLOCK_TARGET`` will be applied to each target in your block. 
 
-     It's best to act upon ``BII_BLOCK_TARGET``.
+     It is best to act upon ``BII_BLOCK_TARGET``.
 
 
 Select build type: Debug or Release
@@ -243,7 +243,9 @@ If you are using *Visual Studio* or any other IDE with a select list box for bui
 Complete variable reference
 ----------------------------
 
-:``BII_LIB_SRC``:  List of files belonging to the library .
+Sorted according to their specific use *before* or *after* ``ADD_BII_TARGETS()`` variable:
+
+:``BII_LIB_SRC``:  List of files belonging to the library.
 :``BII_LIB_TYPE``: Empty by default, (STATIC in most cases) STATIC or SHARED.
 :``BII_LIB_DEPS``: Dependencies to other libraries (user2_block2, user3_blockX).
 :``BII_LIB_SYSTEM_HEADERS``: System linking requirements as windows.h, pthread.h, etc.

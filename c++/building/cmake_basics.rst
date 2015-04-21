@@ -9,7 +9,7 @@ So CMake:
 
 * Basically requires one thing, a *CMakeLists.txt* file.
 * Allows defining ``targets`` which are each **executable** or **library** you want to build for your project.
-* Is **multi platform** and will automatically generate the files your O.S./compiler needs to build your project.
+* Is **multi-platform** and automatically generates the files your O.S./compiler needs to build your project.
 * *CMakeLists.txt* basic example (without biicode):
 
 .. code-block:: cmake
