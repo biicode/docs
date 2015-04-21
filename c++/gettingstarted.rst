@@ -35,6 +35,7 @@ Create your first project
     ~$ bii init unit_test -L
     ~$ cd unit_test
     ~/unit_test$ #create a main.cpp
+    /unit_test$ echo "//main.cpp code goes here" >> main.cpp
 
 Create a *main.cpp* into *unit_test/* folder.
 
@@ -77,7 +78,7 @@ Retrieve the dependency:
     google/gtest: 10
   INFO: Saving files from: google/gtest
 
-This creates a *biicode.conf* file and places GoogleTest block in your *bii/deps* folder:
+This creates a *biicode.conf* file and downloads GoogleTest block into your *bii/deps* folder:
 
 .. code-block:: text
 
@@ -89,8 +90,10 @@ This creates a *biicode.conf* file and places GoogleTest block in your *bii/deps
           ├── biicode.conf
           └── main.cpp
 
-Keeping #includes short
-^^^^^^^^^^^^^^^^^^^^^^^
+[optional] Keeping #includes short
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Keep reading to see how to keep your #includes as usual. You can also :ref:`skip this section.<cpp_run>`
 
   .. code-block:: cpp
     :emphasize-lines: 1
@@ -117,6 +120,8 @@ Instead of using long *#includes*, you can write the specs to retrieve this depe
 
           [includes]
               gtest/*.h: google/gtest/include
+
+.. _cpp_run:
 
 Build and run it
 ----------------
