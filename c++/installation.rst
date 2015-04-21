@@ -25,6 +25,7 @@ Open the terminal and **make sure biicode is installed**:
 
     *  :ref:`Debian based distributions <alternative_install_debian>`
     *  :ref:`Arch based distributions <alternative_install_archlinux>`
+    *  Running biicode from sources :ref:` <alternative_install_sources>`
 
 
 Install C/C++ tools
@@ -122,6 +123,15 @@ Biicode maintains a package at the Arch User Repository (AUR). Install it using 
 
 
 The package is maintained in the AUR, so your package manager will notify you automatically when we update the package.
+
+.. _alternative_install_sources:
+
+Run biicode from source
+-----------------------
+
+The most flexible way to make a package for your distro is running biicode from source. Also, if you are developing biicode, testing  new feature or helping to resolve a bug, you may need to run biicode directly from source. 
+
+Follow this guide to `run biicode from source<http://biicode.github.io/biicode/>`_ . 
 
 
 .. _cpp_installation:
@@ -231,7 +241,7 @@ To check your automatic installation open the Terminal and type ``bii setup:cpp`
 
 .. _proxy_configuration:
 
-Connect throught a proxy server
+Connect through a proxy server
 --------------------------------
 
 Set an environment variable "HTTPS_PROXY" with your proxy server address.
@@ -252,7 +262,7 @@ Set an environment variable "HTTPS_PROXY" with your proxy server address.
 	1. From the Desktop, right-click the very bottom left corner of the screen to get the Power User Task Menu.
 	2. From the Power User Task Menu, click System.
 	3. Click the Advanced System Settings link in the left column.
-	4. In the System Properties window, click on the Advanced tab, then click the Environment Variables button near the bottom of that tab.
+	4. In the System Properties window, click on the Advanced tab, and then click the Environment Variables button near the bottom of that tab.
 	5. In the Environment Variables window, click "New" and add variable name HTTPS_PROXY and value "http://user:pass@proxy_ip:port"
 
 
