@@ -7,9 +7,18 @@ Learn how to get the dependencies your project needs and how to handle their ver
 
 Dependencies
 ------------
-The :ref:`getting started guide<cpp_getting_started>` explained basics on depending. To recall, these are the steps to depend on a library available in biicode, we're using **OpenSSL** in this guide:
+The :ref:`getting started guide<cpp_getting_started>` explained basics on depending. To recall, these are the steps to depend on a library available in biicode, we're using **OpenSSL** in this guide.
 
-* Write your source code as usual:
+* Create a new folder and init it: 
+
+.. code-block:: bash
+
+    ~$ mkdir deps_example
+    ~$ cd deps_example
+    ~/deps_example$ bii init -L
+    ~/deps_example$ echo "//main.cpp code goes here" >> main.cpp
+
+* Write your source code as usual in your *main.cpp*:
 
 .. code-block:: cpp
     :emphasize-lines: 3
@@ -35,13 +44,13 @@ The :ref:`getting started guide<cpp_getting_started>` explained basics on depend
 	    return 0;
 	}
 
-* Search the library you want in biicode, then specify which lib is the one you're using in your *biicode.conf* file.
-
-Let's use first OpenSSL 1.0.1 available in *lasote/openssl* version 0:
+* Search the library you want in biicode, and specify which lib you're using in your *biicode.conf* file.
 
 .. image:: /_static/img/c++/dependencies/openssl_md5_simple.png
 
-Write in your *biicode.conf*:
+Let's first use OpenSSL 1.0.1 available in *lasote/openssl* version 0:
+
+* Write in your *biicode.conf* file:
 
 	.. code-block:: text
 
@@ -52,7 +61,7 @@ Write in your *biicode.conf*:
 		    openssl/md5.h: lasote/openssl/include
 
 
-* **bii build** and you're done. Make sure you've **bii init -L** your repo's folder first.
+* **bii build** and you're done. 
 
 .. container:: infonote
 
@@ -114,7 +123,7 @@ Execute **bii build** and you'll see the new dependencies in your *bii/deps* fol
 Depending on a block track
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Currently, **libuv** keeps 4 mantained versions or **block tracks**:
+Currently, **libuv** keeps four maintained versions or **block tracks**:
 
 		* |libuv_0_10| (Stable, used by Nodejs)
 
