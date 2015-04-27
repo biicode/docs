@@ -30,6 +30,7 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/jsonxx
    examples/lib_miniutf
    examples/lib_splines
+   examples/libuv
    examples/littlecms
    examples/log4z
    examples/lwan

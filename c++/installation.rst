@@ -131,8 +131,7 @@ Run biicode from source
 
 The most flexible way to make a package for your distro is running biicode from source. Also, if you are developing biicode, testing  new feature or helping to resolve a bug, you may need to run biicode directly from source. 
 
-Follow this guide at GitHub to `run biicode from source <http://biicode.github.io/biicode/>`_ . 
-
+Follow this guide at GitHub to `run biicode from source <http://biicode.github.io/biicode/>`_. 
 
 .. _cpp_installation:
 
