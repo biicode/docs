@@ -128,7 +128,7 @@ Then read :ref:`without a previous CMakeLists.txt<without-previous-cmakelists-tx
 **Option 2**: Build your own target library and link them to *BII_LIB_TARGET*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sometimes, when adapting big and complex libraries that already have a CMakeLists.txt building its onw library, the best approach is to link the resulting library to ``${BII_LIB_TARGET}``
+Sometimes, when adapting big and complex libraries that already have a CMakeLists.txt building its own library, the best approach is to link the resulting library to ``${BII_LIB_TARGET}``
 
 * As you want to use your own library targets and these take for granted that all files are always present, it's violating *key fact nº1*. The way to proceed is wiring all your library files together in :ref:`[dependencies]<dependencies_conf>` section in *biicode.conf*.
 
