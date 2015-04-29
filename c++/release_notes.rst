@@ -3,7 +3,13 @@
 Release notes
 =============
 
+**3.1.1** (29-Apr-2015)
 
+        * Optimized complete internal workflow, avoiding slow and unnecessary serializations to project DB
+        * Files not modified in disk, removed problems with CRLF conversions 
+        * Fixed behavior of "bii test" in XCode: https://github.com/biicode/client/issues/12
+        
+        
 **3.0** (15-Apr-2015)
 
         * Open source release of client and common repositories, dev infraestructure re-made
