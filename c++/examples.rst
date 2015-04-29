@@ -16,6 +16,7 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/cimg
    examples/crypto++
    examples/csparse
+   examples/curl
    examples/eigen
    examples/expression-parser
    examples/fit
