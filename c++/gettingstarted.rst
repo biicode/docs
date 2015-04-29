@@ -132,7 +132,7 @@ Build and run your Unit Test, check it works:
 
   ~/unit_test$ bii build
   ...
-  ~/unit_test$ bin\user_unit_test_main
+  ~/unit_test$ bin/user_unit_test_main
   [==========] Running 1 test from 1 test case.
   ...
   [----------] Global test environment tear-down
