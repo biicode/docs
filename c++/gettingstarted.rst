@@ -23,21 +23,18 @@ Let's run a block with a unit test using the |google_test_link| in biicode. Ther
 
 Basics
 ------
-Make sure :ref:`biicode is installed<first_steps>`. Open the terminal and execute **bii setup:cpp** to ensure you've got all tools required.
+Make sure :ref:`biicode is installed<first_steps>`. Open the terminal and execute **bii setup:cpp** to ensure you've got all tools required. 
 
 Create your first project
 -------------------------
 
-**bii init -L** a folder to create a new project. The command below creates and inits *unit_test/* folder as a biicode project containing a block. 
+**bii init -L** a folder to create a new project. The commands below create *unit_test/* folder as a biicode project containing a block and and a *main.cpp* file. 
 
 .. code-block:: bash
 
     ~$ bii init unit_test -L
     ~$ cd unit_test
-    ~/unit_test$ #create a main.cpp
     ~/unit_test$ echo "//main.cpp code goes here" >> main.cpp
-
-Create a *main.cpp* into *unit_test/* folder.
 
 Place this code into the *main.cpp* file:
 
@@ -69,7 +66,7 @@ Retrieve the dependency:
 
 .. code-block:: bash
 
-  ~$ bii find
+  ~/unit_test$ bii find
   ...
 
   INFO: Analyzing compatibility for found dependencies... 
@@ -121,10 +118,20 @@ Instead of using long *#includes*, you can write the specs to retrieve this depe
           [includes]
               gtest/*.h: google/gtest/include
 
+Using an IDE
+------------
+biicode configures your default settings to no IDE and MinGW (Windows) or UNIX Makefiles (MacOS and Linux). You can change these values executing **bii configure**:
+
+.. code-block:: bash
+
+  ~/unit_test$ bii configure -G "Visual Studio 10"
+
+Here's more about :ref:`configuring your IDE <generators_ide>`.
+
 .. _cpp_run:
 
-Build and run it
-----------------
+Build and run
+-------------
 
 Build and run your Unit Test, check it works:
 
@@ -162,16 +169,7 @@ Build and run your Unit Test, check it works:
 
 Congrats! You have just used GoogleTest within your project. You know that we are available at |biicode_forum_link| for any problems. You can also |biicode_write_us| for suggestions and feedback.
 
-Using an IDE
-------------
-biicode configures your default settings to no IDE and MinGW (Windows) or UNIX Makefiles (MacOS and Linux). You can change these values executing **bii configure** before **bii build**:
 
-  .. code-block:: bash
-
-    ~/unit_test$ bii configure -G "Visual Studio 10"
-    ~/unit_test$ bii build
-
-Here's more about :ref:`configuring your IDE <generators_ide>`.
 
 .. _upload-your-code:
 
@@ -202,7 +200,7 @@ Go to your profile at **www.biicode.com/your_username** to check what you've jus
      * Log in to edit the block's web description. 
      * Make sure you've |biicode_signup| to publish. It's **free**.
 
-Take a look into your **block's biicode.conf file** *(~/unit_test/biicode.conf)*. ``[parent]`` section tells you  *"who is your parent version"*, the latest published version of your block and looks like this:
+Take a look into your **block's biicode.conf file** *(~/unit_test/biicode.conf)*. ``[parent]`` section tells you  *"who is your parent version"*, which is the latest published version of your block and looks like this:
 
 .. code-block:: bash
 
