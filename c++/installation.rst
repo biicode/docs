@@ -42,6 +42,10 @@ Then install required tools like CMake and MinGW or GCC:
 
     If any problem installing C/C++ tools, check :ref:`how to install C/C++ tools manually <cpp_installation>`.
 
+.. container:: infonote
+
+    The setup command installs programs in a directory called .biicode in your home directory.
+
 Execute again to make sure the tools are installed:
 
 .. code-block:: bash
