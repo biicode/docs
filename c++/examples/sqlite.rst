@@ -9,7 +9,7 @@ You can find `SRombauts' C++ SQLite3 wrapper library <https://github.com/SRombau
 
 Shopping list database
 ----------------------
-`This example from SRombauts <https://github.com/SRombauts/SQLiteCpp/tree/master/examples/example1>`_, uses SQLiteC++ to create a database called LIST in which stores information about your shopping list. Take a deep look into the code in order to understand how it works and make your own one soon!
+This example uses SQLiteC to create a database called LIST in which stores information about your shopping list. Take a deep look into the code in order to understand how it works and make your own one soon!
 
 Creating a project
 ^^^^^^^^^^^^^^^^^^
@@ -185,7 +185,7 @@ You can see the results of the queries at the output:
   
 SQLite++ Wrapper
 ----------------
-The following example how-to use the SQLite++ wrapper. Following the previous example, we'll develop this in the same project's folder.
+`The following example from SRombauts <https://github.com/SRombauts/SQLiteCpp/tree/master/examples/example1>`_, explains how-to use the SQLite++ wrapper. Following the previous example, we'll develop this in the same project's folder.
 
 Jus place *main.cpp*, *example.db3* and *logo.png* files inside:
 
