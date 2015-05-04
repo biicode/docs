@@ -8,24 +8,28 @@ Little CMS is an Open Source Color Management Engine. This example demonstrates 
 **Little CMS** intends to be an OPEN SOURCE **small-footprint color management engine**, with special focus on accuracy and performance. It uses the International Color Consortium standard (ICC), which is the modern standard when regarding to color management. This examples have been tested in Windows, OS X and Linux-systems.
 Check the Sources:
 
-   1. `Original Little CMS Library <http://www.littlecms.com//>`_
-   2. `Biicode Little CMS block <http://www.biicode.com/martimaria/littlecms>`_
-   3. `Github repository <https://github.com/MariadeAnton/little-cms>`_
-   4. `LittleCMS Documentation <http://sourceforge.net/projects/lcms/files/lcms/2.6/>`_
+   1. `Original Little CMS Library <http://www.littlecms.com//>`_.
+   2. Biicode Little CMS block at `martimaria/littlecms <http://www.biicode.com/martimaria/littlecms>`_.
+   3. `Github repository <https://github.com/MariadeAnton/little-cms>`_.
+   4. `LittleCMS Documentation <http://sourceforge.net/projects/lcms/files/lcms/2.6/>`_.
 
 ICC Profile Examples
 ----------------------
 
-These examples are `already in biicode <http://www.biicode.com/examples/littlecms>`_, simple to run, just open the block and build it like this:
+In this example we'll create a devicelink that decodes TIFF8 Lab files using Little CMS. You only have to write ``#include "lcms2.h"`` at the top of your code.
+
+Creating a new project
+^^^^^^^^^^^^^^^^^^^^^^
+
+Create a new project and a *lcms-main.c* file:
 
 .. code-block:: bash
 
-   $ bii init lcms
+   $ bii init lcms -L
    $ cd lcms
-   $ bii open examples/littlecms
-   $ bii build
+   $ # Create lcms-main.c and copy the code
 
-There are three different examples in the project, note that all of them use Little CMS , simply by including the library. We're focusing on *mktiff8* example but you can execute and try any of them. This example creates a devicelink that decodes TIFF8 Lab files. This is the code used for the example:
+**lcms-main.c**
 
 .. code-block:: cpp
 
@@ -52,7 +56,7 @@ There are three different examples in the project, note that all of them use Lit
 
     // Creates a devicelink that decodes TIFF8 Lab files 
 
-    #include "martimaria/littlecms/include/lcms2.h"
+    #include "lcms2.h"
     #include <stdlib.h>
     #include <math.h>
 
@@ -160,17 +164,103 @@ There are three different examples in the project, note that all of them use Lit
       return 0;
     }
 
-Now, run the *Mktiff* example.
+Manage your dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check the dependencies of the project with **bii deps**:
+
+..  code-block:: bash
+ 
+ INFO: Processing changes...
+ youruser/lcms depends on:
+       system:
+          math.h
+          stdlib.h
+       unresolved:
+          lcms2.h
+
+Now, edit the *biicode.conf* file generated in the project folder. Map your ``[includes]`` to point to martimatia/littlecms:
+
+.. code-block:: text
+
+ [includes]
+     lcms2.h: martimaria/littlecms/include/
+
+Now do **bii find** and biicode will find the most recent version available of Little CMS library:
 
 .. code-block:: bash
 
-   $ bin/examples_littlecms_mktiff8.exe
+ $  bii find
+ INFO: Processing changes...
+ INFO: Finding missing dependencies in server
+ INFO: Looking for martimaria/littlecms...
+ INFO: Block candidate: martimaria/martimaria/littlecms/master
+ INFO:   Version martimaria/littlecms: 1 (STABLE) valid
+ INFO:   Version martimaria/littlecms: 0 (STABLE) valid
+ INFO: Analyzing compatibility for found dependencies...
+ INFO: All dependencies resolved
+ Find resolved new dependencies:
+         martimaria/littlecms: 1
+ INFO: Saving files from: martimaria/littlecms
+
+Have a look at your *biicode.conf* again to ensure Little CMS library was added to your project:
+
+.. code-block:: text
+
+ [requirements]
+     martimaria/littlecms: 1
+ 
+ [includes]
+     lcms2.h: martimaria/littlecms/include/
+
+Check again with **bii deps** and now all dependencies are resolved.
+
+Build the project
+^^^^^^^^^^^^^^^^^
+
+Next, the only thing left is building the project:
+
+.. code-block:: bash
+
+  $ bii build
+
+Execute the binary placed in bin directory:
+
+.. code-block:: bash
+
+  $ bin/youruser_lcms_lcms-main
 
 Once you execute you should see an output like this one, and a the ``lcmstiff8.icm`` file created into your bin folder:
   
 .. code-block:: bash
    
    Creating lcmstiff8.icm...Done
+
+You can find more examples at `examples/littlecms <http://www.biicode.com/examples/littlecms>`_, give them a try!
+
+Open and build
+--------------
+
+This example is already in biicode at `examples/littlecms <http://www.biicode.com/examples/littlecms>`_.
+
+It is simple to run, just open the block and build it like this:
+
+.. code-block:: bash
+
+ $ bii init lcms
+ $ cd lcms
+ $ bii open examples/littlecms
+
+
+There are three different files in the project, note that all of them use Little CMS , simply by including the library.
+
+Build the block and execute any of them!
+
+.. code-block:: bash
+
+ $ bii build
+ $ cd bin
+ $ # Execute!
 
 
 Any doubts? Do not hesitate to `contact us <http://web.biicode.com/contact-us/>`_ visit our `forum <http://forum.biicode.com/>`_ and feel free to ask any questions.
