@@ -5,11 +5,11 @@ SQLite is a software library that implements a self-contained, serverless, zero-
 
 For more information about this library, visit their `official website <http://www.sqlite.org/>`_.
 
-You can find SQLite library at `sqlite/sqlite <http://www.biicode.com/sqlite/sqlite/sqlite/master/5>`_.
+You can find `SRombauts' C++ SQLite3 wrapper library <https://github.com/SRombauts/SQLiteCpp>`_ at `sqlite/sqlite <http://www.biicode.com/sqlite/sqlite/sqlite/master/5>`_ and plain SQLite is at `fenix/sqlite <https://www.biicode.com/fenix/sqlite>`_.
 
 Shopping list database
 ----------------------
-This example creates a database called LIST in which stores information about your shopping list. Take a deep look into the code in order to understand how it works and make your own one soon!
+`This example from SRombauts <https://github.com/SRombauts/SQLiteCpp/tree/master/examples/example1>`_, uses SQLiteC++ to create a database called LIST in which stores information about your shopping list. Take a deep look into the code in order to understand how it works and make your own one soon!
 
 Creating a project
 ^^^^^^^^^^^^^^^^^^
