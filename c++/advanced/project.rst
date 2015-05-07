@@ -30,7 +30,7 @@ Creates a simple folder structure in which *deps/ , build/ and cmake/ folders - 
   |    |    +-- policies.bii
   |    |    +-- settings.bii
 
-in which ``layout.bii`` content is:
+in which *layout.bii* content is:
 
 .. code-block:: text
 
@@ -63,11 +63,11 @@ For example, this is **a project with simple layout** :
   |    +-- biicode.conf
   |    +-- CMakeLists.txt
 
-A project's layout is fully customizable via **layout.bii** file, you can place the auxiliary folders wherever you want, just specify the relative routes to the folders you want to use instead. 
+A project's layout is fully customizable via *layout.bii* file, you can place the auxiliary folders wherever you want, just specify the relative routes to the folders you want to use instead. 
 
 TMP Layout
 ^^^^^^^^^^
-Looking for an even cleaner layout? Use ``bii init -l tmp``.
+Looking for an even cleaner layout? Use **bii init -l tmp**.
 
 This layout option redirects *deps/ , build/ and cmake/* folders to the temporal folder of your system *tmp/myproject/* -all aux folders but *bin/*- and places your repo's code directly in your project's folder. 
 
@@ -85,7 +85,7 @@ Creates a folder structure in which *deps/,build/ and cmake/ folders (all auxili
   |    |    +-- policies.bii
   |    |    +-- settings.bii
 
-in which ``layout.bii`` content is:
+in which *layout.bii* content is:
 
 .. code-block:: text
 
@@ -116,7 +116,7 @@ For example, this is **a project with TMP layout** :
 Classic Layout
 ^^^^^^^^^^^^^^
 
-``bii init myproject`` creates a simple folder structure:
+**bii init myproject** creates a simple folder structure:
 
 .. code-block:: text
 
@@ -194,9 +194,9 @@ This structure empowers consistency between the blocks published in biicode, it 
 
 CLion Layout
 ^^^^^^^^^^^^
-Use |clion_link| with biicode, just like the regular biicode layout but with a ``bii/layout.bii`` to integrate biicode with the C/C++ IDE.
+Use |clion_link| with biicode, just like the regular biicode layout but with a *bii/layout.bii* to integrate biicode with the C/C++ IDE.
 
-This layout places your repo's code as usual, in your ``project_name/blocks/owner/blockname`` directory:
+This layout places your repo's code as usual, in your *project_name/blocks/owner/blockname* directory:
 
 .. -block:: bash
 
@@ -222,7 +222,7 @@ This working project looks like this:
     |    +-- deps/
 
 
-in which ``layout.bii`` content is:
+in which *layout.bii* content is:
 
 .. code-block:: text
 
@@ -232,7 +232,7 @@ in which ``layout.bii`` content is:
 
 .. container:: infonote
      
-     Here's more info about :ref:`working with CLion <ide_clion>`
+     Here's more info about :ref:`working with CLion <ide_clion>`.
 
 
 Check our |biicode_forum_link| and/or |biicode_stackoverflow_link| for questions and answers. You can also |biicode_write_us| for suggestions and feedback.
