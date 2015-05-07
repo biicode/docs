@@ -67,7 +67,7 @@ When working with a block cloned from a git repository, use **bii publish -r** o
  
  $ bii publish -r
 
-This way your reference to the repo and commit will be saved and showed in your block header.
+This way your reference to the repo and commit will be saved and shown in your block header.
 
 You can also use tags:
 
