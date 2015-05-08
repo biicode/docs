@@ -8,7 +8,7 @@ AppVeyor
 
 |appveyor_homepage| provides Continuous Integration and Deploy for Windows and it is compatible with both |github_homepage| and |bitbucket_homepage|. 
 
-Place an ``appveyor.ymĺ`` file in your repository and each time you push to your Github repository it will kick-off a new build in Windows, executing your tests and publishing it as a biicode block into your biicode user account. 
+Place an ``appveyor.yml`` file in your repository and each time you push to your Github repository it will kick-off a new build in Windows, executing your tests and publishing it as a biicode block into your biicode user account. 
 
 Login AppVeyor and click on ``+ NEW PROJECT`` and choose the repository you want to deploy with. Create an ``appveyor.yml`` file in your local project to automatically publish your block to biicode, including your version tags, here's an example file:
 
