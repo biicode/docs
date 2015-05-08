@@ -61,7 +61,7 @@ If your current library doesn't have a *CMakeLists.txt* biicode creates it when 
  
  * If there are references to **external headers**, look for the library you need in biicode. You can use the search engine in https://www.biicode.com and search for the file typing ``file:my_include.h``
 
- 	* Found the library in biicode? Just fill your :ref:`[requirements]<requirements_conf>` section of *biicode.conf* as shown in :ref:`dependencies<cpp_dependencies>` section. Re-run **bii deps** command to ensure the #includes are resolved.
+ 	* Found the library in biicode? Just fill your :ref:`[requirements]<requirements_conf>` of *biicode.conf* as shown in :ref:`dependencies<cpp_dependencies>` section. Re-run **bii deps** command to ensure the #includes are resolved.
  	* Didn't find the library in biicode? You could be the first one adding it ;)
  
  * If there are no unresolved dependencies or it seems your unresolved dependencies are **system dependencies**, try to compile it (point 2).
@@ -79,7 +79,7 @@ If your current library doesn't have a *CMakeLists.txt* biicode creates it when 
   
   * If you receive **linker errors**, search in the code the missing symbols.
 
-  	*  If they are in you source code, maybe biicode is not finding some implementation and the dependency graph wasn't built correctly. You can use :ref:`[bii deps --files]<bii_deps_command>` to inspect how the code is connected. Use :ref:`[dependencies]<dependencies_conf>` section in *biicode.conf* to specify the missing source file.
+  	*  If they are in you source code, maybe biicode is not finding some implementation and the dependency graph wasn't built correctly. You can use :ref:`bii deps --files<bii_deps_command>` to inspect how the code is connected. Use :ref:`[dependencies]<dependencies_conf>` section in *biicode.conf* to specify the missing source file.
 
   	*  Can't find them in your sources? Try to google them. You may need to link a system library. You can use ``TARGET_LINK_LIBRARIES(${BII_LIB_TARGET} PUBLIC pthread)`` in your *CMakeLists.txt* after ``ADD_BII_TARGETS()``.
 
@@ -101,7 +101,7 @@ At this point biicode knows how to build your code. But you are not done yet. Yo
 
 	* You can build more examples including more headers from your library to ensure it works well.
 
-	* Congrats! You have a full functional library in biicode! Execute ``bii publish --tag STABLE`` to freeze an stable version.
+	* Congrats! You have a full functional library in biicode! Execute **bii publish --tag STABLE** to freeze an stable version.
 
 **Got any doubts?** Ask in |biicode_forum_link| or |biicode_write_us|.
 
@@ -255,7 +255,7 @@ There is a third option, a mix of the two previous options:
 
 		.. container:: infonote
 
-			You can include |macro_intersection| from *biicode/cmake* block and reuse the macro ``INTERSECTION``. Check :ref:`[Publish, share and reuse CMake scripts]<reuse_cmake>` section for more information.
+			You can include |macro_intersection| from *biicode/cmake* block and reuse the macro ``INTERSECTION``. Check :ref:`Publish, share and reuse CMake scripts<reuse_cmake>` section for more information.
 
 	* Keep the way you build the library:
 

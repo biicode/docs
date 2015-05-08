@@ -31,7 +31,7 @@ Open the block **myuser/math** for editing on the same project, execute:
 
   ~/mycalc$ bii open myuser/math
 
-``bii open command`` retrieves the complete block to your ``blocks`` folder, and deletes it from your ``deps`` folder.
+**bii open** command retrieves the complete block to your *blocks* folder, and deletes it from your *deps* folder.
 In this case, it will open the specific version you depend on. 
 
 The resulting layout is:
@@ -87,7 +87,7 @@ Now, add the new function, **subtract** and use it on your main.cpp
    }
 
 
-Build, ``bii build`` and run your tests ``myuser_math_main`` to check everything is working.
+Build, **bii build** and run your tests ``myuser_math_main`` to check everything is working.
 
 
 Publishing updated code
@@ -99,9 +99,9 @@ Publish the math block again. As you now have 2 blocks opened (calc, math), spec
 
    ~/mycalc$ bii publish myuser/math
 
-By default, ``bii publish`` uses the DEV tag. Check on your online biicode profile it's been published.
+By default, **bii publish** uses the DEV tag. Check on your online biicode profile it's been published.
 
-Using ``DEV`` tag, the latest ``DEV`` version is overrided, so ``[parents]`` section of your **biicode.conf**  remains unmodified:
+Using ``DEV`` tag, the latest ``DEV`` version is overrided, so ``[parents]`` section of your *biicode.conf*  remains unmodified:
 
 .. code-block:: text
 
@@ -112,7 +112,7 @@ Using ``DEV`` tag, the latest ``DEV`` version is overrided, so ``[parents]`` sec
 Closing edited block
 ^^^^^^^^^^^^^^^^^^^^
 
-You can now close **myuser/math** block, it and it will return, with the code already updated, to your ``deps`` folder:
+You can now close **myuser/math** block, it and it will return, with the code already updated, to your *deps* folder:
 
 .. code-block:: bash
 
@@ -196,11 +196,11 @@ Once your changes build, publish your own version of the block.
 If **the block in edition isn't yours**:
 
   * Rename **lasote** folder with your **username**. 
-  * Delete the ``[parents]`` section content in your **biicode.conf** file.
+  * Delete the ``[parents]`` section content in your *biicode.conf* file.
 
 .. container:: infonote
 
-    Remember to ``bii build`` before publishing!
+    Remember to **bii build** before publishing!
 
 And publish:
 
@@ -210,7 +210,7 @@ And publish:
 
 .. container:: infonote
   
-  Check :ref:`bii:publish command<bii_publish_command>` to know more.
+  Check :ref:`bii publish command<bii_publish_command>` to know more.
 
 Close the block
 ^^^^^^^^^^^^^^^
@@ -234,7 +234,7 @@ Now, if you want to depend on the block you've just published:
 
   * Update your #include (s) to the ones referring to your new published version
   * If you didn't publish it as STABLE, do it or update your :ref:`policies.bii <policies>` file to accept DEV versions.
-  * Execute ``bii find`` and you're ready to build as usual. Here's :ref:`bii find command documentation<bii_find_command>`.
+  * Execute **bii find** and you're ready to build as usual. Here's :ref:`bii find command documentation<bii_find_command>`.
 
 
 .. container:: infonote
@@ -247,7 +247,7 @@ Now, if you want to depend on the block you've just published:
 
 .. container:: infonote
 
-    Here's how to :ref:`create a biicode block from a git repo <cpp_block_git>`
+    Here's how to :ref:`create a biicode block from a git repo <cpp_block_git>`.
 
 Check our |biicode_forum_link| and/or |biicode_stackoverflow_link| for questions and answers. You can also |biicode_write_us| for suggestions and feedback.
 

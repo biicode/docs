@@ -58,6 +58,27 @@ Publish your blocks with different tags:
         Here's a full guide about :ref:`publishing<cpp_publishing>` to biicode.
 
 
+Publish from a git commit
+-------------------------
+
+When working with a block cloned from a git repository, use **bii publish -r** or **bii publish --remote** to publish git info along with your block:
+
+.. code-block:: bash
+ 
+ $ bii publish -r
+
+This way your reference to the repo and commit will be saved and shown in your block header.
+
+You can also use tags:
+
+.. code-block:: bash
+ 
+ $ bii publish -r --tag SATBLE
+
+.. container:: infonote
+
+        Check :ref:`Git integration <git_integration>` to know more about working with git repositories.
+
 
 Publish one of your project's blocks
 ------------------------------------
@@ -70,7 +91,7 @@ If there's more than one block within your project, specify which one you want t
 
 
 An Example
------------
+^^^^^^^^^^
 
 ``fenix`` user is editing two blocks, ``fenix/vector`` and ``fenix/matrix``. He wants to publish **just fenix/vector** using DEV tag:
 

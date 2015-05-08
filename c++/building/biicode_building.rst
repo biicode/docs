@@ -88,7 +88,7 @@ For example, if the block *lasote/game* has a *main.cpp* in a folder named "src"
 
   .. container:: infonote
 
-     You can also do this by adding ``!examples_src_my_program`` line to ``[mains]`` :ref:`section <mains_conf>`.
+     You can also do this by adding ``!examples_src_my_program`` line to ``[mains]`` :ref:`section of biicode.conf <mains_conf>`.
 
 
 Which source code files are part of each **executable**
@@ -96,7 +96,7 @@ Which source code files are part of each **executable**
 
 ``BII_exe_name_SRC`` contains all source code that will be added to the exe. "exe_name" matches this pattern: *path_to_mainfile*.
 
-For example, if the block *lasote/game* has a *main.cpp* in a folder named "src" the variable is: "BII_src_main_SRC"  
+For example, if the block *lasote/game* has a *main.cpp* in a folder named "src" the variable is: "``BII_src_main_SRC``"  
   
   **EXAMPLE**: Exclude *my_file.cpp* from being compiled with *examples/main.cpp* executable.
 
@@ -110,7 +110,7 @@ For example, if the block *lasote/game* has a *main.cpp* in a folder named "src"
 Modify which test targets are made
 ==================================
 
-``BII_BLOCK_TESTS`` is a subset of BII_BLOCK_EXES and contains the executables specified in [tests] section of *biicode.conf* file.
+``BII_BLOCK_TESTS`` is a subset of ``BII_BLOCK_EXES`` and contains the executables specified in ``[tests]`` section of *biicode.conf* file.
 
   **EXAMPLE**: Exclude *tests/one.cpp* from tests.
 
@@ -159,8 +159,7 @@ Configure **library** target
 
   .. container:: infonote
 
-     You can also do this by adding ``myincludedir`` line to ``[paths]`` :ref:`section <paths_conf>`.
-
+     You can also do this by adding ``myincludedir`` line to ``[paths]`` :ref:`section of biicode.conf <paths_conf>`.
 
   **EXAMPLE**: How to activate C++11 for all targets (including lib target).
 
@@ -238,12 +237,12 @@ If you are using *Visual Studio* or any other IDE with a select list box for bui
 
 .. container:: infonote
      
-     Use ``bii clean`` command to restore most of your project's meta-information. Here's more about :ref:`bii clean command<biiclean>`.
+     Use **bii clean** command to restore most of your project's meta-information. Here's more about :ref:`bii clean command<biiclean>`.
 
 Complete variable reference
 ----------------------------
 
-Sorted according to their specific use *before* or *after* ``ADD_BII_TARGETS()`` variable:
+Sorted according to their specific use **before** or **after** ``ADD_BII_TARGETS()`` variable:
 
 :``BII_LIB_SRC``:  List of files belonging to the library.
 :``BII_LIB_TYPE``: Empty by default, (STATIC in most cases) STATIC or SHARED.
@@ -263,7 +262,7 @@ Sorted according to their specific use *before* or *after* ``ADD_BII_TARGETS()``
 :``BII_LIB_TARGET``: Target library name, usually in the form "user_block". It may not exist if ``BII_LIB_SRC`` is empty, so better use ``${BII_BLOCK_TARGET}`` as a general rule. 
 :``BII_BLOCK_TARGET``: CMake **Interface** that represents the whole block. It always exists and it's applied both library and executables (each target). You can use it to configure a block's building configuration: Link libraries, compile flags...etc 
 :``BII_BLOCK_TARGETS``: List of all targets defined in the block
-:``BII_exe_name_TARGET``: Executable target (listed in ``${BII_BLOCK_EXES}``) (e.g. ``${BII_main_TARGET}``. You can also use directly the name of the executable target (e.g. user_block_main)
+:``BII_exe_name_TARGET``: Executable target (listed in ``${BII_BLOCK_EXES}``). e.g. ``${BII_main_TARGET}``. You can also use directly the name of the executable target (e.g. user_block_main)
 
 
 **Got any doubts?** |biicode_forum_link| or |biicode_write_us|.

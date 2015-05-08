@@ -22,6 +22,7 @@ You can:
    :maxdepth: 2
 
    commands/build
+   commands/buzz
    commands/clean
    commands/close
    commands/configure

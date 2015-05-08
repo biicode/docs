@@ -12,7 +12,7 @@ Use **Block Tracks** to publish different development *versions* of a block usin
 Publish a new block Track
 --------------------------
 
-Write the track name between brackets in the ``[parent]`` section of the **biicode.conf** file. Specify ``version -1`` because we want create a new block. 
+Write the track name between brackets in the ``[parent]`` section of the *biicode.conf* file. Specify ``version -1`` because we want create a new block. 
 
 .. code-block:: text
 
@@ -30,7 +30,7 @@ In case you need a personalized fix over the original library from other user, j
 
 This way, you have configured a track of other user whitout changing *includes*.
 
-Execute ``bii publish`` and enter your profile *www.biicode.com/myuser* to check the new track. 
+Execute **bii publish** and enter your profile *www.biicode.com/myuser* to check the new track. 
 
 Read a bit more about how *tracks* work, visit our post in the blog about |biicode_blog_blocktracks|.
 

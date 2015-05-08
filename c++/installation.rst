@@ -25,7 +25,7 @@ Open the terminal and **make sure biicode is installed**:
 
     *  :ref:`Debian based distributions <alternative_install_debian>`
     *  :ref:`Arch based distributions <alternative_install_archlinux>`
-    *  Running biicode from sources :ref:` <alternative_install_sources>`
+    *  :ref:`Running biicode from source <alternative_install_source>`
 
 
 Install C/C++ tools
@@ -77,7 +77,7 @@ Use the ``apt-get`` program to install biicode through the APT repository:
 
     .. container:: infonote
 
-        Execute ``bii setup:cpp`` to make sure you've got all tools required.
+        Execute **bii setup:cpp** to make sure you've got all tools required.
 
 
     Step by step install:
@@ -123,12 +123,12 @@ Biicode maintains a package at the Arch User Repository (AUR). Install it using 
 
 .. code-block:: bash
 
-    sudo yaourt -S biicode
+    $ sudo yaourt -S biicode
 
 
 The package is maintained in the AUR, so your package manager will notify you automatically when we update the package.
 
-.. _alternative_install_sources:
+.. _alternative_install_source:
 
 Run biicode from source
 -----------------------
@@ -216,7 +216,7 @@ Follow these steps if something failed during the automatic installation explain
 Verify your installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To check your automatic installation open the Terminal and type ``bii setup:cpp``. To check your manual installation, run the following commands. If the output messages look similar to these, the tools are successfully installed.
+To check your automatic installation open the Terminal and type **bii setup:cpp**. To check your manual installation, run the following commands. If the output messages look similar to these, the tools are successfully installed.
 
 .. code-block:: bash
 
@@ -253,7 +253,7 @@ Set an environment variable "HTTPS_PROXY" with your proxy server address.
 
 .. code-block:: bash
 
-	export HTTPS_PROXY="http://user:pass@proxy_ip:port"
+	$ export HTTPS_PROXY="http://user:pass@proxy_ip:port"
 
 
 .. container:: infonote
@@ -273,7 +273,7 @@ Set an environment variable "HTTPS_PROXY" with your proxy server address.
 
 .. code-block:: bash
 
-	export HTTPS_PROXY="http://lasote:mypp@localhost:7775"
+	$ export HTTPS_PROXY="http://lasote:mypp@localhost:7775"
 
 
 

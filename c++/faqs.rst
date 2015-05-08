@@ -6,7 +6,7 @@ FAQs
 Is biicode free?
 ----------------
 
-**Yes, and it will be free forever for open source projects**. As long as you share your code, you will enjoy all the functionality and benefits of biicode totally free. However, if you prefer to keep your code private and only accessible to you and your collaborators, you'll have to upgrade to a **premium account** (not available at this moment, although we are working on it).
+**Yes, and it will be free forever for open source projects**. As long as you share your code, you will enjoy all the functionality and benefits of biicode totally free. However, if you prefer to keep your code private and only accessible to you and your collaborators, you'll have to upgrade to a **premium account**.
 
 
 Is biicode an editor in the cloud?

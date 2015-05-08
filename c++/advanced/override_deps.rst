@@ -15,7 +15,9 @@ And you'd rather depend on:
 
 |
 
-Write your preferred versions in your **biicode.conf** and biicode will use those versions in your project: 
+Write your preferred versions in your *biicode.conf* and biicode will use those versions in your project: 
+
+*biicode.conf*
 
 .. code-block:: text
 
@@ -53,11 +55,11 @@ Let's create a block track from **diego/glfw** block:
   [parent]
       diego/glfw(myuser/glfw): -1
 
-* Execute ``bii publish`` and enter your profile *www.biicode.com/myuser* to check the new track. 
+* Execute **bii publish** and enter your profile *www.biicode.com/myuser* to check the new track. 
 
 **Depend on that new block track:**
 
-* Write in your **biicode.conf** file ``[requirements]`` :
+* Write in your *biicode.conf* file ``[requirements]`` :
 
     *biicode.conf*
 
@@ -67,13 +69,13 @@ Let's create a block track from **diego/glfw** block:
         # required blocks (with version)
         diego/glfw(myuser/glfw): 1
 
-* Execute ``bii build`` and it's updated.
+* Execute **bii build** and it's updated.
 
 .. container:: infonote
 
     What if you want to get back again to the original library? 
       
-    * Write in your **biicode.conf** file ``[requirements]`` :
+    * Write in your *biicode.conf* file ``[requirements]`` :
 
       .. code-block:: text
 
