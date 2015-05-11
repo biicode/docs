@@ -32,6 +32,6 @@ after_success:
   - bii publish
 env:
   global:
-  - GCC_VERSION="4.9"
-  - USER=amalulla
-  - secure: Z1IrvEQFr/poZNXRWAVPXB7eDIUwQWXMgkjMWNTJuXAsjKHTXazd5SaOc88Fd6ajU8ZyJfbX1P25bO0A1G+GS15OVq0i28tuFp1HuHF/YmTKu9Ig5erBW36Huj5ijysKbpPeyQxYIpuFcOsCH3MjghQ1nV0Zo+CdnM0OSB2hgcc=
+    - GCC_VERSION="4.9"
+    - USER=amalulla
+    - secure: Z1IrvEQFr/poZNXRWAVPXB7eDIUwQWXMgkjMWNTJuXAsjKHTXazd5SaOc88Fd6ajU8ZyJfbX1P25bO0A1G+GS15OVq0i28tuFp1HuHF/YmTKu9Ig5erBW36Huj5ijysKbpPeyQxYIpuFcOsCH3MjghQ1nV0Zo+CdnM0OSB2hgcc=
