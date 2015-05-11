@@ -61,9 +61,9 @@ environment:
   block_name:
     "cpp-expression-parser"
   secured_passwd:
-    secure: ZMvgETfLAUo7kISnvrinBA==
+    secure: ENCRYPTED_BIICODE_PASSWORD_HERE
   access_token:
-    secure: GdIDIRkmsM9blqS143lQErkxguMYgJBs74GzWw+lgzjvl/NoLs4ErcOZ2JBAEmkr
+    secure: ENCRYPTED_GITHUB_PASSWORD_HERE
   github_user:
     "MariadeAnton"
   github_email:
