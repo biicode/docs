@@ -1,10 +1,7 @@
 version: 1.0.{build}
 
 install:
-  - ps: wget https://s3.amazonaws.com/biibinaries/thirdparty/cmake-3.0.2-win32-x86.zip -OutFile cmake.zip
-  - cmd: echo "Unzipping cmake..."
-  - cmd: 7z x cmake.zip -o"C:\Program Files (x86)\" -y > nul
-  - cmd: set PATH=%PATH:CMake 2.8\bin=%;C:\Program Files (x86)\cmake-3.0.2-win32-x86\bin
+  - cmd: cinst cmake -version 3.0.2 -y
   - cmd: cmake --version
   - cmd: echo "Downloading biicode..."
   - ps: wget http://www.biicode.com/downloads/latest/win -OutFile bii-win.exe
@@ -12,7 +9,6 @@ install:
   - cmd: set PATH=%PATH%;C:\Program Files (x86)\BiiCode\bii
   - cmd: bii -v
   - cmd: del bii-win.exe
-  - cmd: del cmake.zip
 
 before_build:
   - cmd: cd \
