@@ -25,9 +25,7 @@ install:
   - export TRAVIS_CXX=$CXX
 script:
   - cd /tmp
-  - bii init biicode_project
-  - mkdir -p ./biicode_project/blocks/$USER/$BLOCK_NAME
-  - cd biicode_project/blocks/$USER/$BLOCK_NAME
+  - bii init -L
   - shopt -s dotglob && mv $TRAVIS_BUILD_DIR/* ./
   - if [ "$CXX" == "clang++" ]; then export CXX="clang++" && bii cpp:build; fi
   - if [ "$CXX" == "g++" ];     then export CXX="g++"     && bii cpp:build; fi
