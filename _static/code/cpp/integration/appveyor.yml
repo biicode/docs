@@ -11,16 +11,12 @@ install:
   - cmd: del bii-win.exe
 
 before_build:
-  - cmd: cd \
-  - cmd: bii init %project_name%
-  - cmd: cd %project_name%
-  - cmd: bii new %block_user%/%block_name%
-    # copy files and folders
-  - cmd: xcopy "%APPVEYOR_BUILD_FOLDER%" blocks\%block_user%\%block_name%\ /e
+  - cmd: bii init -L
   - cmd: bii cpp:configure -G "Visual Studio 12"
+  - cmd: bii user %block_user%
 
 build_script:
-  - cmd: bii cpp:build
+  - cmd: bii build
 
 test_script:
   - cmd: cd bin

@@ -43,7 +43,11 @@ Learn more about AppVeyor visiting their `docs <http://www.appveyor.com/docs>`_.
 
 .. container:: infonote
 
-   Here's a blog-post about `using Appveyor CI <http://blog.biicode.com/appveyor-ci-windows-biicode/>`_ and Deploy for Windows 
+   * Here's a blog-post about `using Appveyor CI <http://blog.biicode.com/appveyor-ci-windows-biicode/>`_ and Deploy for Windows.
+
+
+   * MinGW compiler is already installed in Appveyor, just include it in the Path at ``install`` section: ``set PATH=%PATH%;C:\MinGW\bin`` and **bii configure "MinGW Makefiles"** at ``before_build`` section.
+
 
 .. _travis_integration:
 

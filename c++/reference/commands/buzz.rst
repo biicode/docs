@@ -1,7 +1,7 @@
 .. _bii_buzz_command:
 
 **bii buzz:** init, find and build
-------------------------------
+----------------------------------
 
 **bii buzz** is an all-in-one purpose command that combines different actions: initialize project, find dependencies and build the block.
 
