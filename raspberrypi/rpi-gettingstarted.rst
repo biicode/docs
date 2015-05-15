@@ -151,7 +151,7 @@ Copy the following code containing a simple sum function and a test into the **m
 .. code-block:: cpp
    :emphasize-lines: 1
 
-   #include "drogon/wiringpi/wiringpi/wiringpi.h"
+   #include "drogon/wiringpi/wiringPi/wiringPi.h"
    #define LED 0
    int main (void){
        wiringPiSetup () ;
