@@ -3,6 +3,15 @@
 Release notes
 =============
 
+**3.2** (19-May-2015)
+
+        * Fixed problem with cmake Eclipse generator overwriting every time the project config
+        * Dependencies are managed as SYSTEM for include_directories, to avoid compilation warnings, both for absolute and relative includes
+        * Opt-out for handling include_directories as system dependencies
+        * Fixed bug in migration of old .bii files
+        * Fixed bug in publish not upgrading properly user profiles
+
+
 **3.1.1** (29-Apr-2015)
 
         * Optimized complete internal workflow, avoiding slow and unnecessary serializations to project DB
