@@ -41,6 +41,7 @@ This doesn't aim to be a comprehensive list of all the contents of biicode, just
    examples/openssl
    examples/poco
    examples/ptypes
+   examples/sdl
    examples/sqlite
    examples/tinythread
    examples/zlib
