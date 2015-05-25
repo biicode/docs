@@ -107,3 +107,7 @@ To use it, just pass it as argument of ``bii configure -t my_toolchain_name``.
 .. container:: infonote
 
 	:ref:`You can read more info about toolchains in the C++ section <custom_toolchains>`
+	
+.. container:: infonote
+
+	`Passwordless secure SSH access is possible by following the instructions on the raspberry pi help section<https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md>`_
