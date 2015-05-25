@@ -57,6 +57,12 @@ This command provides an easy way to configure your Raspberry Pi settings.
 * **RPI IP Address**: Raspberry Pi local IP address. Write here your Raspberry Pi network address, that you can find out executing the ``ifconfig`` in a console inside the RPi.
 * **RPI directory to upload (bin)**: Raspberry Pi directory where you want your programs to be saved. Default value is the ``bin`` user home folder.
 
+Alternatively you can pass your configuration directly into the settings command.
+
+.. code-block:: bash
+
+	$ bii rpi:settings --user USER --ip IP --directory DIRECTORY
+
 .. _bii_rpi_ssh:
 
 **bii rpi:ssh**: connect by ssh with the Raspberry Pi
