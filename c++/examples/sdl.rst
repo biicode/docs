@@ -5,7 +5,7 @@ SDL
 
 `SDL: Simple DirectMedia Layer <http://www.libsdl.org/>`_ is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D.  
 
-SDL library is stored at `miguel/sdl2 <https://www.biicode.com/miguel/sdl2/master>`_.
+SDL library is available in biicode at `miguel/sdl2 <https://www.biicode.com/miguel/sdl2/master>`_.
 
 Graphical window interface
 --------------------------
