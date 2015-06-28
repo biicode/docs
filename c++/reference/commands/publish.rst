@@ -73,7 +73,7 @@ You can also use tags:
 
 .. code-block:: bash
  
- $ bii publish -r --tag SATBLE
+ $ bii publish -r --tag STABLE
 
 .. container:: infonote
 
