@@ -28,7 +28,7 @@ Make sure :ref:`biicode is installed<first_steps>`. Open the terminal and execut
 Create your first project
 -------------------------
 
-**bii init -L** a folder to create a new project. The commands below create *unit_test/* folder as a biicode project containing a block and and a *main.cpp* file. 
+**bii init -L** a folder to create a new project. The commands below create *unit_test/* folder as a biicode project containing a block and a *main.cpp* file. 
 
 .. code-block:: bash
 
